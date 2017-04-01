@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>壮壮-Technology</title>
+  <subtitle>宠辱不惊，闲看庭前花落花开</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.adherentman.com/"/>
+  <updated>2017-03-28T08:57:46.165Z</updated>
+  <id>http://www.adherentman.com/</id>
+  
+  <author>
+    <name>XuZiHao</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Javascript DOM编程艺术学习笔记一（第三章兼高程三）</title>
+    <link href="http://www.adherentman.com/2017/03/26/Javascript%20Dom%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80%EF%BC%88%E7%AC%AC%E4%B8%89%E7%AB%A0%E5%85%BC%E9%AB%98%E7%A8%8B%E4%B8%89%EF%BC%89/"/>
+    <id>http://www.adherentman.com/2017/03/26/Javascript Dom编程艺术学习笔记一（第三章兼高程三）/</id>
+    <published>2017-03-26T12:01:14.000Z</published>
+    <updated>2017-03-28T08:57:46.165Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-Dom基础"><a href="#1-Dom基础" class="headerlink" title="1.Dom基础"></a>1.Dom基础</h1><h2 id="Element"><a href="#Element" class="headerlink" title="Element"></a>Element</h2><ul>
+<li>三种DOM方法可获取元素节点，分别是通过元素ID、通过标签名字和通过类名字来获取</li>
+<li>getElementById  </li>
+</ul>
+<blockquote>
+<p> 根据Id获取元素节点</p>
+</blockquote>
+<ul>
+<li>getElementByTagName  </li>
+</ul>
+<blockquote>
+<p>根据Html获取元素节点</p>
+</blockquote>
+<ul>
+<li>getElementByClassName  </li>
+</ul>
+<blockquote>
+<p>根据ClassName（class）获取元素节点</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="高程三中学到"><a href="#高程三中学到" class="headerlink" title="高程三中学到"></a>高程三中学到</h2><p>Html元素</p>
+<ul>
+<li>id，元素在文档中的唯一标识 -</li>
+<li>title，有关元素的附加说明信息，一般通过工具提示条显示出来 </li>
+<li>lang，元素内容的语言比如中文zh-hans </li>
+<li>dir，语言的方向，值为”ltr”（left-to-right，从左至右）或”rtl”（right-to-left，从右至左），很少使用</li>
+<li><p>className，与元素的class特性对应，即为元素指定的CSS类，没有将这个属性命名为class。</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myDiv"</span> <span class="attr">class</span>=<span class="string">"bd"</span> <span class="attr">title</span>=<span class="string">"Body text"</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">dir</span>=<span class="string">"ltr"</span>&gt;</span>Some text<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p> 可以获得元素中指定的所有信息。</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">div = <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>);</div><div class="line">       alert(div.id);         <span class="comment">//"myDiv"</span></div><div class="line">       alert(div.className);  <span class="comment">//"bd"</span></div><div class="line">       alert(div.title);      <span class="comment">//"Body text"</span></div><div class="line">       alert(div.lang);       <span class="comment">//"en"</span></div><div class="line">       alert(div.dir);        <span class="comment">//"ltr"</span></div></pre></td></tr></table></figure>
+<p> 还可以为每个属性赋予新的值。</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">div = <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>);</div><div class="line">       div.id = <span class="string">"someOtherId"</span>;</div><div class="line">       div.className = <span class="string">"ft"</span>;</div><div class="line">       div.title = <span class="string">"Some other text"</span>;</div><div class="line">       div.lang = <span class="string">"fr"</span>;</div><div class="line">       div.dir =<span class="string">"rtl"</span>;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="获取和设置属性"><a href="#获取和设置属性" class="headerlink" title="获取和设置属性"></a>获取和设置属性</h1><ul>
+<li>getAttribute</li>
+</ul>
+<blockquote>
+<p>getAttribute是一个函数。它只有一个参数——你打算查询的属性名字：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">object.getAttribute(attribute);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<ul>
+<li>setAttribute<blockquote>
+<p>它允许我们对属性节点的值做出修改。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">object.setAttribute(&quot;attribute&quot;,value);</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;1-Dom基础&quot;&gt;&lt;a href=&quot;#1-Dom基础&quot; class=&quot;headerlink&quot; title=&quot;1.Dom基础&quot;&gt;&lt;/a&gt;1.Dom基础&lt;/h1&gt;&lt;h2 id=&quot;Element&quot;&gt;&lt;a href=&quot;#Element&quot; class=&quot;headerlink&quot; title=&quot;Element&quot;&gt;&lt;/a&gt;Element&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;三种DOM方法可获取元素节点，分别是通过元素ID、通过标签名字和通过类名字来获取&lt;/li&gt;
+&lt;li&gt;getElementById  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt; 根据Id获取元素节点&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;getElementByTagName  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;根据Html获取元素节点&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;getElementByClassName  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;根据ClassName（class）获取元素节点&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Javascript修仙之路" scheme="http://www.adherentman.com/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://www.adherentman.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2017Web程序员技术发展路线图</title>
+    <link href="http://www.adherentman.com/2017/03/22/2017Web%E7%A8%8B%E5%BA%8F%E5%91%98%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95%E8%B7%AF%E7%BA%BF%E5%9B%BE/"/>
+    <id>http://www.adherentman.com/2017/03/22/2017Web程序员技术发展路线图/</id>
+    <published>2017-03-22T04:31:52.000Z</published>
+    <updated>2017-03-22T04:59:52.830Z</updated>
+    
+    <content type="html"><![CDATA[<p>这个是国外一个工程师的总结，在知乎上的<a href="https://zhuanlan.zhihu.com/p/25897612" target="_blank" rel="external">前端技术文章精选专栏</a>看见的，看着实用转来到这。</p>
+<blockquote>
+<p>2017 年 Web 开发工程师技术发展路线图</p>
+</blockquote>
+<p>下面的脑图展现了前端、后端以及 devops 技术栈的发展路线图，作者起初做这份技术发展脑图是给初学者和学生们准备的。<br><a id="more"></a></p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><img src="/images/2017fazhang.png" alt="2017发展"></p>
+<h2 id="前端开发工程师路线图"><a href="#前端开发工程师路线图" class="headerlink" title="前端开发工程师路线图"></a>前端开发工程师路线图</h2><p><img src="/images/qianduan.png" alt="前端"></p>
+<h2 id="后端开发工程师路线图"><a href="#后端开发工程师路线图" class="headerlink" title="后端开发工程师路线图"></a>后端开发工程师路线图</h2><p>对于后端方面的技术，原作者表示比较喜欢和看好Nodejs、PHP7 以及 Ruby ，我自己觉得在国内来说 Nodejs 和 React Native 是目前很多前端开发工程师热衷探索的技术，而 Ruby 技术在国内始终不温不火，PHP技术比较传统。建议初学者们还是选择岗位更多的技术栈学习，当然如果你有自己喜欢的技术栈，那就可以暂时不考虑市场因素！<br><img src="/images/houduan.png" alt="后端"></p>
+<h2 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h2><p><img src="/images/DevOps.png" alt="DevOps"></p>
+<p>[GitHub链接:][1]<br>  [1] : kamranahmedse/developer-roadmap</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这个是国外一个工程师的总结，在知乎上的&lt;a href=&quot;https://zhuanlan.zhihu.com/p/25897612&quot;&gt;前端技术文章精选专栏&lt;/a&gt;看见的，看着实用转来到这。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2017 年 Web 开发工程师技术发展路线图&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;下面的脑图展现了前端、后端以及 devops 技术栈的发展路线图，作者起初做这份技术发展脑图是给初学者和学生们准备的。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://www.adherentman.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://www.adherentman.com/tags/javascript/"/>
+    
+      <category term="node.js" scheme="http://www.adherentman.com/tags/node-js/"/>
+    
+      <category term="git" scheme="http://www.adherentman.com/tags/git/"/>
+    
+      <category term="php" scheme="http://www.adherentman.com/tags/php/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>配置SSH Key+Next主题以及个性化改动</title>
+    <link href="http://www.adherentman.com/2017/03/20/%E9%85%8D%E7%BD%AESSH%20Key+Next%E4%B8%BB%E9%A2%98%E4%BB%A5%E5%8F%8A%E4%B8%AA%E6%80%A7%E5%8C%96%E6%94%B9%E5%8A%A8/"/>
+    <id>http://www.adherentman.com/2017/03/20/配置SSH Key+Next主题以及个性化改动/</id>
+    <published>2017-03-20T13:10:55.000Z</published>
+    <updated>2017-03-21T08:46:29.797Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Git-SSH-Key-生成步骤"><a href="#Git-SSH-Key-生成步骤" class="headerlink" title="Git SSH Key 生成步骤"></a>Git SSH Key 生成步骤</h1><p>Git是分布式的代码管理工具，远程的代码管理是基于SSH的，所以要使用远程的Git则需要SSH的配置。</p>
+<ul>
+<li>第一次使用要设置Git的user name 和email<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name</div></pre></td></tr></table></figure>
+</li>
+</ul>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.email</div></pre></td></tr></table></figure>
+ <a id="more"></a>
+<ul>
+<li><p>查看你是否已经拥有密钥</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$cd ~/.ssh</div></pre></td></tr></table></figure>
+<p>如果没有的话就不会有此文件，有的话就会备份删除掉</p>
+</li>
+<li><p>生成密钥</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C “user.email”</div></pre></td></tr></table></figure>
+<p>你将会遇到以下情况的处理：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> Generating public/private rsa key pair.</div><div class="line">Enter file in which to save the key (/root/.ssh/id_rsa):  直接回车</div><div class="line">Enter passphrase (empty for no passphrase):               直接回车</div><div class="line">Enter same passphrase again:</div><div class="line">Your identification has been saved in /root/.ssh/id_rsa.  公钥</div><div class="line">Your public key has been saved in /root/.ssh/id_rsa.pub.  私钥</div><div class="line">The key fingerprint is:</div><div class="line">4d:dd:48:af:76:c2:ba:a8:bc:20:f3:28:1d:6a:28:53</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>就是按3次回车，密码为空！<br>最后你会得到两个文件：<code>id_rsa</code>和<code>id_rsa.pub</code></p>
+<ul>
+<li>把密钥加到Github或者码云或者Coding的SSH上<br><img src="/images/github.png" alt="Github"><br>我们需要把<code>id_rsa.pub</code>中的内容全选复制，然后粘贴进Pages的各自SSH地方，当然需要输入密码。</li>
+<li>测试SSH<br>Github：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ssh -T git@github.com</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>码云：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ssh -T git@git.oschina.net</div></pre></td></tr></table></figure></p>
+<p>Coding:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ssh -T git@coding.net</div></pre></td></tr></table></figure></p>
+<ul>
+<li>若返回则配置成功<br>github:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">The authenticity of host ‘github.com (207.97.227.239)’ can’t be established.</div><div class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</div><div class="line">Are you sure you want to continue connecting (yes/no)? yes</div><div class="line">Warning: Permanently added ‘github.com,207.97.227.239′ (RSA) to the list of known hosts.</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>码云：<code>Welcome to Git@OSC, yourname!</code><br>Coding：<code>Enter passphrase for key ‘/c/Users/Yuankai/.ssh/id_rsa’: Coding.net Tips : [ Hello Kyle_lyk! You have connected to Coding.net by SSH successfully! ]</code><br>那么配置好，我们就可以把Hexo部署到Git上了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$hexo deploy</div></pre></td></tr></table></figure></p>
+<h1 id="Hexo之Next"><a href="#Hexo之Next" class="headerlink" title="Hexo之Next"></a>Hexo之Next</h1><ul>
+<li>Hexo有很多主题，有大道至简的<code>maupassant</code> 也有<code>casper</code>还有<code>uno</code>。但是我还是最喜欢<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">next</a>的风格。</li>
+</ul>
+<h1 id="安装Next"><a href="#安装Next" class="headerlink" title="安装Next"></a>安装Next</h1><p>安装Next是非常的简单。如果你熟悉Git那么你就可以直接使用Git checkout代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd your-hexo-site</div><div class="line">$ git clone https://github.com/iissnan/hexo-theme-next themes/next</div></pre></td></tr></table></figure></p>
+<p>还有一种方法是下载稳定版本</p>
+<ul>
+<li>前往Next版本<a href="https://github.com/iissnan/hexo-theme-next/releases" target="_blank" rel="external">发布页面</a></li>
+<li>一直下拉找到<code>Source code(zip)</code>点击即可下载</li>
+<li>之后把下载的压缩包至站点的themes目录下，并将解压后的文件名改为<code>next</code>。</li>
+</ul>
+<h2 id="启用Next"><a href="#启用Next" class="headerlink" title="启用Next"></a>启用Next</h2><ul>
+<li>你需要打开你的站点目录找到<code>_config.yml</code>这个文件，记住不是themes下next中的<code>_config.yml</code>。</li>
+<li>我们需要在站点文件<code>_config.yml</code>中<code>ctrl+F</code>打入<code>theme</code>字段，并将其值改为<code>next</code>：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">theme:next</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="验证主题是否生成完成"><a href="#验证主题是否生成完成" class="headerlink" title="验证主题是否生成完成"></a>验证主题是否生成完成</h2><p>首先我们要右击你的站点然后选择<code>Git Bash Here</code>，并开启调试模式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s --debug</div></pre></td></tr></table></figure></p>
+<p>命令行出现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure></p>
+<p>那么我们就可以在网址上输入<code>http://0.0.0.0:4000</code>去查看效果，检查站点是否正确运行。</p>
+<h1 id="Next各种细节"><a href="#Next各种细节" class="headerlink" title="Next各种细节"></a>Next各种细节</h1><h2 id="主题设定"><a href="#主题设定" class="headerlink" title="主题设定"></a>主题设定</h2><p>Scheme 是Next提供的一种特性，就因为Scheme我们有三种选择外观。</p>
+<ul>
+<li>Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</li>
+<li>Mist - Muse 的紧凑版本，整洁有序的单栏外观</li>
+<li>Pisces - 双栏 Scheme，小家碧玉似的清新<br>Scheme 的切换通过更改 主题配置文件（theme/next下的<code>_config.yml</code>），搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#scheme: Muse</div><div class="line">#scheme: Mist</div><div class="line">scheme: Pisces</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>还有更多的小东西大家可以去<a href="https://github.com/iissnan/hexo-theme-next/releases" target="_blank" rel="external">Next官方文档</a>看。比如说</p>
+<ul>
+<li>菜单，</li>
+<li>侧栏，</li>
+<li>头像，</li>
+<li>作者昵称，</li>
+<li>站点描述，</li>
+<li>第三方服务等。</li>
+</ul>
+<h2 id="Next中foot更改"><a href="#Next中foot更改" class="headerlink" title="Next中foot更改"></a>Next中foot更改</h2><p><img src="/images/foot.jpg" alt="foot">我把原来的什么Hexo啊..Next.Pisces啊通通改了，这才像我们自己的博客呀！没得说。<br>我们需要打开<code>next</code>下的<code>layout</code>接着打开<code>_partials</code>下的<code>footer.swig</code>。<br>然后我们要把其中红框里的删除。<br><img src="/images/foot1.png" alt="foot1"><br>紧接着我们回到<code>next</code>下，找到<code>languages</code>，打开<code>zh-Hans.yml</code>。<br><img src="/images/foot2.png" alt="foot2"><br>我们可以改成如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">footer:</div><div class="line">  powered: &quot;个人专属 &quot;</div><div class="line">  theme: Adherent</div></pre></td></tr></table></figure></p>
+<p>看大家的想法自己随意发挥！<br>好啦，我要去研究SEO了！！<br>祝大家建博成功</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Git-SSH-Key-生成步骤&quot;&gt;&lt;a href=&quot;#Git-SSH-Key-生成步骤&quot; class=&quot;headerlink&quot; title=&quot;Git SSH Key 生成步骤&quot;&gt;&lt;/a&gt;Git SSH Key 生成步骤&lt;/h1&gt;&lt;p&gt;Git是分布式的代码管理工具，远程的代码管理是基于SSH的，所以要使用远程的Git则需要SSH的配置。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第一次使用要设置Git的user name 和email&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ git config --global user.name&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+ &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ git config --global user.email&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="Technology" scheme="http://www.adherentman.com/categories/Technology/"/>
+    
+    
+      <category term="git" scheme="http://www.adherentman.com/tags/git/"/>
+    
+      <category term="hexo" scheme="http://www.adherentman.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Node.js+hexo部署博客</title>
+    <link href="http://www.adherentman.com/2017/03/20/Node.js+hexo%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://www.adherentman.com/2017/03/20/Node.js+hexo部署博客/</id>
+    <published>2017-03-20T08:10:14.000Z</published>
+    <updated>2017-03-21T12:50:11.756Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h1><p>想了很久，还是要弄个博客来勉励自己来督促自己学习去记录。因为学生党，没能抢到腾讯云+阿里云学生优惠，又用过github pages而且挺想用markdown写作，就选择Hexo来搭建自己的博客。也许有人会说为什么不用Jekyll，因为我所用的是windows系统，而且不建议在windows系统下安装Jekyll，还有我准备发展方向是前端。hexo是基于Node.js而Jekyll是基于Ruby所以你懂的！还有我查了一下Hexo是台湾的程序员开发的，原生态支持中文。<br>Node.js+Hexo。是因为我对js的热爱还有因为是台湾同胞的作品，所去选择的。<br>现在我也就把自己搭建流程说一下以及自己遇到的问题着重提一下。</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="什么是-Hexo？"><a href="#什么是-Hexo？" class="headerlink" title="什么是 Hexo？"></a>什么是 Hexo？</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h1 id="安装Node"><a href="#安装Node" class="headerlink" title="安装Node"></a>安装Node</h1><h2 id="下载安装Node注意事项"><a href="#下载安装Node注意事项" class="headerlink" title="下载安装Node注意事项"></a>下载安装Node注意事项</h2><p><a href="https://nodejs.org" target="_blank" rel="external">Node.js</a>根据自己电脑/喜好去选择是否用安装包还是绿色安装！建议路径中不要包含空格或者其他特殊字符，防止出现莫名其妙的错误，最好纯英文。</p>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>各种都要配置环境，Node也不例外。如果你的文件路径为<code>D:\node</code>也就是你<code>Node.exe</code>所在的位置。回到桌面点击（我是win10，win7,win8方法类似）我的电脑右键-属性-高级系统设置-高级-环境变量<code>在Path</code>项中加入<code>D:\node</code>这个路径。之后我们win+R打入cmd命令行去执行<code>npm</code>命令，如果没有提示找不到命令，则说明Node安装成功，如果有的话去看看自己是不是环境配置没有配置好。</p>
+<h2 id="配置国内镜像"><a href="#配置国内镜像" class="headerlink" title="配置国内镜像"></a>配置国内镜像</h2><p>在国内可以用<a href="http://npm.taobao.org/" target="_blank" rel="external">淘宝NPM镜像</a>，这样各种安装和使用npm快很多而且还可以代替<code>npm</code>。你只要运行下面的命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</div></pre></td></tr></table></figure></p>
+<p>同样测试有没有安装好，这次打<code>cnpm</code>就行拉，结果显示与上述相同。<br>那么以后我们只要执行跟<code>npm</code>的命令时我们只要把<code>npm</code>替换成<code>cnpm</code>就行了！</p>
+<h1 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h1><h2 id="下载Git程序包"><a href="#下载Git程序包" class="headerlink" title="下载Git程序包"></a>下载Git程序包</h2><p>作为萌新最希望能一步一步来，我也就一步一步和大家说，也为了以后自己注意一些Git的小细节。</p>
+<ul>
+<li>windows下安装<a href="https://git-for-windows.github.io/" target="_blank" rel="external">Git SCM</a> </li>
+<li>Mac下安装<a href="https://git-scm.com/download/mac" target="_blank" rel="external">GitSCM</a> </li>
+<li>Linux and Unix下安装<a href="https://git-scm.com/download/linux" target="_blank" rel="external">GitSCM</a></li>
+<li>附上<a href="http://www.bootcss.com/p/git-guide/" target="_blank" rel="external">git使用简易指南</a></li>
+</ul>
+<h2 id="环境配置-1"><a href="#环境配置-1" class="headerlink" title="环境配置"></a>环境配置</h2><p>同样Git也需要环境配置，与Node配置一致。你Git的路径<code>C:\Git\bin</code>那么在<code>Path</code>中就可以这样写<code>C:\Git\bin</code>。下面要进入重点了！</p>
+<h1 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h1><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">Hexo中文文档</a>，我们把Hexo两大依赖Node.js和Git都已经安装配置完成。不出问题，那么下面则是水到渠成。接下来只需要使用 npm 即可完成 Hexo 的安装。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
+<p>有些人会发现执行上面那句下载缓慢还出错，那么因为我们已经用了<a href="http://npm.taobao.org/" target="_blank" rel="external">淘宝NPM镜像</a>我们直接使用以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cnpm install -g hexo-cli</div></pre></td></tr></table></figure></p>
+<p>Windows Mac Linux Unix系统编译时遇到的问题则可以去<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">Hexo中文文档</a>里面寻找解决办法。</p>
+<h2 id="使用Hexo建站"><a href="#使用Hexo建站" class="headerlink" title="使用Hexo建站"></a>使用Hexo建站</h2><p>Hexo建站后产生的文件如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── _config.yml</div><div class="line">├── package.json</div><div class="line">├── scaffolds</div><div class="line">├── source</div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">└── themes</div></pre></td></tr></table></figure></p>
+<p>其中最重要的是_config.yml这是网站的配置信息，我们可以在里面配置大部分的参数。去让我们的博客变得更加个性化。</p>
+<h2 id="创建站点"><a href="#创建站点" class="headerlink" title="创建站点"></a>创建站点</h2><p>找一个你自己想放你项目的目录，按住Shift然后在空白处右击打开Git Bash here执行下列命令，Hexo则会在指定的文件夹中新建所需要的文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init site</div></pre></td></tr></table></figure></p>
+<p>然后我们再右键<code>site</code>文件夹执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure></p>
+<p>这时，我们点开<code>site</code>会发现里面有个<code>public</code>的目录。这里面就是网站的静态文件。我们可以手动的把这些静态文件纳入git的仓库接着推送到开启page服务的分支上或者发布到Web服务器上。但是我还是推荐你们用Hexo的自动化部署。</p>
+<h2 id="自动化部署"><a href="#自动化部署" class="headerlink" title="自动化部署"></a>自动化部署</h2><p>Hexo自动Git部署需要安装<code>hexo-deployer-git</code>，执行下列命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cnpm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<p>然后修改系统配置文件<code>_config.yml</code>（不是<code>themes</code>子目录下的主题配置文件）。修改<code>deploy</code>这一项的值，按照以下格式配置。如果没有这一项，直接在文件末尾添加即可。<em>注意缩进，</em>yml中使用缩进表示从属关系，用<code>-</code>表示一个序列（可以同时部署到多个仓库）。<em>这里减号后有一个空格</em>。以我的项目为例，配置内容如下：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">- type:</span> <span class="string">git</span></div><div class="line"><span class="attr">  repo:</span> <span class="string">git@git.coding.net:Adherent/Adherent.git</span></div><div class="line"><span class="attr">  branch:</span> <span class="string">coding-pages</span></div></pre></td></tr></table></figure></p>
+<p><code>type</code>值不用修改，因为这里使用的是git的pages服务，类型就是git。<br><code>repo</code>为仓库地址，为了方便部署（免输账号密码），使用的是ssh协议的仓库地址。这需要配置ssh秘钥，具体参考<a href="http://git.mydoc.io/?t=154712" target="_blank" rel="external">生成并部署SSH key</a>。<br><code>branch</code>为开启pages服务的分支名称。一般的，码云为<code>osc-pages</code>，Coding为<code>coding-pages</code>，GitHub为<code>gh-pages</code>。<br>配置好部署信息后，即可用Hexo把静态页面部署到git上了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
+<p>部署完成后，通过域名，应该就能访问到这些页面了。</p>
+<h2 id="部署SSH-key"><a href="#部署SSH-key" class="headerlink" title="部署SSH key"></a>部署SSH key</h2><p>则可以看我的部署SSH key的文章</p>
+<h1 id="Pages服务的选择"><a href="#Pages服务的选择" class="headerlink" title="Pages服务的选择"></a>Pages服务的选择</h1><p>都说做编程必须有<a href="https://github.com/" target="_blank" rel="external">GitHub</a>而且上面还聚集了世界各地的开发者吧，因此很多人都在使用github的pages服务建站。但我还是推荐使用国内的<a href="https://git.oschina.net/" target="_blank" rel="external">码云</a>或者<a href="https://coding.net/" target="_blank" rel="external">Coding</a>以获得更好的访问速度。Coding是支持自己添加域名的所以我选择用<a href="https://coding.net/help/doc/pages/index.html" target="_blank" rel="external">Coding</a>。首先要创建一个项目，才能开启pages服务。可以去Coding Pages帮助中心看看如何开启<br>以我的网站为例，项目地址为<a href="https://coding.net/u/Adherent/p/Adherent/git" target="_blank" rel="external">https://coding.net/u/Adherent/p/Adherent/git</a>，开启pages服务的分支名称为<code>coding-pages</code>。项目初始化时并没有<code>codingc-pages</code>分支，可以等Hexo部署静态文件后再开启pages服务。</p>
+<h1 id="添加新文章"><a href="#添加新文章" class="headerlink" title="添加新文章"></a>添加新文章</h1><p>博客建成，那么我们就可以写自己的博文了！执行下列命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo n 文章题目</div></pre></td></tr></table></figure></p>
+<p>以上命令就可以在<code>source/_posts/目录中生成一个文件名为</code>文章题目<code>后缀名为</code>.md`的文件。<br>剩下的文件内容我们就可以用markdown语法写文章就好了。markdown语法参见<a href="http://www.appinn.com/markdown/" target="_blank" rel="external">Markdown 语法说明 (简体中文版)</a><br>我推荐一款<a href="https://www.zybuluo.com/cmd/" target="_blank" rel="external">Cmd Markdown</a>个人感觉用的还是很舒服的。<br><a href="https://www.zybuluo.com/chanvee/note/10789" target="_blank" rel="external">这是Cmd Markdown的简明语法手册。</a><br>然后执行以下命令即可生成新的页面，部署到git。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g -d</div></pre></td></tr></table></figure></p>
+<p>同样的，把新添加的文件纳入git仓库，并推送到网上的仓库。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git add *</div><div class="line">git commit -m &quot;新的文章&quot;</div><div class="line">git push</div></pre></td></tr></table></figure></p>
+<p>到了这里，该系统已经能很好的运行了。更多的使用以及设置方法参考<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">文档|Hexo</a>即可。</p>
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><ul>
+<li><a href="http://npm.taobao.org/" target="_blank" rel="external">淘宝NPM镜像</a></li>
+<li><a href="http://www.bootcss.com/p/git-guide/" target="_blank" rel="external">git使用简易指南</a></li>
+<li><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">文档|Hexo</a></li>
+<li><a href="https://www.zybuluo.com/cmd/" target="_blank" rel="external">Cmd Markdown</a></li>
+<li><a href="http://www.maoxuner.cn/" target="_blank" rel="external">启蒙</a><br>`</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;初衷&quot;&gt;&lt;a href=&quot;#初衷&quot; class=&quot;headerlink&quot; title=&quot;初衷&quot;&gt;&lt;/a&gt;初衷&lt;/h1&gt;&lt;p&gt;想了很久，还是要弄个博客来勉励自己来督促自己学习去记录。因为学生党，没能抢到腾讯云+阿里云学生优惠，又用过github pages而且挺想用markdown写作，就选择Hexo来搭建自己的博客。也许有人会说为什么不用Jekyll，因为我所用的是windows系统，而且不建议在windows系统下安装Jekyll，还有我准备发展方向是前端。hexo是基于Node.js而Jekyll是基于Ruby所以你懂的！还有我查了一下Hexo是台湾的程序员开发的，原生态支持中文。&lt;br&gt;Node.js+Hexo。是因为我对js的热爱还有因为是台湾同胞的作品，所去选择的。&lt;br&gt;现在我也就把自己搭建流程说一下以及自己遇到的问题着重提一下。&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
+    
+    </summary>
+    
+      <category term="Technology" scheme="http://www.adherentman.com/categories/Technology/"/>
+    
+    
+      <category term="javascript" scheme="http://www.adherentman.com/tags/javascript/"/>
+    
+      <category term="git" scheme="http://www.adherentman.com/tags/git/"/>
+    
+      <category term="hexo" scheme="http://www.adherentman.com/tags/hexo/"/>
+    
+      <category term="Node.js" scheme="http://www.adherentman.com/tags/Node-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello, World!</title>
+    <link href="http://www.adherentman.com/2017/03/19/Hello%20World/"/>
+    <id>http://www.adherentman.com/2017/03/19/Hello World/</id>
+    <published>2017-03-19T13:10:55.000Z</published>
+    <updated>2017-03-21T07:36:24.547Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><ul>
+<li><strong>Hello World</strong></li>
+</ul>
+<blockquote>
+<p>第一篇就和大家打个招呼！</p>
+</blockquote>
+<ul>
+<li>多种语言的<code>Hello World</code><a id="more"></a></li>
+<li><p>C</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Hello, World"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"Hello World!"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>Javascript</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">"Hello, World!"</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>Python</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Hello, World!"</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>PHP</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">echo</span> <span class="string">'Hello,World!'</span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Go</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> main</div><div class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    fmt.Print(<span class="string">"Hello, World!"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<script type="text/javascript">
+    setTimeout(function(){
+        console.log("I Love Mu");
+        alert("Hello, World!");
+    }, 5000);
+</script>
+
+
+
+
+
+
+
+
+
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Hello-World&quot;&gt;&lt;a href=&quot;#Hello-World&quot; class=&quot;headerlink&quot; title=&quot;Hello World&quot;&gt;&lt;/a&gt;Hello World&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Hello World&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;第一篇就和大家打个招呼！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;多种语言的&lt;code&gt;Hello World&lt;/code&gt;
+    
+    </summary>
+    
+      <category term="Technology" scheme="http://www.adherentman.com/categories/Technology/"/>
+    
+    
+      <category term="C" scheme="http://www.adherentman.com/tags/C/"/>
+    
+      <category term="Java" scheme="http://www.adherentman.com/tags/Java/"/>
+    
+      <category term="JavaScript" scheme="http://www.adherentman.com/tags/JavaScript/"/>
+    
+      <category term="Python" scheme="http://www.adherentman.com/tags/Python/"/>
+    
+      <category term="PHP" scheme="http://www.adherentman.com/tags/PHP/"/>
+    
+      <category term="go" scheme="http://www.adherentman.com/tags/go/"/>
+    
+  </entry>
+  
+</feed>
