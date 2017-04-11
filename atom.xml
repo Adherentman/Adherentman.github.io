@@ -435,9 +435,9 @@
     
       <category term="javascript" scheme="http://www.adherentman.com/tags/javascript/"/>
     
-      <category term="git" scheme="http://www.adherentman.com/tags/git/"/>
-    
       <category term="node.js" scheme="http://www.adherentman.com/tags/node-js/"/>
+    
+      <category term="git" scheme="http://www.adherentman.com/tags/git/"/>
     
       <category term="php" scheme="http://www.adherentman.com/tags/php/"/>
     
@@ -533,9 +533,9 @@
       <category term="Technology" scheme="http://www.adherentman.com/categories/Technology/"/>
     
     
-      <category term="hexo" scheme="http://www.adherentman.com/tags/hexo/"/>
-    
       <category term="git" scheme="http://www.adherentman.com/tags/git/"/>
+    
+      <category term="hexo" scheme="http://www.adherentman.com/tags/hexo/"/>
     
   </entry>
   
@@ -599,9 +599,9 @@
     
       <category term="javascript" scheme="http://www.adherentman.com/tags/javascript/"/>
     
-      <category term="hexo" scheme="http://www.adherentman.com/tags/hexo/"/>
-    
       <category term="git" scheme="http://www.adherentman.com/tags/git/"/>
+    
+      <category term="hexo" scheme="http://www.adherentman.com/tags/hexo/"/>
     
       <category term="Node.js" scheme="http://www.adherentman.com/tags/Node-js/"/>
     
