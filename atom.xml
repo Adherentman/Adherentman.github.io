@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.adherentman.com/"/>
-  <updated>2017-04-11T03:19:50.000Z</updated>
+  <updated>2017-04-11T04:43:57.000Z</updated>
   <id>http://www.adherentman.com/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>JavaScript基本概念（高程3）</title>
-    <link href="http://www.adherentman.com/2017/04/11/JavaScript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
-    <id>http://www.adherentman.com/2017/04/11/JavaScript基本概念/</id>
+    <link href="http://www.adherentman.com/2017/04/11/JavaScript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5copy/"/>
+    <id>http://www.adherentman.com/2017/04/11/JavaScript基本概念copy/</id>
     <published>2017-04-11T02:49:00.000Z</published>
-    <updated>2017-04-11T03:19:50.000Z</updated>
+    <updated>2017-04-11T04:43:57.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="JavaScript基本概念（高程3）"><a href="#JavaScript基本概念（高程3）" class="headerlink" title="JavaScript基本概念（高程3）"></a>JavaScript基本概念（高程3）</h1><h2 id="JavaScript高级程序设计第三章"><a href="#JavaScript高级程序设计第三章" class="headerlink" title="JavaScript高级程序设计第三章"></a>JavaScript高级程序设计第三章</h2><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="typeof操作符"><a href="#typeof操作符" class="headerlink" title="typeof操作符"></a>typeof操作符</h3><p>“undefined”——如果这个值未定义;</p>
 <p>“boolean”——如果这个值是布尔值;</p>
