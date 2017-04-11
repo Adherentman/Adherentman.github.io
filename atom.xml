@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.adherentman.com/"/>
-  <updated>2017-04-11T02:50:56.000Z</updated>
+  <updated>2017-04-11T02:53:34.000Z</updated>
   <id>http://www.adherentman.com/</id>
   
   <author>
@@ -16,14 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="http://www.adherentman.com/2017/04/10/JavaScript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
-    <id>http://www.adherentman.com/2017/04/10/JavaScript基本概念/</id>
-    <published>2017-04-10T08:17:49.000Z</published>
-    <updated>2017-04-11T02:50:56.000Z</updated>
+    <title>JavaScript基本概念（高程3）</title>
+    <link href="http://www.adherentman.com/2017/04/11/JavaScript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
+    <id>http://www.adherentman.com/2017/04/11/JavaScript基本概念/</id>
+    <published>2017-04-11T02:49:00.000Z</published>
+    <updated>2017-04-11T02:53:34.000Z</updated>
     
-    <content type="html"><![CDATA[<p>title: JavaScript基本概念（高程3）<br>date: 2017-04-11 10:49<br>comments: true<br>layout: post<br>tags: [javascript]<br>categories: Javascript修仙之路</p>
-<h1 id="JavaScript基本概念（高程3）"><a href="#JavaScript基本概念（高程3）" class="headerlink" title="JavaScript基本概念（高程3）"></a>JavaScript基本概念（高程3）</h1><h2 id="JavaScript高级程序设计第三章"><a href="#JavaScript高级程序设计第三章" class="headerlink" title="JavaScript高级程序设计第三章"></a>JavaScript高级程序设计第三章</h2><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="typeof操作符"><a href="#typeof操作符" class="headerlink" title="typeof操作符"></a>typeof操作符</h3><p>“undefined”——如果这个值未定义;</p>
+    <content type="html"><![CDATA[<h1 id="JavaScript基本概念（高程3）"><a href="#JavaScript基本概念（高程3）" class="headerlink" title="JavaScript基本概念（高程3）"></a>JavaScript基本概念（高程3）</h1><h2 id="JavaScript高级程序设计第三章"><a href="#JavaScript高级程序设计第三章" class="headerlink" title="JavaScript高级程序设计第三章"></a>JavaScript高级程序设计第三章</h2><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="typeof操作符"><a href="#typeof操作符" class="headerlink" title="typeof操作符"></a>typeof操作符</h3><p>“undefined”——如果这个值未定义;</p>
 <p>“boolean”——如果这个值是布尔值;</p>
 <p>“string”——如果这个值是字符串;</p>
 <p>“number”——如果这个值是数值;</p>
@@ -299,10 +298,14 @@
     
     <summary type="html">
     
-      &lt;p&gt;title: JavaScript基本概念（高程3）&lt;br&gt;date: 2017-04-11 10:49&lt;br&gt;comments: true&lt;br&gt;layout: post&lt;br&gt;tags: [javascript]&lt;br&gt;categories: Javascript修仙之
+      &lt;h1 id=&quot;JavaScript基本概念（高程3）&quot;&gt;&lt;a href=&quot;#JavaScript基本概念（高程3）&quot; class=&quot;headerlink&quot; title=&quot;JavaScript基本概念（高程3）&quot;&gt;&lt;/a&gt;JavaScript基本概念（高程3）&lt;/h1&gt;&lt;h2 i
     
     </summary>
     
+      <category term="Javascript修仙之路" scheme="http://www.adherentman.com/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://www.adherentman.com/tags/javascript/"/>
     
   </entry>
   
