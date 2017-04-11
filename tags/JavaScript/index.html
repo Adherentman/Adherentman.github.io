@@ -92,7 +92,7 @@
 <meta name="description" content="爱技术，能坚持。javascript.java">
 <meta property="og:type" content="website">
 <meta property="og:title" content="壮壮-Technology">
-<meta property="og:url" content="http://www.adherentman.com/tags/javascript/index.html">
+<meta property="og:url" content="http://www.adherentman.com/tags/JavaScript/index.html">
 <meta property="og:site_name" content="壮壮-Technology">
 <meta property="og:description" content="爱技术，能坚持。javascript.java">
 <meta name="twitter:card" content="summary">
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://www.adherentman.com/tags/javascript/"/>
+  <link rel="canonical" href="http://www.adherentman.com/tags/JavaScript/"/>
 
 
 
 
 
-  <title> 标签: javascript | 壮壮-Technology </title>
+  <title> 标签: JavaScript | 壮壮-Technology </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -317,7 +317,7 @@
   <div id="posts" class="posts-collapse">
     <div class="collection-title">
       <h2 >
-        javascript
+        JavaScript
         <small>标签</small>
       </h2>
     </div>
@@ -330,37 +330,9 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/2017/04/11/JavaScript基本概念/" itemprop="url">
+            <a class="post-title-link" href="/2017/03/19/Hello World/" itemprop="url">
               
-                <span itemprop="name">JavaScript基本概念（高程3）</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-11T10:49:00+08:00"
-              content="2017-04-11" >
-          04-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/26/Javascript Dom编程艺术学习笔记一（第三章兼高程三）/" itemprop="url">
-              
-                <span itemprop="name">Javascript DOM编程艺术学习笔记一（第三章兼高程三）</span>
+                <span itemprop="name">Hello, World!</span>
               
             </a>
         
@@ -368,65 +340,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-26T20:01:14+08:00"
-              content="2017-03-26" >
-          03-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/22/2017Web程序员技术发展路线图/" itemprop="url">
-              
-                <span itemprop="name">2017Web程序员技术发展路线图</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-22T12:31:52+08:00"
-              content="2017-03-22" >
-          03-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/03/20/Node.js+hexo部署博客/" itemprop="url">
-              
-                <span itemprop="name">Node.js+hexo部署博客</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-20T16:10:14+08:00"
-              content="2017-03-20" >
-          03-20
+              datetime="2017-03-19T21:10:55+08:00"
+              content="2017-03-19" >
+          03-19
         </time>
       </div>
 
@@ -814,6 +730,77 @@
                 // show search results
                 if (isMatch) {
                   matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+          matchcounts += 1;
                   str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
                   var content = data.content.trim().replace(/<[^>]+>/g,"");
                   if (first_occur >= 0) {
