@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.adherentman.com/"/>
-  <updated>2017-04-11T02:53:34.000Z</updated>
+  <updated>2017-04-11T02:55:35.000Z</updated>
   <id>http://www.adherentman.com/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="http://www.adherentman.com/2017/04/11/JavaScript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
     <id>http://www.adherentman.com/2017/04/11/JavaScript基本概念/</id>
     <published>2017-04-11T02:49:00.000Z</published>
-    <updated>2017-04-11T02:53:34.000Z</updated>
+    <updated>2017-04-11T02:55:35.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="JavaScript基本概念（高程3）"><a href="#JavaScript基本概念（高程3）" class="headerlink" title="JavaScript基本概念（高程3）"></a>JavaScript基本概念（高程3）</h1><h2 id="JavaScript高级程序设计第三章"><a href="#JavaScript高级程序设计第三章" class="headerlink" title="JavaScript高级程序设计第三章"></a>JavaScript高级程序设计第三章</h2><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="typeof操作符"><a href="#typeof操作符" class="headerlink" title="typeof操作符"></a>typeof操作符</h3><p>“undefined”——如果这个值未定义;</p>
 <p>“boolean”——如果这个值是布尔值;</p>
 <p>“string”——如果这个值是字符串;</p>
 <p>“number”——如果这个值是数值;</p>
 <p>“object”——如果这个值是对象或null;</p>
-<p>“function”——如果这个值是函数;</p>
+<p>“function”——如果这个值是函数;<br><a id="more"></a></p>
 <h3 id="Undefined类型"><a href="#Undefined类型" class="headerlink" title="Undefined类型"></a>Undefined类型</h3><ul>
 <li>Undefined类型只有一个值，即特殊的undefined。</li>
 </ul>
@@ -298,7 +298,12 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;JavaScript基本概念（高程3）&quot;&gt;&lt;a href=&quot;#JavaScript基本概念（高程3）&quot; class=&quot;headerlink&quot; title=&quot;JavaScript基本概念（高程3）&quot;&gt;&lt;/a&gt;JavaScript基本概念（高程3）&lt;/h1&gt;&lt;h2 i
+      &lt;h1 id=&quot;JavaScript基本概念（高程3）&quot;&gt;&lt;a href=&quot;#JavaScript基本概念（高程3）&quot; class=&quot;headerlink&quot; title=&quot;JavaScript基本概念（高程3）&quot;&gt;&lt;/a&gt;JavaScript基本概念（高程3）&lt;/h1&gt;&lt;h2 id=&quot;JavaScript高级程序设计第三章&quot;&gt;&lt;a href=&quot;#JavaScript高级程序设计第三章&quot; class=&quot;headerlink&quot; title=&quot;JavaScript高级程序设计第三章&quot;&gt;&lt;/a&gt;JavaScript高级程序设计第三章&lt;/h2&gt;&lt;h2 id=&quot;数据类型&quot;&gt;&lt;a href=&quot;#数据类型&quot; class=&quot;headerlink&quot; title=&quot;数据类型&quot;&gt;&lt;/a&gt;数据类型&lt;/h2&gt;&lt;h3 id=&quot;typeof操作符&quot;&gt;&lt;a href=&quot;#typeof操作符&quot; class=&quot;headerlink&quot; title=&quot;typeof操作符&quot;&gt;&lt;/a&gt;typeof操作符&lt;/h3&gt;&lt;p&gt;“undefined”——如果这个值未定义;&lt;/p&gt;
+&lt;p&gt;“boolean”——如果这个值是布尔值;&lt;/p&gt;
+&lt;p&gt;“string”——如果这个值是字符串;&lt;/p&gt;
+&lt;p&gt;“number”——如果这个值是数值;&lt;/p&gt;
+&lt;p&gt;“object”——如果这个值是对象或null;&lt;/p&gt;
+&lt;p&gt;“function”——如果这个值是函数;&lt;br&gt;
     
     </summary>
     
