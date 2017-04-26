@@ -65,7 +65,7 @@
     <link href="http://www.adherentman.com/2017/04/24/JavaScript%E5%8F%98%E9%87%8F/"/>
     <id>http://www.adherentman.com/2017/04/24/JavaScript变量/</id>
     <published>2017-04-24T05:55:00.000Z</published>
-    <updated>2017-04-24T06:44:38.000Z</updated>
+    <updated>2017-04-26T14:48:06.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="JavaScript变量"><a href="#JavaScript变量" class="headerlink" title="JavaScript变量"></a>JavaScript变量</h1><p>ECMAScript变量可能包含两种不同数据类型的值：基本类型值和引用类型值。</p>
 <p><strong>基本类型值</strong>指的是简单的数据段，而<strong>引用类型值</strong>指那些可能有多个值构成的对象。</p>
@@ -82,7 +82,7 @@
       <category term="Javascript修仙之路" scheme="http://www.adherentman.com/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="javascript" scheme="http://www.adherentman.com/tags/javascript/"/>
+      <category term="JavaScript" scheme="http://www.adherentman.com/tags/JavaScript/"/>
     
   </entry>
   
@@ -91,7 +91,7 @@
     <link href="http://www.adherentman.com/2017/04/11/JavaScript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5copy/"/>
     <id>http://www.adherentman.com/2017/04/11/JavaScript基本概念copy/</id>
     <published>2017-04-11T02:49:00.000Z</published>
-    <updated>2017-04-11T04:43:57.000Z</updated>
+    <updated>2017-04-26T14:47:38.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="JavaScript基本概念（高程3）"><a href="#JavaScript基本概念（高程3）" class="headerlink" title="JavaScript基本概念（高程3）"></a>JavaScript基本概念（高程3）</h1><h2 id="JavaScript高级程序设计第三章"><a href="#JavaScript高级程序设计第三章" class="headerlink" title="JavaScript高级程序设计第三章"></a>JavaScript高级程序设计第三章</h2><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="typeof操作符"><a href="#typeof操作符" class="headerlink" title="typeof操作符"></a>typeof操作符</h3><p>“undefined”——如果这个值未定义;</p>
 <p>“boolean”——如果这个值是布尔值;</p>
@@ -381,7 +381,7 @@
       <category term="Javascript修仙之路" scheme="http://www.adherentman.com/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="javascript" scheme="http://www.adherentman.com/tags/javascript/"/>
+      <category term="JavaScript" scheme="http://www.adherentman.com/tags/JavaScript/"/>
     
   </entry>
   
@@ -390,7 +390,7 @@
     <link href="http://www.adherentman.com/2017/03/26/Javascript%20Dom%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80%EF%BC%88%E7%AC%AC%E4%B8%89%E7%AB%A0%E5%85%BC%E9%AB%98%E7%A8%8B%E4%B8%89%EF%BC%89/"/>
     <id>http://www.adherentman.com/2017/03/26/Javascript Dom编程艺术学习笔记一（第三章兼高程三）/</id>
     <published>2017-03-26T12:01:14.000Z</published>
-    <updated>2017-04-11T02:49:59.000Z</updated>
+    <updated>2017-04-26T14:47:51.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-Dom基础"><a href="#1-Dom基础" class="headerlink" title="1.Dom基础"></a>1.Dom基础</h1><h2 id="Element"><a href="#Element" class="headerlink" title="Element"></a>Element</h2><ul>
 <li>三种DOM方法可获取元素节点，分别是通过元素ID、通过标签名字和通过类名字来获取</li>
@@ -419,11 +419,11 @@
 <li>lang，元素内容的语言比如中文zh-hans </li>
 <li>dir，语言的方向，值为”ltr”（left-to-right，从左至右）或”rtl”（right-to-left，从右至左），很少使用</li>
 <li><p>className，与元素的class特性对应，即为元素指定的CSS类，没有将这个属性命名为class。</p>
- <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myDiv"</span> <span class="attr">class</span>=<span class="string">"bd"</span> <span class="attr">title</span>=<span class="string">"Body text"</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">dir</span>=<span class="string">"ltr"</span>&gt;</span>Some text<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p> 可以获得元素中指定的所有信息。</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">div = <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>);</div><div class="line">       alert(div.id);         <span class="comment">//"myDiv"</span></div><div class="line">       alert(div.className);  <span class="comment">//"bd"</span></div><div class="line">       alert(div.title);      <span class="comment">//"Body text"</span></div><div class="line">       alert(div.lang);       <span class="comment">//"en"</span></div><div class="line">       alert(div.dir);        <span class="comment">//"ltr"</span></div></pre></td></tr></table></figure>
-<p> 还可以为每个属性赋予新的值。</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">div = <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>);</div><div class="line">       div.id = <span class="string">"someOtherId"</span>;</div><div class="line">       div.className = <span class="string">"ft"</span>;</div><div class="line">       div.title = <span class="string">"Some other text"</span>;</div><div class="line">       div.lang = <span class="string">"fr"</span>;</div><div class="line">       div.dir =<span class="string">"rtl"</span>;</div></pre></td></tr></table></figure>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myDiv"</span> <span class="attr">class</span>=<span class="string">"bd"</span> <span class="attr">title</span>=<span class="string">"Body text"</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">dir</span>=<span class="string">"ltr"</span>&gt;</span>Some text<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>  可以获得元素中指定的所有信息。</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">div = <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>);</div><div class="line">       alert(div.id);         <span class="comment">//"myDiv"</span></div><div class="line">       alert(div.className);  <span class="comment">//"bd"</span></div><div class="line">       alert(div.title);      <span class="comment">//"Body text"</span></div><div class="line">       alert(div.lang);       <span class="comment">//"en"</span></div><div class="line">       alert(div.dir);        <span class="comment">//"ltr"</span></div></pre></td></tr></table></figure>
+<p>  还可以为每个属性赋予新的值。</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">div = <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>);</div><div class="line">       div.id = <span class="string">"someOtherId"</span>;</div><div class="line">       div.className = <span class="string">"ft"</span>;</div><div class="line">       div.title = <span class="string">"Some other text"</span>;</div><div class="line">       div.lang = <span class="string">"fr"</span>;</div><div class="line">       div.dir =<span class="string">"rtl"</span>;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="获取和设置属性"><a href="#获取和设置属性" class="headerlink" title="获取和设置属性"></a>获取和设置属性</h1><ul>
@@ -468,7 +468,7 @@
       <category term="Javascript修仙之路" scheme="http://www.adherentman.com/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="javascript" scheme="http://www.adherentman.com/tags/javascript/"/>
+      <category term="JavaScript" scheme="http://www.adherentman.com/tags/JavaScript/"/>
     
   </entry>
   
@@ -477,7 +477,7 @@
     <link href="http://www.adherentman.com/2017/03/22/2017Web%E7%A8%8B%E5%BA%8F%E5%91%98%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95%E8%B7%AF%E7%BA%BF%E5%9B%BE/"/>
     <id>http://www.adherentman.com/2017/03/22/2017Web程序员技术发展路线图/</id>
     <published>2017-03-22T04:31:52.000Z</published>
-    <updated>2017-03-22T04:59:52.000Z</updated>
+    <updated>2017-04-26T14:48:50.000Z</updated>
     
     <content type="html"><![CDATA[<p>这个是国外一个工程师的总结，在知乎上的<a href="https://zhuanlan.zhihu.com/p/25897612" target="_blank" rel="external">前端技术文章精选专栏</a>看见的，看着实用转来到这。</p>
 <blockquote>
@@ -504,13 +504,13 @@
       <category term="前端" scheme="http://www.adherentman.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="javascript" scheme="http://www.adherentman.com/tags/javascript/"/>
-    
       <category term="node.js" scheme="http://www.adherentman.com/tags/node-js/"/>
     
       <category term="git" scheme="http://www.adherentman.com/tags/git/"/>
     
       <category term="php" scheme="http://www.adherentman.com/tags/php/"/>
+    
+      <category term="JavaScript" scheme="http://www.adherentman.com/tags/JavaScript/"/>
     
   </entry>
   
