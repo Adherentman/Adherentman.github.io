@@ -89,22 +89,22 @@
 
 
 
-<meta name="description" content="JavaScript变量ECMAScript变量可能包含两种不同数据类型的值：基本类型值和引用类型值。
+<meta name="description" content="JavaScript变量+方法ECMAScript变量可能包含两种不同数据类型的值：基本类型值和引用类型值。
 基本类型值指的是简单的数据段，而引用类型值指那些可能有多个值构成的对象。
-传递参数12345678function addTen(num)&amp;#123;  num +=10;  return num;&amp;#125;var count =20;var result = addTen(count);al">
+传递参数12345678function addTen(num)&amp;#123;  num +=10;  return num;&amp;#125;var count =20;var result = addTen(count)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript变量">
+<meta property="og:title" content="JavaScript变量+方法">
 <meta property="og:url" content="http://www.adherentman.com/2017/04/24/JavaScript变量/index.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="JavaScript变量ECMAScript变量可能包含两种不同数据类型的值：基本类型值和引用类型值。
+<meta property="og:description" content="JavaScript变量+方法ECMAScript变量可能包含两种不同数据类型的值：基本类型值和引用类型值。
 基本类型值指的是简单的数据段，而引用类型值指那些可能有多个值构成的对象。
-传递参数12345678function addTen(num)&amp;#123;  num +=10;  return num;&amp;#125;var count =20;var result = addTen(count);al">
-<meta property="og:updated_time" content="2017-04-26T14:48:06.000Z">
+传递参数12345678function addTen(num)&amp;#123;  num +=10;  return num;&amp;#125;var count =20;var result = addTen(count)">
+<meta property="og:updated_time" content="2017-04-28T07:56:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript变量">
-<meta name="twitter:description" content="JavaScript变量ECMAScript变量可能包含两种不同数据类型的值：基本类型值和引用类型值。
+<meta name="twitter:title" content="JavaScript变量+方法">
+<meta name="twitter:description" content="JavaScript变量+方法ECMAScript变量可能包含两种不同数据类型的值：基本类型值和引用类型值。
 基本类型值指的是简单的数据段，而引用类型值指那些可能有多个值构成的对象。
-传递参数12345678function addTen(num)&amp;#123;  num +=10;  return num;&amp;#125;var count =20;var result = addTen(count);al">
+传递参数12345678function addTen(num)&amp;#123;  num +=10;  return num;&amp;#125;var count =20;var result = addTen(count)">
 
 
 
@@ -138,7 +138,7 @@
 
 
 
-  <title> JavaScript变量 | 壮壮-Technology </title>
+  <title> JavaScript变量+方法 | 壮壮-Technology </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -352,7 +352,7 @@
             
             
               
-                JavaScript变量
+                JavaScript变量+方法
               
             
           </h1>
@@ -440,10 +440,26 @@
       
 
       
-        <h1 id="JavaScript变量"><a href="#JavaScript变量" class="headerlink" title="JavaScript变量"></a>JavaScript变量</h1><p>ECMAScript变量可能包含两种不同数据类型的值：基本类型值和引用类型值。</p>
+        <h1 id="JavaScript变量-方法"><a href="#JavaScript变量-方法" class="headerlink" title="JavaScript变量+方法"></a>JavaScript变量+方法</h1><p>ECMAScript变量可能包含两种不同数据类型的值：基本类型值和引用类型值。</p>
 <p><strong>基本类型值</strong>指的是简单的数据段，而<strong>引用类型值</strong>指那些可能有多个值构成的对象。</p>
 <h2 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTen</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">  num +=<span class="number">10</span>;</div><div class="line">  <span class="keyword">return</span> num;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> count =<span class="number">20</span>;</div><div class="line"><span class="keyword">var</span> result = addTen(count);</div><div class="line">alert(count); 		<span class="comment">//20,没变化</span></div><div class="line">alert(result);		<span class="comment">//30</span></div></pre></td></tr></table></figure>
 <p>在这上面看了高程三的话懵懵懂懂，实际上在说的是，要执行<code>alert(count);</code>时<code>count</code>只是把20复制给参数num，以便20在addTen()中使用，在函数里面num的值确实+10变成了30，但是不影响外部count的变量。</p>
+<a id="more"></a>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
+<li><strong>split()</strong></li>
+</ul>
+<p>方法讲一个字符串对象的每个字符拆出来，并且将每个字符串当数组的每个元素。</p>
+<h2 id="重排序方法"><a href="#重排序方法" class="headerlink" title="重排序方法"></a>重排序方法</h2><ul>
+<li><strong>reverse()和sort()</strong></li>
+</ul>
+<p><strong>reverse()</strong>方法会反转数组项的顺序。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> values = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line">values.reverse();</div><div class="line">alert(values); 			<span class="comment">//5,4,3,2,1</span></div></pre></td></tr></table></figure>
+<p>而 <strong>sort()</strong>方法是按升序排列数组项。——最小的值位于前面，最大的值排在最后面。而且<code>sort()</code>方法会调用每个数组项的<code>toString()</code>转型方法，然后去比较得到的字符串。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> values = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">15</span>];</div><div class="line">values.sort();</div><div class="line">alert(values); 		<span class="comment">//0,1,10,15,5</span></div></pre></td></tr></table></figure>
+<p>在字符串的比较时，10则位于5的前面，于是数组的顺序就被修改了。当然改为降序也行参考注释</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">compare</span> (<span class="params">value1,value2</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(value1 &lt;value2)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">-1</span>; 			<span class="comment">//return 1;</span></div><div class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(value1 &gt;value2)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;			<span class="comment">//return -1;</span></div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后我们再把这个参数传给<code>sort()</code>方法即可。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> values = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">15</span>];</div><div class="line">values.sort(compare);</div><div class="line">alert(values); 		<span class="comment">//0,1,5,10,15</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -546,7 +562,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2017/04/24/JavaScript变量/"
-           data-title="JavaScript变量" data-url="http://www.adherentman.com/2017/04/24/JavaScript变量/">
+           data-title="JavaScript变量+方法" data-url="http://www.adherentman.com/2017/04/24/JavaScript变量/">
       </div>
     
   </div>
@@ -688,7 +704,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript变量"><span class="nav-number">1.</span> <span class="nav-text">JavaScript变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#传递参数"><span class="nav-number">1.1.</span> <span class="nav-text">传递参数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript变量-方法"><span class="nav-number">1.</span> <span class="nav-text">JavaScript变量+方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#传递参数"><span class="nav-number">1.1.</span> <span class="nav-text">传递参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">1.2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重排序方法"><span class="nav-number">1.3.</span> <span class="nav-text">重排序方法</span></a></li></ol></li></ol></div>
             
 
           </div>

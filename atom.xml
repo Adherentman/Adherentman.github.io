@@ -33,7 +33,7 @@
 <li>用法</li>
 </ul>
 <p>动态的绑定一个或多个特性，或一个组件<code>prop</code>到表达式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a v-bind:href=<span class="string">"url"</span> href=<span class="string">"#"</span>&gt;&lt;/a&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a v-bind:href=<span class="string">"url"</span> href=<span class="string">"#"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></div></pre></td></tr></table></figure>
 <p>在这里<code>:href</code>是参数，通过<code>v-bind</code>指令将该元素的<code>href</code>属性与表达式的<code>url</code>绑定。</p>
 <a id="more"></a>
 <h2 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a><strong>v-if</strong></h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p v-<span class="keyword">if</span>=<span class="string">"seen"</span>&gt;Now you see me&lt;<span class="regexp">/p&gt;</span></div></pre></td></tr></table></figure>
@@ -96,7 +96,7 @@
 &lt;li&gt;用法&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;动态的绑定一个或多个特性，或一个组件&lt;code&gt;prop&lt;/code&gt;到表达式&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;a v-bind:href=&lt;span class=&quot;string&quot;&gt;&quot;url&quot;&lt;/span&gt; href=&lt;span class=&quot;string&quot;&gt;&quot;#&quot;&lt;/span&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;a v-bind:href=&lt;span class=&quot;string&quot;&gt;&quot;url&quot;&lt;/span&gt; href=&lt;span class=&quot;string&quot;&gt;&quot;#&quot;&lt;/span&gt;&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;在这里&lt;code&gt;:href&lt;/code&gt;是参数，通过&lt;code&gt;v-bind&lt;/code&gt;指令将该元素的&lt;code&gt;href&lt;/code&gt;属性与表达式的&lt;code&gt;url&lt;/code&gt;绑定。&lt;/p&gt;
     
     </summary>
@@ -253,21 +253,40 @@
   </entry>
   
   <entry>
-    <title>JavaScript变量</title>
+    <title>JavaScript变量+方法</title>
     <link href="http://www.adherentman.com/2017/04/24/JavaScript%E5%8F%98%E9%87%8F/"/>
     <id>http://www.adherentman.com/2017/04/24/JavaScript变量/</id>
     <published>2017-04-24T05:55:00.000Z</published>
-    <updated>2017-04-26T14:48:06.000Z</updated>
+    <updated>2017-04-28T07:56:37.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="JavaScript变量"><a href="#JavaScript变量" class="headerlink" title="JavaScript变量"></a>JavaScript变量</h1><p>ECMAScript变量可能包含两种不同数据类型的值：基本类型值和引用类型值。</p>
+    <content type="html"><![CDATA[<h1 id="JavaScript变量-方法"><a href="#JavaScript变量-方法" class="headerlink" title="JavaScript变量+方法"></a>JavaScript变量+方法</h1><p>ECMAScript变量可能包含两种不同数据类型的值：基本类型值和引用类型值。</p>
 <p><strong>基本类型值</strong>指的是简单的数据段，而<strong>引用类型值</strong>指那些可能有多个值构成的对象。</p>
 <h2 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTen</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">  num +=<span class="number">10</span>;</div><div class="line">  <span class="keyword">return</span> num;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> count =<span class="number">20</span>;</div><div class="line"><span class="keyword">var</span> result = addTen(count);</div><div class="line">alert(count); 		<span class="comment">//20,没变化</span></div><div class="line">alert(result);		<span class="comment">//30</span></div></pre></td></tr></table></figure>
 <p>在这上面看了高程三的话懵懵懂懂，实际上在说的是，要执行<code>alert(count);</code>时<code>count</code>只是把20复制给参数num，以便20在addTen()中使用，在函数里面num的值确实+10变成了30，但是不影响外部count的变量。</p>
+<a id="more"></a>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
+<li><strong>split()</strong></li>
+</ul>
+<p>方法讲一个字符串对象的每个字符拆出来，并且将每个字符串当数组的每个元素。</p>
+<h2 id="重排序方法"><a href="#重排序方法" class="headerlink" title="重排序方法"></a>重排序方法</h2><ul>
+<li><strong>reverse()和sort()</strong></li>
+</ul>
+<p><strong>reverse()</strong>方法会反转数组项的顺序。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> values = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line">values.reverse();</div><div class="line">alert(values); 			<span class="comment">//5,4,3,2,1</span></div></pre></td></tr></table></figure>
+<p>而 <strong>sort()</strong>方法是按升序排列数组项。——最小的值位于前面，最大的值排在最后面。而且<code>sort()</code>方法会调用每个数组项的<code>toString()</code>转型方法，然后去比较得到的字符串。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> values = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">15</span>];</div><div class="line">values.sort();</div><div class="line">alert(values); 		<span class="comment">//0,1,10,15,5</span></div></pre></td></tr></table></figure>
+<p>在字符串的比较时，10则位于5的前面，于是数组的顺序就被修改了。当然改为降序也行参考注释</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">compare</span> (<span class="params">value1,value2</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(value1 &lt;value2)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">-1</span>; 			<span class="comment">//return 1;</span></div><div class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(value1 &gt;value2)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;			<span class="comment">//return -1;</span></div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后我们再把这个参数传给<code>sort()</code>方法即可。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> values = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">15</span>];</div><div class="line">values.sort(compare);</div><div class="line">alert(values); 		<span class="comment">//0,1,5,10,15</span></div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;JavaScript变量&quot;&gt;&lt;a href=&quot;#JavaScript变量&quot; class=&quot;headerlink&quot; title=&quot;JavaScript变量&quot;&gt;&lt;/a&gt;JavaScript变量&lt;/h1&gt;&lt;p&gt;ECMAScript变量可能包含两种不同数据类型的值：基本类
+      &lt;h1 id=&quot;JavaScript变量-方法&quot;&gt;&lt;a href=&quot;#JavaScript变量-方法&quot; class=&quot;headerlink&quot; title=&quot;JavaScript变量+方法&quot;&gt;&lt;/a&gt;JavaScript变量+方法&lt;/h1&gt;&lt;p&gt;ECMAScript变量可能包含两种不同数据类型的值：基本类型值和引用类型值。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;基本类型值&lt;/strong&gt;指的是简单的数据段，而&lt;strong&gt;引用类型值&lt;/strong&gt;指那些可能有多个值构成的对象。&lt;/p&gt;
+&lt;h2 id=&quot;传递参数&quot;&gt;&lt;a href=&quot;#传递参数&quot; class=&quot;headerlink&quot; title=&quot;传递参数&quot;&gt;&lt;/a&gt;传递参数&lt;/h2&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;addTen&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;num&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  num +=&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; num;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; count =&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; result = addTen(count);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;alert(count); 		&lt;span class=&quot;comment&quot;&gt;//20,没变化&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;alert(result);		&lt;span class=&quot;comment&quot;&gt;//30&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在这上面看了高程三的话懵懵懂懂，实际上在说的是，要执行&lt;code&gt;alert(count);&lt;/code&gt;时&lt;code&gt;count&lt;/code&gt;只是把20复制给参数num，以便20在addTen()中使用，在函数里面num的值确实+10变成了30，但是不影响外部count的变量。&lt;/p&gt;
     
     </summary>
     
