@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.adherentman.com/"/>
-  <updated>2017-04-27T07:48:55.000Z</updated>
+  <updated>2017-04-28T05:01:19.000Z</updated>
   <id>http://www.adherentman.com/</id>
   
   <author>
@@ -14,6 +14,93 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://www.adherentman.com/2017/04/28/Vue.js%E5%B0%8F%E8%AE%B0/"/>
+    <id>http://www.adherentman.com/2017/04/28/Vue.js小记/</id>
+    <published>2017-04-28T04:02:13.000Z</published>
+    <updated>2017-04-28T05:01:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Vue小记"><a href="#Vue小记" class="headerlink" title="Vue小记"></a>Vue小记</h2><h2 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a><strong>v-bind</strong></h2><ul>
+<li>缩写： <code>：</code></li>
+<li>修饰符<ul>
+<li><code>.prop</code> - 被用于绑定DOM属性</li>
+<li><code>.camel</code></li>
+</ul>
+</li>
+<li>用法</li>
+</ul>
+<p>动态的绑定一个或多个特性，或一个组件<code>prop</code>到表达式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a v-bind:href=<span class="string">"url"</span> href=<span class="string">"#"</span>&gt;&lt;/a&gt;</div></pre></td></tr></table></figure>
+<p>在这里<code>:href</code>是参数，通过<code>v-bind</code>指令将该元素的<code>href</code>属性与表达式的<code>url</code>绑定。</p>
+<a id="more"></a>
+<h2 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a><strong>v-if</strong></h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p v-<span class="keyword">if</span>=<span class="string">"seen"</span>&gt;Now you see me&lt;<span class="regexp">/p&gt;</span></div></pre></td></tr></table></figure>
+<p>这个<code>v-if</code>指令将判断<code>seen</code>的真假值来移出/插入<code>&lt;p&gt;</code>元素。</p>
+<h2 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a><strong>v-on</strong></h2><ul>
+<li>缩写：<code>@</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a v-on:click=<span class="string">"doSomething"</span>&gt;</div></pre></td></tr></table></figure>
+<p>这个指令是用来监听DOM事件。</p>
+<h3 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h3><ul>
+<li><code>.stop</code></li>
+<li><code>.prevent</code></li>
+<li><code>.capture</code></li>
+<li><code>.self</code></li>
+<li><code>.once</code></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 阻止单击事件冒泡 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click.stop</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 提交事件不再重载页面 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">v-on:submit.prevent</span>=<span class="string">"onSubmit"</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 修饰符可以串联  --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click.stop.prevent</span>=<span class="string">"doThat"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 只有修饰符 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">v-on:submit.prevent</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 添加事件侦听器时使用事件捕获模式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-on:click.capture</span>=<span class="string">"doThis"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 只当事件在该元素本身（而不是子元素）触发时触发回调 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-on:click.self</span>=<span class="string">"doThat"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">2.1.4新增</div><div class="line"><span class="comment">&lt;!-- 点击事件将只会触发一次 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click.once</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="按键修饰符"><a href="#按键修饰符" class="headerlink" title="按键修饰符"></a>按键修饰符</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 只有在 keyCode 是 13 时调用 vm.submit() --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-on:keyup.13</span>=<span class="string">"submit"</span>&gt;</span></div><div class="line">记住keyCode各种值很难所以提供了别名</div><div class="line"><span class="comment">&lt;!-- 同上 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-on:keyup.enter</span>=<span class="string">"submit"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 缩写语法 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> @<span class="attr">keyup.enter</span>=<span class="string">"submit"</span>&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li><code>.enter</code></li>
+<li><code>.tab</code></li>
+<li><code>.delete</code>(捕获“删除”和“退格”按键)</li>
+<li><code>.esc</code></li>
+<li><code>.space</code></li>
+<li><code>.up</code></li>
+<li><code>.down</code></li>
+<li><code>.left</code></li>
+<li><code>.right</code></li>
+</ul>
+<p><strong>2.1.0新增</strong></p>
+<ul>
+<li><code>.ctrl</code></li>
+<li><code>.alt</code></li>
+<li><code>.shift</code></li>
+<li><code>.meta</code>(Mac上为(⌘)在windows上为(⊞))</li>
+</ul>
+<h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h2><p>我们用 <code>v-for</code> 指令根据一组数组的选项列表进行渲染。 <code>v-for</code> 指令需要以</p>
+<p> <code>item in items</code> 形式的特殊语法， <code>items</code> 是源数据数组并且 <code>item</code> 是数组元素迭代的别名。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"example-1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span></div><div class="line">    &#123;&#123; item.message &#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> example1 = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#example-1'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">items</span>: [</div><div class="line">      &#123;<span class="attr">message</span>: <span class="string">'Foo'</span> &#125;,</div><div class="line">      &#123;<span class="attr">message</span>: <span class="string">'Bar'</span> &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>结果：</p>
+<ul>
+<li>Foo</li>
+<li>Bar</li>
+</ul>
+<h2 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h2><p>你可以用 <code>v-model</code> 指令在表单控件元素上创建双向数据绑定。它会根据控件类型自动选取正确的方法来更新元素。尽管有些神奇，但 <code>v-model</code> 本质上不过是语法糖，它负责监听用户的输入事件以更新数据，并特别处理一些极端的例子。</p>
+<p>具体看</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Vue小记&quot;&gt;&lt;a href=&quot;#Vue小记&quot; class=&quot;headerlink&quot; title=&quot;Vue小记&quot;&gt;&lt;/a&gt;Vue小记&lt;/h2&gt;&lt;h2 id=&quot;v-bind&quot;&gt;&lt;a href=&quot;#v-bind&quot; class=&quot;headerlink&quot; title=&quot;v-bind&quot;&gt;&lt;/a&gt;&lt;strong&gt;v-bind&lt;/strong&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;缩写： &lt;code&gt;：&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;修饰符&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.prop&lt;/code&gt; - 被用于绑定DOM属性&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.camel&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;用法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;动态的绑定一个或多个特性，或一个组件&lt;code&gt;prop&lt;/code&gt;到表达式&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;a v-bind:href=&lt;span class=&quot;string&quot;&gt;&quot;url&quot;&lt;/span&gt; href=&lt;span class=&quot;string&quot;&gt;&quot;#&quot;&lt;/span&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在这里&lt;code&gt;:href&lt;/code&gt;是参数，通过&lt;code&gt;v-bind&lt;/code&gt;指令将该元素的&lt;code&gt;href&lt;/code&gt;属性与表达式的&lt;code&gt;url&lt;/code&gt;绑定。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>初入React+Webpack(入门)</title>
