@@ -89,7 +89,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;前端面试题&quot;&gt;&lt;a href=&quot;#前端面试题&quot; class=&quot;headerlink&quot; title=&quot;前端面试题&quot;&gt;&lt;/a&gt;前端面试题&lt;/h1&gt;&lt;p&gt;题目来自&lt;a href=&quot;https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Question#js&quot;&gt;朴灵大大的github&lt;/a&gt;&lt;/p&gt;
+      &lt;h1 id=&quot;前端面试题&quot;&gt;&lt;a href=&quot;#前端面试题&quot; class=&quot;headerlink&quot; title=&quot;前端面试题&quot;&gt;&lt;/a&gt;前端面试题&lt;/h1&gt;&lt;p&gt;题目来自&lt;a href=&quot;https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Question#js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;朴灵大大的github&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;介绍JavaScript的基本数据类型&quot;&gt;&lt;a href=&quot;#介绍JavaScript的基本数据类型&quot; class=&quot;headerlink&quot; title=&quot;介绍JavaScript的基本数据类型&quot;&gt;&lt;/a&gt;介绍JavaScript的基本数据类型&lt;/h2&gt;&lt;p&gt;JavaScript有5种简单数据类型： &lt;code&gt;Undefined&lt;/code&gt;、&lt;code&gt;Null&lt;/code&gt;、&lt;code&gt;Boolean&lt;/code&gt;、&lt;code&gt;Number&lt;/code&gt;、&lt;code&gt;String&lt;/code&gt;。还有一种复杂数据类型&lt;code&gt;Object&lt;/code&gt;。&lt;/p&gt;
 &lt;h3 id=&quot;typeof操作符&quot;&gt;&lt;a href=&quot;#typeof操作符&quot; class=&quot;headerlink&quot; title=&quot;typeof操作符&quot;&gt;&lt;/a&gt;typeof操作符&lt;/h3&gt;&lt;p&gt;用&lt;code&gt;typeof&lt;/code&gt;操作符能检测给定变量的数据类型。（括号中是自己的理解意思）&lt;/p&gt;
 &lt;ul&gt;
@@ -393,7 +393,7 @@
     <summary type="html">
     
       &lt;p&gt;因为需要做一个自己的小想法以后需要去实现把这个想法变成项目，在重多得框架中选择React.js，因为它需要学习成本，所以我觉得我在学习的过程中能学到很多东西。&lt;/p&gt;
-&lt;h1 id=&quot;通过npm使用React&quot;&gt;&lt;a href=&quot;#通过npm使用React&quot; class=&quot;headerlink&quot; title=&quot;通过npm使用React&quot;&gt;&lt;/a&gt;通过npm使用React&lt;/h1&gt;&lt;p&gt;建议在 React 中使用 CommonJS 模块系统，比如 &lt;a href=&quot;http://browserify.org/&quot;&gt;browserify&lt;/a&gt; 或 &lt;a href=&quot;https://webpack.github.io/&quot;&gt;webpack&lt;/a&gt;。使用 &lt;a href=&quot;https://www.npmjs.com/package/react&quot;&gt;&lt;code&gt;react&lt;/code&gt;&lt;/a&gt; 和 &lt;a href=&quot;https://www.npmjs.com/package/react-dom&quot;&gt;&lt;code&gt;react-dom&lt;/code&gt;&lt;/a&gt; npm 包.&lt;/p&gt;
+&lt;h1 id=&quot;通过npm使用React&quot;&gt;&lt;a href=&quot;#通过npm使用React&quot; class=&quot;headerlink&quot; title=&quot;通过npm使用React&quot;&gt;&lt;/a&gt;通过npm使用React&lt;/h1&gt;&lt;p&gt;建议在 React 中使用 CommonJS 模块系统，比如 &lt;a href=&quot;http://browserify.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;browserify&lt;/a&gt; 或 &lt;a href=&quot;https://webpack.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;webpack&lt;/a&gt;。使用 &lt;a href=&quot;https://www.npmjs.com/package/react&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;code&gt;react&lt;/code&gt;&lt;/a&gt; 和 &lt;a href=&quot;https://www.npmjs.com/package/react-dom&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;code&gt;react-dom&lt;/code&gt;&lt;/a&gt; npm 包.&lt;/p&gt;
 &lt;p&gt;我使用webpack来安装React DOM的&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ npm install --save react react-dom babelify babel-preset-react&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ browserify -t [ babelify --presets [ react ] ] main.js -o bundle.js&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;那么第一步肯定是创建Hello World啦~&lt;/p&gt;
@@ -863,7 +863,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;这个是国外一个工程师的总结，在知乎上的&lt;a href=&quot;https://zhuanlan.zhihu.com/p/25897612&quot;&gt;前端技术文章精选专栏&lt;/a&gt;看见的，看着实用转来到这。&lt;/p&gt;
+      &lt;p&gt;这个是国外一个工程师的总结，在知乎上的&lt;a href=&quot;https://zhuanlan.zhihu.com/p/25897612&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;前端技术文章精选专栏&lt;/a&gt;看见的，看着实用转来到这。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;2017 年 Web 开发工程师技术发展路线图&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1117,11 +1117,11 @@
       <category term="Technology" scheme="http://www.adherentman.cn/categories/Technology/"/>
     
     
+      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+    
       <category term="C" scheme="http://www.adherentman.cn/tags/C/"/>
     
       <category term="Java" scheme="http://www.adherentman.cn/tags/Java/"/>
-    
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
     
       <category term="Python" scheme="http://www.adherentman.cn/tags/Python/"/>
     
