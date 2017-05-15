@@ -326,6 +326,221 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.adherentman.cn/2017/05/15/JavaScript——16道算法题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XuZiHao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="壮壮-Technology">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/15/JavaScript——16道算法题/" itemprop="url">
+                  JavaScript——16道算法题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-15T13:19:00+08:00">
+                2017-05-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Javascript修仙之路/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript修仙之路</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/15/JavaScript——16道算法题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/15/JavaScript——16道算法题/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Let‘s-go"><a href="#Let‘s-go" class="headerlink" title="Let‘s go"></a>Let‘s go</h1><h4 id="1-Reverse-a-String"><a href="#1-Reverse-a-String" class="headerlink" title="1.Reverse a String"></a>1.Reverse a String</h4><p>翻转字符串</p>
+<p>先把字符串转化成数组，再借助数组的reverse方法翻转数组顺序，最后把数组转化成字符串。</p>
+<p>你的结果必须得是一个字符串</p>
+<p>这是一些对你有帮助的资源:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="external">Global String Object</a></li>
+</ul>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split" target="_blank" rel="external">String.split()</a></li>
+</ul>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse" target="_blank" rel="external">Array.reverse()</a></li>
+</ul>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/join" target="_blank" rel="external">Array.join()</a></li>
+</ul>
+<blockquote>
+<p><code>reverseString(&quot;hello&quot;)</code> 应该返回 <code>&quot;olleh&quot;</code>.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseString</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> str.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</div><div class="line">&#125;</div><div class="line">reverseString(<span class="string">"hello"</span>);</div></pre></td></tr></table></figure>
+<h4 id="2-Factorialize-a-Number"><a href="#2-Factorialize-a-Number" class="headerlink" title="2.Factorialize a Number"></a>2.Factorialize a Number</h4><p>计算一个整数的阶乘</p>
+<p>如果用字母n来代表一个整数，阶乘代表着所有小于或等于n的整数的乘积。</p>
+<p>阶乘通常简写成 <code>n!</code></p>
+<p>例如: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code></p>
+<p>这是一些对你有帮助的资源:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators" target="_blank" rel="external">Arithmetic Operators</a></li>
+</ul>
+<blockquote>
+<p><code>factorialize(5)</code> 应该返回 120.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorialize</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span>(num&lt;<span class="number">0</span>)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">-1</span>; </div><div class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(num ===<span class="number">0</span>||num===<span class="number">1</span>)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">  <span class="keyword">return</span> (num*factorialize(num<span class="number">-1</span>));</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">factorialize(<span class="number">5</span>);</div></pre></td></tr></table></figure>
+<h4 id="3-Check-for-Palindromes"><a href="#3-Check-for-Palindromes" class="headerlink" title="3.Check for Palindromes"></a>3.Check for Palindromes</h4><p>如果给定的字符串是回文，返回<code>true</code>，反之，返回<code>false</code>。</p>
+<p>如果一个字符串忽略标点符号、大小写和空格，正着读和反着读一模一样，那么这个字符串就是palindrome(回文)。</p>
+<p><strong>注意</strong>你需要去掉字符串多余的标点符号和空格，然后把字符串转化成小写来验证此字符串是否为回文。</p>
+<p>函数参数的值可以为<code>&quot;racecar&quot;</code>，<code>&quot;RaceCar&quot;</code>和<code>&quot;race CAR&quot;</code>。</p>
+<p>这是一些对你有帮助的资源:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace" target="_blank" rel="external">String.replace()</a></li>
+</ul>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase" target="_blank" rel="external">String.toLowerCase()</a></li>
+</ul>
+<blockquote>
+<p><code>palindrome(&quot;race car&quot;)</code> 应该返回 true.</p>
+<p><code>palindrome(&quot;not a palindrome&quot;)</code> 应该返回 false.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">palindrome</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="comment">// Good luck!</span></div><div class="line">  <span class="keyword">var</span> re = <span class="regexp">/[\W_]/g</span>;</div><div class="line">  <span class="keyword">var</span> slo=str.toLowerCase().replace(re,<span class="string">""</span>);</div><div class="line">  <span class="keyword">var</span> slow=slo.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</div><div class="line">  <span class="keyword">if</span>(slo==slow)&#123;</div><div class="line">  <span class="keyword">return</span> <span class="literal">true</span>;&#125;</div><div class="line">  <span class="keyword">else</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">palindrome(<span class="string">"我爱你"</span>);</div></pre></td></tr></table></figure>
+<h4 id="4-Title-Case-a-Sentence"><a href="#4-Title-Case-a-Sentence" class="headerlink" title="4.Title Case a Sentence"></a>4.Title Case a Sentence</h4><p>确保字符串的每个单词首字母都大写，其余部分小写。</p>
+<p>像’the’和’of’这样的连接符同理。</p>
+<p>这是一些对你有帮助的资源:</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split" target="_blank" rel="external">String.split</a></p>
+<blockquote>
+<p><code>titleCase(&quot;I&#39;m a little tea pot&quot;)</code> 应该返回 “I’m A Little Tea Pot”.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">titleCase</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> arr=str.toLowerCase().split(<span class="string">' '</span>);</div><div class="line">  <span class="keyword">var</span> l=[];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">    <span class="keyword">var</span> str1=arr[i].slice(<span class="number">0</span>,<span class="number">1</span>).toUpperCase()+arr[i].slice(<span class="number">1</span>);</div><div class="line">    l.push(str1);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> l.join(<span class="string">' '</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">titleCase(<span class="string">"I'm a little tea pot"</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>首先我们需要把这个字符串的每一项都变成小写字母并转换成数组</li>
+<li>创建一个保存新的空数组</li>
+<li>用遍历数组的长度。之后我们把每一项数组的第一个字母用<code>slice()</code>变成大写。</li>
+<li>再<code>push</code>到空的数组里。</li>
+<li>最后用<code>join()</code>数组返回字符串。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://www.adherentman.cn/2017/05/07/前端面试题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -777,7 +992,7 @@
 <li>用法</li>
 </ul>
 <p>动态的绑定一个或多个特性，或一个组件<code>prop</code>到表达式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a v-bind:href=<span class="string">"url"</span> href=<span class="string">"#"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a v-bind:href=<span class="string">"url"</span> href=<span class="string">"#"</span>&gt;&lt;/a&gt;</div></pre></td></tr></table></figure>
 <p>在这里<code>:href</code>是参数，通过<code>v-bind</code>指令将该元素的<code>href</code>属性与表达式的<code>url</code>绑定。</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1799,164 +2014,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.adherentman.cn/2017/03/20/Node.js+hexo部署博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="XuZiHao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="壮壮-Technology">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/20/Node.js+hexo部署博客/" itemprop="url">
-                  Node.js+hexo部署博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-20T16:10:14+08:00">
-                2017-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Technology/" itemprop="url" rel="index">
-                    <span itemprop="name">Technology</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/20/Node.js+hexo部署博客/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/20/Node.js+hexo部署博客/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h1><p>想了很久，还是要弄个博客来勉励自己来督促自己学习去记录。因为学生党，没能抢到腾讯云+阿里云学生优惠，又用过github pages而且挺想用markdown写作，就选择Hexo来搭建自己的博客。也许有人会说为什么不用Jekyll，因为我所用的是windows系统，而且不建议在windows系统下安装Jekyll，还有我准备发展方向是前端。hexo是基于Node.js而Jekyll是基于Ruby所以你懂的！还有我查了一下Hexo是台湾的程序员开发的，原生态支持中文。<br>Node.js+Hexo。是因为我对js的热爱还有因为是台湾同胞的作品，所去选择的。<br>现在我也就把自己搭建流程说一下以及自己遇到的问题着重提一下。</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/20/Node.js+hexo部署博客/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2006,7 +2063,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

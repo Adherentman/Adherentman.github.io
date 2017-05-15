@@ -89,17 +89,17 @@
 
 
 
-<meta name="description" content="JavaScript基本概念（高程3）JavaScript高级程序设计第三章数据类型typeof操作符“undefined”——如果这个值未定义; “boolean”——如果这个值是布尔值; “string”——如果这个值是字符串; “number”——如果这个值是数值; “object”——如果这个值是对象或null; “function”——如果这个值是函数;">
+<meta name="description" content="Let‘s go1.Reverse a String翻转字符串 先把字符串转化成数组，再借助数组的reverse方法翻转数组顺序，最后把数组转化成字符串。 你的结果必须得是一个字符串 这是一些对你有帮助的资源:  Global String Object   String.split()   Array.reverse()   Array.join()   reverseString(&amp;quot;">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript基本概念（高程3）">
-<meta property="og:url" content="http://www.adherentman.cn/2017/04/11/JavaScript基本概念copy/index.html">
+<meta property="og:title" content="JavaScript——16道算法题">
+<meta property="og:url" content="http://www.adherentman.cn/2017/05/15/JavaScript——16道算法题/index.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="JavaScript基本概念（高程3）JavaScript高级程序设计第三章数据类型typeof操作符“undefined”——如果这个值未定义; “boolean”——如果这个值是布尔值; “string”——如果这个值是字符串; “number”——如果这个值是数值; “object”——如果这个值是对象或null; “function”——如果这个值是函数;">
-<meta property="og:updated_time" content="2017-04-26T14:47:38.000Z">
+<meta property="og:description" content="Let‘s go1.Reverse a String翻转字符串 先把字符串转化成数组，再借助数组的reverse方法翻转数组顺序，最后把数组转化成字符串。 你的结果必须得是一个字符串 这是一些对你有帮助的资源:  Global String Object   String.split()   Array.reverse()   Array.join()   reverseString(&amp;quot;">
+<meta property="og:updated_time" content="2017-05-15T05:20:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript基本概念（高程3）">
-<meta name="twitter:description" content="JavaScript基本概念（高程3）JavaScript高级程序设计第三章数据类型typeof操作符“undefined”——如果这个值未定义; “boolean”——如果这个值是布尔值; “string”——如果这个值是字符串; “number”——如果这个值是数值; “object”——如果这个值是对象或null; “function”——如果这个值是函数;">
+<meta name="twitter:title" content="JavaScript——16道算法题">
+<meta name="twitter:description" content="Let‘s go1.Reverse a String翻转字符串 先把字符串转化成数组，再借助数组的reverse方法翻转数组顺序，最后把数组转化成字符串。 你的结果必须得是一个字符串 这是一些对你有帮助的资源:  Global String Object   String.split()   Array.reverse()   Array.join()   reverseString(&amp;quot;">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://www.adherentman.cn/2017/04/11/JavaScript基本概念copy/"/>
+  <link rel="canonical" href="http://www.adherentman.cn/2017/05/15/JavaScript——16道算法题/"/>
 
 
 
 
 
-  <title> JavaScript基本概念（高程3） | 壮壮-Technology </title>
+  <title> JavaScript——16道算法题 | 壮壮-Technology </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -326,7 +326,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.adherentman.cn/2017/04/11/JavaScript基本概念copy/">
+    <link itemprop="mainEntityOfPage" href="http://www.adherentman.cn/2017/05/15/JavaScript——16道算法题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XuZiHao">
@@ -347,7 +347,7 @@
             
             
               
-                JavaScript基本概念（高程3）
+                JavaScript——16道算法题
               
             
           </h1>
@@ -362,8 +362,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T10:49:00+08:00">
-                2017-04-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-15T13:19:00+08:00">
+                2017-05-15
               </time>
             
 
@@ -403,8 +403,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/04/11/JavaScript基本概念copy/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/11/JavaScript基本概念copy/" itemprop="commentCount"></span>
+                <a href="/2017/05/15/JavaScript——16道算法题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/15/JavaScript——16道算法题/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -435,278 +435,69 @@
       
 
       
-        <h1 id="JavaScript基本概念（高程3）"><a href="#JavaScript基本概念（高程3）" class="headerlink" title="JavaScript基本概念（高程3）"></a>JavaScript基本概念（高程3）</h1><h2 id="JavaScript高级程序设计第三章"><a href="#JavaScript高级程序设计第三章" class="headerlink" title="JavaScript高级程序设计第三章"></a>JavaScript高级程序设计第三章</h2><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="typeof操作符"><a href="#typeof操作符" class="headerlink" title="typeof操作符"></a>typeof操作符</h3><p>“undefined”——如果这个值未定义;</p>
-<p>“boolean”——如果这个值是布尔值;</p>
-<p>“string”——如果这个值是字符串;</p>
-<p>“number”——如果这个值是数值;</p>
-<p>“object”——如果这个值是对象或null;</p>
-<p>“function”——如果这个值是函数;<br><a id="more"></a></p>
-<h3 id="Undefined类型"><a href="#Undefined类型" class="headerlink" title="Undefined类型"></a>Undefined类型</h3><ul>
-<li>Undefined类型只有一个值，即特殊的undefined。</li>
-</ul>
-<h3 id="Null类型"><a href="#Null类型" class="headerlink" title="Null类型"></a>Null类型</h3><ul>
-<li>Null类型是第二个只有一个值的数据类型，这个特殊的值是null。从逻辑角度来看，null值表示一个空对象指针，而这也正是使用typeof操作符检测null值会返回”object”的原因。</li>
-</ul>
-<h3 id="Boolean类型"><a href="#Boolean类型" class="headerlink" title="Boolean类型"></a>Boolean类型</h3><ul>
-<li>Boolean类型是ECMAScript中使用得最多的一种类型，该类型只有两个字面值：true和false。这两个值与数字值不是一回事，<strong>因此true不一定等于1，而false也不一定等于0.</strong></li>
-</ul>
-<h3 id="Number类型"><a href="#Number类型" class="headerlink" title="Number类型"></a>Number类型</h3><p>整数通过八进制（以8为基数）或十六进制（以16为基数）的字面值来表示。其中，八进制字面值的第一位必须是零（0），然后是八进制数字序列（0~7）。</p>
-<p>十六进制字面值的前两位必须是0x，后跟任何十六进制数字（0~9及A~F）。</p>
+        <h1 id="Let‘s-go"><a href="#Let‘s-go" class="headerlink" title="Let‘s go"></a>Let‘s go</h1><h4 id="1-Reverse-a-String"><a href="#1-Reverse-a-String" class="headerlink" title="1.Reverse a String"></a>1.Reverse a String</h4><p>翻转字符串</p>
+<p>先把字符串转化成数组，再借助数组的reverse方法翻转数组顺序，最后把数组转化成字符串。</p>
+<p>你的结果必须得是一个字符串</p>
+<p>这是一些对你有帮助的资源:</p>
 <ul>
-<li>浮点数值</li>
-</ul>
-<p>永远不要测试某个特定的浮点数值。</p>
-<p>如果小数点后面没有跟任何数字，那么这个数值就可以作为整数值来保存。</p>
-<ul>
-<li>数值范围</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result= <span class="built_in">Number</span>.MAX_VALUE +<span class="built_in">Number</span>.MAX_VALUE;</div><div class="line">alert(<span class="built_in">isFinite</span>(result));			<span class="comment">//false</span></div></pre></td></tr></table></figure>
-<ul>
-<li>NaN</li>
-</ul>
-<p>NaN，即非数值（Not a Number）是一个特殊的数值，这个数值用于表示一个本来要返回数值的操作数未返回数值的情况。</p>
-<p>它本身有两个非同寻常的特点。首先，任何涉及NaN的操作（例如NaN/10）都会返回NaN，这个特点在多步计算中有可能导致问题。其次，NaN与任何值都不想等，包括NaN本身。例如，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(<span class="literal">NaN</span> == <span class="literal">NaN</span>);  		 <span class="comment">//false</span></div></pre></td></tr></table></figure>
-<ul>
-<li><p>数值转换</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num1 = <span class="built_in">Number</span>(<span class="string">"Hello world"</span>);		<span class="comment">//NaN</span></div><div class="line"><span class="keyword">var</span> num2 = <span class="built_in">Number</span>(<span class="string">" "</span>);					<span class="comment">//0</span></div><div class="line"><span class="keyword">var</span> num3 = <span class="built_in">Number</span>(<span class="string">"000011"</span>);			<span class="comment">//11</span></div><div class="line"><span class="keyword">var</span> num4 = <span class="built_in">Number</span>(<span class="string">"true"</span>);				<span class="comment">//1</span></div></pre></td></tr></table></figure>
-<h3 id="String类型"><a href="#String类型" class="headerlink" title="String类型"></a>String类型</h3></li>
-<li><p>字符字面量-也叫转义序列</p>
-</li>
-<li><p>字符串的特定</p>
-</li>
-</ul>
-<p>字符串一旦创建，它们的值就不能改变。</p>
-<ul>
-<li>转换为字符串</li>
-</ul>
-<p>要把一个值转换为一个字符串有两种方式。第一种是使用几乎每个值都有的toString()方法。第二用String方法。</p>
-<h3 id="Object类型"><a href="#Object类型" class="headerlink" title="Object类型"></a>Object类型</h3><ul>
-<li><p>constructor:保存着用于创建当前对象的函数。</p>
-</li>
-<li><p>hasOwnProperty（propertyName）:用于检查给定的属性在当前对象实例中（而不是在实例的原型中）是否存在。其中作为参数的属性名（propertyName）必须以字符串形式指定（例如：o.hasOwnProperty(“name”)）。</p>
-</li>
-<li><p>isPrototypeOf(object):用于检查传入的对象是否是传入对象的原型。</p>
-</li>
-<li><p>propertyIsEnumerable(propertyName)：用于检查给定的属性是否能够使用for-in语句来枚举。与2方法一样，作为参数必须以字符串形式指定。</p>
-</li>
-<li><p>toLocaleString():返回对象的字符串表示，该字符串与执行环境的地区对应。</p>
-</li>
-<li><p>toString():返回对象的字符串表示。</p>
-</li>
-<li><p>valueOf():返回对象的字符串、数值或布尔值表示。通常与toString()方法的返回值相同。</p>
-<h2 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h2><h2 id="一元操作符"><a href="#一元操作符" class="headerlink" title="一元操作符"></a>一元操作符</h2><ul>
-<li>递增和递减操作符</li>
-</ul>
-<p>​     递增和递减操作符直接借鉴C。</p>
-<ul>
-<li>位操作符</li>
-</ul>
-<p>符号位的值决定了其他为数值的格式。</p>
-<p><strong>负数同样以二进制码存储，但使用的格式是二进制补码</strong></p>
-</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="external">Global String Object</a></li>
 </ul>
 <ul>
-<li>按位非（NOT）</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split" target="_blank" rel="external">String.split()</a></li>
 </ul>
-<p>按位非操作符由一个波浪线（~）表示，执行按位非的结果就是返回数值的反码。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num1 = <span class="number">25</span>;<span class="comment">//二进制00000000000000000000000000011001</span></div><div class="line"><span class="comment">//二进制11111111111111111111111111100110</span></div><div class="line"><span class="keyword">var</span> num2 = ~num1;</div><div class="line">alert(num2);<span class="comment">//-26</span></div></pre></td></tr></table></figure>
 <ul>
-<li>按位与（AND）</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse" target="_blank" rel="external">Array.reverse()</a></li>
 </ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">第一个数值的位</th>
-<th style="text-align:center">第二个数值的位</th>
-<th style="text-align:center">结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-</tbody>
-</table>
-<p>简而言之，按位与操作只在两个数值的对应位都是1时才返回1，任何一位是0，结果都是0.</p>
 <ul>
-<li>按位或（OR）</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/join" target="_blank" rel="external">Array.join()</a></li>
 </ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">第一个数值的位</th>
-<th style="text-align:center">第二个数值的位</th>
-<th style="text-align:center">结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-</tbody>
-</table>
-<p>按位或操作在有一个位是1的情况下就返回1，而只有在两个位都是0的情况下才返回0.</p>
+<blockquote>
+<p><code>reverseString(&quot;hello&quot;)</code> 应该返回 <code>&quot;olleh&quot;</code>.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseString</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> str.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</div><div class="line">&#125;</div><div class="line">reverseString(<span class="string">"hello"</span>);</div></pre></td></tr></table></figure>
+<h4 id="2-Factorialize-a-Number"><a href="#2-Factorialize-a-Number" class="headerlink" title="2.Factorialize a Number"></a>2.Factorialize a Number</h4><p>计算一个整数的阶乘</p>
+<p>如果用字母n来代表一个整数，阶乘代表着所有小于或等于n的整数的乘积。</p>
+<p>阶乘通常简写成 <code>n!</code></p>
+<p>例如: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code></p>
+<p>这是一些对你有帮助的资源:</p>
 <ul>
-<li>按位异或（XOR）</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators" target="_blank" rel="external">Arithmetic Operators</a></li>
 </ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">第一个数值的位</th>
-<th style="text-align:center">第二个数值的位</th>
-<th style="text-align:center">结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-</tbody>
-</table>
-<p>按位异或与按位或的不同之处在于，这个操作两个数值对应位上只有一个1时才返回1，如果对应的两位都是1或是0，则返回0.</p>
+<blockquote>
+<p><code>factorialize(5)</code> 应该返回 120.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorialize</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span>(num&lt;<span class="number">0</span>)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">-1</span>; </div><div class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(num ===<span class="number">0</span>||num===<span class="number">1</span>)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">  <span class="keyword">return</span> (num*factorialize(num<span class="number">-1</span>));</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">factorialize(<span class="number">5</span>);</div></pre></td></tr></table></figure>
+<h4 id="3-Check-for-Palindromes"><a href="#3-Check-for-Palindromes" class="headerlink" title="3.Check for Palindromes"></a>3.Check for Palindromes</h4><p>如果给定的字符串是回文，返回<code>true</code>，反之，返回<code>false</code>。</p>
+<p>如果一个字符串忽略标点符号、大小写和空格，正着读和反着读一模一样，那么这个字符串就是palindrome(回文)。</p>
+<p><strong>注意</strong>你需要去掉字符串多余的标点符号和空格，然后把字符串转化成小写来验证此字符串是否为回文。</p>
+<p>函数参数的值可以为<code>&quot;racecar&quot;</code>，<code>&quot;RaceCar&quot;</code>和<code>&quot;race CAR&quot;</code>。</p>
+<p>这是一些对你有帮助的资源:</p>
 <ul>
-<li>左移</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace" target="_blank" rel="external">String.replace()</a></li>
 </ul>
-<p>左移操作符由两个小于号（&lt;&lt;）表示。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> oldValue = <span class="number">2</span>;					<span class="comment">//等于二进制的10</span></div><div class="line"><span class="keyword">var</span> newValue = oldValue &lt;&lt; <span class="number">5</span>;<span class="comment">//等于二进制的1000000,十进制的64</span></div></pre></td></tr></table></figure>
 <ul>
-<li>有符号的右移</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase" target="_blank" rel="external">String.toLowerCase()</a></li>
 </ul>
-<p>有符号的右移操作符由两个大于号（&gt;&gt;）表示。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> oldValue = <span class="number">64</span>;<span class="comment">//等于二进制的1000000</span></div><div class="line"><span class="keyword">var</span> newValue = oldValue &gt;&gt; <span class="number">5</span>;<span class="comment">//等于二进制的10，即十进制的2</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p><code>palindrome(&quot;race car&quot;)</code> 应该返回 true.</p>
+<p><code>palindrome(&quot;not a palindrome&quot;)</code> 应该返回 false.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">palindrome</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="comment">// Good luck!</span></div><div class="line">  <span class="keyword">var</span> re = <span class="regexp">/[\W_]/g</span>;</div><div class="line">  <span class="keyword">var</span> slo=str.toLowerCase().replace(re,<span class="string">""</span>);</div><div class="line">  <span class="keyword">var</span> slow=slo.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</div><div class="line">  <span class="keyword">if</span>(slo==slow)&#123;</div><div class="line">  <span class="keyword">return</span> <span class="literal">true</span>;&#125;</div><div class="line">  <span class="keyword">else</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">palindrome(<span class="string">"我爱你"</span>);</div></pre></td></tr></table></figure>
+<h4 id="4-Title-Case-a-Sentence"><a href="#4-Title-Case-a-Sentence" class="headerlink" title="4.Title Case a Sentence"></a>4.Title Case a Sentence</h4><p>确保字符串的每个单词首字母都大写，其余部分小写。</p>
+<p>像’the’和’of’这样的连接符同理。</p>
+<p>这是一些对你有帮助的资源:</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split" target="_blank" rel="external">String.split</a></p>
+<blockquote>
+<p><code>titleCase(&quot;I&#39;m a little tea pot&quot;)</code> 应该返回 “I’m A Little Tea Pot”.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">titleCase</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> arr=str.toLowerCase().split(<span class="string">' '</span>);</div><div class="line">  <span class="keyword">var</span> l=[];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">    <span class="keyword">var</span> str1=arr[i].slice(<span class="number">0</span>,<span class="number">1</span>).toUpperCase()+arr[i].slice(<span class="number">1</span>);</div><div class="line">    l.push(str1);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> l.join(<span class="string">' '</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">titleCase(<span class="string">"I'm a little tea pot"</span>);</div></pre></td></tr></table></figure>
 <ul>
-<li>无符号右移</li>
+<li>首先我们需要把这个字符串的每一项都变成小写字母并转换成数组</li>
+<li>创建一个保存新的空数组</li>
+<li>用遍历数组的长度。之后我们把每一项数组的第一个字母用<code>slice()</code>变成大写。</li>
+<li>再<code>push</code>到空的数组里。</li>
+<li>最后用<code>join()</code>数组返回字符串。</li>
 </ul>
-<p>无符号右移操作符由3个大于号（&gt;&gt;&gt;）表示。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> oldValue = <span class="number">64</span>;<span class="comment">//等于二进制的1000000</span></div><div class="line"><span class="keyword">var</span> newValue =oldValue &gt;&gt;&gt; <span class="number">5</span>;<span class="comment">//等于二进制的10，即十进制的2</span></div></pre></td></tr></table></figure>
-<p>无符号右移操作符会把负数的二进制码当成正数的二进制码。而且由于负数以其绝对值的二进制补码形式表示，因此就会导致无符号右移后的结果非常之大。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> oldValue = <span class="number">-64</span>;<span class="comment">//等于二进制的11111111111111111111111111000000</span></div><div class="line"><span class="keyword">var</span> newValue = oldValue &gt;&gt;&gt;<span class="number">5</span>;<span class="comment">//等于十进制的134217726</span></div></pre></td></tr></table></figure>
-<h2 id="布尔操作符"><a href="#布尔操作符" class="headerlink" title="布尔操作符"></a>布尔操作符</h2><ul>
-<li>逻辑非（！）</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">alert(!<span class="literal">false</span>);	<span class="comment">//true</span></div><div class="line">alert(!<span class="string">"blue"</span>);	<span class="comment">//false</span></div><div class="line">alert(!<span class="number">0</span>);		<span class="comment">//true</span></div><div class="line">alert(!<span class="literal">NaN</span>);	<span class="comment">//true</span></div><div class="line">alert(!<span class="string">""</span>);		<span class="comment">//true</span></div><div class="line">alert(!<span class="number">12345</span>);	<span class="comment">//false</span></div></pre></td></tr></table></figure>
-<ul>
-<li>逻辑与（&amp;&amp;）</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">第一个操作数</th>
-<th style="text-align:center">第二个操作数</th>
-<th style="text-align:center">结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">true</td>
-<td style="text-align:center">true</td>
-<td style="text-align:center">true</td>
-</tr>
-<tr>
-<td style="text-align:center">true</td>
-<td style="text-align:center">false</td>
-<td style="text-align:center">false</td>
-</tr>
-<tr>
-<td style="text-align:center">false</td>
-<td style="text-align:center">true</td>
-<td style="text-align:center">false</td>
-</tr>
-<tr>
-<td style="text-align:center">false</td>
-<td style="text-align:center">false</td>
-<td style="text-align:center">false</td>
-</tr>
-</tbody>
-</table>
-<p>在有一个操作数不是布尔值的情况下，逻辑与操作就不一定返回布尔值。</p>
-<ul>
-<li>逻辑或</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">true</th>
-<th style="text-align:center">true</th>
-<th style="text-align:center">true</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">true</td>
-<td style="text-align:center">false</td>
-<td style="text-align:center">true</td>
-</tr>
-<tr>
-<td style="text-align:center">false</td>
-<td style="text-align:center">true</td>
-<td style="text-align:center">true</td>
-</tr>
-<tr>
-<td style="text-align:center">false</td>
-<td style="text-align:center">false</td>
-<td style="text-align:center">false</td>
-</tr>
-<tr>
-<td style="text-align:center">第一个操作数</td>
-<td style="text-align:center">第二个操作数</td>
-<td style="text-align:center">结果</td>
-</tr>
-</tbody>
-</table>
-<p>与逻辑与操作相似，如果有一个操作数不是布尔值，逻辑或也不一定返回布尔值，</p>
 
       
     </div>
@@ -770,8 +561,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/26/Javascript Dom编程艺术学习笔记一（第三章兼高程三）/" rel="next" title="Javascript DOM编程艺术学习笔记一（第三章兼高程三）">
-                <i class="fa fa-chevron-left"></i> Javascript DOM编程艺术学习笔记一（第三章兼高程三）
+              <a href="/2017/05/07/前端面试题/" rel="next" title="前端面试题">
+                <i class="fa fa-chevron-left"></i> 前端面试题
               </a>
             
           </div>
@@ -779,10 +570,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/24/JavaScript变量/" rel="prev" title="JavaScript变量+方法">
-                JavaScript变量+方法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -808,8 +595,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/04/11/JavaScript基本概念copy/"
-           data-title="JavaScript基本概念（高程3）" data-url="http://www.adherentman.cn/2017/04/11/JavaScript基本概念copy/">
+      <div class="ds-thread" data-thread-key="2017/05/15/JavaScript——16道算法题/"
+           data-title="JavaScript——16道算法题" data-url="http://www.adherentman.cn/2017/05/15/JavaScript——16道算法题/">
       </div>
     
   </div>
@@ -951,7 +738,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript基本概念（高程3）"><span class="nav-number">1.</span> <span class="nav-text">JavaScript基本概念（高程3）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript高级程序设计第三章"><span class="nav-number">1.1.</span> <span class="nav-text">JavaScript高级程序设计第三章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.2.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#typeof操作符"><span class="nav-number">1.2.1.</span> <span class="nav-text">typeof操作符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Undefined类型"><span class="nav-number">1.2.2.</span> <span class="nav-text">Undefined类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Null类型"><span class="nav-number">1.2.3.</span> <span class="nav-text">Null类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Boolean类型"><span class="nav-number">1.2.4.</span> <span class="nav-text">Boolean类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number类型"><span class="nav-number">1.2.5.</span> <span class="nav-text">Number类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String类型"><span class="nav-number">1.2.6.</span> <span class="nav-text">String类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object类型"><span class="nav-number">1.2.7.</span> <span class="nav-text">Object类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作符"><span class="nav-number">1.3.</span> <span class="nav-text">操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一元操作符"><span class="nav-number">1.4.</span> <span class="nav-text">一元操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#布尔操作符"><span class="nav-number">1.5.</span> <span class="nav-text">布尔操作符</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Let‘s-go"><span class="nav-number">1.</span> <span class="nav-text">Let‘s go</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Reverse-a-String"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1.Reverse a String</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Factorialize-a-Number"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">2.Factorialize a Number</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Check-for-Palindromes"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">3.Check for Palindromes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Title-Case-a-Sentence"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">4.Title Case a Sentence</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
