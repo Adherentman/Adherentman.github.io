@@ -1,3 +1,4 @@
+http://www.adherentman.cn/2017/05/18/JavaScript作用域/
 http://www.adherentman.cn/2017/05/15/JavaScript——16道算法题/
 http://www.adherentman.cn/2017/05/07/前端面试题/
 http://www.adherentman.cn/2017/05/04/JavaScrip作用域和内存/

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.adherentman.cn/"/>
-  <updated>2017-05-15T05:22:51.000Z</updated>
+  <updated>2017-05-19T09:41:06.000Z</updated>
   <id>http://www.adherentman.cn/</id>
   
   <author>
@@ -16,11 +16,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JavaScript作用域与作用域链</title>
+    <link href="http://www.adherentman.cn/2017/05/18/JavaScript%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
+    <id>http://www.adherentman.cn/2017/05/18/JavaScript作用域/</id>
+    <published>2017-05-18T09:37:54.000Z</published>
+    <updated>2017-05-19T09:41:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Javascript作用域与作用域链"><a href="#Javascript作用域与作用域链" class="headerlink" title="Javascript作用域与作用域链"></a>Javascript作用域与作用域链</h1><h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在JavaScript中，变量的作用域有全局作用域和局部作用域两种。</p>
+<h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><h5 id="全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。"><a href="#全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。" class="headerlink" title="全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。"></a>全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> l=<span class="string">"我是全局变量"</span>;			<span class="comment">//声明了一个全局变量</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">scope</span>(<span class="params"></span>)</span>&#123;		</div><div class="line">  <span class="keyword">var</span> l=<span class="string">"我是局部变量"</span>;		<span class="comment">//声明了一个同名的局部变量</span></div><div class="line">  <span class="keyword">return</span> l;</div><div class="line">&#125;</div><div class="line">scope()					<span class="comment">//输出“我是局部变量”</span></div></pre></td></tr></table></figure>
+<h5 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h5><p>在函数内声明变量前不加<code>var</code>就是一个全局变量。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> l=<span class="string">"我是全局变量"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">scope</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> 	l=<span class="string">"我还是全局变量"</span>;			<span class="comment">//改变了全局变量</span></div><div class="line">	m=<span class="string">"我是一个新的全局变量"</span>;	  	 <span class="comment">//声明了一个新的全局变量</span></div><div class="line">	<span class="keyword">return</span> [l,m];</div><div class="line">&#125;</div><div class="line">scope()						   <span class="comment">//输出"我是一个新的全局变量"</span></div><div class="line">l</div><div class="line">m</div></pre></td></tr></table></figure>
+<h5 id="在函数内声明的变量只在函数内有定义，它们是局部变量，作用域是局部性的。"><a href="#在函数内声明的变量只在函数内有定义，它们是局部变量，作用域是局部性的。" class="headerlink" title="在函数内声明的变量只在函数内有定义，它们是局部变量，作用域是局部性的。"></a>在函数内声明的变量只在函数内有定义，它们是局部变量，作用域是局部性的。</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> l=<span class="string">"我是全局变量"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">scope</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> l=<span class="string">"我是局部变量"</span>;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">scope1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> l=<span class="string">"我是一个新的局部变量"</span>;			<span class="comment">//嵌套作用域内的局部变量</span></div><div class="line">    <span class="keyword">return</span> l;						  <span class="comment">//返回当前作用域内的值</span></div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> scope1();</div><div class="line">&#125;</div><div class="line">scope();							 <span class="comment">//嵌套作用域</span></div></pre></td></tr></table></figure>
+<h2 id="函数作用域和声明提前"><a href="#函数作用域和声明提前" class="headerlink" title="函数作用域和声明提前"></a>函数作用域和声明提前</h2><p>函数作用域是指在函数内声明的所有变量在函数体内始终是可见的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(num);           <span class="comment">//输出：undefined，而非报错，因为变量num在整个函数体内都是有定义的</span></div><div class="line">            <span class="keyword">var</span> num = <span class="number">1</span>;                <span class="comment">//声明num 在整个函数体func内都有定义</span></div><div class="line">            <span class="built_in">console</span>.log(num);           <span class="comment">//输出：1</span></div><div class="line">        &#125;</div><div class="line">        func();</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Javascript作用域与作用域链&quot;&gt;&lt;a href=&quot;#Javascript作用域与作用域链&quot; class=&quot;headerlink&quot; title=&quot;Javascript作用域与作用域链&quot;&gt;&lt;/a&gt;Javascript作用域与作用域链&lt;/h1&gt;&lt;h2 id=&quot;作用域&quot;&gt;&lt;a href=&quot;#作用域&quot; class=&quot;headerlink&quot; title=&quot;作用域&quot;&gt;&lt;/a&gt;作用域&lt;/h2&gt;&lt;p&gt;简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在JavaScript中，变量的作用域有全局作用域和局部作用域两种。&lt;/p&gt;
+&lt;h3 id=&quot;变量作用域&quot;&gt;&lt;a href=&quot;#变量作用域&quot; class=&quot;headerlink&quot; title=&quot;变量作用域&quot;&gt;&lt;/a&gt;变量作用域&lt;/h3&gt;&lt;h5 id=&quot;全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。&quot;&gt;&lt;a href=&quot;#全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。&quot; class=&quot;headerlink&quot; title=&quot;全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。&quot;&gt;&lt;/a&gt;全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。&lt;/h5&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; l=&lt;span class=&quot;string&quot;&gt;&quot;我是全局变量&quot;&lt;/span&gt;;			&lt;span class=&quot;comment&quot;&gt;//声明了一个全局变量&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;scope&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;		&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; l=&lt;span class=&quot;string&quot;&gt;&quot;我是局部变量&quot;&lt;/span&gt;;		&lt;span class=&quot;comment&quot;&gt;//声明了一个同名的局部变量&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; l;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;scope()					&lt;span class=&quot;comment&quot;&gt;//输出“我是局部变量”&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
+    
+    </summary>
+    
+      <category term="Javascript基础" scheme="http://www.adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JavaScript——16道算法题</title>
     <link href="http://www.adherentman.cn/2017/05/15/JavaScript%E2%80%94%E2%80%9416%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/"/>
     <id>http://www.adherentman.cn/2017/05/15/JavaScript——16道算法题/</id>
     <published>2017-05-15T05:19:00.000Z</published>
-    <updated>2017-05-15T05:22:51.000Z</updated>
+    <updated>2017-05-18T09:37:13.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Let‘s-go"><a href="#Let‘s-go" class="headerlink" title="Let‘s go"></a>Let‘s go</h1><h4 id="1-Reverse-a-String"><a href="#1-Reverse-a-String" class="headerlink" title="1.Reverse a String"></a>1.Reverse a String</h4><p>翻转字符串</p>
 <p>先把字符串转化成数组，再借助数组的reverse方法翻转数组顺序，最后把数组转化成字符串。</p>
@@ -42,6 +73,7 @@
 <p><code>reverseString(&quot;hello&quot;)</code> 应该返回 <code>&quot;olleh&quot;</code>.</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseString</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> str.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</div><div class="line">&#125;</div><div class="line">reverseString(<span class="string">"hello"</span>);</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h4 id="2-Factorialize-a-Number"><a href="#2-Factorialize-a-Number" class="headerlink" title="2.Factorialize a Number"></a>2.Factorialize a Number</h4><p>计算一个整数的阶乘</p>
 <p>如果用字母n来代表一个整数，阶乘代表着所有小于或等于n的整数的乘积。</p>
 <p>阶乘通常简写成 <code>n!</code></p>
@@ -102,7 +134,26 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Let‘s-go&quot;&gt;&lt;a href=&quot;#Let‘s-go&quot; class=&quot;headerlink&quot; title=&quot;Let‘s go&quot;&gt;&lt;/a&gt;Let‘s go&lt;/h1&gt;&lt;h4 id=&quot;1-Reverse-a-String&quot;&gt;&lt;a href=&quot;#1-Reverse-a
+      &lt;h1 id=&quot;Let‘s-go&quot;&gt;&lt;a href=&quot;#Let‘s-go&quot; class=&quot;headerlink&quot; title=&quot;Let‘s go&quot;&gt;&lt;/a&gt;Let‘s go&lt;/h1&gt;&lt;h4 id=&quot;1-Reverse-a-String&quot;&gt;&lt;a href=&quot;#1-Reverse-a-String&quot; class=&quot;headerlink&quot; title=&quot;1.Reverse a String&quot;&gt;&lt;/a&gt;1.Reverse a String&lt;/h4&gt;&lt;p&gt;翻转字符串&lt;/p&gt;
+&lt;p&gt;先把字符串转化成数组，再借助数组的reverse方法翻转数组顺序，最后把数组转化成字符串。&lt;/p&gt;
+&lt;p&gt;你的结果必须得是一个字符串&lt;/p&gt;
+&lt;p&gt;这是一些对你有帮助的资源:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Global String Object&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;String.split()&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Array.reverse()&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/join&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Array.join()&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;reverseString(&amp;quot;hello&amp;quot;)&lt;/code&gt; 应该返回 &lt;code&gt;&amp;quot;olleh&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;reverseString&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;str&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; str.split(&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;).reverse().join(&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;reverseString(&lt;span class=&quot;string&quot;&gt;&quot;hello&quot;&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
