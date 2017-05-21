@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.adherentman.cn/"/>
-  <updated>2017-05-21T02:43:18.000Z</updated>
+  <updated>2017-05-21T03:59:17.000Z</updated>
   <id>http://www.adherentman.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.adherentman.cn/2017/05/18/JavaScript%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
     <id>http://www.adherentman.cn/2017/05/18/JavaScript作用域/</id>
     <published>2017-05-18T09:37:54.000Z</published>
-    <updated>2017-05-21T02:43:18.000Z</updated>
+    <updated>2017-05-21T03:59:17.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Javascript作用域与作用域链"><a href="#Javascript作用域与作用域链" class="headerlink" title="Javascript作用域与作用域链"></a>Javascript作用域与作用域链</h1><h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在JavaScript中，变量的作用域有全局作用域和局部作用域两种。</p>
 <h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><h5 id="全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。"><a href="#全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。" class="headerlink" title="全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。"></a>全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> l=<span class="string">"我是全局变量"</span>;			<span class="comment">//声明了一个全局变量</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">scope</span>(<span class="params"></span>)</span>&#123;		</div><div class="line">  <span class="keyword">var</span> l=<span class="string">"我是局部变量"</span>;		<span class="comment">//声明了一个同名的局部变量</span></div><div class="line">  <span class="keyword">return</span> l;</div><div class="line">&#125;</div><div class="line">scope()					<span class="comment">//输出“我是局部变量”</span></div></pre></td></tr></table></figure>
@@ -64,7 +64,7 @@
     <link href="http://www.adherentman.cn/2017/05/15/JavaScript%E2%80%94%E2%80%9416%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/"/>
     <id>http://www.adherentman.cn/2017/05/15/JavaScript——16道算法题/</id>
     <published>2017-05-15T05:19:00.000Z</published>
-    <updated>2017-05-18T09:37:13.000Z</updated>
+    <updated>2017-05-21T04:37:16.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Let‘s-go"><a href="#Let‘s-go" class="headerlink" title="Let‘s go"></a>Let‘s go</h1><h4 id="1-Reverse-a-String"><a href="#1-Reverse-a-String" class="headerlink" title="1.Reverse a String"></a>1.Reverse a String</h4><p>翻转字符串</p>
 <p>先把字符串转化成数组，再借助数组的reverse方法翻转数组顺序，最后把数组转化成字符串。</p>
@@ -143,7 +143,18 @@
 <li>再<code>push</code>到空的数组里。</li>
 <li>最后用<code>join()</code>数组返回字符串。</li>
 </ul>
-]]></content>
+<h4 id="6-Return-Largest-Numbers-in-Arrays"><a href="#6-Return-Largest-Numbers-in-Arrays" class="headerlink" title="6.Return Largest Numbers in Arrays"></a>6.Return Largest Numbers in Arrays</h4><p>右边大数组中包含了4个小数组，分别找到每个小数组中的最大值，然后把它们串联起来，形成一个新数组。</p>
+<p>提示：你可以用for循环来迭代数组，并通过<code>arr[i]</code>的方式来访问数组的每个元素。</p>
+<p>这是一些对你有帮助的资源:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Comparison_Operators" target="_blank" rel="external">Comparison Operators</a></li>
+</ul>
+<blockquote>
+<p><code>largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> 应该返回 <code>[27,5,39,1001]</code>.</p>
+</blockquote>
+<p><strong>第一种方法</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">largestOfFour</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">  <span class="comment">// You can do this!</span></div><div class="line"> <span class="keyword">var</span> l=[];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">    arr[i].sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> b-a&#125;);</div><div class="line">  &#125;</div><div class="line">  l.push(arr[i][<span class="number">0</span>]);</div><div class="line">&#125;</div><div class="line"><span class="keyword">return</span> l;</div><div class="line"></div><div class="line">largestOfFour([[<span class="number">4</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">3</span>], [<span class="number">13</span>, <span class="number">27</span>, <span class="number">18</span>, <span class="number">26</span>], [<span class="number">32</span>, <span class="number">35</span>, <span class="number">37</span>, <span class="number">39</span>], [<span class="number">1000</span>, <span class="number">1001</span>, <span class="number">857</span>, <span class="number">1</span>]]);</div></pre></td></tr></table></figure></p>
+<p><strong>第二种方法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">largestOfFour</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">  <span class="comment">// You can do this!</span></div><div class="line">  <span class="keyword">var</span> temp = [];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</div><div class="line">    <span class="keyword">var</span> l = arr[i].reduce(<span class="function"><span class="keyword">function</span>(<span class="params">prev,cur,index,array</span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> prev &gt; cur ? prev : cur;</div><div class="line">    &#125;);</div><div class="line">    temp.push(l);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> temp;</div><div class="line">&#125;</div><div class="line">largestOfFour([[<span class="number">4</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">3</span>], [<span class="number">13</span>, <span class="number">27</span>, <span class="number">18</span>, <span class="number">26</span>], [<span class="number">32</span>, <span class="number">35</span>, <span class="number">37</span>, <span class="number">39</span>], [<span class="number">1000</span>, <span class="number">1001</span>, <span class="number">857</span>, <span class="number">1</span>]]);</div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
