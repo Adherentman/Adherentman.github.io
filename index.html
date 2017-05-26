@@ -326,6 +326,192 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.adherentman.cn/2017/05/22/JavaScript闭包/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XuZiHao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="壮壮-Technology">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/22/JavaScript闭包/" itemprop="url">
+                  JavaScript闭包
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-22T13:44:44+08:00">
+                2017-05-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Javascript基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/22/JavaScript闭包/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/22/JavaScript闭包/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="闭包-bibao-Closures"><a href="#闭包-bibao-Closures" class="headerlink" title="闭包/bibao/Closures"></a>闭包/bibao/Closures</h1><h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><p>MDN对闭包的定义为：</p>
+<blockquote>
+<p>闭包是指那些能够访问自由变量的函数。</p>
+</blockquote>
+<p>阮老师对闭包的定义为：</p>
+<blockquote>
+<p> 闭包就是能够读取其他函数内部变量的函数。</p>
+<p>可以把闭包简单理解成”定义在一个函数内部的函数”。</p>
+</blockquote>
+<p>红宝书对闭包的定义为：</p>
+<blockquote>
+<p>　闭包是指有权访问另一个函数作用域中的变量的函数</p>
+</blockquote>
+<p>那么圣经犀牛书对闭包定义为：</p>
+<blockquote>
+<p>函数对象可以通过作用域链相互关联起来，函数体内部的变量都可以保存在函数作用域内，这种特性在计算机科学文献中称为‘闭包’”</p>
+</blockquote>
+<p><strong>我个人比较认同红宝书的定义。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(a); <span class="comment">// 2</span></div><div class="line">    &#125;</div><div class="line">    bar();</div><div class="line">&#125;</div><div class="line">foo();</div></pre></td></tr></table></figure>
+<p>我们来做一个数组求和</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> x+y;</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line">sum([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]);			<span class="comment">//18</span></div></pre></td></tr></table></figure>
+<p>但是我们想要返回函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">smallsum</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> x+y;</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> sum;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当我们想要用<code>smallsum</code>的时候返回的却是个函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = smallsum([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]);		<span class="comment">//function sum()</span></div></pre></td></tr></table></figure>
+<p>直到我们调用<code>result</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result();			<span class="comment">//18</span></div></pre></td></tr></table></figure>
+<p>在这个例子中，我发现内部函数<code>sum</code>可以调用外部函数<code>smallsum</code>的参数和局部变量。</p>
+<p>当我们调用<code>smallsum</code>的时候，每次调用都会产生一个新的函数。即使你传入的值相同。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result1 = smallsum([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]);</div><div class="line"><span class="keyword">var</span> result2 = smallsum([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]);</div><div class="line">result1 === result2; 			<span class="comment">//false</span></div></pre></td></tr></table></figure>
+<h2 id="假如"><a href="#假如" class="headerlink" title="假如"></a>假如</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">l</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> arr= [];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</div><div class="line">    arr.push(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> i;</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a= l();</div><div class="line"><span class="keyword">var</span> f1=a[<span class="number">0</span>];</div><div class="line"><span class="keyword">var</span> f2=a[<span class="number">1</span>];</div><div class="line"><span class="keyword">var</span> f3=a[<span class="number">2</span>];</div><div class="line"></div><div class="line">f1();	<span class="comment">//4</span></div><div class="line">f2();	<span class="comment">//4</span></div><div class="line">f3();	<span class="comment">//4</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">l</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> arr= [];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</div><div class="line">    arr.push((<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> n;</div><div class="line">      &#125;</div><div class="line">    &#125;)(i));</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> arr;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a= l();</div><div class="line"><span class="keyword">var</span> f1=a[<span class="number">0</span>];</div><div class="line"><span class="keyword">var</span> f2=a[<span class="number">1</span>];</div><div class="line"><span class="keyword">var</span> f3=a[<span class="number">2</span>];</div><div class="line"></div><div class="line">f1();		<span class="comment">//0</span></div><div class="line">f2();		<span class="comment">//1</span></div><div class="line">f3();		<span class="comment">//2</span></div></pre></td></tr></table></figure>
+<p>注意这里用了一个“创建一个匿名函数并立刻执行”的语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> n;</div><div class="line">&#125;)(<span class="number">1</span>); <span class="comment">//1</span></div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://www.adherentman.cn/2017/05/18/JavaScript作用域/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -828,171 +1014,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.adherentman.cn/2017/05/04/JavaScrip作用域和内存/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="XuZiHao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="壮壮-Technology">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/04/JavaScrip作用域和内存/" itemprop="url">
-                  JavaScrip作用域和内存
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-04T08:00:00+08:00">
-                2017-05-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript修仙之路/" itemprop="url" rel="index">
-                    <span itemprop="name">Javascript修仙之路</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/05/04/JavaScrip作用域和内存/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/04/JavaScrip作用域和内存/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="JavaScrip作用域和内存"><a href="#JavaScrip作用域和内存" class="headerlink" title="JavaScrip作用域和内存"></a>JavaScrip作用域和内存</h1><h2 id="执行环境及作用域"><a href="#执行环境及作用域" class="headerlink" title="执行环境及作用域"></a>执行环境及作用域</h2><ul>
-<li>执行环境定义了变量或函数有权访问的其他数据，决定了它们各自的行为。（类型总公共两种——全局和局部（函数））</li>
-<li>每个执行环境都有一个与之关联的 <strong>变量对象</strong> 。（所有<strong>变量</strong>和<strong>函数</strong>都保存在这个对象里）</li>
-<li>全局执行环境被认为是window对象，因此所有全局变量和函数都是作为window对象的属性和方法创建的。</li>
-<li>每个函数都有自己的 <strong>执行环境</strong>。</li>
-<li>代码在一个环境中执行时，会创建变量对象的一个 <strong>作用域链</strong>。</li>
-<li><strong>作用域链</strong>的用途：是保证对执行环境有权访问的所有变量和函数的有序访问。</li>
-<li>全局执行环境的变量对象<strong>始终</strong>都是作用域链中的最后一个对象。</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/04/JavaScrip作用域和内存/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://www.adherentman.cn/2017/04/28/Vue.js小记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1055,8 +1076,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript修仙之路/" itemprop="url" rel="index">
-                    <span itemprop="name">Javascript修仙之路</span>
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
                   </a>
                 </span>
 
@@ -1224,8 +1245,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript修仙之路/" itemprop="url" rel="index">
-                    <span itemprop="name">Javascript修仙之路</span>
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
                   </a>
                 </span>
 
@@ -2032,7 +2053,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

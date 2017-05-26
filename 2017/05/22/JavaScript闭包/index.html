@@ -89,17 +89,17 @@
 
 
 
-<meta name="description" content="1.Dom基础Element 三种DOM方法可获取元素节点，分别是通过元素ID、通过标签名字和通过类名字来获取 getElementById      根据Id获取元素节点   getElementByTagName     根据Html获取元素节点   getElementByClassName     根据ClassName（class）获取元素节点">
+<meta name="description" content="闭包/bibao/Closures什么是闭包MDN对闭包的定义为：  闭包是指那些能够访问自由变量的函数。  阮老师对闭包的定义为：   闭包就是能够读取其他函数内部变量的函数。 可以把闭包简单理解成”定义在一个函数内部的函数”。  红宝书对闭包的定义为：  　闭包是指有权访问另一个函数作用域中的变量的函数  那么圣经犀牛书对闭包定义为：  函数对象可以通过作用域链相互关联起来，函数体内部的变量都">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javascript DOM编程艺术学习笔记一（第三章兼高程三）">
-<meta property="og:url" content="http://www.adherentman.cn/2017/03/26/Javascript Dom编程艺术学习笔记一（第三章兼高程三）/index.html">
+<meta property="og:title" content="JavaScript闭包">
+<meta property="og:url" content="http://www.adherentman.cn/2017/05/22/JavaScript闭包/index.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="1.Dom基础Element 三种DOM方法可获取元素节点，分别是通过元素ID、通过标签名字和通过类名字来获取 getElementById      根据Id获取元素节点   getElementByTagName     根据Html获取元素节点   getElementByClassName     根据ClassName（class）获取元素节点">
-<meta property="og:updated_time" content="2017-04-26T14:47:51.000Z">
+<meta property="og:description" content="闭包/bibao/Closures什么是闭包MDN对闭包的定义为：  闭包是指那些能够访问自由变量的函数。  阮老师对闭包的定义为：   闭包就是能够读取其他函数内部变量的函数。 可以把闭包简单理解成”定义在一个函数内部的函数”。  红宝书对闭包的定义为：  　闭包是指有权访问另一个函数作用域中的变量的函数  那么圣经犀牛书对闭包定义为：  函数对象可以通过作用域链相互关联起来，函数体内部的变量都">
+<meta property="og:updated_time" content="2017-05-26T09:45:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascript DOM编程艺术学习笔记一（第三章兼高程三）">
-<meta name="twitter:description" content="1.Dom基础Element 三种DOM方法可获取元素节点，分别是通过元素ID、通过标签名字和通过类名字来获取 getElementById      根据Id获取元素节点   getElementByTagName     根据Html获取元素节点   getElementByClassName     根据ClassName（class）获取元素节点">
+<meta name="twitter:title" content="JavaScript闭包">
+<meta name="twitter:description" content="闭包/bibao/Closures什么是闭包MDN对闭包的定义为：  闭包是指那些能够访问自由变量的函数。  阮老师对闭包的定义为：   闭包就是能够读取其他函数内部变量的函数。 可以把闭包简单理解成”定义在一个函数内部的函数”。  红宝书对闭包的定义为：  　闭包是指有权访问另一个函数作用域中的变量的函数  那么圣经犀牛书对闭包定义为：  函数对象可以通过作用域链相互关联起来，函数体内部的变量都">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://www.adherentman.cn/2017/03/26/Javascript Dom编程艺术学习笔记一（第三章兼高程三）/"/>
+  <link rel="canonical" href="http://www.adherentman.cn/2017/05/22/JavaScript闭包/"/>
 
 
 
 
 
-  <title> Javascript DOM编程艺术学习笔记一（第三章兼高程三） | 壮壮-Technology </title>
+  <title> JavaScript闭包 | 壮壮-Technology </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -326,7 +326,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.adherentman.cn/2017/03/26/Javascript Dom编程艺术学习笔记一（第三章兼高程三）/">
+    <link itemprop="mainEntityOfPage" href="http://www.adherentman.cn/2017/05/22/JavaScript闭包/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XuZiHao">
@@ -347,7 +347,7 @@
             
             
               
-                Javascript DOM编程艺术学习笔记一（第三章兼高程三）
+                JavaScript闭包
               
             
           </h1>
@@ -362,8 +362,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-26T20:01:14+08:00">
-                2017-03-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-22T13:44:44+08:00">
+                2017-05-22
               </time>
             
 
@@ -385,8 +385,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript修仙之路/" itemprop="url" rel="index">
-                    <span itemprop="name">Javascript修仙之路</span>
+                  <a href="/categories/Javascript基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript基础</span>
                   </a>
                 </span>
 
@@ -403,8 +403,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/26/Javascript Dom编程艺术学习笔记一（第三章兼高程三）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/26/Javascript Dom编程艺术学习笔记一（第三章兼高程三）/" itemprop="commentCount"></span>
+                <a href="/2017/05/22/JavaScript闭包/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/22/JavaScript闭包/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -435,54 +435,41 @@
       
 
       
-        <h1 id="1-Dom基础"><a href="#1-Dom基础" class="headerlink" title="1.Dom基础"></a>1.Dom基础</h1><h2 id="Element"><a href="#Element" class="headerlink" title="Element"></a>Element</h2><ul>
-<li>三种DOM方法可获取元素节点，分别是通过元素ID、通过标签名字和通过类名字来获取</li>
-<li>getElementById  </li>
-</ul>
+        <h1 id="闭包-bibao-Closures"><a href="#闭包-bibao-Closures" class="headerlink" title="闭包/bibao/Closures"></a>闭包/bibao/Closures</h1><h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><p>MDN对闭包的定义为：</p>
 <blockquote>
-<p> 根据Id获取元素节点</p>
+<p>闭包是指那些能够访问自由变量的函数。</p>
 </blockquote>
-<ul>
-<li>getElementByTagName  </li>
-</ul>
+<p>阮老师对闭包的定义为：</p>
 <blockquote>
-<p>根据Html获取元素节点</p>
+<p> 闭包就是能够读取其他函数内部变量的函数。</p>
+<p>可以把闭包简单理解成”定义在一个函数内部的函数”。</p>
 </blockquote>
-<ul>
-<li>getElementByClassName  </li>
-</ul>
+<p>红宝书对闭包的定义为：</p>
 <blockquote>
-<p>根据ClassName（class）获取元素节点</p>
+<p>　闭包是指有权访问另一个函数作用域中的变量的函数</p>
 </blockquote>
-<a id="more"></a>
-<h2 id="高程三中学到"><a href="#高程三中学到" class="headerlink" title="高程三中学到"></a>高程三中学到</h2><p>Html元素</p>
-<ul>
-<li>id，元素在文档中的唯一标识 -</li>
-<li>title，有关元素的附加说明信息，一般通过工具提示条显示出来 </li>
-<li>lang，元素内容的语言比如中文zh-hans </li>
-<li>dir，语言的方向，值为”ltr”（left-to-right，从左至右）或”rtl”（right-to-left，从右至左），很少使用</li>
-<li><p>className，与元素的class特性对应，即为元素指定的CSS类，没有将这个属性命名为class。</p>
-  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myDiv"</span> <span class="attr">class</span>=<span class="string">"bd"</span> <span class="attr">title</span>=<span class="string">"Body text"</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">dir</span>=<span class="string">"ltr"</span>&gt;</span>Some text<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>  可以获得元素中指定的所有信息。</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">div = <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>);</div><div class="line">       alert(div.id);         <span class="comment">//"myDiv"</span></div><div class="line">       alert(div.className);  <span class="comment">//"bd"</span></div><div class="line">       alert(div.title);      <span class="comment">//"Body text"</span></div><div class="line">       alert(div.lang);       <span class="comment">//"en"</span></div><div class="line">       alert(div.dir);        <span class="comment">//"ltr"</span></div></pre></td></tr></table></figure>
-<p>  还可以为每个属性赋予新的值。</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">div = <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>);</div><div class="line">       div.id = <span class="string">"someOtherId"</span>;</div><div class="line">       div.className = <span class="string">"ft"</span>;</div><div class="line">       div.title = <span class="string">"Some other text"</span>;</div><div class="line">       div.lang = <span class="string">"fr"</span>;</div><div class="line">       div.dir =<span class="string">"rtl"</span>;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="获取和设置属性"><a href="#获取和设置属性" class="headerlink" title="获取和设置属性"></a>获取和设置属性</h1><ul>
-<li>getAttribute</li>
-</ul>
+<p>那么圣经犀牛书对闭包定义为：</p>
 <blockquote>
-<p>getAttribute是一个函数。它只有一个参数——你打算查询的属性名字：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">object.getAttribute(attribute);</div></pre></td></tr></table></figure></p>
+<p>函数对象可以通过作用域链相互关联起来，函数体内部的变量都可以保存在函数作用域内，这种特性在计算机科学文献中称为‘闭包’”</p>
 </blockquote>
-<ul>
-<li>setAttribute<blockquote>
-<p>它允许我们对属性节点的值做出修改。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">object.setAttribute(&quot;attribute&quot;,value);</div></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-
+<p><strong>我个人比较认同红宝书的定义。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(a); <span class="comment">// 2</span></div><div class="line">    &#125;</div><div class="line">    bar();</div><div class="line">&#125;</div><div class="line">foo();</div></pre></td></tr></table></figure>
+<p>我们来做一个数组求和</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> x+y;</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line">sum([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]);			<span class="comment">//18</span></div></pre></td></tr></table></figure>
+<p>但是我们想要返回函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">smallsum</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> x+y;</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> sum;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当我们想要用<code>smallsum</code>的时候返回的却是个函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = smallsum([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]);		<span class="comment">//function sum()</span></div></pre></td></tr></table></figure>
+<p>直到我们调用<code>result</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result();			<span class="comment">//18</span></div></pre></td></tr></table></figure>
+<p>在这个例子中，我发现内部函数<code>sum</code>可以调用外部函数<code>smallsum</code>的参数和局部变量。</p>
+<p>当我们调用<code>smallsum</code>的时候，每次调用都会产生一个新的函数。即使你传入的值相同。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result1 = smallsum([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]);</div><div class="line"><span class="keyword">var</span> result2 = smallsum([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]);</div><div class="line">result1 === result2; 			<span class="comment">//false</span></div></pre></td></tr></table></figure>
+<h2 id="假如"><a href="#假如" class="headerlink" title="假如"></a>假如</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">l</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> arr= [];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</div><div class="line">    arr.push(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> i;</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a= l();</div><div class="line"><span class="keyword">var</span> f1=a[<span class="number">0</span>];</div><div class="line"><span class="keyword">var</span> f2=a[<span class="number">1</span>];</div><div class="line"><span class="keyword">var</span> f3=a[<span class="number">2</span>];</div><div class="line"></div><div class="line">f1();	<span class="comment">//4</span></div><div class="line">f2();	<span class="comment">//4</span></div><div class="line">f3();	<span class="comment">//4</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">l</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> arr= [];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</div><div class="line">    arr.push((<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> n;</div><div class="line">      &#125;</div><div class="line">    &#125;)(i));</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> arr;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a= l();</div><div class="line"><span class="keyword">var</span> f1=a[<span class="number">0</span>];</div><div class="line"><span class="keyword">var</span> f2=a[<span class="number">1</span>];</div><div class="line"><span class="keyword">var</span> f3=a[<span class="number">2</span>];</div><div class="line"></div><div class="line">f1();		<span class="comment">//0</span></div><div class="line">f2();		<span class="comment">//1</span></div><div class="line">f3();		<span class="comment">//2</span></div></pre></td></tr></table></figure>
+<p>注意这里用了一个“创建一个匿名函数并立刻执行”的语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> n;</div><div class="line">&#125;)(<span class="number">1</span>); <span class="comment">//1</span></div></pre></td></tr></table></figure>
       
     </div>
 
@@ -545,8 +532,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/22/2017Web程序员技术发展路线图/" rel="next" title="2017Web程序员技术发展路线图">
-                <i class="fa fa-chevron-left"></i> 2017Web程序员技术发展路线图
+              <a href="/2017/05/18/JavaScript作用域/" rel="next" title="JavaScript作用域与作用域链">
+                <i class="fa fa-chevron-left"></i> JavaScript作用域与作用域链
               </a>
             
           </div>
@@ -554,10 +541,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/11/JavaScript基本概念copy/" rel="prev" title="JavaScript基本概念（高程3）">
-                JavaScript基本概念（高程3） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -583,8 +566,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/26/Javascript Dom编程艺术学习笔记一（第三章兼高程三）/"
-           data-title="Javascript DOM编程艺术学习笔记一（第三章兼高程三）" data-url="http://www.adherentman.cn/2017/03/26/Javascript Dom编程艺术学习笔记一（第三章兼高程三）/">
+      <div class="ds-thread" data-thread-key="2017/05/22/JavaScript闭包/"
+           data-title="JavaScript闭包" data-url="http://www.adherentman.cn/2017/05/22/JavaScript闭包/">
       </div>
     
   </div>
@@ -726,7 +709,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Dom基础"><span class="nav-number">1.</span> <span class="nav-text">1.Dom基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Element"><span class="nav-number">1.1.</span> <span class="nav-text">Element</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高程三中学到"><span class="nav-number">1.2.</span> <span class="nav-text">高程三中学到</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取和设置属性"><span class="nav-number">2.</span> <span class="nav-text">获取和设置属性</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#闭包-bibao-Closures"><span class="nav-number">1.</span> <span class="nav-text">闭包/bibao/Closures</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是闭包"><span class="nav-number">1.1.</span> <span class="nav-text">什么是闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#假如"><span class="nav-number">1.2.</span> <span class="nav-text">假如</span></a></li></ol></li></ol></div>
             
 
           </div>

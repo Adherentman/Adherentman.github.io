@@ -1,7 +1,7 @@
+http://www.adherentman.cn/2017/05/22/JavaScript闭包/
 http://www.adherentman.cn/2017/05/18/JavaScript作用域/
 http://www.adherentman.cn/2017/05/15/JavaScript——16道算法题/
 http://www.adherentman.cn/2017/05/07/前端面试题/
-http://www.adherentman.cn/2017/05/04/JavaScrip作用域和内存/
 http://www.adherentman.cn/2017/04/28/Vue.js小记/
 http://www.adherentman.cn/2017/04/27/初入React/
 http://www.adherentman.cn/2017/04/24/JavaScript变量/

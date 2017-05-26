@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.adherentman.cn/"/>
-  <updated>2017-05-21T03:59:17.000Z</updated>
+  <updated>2017-05-26T09:45:05.000Z</updated>
   <id>http://www.adherentman.cn/</id>
   
   <author>
@@ -16,11 +16,67 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JavaScript闭包</title>
+    <link href="http://www.adherentman.cn/2017/05/22/JavaScript%E9%97%AD%E5%8C%85/"/>
+    <id>http://www.adherentman.cn/2017/05/22/JavaScript闭包/</id>
+    <published>2017-05-22T05:44:44.000Z</published>
+    <updated>2017-05-26T09:45:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="闭包-bibao-Closures"><a href="#闭包-bibao-Closures" class="headerlink" title="闭包/bibao/Closures"></a>闭包/bibao/Closures</h1><h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><p>MDN对闭包的定义为：</p>
+<blockquote>
+<p>闭包是指那些能够访问自由变量的函数。</p>
+</blockquote>
+<p>阮老师对闭包的定义为：</p>
+<blockquote>
+<p> 闭包就是能够读取其他函数内部变量的函数。</p>
+<p>可以把闭包简单理解成”定义在一个函数内部的函数”。</p>
+</blockquote>
+<p>红宝书对闭包的定义为：</p>
+<blockquote>
+<p>　闭包是指有权访问另一个函数作用域中的变量的函数</p>
+</blockquote>
+<p>那么圣经犀牛书对闭包定义为：</p>
+<blockquote>
+<p>函数对象可以通过作用域链相互关联起来，函数体内部的变量都可以保存在函数作用域内，这种特性在计算机科学文献中称为‘闭包’”</p>
+</blockquote>
+<p><strong>我个人比较认同红宝书的定义。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(a); <span class="comment">// 2</span></div><div class="line">    &#125;</div><div class="line">    bar();</div><div class="line">&#125;</div><div class="line">foo();</div></pre></td></tr></table></figure>
+<p>我们来做一个数组求和</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> x+y;</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line">sum([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]);			<span class="comment">//18</span></div></pre></td></tr></table></figure>
+<p>但是我们想要返回函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">smallsum</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> x+y;</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> sum;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当我们想要用<code>smallsum</code>的时候返回的却是个函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = smallsum([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]);		<span class="comment">//function sum()</span></div></pre></td></tr></table></figure>
+<p>直到我们调用<code>result</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result();			<span class="comment">//18</span></div></pre></td></tr></table></figure>
+<p>在这个例子中，我发现内部函数<code>sum</code>可以调用外部函数<code>smallsum</code>的参数和局部变量。</p>
+<p>当我们调用<code>smallsum</code>的时候，每次调用都会产生一个新的函数。即使你传入的值相同。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result1 = smallsum([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]);</div><div class="line"><span class="keyword">var</span> result2 = smallsum([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]);</div><div class="line">result1 === result2; 			<span class="comment">//false</span></div></pre></td></tr></table></figure>
+<h2 id="假如"><a href="#假如" class="headerlink" title="假如"></a>假如</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">l</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> arr= [];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</div><div class="line">    arr.push(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> i;</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a= l();</div><div class="line"><span class="keyword">var</span> f1=a[<span class="number">0</span>];</div><div class="line"><span class="keyword">var</span> f2=a[<span class="number">1</span>];</div><div class="line"><span class="keyword">var</span> f3=a[<span class="number">2</span>];</div><div class="line"></div><div class="line">f1();	<span class="comment">//4</span></div><div class="line">f2();	<span class="comment">//4</span></div><div class="line">f3();	<span class="comment">//4</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">l</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> arr= [];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</div><div class="line">    arr.push((<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> n;</div><div class="line">      &#125;</div><div class="line">    &#125;)(i));</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> arr;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a= l();</div><div class="line"><span class="keyword">var</span> f1=a[<span class="number">0</span>];</div><div class="line"><span class="keyword">var</span> f2=a[<span class="number">1</span>];</div><div class="line"><span class="keyword">var</span> f3=a[<span class="number">2</span>];</div><div class="line"></div><div class="line">f1();		<span class="comment">//0</span></div><div class="line">f2();		<span class="comment">//1</span></div><div class="line">f3();		<span class="comment">//2</span></div></pre></td></tr></table></figure>
+<p>注意这里用了一个“创建一个匿名函数并立刻执行”的语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> n;</div><div class="line">&#125;)(<span class="number">1</span>); <span class="comment">//1</span></div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;闭包-bibao-Closures&quot;&gt;&lt;a href=&quot;#闭包-bibao-Closures&quot; class=&quot;headerlink&quot; title=&quot;闭包/bibao/Closures&quot;&gt;&lt;/a&gt;闭包/bibao/Closures&lt;/h1&gt;&lt;h2 id=&quot;什么是闭包
+    
+    </summary>
+    
+      <category term="Javascript基础" scheme="http://www.adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JavaScript作用域与作用域链</title>
     <link href="http://www.adherentman.cn/2017/05/18/JavaScript%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
     <id>http://www.adherentman.cn/2017/05/18/JavaScript作用域/</id>
     <published>2017-05-18T09:37:54.000Z</published>
-    <updated>2017-05-21T03:59:17.000Z</updated>
+    <updated>2017-05-22T05:44:16.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Javascript作用域与作用域链"><a href="#Javascript作用域与作用域链" class="headerlink" title="Javascript作用域与作用域链"></a>Javascript作用域与作用域链</h1><h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在JavaScript中，变量的作用域有全局作用域和局部作用域两种。</p>
 <h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><h5 id="全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。"><a href="#全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。" class="headerlink" title="全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。"></a>全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> l=<span class="string">"我是全局变量"</span>;			<span class="comment">//声明了一个全局变量</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">scope</span>(<span class="params"></span>)</span>&#123;		</div><div class="line">  <span class="keyword">var</span> l=<span class="string">"我是局部变量"</span>;		<span class="comment">//声明了一个同名的局部变量</span></div><div class="line">  <span class="keyword">return</span> l;</div><div class="line">&#125;</div><div class="line">scope()					<span class="comment">//输出“我是局部变量”</span></div></pre></td></tr></table></figure>
@@ -32,14 +88,16 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(num);           <span class="comment">//输出：undefined，而非报错，因为变量num在整个函数体内都是有定义的</span></div><div class="line">            <span class="keyword">var</span> num = <span class="number">1</span>;                <span class="comment">//声明num 在整个函数体func内都有定义</span></div><div class="line">            <span class="built_in">console</span>.log(num);           <span class="comment">//输出：1</span></div><div class="line">        &#125;</div><div class="line">        func();</div></pre></td></tr></table></figure>
 <p>再看看下面这个例子：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num=<span class="number">2</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> num;</div><div class="line">            <span class="built_in">console</span>.log(num);           <span class="comment">//输出：undefined，而非报错，因为变量num在整个函数体内都是有定义的</span></div><div class="line">            <span class="keyword">var</span> num = <span class="number">1</span>;                <span class="comment">//声明num 在整个函数体func内都有定义</span></div><div class="line">            <span class="built_in">console</span>.log(num);           <span class="comment">//输出：1</span></div><div class="line">        &#125;</div><div class="line">        <span class="built_in">console</span>.log(num);				<span class="comment">//输出2</span></div><div class="line">        func();</div></pre></td></tr></table></figure>
-<h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2><p>作用域链上有两个对象。</p>
+<h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2><p><strong>用途：</strong></p>
+<p>保证对<strong>执行环境有权访问</strong>的<strong>所有变量和函数的有序访问</strong>。</p>
+<p>作用域链上有两个对象。</p>
 <ul>
 <li>第一个是定义函数参数和局部变量的对象</li>
 <li>第二个是全局对象</li>
 </ul>
 <p>当定义一个函数时，它实际上保存一个作用域链。</p>
-<p><strong>高三下这个例子就特别好</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = <span class="string">"blue"</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeColor</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> anotherColor = <span class="string">"red"</span>;</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">swapColors</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> tempColor = anotherColor;</div><div class="line">    anotherColor = color;</div><div class="line">    color = tempColor;</div><div class="line">    <span class="comment">//能访问 color、anotherColor、tempColor。</span></div><div class="line">  &#125;</div><div class="line">  swapColors();			<span class="comment">//能访问color、anotherColorb不能访问tempColor。</span></div><div class="line">&#125;</div><div class="line">changeColor();			<span class="comment">//只能访问color</span></div></pre></td></tr></table></figure>
+<p><strong>高程三下这个例子就特别好</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = <span class="string">"blue"</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeColor</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> anotherColor = <span class="string">"red"</span>;</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">swapColors</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> tempColor = anotherColor;</div><div class="line">    anotherColor = color;</div><div class="line">    color = tempColor;</div><div class="line">    <span class="comment">//能访问 color、anotherColor、tempColor。</span></div><div class="line">  &#125;</div><div class="line">  swapColors();			<span class="comment">//能访问color、anotherColor不能访问tempColor。</span></div><div class="line">&#125;</div><div class="line">changeColor();			<span class="comment">//只能访问color</span></div></pre></td></tr></table></figure>
 <p><code>changeColor()</code>的作用域链中只包含2个对象：它自己的变量对象和全局变量对象。所以它不能访问<code>swapColor()</code>的环境。</p>
 <p>那么在<code>swapColors()</code>的作用域链中又3个对象：<code>swapColors()</code>的变量对象、<code>changeColor()</code>的变量对象和全局变量对象。</p>
 ]]></content>
@@ -284,75 +342,11 @@
   </entry>
   
   <entry>
-    <title>JavaScrip作用域和内存</title>
-    <link href="http://www.adherentman.cn/2017/05/04/JavaScrip%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%86%85%E5%AD%98/"/>
-    <id>http://www.adherentman.cn/2017/05/04/JavaScrip作用域和内存/</id>
-    <published>2017-05-04T00:00:00.000Z</published>
-    <updated>2017-05-04T01:15:36.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="JavaScrip作用域和内存"><a href="#JavaScrip作用域和内存" class="headerlink" title="JavaScrip作用域和内存"></a>JavaScrip作用域和内存</h1><h2 id="执行环境及作用域"><a href="#执行环境及作用域" class="headerlink" title="执行环境及作用域"></a>执行环境及作用域</h2><ul>
-<li>执行环境定义了变量或函数有权访问的其他数据，决定了它们各自的行为。（类型总公共两种——全局和局部（函数））</li>
-<li>每个执行环境都有一个与之关联的 <strong>变量对象</strong> 。（所有<strong>变量</strong>和<strong>函数</strong>都保存在这个对象里）</li>
-<li>全局执行环境被认为是window对象，因此所有全局变量和函数都是作为window对象的属性和方法创建的。</li>
-<li>每个函数都有自己的 <strong>执行环境</strong>。</li>
-<li>代码在一个环境中执行时，会创建变量对象的一个 <strong>作用域链</strong>。</li>
-<li><strong>作用域链</strong>的用途：是保证对执行环境有权访问的所有变量和函数的有序访问。</li>
-<li>全局执行环境的变量对象<strong>始终</strong>都是作用域链中的最后一个对象。</li>
-</ul>
-<a id="more"></a>
-<h2 id="延长作用域链"><a href="#延长作用域链" class="headerlink" title="延长作用域链"></a>延长作用域链</h2><ul>
-<li><code>try-catch</code>语句和<code>catch</code>块</li>
-</ul>
-<blockquote>
-<p><code>catch</code>语句，会创建一个新的变量对象，其中包含的是被抛出的错误对象的声明。</p>
-</blockquote>
-<ul>
-<li><code>with</code>语句</li>
-</ul>
-<blockquote>
-<p><code>with</code>语句会将指定的对象添加到作用域链中。</p>
-</blockquote>
-<h2 id="没有块级作用域"><a href="#没有块级作用域" class="headerlink" title="没有块级作用域"></a>没有块级作用域</h2><h3 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=o; i &lt; <span class="number">10</span>; i++)&#123;</div><div class="line">  doSomething(i);</div><div class="line">&#125;</div><div class="line">alert(i);		<span class="comment">//10</span></div></pre></td></tr></table></figure>
-<p>由<code>for</code>语句创建的变量<code>i</code>即使在<code>for</code>循环执行结束后，<code>i</code>也会存在于循环外部的执行环境中。</p>
-<ul>
-<li>使用<code>var</code>声明的变量会自动被添加到最接近的环境中。</li>
-<li>在函数内部，最接近的环境就是函数的局部环境。</li>
-<li>在<code>with</code>语句中，最接近的环境是函数环境。</li>
-<li>初始化变量没有<code>var</code>，这个变量是会自动添加到全局环境。</li>
-</ul>
-<h3 id="查询标示符"><a href="#查询标示符" class="headerlink" title="查询标示符"></a>查询标示符</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> color = <span class="string">"blue"</span>;</div><div class="line">fuction getColor()&#123;</div><div class="line">  <span class="keyword">var</span> color = <span class="string">"red"</span>;</div><div class="line">  <span class="keyword">return</span> color;</div><div class="line">&#125;</div><div class="line">alert(getColor());		<span class="comment">//red</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>一层一层往上寻找。</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;JavaScrip作用域和内存&quot;&gt;&lt;a href=&quot;#JavaScrip作用域和内存&quot; class=&quot;headerlink&quot; title=&quot;JavaScrip作用域和内存&quot;&gt;&lt;/a&gt;JavaScrip作用域和内存&lt;/h1&gt;&lt;h2 id=&quot;执行环境及作用域&quot;&gt;&lt;a href=&quot;#执行环境及作用域&quot; class=&quot;headerlink&quot; title=&quot;执行环境及作用域&quot;&gt;&lt;/a&gt;执行环境及作用域&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;执行环境定义了变量或函数有权访问的其他数据，决定了它们各自的行为。（类型总公共两种——全局和局部（函数））&lt;/li&gt;
-&lt;li&gt;每个执行环境都有一个与之关联的 &lt;strong&gt;变量对象&lt;/strong&gt; 。（所有&lt;strong&gt;变量&lt;/strong&gt;和&lt;strong&gt;函数&lt;/strong&gt;都保存在这个对象里）&lt;/li&gt;
-&lt;li&gt;全局执行环境被认为是window对象，因此所有全局变量和函数都是作为window对象的属性和方法创建的。&lt;/li&gt;
-&lt;li&gt;每个函数都有自己的 &lt;strong&gt;执行环境&lt;/strong&gt;。&lt;/li&gt;
-&lt;li&gt;代码在一个环境中执行时，会创建变量对象的一个 &lt;strong&gt;作用域链&lt;/strong&gt;。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;作用域链&lt;/strong&gt;的用途：是保证对执行环境有权访问的所有变量和函数的有序访问。&lt;/li&gt;
-&lt;li&gt;全局执行环境的变量对象&lt;strong&gt;始终&lt;/strong&gt;都是作用域链中的最后一个对象。&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="Javascript修仙之路" scheme="http://www.adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Vue.js小记</title>
     <link href="http://www.adherentman.cn/2017/04/28/Vue.js%E5%B0%8F%E8%AE%B0/"/>
     <id>http://www.adherentman.cn/2017/04/28/Vue.js小记/</id>
     <published>2017-04-28T07:54:00.000Z</published>
-    <updated>2017-04-28T07:55:04.000Z</updated>
+    <updated>2017-05-26T08:37:32.000Z</updated>
     
     <content type="html"><![CDATA[<p>#Vue小记</p>
 <h2 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a><strong>v-bind</strong></h2><ul>
@@ -433,7 +427,7 @@
     
     </summary>
     
-      <category term="Javascript修仙之路" scheme="http://www.adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+      <category term="Vue" scheme="http://www.adherentman.cn/categories/Vue/"/>
     
     
       <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
@@ -447,7 +441,7 @@
     <link href="http://www.adherentman.cn/2017/04/27/%E5%88%9D%E5%85%A5React/"/>
     <id>http://www.adherentman.cn/2017/04/27/初入React/</id>
     <published>2017-04-27T07:29:00.000Z</published>
-    <updated>2017-04-27T07:48:55.000Z</updated>
+    <updated>2017-05-26T08:37:41.000Z</updated>
     
     <content type="html"><![CDATA[<p>因为需要做一个自己的小想法以后需要去实现把这个想法变成项目，在重多得框架中选择React.js，因为它需要学习成本，所以我觉得我在学习的过程中能学到很多东西。</p>
 <h1 id="通过npm使用React"><a href="#通过npm使用React" class="headerlink" title="通过npm使用React"></a>通过npm使用React</h1><p>建议在 React 中使用 CommonJS 模块系统，比如 <a href="http://browserify.org/" target="_blank" rel="external">browserify</a> 或 <a href="https://webpack.github.io/" target="_blank" rel="external">webpack</a>。使用 <a href="https://www.npmjs.com/package/react" target="_blank" rel="external"><code>react</code></a> 和 <a href="https://www.npmjs.com/package/react-dom" target="_blank" rel="external"><code>react-dom</code></a> npm 包.</p>
@@ -573,7 +567,7 @@
     
     </summary>
     
-      <category term="Javascript修仙之路" scheme="http://www.adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+      <category term="React" scheme="http://www.adherentman.cn/categories/React/"/>
     
     
       <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
@@ -1290,11 +1284,11 @@
       <category term="Technology" scheme="http://www.adherentman.cn/categories/Technology/"/>
     
     
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
-    
       <category term="C" scheme="http://www.adherentman.cn/tags/C/"/>
     
       <category term="Java" scheme="http://www.adherentman.cn/tags/Java/"/>
+    
+      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
     
       <category term="Python" scheme="http://www.adherentman.cn/tags/Python/"/>
     
