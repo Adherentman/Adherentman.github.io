@@ -89,17 +89,17 @@
 
 
 
-<meta name="description" content="闭包/bibao/Closures什么是闭包MDN对闭包的定义为：  闭包是指那些能够访问自由变量的函数。  阮老师对闭包的定义为：   闭包就是能够读取其他函数内部变量的函数。 可以把闭包简单理解成”定义在一个函数内部的函数”。  红宝书对闭包的定义为：  　闭包是指有权访问另一个函数作用域中的变量的函数  那么圣经犀牛书对闭包定义为：  函数对象可以通过作用域链相互关联起来，函数体内部的变量都">
+<meta name="description" content="闭包/bibao/Closures什么是闭包MDN对闭包的定义为：  闭包是指那些能够访问自由变量的函数。  阮老师对闭包的定义为：   闭包就是能够读取其他函数内部变量的函数。  可以把闭包简单理解成”定义在一个函数内部的函数”。  红宝书对闭包的定义为：  　闭包是指有权访问另一个函数作用域中的变量的函数  那么圣经犀牛书对闭包定义为：  函数对象可以通过作用域链相互关联起来，函数体内部的变量">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript闭包">
 <meta property="og:url" content="http://www.adherentman.cn/2017/05/22/JavaScript闭包/index.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="闭包/bibao/Closures什么是闭包MDN对闭包的定义为：  闭包是指那些能够访问自由变量的函数。  阮老师对闭包的定义为：   闭包就是能够读取其他函数内部变量的函数。 可以把闭包简单理解成”定义在一个函数内部的函数”。  红宝书对闭包的定义为：  　闭包是指有权访问另一个函数作用域中的变量的函数  那么圣经犀牛书对闭包定义为：  函数对象可以通过作用域链相互关联起来，函数体内部的变量都">
-<meta property="og:updated_time" content="2017-05-26T09:45:05.000Z">
+<meta property="og:description" content="闭包/bibao/Closures什么是闭包MDN对闭包的定义为：  闭包是指那些能够访问自由变量的函数。  阮老师对闭包的定义为：   闭包就是能够读取其他函数内部变量的函数。  可以把闭包简单理解成”定义在一个函数内部的函数”。  红宝书对闭包的定义为：  　闭包是指有权访问另一个函数作用域中的变量的函数  那么圣经犀牛书对闭包定义为：  函数对象可以通过作用域链相互关联起来，函数体内部的变量">
+<meta property="og:updated_time" content="2017-05-26T09:47:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript闭包">
-<meta name="twitter:description" content="闭包/bibao/Closures什么是闭包MDN对闭包的定义为：  闭包是指那些能够访问自由变量的函数。  阮老师对闭包的定义为：   闭包就是能够读取其他函数内部变量的函数。 可以把闭包简单理解成”定义在一个函数内部的函数”。  红宝书对闭包的定义为：  　闭包是指有权访问另一个函数作用域中的变量的函数  那么圣经犀牛书对闭包定义为：  函数对象可以通过作用域链相互关联起来，函数体内部的变量都">
+<meta name="twitter:description" content="闭包/bibao/Closures什么是闭包MDN对闭包的定义为：  闭包是指那些能够访问自由变量的函数。  阮老师对闭包的定义为：   闭包就是能够读取其他函数内部变量的函数。  可以把闭包简单理解成”定义在一个函数内部的函数”。  红宝书对闭包的定义为：  　闭包是指有权访问另一个函数作用域中的变量的函数  那么圣经犀牛书对闭包定义为：  函数对象可以通过作用域链相互关联起来，函数体内部的变量">
 
 
 
@@ -442,7 +442,7 @@
 <p>阮老师对闭包的定义为：</p>
 <blockquote>
 <p> 闭包就是能够读取其他函数内部变量的函数。</p>
-<p>可以把闭包简单理解成”定义在一个函数内部的函数”。</p>
+<p> 可以把闭包简单理解成”定义在一个函数内部的函数”。</p>
 </blockquote>
 <p>红宝书对闭包的定义为：</p>
 <blockquote>
@@ -452,6 +452,7 @@
 <blockquote>
 <p>函数对象可以通过作用域链相互关联起来，函数体内部的变量都可以保存在函数作用域内，这种特性在计算机科学文献中称为‘闭包’”</p>
 </blockquote>
+<a id="more"></a>
 <p><strong>我个人比较认同红宝书的定义。</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(a); <span class="comment">// 2</span></div><div class="line">    &#125;</div><div class="line">    bar();</div><div class="line">&#125;</div><div class="line">foo();</div></pre></td></tr></table></figure>
 <p>我们来做一个数组求和</p>
