@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[数据库E-R图]]></title>
+      <url>%2F2017%2F07%2F17%2FE-R%E5%9B%BE%2F</url>
+      <content type="text"><![CDATA[E-R图E-R图是指实体-关系-属性三个基本概括数据的基本结构. 强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。 ER图的实体（entity）即数据模型中的数据对象，例如人、学生、音乐都可以作为一个数据对象，用长方体来表示，每个实体都有自己的实体成员（entity member）或者说实体对象（entity instance），例如学生实体里包括张三、李四等，实体成员（entity member）/实体实例（entity instance） 不需要出现在ER图中。 ER图的属性（attribute）即数据对象所具有的属性，例如学生具有姓名、学号、年级等属性，用椭圆形表示，属性分为唯一属性（ unique attribute）和非唯一属性，唯一属性指的是唯一可用来标识该实体实例或者成员的属性，用下划线表示，一般来讲实体都至少有一个唯一属性。 ER图的关系（relationship）用来表现数据对象与数据对象之间的联系，例如学生的实体和成绩表的实体之间有一定的联系，每个学生都有自己的成绩表，这就是一种关系，关系用菱形来表示。]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[React State与Props的小心思]]></title>
       <url>%2F2017%2F06%2F30%2FReact-State%E4%B8%8EProps%E7%9A%84%E5%B0%8F%E5%BF%83%E6%80%9D%2F</url>
       <content type="text"><![CDATA[忙于期末考。。很久都没有更新博客了！因为找了个实习需要React所以这里写写自己在看React的官方文档中，遇到的问题。 Props与State很容易让我经常弄混先来说说Props 官方解释 组件从概念上看就是函数，之后这个组件可以接受任意的输入值，并返回一个需要页面上展示的React元素。那么这个输入值就为props。 个人理解 props是不可变的，传入什么值进去，最后返回的也是传入的值。也就是说，只读。 props父子传递12345678910111213141516function Uesr(props)&#123; return( &lt;div className=&#123;'abc'+ props.color&#125;&gt; &#123;props.children&#125; &lt;/div&gt; );&#125;------------------------------------------------------------------------ function My()&#123; return( &lt;User color="red"&gt; &lt;h1&gt;nihao&lt;/h1&gt; &lt;/User&gt; );&#125; 在JSX标签内的任何内容都将通过children属性传入User。因为User在一个div内渲染了{props.children}，所以被传递的所有元素都会出现在最终输出中。 其实，我们也可以不用children。借用React官方文档的例子： 1234567891011121314151617181920212223242526272829303132function Contacts() &#123; return &lt;div className="Contacts" /&gt;;&#125;function Chat() &#123; return &lt;div className="Chat" /&gt;;&#125;function SplitPane(props) &#123; return ( &lt;div className="SplitPane"&gt; &lt;div className="SplitPane-left"&gt; &#123;props.left&#125; &lt;/div&gt; &lt;div className="SplitPane-right"&gt; &#123;props.right&#125; &lt;/div&gt; &lt;/div&gt; );&#125;function App() &#123; return ( &lt;SplitPane left=&#123; &lt;Contacts /&gt; &#125; right=&#123; &lt;Chat /&gt; &#125; /&gt; );&#125; 接下来Statestate怎么工作？通过调用setState(data,callback)方法，改变状态，就会触发React更新UI。 什么时候组件需要state呢？一般来说，大部分的组件应该从props属性中获取数据然后渲染。那么在！ 用户输入，服务器交互，这些情况下会用到State。在官方上说，尽可能的保持你的组件无状态化。 通过看官方文档。。我发现他们的模式是：构建几个无状态的组件用来渲染数据，然后在这些之上去构建一个有状态的组件同用户和服务器交互，数据通过props传递给无状态组件。 setState:更新组件状态。 setState会触发diff算法：判断state和页面结果的区别，是否需要更新。 状态(state)和属性(props)对比 状态和属性都会触发render更新，都是纯JS对象 状态：是和自己相关的，既不受父组件也不受子组件影响 属性：本身是不能自己去修改的，只能从父组件获取属性，父组件也能修改它的属性 根本的区别：组件在运行时需要去修改维护的就是状态]]></content>
