@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.adherentman.cn/"/>
-  <updated>2017-07-20T15:48:47.000Z</updated>
+  <updated>2017-07-22T13:16:29.000Z</updated>
   <id>http://www.adherentman.cn/</id>
   
   <author>
@@ -14,6 +14,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GraphQL基本操作</title>
+    <link href="http://www.adherentman.cn/2017/07/17/GraphQL/"/>
+    <id>http://www.adherentman.cn/2017/07/17/GraphQL/</id>
+    <published>2017-07-17T08:02:36.000Z</published>
+    <updated>2017-07-22T13:16:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="GraphQL"><a href="#GraphQL" class="headerlink" title="GraphQL"></a>GraphQL</h1><h2 id="操作-operation"><a href="#操作-operation" class="headerlink" title="操作(operation)"></a>操作(operation)</h2><ul>
+<li>查询(Query)</li>
+<li>修改(mutation)</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">query&#123;</div><div class="line">    clent(id:1)&#123;</div><div class="line">      id</div><div class="line">      name</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>client 是查询的operation</li>
+<li>(id:1)包含了传入给Query的参数</li>
+<li>查询包含id和name字段,这些字段也是我们希望查询可以返回的.</li>
+</ul>
+<p>server会给这个查询返回什么：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"data"</span>: &#123;</div><div class="line">    <span class="attr">"client"</span>: &#123;</div><div class="line">      <span class="attr">"id"</span>: <span class="string">"1"</span>,</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"Uncle Charlie"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>server会返回一个JSON串。这个JSON的schema和查询的基本一致。</p>
+<h2 id="变量-Variable"><a href="#变量-Variable" class="headerlink" title="变量(Variable)"></a>变量(Variable)</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">query($clientId: Int) &#123;</div><div class="line">  client(id: $clientId) &#123;</div><div class="line">    name</div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  purchases(client_id: $clientId) &#123;</div><div class="line">    date</div><div class="line">    quantity</div><div class="line">    total</div><div class="line">    product &#123;</div><div class="line">      name</div><div class="line">      price</div><div class="line">      product_category &#123;</div><div class="line">        name</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    client &#123;</div><div class="line">      name</div><div class="line">      dob</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"clientId"</span>: <span class="number">1</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Mutation（修改）"><a href="#Mutation（修改）" class="headerlink" title="Mutation（修改）"></a>Mutation（修改）</h2><p>增、删、改一类的operation在GraphQL里统称为Muration（修改）</p>
+<ul>
+<li>create_client增加</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mutation &#123;</div><div class="line">  create_client (</div><div class="line">    name: "查理大叔"</div><div class="line">    dob: "2017/01/28"</div><div class="line">  ) &#123;</div><div class="line">    id </div><div class="line">    name</div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>update_client更新</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mutation &#123;</div><div class="line">  update_client (</div><div class="line">    id: 5</div><div class="line">    dob: "1990/01/01"</div><div class="line">  ) &#123;</div><div class="line">    id</div><div class="line">    name</div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>destroy_client删除</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mutation &#123;</div><div class="line">  destroy_client(id: 5) &#123;</div><div class="line">    name </div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="强类型"><a href="#强类型" class="headerlink" title="强类型"></a>强类型</h2><p>由于 GraphQL 是一个强类型语言，所以它可以在执行查询之前检查每个查询语句是否满足事先设定的 schema，符合则合法，如果查询语句不合法则不进行查询。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;GraphQL&quot;&gt;&lt;a href=&quot;#GraphQL&quot; class=&quot;headerlink&quot; title=&quot;GraphQL&quot;&gt;&lt;/a&gt;GraphQL&lt;/h1&gt;&lt;h2 id=&quot;操作-operation&quot;&gt;&lt;a href=&quot;#操作-operation&quot; class=&quot;
+    
+    </summary>
+    
+      <category term="GraphQL" scheme="http://www.adherentman.cn/categories/GraphQL/"/>
+    
+    
+      <category term="GraphQL" scheme="http://www.adherentman.cn/tags/GraphQL/"/>
+    
+  </entry>
   
   <entry>
     <title>React-Router</title>
@@ -597,44 +648,6 @@
   </entry>
   
   <entry>
-    <title>ES6箭头函数</title>
-    <link href="http://www.adherentman.cn/2017/04/27/Es6%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/"/>
-    <id>http://www.adherentman.cn/2017/04/27/Es6箭头函数/</id>
-    <published>2017-04-27T07:29:00.000Z</published>
-    <updated>2017-06-20T08:46:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<p>简单地说，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">x</span> =&gt;</span> x;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> x;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>这个就是最简单的箭头函数。</p>
-<a id="more"></a>
-<p>接着如果箭头函数不需要参数或者多个参数的话，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">()</span> =&gt;</span> <span class="number">1</span>;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;;</div><div class="line">或者</div><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">_</span> =&gt;</span><span class="number">1</span>;</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sum = <span class="function">(<span class="params">num1,num2</span>) =&gt;</span>num1 +num2;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> sum =<span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> num1+num2;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p><strong>箭头函数没有自己的<code>this</code></strong>，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> [</div><div class="line">    <span class="function">(<span class="params">(</span>)=&gt;</span> <span class="keyword">this</span>.x).bind(&#123;<span class="attr">x</span> :<span class="string">'inner'</span>&#125;)()</div><div class="line">  ]</div><div class="line">&#125;).call(&#123;<span class="attr">x</span> :<span class="string">'outer'</span>&#125;);</div><div class="line"><span class="comment">//['outer']</span></div></pre></td></tr></table></figure>
-<p>所以<code>bind</code>的方法无效。并且<code>call()</code>,<code>apply()</code>,也无效。</p>
-<p><strong>MDN上的</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> adder = &#123;</div><div class="line">  <span class="attr">base</span> : <span class="number">1</span>,</div><div class="line">    </div><div class="line">  <span class="attr">add</span> : <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</div><div class="line">    <span class="keyword">return</span> f(a);</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">addThruCall</span>: <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</div><div class="line">    <span class="keyword">var</span> b = &#123;</div><div class="line">      <span class="attr">base</span> : <span class="number">2</span></div><div class="line">    &#125;;</div><div class="line">            </div><div class="line">    <span class="keyword">return</span> f.call(b, a);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(adder.add(<span class="number">1</span>));         <span class="comment">// 输出 2</span></div><div class="line"><span class="built_in">console</span>.log(adder.addThruCall(<span class="number">1</span>)); <span class="comment">// 仍然输出 2（而不是3 ——译者注）</span></div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;简单地说，&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt; =&amp;gt;&lt;/span&gt; x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a =&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;这个就是最简单的箭头函数。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Javascript修仙之路" scheme="http://www.adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>初入React+Webpack(入门)</title>
     <link href="http://www.adherentman.cn/2017/04/27/%E5%88%9D%E5%85%A5React/"/>
     <id>http://www.adherentman.cn/2017/04/27/初入React/</id>
@@ -771,6 +784,44 @@
       <category term="Recat" scheme="http://www.adherentman.cn/tags/Recat/"/>
     
       <category term="Webpack" scheme="http://www.adherentman.cn/tags/Webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6箭头函数</title>
+    <link href="http://www.adherentman.cn/2017/04/27/Es6%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/"/>
+    <id>http://www.adherentman.cn/2017/04/27/Es6箭头函数/</id>
+    <published>2017-04-27T07:29:00.000Z</published>
+    <updated>2017-06-20T08:46:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<p>简单地说，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">x</span> =&gt;</span> x;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> x;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>这个就是最简单的箭头函数。</p>
+<a id="more"></a>
+<p>接着如果箭头函数不需要参数或者多个参数的话，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">()</span> =&gt;</span> <span class="number">1</span>;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;;</div><div class="line">或者</div><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">_</span> =&gt;</span><span class="number">1</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sum = <span class="function">(<span class="params">num1,num2</span>) =&gt;</span>num1 +num2;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> sum =<span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> num1+num2;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><strong>箭头函数没有自己的<code>this</code></strong>，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> [</div><div class="line">    <span class="function">(<span class="params">(</span>)=&gt;</span> <span class="keyword">this</span>.x).bind(&#123;<span class="attr">x</span> :<span class="string">'inner'</span>&#125;)()</div><div class="line">  ]</div><div class="line">&#125;).call(&#123;<span class="attr">x</span> :<span class="string">'outer'</span>&#125;);</div><div class="line"><span class="comment">//['outer']</span></div></pre></td></tr></table></figure>
+<p>所以<code>bind</code>的方法无效。并且<code>call()</code>,<code>apply()</code>,也无效。</p>
+<p><strong>MDN上的</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> adder = &#123;</div><div class="line">  <span class="attr">base</span> : <span class="number">1</span>,</div><div class="line">    </div><div class="line">  <span class="attr">add</span> : <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</div><div class="line">    <span class="keyword">return</span> f(a);</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">addThruCall</span>: <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</div><div class="line">    <span class="keyword">var</span> b = &#123;</div><div class="line">      <span class="attr">base</span> : <span class="number">2</span></div><div class="line">    &#125;;</div><div class="line">            </div><div class="line">    <span class="keyword">return</span> f.call(b, a);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(adder.add(<span class="number">1</span>));         <span class="comment">// 输出 2</span></div><div class="line"><span class="built_in">console</span>.log(adder.addThruCall(<span class="number">1</span>)); <span class="comment">// 仍然输出 2（而不是3 ——译者注）</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;简单地说，&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt; =&amp;gt;&lt;/span&gt; x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a =&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这个就是最简单的箭头函数。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Javascript修仙之路" scheme="http://www.adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
     
   </entry>
   
