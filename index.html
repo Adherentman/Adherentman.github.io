@@ -1731,7 +1731,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.adherentman.cn/2017/04/27/Es6箭头函数/">
+    <link itemprop="mainEntityOfPage" href="http://www.adherentman.cn/2017/04/27/初入React/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XuZiHao">
@@ -1753,8 +1753,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/04/27/Es6箭头函数/" itemprop="url">
-                  ES6箭头函数
+                <a class="post-title-link" href="/2017/04/27/初入React/" itemprop="url">
+                  初入React+Webpack(入门)
                 </a>
               
             
@@ -1793,8 +1793,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript修仙之路/" itemprop="url" rel="index">
-                    <span itemprop="name">Javascript修仙之路</span>
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
                   </a>
                 </span>
 
@@ -1829,13 +1829,14 @@
 
       
         
-          <hr>
-<p>简单地说，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">x</span> =&gt;</span> x;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> x;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>这个就是最简单的箭头函数。</p>
+          <p>因为需要做一个自己的小想法以后需要去实现把这个想法变成项目，在重多得框架中选择React.js，因为它需要学习成本，所以我觉得我在学习的过程中能学到很多东西。</p>
+<h1 id="通过npm使用React"><a href="#通过npm使用React" class="headerlink" title="通过npm使用React"></a>通过npm使用React</h1><p>建议在 React 中使用 CommonJS 模块系统，比如 <a href="http://browserify.org/" target="_blank" rel="external">browserify</a> 或 <a href="https://webpack.github.io/" target="_blank" rel="external">webpack</a>。使用 <a href="https://www.npmjs.com/package/react" target="_blank" rel="external"><code>react</code></a> 和 <a href="https://www.npmjs.com/package/react-dom" target="_blank" rel="external"><code>react-dom</code></a> npm 包.</p>
+<p>我使用webpack来安装React DOM的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm install --save react react-dom babelify babel-preset-react</div><div class="line">$ browserify -t [ babelify --presets [ react ] ] main.js -o bundle.js</div></pre></td></tr></table></figure>
+<p>那么第一步肯定是创建Hello World啦~</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/04/27/Es6箭头函数/#more" rel="contents">
+            <a class="btn" href="/2017/04/27/初入React/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
