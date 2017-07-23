@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.adherentman.cn/"/>
-  <updated>2017-07-17T08:06:54.000Z</updated>
+  <updated>2017-07-23T01:02:39.000Z</updated>
   <id>http://www.adherentman.cn/</id>
   
   <author>
@@ -14,87 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>数据库E-R图</title>
-    <link href="http://www.adherentman.cn/2017/07/17/E-R%E5%9B%BE/"/>
-    <id>http://www.adherentman.cn/2017/07/17/E-R图/</id>
-    <published>2017-07-17T08:02:36.000Z</published>
-    <updated>2017-07-17T08:06:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="E-R图"><a href="#E-R图" class="headerlink" title="E-R图"></a>E-R图</h1><p>E-R图是指实体-关系-属性三个基本概括数据的基本结构.</p>
-<p>强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。</p>
-<a id="more"></a>
-<ul>
-<li>ER图的实体（entity）即数据模型中的数据对象，例如人、学生、音乐都可以作为一个数据对象，用长方体来表示，每个实体都有自己的实体成员（entity member）或者说实体对象（entity instance），例如学生实体里包括张三、李四等，实体成员（entity member）/实体实例（entity instance） 不需要出现在ER图中。</li>
-</ul>
-<ul>
-<li>ER图的属性（attribute）即数据对象所具有的属性，例如学生具有姓名、学号、年级等属性，用椭圆形表示，属性分为唯一属性（ unique attribute）和非唯一属性，唯一属性指的是唯一可用来标识该实体实例或者成员的属性，用下划线表示，一般来讲实体都至少有一个唯一属性。</li>
-</ul>
-<ul>
-<li>ER图的关系（relationship）用来表现数据对象与数据对象之间的联系，例如学生的实体和成绩表的实体之间有一定的联系，每个学生都有自己的成绩表，这就是一种关系，关系用菱形来表示。</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;E-R图&quot;&gt;&lt;a href=&quot;#E-R图&quot; class=&quot;headerlink&quot; title=&quot;E-R图&quot;&gt;&lt;/a&gt;E-R图&lt;/h1&gt;&lt;p&gt;E-R图是指实体-关系-属性三个基本概括数据的基本结构.&lt;/p&gt;
-&lt;p&gt;强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据库" scheme="http://www.adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="数据库" scheme="http://www.adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React-Router</title>
-    <link href="http://www.adherentman.cn/2017/07/17/React-Router/"/>
-    <id>http://www.adherentman.cn/2017/07/17/React-Router/</id>
-    <published>2017-07-17T08:02:36.000Z</published>
-    <updated>2017-07-20T15:48:47.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="React-Router"><a href="#React-Router" class="headerlink" title="React-Router"></a>React-Router</h1><h3 id="路径语法"><a href="#路径语法" class="headerlink" title="路径语法"></a>路径语法</h3><p>路由路径是匹配一个（或一部分）URL 的 <a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#routepattern" target="_blank" rel="external">一个字符串模式</a>。大部分的路由路径都可以直接按照字面量理解，除了以下几个特殊的符号：</p>
-<ul>
-<li><code>:paramName</code> – 匹配一段位于 <code>/</code>、<code>?</code> 或 <code>#</code> 之后的 URL。 命中的部分将被作为一个<a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params" target="_blank" rel="external">参数</a></li>
-<li><code>()</code> – 在它内部的内容被认为是可选的</li>
-<li><code>*</code> – 匹配任意字符（非贪婪的）直到命中下一个字符或者整个 URL 的末尾，并创建一个 <code>splat</code> <a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params" target="_blank" rel="external">参数</a></li>
-</ul>
-<a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//匹配 /hello/michael 和 /hello/ryan</div><div class="line">&lt;Route path=&quot;/hello/:name&quot;&gt;         </div><div class="line">  </div><div class="line">  </div><div class="line">//匹配 /hello, /hello/02 和 /hello/01</div><div class="line">&lt;Route path=&quot;/hello(/:id)&quot;&gt;   </div><div class="line"></div><div class="line"></div><div class="line">//匹配 /files/hello.jpg和/files/path/to/hello.jpg</div><div class="line">&lt;Route path=&quot;/files/*.*&quot;&gt;</div></pre></td></tr></table></figure>
-<h2 id="Histories"><a href="#Histories" class="headerlink" title="Histories"></a>Histories</h2><p>常用的 history 有三种形式， 但是你也可以使用 React Router 实现自定义的 history。</p>
-<ul>
-<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#browserHistory" target="_blank" rel="external"><code>browserHistory</code></a> (推荐)</li>
-<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#hashHistory" target="_blank" rel="external"><code>hashHistory</code></a></li>
-<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#creatememoryhistory" target="_blank" rel="external"><code>createMemoryHistory</code></a></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Router history=&#123;browserHistory&#125;&gt;</div></pre></td></tr></table></figure>
-<h3 id="browserHistory"><a href="#browserHistory" class="headerlink" title="browserHistory"></a><code>browserHistory</code></h3><p>Browser history 是使用 React Router 的应用推荐的 history。它使用浏览器中的 <a href="https://developer.mozilla.org/en-US/docs/Web/API/History" target="_blank" rel="external">History</a> API 用于处理 URL，创建一个像<code>example.com/some/path</code>这样真实的 URL 。</p>
-<h2 id="在组件外部使用导航"><a href="#在组件外部使用导航" class="headerlink" title="在组件外部使用导航"></a>在组件外部使用导航</h2><p>虽然在组件内部可以使用 <code>this.context.router</code> 来实现导航，但许多应用想要在组件外部使用导航。使用Router组件上被赋予的history可以在组件外部实现导航。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;React-Router&quot;&gt;&lt;a href=&quot;#React-Router&quot; class=&quot;headerlink&quot; title=&quot;React-Router&quot;&gt;&lt;/a&gt;React-Router&lt;/h1&gt;&lt;h3 id=&quot;路径语法&quot;&gt;&lt;a href=&quot;#路径语法&quot; class=&quot;headerlink&quot; title=&quot;路径语法&quot;&gt;&lt;/a&gt;路径语法&lt;/h3&gt;&lt;p&gt;路由路径是匹配一个（或一部分）URL 的 &lt;a href=&quot;https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#routepattern&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;一个字符串模式&lt;/a&gt;。大部分的路由路径都可以直接按照字面量理解，除了以下几个特殊的符号：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;:paramName&lt;/code&gt; – 匹配一段位于 &lt;code&gt;/&lt;/code&gt;、&lt;code&gt;?&lt;/code&gt; 或 &lt;code&gt;#&lt;/code&gt; 之后的 URL。 命中的部分将被作为一个&lt;a href=&quot;https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参数&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;()&lt;/code&gt; – 在它内部的内容被认为是可选的&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;*&lt;/code&gt; – 匹配任意字符（非贪婪的）直到命中下一个字符或者整个 URL 的末尾，并创建一个 &lt;code&gt;splat&lt;/code&gt; &lt;a href=&quot;https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参数&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="React" scheme="http://www.adherentman.cn/categories/React/"/>
-    
-    
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
-    
-      <category term="React" scheme="http://www.adherentman.cn/tags/React/"/>
-    
-  </entry>
   
   <entry>
     <title>GraphQL基本操作</title>
@@ -158,6 +77,87 @@
   </entry>
   
   <entry>
+    <title>React-Router</title>
+    <link href="http://www.adherentman.cn/2017/07/17/React-Router/"/>
+    <id>http://www.adherentman.cn/2017/07/17/React-Router/</id>
+    <published>2017-07-17T08:02:36.000Z</published>
+    <updated>2017-07-20T15:48:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="React-Router"><a href="#React-Router" class="headerlink" title="React-Router"></a>React-Router</h1><h3 id="路径语法"><a href="#路径语法" class="headerlink" title="路径语法"></a>路径语法</h3><p>路由路径是匹配一个（或一部分）URL 的 <a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#routepattern" target="_blank" rel="external">一个字符串模式</a>。大部分的路由路径都可以直接按照字面量理解，除了以下几个特殊的符号：</p>
+<ul>
+<li><code>:paramName</code> – 匹配一段位于 <code>/</code>、<code>?</code> 或 <code>#</code> 之后的 URL。 命中的部分将被作为一个<a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params" target="_blank" rel="external">参数</a></li>
+<li><code>()</code> – 在它内部的内容被认为是可选的</li>
+<li><code>*</code> – 匹配任意字符（非贪婪的）直到命中下一个字符或者整个 URL 的末尾，并创建一个 <code>splat</code> <a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params" target="_blank" rel="external">参数</a></li>
+</ul>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//匹配 /hello/michael 和 /hello/ryan</div><div class="line">&lt;Route path=&quot;/hello/:name&quot;&gt;         </div><div class="line">  </div><div class="line">  </div><div class="line">//匹配 /hello, /hello/02 和 /hello/01</div><div class="line">&lt;Route path=&quot;/hello(/:id)&quot;&gt;   </div><div class="line"></div><div class="line"></div><div class="line">//匹配 /files/hello.jpg和/files/path/to/hello.jpg</div><div class="line">&lt;Route path=&quot;/files/*.*&quot;&gt;</div></pre></td></tr></table></figure>
+<h2 id="Histories"><a href="#Histories" class="headerlink" title="Histories"></a>Histories</h2><p>常用的 history 有三种形式， 但是你也可以使用 React Router 实现自定义的 history。</p>
+<ul>
+<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#browserHistory" target="_blank" rel="external"><code>browserHistory</code></a> (推荐)</li>
+<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#hashHistory" target="_blank" rel="external"><code>hashHistory</code></a></li>
+<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#creatememoryhistory" target="_blank" rel="external"><code>createMemoryHistory</code></a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Router history=&#123;browserHistory&#125;&gt;</div></pre></td></tr></table></figure>
+<h3 id="browserHistory"><a href="#browserHistory" class="headerlink" title="browserHistory"></a><code>browserHistory</code></h3><p>Browser history 是使用 React Router 的应用推荐的 history。它使用浏览器中的 <a href="https://developer.mozilla.org/en-US/docs/Web/API/History" target="_blank" rel="external">History</a> API 用于处理 URL，创建一个像<code>example.com/some/path</code>这样真实的 URL 。</p>
+<h2 id="在组件外部使用导航"><a href="#在组件外部使用导航" class="headerlink" title="在组件外部使用导航"></a>在组件外部使用导航</h2><p>虽然在组件内部可以使用 <code>this.context.router</code> 来实现导航，但许多应用想要在组件外部使用导航。使用Router组件上被赋予的history可以在组件外部实现导航。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;React-Router&quot;&gt;&lt;a href=&quot;#React-Router&quot; class=&quot;headerlink&quot; title=&quot;React-Router&quot;&gt;&lt;/a&gt;React-Router&lt;/h1&gt;&lt;h3 id=&quot;路径语法&quot;&gt;&lt;a href=&quot;#路径语法&quot; class=&quot;headerlink&quot; title=&quot;路径语法&quot;&gt;&lt;/a&gt;路径语法&lt;/h3&gt;&lt;p&gt;路由路径是匹配一个（或一部分）URL 的 &lt;a href=&quot;https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#routepattern&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;一个字符串模式&lt;/a&gt;。大部分的路由路径都可以直接按照字面量理解，除了以下几个特殊的符号：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;:paramName&lt;/code&gt; – 匹配一段位于 &lt;code&gt;/&lt;/code&gt;、&lt;code&gt;?&lt;/code&gt; 或 &lt;code&gt;#&lt;/code&gt; 之后的 URL。 命中的部分将被作为一个&lt;a href=&quot;https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;()&lt;/code&gt; – 在它内部的内容被认为是可选的&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;*&lt;/code&gt; – 匹配任意字符（非贪婪的）直到命中下一个字符或者整个 URL 的末尾，并创建一个 &lt;code&gt;splat&lt;/code&gt; &lt;a href=&quot;https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参数&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="React" scheme="http://www.adherentman.cn/categories/React/"/>
+    
+    
+      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+    
+      <category term="React" scheme="http://www.adherentman.cn/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库E-R图</title>
+    <link href="http://www.adherentman.cn/2017/07/17/E-R%E5%9B%BE/"/>
+    <id>http://www.adherentman.cn/2017/07/17/E-R图/</id>
+    <published>2017-07-17T08:02:36.000Z</published>
+    <updated>2017-07-17T08:06:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="E-R图"><a href="#E-R图" class="headerlink" title="E-R图"></a>E-R图</h1><p>E-R图是指实体-关系-属性三个基本概括数据的基本结构.</p>
+<p>强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。</p>
+<a id="more"></a>
+<ul>
+<li>ER图的实体（entity）即数据模型中的数据对象，例如人、学生、音乐都可以作为一个数据对象，用长方体来表示，每个实体都有自己的实体成员（entity member）或者说实体对象（entity instance），例如学生实体里包括张三、李四等，实体成员（entity member）/实体实例（entity instance） 不需要出现在ER图中。</li>
+</ul>
+<ul>
+<li>ER图的属性（attribute）即数据对象所具有的属性，例如学生具有姓名、学号、年级等属性，用椭圆形表示，属性分为唯一属性（ unique attribute）和非唯一属性，唯一属性指的是唯一可用来标识该实体实例或者成员的属性，用下划线表示，一般来讲实体都至少有一个唯一属性。</li>
+</ul>
+<ul>
+<li>ER图的关系（relationship）用来表现数据对象与数据对象之间的联系，例如学生的实体和成绩表的实体之间有一定的联系，每个学生都有自己的成绩表，这就是一种关系，关系用菱形来表示。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;E-R图&quot;&gt;&lt;a href=&quot;#E-R图&quot; class=&quot;headerlink&quot; title=&quot;E-R图&quot;&gt;&lt;/a&gt;E-R图&lt;/h1&gt;&lt;p&gt;E-R图是指实体-关系-属性三个基本概括数据的基本结构.&lt;/p&gt;
+&lt;p&gt;强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://www.adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="数据库" scheme="http://www.adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
     <title>React State与Props的小心思</title>
     <link href="http://www.adherentman.cn/2017/06/30/React-State%E4%B8%8EProps%E7%9A%84%E5%B0%8F%E5%BF%83%E6%80%9D/"/>
     <id>http://www.adherentman.cn/2017/06/30/React-State与Props的小心思/</id>
@@ -174,7 +174,7 @@
 </ul>
 <p><strong>props</strong>是不可变的，传入什么值进去，最后返回的也是传入的值。也就是说，只读。</p>
 <a id="more"></a>
-<h3 id="props父子传递"><a href="#props父子传递" class="headerlink" title="props父子传递"></a>props父子传递</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Uesr</span>(<span class="params">props</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span>(</div><div class="line">  &lt;div className=&#123;'abc'+ props.color&#125;&gt;</div><div class="line">    &#123;props.children&#125;</div><div class="line">  &lt;/div&gt;</div><div class="line">  );</div><div class="line">&#125;</div><div class="line">------------------------------------------------------------------------</div><div class="line">  </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">My</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span>(</div><div class="line">  &lt;User color="red"&gt;</div><div class="line">    &lt;h1&gt;nihao&lt;/h1&gt;</div><div class="line">  &lt;/User&gt;</div><div class="line">  );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="props父子传递"><a href="#props父子传递" class="headerlink" title="props父子传递"></a>props父子传递</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Uesr</span>(<span class="params">props</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span>(</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&#123;</span>'<span class="attr">abc</span>'+ <span class="attr">props.color</span>&#125;&gt;</span></span></div><div class="line">    &#123;props.children&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  );</div><div class="line">&#125;</div><div class="line">------------------------------------------------------------------------</div><div class="line">  </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">My</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span>(</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">User</span> <span class="attr">color</span>=<span class="string">"red"</span>&gt;</span></span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>nihao<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">User</span>&gt;</span></div><div class="line">  );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>在JSX标签内的任何内容都将通过<code>children</code>属性传入<code>User</code>。因为<code>User</code>在一个<code>div</code>内渲染了<code>{props.children}</code>，所以被传递的所有元素都会出现在最终输出中。</p>
 <p>其实，我们也可以不用children。借用React官方文档的例子：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Contacts</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &lt;div className="Contacts" /&gt;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function Chat() &#123;</div><div class="line">  return &lt;div className="Chat" /&gt;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function SplitPane(props) &#123;</div><div class="line">  return (</div><div class="line">    &lt;div className="SplitPane"&gt;</div><div class="line">      &lt;div className="SplitPane-left"&gt;</div><div class="line">        &#123;props.left&#125;</div><div class="line">      &lt;/div&gt;</div><div class="line">      &lt;div className="SplitPane-right"&gt;</div><div class="line">        &#123;props.right&#125;</div><div class="line">      &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  );</div><div class="line">&#125;</div><div class="line"></div><div class="line">function App() &#123;</div><div class="line">  return (</div><div class="line">    &lt;SplitPane</div><div class="line">      left=&#123;</div><div class="line">        &lt;Contacts /&gt;</div><div class="line">      &#125;</div><div class="line">      right=&#123;</div><div class="line">        &lt;Chat /&gt;</div><div class="line">      &#125; /&gt;</div><div class="line">  );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
