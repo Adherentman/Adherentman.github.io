@@ -424,8 +424,7 @@
 
       
         
-          
-            <h1 id="GraphQL"><a href="#GraphQL" class="headerlink" title="GraphQL"></a>GraphQL</h1><h2 id="操作-operation"><a href="#操作-operation" class="headerlink" title="操作(operation)"></a>操作(operation)</h2><ul>
+          <h1 id="GraphQL"><a href="#GraphQL" class="headerlink" title="GraphQL"></a>GraphQL</h1><h2 id="操作-operation"><a href="#操作-operation" class="headerlink" title="操作(operation)"></a>操作(operation)</h2><ul>
 <li>查询(Query)</li>
 <li>修改(mutation)</li>
 </ul>
@@ -435,27 +434,13 @@
 <li>(id:1)包含了传入给Query的参数</li>
 <li>查询包含id和name字段,这些字段也是我们希望查询可以返回的.</li>
 </ul>
-<p>server会给这个查询返回什么：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"data"</span>: &#123;</div><div class="line">    <span class="attr">"client"</span>: &#123;</div><div class="line">      <span class="attr">"id"</span>: <span class="string">"1"</span>,</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"Uncle Charlie"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>server会返回一个JSON串。这个JSON的schema和查询的基本一致。</p>
-<h2 id="变量-Variable"><a href="#变量-Variable" class="headerlink" title="变量(Variable)"></a>变量(Variable)</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">query($clientId: Int) &#123;</div><div class="line">  client(id: $clientId) &#123;</div><div class="line">    name</div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  purchases(client_id: $clientId) &#123;</div><div class="line">    date</div><div class="line">    quantity</div><div class="line">    total</div><div class="line">    product &#123;</div><div class="line">      name</div><div class="line">      price</div><div class="line">      product_category &#123;</div><div class="line">        name</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    client &#123;</div><div class="line">      name</div><div class="line">      dob</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"clientId"</span>: <span class="number">1</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Mutation（修改）"><a href="#Mutation（修改）" class="headerlink" title="Mutation（修改）"></a>Mutation（修改）</h2><p>增、删、改一类的operation在GraphQL里统称为Muration（修改）</p>
-<ul>
-<li>create_client增加</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mutation &#123;</div><div class="line">  create_client (</div><div class="line">    name: "查理大叔"</div><div class="line">    dob: "2017/01/28"</div><div class="line">  ) &#123;</div><div class="line">    id </div><div class="line">    name</div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>update_client更新</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mutation &#123;</div><div class="line">  update_client (</div><div class="line">    id: 5</div><div class="line">    dob: "1990/01/01"</div><div class="line">  ) &#123;</div><div class="line">    id</div><div class="line">    name</div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>destroy_client删除</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mutation &#123;</div><div class="line">  destroy_client(id: 5) &#123;</div><div class="line">    name </div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="强类型"><a href="#强类型" class="headerlink" title="强类型"></a>强类型</h2><p>由于 GraphQL 是一个强类型语言，所以它可以在执行查询之前检查每个查询语句是否满足事先设定的 schema，符合则合法，如果查询语句不合法则不进行查询。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/17/GraphQL/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

@@ -89,17 +89,17 @@
 
 
 
-<meta name="description" content="GraphQL操作(operation) 查询(Query) 修改(mutation)  123456query&amp;#123;    clent(id:1)&amp;#123;      id      name  &amp;#125;&amp;#125;  client 是查询的operation (id:1)包含了传入给Query的参数 查询包含id和name字段,这些字段也是我们希望查询可以返回的.  server会">
+<meta name="description" content="GraphQL操作(operation) 查询(Query) 修改(mutation)  123456query&amp;#123;    clent(id:1)&amp;#123;      id      name  &amp;#125;&amp;#125;  client 是查询的operation (id:1)包含了传入给Query的参数 查询包含id和name字段,这些字段也是我们希望查询可以返回的.">
 <meta name="keywords" content="GraphQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GraphQL基本操作">
 <meta property="og:url" content="http://www.adherentman.cn/2017/07/17/GraphQL/index.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="GraphQL操作(operation) 查询(Query) 修改(mutation)  123456query&amp;#123;    clent(id:1)&amp;#123;      id      name  &amp;#125;&amp;#125;  client 是查询的operation (id:1)包含了传入给Query的参数 查询包含id和name字段,这些字段也是我们希望查询可以返回的.  server会">
-<meta property="og:updated_time" content="2017-07-22T13:16:29.000Z">
+<meta property="og:description" content="GraphQL操作(operation) 查询(Query) 修改(mutation)  123456query&amp;#123;    clent(id:1)&amp;#123;      id      name  &amp;#125;&amp;#125;  client 是查询的operation (id:1)包含了传入给Query的参数 查询包含id和name字段,这些字段也是我们希望查询可以返回的.">
+<meta property="og:updated_time" content="2017-07-23T01:02:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GraphQL基本操作">
-<meta name="twitter:description" content="GraphQL操作(operation) 查询(Query) 修改(mutation)  123456query&amp;#123;    clent(id:1)&amp;#123;      id      name  &amp;#125;&amp;#125;  client 是查询的operation (id:1)包含了传入给Query的参数 查询包含id和name字段,这些字段也是我们希望查询可以返回的.  server会">
+<meta name="twitter:description" content="GraphQL操作(operation) 查询(Query) 修改(mutation)  123456query&amp;#123;    clent(id:1)&amp;#123;      id      name  &amp;#125;&amp;#125;  client 是查询的operation (id:1)包含了传入给Query的参数 查询包含id和name字段,这些字段也是我们希望查询可以返回的.">
 
 
 
@@ -435,6 +435,7 @@
 <li>(id:1)包含了传入给Query的参数</li>
 <li>查询包含id和name字段,这些字段也是我们希望查询可以返回的.</li>
 </ul>
+<a id="more"></a>
 <p>server会给这个查询返回什么：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"data"</span>: &#123;</div><div class="line">    <span class="attr">"client"</span>: &#123;</div><div class="line">      <span class="attr">"id"</span>: <span class="string">"1"</span>,</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"Uncle Charlie"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>server会返回一个JSON串。这个JSON的schema和查询的基本一致。</p>
