@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.adherentman.cn/"/>
-  <updated>2017-07-24T14:35:52.000Z</updated>
+  <updated>2017-07-25T12:47:15.000Z</updated>
   <id>http://www.adherentman.cn/</id>
   
   <author>
@@ -14,6 +14,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git基本操作</title>
+    <link href="http://www.adherentman.cn/2017/07/25/git/"/>
+    <id>http://www.adherentman.cn/2017/07/25/git/</id>
+    <published>2017-07-25T12:47:00.000Z</published>
+    <updated>2017-07-25T12:47:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h2 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h2><p><code>git add -A</code> 和 <code>git add .</code> 和 <code>git add -u</code></p>
+<ul>
+<li>git add   <strong>.</strong> ：他会监控工作区的状态树，使用它会把工作时的<strong>所有变化提交</strong>到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。</li>
+<li>git add -u ：他仅监控<strong>已经被add的文件</strong>（即tracked file），他会将被修改的文件提交到暂存区。add -u 不会提交新文件（untracked file）。（git add –update的缩写)</li>
+<li>git add -A ：是上面两个功能的合集（git add –all的缩写）</li>
+</ul>
+<p>自我理解:</p>
+<ul>
+<li>git add -A  提交所有变化</li>
+<li>git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)</li>
+<li>git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件</li>
+</ul>
+<h2 id="commit过程"><a href="#commit过程" class="headerlink" title="commit过程"></a>commit过程</h2><ul>
+<li>git status  检查工作区是否干净</li>
+<li>git add 命令主要用于把我们要提交的文件的信息添加到索引库中。当我们使用git commit时，git将依据索引库中的内容来进行文件的提交。</li>
+<li>git commit -am “xxxxxxx”</li>
+<li>git branch </li>
+<li>git push origin xxxx</li>
+</ul>
+<h2 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h2><ul>
+<li>git branch -D xx <strong>删除本地分支</strong></li>
+<li>git push origin :br  (origin 后面有空格) <strong>删除远程分支</strong></li>
+</ul>
+<h2 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h2><ul>
+<li>git fetch origin cms:new  创建新本地分支new</li>
+<li>git branch   </li>
+<li>git merge new  合并</li>
+<li>git branch -D new 删除本地分支</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;git&quot;&gt;&lt;a href=&quot;#git&quot; class=&quot;headerlink&quot; title=&quot;git&quot;&gt;&lt;/a&gt;git&lt;/h1&gt;&lt;h2 id=&quot;git-add&quot;&gt;&lt;a href=&quot;#git-add&quot; class=&quot;headerlink&quot; title=&quot;git add
+    
+    </summary>
+    
+      <category term="git" scheme="http://www.adherentman.cn/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://www.adherentman.cn/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>实习谈业务时所学</title>
@@ -85,6 +136,67 @@
       <category term="git" scheme="http://www.adherentman.cn/tags/git/"/>
     
       <category term="hexo" scheme="http://www.adherentman.cn/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GraphQL基本操作</title>
+    <link href="http://www.adherentman.cn/2017/07/17/GraphQL/"/>
+    <id>http://www.adherentman.cn/2017/07/17/GraphQL/</id>
+    <published>2017-07-17T08:02:36.000Z</published>
+    <updated>2017-07-23T01:02:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="GraphQL"><a href="#GraphQL" class="headerlink" title="GraphQL"></a>GraphQL</h1><h2 id="操作-operation"><a href="#操作-operation" class="headerlink" title="操作(operation)"></a>操作(operation)</h2><ul>
+<li>查询(Query)</li>
+<li>修改(mutation)</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">query&#123;</div><div class="line">    clent(id:1)&#123;</div><div class="line">      id</div><div class="line">      name</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>client 是查询的operation</li>
+<li>(id:1)包含了传入给Query的参数</li>
+<li>查询包含id和name字段,这些字段也是我们希望查询可以返回的.</li>
+</ul>
+<a id="more"></a>
+<p>server会给这个查询返回什么：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"data"</span>: &#123;</div><div class="line">    <span class="attr">"client"</span>: &#123;</div><div class="line">      <span class="attr">"id"</span>: <span class="string">"1"</span>,</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"Uncle Charlie"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>server会返回一个JSON串。这个JSON的schema和查询的基本一致。</p>
+<h2 id="变量-Variable"><a href="#变量-Variable" class="headerlink" title="变量(Variable)"></a>变量(Variable)</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">query($clientId: Int) &#123;</div><div class="line">  client(id: $clientId) &#123;</div><div class="line">    name</div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  purchases(client_id: $clientId) &#123;</div><div class="line">    date</div><div class="line">    quantity</div><div class="line">    total</div><div class="line">    product &#123;</div><div class="line">      name</div><div class="line">      price</div><div class="line">      product_category &#123;</div><div class="line">        name</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    client &#123;</div><div class="line">      name</div><div class="line">      dob</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"clientId"</span>: <span class="number">1</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Mutation（修改）"><a href="#Mutation（修改）" class="headerlink" title="Mutation（修改）"></a>Mutation（修改）</h2><p>增、删、改一类的operation在GraphQL里统称为Muration（修改）</p>
+<ul>
+<li>create_client增加</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mutation &#123;</div><div class="line">  create_client (</div><div class="line">    name: "查理大叔"</div><div class="line">    dob: "2017/01/28"</div><div class="line">  ) &#123;</div><div class="line">    id </div><div class="line">    name</div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>update_client更新</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mutation &#123;</div><div class="line">  update_client (</div><div class="line">    id: 5</div><div class="line">    dob: "1990/01/01"</div><div class="line">  ) &#123;</div><div class="line">    id</div><div class="line">    name</div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>destroy_client删除</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mutation &#123;</div><div class="line">  destroy_client(id: 5) &#123;</div><div class="line">    name </div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="强类型"><a href="#强类型" class="headerlink" title="强类型"></a>强类型</h2><p>由于 GraphQL 是一个强类型语言，所以它可以在执行查询之前检查每个查询语句是否满足事先设定的 schema，符合则合法，如果查询语句不合法则不进行查询。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;GraphQL&quot;&gt;&lt;a href=&quot;#GraphQL&quot; class=&quot;headerlink&quot; title=&quot;GraphQL&quot;&gt;&lt;/a&gt;GraphQL&lt;/h1&gt;&lt;h2 id=&quot;操作-operation&quot;&gt;&lt;a href=&quot;#操作-operation&quot; class=&quot;headerlink&quot; title=&quot;操作(operation)&quot;&gt;&lt;/a&gt;操作(operation)&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;查询(Query)&lt;/li&gt;
+&lt;li&gt;修改(mutation)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;query&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    clent(id:1)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      id&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      name&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;client 是查询的operation&lt;/li&gt;
+&lt;li&gt;(id:1)包含了传入给Query的参数&lt;/li&gt;
+&lt;li&gt;查询包含id和name字段,这些字段也是我们希望查询可以返回的.&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="GraphQL" scheme="http://www.adherentman.cn/categories/GraphQL/"/>
+    
+    
+      <category term="GraphQL" scheme="http://www.adherentman.cn/tags/GraphQL/"/>
     
   </entry>
   
@@ -166,67 +278,6 @@
     
     
       <category term="数据库" scheme="http://www.adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GraphQL基本操作</title>
-    <link href="http://www.adherentman.cn/2017/07/17/GraphQL/"/>
-    <id>http://www.adherentman.cn/2017/07/17/GraphQL/</id>
-    <published>2017-07-17T08:02:36.000Z</published>
-    <updated>2017-07-23T01:02:39.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="GraphQL"><a href="#GraphQL" class="headerlink" title="GraphQL"></a>GraphQL</h1><h2 id="操作-operation"><a href="#操作-operation" class="headerlink" title="操作(operation)"></a>操作(operation)</h2><ul>
-<li>查询(Query)</li>
-<li>修改(mutation)</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">query&#123;</div><div class="line">    clent(id:1)&#123;</div><div class="line">      id</div><div class="line">      name</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>client 是查询的operation</li>
-<li>(id:1)包含了传入给Query的参数</li>
-<li>查询包含id和name字段,这些字段也是我们希望查询可以返回的.</li>
-</ul>
-<a id="more"></a>
-<p>server会给这个查询返回什么：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"data"</span>: &#123;</div><div class="line">    <span class="attr">"client"</span>: &#123;</div><div class="line">      <span class="attr">"id"</span>: <span class="string">"1"</span>,</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"Uncle Charlie"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>server会返回一个JSON串。这个JSON的schema和查询的基本一致。</p>
-<h2 id="变量-Variable"><a href="#变量-Variable" class="headerlink" title="变量(Variable)"></a>变量(Variable)</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">query($clientId: Int) &#123;</div><div class="line">  client(id: $clientId) &#123;</div><div class="line">    name</div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  purchases(client_id: $clientId) &#123;</div><div class="line">    date</div><div class="line">    quantity</div><div class="line">    total</div><div class="line">    product &#123;</div><div class="line">      name</div><div class="line">      price</div><div class="line">      product_category &#123;</div><div class="line">        name</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    client &#123;</div><div class="line">      name</div><div class="line">      dob</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"clientId"</span>: <span class="number">1</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Mutation（修改）"><a href="#Mutation（修改）" class="headerlink" title="Mutation（修改）"></a>Mutation（修改）</h2><p>增、删、改一类的operation在GraphQL里统称为Muration（修改）</p>
-<ul>
-<li>create_client增加</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mutation &#123;</div><div class="line">  create_client (</div><div class="line">    name: "查理大叔"</div><div class="line">    dob: "2017/01/28"</div><div class="line">  ) &#123;</div><div class="line">    id </div><div class="line">    name</div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>update_client更新</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mutation &#123;</div><div class="line">  update_client (</div><div class="line">    id: 5</div><div class="line">    dob: "1990/01/01"</div><div class="line">  ) &#123;</div><div class="line">    id</div><div class="line">    name</div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>destroy_client删除</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mutation &#123;</div><div class="line">  destroy_client(id: 5) &#123;</div><div class="line">    name </div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="强类型"><a href="#强类型" class="headerlink" title="强类型"></a>强类型</h2><p>由于 GraphQL 是一个强类型语言，所以它可以在执行查询之前检查每个查询语句是否满足事先设定的 schema，符合则合法，如果查询语句不合法则不进行查询。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;GraphQL&quot;&gt;&lt;a href=&quot;#GraphQL&quot; class=&quot;headerlink&quot; title=&quot;GraphQL&quot;&gt;&lt;/a&gt;GraphQL&lt;/h1&gt;&lt;h2 id=&quot;操作-operation&quot;&gt;&lt;a href=&quot;#操作-operation&quot; class=&quot;headerlink&quot; title=&quot;操作(operation)&quot;&gt;&lt;/a&gt;操作(operation)&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;查询(Query)&lt;/li&gt;
-&lt;li&gt;修改(mutation)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;query&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    clent(id:1)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      id&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      name&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;client 是查询的operation&lt;/li&gt;
-&lt;li&gt;(id:1)包含了传入给Query的参数&lt;/li&gt;
-&lt;li&gt;查询包含id和name字段,这些字段也是我们希望查询可以返回的.&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="GraphQL" scheme="http://www.adherentman.cn/categories/GraphQL/"/>
-    
-    
-      <category term="GraphQL" scheme="http://www.adherentman.cn/tags/GraphQL/"/>
     
   </entry>
   
@@ -1542,89 +1593,6 @@
       <category term="Node.js" scheme="http://www.adherentman.cn/tags/Node-js/"/>
     
       <category term="javascript" scheme="http://www.adherentman.cn/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello, World!</title>
-    <link href="http://www.adherentman.cn/2017/03/19/Hello%20World/"/>
-    <id>http://www.adherentman.cn/2017/03/19/Hello World/</id>
-    <published>2017-03-19T13:10:55.000Z</published>
-    <updated>2017-03-21T07:36:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><ul>
-<li><strong>Hello World</strong></li>
-</ul>
-<blockquote>
-<p>第一篇就和大家打个招呼！</p>
-</blockquote>
-<ul>
-<li>多种语言的<code>Hello World</code><a id="more"></a></li>
-<li><p>C</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Hello, World"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>Java</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"Hello World!"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>Javascript</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">"Hello, World!"</span>);</div></pre></td></tr></table></figure>
-</li>
-<li><p>Python</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Hello, World!"</span>)</div></pre></td></tr></table></figure>
-</li>
-<li><p>PHP</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">echo</span> <span class="string">'Hello,World!'</span>;</div></pre></td></tr></table></figure>
-</li>
-<li><p>Go</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> main</div><div class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    fmt.Print(<span class="string">"Hello, World!"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<script type="text/javascript">
-    setTimeout(function(){
-        console.log("I Love Mu");
-        alert("Hello, World!");
-    }, 5000);
-</script>
-
-
-
-
-
-
-
-
-
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Hello-World&quot;&gt;&lt;a href=&quot;#Hello-World&quot; class=&quot;headerlink&quot; title=&quot;Hello World&quot;&gt;&lt;/a&gt;Hello World&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Hello World&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;第一篇就和大家打个招呼！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;多种语言的&lt;code&gt;Hello World&lt;/code&gt;
-    
-    </summary>
-    
-      <category term="Technology" scheme="http://www.adherentman.cn/categories/Technology/"/>
-    
-    
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
-    
-      <category term="C" scheme="http://www.adherentman.cn/tags/C/"/>
-    
-      <category term="Java" scheme="http://www.adherentman.cn/tags/Java/"/>
-    
-      <category term="Python" scheme="http://www.adherentman.cn/tags/Python/"/>
-    
-      <category term="PHP" scheme="http://www.adherentman.cn/tags/PHP/"/>
-    
-      <category term="go" scheme="http://www.adherentman.cn/tags/go/"/>
     
   </entry>
   
