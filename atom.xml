@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.adherentman.cn/"/>
-  <updated>2017-07-26T12:56:41.000Z</updated>
+  <updated>2017-07-26T12:58:54.000Z</updated>
   <id>http://www.adherentman.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.adherentman.cn/2017/07/26/Node/"/>
     <id>http://www.adherentman.cn/2017/07/26/Node/</id>
     <published>2017-07-26T12:53:08.000Z</published>
-    <updated>2017-07-26T12:56:41.000Z</updated>
+    <updated>2017-07-26T12:58:54.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="学Node日志-一"><a href="#学Node日志-一" class="headerlink" title="学Node日志(一)"></a>学Node日志(一)</h1><h2 id="node实例"><a href="#node实例" class="headerlink" title="node实例"></a>node实例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> hostname = <span class="string">'127.0.0.1'</span>;</div><div class="line"><span class="keyword">const</span> port = <span class="number">9000</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</div><div class="line">    res.statusCode = <span class="number">200</span>;</div><div class="line">    res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/plain'</span>);</div><div class="line">    res.end(<span class="string">'Hello World\n'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">server.listen(port,hostname, () =&gt; &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'服务器运行在 http://$&#123;hostname&#125;:$&#123;port&#125;/'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <ul>
@@ -32,7 +32,7 @@
 <p>状态码</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1xx的代码代表请求已被接受，需要继续处理。2xx这一类型的状态码，代表请求已成功被服务器接收、理解、并接受。3xx 重定向。4xx 请求错误。5xx表示服务器错误。</div></pre></td></tr></table></figure>
-<p>​</p>
+<p>​<a id="more"></a></p>
 </li>
 </ul>
 <ul>
@@ -87,7 +87,17 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;学Node日志-一&quot;&gt;&lt;a href=&quot;#学Node日志-一&quot; class=&quot;headerlink&quot; title=&quot;学Node日志(一)&quot;&gt;&lt;/a&gt;学Node日志(一)&lt;/h1&gt;&lt;h2 id=&quot;node实例&quot;&gt;&lt;a href=&quot;#node实例&quot; class=&quot;he
+      &lt;h1 id=&quot;学Node日志-一&quot;&gt;&lt;a href=&quot;#学Node日志-一&quot; class=&quot;headerlink&quot; title=&quot;学Node日志(一)&quot;&gt;&lt;/a&gt;学Node日志(一)&lt;/h1&gt;&lt;h2 id=&quot;node实例&quot;&gt;&lt;a href=&quot;#node实例&quot; class=&quot;headerlink&quot; title=&quot;node实例&quot;&gt;&lt;/a&gt;node实例&lt;/h2&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; http = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;http&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; hostname = &lt;span class=&quot;string&quot;&gt;&#39;127.0.0.1&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; port = &lt;span class=&quot;number&quot;&gt;9000&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; server = http.createServer(&lt;span class=&quot;function&quot;&gt;(&lt;span class=&quot;params&quot;&gt;req,res&lt;/span&gt;) =&amp;gt;&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    res.statusCode = &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    res.setHeader(&lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;text/plain&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    res.end(&lt;span class=&quot;string&quot;&gt;&#39;Hello World\n&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;server.listen(port,hostname, () =&amp;gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;服务器运行在 http://$&amp;#123;hostname&amp;#125;:$&amp;#123;port&amp;#125;/&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;response.statusCode()&lt;/code&gt;控制响应头刷新时将被发送到客户端的状态码&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;res.statusCode = 200&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;状态码&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1xx的代码代表请求已被接受，需要继续处理。2xx这一类型的状态码，代表请求已成功被服务器接收、理解、并接受。3xx 重定向。4xx 请求错误。5xx表示服务器错误。&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;​
     
     </summary>
     
@@ -867,44 +877,6 @@
   </entry>
   
   <entry>
-    <title>ES6箭头函数</title>
-    <link href="http://www.adherentman.cn/2017/04/27/Es6%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/"/>
-    <id>http://www.adherentman.cn/2017/04/27/Es6箭头函数/</id>
-    <published>2017-04-27T07:29:00.000Z</published>
-    <updated>2017-06-20T08:46:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<p>简单地说，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">x</span> =&gt;</span> x;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> x;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>这个就是最简单的箭头函数。</p>
-<a id="more"></a>
-<p>接着如果箭头函数不需要参数或者多个参数的话，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">()</span> =&gt;</span> <span class="number">1</span>;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;;</div><div class="line">或者</div><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">_</span> =&gt;</span><span class="number">1</span>;</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sum = <span class="function">(<span class="params">num1,num2</span>) =&gt;</span>num1 +num2;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> sum =<span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> num1+num2;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p><strong>箭头函数没有自己的<code>this</code></strong>，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> [</div><div class="line">    <span class="function">(<span class="params">(</span>)=&gt;</span> <span class="keyword">this</span>.x).bind(&#123;<span class="attr">x</span> :<span class="string">'inner'</span>&#125;)()</div><div class="line">  ]</div><div class="line">&#125;).call(&#123;<span class="attr">x</span> :<span class="string">'outer'</span>&#125;);</div><div class="line"><span class="comment">//['outer']</span></div></pre></td></tr></table></figure>
-<p>所以<code>bind</code>的方法无效。并且<code>call()</code>,<code>apply()</code>,也无效。</p>
-<p><strong>MDN上的</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> adder = &#123;</div><div class="line">  <span class="attr">base</span> : <span class="number">1</span>,</div><div class="line">    </div><div class="line">  <span class="attr">add</span> : <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</div><div class="line">    <span class="keyword">return</span> f(a);</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">addThruCall</span>: <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</div><div class="line">    <span class="keyword">var</span> b = &#123;</div><div class="line">      <span class="attr">base</span> : <span class="number">2</span></div><div class="line">    &#125;;</div><div class="line">            </div><div class="line">    <span class="keyword">return</span> f.call(b, a);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(adder.add(<span class="number">1</span>));         <span class="comment">// 输出 2</span></div><div class="line"><span class="built_in">console</span>.log(adder.addThruCall(<span class="number">1</span>)); <span class="comment">// 仍然输出 2（而不是3 ——译者注）</span></div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;简单地说，&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt; =&amp;gt;&lt;/span&gt; x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a =&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;这个就是最简单的箭头函数。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Javascript修仙之路" scheme="http://www.adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>初入React+Webpack(入门)</title>
     <link href="http://www.adherentman.cn/2017/04/27/%E5%88%9D%E5%85%A5React/"/>
     <id>http://www.adherentman.cn/2017/04/27/初入React/</id>
@@ -1041,6 +1013,44 @@
       <category term="React" scheme="http://www.adherentman.cn/tags/React/"/>
     
       <category term="Webpack" scheme="http://www.adherentman.cn/tags/Webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6箭头函数</title>
+    <link href="http://www.adherentman.cn/2017/04/27/Es6%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/"/>
+    <id>http://www.adherentman.cn/2017/04/27/Es6箭头函数/</id>
+    <published>2017-04-27T07:29:00.000Z</published>
+    <updated>2017-06-20T08:46:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<p>简单地说，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">x</span> =&gt;</span> x;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> x;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>这个就是最简单的箭头函数。</p>
+<a id="more"></a>
+<p>接着如果箭头函数不需要参数或者多个参数的话，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">()</span> =&gt;</span> <span class="number">1</span>;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;;</div><div class="line">或者</div><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">_</span> =&gt;</span><span class="number">1</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sum = <span class="function">(<span class="params">num1,num2</span>) =&gt;</span>num1 +num2;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> sum =<span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> num1+num2;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><strong>箭头函数没有自己的<code>this</code></strong>，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> [</div><div class="line">    <span class="function">(<span class="params">(</span>)=&gt;</span> <span class="keyword">this</span>.x).bind(&#123;<span class="attr">x</span> :<span class="string">'inner'</span>&#125;)()</div><div class="line">  ]</div><div class="line">&#125;).call(&#123;<span class="attr">x</span> :<span class="string">'outer'</span>&#125;);</div><div class="line"><span class="comment">//['outer']</span></div></pre></td></tr></table></figure>
+<p>所以<code>bind</code>的方法无效。并且<code>call()</code>,<code>apply()</code>,也无效。</p>
+<p><strong>MDN上的</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> adder = &#123;</div><div class="line">  <span class="attr">base</span> : <span class="number">1</span>,</div><div class="line">    </div><div class="line">  <span class="attr">add</span> : <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</div><div class="line">    <span class="keyword">return</span> f(a);</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">addThruCall</span>: <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</div><div class="line">    <span class="keyword">var</span> b = &#123;</div><div class="line">      <span class="attr">base</span> : <span class="number">2</span></div><div class="line">    &#125;;</div><div class="line">            </div><div class="line">    <span class="keyword">return</span> f.call(b, a);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(adder.add(<span class="number">1</span>));         <span class="comment">// 输出 2</span></div><div class="line"><span class="built_in">console</span>.log(adder.addThruCall(<span class="number">1</span>)); <span class="comment">// 仍然输出 2（而不是3 ——译者注）</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;简单地说，&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt; =&amp;gt;&lt;/span&gt; x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a =&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这个就是最简单的箭头函数。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Javascript修仙之路" scheme="http://www.adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
     
   </entry>
   
