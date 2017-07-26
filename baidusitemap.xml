@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://www.adherentman.cn/2017/07/26/Node/</loc>
+    <lastmod>2017-07-26T12:56:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>学Node日志(一)</title>
+        <pubTime>2017-07-26T12:53:08.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>Node.js</tag>
+         
+         
+           
+             
+              <breadCrumb title="Node.js" url="http://www.adherentman.cn/categories/Node-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.adherentman.cn/2017/07/25/git/</loc>
     <lastmod>2017-07-25T12:47:15.000Z</lastmod>
     <data>
@@ -398,9 +420,9 @@
         
         <tag>git</tag>
          
-        <tag>hexo</tag>
-         
         <tag>Node.js</tag>
+         
+        <tag>hexo</tag>
          
         <tag>javascript</tag>
          
