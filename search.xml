@@ -31,9 +31,9 @@
 
     
     <entry>
-      <title><![CDATA[多说挂了好久。现在换成disqus]]></title>
+      <title><![CDATA[多说挂了好久。现在换成来必力]]></title>
       <url>%2F2017%2F07%2F23%2F%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E8%BF%81%E7%A7%BB%2F</url>
-      <content type="text"><![CDATA[多说已挂，将评论迁移到disqus有很多可替代的方案 网易云跟帖 畅言 友言 Disqus 来必力 还有许多评论功能就不一一举例了. 具体说下该如何迁移因为我是hexo搭建的博客，然后我用的主题是next。 我们只需打开Disqus主页（需要翻墙），然后登录。 之后 get started 。 然后 website name 就是你的后面要用到的sortname 如果你也是hexo，就不用管installation直接跳到第三步设置。 这样就差不多了。 然后再设置里把你的 url填入你的域名。 最后在你的根目录下的config.yml里插入以下 disqus_shortname: your shortname 因为我是next主题。 然后在自己的主题文件下中的config.yml插入 1234disqus: enable: true shortname: count: true 之后在终端输入hexo clean &amp;&amp; hexo g -d 完成~~！]]></content>
+      <content type="text"><![CDATA[多说已挂，将评论迁移到来必力有很多可替代的方案 网易云跟帖 畅言 友言 Disqus 来必力 还有许多评论功能就不一一举例了. 具体说下该如何迁移因为我是hexo搭建的博客，然后我用的主题是next。 打开来必力官网，注册完毕。 登陆后我们来到管理页面。 之后再点击代码管理，我们将会看见一堆代码。 我们在代码中找到data-uid：“xxxxxxxxxx”。 这段将是我们要用的uid。 打开主题文件下的_config.yml我们 livere_uid: #your livere_uid 之后hexo clean &amp;&amp; hexo g -d即可]]></content>
     </entry>
 
     
