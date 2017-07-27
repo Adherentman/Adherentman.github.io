@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.adherentman.cn/"/>
-  <updated>2017-07-26T13:00:13.000Z</updated>
+  <updated>2017-07-27T13:22:41.000Z</updated>
   <id>http://www.adherentman.cn/</id>
   
   <author>
@@ -16,13 +16,45 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Mongodb之旅(一)</title>
+    <link href="http://www.adherentman.cn/2017/07/27/mongodb/"/>
+    <id>http://www.adherentman.cn/2017/07/27/mongodb/</id>
+    <published>2017-07-27T13:18:35.000Z</published>
+    <updated>2017-07-27T13:22:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Mongodb之旅-一"><a href="#Mongodb之旅-一" class="headerlink" title="Mongodb之旅(一)"></a>Mongodb之旅(一)</h1><h2 id="插入-insertOne-Many"><a href="#插入-insertOne-Many" class="headerlink" title="插入,insertOne/Many"></a>插入,insertOne/Many</h2><h3 id="insertOne"><a href="#insertOne" class="headerlink" title="insertOne( )"></a>insertOne( )</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">db.inventory.insertOne(</div><div class="line">   &#123; item: &quot;canvas&quot;, qty: 100, tags: [&quot;cotton&quot;], size: &#123; h: 28, w: 35.5, uom: &quot;cm&quot; &#125; &#125;</div><div class="line">)</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="insertMany"><a href="#insertMany" class="headerlink" title="insertMany([ ])"></a>insertMany([ ])</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">db.inventory.insertMany([</div><div class="line">   &#123; item: &quot;journal&quot;, qty: 25, tags: [&quot;blank&quot;, &quot;red&quot;], size: &#123; h: 14, w: 21, uom: &quot;cm&quot; &#125; &#125;,</div><div class="line">   &#123; item: &quot;mat&quot;, qty: 85, tags: [&quot;gray&quot;], size: &#123; h: 27.9, w: 35.5, uom: &quot;cm&quot; &#125; &#125;,</div><div class="line">   &#123; item: &quot;mousepad&quot;, qty: 25, tags: [&quot;gel&quot;, &quot;blue&quot;], size: &#123; h: 19, w: 22.85, uom: &quot;cm&quot; &#125; &#125;</div><div class="line">])</div></pre></td></tr></table></figure>
+<h2 id="查找-find"><a href="#查找-find" class="headerlink" title="查找,find"></a>查找,find</h2><h3 id="find"><a href="#find" class="headerlink" title="find( )"></a>find( )</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.inventory.find( &#123;&#125; )</div></pre></td></tr></table></figure>
+<h2 id="更新-updateOne-Many"><a href="#更新-updateOne-Many" class="headerlink" title="更新,updateOne/Many"></a>更新,updateOne/Many</h2><h3 id="set"><a href="#set" class="headerlink" title="$set"></a>$set</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">db.memberplan.update(</div><div class="line"></div><div class="line">&#123;_id:&quot;xxx&quot;&#125;,</div><div class="line"></div><div class="line">&#123;$set:</div><div class="line"></div><div class="line">&#123;tags:[&quot;coats&quot;,&quot;outerwear&quot;]&#125;</div><div class="line"></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="currentDate-当前时间"><a href="#currentDate-当前时间" class="headerlink" title="$currentDate,当前时间"></a>$currentDate,当前时间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">db.inventory.updateOne(</div><div class="line">   &#123; item: &quot;paper&quot; &#125;,</div><div class="line">   &#123;</div><div class="line">	 $set: &#123; &quot;size.uom&quot;: &quot;cm&quot;, status: &quot;P&quot; &#125;,</div><div class="line">	 $currentDate: &#123; lastModified: true &#125;</div><div class="line">   &#125;</div><div class="line">)</div></pre></td></tr></table></figure>
+<h3 id="updateMany"><a href="#updateMany" class="headerlink" title="updateMany"></a>updateMany</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">db.inventory.updateMany(</div><div class="line">   &#123; &quot;qty&quot;: &#123; $lt: 50 &#125; &#125;,</div><div class="line">   &#123;</div><div class="line">     $set: &#123; &quot;size.uom&quot;: &quot;in&quot;, status: &quot;P&quot; &#125;,</div><div class="line">     $currentDate: &#123; lastModified: true &#125;</div><div class="line">   &#125;</div><div class="line">)</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Mongodb之旅-一&quot;&gt;&lt;a href=&quot;#Mongodb之旅-一&quot; class=&quot;headerlink&quot; title=&quot;Mongodb之旅(一)&quot;&gt;&lt;/a&gt;Mongodb之旅(一)&lt;/h1&gt;&lt;h2 id=&quot;插入-insertOne-Many&quot;&gt;&lt;a href=&quot;#插入-insertOne-Many&quot; class=&quot;headerlink&quot; title=&quot;插入,insertOne/Many&quot;&gt;&lt;/a&gt;插入,insertOne/Many&lt;/h2&gt;&lt;h3 id=&quot;insertOne&quot;&gt;&lt;a href=&quot;#insertOne&quot; class=&quot;headerlink&quot; title=&quot;insertOne( )&quot;&gt;&lt;/a&gt;insertOne( )&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;db.inventory.insertOne(&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &amp;#123; item: &amp;quot;canvas&amp;quot;, qty: 100, tags: [&amp;quot;cotton&amp;quot;], size: &amp;#123; h: 28, w: 35.5, uom: &amp;quot;cm&amp;quot; &amp;#125; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="数据库,Mongodb" scheme="http://www.adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93-Mongodb/"/>
+    
+    
+      <category term="数据库" scheme="http://www.adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="Mongodb" scheme="http://www.adherentman.cn/tags/Mongodb/"/>
+    
+  </entry>
+  
+  <entry>
     <title>学Node日志(一)</title>
     <link href="http://www.adherentman.cn/2017/07/26/Node/"/>
     <id>http://www.adherentman.cn/2017/07/26/Node/</id>
     <published>2017-07-26T12:53:08.000Z</published>
-    <updated>2017-07-26T13:00:13.000Z</updated>
+    <updated>2017-07-27T13:20:51.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="学Node日志-一"><a href="#学Node日志-一" class="headerlink" title="学Node日志(一)"></a>学Node日志(一)</h1><h2 id="node实例"><a href="#node实例" class="headerlink" title="node实例"></a>node实例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> hostname = <span class="string">'127.0.0.1'</span>;</div><div class="line"><span class="keyword">const</span> port = <span class="number">9000</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</div><div class="line">    res.statusCode = <span class="number">200</span>;</div><div class="line">    res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/plain'</span>);</div><div class="line">    res.end(<span class="string">'Hello World\n'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">server.listen(port,hostname, () =&gt; &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'服务器运行在 http://$&#123;hostname&#125;:$&#123;port&#125;/'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <ul>
 <li><p><code>response.statusCode()</code>控制响应头刷新时将被发送到客户端的状态码</p>
 <ul>
@@ -32,7 +64,7 @@
 <p>状态码</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1xx的代码代表请求已被接受，需要继续处理。2xx这一类型的状态码，代表请求已成功被服务器接收、理解、并接受。3xx 重定向。4xx 请求错误。5xx表示服务器错误。</div></pre></td></tr></table></figure>
-<p>​<a id="more"></a></p>
+<p>​</p>
 </li>
 </ul>
 <ul>
@@ -88,16 +120,6 @@
     <summary type="html">
     
       &lt;h1 id=&quot;学Node日志-一&quot;&gt;&lt;a href=&quot;#学Node日志-一&quot; class=&quot;headerlink&quot; title=&quot;学Node日志(一)&quot;&gt;&lt;/a&gt;学Node日志(一)&lt;/h1&gt;&lt;h2 id=&quot;node实例&quot;&gt;&lt;a href=&quot;#node实例&quot; class=&quot;headerlink&quot; title=&quot;node实例&quot;&gt;&lt;/a&gt;node实例&lt;/h2&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; http = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;http&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; hostname = &lt;span class=&quot;string&quot;&gt;&#39;127.0.0.1&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; port = &lt;span class=&quot;number&quot;&gt;9000&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; server = http.createServer(&lt;span class=&quot;function&quot;&gt;(&lt;span class=&quot;params&quot;&gt;req,res&lt;/span&gt;) =&amp;gt;&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    res.statusCode = &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    res.setHeader(&lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;text/plain&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    res.end(&lt;span class=&quot;string&quot;&gt;&#39;Hello World\n&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;server.listen(port,hostname, () =&amp;gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;服务器运行在 http://$&amp;#123;hostname&amp;#125;:$&amp;#123;port&amp;#125;/&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;response.statusCode()&lt;/code&gt;控制响应头刷新时将被发送到客户端的状态码&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;res.statusCode = 200&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;状态码&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1xx的代码代表请求已被接受，需要继续处理。2xx这一类型的状态码，代表请求已成功被服务器接收、理解、并接受。3xx 重定向。4xx 请求错误。5xx表示服务器错误。&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;​
     
     </summary>
     
@@ -115,11 +137,14 @@
     <link href="http://www.adherentman.cn/2017/07/25/git/"/>
     <id>http://www.adherentman.cn/2017/07/25/git/</id>
     <published>2017-07-25T12:47:00.000Z</published>
-    <updated>2017-07-25T12:47:15.000Z</updated>
+    <updated>2017-07-27T13:20:59.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h2 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h2><p><code>git add -A</code> 和 <code>git add .</code> 和 <code>git add -u</code></p>
 <ul>
 <li>git add   <strong>.</strong> ：他会监控工作区的状态树，使用它会把工作时的<strong>所有变化提交</strong>到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。</li>
+</ul>
+<a id="more"></a>
+<ul>
 <li>git add -u ：他仅监控<strong>已经被add的文件</strong>（即tracked file），他会将被修改的文件提交到暂存区。add -u 不会提交新文件（untracked file）。（git add –update的缩写)</li>
 <li>git add -A ：是上面两个功能的合集（git add –all的缩写）</li>
 </ul>
@@ -150,7 +175,10 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;git&quot;&gt;&lt;a href=&quot;#git&quot; class=&quot;headerlink&quot; title=&quot;git&quot;&gt;&lt;/a&gt;git&lt;/h1&gt;&lt;h2 id=&quot;git-add&quot;&gt;&lt;a href=&quot;#git-add&quot; class=&quot;headerlink&quot; title=&quot;git add
+      &lt;h1 id=&quot;git&quot;&gt;&lt;a href=&quot;#git&quot; class=&quot;headerlink&quot; title=&quot;git&quot;&gt;&lt;/a&gt;git&lt;/h1&gt;&lt;h2 id=&quot;git-add&quot;&gt;&lt;a href=&quot;#git-add&quot; class=&quot;headerlink&quot; title=&quot;git add&quot;&gt;&lt;/a&gt;git add&lt;/h2&gt;&lt;p&gt;&lt;code&gt;git add -A&lt;/code&gt; 和 &lt;code&gt;git add .&lt;/code&gt; 和 &lt;code&gt;git add -u&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;git add   &lt;strong&gt;.&lt;/strong&gt; ：他会监控工作区的状态树，使用它会把工作时的&lt;strong&gt;所有变化提交&lt;/strong&gt;到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -166,10 +194,10 @@
     <link href="http://www.adherentman.cn/2017/07/24/yewu/"/>
     <id>http://www.adherentman.cn/2017/07/24/yewu/</id>
     <published>2017-07-24T14:33:00.000Z</published>
-    <updated>2017-07-24T14:35:52.000Z</updated>
+    <updated>2017-07-27T13:21:26.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="一些。。。"><a href="#一些。。。" class="headerlink" title="一些。。。"></a>一些。。。</h1><p>1.业务员可能都没有理清业务或者需求，需要自己去帮他们理清，好让自己设计开发的产品更健壮和在未来更有扩展性。</p>
-]]></content>
+<a id="more"></a>]]></content>
     
     <summary type="html">
     
@@ -189,7 +217,7 @@
     <link href="http://www.adherentman.cn/2017/07/23/%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E8%BF%81%E7%A7%BB/"/>
     <id>http://www.adherentman.cn/2017/07/23/评论功能迁移/</id>
     <published>2017-07-23T01:30:55.000Z</published>
-    <updated>2017-07-23T02:07:00.000Z</updated>
+    <updated>2017-07-27T13:21:42.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="多说已挂，将评论迁移到disqus"><a href="#多说已挂，将评论迁移到disqus" class="headerlink" title="多说已挂，将评论迁移到disqus"></a>多说已挂，将评论迁移到disqus</h1><p>有很多可替代的方案</p>
 <ul>
@@ -199,6 +227,7 @@
 <li><a href="www.disqus.com">Disqus</a></li>
 <li><a href="https://livere.com/" target="_blank" rel="external">来必力</a></li>
 </ul>
+<a id="more"></a>
 <p>还有许多评论功能就不一一举例了.</p>
 <h2 id="具体说下该如何迁移"><a href="#具体说下该如何迁移" class="headerlink" title="具体说下该如何迁移"></a>具体说下该如何迁移</h2><p>因为我是hexo搭建的博客，然后我用的主题是next。</p>
 <p>我们只需打开<a href="www.disqus.com">Disqus</a>主页（需要翻墙），然后登录。</p>
@@ -221,7 +250,14 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;多说已挂，将评论迁移到disqus&quot;&gt;&lt;a href=&quot;#多说已挂，将评论迁移到disqus&quot; class=&quot;headerlink&quot; title=&quot;多说已挂，将评论迁移到disqus&quot;&gt;&lt;/a&gt;多说已挂，将评论迁移到disqus&lt;/h1&gt;&lt;p&gt;有很多可替代的方案&lt;
+      &lt;h1 id=&quot;多说已挂，将评论迁移到disqus&quot;&gt;&lt;a href=&quot;#多说已挂，将评论迁移到disqus&quot; class=&quot;headerlink&quot; title=&quot;多说已挂，将评论迁移到disqus&quot;&gt;&lt;/a&gt;多说已挂，将评论迁移到disqus&lt;/h1&gt;&lt;p&gt;有很多可替代的方案&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://gentie.163.com/info.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;网易云跟帖&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://changyan.kuaizhan.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;畅言&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.uyan.cc/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;友言&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;www.disqus.com&quot;&gt;Disqus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://livere.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;来必力&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -281,13 +317,48 @@
   </entry>
   
   <entry>
+    <title>数据库E-R图</title>
+    <link href="http://www.adherentman.cn/2017/07/17/E-R%E5%9B%BE/"/>
+    <id>http://www.adherentman.cn/2017/07/17/E-R图/</id>
+    <published>2017-07-17T08:02:36.000Z</published>
+    <updated>2017-07-17T08:06:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="E-R图"><a href="#E-R图" class="headerlink" title="E-R图"></a>E-R图</h1><p>E-R图是指实体-关系-属性三个基本概括数据的基本结构.</p>
+<p>强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。</p>
+<a id="more"></a>
+<ul>
+<li>ER图的实体（entity）即数据模型中的数据对象，例如人、学生、音乐都可以作为一个数据对象，用长方体来表示，每个实体都有自己的实体成员（entity member）或者说实体对象（entity instance），例如学生实体里包括张三、李四等，实体成员（entity member）/实体实例（entity instance） 不需要出现在ER图中。</li>
+</ul>
+<ul>
+<li>ER图的属性（attribute）即数据对象所具有的属性，例如学生具有姓名、学号、年级等属性，用椭圆形表示，属性分为唯一属性（ unique attribute）和非唯一属性，唯一属性指的是唯一可用来标识该实体实例或者成员的属性，用下划线表示，一般来讲实体都至少有一个唯一属性。</li>
+</ul>
+<ul>
+<li>ER图的关系（relationship）用来表现数据对象与数据对象之间的联系，例如学生的实体和成绩表的实体之间有一定的联系，每个学生都有自己的成绩表，这就是一种关系，关系用菱形来表示。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;E-R图&quot;&gt;&lt;a href=&quot;#E-R图&quot; class=&quot;headerlink&quot; title=&quot;E-R图&quot;&gt;&lt;/a&gt;E-R图&lt;/h1&gt;&lt;p&gt;E-R图是指实体-关系-属性三个基本概括数据的基本结构.&lt;/p&gt;
+&lt;p&gt;强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://www.adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="数据库" scheme="http://www.adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
     <title>GraphQL基本操作</title>
     <link href="http://www.adherentman.cn/2017/07/17/GraphQL/"/>
     <id>http://www.adherentman.cn/2017/07/17/GraphQL/</id>
     <published>2017-07-17T08:02:36.000Z</published>
-    <updated>2017-07-23T01:02:39.000Z</updated>
+    <updated>2017-07-27T13:18:30.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="GraphQL"><a href="#GraphQL" class="headerlink" title="GraphQL"></a>GraphQL</h1><h2 id="操作-operation"><a href="#操作-operation" class="headerlink" title="操作(operation)"></a>操作(operation)</h2><ul>
+    <content type="html"><![CDATA[<h1 id="GraphQL"><a href="#GraphQL" class="headerlink" title="GraphQL()"></a>GraphQL()</h1><h2 id="操作-operation"><a href="#操作-operation" class="headerlink" title="操作(operation)"></a>操作(operation)</h2><ul>
 <li>查询(Query)</li>
 <li>修改(mutation)</li>
 </ul>
@@ -321,7 +392,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;GraphQL&quot;&gt;&lt;a href=&quot;#GraphQL&quot; class=&quot;headerlink&quot; title=&quot;GraphQL&quot;&gt;&lt;/a&gt;GraphQL&lt;/h1&gt;&lt;h2 id=&quot;操作-operation&quot;&gt;&lt;a href=&quot;#操作-operation&quot; class=&quot;headerlink&quot; title=&quot;操作(operation)&quot;&gt;&lt;/a&gt;操作(operation)&lt;/h2&gt;&lt;ul&gt;
+      &lt;h1 id=&quot;GraphQL&quot;&gt;&lt;a href=&quot;#GraphQL&quot; class=&quot;headerlink&quot; title=&quot;GraphQL()&quot;&gt;&lt;/a&gt;GraphQL()&lt;/h1&gt;&lt;h2 id=&quot;操作-operation&quot;&gt;&lt;a href=&quot;#操作-operation&quot; class=&quot;headerlink&quot; title=&quot;操作(operation)&quot;&gt;&lt;/a&gt;操作(operation)&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;查询(Query)&lt;/li&gt;
 &lt;li&gt;修改(mutation)&lt;/li&gt;
 &lt;/ul&gt;
@@ -338,41 +409,6 @@
     
     
       <category term="GraphQL" scheme="http://www.adherentman.cn/tags/GraphQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据库E-R图</title>
-    <link href="http://www.adherentman.cn/2017/07/17/E-R%E5%9B%BE/"/>
-    <id>http://www.adherentman.cn/2017/07/17/E-R图/</id>
-    <published>2017-07-17T08:02:36.000Z</published>
-    <updated>2017-07-17T08:06:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="E-R图"><a href="#E-R图" class="headerlink" title="E-R图"></a>E-R图</h1><p>E-R图是指实体-关系-属性三个基本概括数据的基本结构.</p>
-<p>强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。</p>
-<a id="more"></a>
-<ul>
-<li>ER图的实体（entity）即数据模型中的数据对象，例如人、学生、音乐都可以作为一个数据对象，用长方体来表示，每个实体都有自己的实体成员（entity member）或者说实体对象（entity instance），例如学生实体里包括张三、李四等，实体成员（entity member）/实体实例（entity instance） 不需要出现在ER图中。</li>
-</ul>
-<ul>
-<li>ER图的属性（attribute）即数据对象所具有的属性，例如学生具有姓名、学号、年级等属性，用椭圆形表示，属性分为唯一属性（ unique attribute）和非唯一属性，唯一属性指的是唯一可用来标识该实体实例或者成员的属性，用下划线表示，一般来讲实体都至少有一个唯一属性。</li>
-</ul>
-<ul>
-<li>ER图的关系（relationship）用来表现数据对象与数据对象之间的联系，例如学生的实体和成绩表的实体之间有一定的联系，每个学生都有自己的成绩表，这就是一种关系，关系用菱形来表示。</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;E-R图&quot;&gt;&lt;a href=&quot;#E-R图&quot; class=&quot;headerlink&quot; title=&quot;E-R图&quot;&gt;&lt;/a&gt;E-R图&lt;/h1&gt;&lt;p&gt;E-R图是指实体-关系-属性三个基本概括数据的基本结构.&lt;/p&gt;
-&lt;p&gt;强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据库" scheme="http://www.adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="数据库" scheme="http://www.adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -877,6 +913,44 @@
   </entry>
   
   <entry>
+    <title>ES6箭头函数</title>
+    <link href="http://www.adherentman.cn/2017/04/27/Es6%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/"/>
+    <id>http://www.adherentman.cn/2017/04/27/Es6箭头函数/</id>
+    <published>2017-04-27T07:29:00.000Z</published>
+    <updated>2017-06-20T08:46:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<p>简单地说，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">x</span> =&gt;</span> x;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> x;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>这个就是最简单的箭头函数。</p>
+<a id="more"></a>
+<p>接着如果箭头函数不需要参数或者多个参数的话，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">()</span> =&gt;</span> <span class="number">1</span>;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;;</div><div class="line">或者</div><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">_</span> =&gt;</span><span class="number">1</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sum = <span class="function">(<span class="params">num1,num2</span>) =&gt;</span>num1 +num2;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> sum =<span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> num1+num2;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><strong>箭头函数没有自己的<code>this</code></strong>，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> [</div><div class="line">    <span class="function">(<span class="params">(</span>)=&gt;</span> <span class="keyword">this</span>.x).bind(&#123;<span class="attr">x</span> :<span class="string">'inner'</span>&#125;)()</div><div class="line">  ]</div><div class="line">&#125;).call(&#123;<span class="attr">x</span> :<span class="string">'outer'</span>&#125;);</div><div class="line"><span class="comment">//['outer']</span></div></pre></td></tr></table></figure>
+<p>所以<code>bind</code>的方法无效。并且<code>call()</code>,<code>apply()</code>,也无效。</p>
+<p><strong>MDN上的</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> adder = &#123;</div><div class="line">  <span class="attr">base</span> : <span class="number">1</span>,</div><div class="line">    </div><div class="line">  <span class="attr">add</span> : <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</div><div class="line">    <span class="keyword">return</span> f(a);</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">addThruCall</span>: <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</div><div class="line">    <span class="keyword">var</span> b = &#123;</div><div class="line">      <span class="attr">base</span> : <span class="number">2</span></div><div class="line">    &#125;;</div><div class="line">            </div><div class="line">    <span class="keyword">return</span> f.call(b, a);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(adder.add(<span class="number">1</span>));         <span class="comment">// 输出 2</span></div><div class="line"><span class="built_in">console</span>.log(adder.addThruCall(<span class="number">1</span>)); <span class="comment">// 仍然输出 2（而不是3 ——译者注）</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;简单地说，&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt; =&amp;gt;&lt;/span&gt; x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a =&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这个就是最简单的箭头函数。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Javascript修仙之路" scheme="http://www.adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>初入React+Webpack(入门)</title>
     <link href="http://www.adherentman.cn/2017/04/27/%E5%88%9D%E5%85%A5React/"/>
     <id>http://www.adherentman.cn/2017/04/27/初入React/</id>
@@ -1013,44 +1087,6 @@
       <category term="React" scheme="http://www.adherentman.cn/tags/React/"/>
     
       <category term="Webpack" scheme="http://www.adherentman.cn/tags/Webpack/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6箭头函数</title>
-    <link href="http://www.adherentman.cn/2017/04/27/Es6%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/"/>
-    <id>http://www.adherentman.cn/2017/04/27/Es6箭头函数/</id>
-    <published>2017-04-27T07:29:00.000Z</published>
-    <updated>2017-06-20T08:46:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<p>简单地说，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">x</span> =&gt;</span> x;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> x;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>这个就是最简单的箭头函数。</p>
-<a id="more"></a>
-<p>接着如果箭头函数不需要参数或者多个参数的话，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">()</span> =&gt;</span> <span class="number">1</span>;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;;</div><div class="line">或者</div><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">_</span> =&gt;</span><span class="number">1</span>;</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sum = <span class="function">(<span class="params">num1,num2</span>) =&gt;</span>num1 +num2;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> sum =<span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> num1+num2;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p><strong>箭头函数没有自己的<code>this</code></strong>，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> [</div><div class="line">    <span class="function">(<span class="params">(</span>)=&gt;</span> <span class="keyword">this</span>.x).bind(&#123;<span class="attr">x</span> :<span class="string">'inner'</span>&#125;)()</div><div class="line">  ]</div><div class="line">&#125;).call(&#123;<span class="attr">x</span> :<span class="string">'outer'</span>&#125;);</div><div class="line"><span class="comment">//['outer']</span></div></pre></td></tr></table></figure>
-<p>所以<code>bind</code>的方法无效。并且<code>call()</code>,<code>apply()</code>,也无效。</p>
-<p><strong>MDN上的</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> adder = &#123;</div><div class="line">  <span class="attr">base</span> : <span class="number">1</span>,</div><div class="line">    </div><div class="line">  <span class="attr">add</span> : <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</div><div class="line">    <span class="keyword">return</span> f(a);</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">addThruCall</span>: <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</div><div class="line">    <span class="keyword">var</span> b = &#123;</div><div class="line">      <span class="attr">base</span> : <span class="number">2</span></div><div class="line">    &#125;;</div><div class="line">            </div><div class="line">    <span class="keyword">return</span> f.call(b, a);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(adder.add(<span class="number">1</span>));         <span class="comment">// 输出 2</span></div><div class="line"><span class="built_in">console</span>.log(adder.addThruCall(<span class="number">1</span>)); <span class="comment">// 仍然输出 2（而不是3 ——译者注）</span></div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;简单地说，&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt; =&amp;gt;&lt;/span&gt; x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a =&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;这个就是最简单的箭头函数。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Javascript修仙之路" scheme="http://www.adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
     
   </entry>
   
@@ -1524,102 +1560,6 @@
       <category term="git" scheme="http://www.adherentman.cn/tags/git/"/>
     
       <category term="php" scheme="http://www.adherentman.cn/tags/php/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>配置SSH Key+Next主题以及个性化改动</title>
-    <link href="http://www.adherentman.cn/2017/03/20/%E9%85%8D%E7%BD%AESSH%20Key+Next%E4%B8%BB%E9%A2%98%E4%BB%A5%E5%8F%8A%E4%B8%AA%E6%80%A7%E5%8C%96%E6%94%B9%E5%8A%A8/"/>
-    <id>http://www.adherentman.cn/2017/03/20/配置SSH Key+Next主题以及个性化改动/</id>
-    <published>2017-03-20T13:10:55.000Z</published>
-    <updated>2017-03-21T08:46:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Git-SSH-Key-生成步骤"><a href="#Git-SSH-Key-生成步骤" class="headerlink" title="Git SSH Key 生成步骤"></a>Git SSH Key 生成步骤</h1><p>Git是分布式的代码管理工具，远程的代码管理是基于SSH的，所以要使用远程的Git则需要SSH的配置。</p>
-<ul>
-<li>第一次使用要设置Git的user name 和email<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name</div></pre></td></tr></table></figure>
-</li>
-</ul>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.email</div></pre></td></tr></table></figure>
- <a id="more"></a>
-<ul>
-<li><p>查看你是否已经拥有密钥</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$cd ~/.ssh</div></pre></td></tr></table></figure>
-<p>如果没有的话就不会有此文件，有的话就会备份删除掉</p>
-</li>
-<li><p>生成密钥</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C “user.email”</div></pre></td></tr></table></figure>
-<p>你将会遇到以下情况的处理：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> Generating public/private rsa key pair.</div><div class="line">Enter file in which to save the key (/root/.ssh/id_rsa):  直接回车</div><div class="line">Enter passphrase (empty for no passphrase):               直接回车</div><div class="line">Enter same passphrase again:</div><div class="line">Your identification has been saved in /root/.ssh/id_rsa.  公钥</div><div class="line">Your public key has been saved in /root/.ssh/id_rsa.pub.  私钥</div><div class="line">The key fingerprint is:</div><div class="line">4d:dd:48:af:76:c2:ba:a8:bc:20:f3:28:1d:6a:28:53</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>就是按3次回车，密码为空！<br>最后你会得到两个文件：<code>id_rsa</code>和<code>id_rsa.pub</code></p>
-<ul>
-<li>把密钥加到Github或者码云或者Coding的SSH上<br><img src="/images/github.png" alt="Github"><br>我们需要把<code>id_rsa.pub</code>中的内容全选复制，然后粘贴进Pages的各自SSH地方，当然需要输入密码。</li>
-<li>测试SSH<br>Github：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ssh -T git@github.com</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>码云：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ssh -T git@git.oschina.net</div></pre></td></tr></table></figure></p>
-<p>Coding:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ssh -T git@coding.net</div></pre></td></tr></table></figure></p>
-<ul>
-<li>若返回则配置成功<br>github:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">The authenticity of host ‘github.com (207.97.227.239)’ can’t be established.</div><div class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</div><div class="line">Are you sure you want to continue connecting (yes/no)? yes</div><div class="line">Warning: Permanently added ‘github.com,207.97.227.239′ (RSA) to the list of known hosts.</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>码云：<code>Welcome to Git@OSC, yourname!</code><br>Coding：<code>Enter passphrase for key ‘/c/Users/Yuankai/.ssh/id_rsa’: Coding.net Tips : [ Hello Kyle_lyk! You have connected to Coding.net by SSH successfully! ]</code><br>那么配置好，我们就可以把Hexo部署到Git上了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$hexo deploy</div></pre></td></tr></table></figure></p>
-<h1 id="Hexo之Next"><a href="#Hexo之Next" class="headerlink" title="Hexo之Next"></a>Hexo之Next</h1><ul>
-<li>Hexo有很多主题，有大道至简的<code>maupassant</code> 也有<code>casper</code>还有<code>uno</code>。但是我还是最喜欢<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">next</a>的风格。</li>
-</ul>
-<h1 id="安装Next"><a href="#安装Next" class="headerlink" title="安装Next"></a>安装Next</h1><p>安装Next是非常的简单。如果你熟悉Git那么你就可以直接使用Git checkout代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd your-hexo-site</div><div class="line">$ git clone https://github.com/iissnan/hexo-theme-next themes/next</div></pre></td></tr></table></figure></p>
-<p>还有一种方法是下载稳定版本</p>
-<ul>
-<li>前往Next版本<a href="https://github.com/iissnan/hexo-theme-next/releases" target="_blank" rel="external">发布页面</a></li>
-<li>一直下拉找到<code>Source code(zip)</code>点击即可下载</li>
-<li>之后把下载的压缩包至站点的themes目录下，并将解压后的文件名改为<code>next</code>。</li>
-</ul>
-<h2 id="启用Next"><a href="#启用Next" class="headerlink" title="启用Next"></a>启用Next</h2><ul>
-<li>你需要打开你的站点目录找到<code>_config.yml</code>这个文件，记住不是themes下next中的<code>_config.yml</code>。</li>
-<li>我们需要在站点文件<code>_config.yml</code>中<code>ctrl+F</code>打入<code>theme</code>字段，并将其值改为<code>next</code>：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">theme:next</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="验证主题是否生成完成"><a href="#验证主题是否生成完成" class="headerlink" title="验证主题是否生成完成"></a>验证主题是否生成完成</h2><p>首先我们要右击你的站点然后选择<code>Git Bash Here</code>，并开启调试模式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s --debug</div></pre></td></tr></table></figure></p>
-<p>命令行出现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure></p>
-<p>那么我们就可以在网址上输入<code>http://0.0.0.0:4000</code>去查看效果，检查站点是否正确运行。</p>
-<h1 id="Next各种细节"><a href="#Next各种细节" class="headerlink" title="Next各种细节"></a>Next各种细节</h1><h2 id="主题设定"><a href="#主题设定" class="headerlink" title="主题设定"></a>主题设定</h2><p>Scheme 是Next提供的一种特性，就因为Scheme我们有三种选择外观。</p>
-<ul>
-<li>Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</li>
-<li>Mist - Muse 的紧凑版本，整洁有序的单栏外观</li>
-<li>Pisces - 双栏 Scheme，小家碧玉似的清新<br>Scheme 的切换通过更改 主题配置文件（theme/next下的<code>_config.yml</code>），搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#scheme: Muse</div><div class="line">#scheme: Mist</div><div class="line">scheme: Pisces</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>还有更多的小东西大家可以去<a href="https://github.com/iissnan/hexo-theme-next/releases" target="_blank" rel="external">Next官方文档</a>看。比如说</p>
-<ul>
-<li>菜单，</li>
-<li>侧栏，</li>
-<li>头像，</li>
-<li>作者昵称，</li>
-<li>站点描述，</li>
-<li>第三方服务等。</li>
-</ul>
-<h2 id="Next中foot更改"><a href="#Next中foot更改" class="headerlink" title="Next中foot更改"></a>Next中foot更改</h2><p><img src="/images/foot.jpg" alt="foot">我把原来的什么Hexo啊..Next.Pisces啊通通改了，这才像我们自己的博客呀！没得说。<br>我们需要打开<code>next</code>下的<code>layout</code>接着打开<code>_partials</code>下的<code>footer.swig</code>。<br>然后我们要把其中红框里的删除。<br><img src="/images/foot1.png" alt="foot1"><br>紧接着我们回到<code>next</code>下，找到<code>languages</code>，打开<code>zh-Hans.yml</code>。<br><img src="/images/foot2.png" alt="foot2"><br>我们可以改成如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">footer:</div><div class="line">  powered: &quot;个人专属 &quot;</div><div class="line">  theme: Adherent</div></pre></td></tr></table></figure></p>
-<p>看大家的想法自己随意发挥！<br>好啦，我要去研究SEO了！！<br>祝大家建博成功</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Git-SSH-Key-生成步骤&quot;&gt;&lt;a href=&quot;#Git-SSH-Key-生成步骤&quot; class=&quot;headerlink&quot; title=&quot;Git SSH Key 生成步骤&quot;&gt;&lt;/a&gt;Git SSH Key 生成步骤&lt;/h1&gt;&lt;p&gt;Git是分布式的代码管理工具，远程的代码管理是基于SSH的，所以要使用远程的Git则需要SSH的配置。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;第一次使用要设置Git的user name 和email&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ git config --global user.name&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
- &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ git config --global user.email&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="Technology" scheme="http://www.adherentman.cn/categories/Technology/"/>
-    
-    
-      <category term="git" scheme="http://www.adherentman.cn/tags/git/"/>
-    
-      <category term="hexo" scheme="http://www.adherentman.cn/tags/hexo/"/>
     
   </entry>
   

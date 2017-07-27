@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://www.adherentman.cn/2017/07/26/Node/index.html">
 <meta property="og:site_name" content="壮壮-Technology">
 <meta property="og:description" content="学Node日志(一)node实例1234567891011121314const http = require(&apos;http&apos;);const hostname = &apos;127.0.0.1&apos;;const port = 9000;const server = http.createServer((req,res) =&amp;gt; &amp;#123;    res.statusCode = 200;    res.s">
-<meta property="og:updated_time" content="2017-07-26T13:00:13.000Z">
+<meta property="og:updated_time" content="2017-07-27T13:20:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学Node日志(一)">
 <meta name="twitter:description" content="学Node日志(一)node实例1234567891011121314const http = require(&apos;http&apos;);const hostname = &apos;127.0.0.1&apos;;const port = 9000;const server = http.createServer((req,res) =&amp;gt; &amp;#123;    res.statusCode = 200;    res.s">
@@ -436,6 +436,7 @@
 
       
         <h1 id="学Node日志-一"><a href="#学Node日志-一" class="headerlink" title="学Node日志(一)"></a>学Node日志(一)</h1><h2 id="node实例"><a href="#node实例" class="headerlink" title="node实例"></a>node实例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> hostname = <span class="string">'127.0.0.1'</span>;</div><div class="line"><span class="keyword">const</span> port = <span class="number">9000</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</div><div class="line">    res.statusCode = <span class="number">200</span>;</div><div class="line">    res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/plain'</span>);</div><div class="line">    res.end(<span class="string">'Hello World\n'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">server.listen(port,hostname, () =&gt; &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'服务器运行在 http://$&#123;hostname&#125;:$&#123;port&#125;/'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <ul>
 <li><p><code>response.statusCode()</code>控制响应头刷新时将被发送到客户端的状态码</p>
 <ul>
@@ -445,7 +446,7 @@
 <p>状态码</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1xx的代码代表请求已被接受，需要继续处理。2xx这一类型的状态码，代表请求已成功被服务器接收、理解、并接受。3xx 重定向。4xx 请求错误。5xx表示服务器错误。</div></pre></td></tr></table></figure>
-<p>​<a id="more"></a></p>
+<p>​</p>
 </li>
 </ul>
 <ul>
@@ -571,6 +572,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/07/27/mongodb/" rel="prev" title="Mongodb之旅(一)">
+                Mongodb之旅(一) <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -648,7 +653,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -659,7 +664,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -670,7 +675,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
