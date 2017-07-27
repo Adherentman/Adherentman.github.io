@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="git,Node.js,hexo,javascript," />
+  <meta name="keywords" content="git,hexo,Node.js,javascript," />
 
 
 
@@ -90,7 +90,7 @@
 
 
 <meta name="description" content="初衷想了很久，还是要弄个博客来勉励自己来督促自己学习去记录。因为学生党，没能抢到腾讯云+阿里云学生优惠，又用过github pages而且挺想用markdown写作，就选择Hexo来搭建自己的博客。也许有人会说为什么不用Jekyll，因为我所用的是windows系统，而且不建议在windows系统下安装Jekyll，还有我准备发展方向是前端。hexo是基于Node.js而Jekyll是基于Ruby">
-<meta name="keywords" content="git,Node.js,hexo,javascript">
+<meta name="keywords" content="git,hexo,Node.js,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node.js+hexo部署博客">
 <meta property="og:url" content="http://www.adherentman.cn/2017/03/20/Node.js+hexo部署博客/index.html">
@@ -398,16 +398,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/20/Node.js+hexo部署博客/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/20/Node.js+hexo部署博客/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -526,9 +516,9 @@
           
             <a href="/tags/git/" rel="tag"># git</a>
           
-            <a href="/tags/Node-js/" rel="tag"># Node.js</a>
-          
             <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+            <a href="/tags/Node-js/" rel="tag"># Node.js</a>
           
             <a href="/tags/javascript/" rel="tag"># javascript</a>
           
@@ -581,12 +571,7 @@
           
   <div class="comments" id="comments">
     
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTc3My82MzM5"></div>
     
   </div>
 
@@ -881,41 +866,39 @@
 
   
 
-    <script type="text/javascript">
-      var disqus_shortname = 'xuzihao';
-      var disqus_identifier = '2017/03/20/Node.js+hexo部署博客/';
-
-      var disqus_title = "Node.js+hexo部署博客";
 
 
-      function run_disqus_script(disqus_script) {
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
 
-      run_disqus_script('count.js');
+	
 
-      
-        var disqus_config = function () {
-            this.page.url = disqus_url;
-            this.page.identifier = disqus_identifier;
-            this.page.title = disqus_title;
-        };
-        run_disqus_script('embed.js');
-      
 
-    </script>
+
+
+
   
 
 
 
 
 
+  
 
 
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
 
 
 
