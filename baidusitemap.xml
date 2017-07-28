@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://www.adherentman.cn/2017/07/23/%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E8%BF%81%E7%A7%BB/</loc>
+    <lastmod>2017-07-28T12:51:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>多说挂了好久。现在换成来必力</title>
+        <pubTime>2017-07-23T01:30:55.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Technology" url="http://www.adherentman.cn/categories/Technology/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.adherentman.cn/2017/07/28/Promise/</loc>
     <lastmod>2017-07-28T12:45:51.000Z</lastmod>
     <data>
@@ -139,28 +161,6 @@
            
              
               <breadCrumb title="数据库,Mongodb" url="http://www.adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93-Mongodb/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.adherentman.cn/2017/07/23/%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E8%BF%81%E7%A7%BB/</loc>
-    <lastmod>2017-07-27T13:31:58.000Z</lastmod>
-    <data>
-        <display>
-        <title>多说挂了好久。现在换成来必力</title>
-        <pubTime>2017-07-23T01:30:55.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="Technology" url="http://www.adherentman.cn/categories/Technology/"/>
           
         </display>
     </data>
