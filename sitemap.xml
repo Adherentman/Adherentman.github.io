@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.adherentman.cn/2017/07/28/Promise/</loc>
+    
+    <lastmod>2017-07-28T12:45:51.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.adherentman.cn/2017/03/20/Node.js+hexo%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2/</loc>
     
     <lastmod>2017-07-28T12:43:09.000Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://www.adherentman.cn/2017/04/27/Es6%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/</loc>
     
     <lastmod>2017-07-28T12:41:54.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.adherentman.cn/2017/07/28/Promise/</loc>
-    
-    <lastmod>2017-07-28T12:40:54.000Z</lastmod>
     
   </url>
   
