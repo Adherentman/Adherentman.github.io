@@ -1,10 +1,11 @@
+http://www.adherentman.cn/2017/07/28/Promise/
 http://www.adherentman.cn/2017/07/27/mongodb/
 http://www.adherentman.cn/2017/07/26/Node/
 http://www.adherentman.cn/2017/07/25/git/
 http://www.adherentman.cn/2017/07/24/yewu/
 http://www.adherentman.cn/2017/07/23/评论功能迁移/
-http://www.adherentman.cn/2017/07/17/E-R图/
 http://www.adherentman.cn/2017/07/17/GraphQL/
+http://www.adherentman.cn/2017/07/17/E-R图/
 http://www.adherentman.cn/2017/07/17/React-Router/
 http://www.adherentman.cn/2017/06/30/React-State与Props的小心思/
 http://www.adherentman.cn/2017/05/22/JavaScript闭包/
