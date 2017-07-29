@@ -4,9 +4,9 @@
   <subtitle>宠辱不惊，闲看庭前花落花开</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://www.adherentman.cn/"/>
+  <link href="http://adherentman.cn/"/>
   <updated>2017-07-29T06:33:49.000Z</updated>
-  <id>http://www.adherentman.cn/</id>
+  <id>http://adherentman.cn/</id>
   
   <author>
     <name>XuZiHao</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Generator函数</title>
-    <link href="http://www.adherentman.cn/2017/07/29/Generator/"/>
-    <id>http://www.adherentman.cn/2017/07/29/Generator/</id>
+    <link href="http://adherentman.cn/Generator.html"/>
+    <id>http://adherentman.cn/Generator.html</id>
     <published>2017-07-29T06:21:06.000Z</published>
     <updated>2017-07-29T06:33:49.000Z</updated>
     
@@ -68,19 +68,19 @@
     
     </summary>
     
-      <category term="Javascript修仙之路" scheme="http://www.adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+      <category term="Javascript修仙之路" scheme="http://adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
     
-      <category term="node.js" scheme="http://www.adherentman.cn/tags/node-js/"/>
+      <category term="node.js" scheme="http://adherentman.cn/tags/node-js/"/>
     
   </entry>
   
   <entry>
     <title>Promise</title>
-    <link href="http://www.adherentman.cn/2017/07/28/Promise/"/>
-    <id>http://www.adherentman.cn/2017/07/28/Promise/</id>
+    <link href="http://adherentman.cn/Promise.html"/>
+    <id>http://adherentman.cn/Promise.html</id>
     <published>2017-07-28T09:37:12.000Z</published>
     <updated>2017-07-29T06:41:56.000Z</updated>
     
@@ -153,19 +153,19 @@
     
     </summary>
     
-      <category term="Javascript修仙之路" scheme="http://www.adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+      <category term="Javascript修仙之路" scheme="http://adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
     
-      <category term="node.js" scheme="http://www.adherentman.cn/tags/node-js/"/>
+      <category term="node.js" scheme="http://adherentman.cn/tags/node-js/"/>
     
   </entry>
   
   <entry>
     <title>Mongodb之旅(一)</title>
-    <link href="http://www.adherentman.cn/2017/07/27/mongodb/"/>
-    <id>http://www.adherentman.cn/2017/07/27/mongodb/</id>
+    <link href="http://adherentman.cn/mongodb.html"/>
+    <id>http://adherentman.cn/mongodb.html</id>
     <published>2017-07-27T13:18:35.000Z</published>
     <updated>2017-07-28T12:37:04.000Z</updated>
     
@@ -184,19 +184,19 @@
     
     </summary>
     
-      <category term="数据库,Mongodb" scheme="http://www.adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93-Mongodb/"/>
+      <category term="数据库,Mongodb" scheme="http://adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93-Mongodb/"/>
     
     
-      <category term="数据库" scheme="http://www.adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="Mongodb" scheme="http://www.adherentman.cn/tags/Mongodb/"/>
+      <category term="Mongodb" scheme="http://adherentman.cn/tags/Mongodb/"/>
     
   </entry>
   
   <entry>
     <title>学Node日志(一)</title>
-    <link href="http://www.adherentman.cn/2017/07/26/Node/"/>
-    <id>http://www.adherentman.cn/2017/07/26/Node/</id>
+    <link href="http://adherentman.cn/Node.html"/>
+    <id>http://adherentman.cn/Node.html</id>
     <published>2017-07-26T12:53:08.000Z</published>
     <updated>2017-07-28T12:40:40.000Z</updated>
     
@@ -270,19 +270,19 @@
     
     </summary>
     
-      <category term="Node.js" scheme="http://www.adherentman.cn/categories/Node-js/"/>
+      <category term="Node.js" scheme="http://adherentman.cn/categories/Node-js/"/>
     
     
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
     
-      <category term="node.js" scheme="http://www.adherentman.cn/tags/node-js/"/>
+      <category term="node.js" scheme="http://adherentman.cn/tags/node-js/"/>
     
   </entry>
   
   <entry>
     <title>Git基本操作</title>
-    <link href="http://www.adherentman.cn/2017/07/25/git/"/>
-    <id>http://www.adherentman.cn/2017/07/25/git/</id>
+    <link href="http://adherentman.cn/git.html"/>
+    <id>http://adherentman.cn/git.html</id>
     <published>2017-07-25T12:47:00.000Z</published>
     <updated>2017-07-27T13:20:59.000Z</updated>
     
@@ -329,17 +329,17 @@
     
     </summary>
     
-      <category term="git" scheme="http://www.adherentman.cn/categories/git/"/>
+      <category term="git" scheme="http://adherentman.cn/categories/git/"/>
     
     
-      <category term="git" scheme="http://www.adherentman.cn/tags/git/"/>
+      <category term="git" scheme="http://adherentman.cn/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>实习谈业务时所学</title>
-    <link href="http://www.adherentman.cn/2017/07/24/yewu/"/>
-    <id>http://www.adherentman.cn/2017/07/24/yewu/</id>
+    <link href="http://adherentman.cn/yewu.html"/>
+    <id>http://adherentman.cn/yewu.html</id>
     <published>2017-07-24T14:33:00.000Z</published>
     <updated>2017-07-27T13:21:26.000Z</updated>
     
@@ -352,17 +352,17 @@
     
     </summary>
     
-      <category term="Technology" scheme="http://www.adherentman.cn/categories/Technology/"/>
+      <category term="Technology" scheme="http://adherentman.cn/categories/Technology/"/>
     
     
-      <category term="生活" scheme="http://www.adherentman.cn/tags/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://adherentman.cn/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
   <entry>
     <title>多说挂了好久。现在换成来必力</title>
-    <link href="http://www.adherentman.cn/2017/07/23/%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E8%BF%81%E7%A7%BB/"/>
-    <id>http://www.adherentman.cn/2017/07/23/评论功能迁移/</id>
+    <link href="http://adherentman.cn/%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E8%BF%81%E7%A7%BB.html"/>
+    <id>http://adherentman.cn/评论功能迁移.html</id>
     <published>2017-07-23T01:30:55.000Z</published>
     <updated>2017-07-29T06:34:41.000Z</updated>
     
@@ -402,19 +402,19 @@
     
     </summary>
     
-      <category term="Technology" scheme="http://www.adherentman.cn/categories/Technology/"/>
+      <category term="Technology" scheme="http://adherentman.cn/categories/Technology/"/>
     
     
-      <category term="git" scheme="http://www.adherentman.cn/tags/git/"/>
+      <category term="git" scheme="http://adherentman.cn/tags/git/"/>
     
-      <category term="hexo" scheme="http://www.adherentman.cn/tags/hexo/"/>
+      <category term="hexo" scheme="http://adherentman.cn/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>GraphQL基本操作</title>
-    <link href="http://www.adherentman.cn/2017/07/17/GraphQL/"/>
-    <id>http://www.adherentman.cn/2017/07/17/GraphQL/</id>
+    <link href="http://adherentman.cn/GraphQL.html"/>
+    <id>http://adherentman.cn/GraphQL.html</id>
     <published>2017-07-17T08:02:36.000Z</published>
     <updated>2017-07-27T13:18:30.000Z</updated>
     
@@ -465,17 +465,17 @@
     
     </summary>
     
-      <category term="GraphQL" scheme="http://www.adherentman.cn/categories/GraphQL/"/>
+      <category term="GraphQL" scheme="http://adherentman.cn/categories/GraphQL/"/>
     
     
-      <category term="GraphQL" scheme="http://www.adherentman.cn/tags/GraphQL/"/>
+      <category term="GraphQL" scheme="http://adherentman.cn/tags/GraphQL/"/>
     
   </entry>
   
   <entry>
     <title>数据库E-R图</title>
-    <link href="http://www.adherentman.cn/2017/07/17/E-R%E5%9B%BE/"/>
-    <id>http://www.adherentman.cn/2017/07/17/E-R图/</id>
+    <link href="http://adherentman.cn/E-R%E5%9B%BE.html"/>
+    <id>http://adherentman.cn/E-R图.html</id>
     <published>2017-07-17T08:02:36.000Z</published>
     <updated>2017-07-17T08:06:54.000Z</updated>
     
@@ -500,17 +500,17 @@
     
     </summary>
     
-      <category term="数据库" scheme="http://www.adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="数据库" scheme="http://www.adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>React-Router</title>
-    <link href="http://www.adherentman.cn/2017/07/17/React-Router/"/>
-    <id>http://www.adherentman.cn/2017/07/17/React-Router/</id>
+    <link href="http://adherentman.cn/React-Router.html"/>
+    <id>http://adherentman.cn/React-Router.html</id>
     <published>2017-07-17T08:02:36.000Z</published>
     <updated>2017-07-20T15:48:47.000Z</updated>
     
@@ -544,19 +544,19 @@
     
     </summary>
     
-      <category term="React" scheme="http://www.adherentman.cn/categories/React/"/>
+      <category term="React" scheme="http://adherentman.cn/categories/React/"/>
     
     
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
     
-      <category term="React" scheme="http://www.adherentman.cn/tags/React/"/>
+      <category term="React" scheme="http://adherentman.cn/tags/React/"/>
     
   </entry>
   
   <entry>
     <title>React State与Props的小心思</title>
-    <link href="http://www.adherentman.cn/2017/06/30/React-State%E4%B8%8EProps%E7%9A%84%E5%B0%8F%E5%BF%83%E6%80%9D/"/>
-    <id>http://www.adherentman.cn/2017/06/30/React-State与Props的小心思/</id>
+    <link href="http://adherentman.cn/React-State%E4%B8%8EProps%E7%9A%84%E5%B0%8F%E5%BF%83%E6%80%9D.html"/>
+    <id>http://adherentman.cn/React-State与Props的小心思.html</id>
     <published>2017-06-30T04:10:00.000Z</published>
     <updated>2017-07-24T14:37:44.000Z</updated>
     
@@ -604,21 +604,21 @@
     
     </summary>
     
-      <category term="React" scheme="http://www.adherentman.cn/categories/React/"/>
+      <category term="React" scheme="http://adherentman.cn/categories/React/"/>
     
     
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
     
-      <category term="React" scheme="http://www.adherentman.cn/tags/React/"/>
+      <category term="React" scheme="http://adherentman.cn/tags/React/"/>
     
-      <category term="Webpack" scheme="http://www.adherentman.cn/tags/Webpack/"/>
+      <category term="Webpack" scheme="http://adherentman.cn/tags/Webpack/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript闭包</title>
-    <link href="http://www.adherentman.cn/2017/05/22/JavaScript%E9%97%AD%E5%8C%85/"/>
-    <id>http://www.adherentman.cn/2017/05/22/JavaScript闭包/</id>
+    <link href="http://adherentman.cn/JavaScript%E9%97%AD%E5%8C%85.html"/>
+    <id>http://adherentman.cn/JavaScript闭包.html</id>
     <published>2017-05-22T05:44:44.000Z</published>
     <updated>2017-05-26T09:47:24.000Z</updated>
     
@@ -681,17 +681,17 @@
     
     </summary>
     
-      <category term="Javascript基础" scheme="http://www.adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
+      <category term="Javascript基础" scheme="http://adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript作用域与作用域链</title>
-    <link href="http://www.adherentman.cn/2017/05/18/JavaScript%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
-    <id>http://www.adherentman.cn/2017/05/18/JavaScript作用域/</id>
+    <link href="http://adherentman.cn/JavaScript%E4%BD%9C%E7%94%A8%E5%9F%9F.html"/>
+    <id>http://adherentman.cn/JavaScript作用域.html</id>
     <published>2017-05-18T09:37:54.000Z</published>
     <updated>2017-05-22T05:44:16.000Z</updated>
     
@@ -727,17 +727,17 @@
     
     </summary>
     
-      <category term="Javascript基础" scheme="http://www.adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
+      <category term="Javascript基础" scheme="http://adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript——16道算法题</title>
-    <link href="http://www.adherentman.cn/2017/05/15/JavaScript%E2%80%94%E2%80%9416%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/"/>
-    <id>http://www.adherentman.cn/2017/05/15/JavaScript——16道算法题/</id>
+    <link href="http://adherentman.cn/JavaScript%E2%80%94%E2%80%9416%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98.html"/>
+    <id>http://adherentman.cn/JavaScript——16道算法题.html</id>
     <published>2017-05-15T05:19:00.000Z</published>
     <updated>2017-05-21T04:37:16.000Z</updated>
     
@@ -856,17 +856,17 @@
     
     </summary>
     
-      <category term="Javascript修仙之路" scheme="http://www.adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+      <category term="Javascript修仙之路" scheme="http://adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>前端面试题</title>
-    <link href="http://www.adherentman.cn/2017/05/07/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    <id>http://www.adherentman.cn/2017/05/07/前端面试题/</id>
+    <link href="http://adherentman.cn/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98.html"/>
+    <id>http://adherentman.cn/前端面试题.html</id>
     <published>2017-05-07T05:42:00.000Z</published>
     <updated>2017-05-07T06:57:49.000Z</updated>
     
@@ -951,17 +951,17 @@
     
     </summary>
     
-      <category term="Javascript修仙之路" scheme="http://www.adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+      <category term="Javascript修仙之路" scheme="http://adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>Vue.js小记</title>
-    <link href="http://www.adherentman.cn/2017/04/28/Vue.js%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.adherentman.cn/2017/04/28/Vue.js小记/</id>
+    <link href="http://adherentman.cn/Vue.js%E5%B0%8F%E8%AE%B0.html"/>
+    <id>http://adherentman.cn/Vue.js小记.html</id>
     <published>2017-04-28T07:54:00.000Z</published>
     <updated>2017-05-26T08:37:32.000Z</updated>
     
@@ -1044,19 +1044,19 @@
     
     </summary>
     
-      <category term="Vue" scheme="http://www.adherentman.cn/categories/Vue/"/>
+      <category term="Vue" scheme="http://adherentman.cn/categories/Vue/"/>
     
     
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
     
-      <category term="Vue.js" scheme="http://www.adherentman.cn/tags/Vue-js/"/>
+      <category term="Vue.js" scheme="http://adherentman.cn/tags/Vue-js/"/>
     
   </entry>
   
   <entry>
     <title>ES6箭头函数</title>
-    <link href="http://www.adherentman.cn/2017/04/27/Es6%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/"/>
-    <id>http://www.adherentman.cn/2017/04/27/Es6箭头函数/</id>
+    <link href="http://adherentman.cn/Es6%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.html"/>
+    <id>http://adherentman.cn/Es6箭头函数.html</id>
     <published>2017-04-27T07:29:00.000Z</published>
     <updated>2017-07-28T12:41:54.000Z</updated>
     
@@ -1082,17 +1082,17 @@
     
     </summary>
     
-      <category term="Javascript修仙之路" scheme="http://www.adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+      <category term="Javascript修仙之路" scheme="http://adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>初入React+Webpack(入门)</title>
-    <link href="http://www.adherentman.cn/2017/04/27/%E5%88%9D%E5%85%A5React/"/>
-    <id>http://www.adherentman.cn/2017/04/27/初入React/</id>
+    <link href="http://adherentman.cn/%E5%88%9D%E5%85%A5React.html"/>
+    <id>http://adherentman.cn/初入React.html</id>
     <published>2017-04-27T07:29:00.000Z</published>
     <updated>2017-07-24T14:37:52.000Z</updated>
     
@@ -1218,21 +1218,21 @@
     
     </summary>
     
-      <category term="React" scheme="http://www.adherentman.cn/categories/React/"/>
+      <category term="React" scheme="http://adherentman.cn/categories/React/"/>
     
     
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
     
-      <category term="React" scheme="http://www.adherentman.cn/tags/React/"/>
+      <category term="React" scheme="http://adherentman.cn/tags/React/"/>
     
-      <category term="Webpack" scheme="http://www.adherentman.cn/tags/Webpack/"/>
+      <category term="Webpack" scheme="http://adherentman.cn/tags/Webpack/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript变量+方法</title>
-    <link href="http://www.adherentman.cn/2017/04/24/JavaScript%E5%8F%98%E9%87%8F/"/>
-    <id>http://www.adherentman.cn/2017/04/24/JavaScript变量/</id>
+    <link href="http://adherentman.cn/JavaScript%E5%8F%98%E9%87%8F.html"/>
+    <id>http://adherentman.cn/JavaScript变量.html</id>
     <published>2017-04-24T05:55:00.000Z</published>
     <updated>2017-05-26T09:49:01.000Z</updated>
     
@@ -1267,17 +1267,17 @@
     
     </summary>
     
-      <category term="Javascript基础" scheme="http://www.adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
+      <category term="Javascript基础" scheme="http://adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript基本概念（高程3）</title>
-    <link href="http://www.adherentman.cn/2017/04/11/JavaScript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5copy/"/>
-    <id>http://www.adherentman.cn/2017/04/11/JavaScript基本概念copy/</id>
+    <link href="http://adherentman.cn/JavaScript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5copy.html"/>
+    <id>http://adherentman.cn/JavaScript基本概念copy.html</id>
     <published>2017-04-11T02:49:00.000Z</published>
     <updated>2017-05-26T09:49:17.000Z</updated>
     
@@ -1566,10 +1566,10 @@
     
     </summary>
     
-      <category term="Javascript基础" scheme="http://www.adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
+      <category term="Javascript基础" scheme="http://adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
     
   </entry>
   
