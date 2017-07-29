@@ -96,14 +96,14 @@
 <meta property="og:url" content="http://www.adherentman.cn/2017/07/28/Promise/index.html">
 <meta property="og:site_name" content="壮壮-Technology">
 <meta property="og:description" content="Promise1234new Promise(/* executor */   function(resolve,reject)&amp;#123;...&amp;#125;)  executor 函数在Promise构造函数执行时同步执行，被传递resolve和reject函数（executor 函数在Promise构造函数返回新建对象前被调用）。  一个 Promise有以下几种状态:  pending: 初">
-<meta property="og:image" content="http://www.adherentman.cn/Users/xuzihao/blog/public/images/选区_014.png">
-<meta property="og:image" content="http://www.adherentman.cn/Users/xuzihao/blog/public/images/选区_015.png">
-<meta property="og:image" content="http://www.adherentman.cn/Users/xuzihao/blog/public/images/选区_016.png">
-<meta property="og:updated_time" content="2017-07-28T12:45:51.000Z">
+<meta property="og:image" content="http://www.adherentman.cn/Users/xuzihao/blog/public/images/promise1.png">
+<meta property="og:image" content="http://www.adherentman.cn/Users/xuzihao/blog/public/images/promise2.png">
+<meta property="og:image" content="http://www.adherentman.cn/Users/xuzihao/blog/public/images/promise3.png">
+<meta property="og:updated_time" content="2017-07-29T06:24:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Promise">
 <meta name="twitter:description" content="Promise1234new Promise(/* executor */   function(resolve,reject)&amp;#123;...&amp;#125;)  executor 函数在Promise构造函数执行时同步执行，被传递resolve和reject函数（executor 函数在Promise构造函数返回新建对象前被调用）。  一个 Promise有以下几种状态:  pending: 初">
-<meta name="twitter:image" content="http://www.adherentman.cn/Users/xuzihao/blog/public/images/选区_014.png">
+<meta name="twitter:image" content="http://www.adherentman.cn/Users/xuzihao/blog/public/images/promise1.png">
 
 
 
@@ -454,10 +454,10 @@
 </li>
 </ul>
 <h2 id="Promise原型"><a href="#Promise原型" class="headerlink" title="Promise原型"></a>Promise原型</h2><h3 id="then-方法"><a href="#then-方法" class="headerlink" title="then()方法"></a>then()方法</h3><h4 id="MDN的例子"><a href="#MDN的例子" class="headerlink" title="MDN的例子"></a>MDN的例子</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">  resolve(<span class="string">"Success!"</span>);</div><div class="line">  <span class="comment">// or</span></div><div class="line">  <span class="comment">// reject ("Error!");</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line">p1.then(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(value); <span class="comment">// Success!</span></div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">reason</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(reason); <span class="comment">// Error!</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p><img src="/Users/xuzihao/blog/public/images/选区_014.png" alt="选区_014"></p>
+<p><img src="/Users/xuzihao/blog/public/images/promise1.png" alt="promise1"></p>
 <p>当我把<code>reject</code>去掉注释</p>
-<p><img src="/Users/xuzihao/blog/public/images/选区_015.png" alt="选区_015"></p>
-<p><img src="/Users/xuzihao/blog/public/images/选区_016.png" alt="选区_016"></p>
+<p><img src="/Users/xuzihao/blog/public/images/promise2.png" alt="promise2"></p>
+<p><img src="/Users/xuzihao/blog/public/images/promise3.png" alt="promise3"></p>
 <p>说明<code>p1</code>已经被声明过了,而且状态改变过了就不会在改变了.</p>
 <p>我只能把<code>p1</code> 改成别的才能得到<code>Error</code>.</p>
 <h4 id="链式"><a href="#链式" class="headerlink" title="链式"></a>链式</h4><p>例子来自<es6标准入门></es6标准入门></p>
@@ -556,6 +556,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/07/29/Generator/" rel="prev" title="Generator函数">
+                Generator函数 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -628,7 +632,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

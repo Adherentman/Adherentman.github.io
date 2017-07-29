@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.adherentman.cn/"/>
-  <updated>2017-07-28T12:45:51.000Z</updated>
+  <updated>2017-07-29T06:28:16.000Z</updated>
   <id>http://www.adherentman.cn/</id>
   
   <author>
@@ -16,11 +16,73 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Generator函数</title>
+    <link href="http://www.adherentman.cn/2017/07/29/Generator/"/>
+    <id>http://www.adherentman.cn/2017/07/29/Generator/</id>
+    <published>2017-07-29T06:21:06.000Z</published>
+    <updated>2017-07-29T06:28:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Generator函数"><a href="#Generator函数" class="headerlink" title="Generator函数"></a>Generator函数</h1><p>Generator最大的特点就是定义的函数可以被暂停执行.</p>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>迭代器 iterator, infinite range, 可以暂停函数, lazy evaluation, 用来实现 async/await 啊, 棒棒哒.</p>
+<p>async generator/iterator </p>
+<blockquote>
+<p>摘自MDN</p>
+</blockquote>
+<p><strong>生成器</strong>对象是由一个 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/function*" target="_blank" rel="external">generator function</a> 返回的,并且它符合<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols#iterable" target="_blank" rel="external">可迭代协议</a>和<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols#iterator" target="_blank" rel="external">迭代器协议</a>。</p>
+<blockquote>
+<p>摘自ES6标准入门</p>
+</blockquote>
+<p>可以把它理解成一个状态机,封装了多个内部状态.还是一个遍历器对象生成函数.</p>
+<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">hi</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">yield</span> <span class="string">'nihao'</span>;</div><div class="line"><span class="keyword">yield</span> <span class="string">'hello'</span>;</div><div class="line"><span class="keyword">return</span> <span class="string">'ending'</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> hw = hi();</div><div class="line">hw.next();</div><div class="line">hw.next();</div><div class="line">hw.next();</div></pre></td></tr></table></figure>
+<p><img src="/Users/xuzihao/blog/public/images/generator.png" alt="generator"></p>
+<blockquote>
+<p>通过gen.next()取得的输出是一个对象，包含value和done两个属性，其中value是真正返回的值，而done则用来标识Generator是否已经执行完毕。因为自然数生成器是一个无限循环，所以不存在done: true的情况。</p>
+</blockquote>
+<p>在<code>Generator函数</code>返回的遍历器对象只有调用<code>next方法</code>才会遍历下一个内部状态,所以yield语句就是<strong>暂停标志</strong>.</p>
+<ul>
+<li>yield语句后面的表达式,只有当调用到next方法,内部指针指向该语句时才会执行.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">add</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">yield</span> <span class="number">123</span>+<span class="number">123</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//在上面代码里123+123不去求值.当有next();时,才去求值</span></div></pre></td></tr></table></figure>
+<ol>
+<li>每个yield将代码分割成两个部分，需要执行两次next才能执行完。</li>
+<li>yield其实由两个动作组成，<strong>输入</strong> + <strong>输出</strong>（输入在输出前面），每次执行next，代码会暂停在yield <strong>输出</strong>执行后，其它的语句不再执行（<strong>很重要</strong>）。</li>
+</ol>
+<h2 id="for…of循环"><a href="#for…of循环" class="headerlink" title="for…of循环"></a>for…of循环</h2><p>可以自动遍历generator函数,不用去调用next方法.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  yiled <span class="number">1</span>;</div><div class="line">  yiled <span class="number">2</span>;</div><div class="line">  yiled <span class="number">3</span>;</div><div class="line">  yiled <span class="number">4</span>;</div><div class="line">  yiled <span class="number">5</span>;</div><div class="line">  <span class="keyword">return</span> <span class="number">6</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> foo())&#123;</div><div class="line">  <span class="built_in">console</span>.log(v);</div><div class="line">&#125;</div><div class="line"><span class="comment">//1 2 3 4 5</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Generator函数&quot;&gt;&lt;a href=&quot;#Generator函数&quot; class=&quot;headerlink&quot; title=&quot;Generator函数&quot;&gt;&lt;/a&gt;Generator函数&lt;/h1&gt;&lt;p&gt;Generator最大的特点就是定义的函数可以被暂停执行.&lt;/p&gt;
+&lt;h2 id=&quot;作用&quot;&gt;&lt;a href=&quot;#作用&quot; class=&quot;headerlink&quot; title=&quot;作用&quot;&gt;&lt;/a&gt;作用&lt;/h2&gt;&lt;p&gt;迭代器 iterator, infinite range, 可以暂停函数, lazy evaluation, 用来实现 async/await 啊, 棒棒哒.&lt;/p&gt;
+&lt;p&gt;async generator/iterator &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;摘自MDN&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;生成器&lt;/strong&gt;对象是由一个 &lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/function*&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;generator function&lt;/a&gt; 返回的,并且它符合&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols#iterable&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;可迭代协议&lt;/a&gt;和&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols#iterator&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;迭代器协议&lt;/a&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;摘自ES6标准入门&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可以把它理解成一个状态机,封装了多个内部状态.还是一个遍历器对象生成函数.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Javascript修仙之路" scheme="http://www.adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+    
+      <category term="node.js" scheme="http://www.adherentman.cn/tags/node-js/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Promise</title>
     <link href="http://www.adherentman.cn/2017/07/28/Promise/"/>
     <id>http://www.adherentman.cn/2017/07/28/Promise/</id>
     <published>2017-07-28T09:37:12.000Z</published>
-    <updated>2017-07-28T12:45:51.000Z</updated>
+    <updated>2017-07-29T06:24:59.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(</div><div class="line"><span class="comment">/* executor */</span></div><div class="line">   <span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;...&#125;</div><div class="line">)</div></pre></td></tr></table></figure>
 <blockquote>
@@ -47,10 +109,10 @@
 </li>
 </ul>
 <h2 id="Promise原型"><a href="#Promise原型" class="headerlink" title="Promise原型"></a>Promise原型</h2><h3 id="then-方法"><a href="#then-方法" class="headerlink" title="then()方法"></a>then()方法</h3><h4 id="MDN的例子"><a href="#MDN的例子" class="headerlink" title="MDN的例子"></a>MDN的例子</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">  resolve(<span class="string">"Success!"</span>);</div><div class="line">  <span class="comment">// or</span></div><div class="line">  <span class="comment">// reject ("Error!");</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line">p1.then(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(value); <span class="comment">// Success!</span></div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">reason</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(reason); <span class="comment">// Error!</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p><img src="/Users/xuzihao/blog/public/images/选区_014.png" alt="选区_014"></p>
+<p><img src="/Users/xuzihao/blog/public/images/promise1.png" alt="promise1"></p>
 <p>当我把<code>reject</code>去掉注释</p>
-<p><img src="/Users/xuzihao/blog/public/images/选区_015.png" alt="选区_015"></p>
-<p><img src="/Users/xuzihao/blog/public/images/选区_016.png" alt="选区_016"></p>
+<p><img src="/Users/xuzihao/blog/public/images/promise2.png" alt="promise2"></p>
+<p><img src="/Users/xuzihao/blog/public/images/promise3.png" alt="promise3"></p>
 <p>说明<code>p1</code>已经被声明过了,而且状态改变过了就不会在改变了.</p>
 <p>我只能把<code>p1</code> 改成别的才能得到<code>Error</code>.</p>
 <h4 id="链式"><a href="#链式" class="headerlink" title="链式"></a>链式</h4><p>例子来自<es6标准入门></es6标准入门></p>
@@ -302,7 +364,7 @@
     <link href="http://www.adherentman.cn/2017/07/23/%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E8%BF%81%E7%A7%BB/"/>
     <id>http://www.adherentman.cn/2017/07/23/评论功能迁移/</id>
     <published>2017-07-23T01:30:55.000Z</published>
-    <updated>2017-07-28T12:51:32.000Z</updated>
+    <updated>2017-07-29T06:31:21.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="多说已挂，将评论迁移到来必力"><a href="#多说已挂，将评论迁移到来必力" class="headerlink" title="多说已挂，将评论迁移到来必力"></a>多说已挂，将评论迁移到来必力</h1><p>有很多可替代的方案</p>
 <ul>
@@ -318,12 +380,12 @@
 <p>打开<code>来必力</code>官网，注册完毕。</p>
 <p>登陆后我们来到管理页面。</p>
 <p>之后再点击代码管理，我们将会看见一堆代码。</p>
-<p><img src="/Users/xuzihao/blog/public/images/Snip20170728_16.png" alt="Snip20170728_16"></p>
+<p><img src="/Users/xuzihao/blog/public/images/laibili.png" alt="laibili"></p>
 <p>我们在代码中找到data-uid：“xxxxxxxxxx”。</p>
 <p>这段将是我们要用的uid。</p>
 <p>打开主题文件下的<code>_config.yml</code>我们</p>
 <p><code>livere_uid: #your livere_uid</code></p>
-<p><img src="/Users/xuzihao/blog/public/images/Snip20170728_17.png" alt="Snip20170728_17"></p>
+<p><img src="/Users/xuzihao/blog/public/images/pinglun.png" alt="pinglun"></p>
 <p>之后<code>hexo clean &amp;&amp; hexo g -d</code>即可</p>
 ]]></content>
     
@@ -346,41 +408,6 @@
       <category term="git" scheme="http://www.adherentman.cn/tags/git/"/>
     
       <category term="hexo" scheme="http://www.adherentman.cn/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据库E-R图</title>
-    <link href="http://www.adherentman.cn/2017/07/17/E-R%E5%9B%BE/"/>
-    <id>http://www.adherentman.cn/2017/07/17/E-R图/</id>
-    <published>2017-07-17T08:02:36.000Z</published>
-    <updated>2017-07-17T08:06:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="E-R图"><a href="#E-R图" class="headerlink" title="E-R图"></a>E-R图</h1><p>E-R图是指实体-关系-属性三个基本概括数据的基本结构.</p>
-<p>强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。</p>
-<a id="more"></a>
-<ul>
-<li>ER图的实体（entity）即数据模型中的数据对象，例如人、学生、音乐都可以作为一个数据对象，用长方体来表示，每个实体都有自己的实体成员（entity member）或者说实体对象（entity instance），例如学生实体里包括张三、李四等，实体成员（entity member）/实体实例（entity instance） 不需要出现在ER图中。</li>
-</ul>
-<ul>
-<li>ER图的属性（attribute）即数据对象所具有的属性，例如学生具有姓名、学号、年级等属性，用椭圆形表示，属性分为唯一属性（ unique attribute）和非唯一属性，唯一属性指的是唯一可用来标识该实体实例或者成员的属性，用下划线表示，一般来讲实体都至少有一个唯一属性。</li>
-</ul>
-<ul>
-<li>ER图的关系（relationship）用来表现数据对象与数据对象之间的联系，例如学生的实体和成绩表的实体之间有一定的联系，每个学生都有自己的成绩表，这就是一种关系，关系用菱形来表示。</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;E-R图&quot;&gt;&lt;a href=&quot;#E-R图&quot; class=&quot;headerlink&quot; title=&quot;E-R图&quot;&gt;&lt;/a&gt;E-R图&lt;/h1&gt;&lt;p&gt;E-R图是指实体-关系-属性三个基本概括数据的基本结构.&lt;/p&gt;
-&lt;p&gt;强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据库" scheme="http://www.adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="数据库" scheme="http://www.adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -442,6 +469,41 @@
     
     
       <category term="GraphQL" scheme="http://www.adherentman.cn/tags/GraphQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库E-R图</title>
+    <link href="http://www.adherentman.cn/2017/07/17/E-R%E5%9B%BE/"/>
+    <id>http://www.adherentman.cn/2017/07/17/E-R图/</id>
+    <published>2017-07-17T08:02:36.000Z</published>
+    <updated>2017-07-17T08:06:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="E-R图"><a href="#E-R图" class="headerlink" title="E-R图"></a>E-R图</h1><p>E-R图是指实体-关系-属性三个基本概括数据的基本结构.</p>
+<p>强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。</p>
+<a id="more"></a>
+<ul>
+<li>ER图的实体（entity）即数据模型中的数据对象，例如人、学生、音乐都可以作为一个数据对象，用长方体来表示，每个实体都有自己的实体成员（entity member）或者说实体对象（entity instance），例如学生实体里包括张三、李四等，实体成员（entity member）/实体实例（entity instance） 不需要出现在ER图中。</li>
+</ul>
+<ul>
+<li>ER图的属性（attribute）即数据对象所具有的属性，例如学生具有姓名、学号、年级等属性，用椭圆形表示，属性分为唯一属性（ unique attribute）和非唯一属性，唯一属性指的是唯一可用来标识该实体实例或者成员的属性，用下划线表示，一般来讲实体都至少有一个唯一属性。</li>
+</ul>
+<ul>
+<li>ER图的关系（relationship）用来表现数据对象与数据对象之间的联系，例如学生的实体和成绩表的实体之间有一定的联系，每个学生都有自己的成绩表，这就是一种关系，关系用菱形来表示。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;E-R图&quot;&gt;&lt;a href=&quot;#E-R图&quot; class=&quot;headerlink&quot; title=&quot;E-R图&quot;&gt;&lt;/a&gt;E-R图&lt;/h1&gt;&lt;p&gt;E-R图是指实体-关系-属性三个基本概括数据的基本结构.&lt;/p&gt;
+&lt;p&gt;强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://www.adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="数据库" scheme="http://www.adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -992,6 +1054,42 @@
   </entry>
   
   <entry>
+    <title>ES6箭头函数</title>
+    <link href="http://www.adherentman.cn/2017/04/27/Es6%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/"/>
+    <id>http://www.adherentman.cn/2017/04/27/Es6箭头函数/</id>
+    <published>2017-04-27T07:29:00.000Z</published>
+    <updated>2017-07-28T12:41:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>简单地说，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">x</span> =&gt;</span> x;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> x;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>这个就是最简单的箭头函数。</p>
+<a id="more"></a>
+<p>接着如果箭头函数不需要参数或者多个参数的话，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">()</span> =&gt;</span> <span class="number">1</span>;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;;</div><div class="line">或者</div><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">_</span> =&gt;</span><span class="number">1</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sum = <span class="function">(<span class="params">num1,num2</span>) =&gt;</span>num1 +num2;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> sum =<span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> num1+num2;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><strong>箭头函数没有自己的<code>this</code></strong>，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> [</div><div class="line">    <span class="function">(<span class="params">(</span>)=&gt;</span> <span class="keyword">this</span>.x).bind(&#123;<span class="attr">x</span> :<span class="string">'inner'</span>&#125;)()</div><div class="line">  ]</div><div class="line">&#125;).call(&#123;<span class="attr">x</span> :<span class="string">'outer'</span>&#125;);</div><div class="line"><span class="comment">//['outer']</span></div></pre></td></tr></table></figure>
+<p>所以<code>bind</code>的方法无效。并且<code>call()</code>,<code>apply()</code>,也无效。</p>
+<p><strong>MDN上的</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> adder = &#123;</div><div class="line">  <span class="attr">base</span> : <span class="number">1</span>,</div><div class="line">    </div><div class="line">  <span class="attr">add</span> : <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</div><div class="line">    <span class="keyword">return</span> f(a);</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">addThruCall</span>: <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</div><div class="line">    <span class="keyword">var</span> b = &#123;</div><div class="line">      <span class="attr">base</span> : <span class="number">2</span></div><div class="line">    &#125;;</div><div class="line">            </div><div class="line">    <span class="keyword">return</span> f.call(b, a);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(adder.add(<span class="number">1</span>));         <span class="comment">// 输出 2</span></div><div class="line"><span class="built_in">console</span>.log(adder.addThruCall(<span class="number">1</span>)); <span class="comment">// 仍然输出 2（而不是3 ——译者注）</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;简单地说，&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt; =&amp;gt;&lt;/span&gt; x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a =&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这个就是最简单的箭头函数。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Javascript修仙之路" scheme="http://www.adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>初入React+Webpack(入门)</title>
     <link href="http://www.adherentman.cn/2017/04/27/%E5%88%9D%E5%85%A5React/"/>
     <id>http://www.adherentman.cn/2017/04/27/初入React/</id>
@@ -1128,42 +1226,6 @@
       <category term="React" scheme="http://www.adherentman.cn/tags/React/"/>
     
       <category term="Webpack" scheme="http://www.adherentman.cn/tags/Webpack/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6箭头函数</title>
-    <link href="http://www.adherentman.cn/2017/04/27/Es6%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/"/>
-    <id>http://www.adherentman.cn/2017/04/27/Es6箭头函数/</id>
-    <published>2017-04-27T07:29:00.000Z</published>
-    <updated>2017-07-28T12:41:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>简单地说，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">x</span> =&gt;</span> x;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> x;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>这个就是最简单的箭头函数。</p>
-<a id="more"></a>
-<p>接着如果箭头函数不需要参数或者多个参数的话，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">()</span> =&gt;</span> <span class="number">1</span>;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;;</div><div class="line">或者</div><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">_</span> =&gt;</span><span class="number">1</span>;</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sum = <span class="function">(<span class="params">num1,num2</span>) =&gt;</span>num1 +num2;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> sum =<span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> num1+num2;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p><strong>箭头函数没有自己的<code>this</code></strong>，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> [</div><div class="line">    <span class="function">(<span class="params">(</span>)=&gt;</span> <span class="keyword">this</span>.x).bind(&#123;<span class="attr">x</span> :<span class="string">'inner'</span>&#125;)()</div><div class="line">  ]</div><div class="line">&#125;).call(&#123;<span class="attr">x</span> :<span class="string">'outer'</span>&#125;);</div><div class="line"><span class="comment">//['outer']</span></div></pre></td></tr></table></figure>
-<p>所以<code>bind</code>的方法无效。并且<code>call()</code>,<code>apply()</code>,也无效。</p>
-<p><strong>MDN上的</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> adder = &#123;</div><div class="line">  <span class="attr">base</span> : <span class="number">1</span>,</div><div class="line">    </div><div class="line">  <span class="attr">add</span> : <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</div><div class="line">    <span class="keyword">return</span> f(a);</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">addThruCall</span>: <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</div><div class="line">    <span class="keyword">var</span> b = &#123;</div><div class="line">      <span class="attr">base</span> : <span class="number">2</span></div><div class="line">    &#125;;</div><div class="line">            </div><div class="line">    <span class="keyword">return</span> f.call(b, a);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(adder.add(<span class="number">1</span>));         <span class="comment">// 输出 2</span></div><div class="line"><span class="built_in">console</span>.log(adder.addThruCall(<span class="number">1</span>)); <span class="comment">// 仍然输出 2（而不是3 ——译者注）</span></div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;简单地说，&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt; =&amp;gt;&lt;/span&gt; x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a =&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;这个就是最简单的箭头函数。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Javascript修仙之路" scheme="http://www.adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
     
   </entry>
   
@@ -1505,93 +1567,6 @@
     </summary>
     
       <category term="Javascript基础" scheme="http://www.adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Javascript DOM编程艺术学习笔记一（第三章兼高程三）</title>
-    <link href="http://www.adherentman.cn/2017/03/26/Javascript%20Dom%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80%EF%BC%88%E7%AC%AC%E4%B8%89%E7%AB%A0%E5%85%BC%E9%AB%98%E7%A8%8B%E4%B8%89%EF%BC%89/"/>
-    <id>http://www.adherentman.cn/2017/03/26/Javascript Dom编程艺术学习笔记一（第三章兼高程三）/</id>
-    <published>2017-03-26T12:01:14.000Z</published>
-    <updated>2017-04-26T14:47:51.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="1-Dom基础"><a href="#1-Dom基础" class="headerlink" title="1.Dom基础"></a>1.Dom基础</h1><h2 id="Element"><a href="#Element" class="headerlink" title="Element"></a>Element</h2><ul>
-<li>三种DOM方法可获取元素节点，分别是通过元素ID、通过标签名字和通过类名字来获取</li>
-<li>getElementById  </li>
-</ul>
-<blockquote>
-<p> 根据Id获取元素节点</p>
-</blockquote>
-<ul>
-<li>getElementByTagName  </li>
-</ul>
-<blockquote>
-<p>根据Html获取元素节点</p>
-</blockquote>
-<ul>
-<li>getElementByClassName  </li>
-</ul>
-<blockquote>
-<p>根据ClassName（class）获取元素节点</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="高程三中学到"><a href="#高程三中学到" class="headerlink" title="高程三中学到"></a>高程三中学到</h2><p>Html元素</p>
-<ul>
-<li>id，元素在文档中的唯一标识 -</li>
-<li>title，有关元素的附加说明信息，一般通过工具提示条显示出来 </li>
-<li>lang，元素内容的语言比如中文zh-hans </li>
-<li>dir，语言的方向，值为”ltr”（left-to-right，从左至右）或”rtl”（right-to-left，从右至左），很少使用</li>
-<li><p>className，与元素的class特性对应，即为元素指定的CSS类，没有将这个属性命名为class。</p>
-  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myDiv"</span> <span class="attr">class</span>=<span class="string">"bd"</span> <span class="attr">title</span>=<span class="string">"Body text"</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">dir</span>=<span class="string">"ltr"</span>&gt;</span>Some text<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>  可以获得元素中指定的所有信息。</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">div = <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>);</div><div class="line">       alert(div.id);         <span class="comment">//"myDiv"</span></div><div class="line">       alert(div.className);  <span class="comment">//"bd"</span></div><div class="line">       alert(div.title);      <span class="comment">//"Body text"</span></div><div class="line">       alert(div.lang);       <span class="comment">//"en"</span></div><div class="line">       alert(div.dir);        <span class="comment">//"ltr"</span></div></pre></td></tr></table></figure>
-<p>  还可以为每个属性赋予新的值。</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">div = <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>);</div><div class="line">       div.id = <span class="string">"someOtherId"</span>;</div><div class="line">       div.className = <span class="string">"ft"</span>;</div><div class="line">       div.title = <span class="string">"Some other text"</span>;</div><div class="line">       div.lang = <span class="string">"fr"</span>;</div><div class="line">       div.dir =<span class="string">"rtl"</span>;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="获取和设置属性"><a href="#获取和设置属性" class="headerlink" title="获取和设置属性"></a>获取和设置属性</h1><ul>
-<li>getAttribute</li>
-</ul>
-<blockquote>
-<p>getAttribute是一个函数。它只有一个参数——你打算查询的属性名字：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">object.getAttribute(attribute);</div></pre></td></tr></table></figure></p>
-</blockquote>
-<ul>
-<li>setAttribute<blockquote>
-<p>它允许我们对属性节点的值做出修改。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">object.setAttribute(&quot;attribute&quot;,value);</div></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;1-Dom基础&quot;&gt;&lt;a href=&quot;#1-Dom基础&quot; class=&quot;headerlink&quot; title=&quot;1.Dom基础&quot;&gt;&lt;/a&gt;1.Dom基础&lt;/h1&gt;&lt;h2 id=&quot;Element&quot;&gt;&lt;a href=&quot;#Element&quot; class=&quot;headerlink&quot; title=&quot;Element&quot;&gt;&lt;/a&gt;Element&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;三种DOM方法可获取元素节点，分别是通过元素ID、通过标签名字和通过类名字来获取&lt;/li&gt;
-&lt;li&gt;getElementById  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt; 根据Id获取元素节点&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;getElementByTagName  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;根据Html获取元素节点&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;getElementByClassName  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;根据ClassName（class）获取元素节点&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Javascript修仙之路" scheme="http://www.adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
     
     
       <category term="JavaScript" scheme="http://www.adherentman.cn/tags/JavaScript/"/>
