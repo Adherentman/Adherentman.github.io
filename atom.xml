@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.adherentman.cn/"/>
-  <updated>2017-07-29T06:28:16.000Z</updated>
+  <updated>2017-07-29T06:33:49.000Z</updated>
   <id>http://www.adherentman.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.adherentman.cn/2017/07/29/Generator/"/>
     <id>http://www.adherentman.cn/2017/07/29/Generator/</id>
     <published>2017-07-29T06:21:06.000Z</published>
-    <updated>2017-07-29T06:28:16.000Z</updated>
+    <updated>2017-07-29T06:33:49.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Generator函数"><a href="#Generator函数" class="headerlink" title="Generator函数"></a>Generator函数</h1><p>Generator最大的特点就是定义的函数可以被暂停执行.</p>
 <h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>迭代器 iterator, infinite range, 可以暂停函数, lazy evaluation, 用来实现 async/await 啊, 棒棒哒.</p>
@@ -35,7 +35,7 @@
 <p>可以把它理解成一个状态机,封装了多个内部状态.还是一个遍历器对象生成函数.</p>
 <a id="more"></a>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">hi</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">yield</span> <span class="string">'nihao'</span>;</div><div class="line"><span class="keyword">yield</span> <span class="string">'hello'</span>;</div><div class="line"><span class="keyword">return</span> <span class="string">'ending'</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> hw = hi();</div><div class="line">hw.next();</div><div class="line">hw.next();</div><div class="line">hw.next();</div></pre></td></tr></table></figure>
-<p><img src="/Users/xuzihao/blog/public/images/generator.png" alt="generator"></p>
+<p><img src="/images/generator.png" alt="generator"></p>
 <blockquote>
 <p>通过gen.next()取得的输出是一个对象，包含value和done两个属性，其中value是真正返回的值，而done则用来标识Generator是否已经执行完毕。因为自然数生成器是一个无限循环，所以不存在done: true的情况。</p>
 </blockquote>
@@ -82,7 +82,7 @@
     <link href="http://www.adherentman.cn/2017/07/28/Promise/"/>
     <id>http://www.adherentman.cn/2017/07/28/Promise/</id>
     <published>2017-07-28T09:37:12.000Z</published>
-    <updated>2017-07-29T06:24:59.000Z</updated>
+    <updated>2017-07-29T06:34:18.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(</div><div class="line"><span class="comment">/* executor */</span></div><div class="line">   <span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;...&#125;</div><div class="line">)</div></pre></td></tr></table></figure>
 <blockquote>
@@ -109,10 +109,10 @@
 </li>
 </ul>
 <h2 id="Promise原型"><a href="#Promise原型" class="headerlink" title="Promise原型"></a>Promise原型</h2><h3 id="then-方法"><a href="#then-方法" class="headerlink" title="then()方法"></a>then()方法</h3><h4 id="MDN的例子"><a href="#MDN的例子" class="headerlink" title="MDN的例子"></a>MDN的例子</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">  resolve(<span class="string">"Success!"</span>);</div><div class="line">  <span class="comment">// or</span></div><div class="line">  <span class="comment">// reject ("Error!");</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line">p1.then(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(value); <span class="comment">// Success!</span></div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">reason</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(reason); <span class="comment">// Error!</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p><img src="/Users/xuzihao/blog/public/images/promise1.png" alt="promise1"></p>
+<p><img src="/images/promise1.png" alt="promise1"></p>
 <p>当我把<code>reject</code>去掉注释</p>
-<p><img src="/Users/xuzihao/blog/public/images/promise2.png" alt="promise2"></p>
-<p><img src="/Users/xuzihao/blog/public/images/promise3.png" alt="promise3"></p>
+<p><img src="/images/promise2.png" alt="promise2"></p>
+<p><img src="/images/promise3.png" alt="promise3"></p>
 <p>说明<code>p1</code>已经被声明过了,而且状态改变过了就不会在改变了.</p>
 <p>我只能把<code>p1</code> 改成别的才能得到<code>Error</code>.</p>
 <h4 id="链式"><a href="#链式" class="headerlink" title="链式"></a>链式</h4><p>例子来自<es6标准入门></es6标准入门></p>
@@ -364,7 +364,7 @@
     <link href="http://www.adherentman.cn/2017/07/23/%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E8%BF%81%E7%A7%BB/"/>
     <id>http://www.adherentman.cn/2017/07/23/评论功能迁移/</id>
     <published>2017-07-23T01:30:55.000Z</published>
-    <updated>2017-07-29T06:31:21.000Z</updated>
+    <updated>2017-07-29T06:34:41.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="多说已挂，将评论迁移到来必力"><a href="#多说已挂，将评论迁移到来必力" class="headerlink" title="多说已挂，将评论迁移到来必力"></a>多说已挂，将评论迁移到来必力</h1><p>有很多可替代的方案</p>
 <ul>
@@ -380,12 +380,12 @@
 <p>打开<code>来必力</code>官网，注册完毕。</p>
 <p>登陆后我们来到管理页面。</p>
 <p>之后再点击代码管理，我们将会看见一堆代码。</p>
-<p><img src="/Users/xuzihao/blog/public/images/laibili.png" alt="laibili"></p>
+<p><img src="/images/laibili.png" alt="laibili"></p>
 <p>我们在代码中找到data-uid：“xxxxxxxxxx”。</p>
 <p>这段将是我们要用的uid。</p>
 <p>打开主题文件下的<code>_config.yml</code>我们</p>
 <p><code>livere_uid: #your livere_uid</code></p>
-<p><img src="/Users/xuzihao/blog/public/images/pinglun.png" alt="pinglun"></p>
+<p><img src="/images/pinglun.png" alt="pinglun"></p>
 <p>之后<code>hexo clean &amp;&amp; hexo g -d</code>即可</p>
 ]]></content>
     

@@ -96,12 +96,12 @@
 <meta property="og:url" content="http://www.adherentman.cn/2017/07/29/Generator/index.html">
 <meta property="og:site_name" content="壮壮-Technology">
 <meta property="og:description" content="Generator函数Generator最大的特点就是定义的函数可以被暂停执行. 作用迭代器 iterator, infinite range, 可以暂停函数, lazy evaluation, 用来实现 async/await 啊, 棒棒哒. async generator/iterator   摘自MDN  生成器对象是由一个 generator function 返回的,并且它符合可迭代协议">
-<meta property="og:image" content="http://www.adherentman.cn/Users/xuzihao/blog/public/images/generator.png">
-<meta property="og:updated_time" content="2017-07-29T06:28:16.000Z">
+<meta property="og:image" content="http://www.adherentman.cn/images/generator.png">
+<meta property="og:updated_time" content="2017-07-29T06:33:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Generator函数">
 <meta name="twitter:description" content="Generator函数Generator最大的特点就是定义的函数可以被暂停执行. 作用迭代器 iterator, infinite range, 可以暂停函数, lazy evaluation, 用来实现 async/await 啊, 棒棒哒. async generator/iterator   摘自MDN  生成器对象是由一个 generator function 返回的,并且它符合可迭代协议">
-<meta name="twitter:image" content="http://www.adherentman.cn/Users/xuzihao/blog/public/images/generator.png">
+<meta name="twitter:image" content="http://www.adherentman.cn/images/generator.png">
 
 
 
@@ -440,7 +440,7 @@
 <p>可以把它理解成一个状态机,封装了多个内部状态.还是一个遍历器对象生成函数.</p>
 <a id="more"></a>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">hi</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">yield</span> <span class="string">'nihao'</span>;</div><div class="line"><span class="keyword">yield</span> <span class="string">'hello'</span>;</div><div class="line"><span class="keyword">return</span> <span class="string">'ending'</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> hw = hi();</div><div class="line">hw.next();</div><div class="line">hw.next();</div><div class="line">hw.next();</div></pre></td></tr></table></figure>
-<p><img src="/Users/xuzihao/blog/public/images/generator.png" alt="generator"></p>
+<p><img src="/images/generator.png" alt="generator"></p>
 <blockquote>
 <p>通过gen.next()取得的输出是一个对象，包含value和done两个属性，其中value是真正返回的值，而done则用来标识Generator是否已经执行完毕。因为自然数生成器是一个无限循环，所以不存在done: true的情况。</p>
 </blockquote>
