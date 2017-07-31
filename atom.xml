@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://adherentman.cn/"/>
-  <updated>2017-07-30T02:33:27.000Z</updated>
+  <updated>2017-07-31T01:23:38.000Z</updated>
   <id>http://adherentman.cn/</id>
   
   <author>
@@ -14,6 +14,165 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React-Redux、Redux</title>
+    <link href="http://adherentman.cn/redux.html"/>
+    <id>http://adherentman.cn/redux.html</id>
+    <published>2017-07-31T01:18:26.000Z</published>
+    <updated>2017-07-31T01:23:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>react无法让两个组件互相交流，使用对方数据。</p>
+<h1 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a>Redux</h1><ul>
+<li>需要回调通知state（等同于回调参数）-&gt;action</li>
+<li>需要根据回调处理（等同于父级方法） -&gt;reducer</li>
+<li>需要state(等同于总状态) -&gt;store</li>
+</ul>
+<p>现在您只需要记住 <code>reducer</code> 是一个函数，负责更新并返回一个新的<code>state</code></p>
+<p>而 <code>initialState</code> 主要用于前后端同构的数据同步</p>
+<a id="more"></a>
+<h2 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h2><ul>
+<li>是把数据从应用传到store的有效载荷。</li>
+<li>是store数据的唯一来源</li>
+<li>描述发生了什么的普通对象</li>
+<li>也可以理解成新闻的摘要-“任务列表里添加了学习Redux文档”。</li>
+</ul>
+<h2 id="Store"><a href="#Store" class="headerlink" title="Store"></a>Store</h2><ul>
+<li>Redux应用中只有一个单一的store</li>
+<li>维持应用的state</li>
+<li>提供 getState() 获取state</li>
+<li>提供dispatch() 更新state</li>
+<li>通过subscribe(listener) 注册监听器</li>
+<li>通过subscribe(listener) 返回的函数注销监听器.</li>
+<li>会把2个参数传入reducer：当前的state树和action。</li>
+</ul>
+<h2 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h2><h2 id="Reducer-1"><a href="#Reducer-1" class="headerlink" title="Reducer"></a>Reducer</h2><p>reducer就是实现(state,action) -&gt; newState的纯函数. 也就是真正处理state的地方.</p>
+<p>Redux不希望我们修改老的state ,而且通过直接返回新的state的方式去修改.</p>
+<ul>
+<li><strong>永远不要</strong>在 reducer 里做这些操作：<ul>
+<li>修改传入参数；</li>
+<li>执行有副作用的操作，如 API 请求和路由跳转；</li>
+<li>调用非纯函数，如 <code>Date.now()</code> 或 <code>Math.random()</code>。</li>
+</ul>
+</li>
+<li>指明根据action更新state。</li>
+</ul>
+<p>通俗点讲，就是 <code>reducer</code> 返回啥，<code>state</code> 就被替换成啥</p>
+<ul>
+<li>view(React)</li>
+<li>store(state)</li>
+<li>action</li>
+<li>reducer</li>
+</ul>
+<ul>
+<li>view(React) = 家具的摆放在视觉的效果上</li>
+<li>store(state) = 每个家具在空间内的坐标(如：电视的位置是x:10, y: 400)</li>
+<li>action = 小明分配任务(谁应该干什么)</li>
+<li>reducer = 具体任务都干些什么(把电视搬到沙发正对面然后靠墙的地方)</li>
+</ul>
+<p>所以这个过程应该是这样的：</p>
+<p><strong>view —&gt; action —&gt; reducer —&gt; store(state) —&gt; view</strong></p>
+<h1 id="React-Redux"><a href="#React-Redux" class="headerlink" title="React-Redux"></a>React-Redux</h1><ol>
+<li><p>Provider是一个普通组件，可以作为顶层app的分发点，它只需要store属性就可以。他会将state分发给所有被connect的组件，不管它在哪里，被嵌套多少层。</p>
+</li>
+<li><p>connect是真正的重点，它是一个科里化函数，意思是先接受两个参数（数据绑定mapStateToProps和事件绑定mapDispatchToProps），再接受一个参数（将要绑定的组件本身）：mapStateToProps：构建好Redux系统的时候，它会被自动初始化，但是你的React组件并不知道它的存在，因此你需要分拣出你需要的Redux状态，所以你需要绑定一个函数，它的参数是state，简单返回你关心的几个值。</p>
+</li>
+<li><p>mapDispatchToProps：声明好的action作为回调，也可以被注入到组件里，就是通过这个函数，它的参数是dispatch，通过redux的辅助方法bindActionCreator绑定所有action以及参数的dispatch，就可以作为属性在组件里面作为函数简单使用了，不需要手动dispatch。这个mapDispatchToProps是可选的，如果不传这个参数redux会简单把dispatch作为属性注入给组件，可以手动当做store.dispatch使用。这也是为什么要科里化的原因。</p>
+<p>做好以上流程Redux和React就可以工作了。简单地说就是：</p>
+<p>​</p>
+<p>1.顶层分发状态，让React组件被动地渲染。</p>
+<p>​</p>
+<p>2.监听事件，事件有权利回到所有状态顶层影响状态。</p>
+</li>
+</ol>
+<h1 id="Redux-与传统后端-MVC-的对照"><a href="#Redux-与传统后端-MVC-的对照" class="headerlink" title="Redux 与传统后端 MVC 的对照"></a>Redux 与传统后端 MVC 的对照</h1><table>
+<thead>
+<tr>
+<th>Redux</th>
+<th>传统后端 MVC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>store</code></td>
+<td>数据库实例</td>
+</tr>
+<tr>
+<td><code>state</code></td>
+<td>数据库中存储的数据</td>
+</tr>
+<tr>
+<td><code>dispatch(action)</code></td>
+<td>用户发起请求</td>
+</tr>
+<tr>
+<td><code>action: { type, payload }</code></td>
+<td><code>type</code> 表示请求的 URL，<code>payload</code> 表示请求的数据</td>
+</tr>
+<tr>
+<td><code>reducer</code></td>
+<td>路由 + 控制器（handler）</td>
+</tr>
+<tr>
+<td><code>reducer</code> 中的 <code>switch-case</code> 分支</td>
+<td>路由，根据 <code>action.type</code> 路由到对应的控制器</td>
+</tr>
+<tr>
+<td><code>reducer</code> 内部对 <code>state</code> 的处理</td>
+<td>控制器对数据库进行增删改操作</td>
+</tr>
+<tr>
+<td><code>reducer</code> 返回 <code>nextState</code></td>
+<td>将修改后的记录写回数据库</td>
+</tr>
+</tbody>
+</table>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="redux-三个基本原则"><a href="#redux-三个基本原则" class="headerlink" title="redux 三个基本原则"></a>redux 三个基本原则</h2><ol>
+<li>整个应用只有唯一一个 Store 实例</li>
+<li>State 只能通过触发 Action 来更改</li>
+<li>State 的更改 必须写成纯函数(Reducer)，(oldState, action) =&gt; newState，也就是每次更改总是返回一个新的 State</li>
+</ol>
+<h2 id="redux-两个显著的特点"><a href="#redux-两个显著的特点" class="headerlink" title="redux 两个显著的特点"></a>redux 两个显著的特点</h2><ol>
+<li>可预测性（Reducer 是纯函数）。</li>
+<li>扩展性强（middleware）。</li>
+</ol>
+<h2 id="reducer-可以根据场景分为以下几种"><a href="#reducer-可以根据场景分为以下几种" class="headerlink" title="reducer 可以根据场景分为以下几种:"></a>reducer 可以根据场景分为以下几种:</h2><ul>
+<li>root reducer :根reducer ,作为createStore的第一个参数</li>
+<li>slice reducer : 分片reducer,相对根reducer 来说的.用来操作state的一部分数据.多个分片reducer可以合并成一个根reducer.</li>
+<li>higher-order reducer : 高阶reducer 接受reducer作为函数/返回reducer作为返回的函数.</li>
+<li>case function: 功能函数,接受指定action后的更新逻辑,可以是简单的reducer函数,也可以接受其他参数.</li>
+</ul>
+<h2 id="reducer-的最佳实践主要分为以下几个部分"><a href="#reducer-的最佳实践主要分为以下几个部分" class="headerlink" title="reducer 的最佳实践主要分为以下几个部分"></a>reducer 的最佳实践主要分为以下几个部分</h2><ul>
+<li>抽离工具函数,以便复用.</li>
+<li>抽离功能函数(case function),精简reducer声明部分的代码</li>
+<li>根据数据类别拆分,维护多个独立的slice reducer.</li>
+<li>合并slice reducer.</li>
+<li>通过crossReducer在多个slice reducer中共享数据.</li>
+<li>减少reducer的模板代码.</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;react无法让两个组件互相交流，使用对方数据。&lt;/p&gt;
+&lt;h1 id=&quot;Redux&quot;&gt;&lt;a href=&quot;#Redux&quot; class=&quot;headerlink&quot; title=&quot;Redux&quot;&gt;&lt;/a&gt;Redux&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;需要回调通知state（等同于回调参数）-&amp;gt;action&lt;/li&gt;
+&lt;li&gt;需要根据回调处理（等同于父级方法） -&amp;gt;reducer&lt;/li&gt;
+&lt;li&gt;需要state(等同于总状态) -&amp;gt;store&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;现在您只需要记住 &lt;code&gt;reducer&lt;/code&gt; 是一个函数，负责更新并返回一个新的&lt;code&gt;state&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;而 &lt;code&gt;initialState&lt;/code&gt; 主要用于前后端同构的数据同步&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="React" scheme="http://adherentman.cn/categories/React/"/>
+    
+    
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
+    
+      <category term="React" scheme="http://adherentman.cn/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>初入Express</title>
@@ -501,41 +660,6 @@
   </entry>
   
   <entry>
-    <title>数据库E-R图</title>
-    <link href="http://adherentman.cn/E-R%E5%9B%BE.html"/>
-    <id>http://adherentman.cn/E-R图.html</id>
-    <published>2017-07-17T08:02:36.000Z</published>
-    <updated>2017-07-17T08:06:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="E-R图"><a href="#E-R图" class="headerlink" title="E-R图"></a>E-R图</h1><p>E-R图是指实体-关系-属性三个基本概括数据的基本结构.</p>
-<p>强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。</p>
-<a id="more"></a>
-<ul>
-<li>ER图的实体（entity）即数据模型中的数据对象，例如人、学生、音乐都可以作为一个数据对象，用长方体来表示，每个实体都有自己的实体成员（entity member）或者说实体对象（entity instance），例如学生实体里包括张三、李四等，实体成员（entity member）/实体实例（entity instance） 不需要出现在ER图中。</li>
-</ul>
-<ul>
-<li>ER图的属性（attribute）即数据对象所具有的属性，例如学生具有姓名、学号、年级等属性，用椭圆形表示，属性分为唯一属性（ unique attribute）和非唯一属性，唯一属性指的是唯一可用来标识该实体实例或者成员的属性，用下划线表示，一般来讲实体都至少有一个唯一属性。</li>
-</ul>
-<ul>
-<li>ER图的关系（relationship）用来表现数据对象与数据对象之间的联系，例如学生的实体和成绩表的实体之间有一定的联系，每个学生都有自己的成绩表，这就是一种关系，关系用菱形来表示。</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;E-R图&quot;&gt;&lt;a href=&quot;#E-R图&quot; class=&quot;headerlink&quot; title=&quot;E-R图&quot;&gt;&lt;/a&gt;E-R图&lt;/h1&gt;&lt;p&gt;E-R图是指实体-关系-属性三个基本概括数据的基本结构.&lt;/p&gt;
-&lt;p&gt;强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据库" scheme="http://adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="数据库" scheme="http://adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
     <title>GraphQL基本操作</title>
     <link href="http://adherentman.cn/GraphQL.html"/>
     <id>http://adherentman.cn/GraphQL.html</id>
@@ -593,6 +717,41 @@
     
     
       <category term="GraphQL" scheme="http://adherentman.cn/tags/GraphQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库E-R图</title>
+    <link href="http://adherentman.cn/E-R%E5%9B%BE.html"/>
+    <id>http://adherentman.cn/E-R图.html</id>
+    <published>2017-07-17T08:02:36.000Z</published>
+    <updated>2017-07-17T08:06:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="E-R图"><a href="#E-R图" class="headerlink" title="E-R图"></a>E-R图</h1><p>E-R图是指实体-关系-属性三个基本概括数据的基本结构.</p>
+<p>强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。</p>
+<a id="more"></a>
+<ul>
+<li>ER图的实体（entity）即数据模型中的数据对象，例如人、学生、音乐都可以作为一个数据对象，用长方体来表示，每个实体都有自己的实体成员（entity member）或者说实体对象（entity instance），例如学生实体里包括张三、李四等，实体成员（entity member）/实体实例（entity instance） 不需要出现在ER图中。</li>
+</ul>
+<ul>
+<li>ER图的属性（attribute）即数据对象所具有的属性，例如学生具有姓名、学号、年级等属性，用椭圆形表示，属性分为唯一属性（ unique attribute）和非唯一属性，唯一属性指的是唯一可用来标识该实体实例或者成员的属性，用下划线表示，一般来讲实体都至少有一个唯一属性。</li>
+</ul>
+<ul>
+<li>ER图的关系（relationship）用来表现数据对象与数据对象之间的联系，例如学生的实体和成绩表的实体之间有一定的联系，每个学生都有自己的成绩表，这就是一种关系，关系用菱形来表示。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;E-R图&quot;&gt;&lt;a href=&quot;#E-R图&quot; class=&quot;headerlink&quot; title=&quot;E-R图&quot;&gt;&lt;/a&gt;E-R图&lt;/h1&gt;&lt;p&gt;E-R图是指实体-关系-属性三个基本概括数据的基本结构.&lt;/p&gt;
+&lt;p&gt;强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="数据库" scheme="http://adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -1097,42 +1256,6 @@
   </entry>
   
   <entry>
-    <title>ES6箭头函数</title>
-    <link href="http://adherentman.cn/Es6%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.html"/>
-    <id>http://adherentman.cn/Es6箭头函数.html</id>
-    <published>2017-04-27T07:29:00.000Z</published>
-    <updated>2017-07-28T12:41:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>简单地说，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">x</span> =&gt;</span> x;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> x;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>这个就是最简单的箭头函数。</p>
-<a id="more"></a>
-<p>接着如果箭头函数不需要参数或者多个参数的话，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">()</span> =&gt;</span> <span class="number">1</span>;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;;</div><div class="line">或者</div><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">_</span> =&gt;</span><span class="number">1</span>;</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sum = <span class="function">(<span class="params">num1,num2</span>) =&gt;</span>num1 +num2;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> sum =<span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> num1+num2;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p><strong>箭头函数没有自己的<code>this</code></strong>，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> [</div><div class="line">    <span class="function">(<span class="params">(</span>)=&gt;</span> <span class="keyword">this</span>.x).bind(&#123;<span class="attr">x</span> :<span class="string">'inner'</span>&#125;)()</div><div class="line">  ]</div><div class="line">&#125;).call(&#123;<span class="attr">x</span> :<span class="string">'outer'</span>&#125;);</div><div class="line"><span class="comment">//['outer']</span></div></pre></td></tr></table></figure>
-<p>所以<code>bind</code>的方法无效。并且<code>call()</code>,<code>apply()</code>,也无效。</p>
-<p><strong>MDN上的</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> adder = &#123;</div><div class="line">  <span class="attr">base</span> : <span class="number">1</span>,</div><div class="line">    </div><div class="line">  <span class="attr">add</span> : <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</div><div class="line">    <span class="keyword">return</span> f(a);</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">addThruCall</span>: <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</div><div class="line">    <span class="keyword">var</span> b = &#123;</div><div class="line">      <span class="attr">base</span> : <span class="number">2</span></div><div class="line">    &#125;;</div><div class="line">            </div><div class="line">    <span class="keyword">return</span> f.call(b, a);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(adder.add(<span class="number">1</span>));         <span class="comment">// 输出 2</span></div><div class="line"><span class="built_in">console</span>.log(adder.addThruCall(<span class="number">1</span>)); <span class="comment">// 仍然输出 2（而不是3 ——译者注）</span></div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;简单地说，&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt; =&amp;gt;&lt;/span&gt; x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a =&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;这个就是最简单的箭头函数。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Javascript修仙之路" scheme="http://adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>初入React+Webpack(入门)</title>
     <link href="http://adherentman.cn/%E5%88%9D%E5%85%A5React.html"/>
     <id>http://adherentman.cn/初入React.html</id>
@@ -1273,44 +1396,35 @@
   </entry>
   
   <entry>
-    <title>JavaScript变量+方法</title>
-    <link href="http://adherentman.cn/JavaScript%E5%8F%98%E9%87%8F.html"/>
-    <id>http://adherentman.cn/JavaScript变量.html</id>
-    <published>2017-04-24T05:55:00.000Z</published>
-    <updated>2017-05-26T09:49:01.000Z</updated>
+    <title>ES6箭头函数</title>
+    <link href="http://adherentman.cn/Es6%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.html"/>
+    <id>http://adherentman.cn/Es6箭头函数.html</id>
+    <published>2017-04-27T07:29:00.000Z</published>
+    <updated>2017-07-28T12:41:54.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="JavaScript变量-方法"><a href="#JavaScript变量-方法" class="headerlink" title="JavaScript变量+方法"></a>JavaScript变量+方法</h1><p>ECMAScript变量可能包含两种不同数据类型的值：基本类型值和引用类型值。</p>
-<p><strong>基本类型值</strong>指的是简单的数据段，而<strong>引用类型值</strong>指那些可能有多个值构成的对象。</p>
-<h2 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTen</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">  num +=<span class="number">10</span>;</div><div class="line">  <span class="keyword">return</span> num;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> count =<span class="number">20</span>;</div><div class="line"><span class="keyword">var</span> result = addTen(count);</div><div class="line">alert(count); 		<span class="comment">//20,没变化</span></div><div class="line">alert(result);		<span class="comment">//30</span></div></pre></td></tr></table></figure>
-<p>在这上面看了高程三的话懵懵懂懂，实际上在说的是，要执行<code>alert(count);</code>时<code>count</code>只是把20复制给参数num，以便20在addTen()中使用，在函数里面num的值确实+10变成了30，但是不影响外部count的变量。</p>
+    <content type="html"><![CDATA[<p>简单地说，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">x</span> =&gt;</span> x;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> x;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>这个就是最简单的箭头函数。</p>
 <a id="more"></a>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
-<li><strong>split()</strong></li>
-</ul>
-<p>方法讲一个字符串对象的每个字符拆出来，并且将每个字符串当数组的每个元素。</p>
-<h2 id="重排序方法"><a href="#重排序方法" class="headerlink" title="重排序方法"></a>重排序方法</h2><ul>
-<li><strong>reverse()和sort()</strong></li>
-</ul>
-<p><strong>reverse()</strong>方法会反转数组项的顺序。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> values = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line">values.reverse();</div><div class="line">alert(values); 			<span class="comment">//5,4,3,2,1</span></div></pre></td></tr></table></figure>
-<p>而 <strong>sort()</strong>方法是按升序排列数组项。——最小的值位于前面，最大的值排在最后面。而且<code>sort()</code>方法会调用每个数组项的<code>toString()</code>转型方法，然后去比较得到的字符串。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> values = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">15</span>];</div><div class="line">values.sort();</div><div class="line">alert(values); 		<span class="comment">//0,1,10,15,5</span></div></pre></td></tr></table></figure>
-<p>在字符串的比较时，10则位于5的前面，于是数组的顺序就被修改了。当然改为降序也行参考注释</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">compare</span> (<span class="params">value1,value2</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(value1 &lt;value2)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">-1</span>; 			<span class="comment">//return 1;</span></div><div class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(value1 &gt;value2)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;			<span class="comment">//return -1;</span></div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>然后我们再把这个参数传给<code>sort()</code>方法即可。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> values = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">15</span>];</div><div class="line">values.sort(compare);</div><div class="line">alert(values); 		<span class="comment">//0,1,5,10,15</span></div></pre></td></tr></table></figure>
+<p>接着如果箭头函数不需要参数或者多个参数的话，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">()</span> =&gt;</span> <span class="number">1</span>;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;;</div><div class="line">或者</div><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">_</span> =&gt;</span><span class="number">1</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sum = <span class="function">(<span class="params">num1,num2</span>) =&gt;</span>num1 +num2;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> sum =<span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> num1+num2;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><strong>箭头函数没有自己的<code>this</code></strong>，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> [</div><div class="line">    <span class="function">(<span class="params">(</span>)=&gt;</span> <span class="keyword">this</span>.x).bind(&#123;<span class="attr">x</span> :<span class="string">'inner'</span>&#125;)()</div><div class="line">  ]</div><div class="line">&#125;).call(&#123;<span class="attr">x</span> :<span class="string">'outer'</span>&#125;);</div><div class="line"><span class="comment">//['outer']</span></div></pre></td></tr></table></figure>
+<p>所以<code>bind</code>的方法无效。并且<code>call()</code>,<code>apply()</code>,也无效。</p>
+<p><strong>MDN上的</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> adder = &#123;</div><div class="line">  <span class="attr">base</span> : <span class="number">1</span>,</div><div class="line">    </div><div class="line">  <span class="attr">add</span> : <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</div><div class="line">    <span class="keyword">return</span> f(a);</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">addThruCall</span>: <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</div><div class="line">    <span class="keyword">var</span> b = &#123;</div><div class="line">      <span class="attr">base</span> : <span class="number">2</span></div><div class="line">    &#125;;</div><div class="line">            </div><div class="line">    <span class="keyword">return</span> f.call(b, a);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(adder.add(<span class="number">1</span>));         <span class="comment">// 输出 2</span></div><div class="line"><span class="built_in">console</span>.log(adder.addThruCall(<span class="number">1</span>)); <span class="comment">// 仍然输出 2（而不是3 ——译者注）</span></div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;JavaScript变量-方法&quot;&gt;&lt;a href=&quot;#JavaScript变量-方法&quot; class=&quot;headerlink&quot; title=&quot;JavaScript变量+方法&quot;&gt;&lt;/a&gt;JavaScript变量+方法&lt;/h1&gt;&lt;p&gt;ECMAScript变量可能包含两种不同数据类型的值：基本类型值和引用类型值。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;基本类型值&lt;/strong&gt;指的是简单的数据段，而&lt;strong&gt;引用类型值&lt;/strong&gt;指那些可能有多个值构成的对象。&lt;/p&gt;
-&lt;h2 id=&quot;传递参数&quot;&gt;&lt;a href=&quot;#传递参数&quot; class=&quot;headerlink&quot; title=&quot;传递参数&quot;&gt;&lt;/a&gt;传递参数&lt;/h2&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;addTen&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;num&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  num +=&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; num;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; count =&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; result = addTen(count);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;alert(count); 		&lt;span class=&quot;comment&quot;&gt;//20,没变化&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;alert(result);		&lt;span class=&quot;comment&quot;&gt;//30&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;在这上面看了高程三的话懵懵懂懂，实际上在说的是，要执行&lt;code&gt;alert(count);&lt;/code&gt;时&lt;code&gt;count&lt;/code&gt;只是把20复制给参数num，以便20在addTen()中使用，在函数里面num的值确实+10变成了30，但是不影响外部count的变量。&lt;/p&gt;
+      &lt;p&gt;简单地说，&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt; =&amp;gt;&lt;/span&gt; x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a =&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;x&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; x;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这个就是最简单的箭头函数。&lt;/p&gt;
     
     </summary>
     
-      <category term="Javascript基础" scheme="http://adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
+      <category term="Javascript修仙之路" scheme="http://adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
     
     
       <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
