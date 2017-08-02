@@ -639,9 +639,9 @@
     <link href="http://adherentman.cn/git.html"/>
     <id>http://adherentman.cn/git.html</id>
     <published>2017-07-25T12:47:00.000Z</published>
-    <updated>2017-07-27T13:20:59.000Z</updated>
+    <updated>2017-08-02T10:34:24.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h2 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h2><p><code>git add -A</code> 和 <code>git add .</code> 和 <code>git add -u</code></p>
+    <content type="html"><![CDATA[<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h1 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h1><p><code>git add -A</code> 和 <code>git add .</code> 和 <code>git add -u</code></p>
 <ul>
 <li>git add   <strong>.</strong> ：他会监控工作区的状态树，使用它会把工作时的<strong>所有变化提交</strong>到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。</li>
 </ul>
@@ -656,28 +656,32 @@
 <li>git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)</li>
 <li>git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件</li>
 </ul>
-<h2 id="commit过程"><a href="#commit过程" class="headerlink" title="commit过程"></a>commit过程</h2><ul>
+<h1 id="commit过程"><a href="#commit过程" class="headerlink" title="commit过程"></a>commit过程</h1><ul>
 <li>git status  检查工作区是否干净</li>
 <li>git add 命令主要用于把我们要提交的文件的信息添加到索引库中。当我们使用git commit时，git将依据索引库中的内容来进行文件的提交。</li>
 <li>git commit -am “xxxxxxx”</li>
 <li>git branch </li>
 <li>git push origin xxxx</li>
 </ul>
-<h2 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h2><ul>
+<h1 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h1><ul>
 <li>git branch -D xx <strong>删除本地分支</strong></li>
 <li>git push origin :br  (origin 后面有空格) <strong>删除远程分支</strong></li>
 </ul>
-<h2 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h2><ul>
+<h1 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h1><ul>
 <li>git fetch origin cms:new  创建新本地分支new</li>
 <li>git branch   </li>
 <li>git merge new  合并</li>
 <li>git branch -D new 删除本地分支</li>
 </ul>
+<h1 id="diff"><a href="#diff" class="headerlink" title="diff"></a>diff</h1><p>查看自上次提交以来，本地代码改动的具体情况</p>
+<h1 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h1><p>在提交了若干更新之后，又或者克隆了某个项目，想回顾下提交历史，可以使用 <code>Git log</code> 命令查看</p>
+<h1 id="git-show"><a href="#git-show" class="headerlink" title="git show"></a>git show</h1><p>git show <commit-hash-id>查看某次commit的修改内容</commit-hash-id></p>
+<h1 id="git-reset-–hard"><a href="#git-reset-–hard" class="headerlink" title="git reset –hard "></a>git reset –hard <commit></commit></h1><p>现在让我们来重置回那次提交的状态：</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;git&quot;&gt;&lt;a href=&quot;#git&quot; class=&quot;headerlink&quot; title=&quot;git&quot;&gt;&lt;/a&gt;git&lt;/h1&gt;&lt;h2 id=&quot;git-add&quot;&gt;&lt;a href=&quot;#git-add&quot; class=&quot;headerlink&quot; title=&quot;git add&quot;&gt;&lt;/a&gt;git add&lt;/h2&gt;&lt;p&gt;&lt;code&gt;git add -A&lt;/code&gt; 和 &lt;code&gt;git add .&lt;/code&gt; 和 &lt;code&gt;git add -u&lt;/code&gt;&lt;/p&gt;
+      &lt;h1 id=&quot;git&quot;&gt;&lt;a href=&quot;#git&quot; class=&quot;headerlink&quot; title=&quot;git&quot;&gt;&lt;/a&gt;git&lt;/h1&gt;&lt;h1 id=&quot;git-add&quot;&gt;&lt;a href=&quot;#git-add&quot; class=&quot;headerlink&quot; title=&quot;git add&quot;&gt;&lt;/a&gt;git add&lt;/h1&gt;&lt;p&gt;&lt;code&gt;git add -A&lt;/code&gt; 和 &lt;code&gt;git add .&lt;/code&gt; 和 &lt;code&gt;git add -u&lt;/code&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;git add   &lt;strong&gt;.&lt;/strong&gt; ：他会监控工作区的状态树，使用它会把工作时的&lt;strong&gt;所有变化提交&lt;/strong&gt;到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。&lt;/li&gt;
 &lt;/ul&gt;
