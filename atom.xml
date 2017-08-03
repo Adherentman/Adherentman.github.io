@@ -711,9 +711,9 @@
     <link href="http://adherentman.cn/git.html"/>
     <id>http://adherentman.cn/git.html</id>
     <published>2017-07-25T12:47:00.000Z</published>
-    <updated>2017-08-02T10:34:24.000Z</updated>
+    <updated>2017-08-03T15:53:12.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><h1 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h1><p><code>git add -A</code> 和 <code>git add .</code> 和 <code>git add -u</code></p>
+    <content type="html"><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h1 id="Git-add"><a href="#Git-add" class="headerlink" title="Git add"></a>Git add</h1><p><code>git add -A</code> 和 <code>git add .</code> 和 <code>git add -u</code></p>
 <ul>
 <li>git add   <strong>.</strong> ：他会监控工作区的状态树，使用它会把工作时的<strong>所有变化提交</strong>到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。</li>
 </ul>
@@ -746,14 +746,20 @@
 <li>git branch -D new 删除本地分支</li>
 </ul>
 <h1 id="diff"><a href="#diff" class="headerlink" title="diff"></a>diff</h1><p>查看自上次提交以来，本地代码改动的具体情况</p>
-<h1 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h1><p>在提交了若干更新之后，又或者克隆了某个项目，想回顾下提交历史，可以使用 <code>Git log</code> 命令查看</p>
-<h1 id="git-show"><a href="#git-show" class="headerlink" title="git show"></a>git show</h1><p>git show <commit-hash-id>查看某次commit的修改内容</commit-hash-id></p>
-<h1 id="git-reset-–hard"><a href="#git-reset-–hard" class="headerlink" title="git reset –hard "></a>git reset –hard <commit></commit></h1><p>现在让我们来重置回那次提交的状态：</p>
+<h1 id="Git-log"><a href="#Git-log" class="headerlink" title="Git log"></a>Git log</h1><p>在提交了若干更新之后，又或者克隆了某个项目，想回顾下提交历史，可以使用 <code>Git log</code> 命令查看</p>
+<h1 id="Git-show"><a href="#Git-show" class="headerlink" title="Git show"></a>Git show</h1><p>git show <commit-hash-id>查看某次commit的修改内容</commit-hash-id></p>
+<h1 id="Git-reset-–hard"><a href="#Git-reset-–hard" class="headerlink" title="Git reset –hard "></a>Git reset –hard <commit></commit></h1><p>现在让我们来重置回那次提交的状态：</p>
+<h1 id="Git-rebase"><a href="#Git-rebase" class="headerlink" title="Git rebase"></a>Git rebase</h1><p>对于git rebase, 你亦可以选择进行交互式的rebase。这种方法通常用于在向别处推送提交之前对它们进行重写。交互式rebase提供了一个简单易用的途径让你在和别人 分享提交之前对你的提交进行分割、合并或者重排序。在把从其他开发者处拉取的提交应用到本地时，你也可以使用交互式rebase对它们进行清理。</p>
+<p>如果你想在rebase的过程中对一部分提交进行修改，你可以在’git rebase’命令中加入’-i’或’–interactive’参数去调用交互模式。</p>
+<p>$ git rebase -i origin/master</p>
+<p>这个命令会执行交互式rebase操作，操作对象是那些自最后一次从origin仓库拉取或者向origin推送之后的所有提交。</p>
+<p>若想查看一下将被rebase的提交，可以用如下的log命令：</p>
+<p>$ git log github/master..</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;git&quot;&gt;&lt;a href=&quot;#git&quot; class=&quot;headerlink&quot; title=&quot;git&quot;&gt;&lt;/a&gt;git&lt;/h1&gt;&lt;h1 id=&quot;git-add&quot;&gt;&lt;a href=&quot;#git-add&quot; class=&quot;headerlink&quot; title=&quot;git add&quot;&gt;&lt;/a&gt;git add&lt;/h1&gt;&lt;p&gt;&lt;code&gt;git add -A&lt;/code&gt; 和 &lt;code&gt;git add .&lt;/code&gt; 和 &lt;code&gt;git add -u&lt;/code&gt;&lt;/p&gt;
+      &lt;h1 id=&quot;Git&quot;&gt;&lt;a href=&quot;#Git&quot; class=&quot;headerlink&quot; title=&quot;Git&quot;&gt;&lt;/a&gt;Git&lt;/h1&gt;&lt;h1 id=&quot;Git-add&quot;&gt;&lt;a href=&quot;#Git-add&quot; class=&quot;headerlink&quot; title=&quot;Git add&quot;&gt;&lt;/a&gt;Git add&lt;/h1&gt;&lt;p&gt;&lt;code&gt;git add -A&lt;/code&gt; 和 &lt;code&gt;git add .&lt;/code&gt; 和 &lt;code&gt;git add -u&lt;/code&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;git add   &lt;strong&gt;.&lt;/strong&gt; ：他会监控工作区的状态树，使用它会把工作时的&lt;strong&gt;所有变化提交&lt;/strong&gt;到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。&lt;/li&gt;
 &lt;/ul&gt;
