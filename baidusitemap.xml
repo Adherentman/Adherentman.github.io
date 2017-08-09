@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://adherentman.cn/Javascript%E5%AF%B9%E8%B1%A1.html</loc>
+    <lastmod>2017-08-09T13:34:34.000Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript对象</title>
+        <pubTime>2017-08-02T14:30:44.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="Javascript基础" url="http://adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://adherentman.cn/%E5%BC%82%E6%AD%A5.html</loc>
     <lastmod>2017-08-09T12:05:17.000Z</lastmod>
     <data>
@@ -81,26 +101,6 @@
            
              
               <breadCrumb title="git" url="http://adherentman.cn/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://adherentman.cn/Javascript%E5%AF%B9%E8%B1%A1.html</loc>
-    <lastmod>2017-08-03T14:01:31.000Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript对象</title>
-        <pubTime>2017-08-02T14:30:44.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="Javascript基础" url="http://adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
           
         </display>
     </data>
