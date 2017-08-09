@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://adherentman.cn/%E5%BC%82%E6%AD%A5.html</loc>
+    <lastmod>2017-08-09T12:05:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>异步操作</title>
+        <pubTime>2017-08-01T11:35:44.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>node.js</tag>
+         
+         
+           
+             
+              <breadCrumb title="Javascript修仙之路" url="http://adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://adherentman.cn/GraphQL.html</loc>
     <lastmod>2017-08-08T11:46:11.000Z</lastmod>
     <data>
@@ -79,28 +101,6 @@
            
              
               <breadCrumb title="Javascript基础" url="http://adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://adherentman.cn/node.js%20co%E5%87%BD%E6%95%B0%E5%BA%93.html</loc>
-    <lastmod>2017-08-01T11:45:51.000Z</lastmod>
-    <data>
-        <display>
-        <title>异步操作</title>
-        <pubTime>2017-08-01T11:35:44.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>node.js</tag>
-         
-         
-           
-             
-              <breadCrumb title="Javascript修仙之路" url="http://adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
           
         </display>
     </data>

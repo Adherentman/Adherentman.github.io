@@ -93,10 +93,10 @@
 <meta name="keywords" content="JavaScript,node.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="异步操作">
-<meta property="og:url" content="http://adherentman.cn/node.js co函数库.html">
+<meta property="og:url" content="http://adherentman.cn/异步.html">
 <meta property="og:site_name" content="壮壮-Technology">
 <meta property="og:description" content="异步操作回调函数JavaScript 语言对异步编程的实现，就是回调函数。所谓回调函数，就是把任务的第二段单独写在一个函数里面，等到重新执行这个任务的时候，就直接调用这个函数。它的英语名字 callback，直译过来就是”重新调用”。 读取文件进行处理，是这样写的:  12345&amp;gt; fs.readFile(&apos;/etc/passwd&apos;, function (err, data) &amp;#123;&amp;">
-<meta property="og:updated_time" content="2017-08-01T11:45:51.000Z">
+<meta property="og:updated_time" content="2017-08-09T12:05:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="异步操作">
 <meta name="twitter:description" content="异步操作回调函数JavaScript 语言对异步编程的实现，就是回调函数。所谓回调函数，就是把任务的第二段单独写在一个函数里面，等到重新执行这个任务的时候，就直接调用这个函数。它的英语名字 callback，直译过来就是”重新调用”。 读取文件进行处理，是这样写的:  12345&amp;gt; fs.readFile(&apos;/etc/passwd&apos;, function (err, data) &amp;#123;&amp;">
@@ -127,7 +127,7 @@
 
 
 
-  <link rel="canonical" href="http://adherentman.cn/node.js co函数库.html"/>
+  <link rel="canonical" href="http://adherentman.cn/异步.html"/>
 
 
 
@@ -326,7 +326,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://adherentman.cn/node.js co函数库.html">
+    <link itemprop="mainEntityOfPage" href="http://adherentman.cn/异步.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XuZiHao">
@@ -517,7 +517,7 @@
 </blockquote>
 <h1 id="终极武器—-Async函数"><a href="#终极武器—-Async函数" class="headerlink" title="终极武器—-Async函数"></a>终极武器—-Async函数</h1><p><strong>异步编程的最高境界，就是根本不用关心它是不是异步。</strong></p>
 <p>async 函数就是隧道尽头的亮光，很多人认为它是异步操作的终极解决方案。</p>
-<p>所谓async函数，其实是Generator函数的语法糖。</p>
+<p><strong>所谓async函数，其实是Generator函数的语法糖。</strong></p>
 <p>前文有一个 Generator 函数，依次读取两个文件。</p>
 <blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line">&gt;</div><div class="line">&gt; <span class="keyword">var</span> readFile = <span class="function"><span class="keyword">function</span> (<span class="params">fileName</span>)</span>&#123;</div><div class="line">&gt;   <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>)</span>&#123;</div><div class="line">&gt;     fs.readFile(fileName, <span class="function"><span class="keyword">function</span>(<span class="params">error, data</span>)</span>&#123;</div><div class="line">&gt;       <span class="keyword">if</span> (error) reject(error);</div><div class="line">&gt;       resolve(data);</div><div class="line">&gt;     &#125;);</div><div class="line">&gt;   &#125;);</div><div class="line">&gt; &#125;;</div><div class="line">&gt;</div><div class="line">&gt; <span class="keyword">var</span> gen = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>)</span>&#123;</div><div class="line">&gt;   <span class="keyword">var</span> f1 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/fstab'</span>);</div><div class="line">&gt;   <span class="keyword">var</span> f2 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/shells'</span>);</div><div class="line">&gt;   <span class="built_in">console</span>.log(f1.toString());</div><div class="line">&gt;   <span class="built_in">console</span>.log(f2.toString());</div><div class="line">&gt; &#125;;</div><div class="line">&gt;</div></pre></td></tr></table></figure>

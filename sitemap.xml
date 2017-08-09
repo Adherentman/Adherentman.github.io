@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://adherentman.cn/%E5%BC%82%E6%AD%A5.html</loc>
+    
+    <lastmod>2017-08-09T12:05:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://adherentman.cn/GraphQL.html</loc>
     
     <lastmod>2017-08-08T11:46:11.000Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>http://adherentman.cn/Javascript%E5%AF%B9%E8%B1%A1.html</loc>
     
     <lastmod>2017-08-03T14:01:31.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://adherentman.cn/node.js%20co%E5%87%BD%E6%95%B0%E5%BA%93.html</loc>
-    
-    <lastmod>2017-08-01T11:45:51.000Z</lastmod>
     
   </url>
   

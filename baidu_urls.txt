@@ -1,5 +1,5 @@
 http://adherentman.cn/Javascript对象.html
-http://adherentman.cn/node.js co函数库.html
+http://adherentman.cn/异步.html
 http://adherentman.cn/redux.html
 http://adherentman.cn/Express.html
 http://adherentman.cn/Generator.html
