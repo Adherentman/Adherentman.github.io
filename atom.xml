@@ -721,7 +721,7 @@
     <link href="http://adherentman.cn/git.html"/>
     <id>http://adherentman.cn/git.html</id>
     <published>2017-07-25T12:47:00.000Z</published>
-    <updated>2017-08-03T15:53:12.000Z</updated>
+    <updated>2017-08-10T11:04:43.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h1 id="Git-add"><a href="#Git-add" class="headerlink" title="Git add"></a>Git add</h1><p><code>git add -A</code> 和 <code>git add .</code> 和 <code>git add -u</code></p>
 <ul>
@@ -765,6 +765,9 @@
 <p>这个命令会执行交互式rebase操作，操作对象是那些自最后一次从origin仓库拉取或者向origin推送之后的所有提交。</p>
 <p>若想查看一下将被rebase的提交，可以用如下的log命令：</p>
 <p>$ git log github/master..</p>
+<h1 id="git-branch-a"><a href="#git-branch-a" class="headerlink" title="git branch -a"></a>git branch -a</h1><p>查看远程分支</p>
+<p>master<br>remotes/origin/HEAD -&gt; origin/master<br>remotes/origin/Release<br>remotes/origin/master</p>
+<h1 id="git-checkout-b-myRelease-origin-Release"><a href="#git-checkout-b-myRelease-origin-Release" class="headerlink" title="git checkout -b myRelease origin/Release"></a>git checkout -b myRelease origin/Release</h1><p>切换到 origin/Release分支，并在本地新建分支 myRelease</p>
 ]]></content>
     
     <summary type="html">

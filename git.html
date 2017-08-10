@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://adherentman.cn/git.html">
 <meta property="og:site_name" content="壮壮-Technology">
 <meta property="og:description" content="GitGit addgit add -A 和 git add . 和 git add -u  git add   . ：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。">
-<meta property="og:updated_time" content="2017-08-03T15:53:12.000Z">
+<meta property="og:updated_time" content="2017-08-10T11:04:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git基本操作">
 <meta name="twitter:description" content="GitGit addgit add -A 和 git add . 和 git add -u  git add   . ：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。">
@@ -467,6 +467,9 @@
 <p>这个命令会执行交互式rebase操作，操作对象是那些自最后一次从origin仓库拉取或者向origin推送之后的所有提交。</p>
 <p>若想查看一下将被rebase的提交，可以用如下的log命令：</p>
 <p>$ git log github/master..</p>
+<h1 id="git-branch-a"><a href="#git-branch-a" class="headerlink" title="git branch -a"></a>git branch -a</h1><p>查看远程分支</p>
+<p>master<br>remotes/origin/HEAD -&gt; origin/master<br>remotes/origin/Release<br>remotes/origin/master</p>
+<h1 id="git-checkout-b-myRelease-origin-Release"><a href="#git-checkout-b-myRelease-origin-Release" class="headerlink" title="git checkout -b myRelease origin/Release"></a>git checkout -b myRelease origin/Release</h1><p>切换到 origin/Release分支，并在本地新建分支 myRelease</p>
 
       
     </div>
@@ -709,7 +712,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git"><span class="nav-number">1.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-add"><span class="nav-number">2.</span> <span class="nav-text">Git add</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#commit过程"><span class="nav-number">3.</span> <span class="nav-text">commit过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除分支"><span class="nav-number">4.</span> <span class="nav-text">删除分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决冲突"><span class="nav-number">5.</span> <span class="nav-text">解决冲突</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#diff"><span class="nav-number">6.</span> <span class="nav-text">diff</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-log"><span class="nav-number">7.</span> <span class="nav-text">Git log</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-show"><span class="nav-number">8.</span> <span class="nav-text">Git show</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-reset-–hard"><span class="nav-number">9.</span> <span class="nav-text">Git reset –hard </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-rebase"><span class="nav-number">10.</span> <span class="nav-text">Git rebase</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git"><span class="nav-number">1.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-add"><span class="nav-number">2.</span> <span class="nav-text">Git add</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#commit过程"><span class="nav-number">3.</span> <span class="nav-text">commit过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除分支"><span class="nav-number">4.</span> <span class="nav-text">删除分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决冲突"><span class="nav-number">5.</span> <span class="nav-text">解决冲突</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#diff"><span class="nav-number">6.</span> <span class="nav-text">diff</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-log"><span class="nav-number">7.</span> <span class="nav-text">Git log</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-show"><span class="nav-number">8.</span> <span class="nav-text">Git show</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-reset-–hard"><span class="nav-number">9.</span> <span class="nav-text">Git reset –hard </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-rebase"><span class="nav-number">10.</span> <span class="nav-text">Git rebase</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-branch-a"><span class="nav-number">11.</span> <span class="nav-text">git branch -a</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-checkout-b-myRelease-origin-Release"><span class="nav-number">12.</span> <span class="nav-text">git checkout -b myRelease origin/Release</span></a></li></ol></div>
             
 
           </div>
