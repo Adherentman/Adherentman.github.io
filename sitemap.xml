@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://adherentman.cn/React%20Native%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html</loc>
+    
+    <lastmod>2017-08-14T06:55:20.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://adherentman.cn/React-Router.html</loc>
+    
+    <lastmod>2017-08-14T06:53:29.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://adherentman.cn/GraphQL.html</loc>
     
     <lastmod>2017-08-12T10:50:55.000Z</lastmod>
@@ -117,13 +131,6 @@
     <loc>http://adherentman.cn/React-State%E4%B8%8EProps%E7%9A%84%E5%B0%8F%E5%BF%83%E6%80%9D.html</loc>
     
     <lastmod>2017-07-24T14:37:44.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://adherentman.cn/React-Router.html</loc>
-    
-    <lastmod>2017-07-20T15:48:47.000Z</lastmod>
     
   </url>
   

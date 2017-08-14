@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://adherentman.cn/"/>
-  <updated>2017-08-09T13:34:34.000Z</updated>
+  <updated>2017-08-14T06:55:20.000Z</updated>
   <id>http://adherentman.cn/</id>
   
   <author>
@@ -14,6 +14,113 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React Native iOS/android环境配置</title>
+    <link href="http://adherentman.cn/React%20Native%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html"/>
+    <id>http://adherentman.cn/React Native环境配置.html</id>
+    <published>2017-08-14T04:32:53.000Z</published>
+    <updated>2017-08-14T06:55:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="React-Native环境配置"><a href="#React-Native环境配置" class="headerlink" title="React Native环境配置"></a>React Native环境配置</h1><h1 id="Ios开发环境"><a href="#Ios开发环境" class="headerlink" title="Ios开发环境"></a>Ios开发环境</h1><p>因为我是在mac下搭建环境的。所以比较方便。</p>
+<ul>
+<li><p>Xcode时必须的！</p>
+</li>
+<li><blockquote>
+<p>brew install node        //电脑需要有node</p>
+<p>brew install watchman    //这是用来监视文件系统中的更改的工具</p>
+</blockquote>
+</li>
+<li><p>npm install -g react-native-cli</p>
+<p>然后我们打开 <strong>Xcode</strong></p>
+<p><img src="/images/xcode.png" alt="xcode"></p>
+<a id="more"></a>
+</li>
+</ul>
+<p>接下来我们需要执行命令</p>
+<p><strong>react-native init AwesomeProject</strong></p>
+<p>Then：我们需要在Xcode里打开</p>
+<p><img src="/images/xcode文件.png" alt="xcode文件"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">接着在终端里</div><div class="line">cd AwesomeProject</div><div class="line">then：</div><div class="line">react-native run-ios</div></pre></td></tr></table></figure>
+<p>接下来我们等就好了</p>
+<p><img src="/images/iphone6.png" alt="iphone6"></p>
+<p>这就是成功界面</p>
+<p>恭喜🎉！</p>
+<h1 id="Android环境"><a href="#Android环境" class="headerlink" title="Android环境"></a>Android环境</h1><p>第一步与ios一样</p>
+<ul>
+<li>brew install node      </li>
+<li>brew install watchman   </li>
+</ul>
+<p>我们就不做了。</p>
+<p>接下来</p>
+<h2 id="我们需要安装Java的环境。"><a href="#我们需要安装Java的环境。" class="headerlink" title="我们需要安装Java的环境。"></a>我们需要安装<code>Java</code>的环境。</h2><p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">Download and install JDK 8 or newer</a></p>
+<h2 id="安装Android环境"><a href="#安装Android环境" class="headerlink" title="安装Android环境"></a>安装<code>Android</code>环境</h2><ol>
+<li>安装 <strong><a href="https://developer.android.com/studio/index.html" target="_blank" rel="external">Android studio</a></strong> </li>
+<li><img src="/images/custon.png" alt="custon"></li>
+<li>勾选<code>Performance</code>和<code>Android Virtual Device</code><img src="/images/sdk.png" alt="sdk"></li>
+<li>安装完成后，在Android Studio的启动欢迎界面中选择<code>Configure | SDK Manager</code>。<img src="/images/config.png" alt="config"></li>
+<li>在<code>SDK Platforms</code>窗口中，选择<code>Show Package Details</code></li>
+</ol>
+<p><img src="/images/palt.png" alt="palt"></p>
+<p>然后tools里</p>
+<p><img src="/images/sdttool.png" alt="sdttool"></p>
+<p><img src="/images/sdktools.png" alt="sdktools"></p>
+<p><img src="/images/sdksuppt.png" alt="sdksuppt"></p>
+<h4 id="ANDROID-HOME环境变量"><a href="#ANDROID-HOME环境变量" class="headerlink" title="ANDROID_HOME环境变量"></a>ANDROID_HOME环境变量</h4><p>确保<code>ANDROID_HOME</code>环境变量正确地指向了你安装的Android SDK的路径。具体的做法是把下面的命令加入到<code>~/.bash_profile</code>文件中：(<strong>译注</strong>：~表示用户目录，即<code>/Users/你的用户名/</code>，而小数点开头的文件在Finder中是隐藏的，并且这个文件有可能并不存在。请在终端下使用<code>vi ~/.bash_profile</code>命令创建或编辑。如不熟悉vi操作，请点击<a href="http://www.eepw.com.cn/article/48018.htm" target="_blank" rel="external">这里</a>学习）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 如果你不是通过Android Studio安装的sdk，则其路径可能不同，请自行确定清楚。</div><div class="line">export ANDROID_HOME=~/Library/Android/sdk</div></pre></td></tr></table></figure>
+<p>然后使用下列命令使其立即生效（否则重启后才生效）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source ~/.bash_profile</div></pre></td></tr></table></figure>
+<p>可以使用<code>echo $ANDROID_HOME</code>检查此变量是否已正确设置。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>同样我们需要在<code>Android studio</code>中打开创建的文件夹下Android文件</p>
+<p>然后去build</p>
+<p><img src="/images/studio.png" alt="studio"></p>
+<p>圆圈是选手机机型。</p>
+<p>我们在正方形框框中先点击锤子然后点击绿色箭头之后在终端里输入以下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">react-native init AwesomeProject</div><div class="line">cd AwesomeProject</div><div class="line">react-native run-android</div></pre></td></tr></table></figure>
+<p>下面就是成功画面！恭喜🎉！<img src="/images/Android.png" alt="Android"></p>
+<h1 id="在搭建环境下踩得坑"><a href="#在搭建环境下踩得坑" class="headerlink" title="在搭建环境下踩得坑"></a>在搭建环境下踩得坑</h1><h2 id="Android下"><a href="#Android下" class="headerlink" title="Android下"></a>Android下</h2><p><img src="/images/安卓bug.png" alt="安卓bug"></p>
+<p>这是我运行安卓的时候遇到的问题。我们需要在 <strong>Android studio</strong>先启动一个手机模拟器再去终端里输入指令：<code>react-native run-android</code> 就可以了</p>
+<p><img src="/images/android tools.png" alt="android tools"></p>
+<p>这个问题是说Build Tools 23.0.0.1太低至少需要25.0.0</p>
+<p>但是我升级过后还不行。发现是配置文件里的问题。</p>
+<p><img src="/images/gaibuild.png" alt="gaibuild"></p>
+<p>这样就行啦！</p>
+<h2 id="Ios下"><a href="#Ios下" class="headerlink" title="Ios下"></a>Ios下</h2><p>具体出错问题描述找不到了，但是情况还是记得的。</p>
+<p>就是说我ios的虚拟机打开了但是我在上面看不见自己的项目。</p>
+<p>这时候google到答案。。</p>
+<p><img src="/images/ios解决问题1.png" alt="ios解决问题1"></p>
+<p>需要开一个终端，然后去在你的项目下<code>npm install</code> 就是这样。。具体情况我也不知道发生了什么哈哈哈</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;React-Native环境配置&quot;&gt;&lt;a href=&quot;#React-Native环境配置&quot; class=&quot;headerlink&quot; title=&quot;React Native环境配置&quot;&gt;&lt;/a&gt;React Native环境配置&lt;/h1&gt;&lt;h1 id=&quot;Ios开发环境&quot;&gt;&lt;a href=&quot;#Ios开发环境&quot; class=&quot;headerlink&quot; title=&quot;Ios开发环境&quot;&gt;&lt;/a&gt;Ios开发环境&lt;/h1&gt;&lt;p&gt;因为我是在mac下搭建环境的。所以比较方便。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Xcode时必须的！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;blockquote&gt;
+&lt;p&gt;brew install node        //电脑需要有node&lt;/p&gt;
+&lt;p&gt;brew install watchman    //这是用来监视文件系统中的更改的工具&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;npm install -g react-native-cli&lt;/p&gt;
+&lt;p&gt;然后我们打开 &lt;strong&gt;Xcode&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/xcode.png&quot; alt=&quot;xcode&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="React,React Native,iOS,Android" scheme="http://adherentman.cn/categories/React-React-Native-iOS-Android/"/>
+    
+    
+      <category term="React" scheme="http://adherentman.cn/tags/React/"/>
+    
+      <category term="React Native" scheme="http://adherentman.cn/tags/React-Native/"/>
+    
+      <category term="iOS" scheme="http://adherentman.cn/tags/iOS/"/>
+    
+      <category term="Android" scheme="http://adherentman.cn/tags/Android/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript对象</title>
@@ -981,6 +1088,52 @@
   </entry>
   
   <entry>
+    <title>React-Router v3</title>
+    <link href="http://adherentman.cn/React-Router.html"/>
+    <id>http://adherentman.cn/React-Router.html</id>
+    <published>2017-07-17T08:02:36.000Z</published>
+    <updated>2017-08-14T06:53:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="React-Router3"><a href="#React-Router3" class="headerlink" title="React-Router3"></a>React-Router3</h1><h3 id="路径语法"><a href="#路径语法" class="headerlink" title="路径语法"></a>路径语法</h3><p>路由路径是匹配一个（或一部分）URL 的 <a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#routepattern" target="_blank" rel="external">一个字符串模式</a>。大部分的路由路径都可以直接按照字面量理解，除了以下几个特殊的符号：</p>
+<ul>
+<li><code>:paramName</code> – 匹配一段位于 <code>/</code>、<code>?</code> 或 <code>#</code> 之后的 URL。 命中的部分将被作为一个<a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params" target="_blank" rel="external">参数</a></li>
+<li><code>()</code> – 在它内部的内容被认为是可选的</li>
+<li><code>*</code> – 匹配任意字符（非贪婪的）直到命中下一个字符或者整个 URL 的末尾，并创建一个 <code>splat</code> <a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params" target="_blank" rel="external">参数</a></li>
+</ul>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//匹配 /hello/michael 和 /hello/ryan</div><div class="line">&lt;Route path=&quot;/hello/:name&quot;&gt;         </div><div class="line">  </div><div class="line">  </div><div class="line">//匹配 /hello, /hello/02 和 /hello/01</div><div class="line">&lt;Route path=&quot;/hello(/:id)&quot;&gt;   </div><div class="line"></div><div class="line"></div><div class="line">//匹配 /files/hello.jpg和/files/path/to/hello.jpg</div><div class="line">&lt;Route path=&quot;/files/*.*&quot;&gt;</div></pre></td></tr></table></figure>
+<h2 id="Histories"><a href="#Histories" class="headerlink" title="Histories"></a>Histories</h2><p>常用的 history 有三种形式， 但是你也可以使用 React Router 实现自定义的 history。</p>
+<ul>
+<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#browserHistory" target="_blank" rel="external"><code>browserHistory</code></a> (推荐)</li>
+<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#hashHistory" target="_blank" rel="external"><code>hashHistory</code></a></li>
+<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#creatememoryhistory" target="_blank" rel="external"><code>createMemoryHistory</code></a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Router history=&#123;browserHistory&#125;&gt;</div></pre></td></tr></table></figure>
+<h3 id="browserHistory"><a href="#browserHistory" class="headerlink" title="browserHistory"></a><code>browserHistory</code></h3><p>Browser history 是使用 React Router 的应用推荐的 history。它使用浏览器中的 <a href="https://developer.mozilla.org/en-US/docs/Web/API/History" target="_blank" rel="external">History</a> API 用于处理 URL，创建一个像<code>example.com/some/path</code>这样真实的 URL 。</p>
+<h2 id="在组件外部使用导航"><a href="#在组件外部使用导航" class="headerlink" title="在组件外部使用导航"></a>在组件外部使用导航</h2><p>虽然在组件内部可以使用 <code>this.context.router</code> 来实现导航，但许多应用想要在组件外部使用导航。使用Router组件上被赋予的history可以在组件外部实现导航。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;React-Router3&quot;&gt;&lt;a href=&quot;#React-Router3&quot; class=&quot;headerlink&quot; title=&quot;React-Router3&quot;&gt;&lt;/a&gt;React-Router3&lt;/h1&gt;&lt;h3 id=&quot;路径语法&quot;&gt;&lt;a href=&quot;#路径语法&quot; class=&quot;headerlink&quot; title=&quot;路径语法&quot;&gt;&lt;/a&gt;路径语法&lt;/h3&gt;&lt;p&gt;路由路径是匹配一个（或一部分）URL 的 &lt;a href=&quot;https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#routepattern&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;一个字符串模式&lt;/a&gt;。大部分的路由路径都可以直接按照字面量理解，除了以下几个特殊的符号：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;:paramName&lt;/code&gt; – 匹配一段位于 &lt;code&gt;/&lt;/code&gt;、&lt;code&gt;?&lt;/code&gt; 或 &lt;code&gt;#&lt;/code&gt; 之后的 URL。 命中的部分将被作为一个&lt;a href=&quot;https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;()&lt;/code&gt; – 在它内部的内容被认为是可选的&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;*&lt;/code&gt; – 匹配任意字符（非贪婪的）直到命中下一个字符或者整个 URL 的末尾，并创建一个 &lt;code&gt;splat&lt;/code&gt; &lt;a href=&quot;https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参数&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="React" scheme="http://adherentman.cn/categories/React/"/>
+    
+    
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
+    
+      <category term="React" scheme="http://adherentman.cn/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数据库E-R图</title>
     <link href="http://adherentman.cn/E-R%E5%9B%BE.html"/>
     <id>http://adherentman.cn/E-R图.html</id>
@@ -1012,52 +1165,6 @@
     
     
       <category term="数据库" scheme="http://adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React-Router</title>
-    <link href="http://adherentman.cn/React-Router.html"/>
-    <id>http://adherentman.cn/React-Router.html</id>
-    <published>2017-07-17T08:02:36.000Z</published>
-    <updated>2017-07-20T15:48:47.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="React-Router"><a href="#React-Router" class="headerlink" title="React-Router"></a>React-Router</h1><h3 id="路径语法"><a href="#路径语法" class="headerlink" title="路径语法"></a>路径语法</h3><p>路由路径是匹配一个（或一部分）URL 的 <a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#routepattern" target="_blank" rel="external">一个字符串模式</a>。大部分的路由路径都可以直接按照字面量理解，除了以下几个特殊的符号：</p>
-<ul>
-<li><code>:paramName</code> – 匹配一段位于 <code>/</code>、<code>?</code> 或 <code>#</code> 之后的 URL。 命中的部分将被作为一个<a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params" target="_blank" rel="external">参数</a></li>
-<li><code>()</code> – 在它内部的内容被认为是可选的</li>
-<li><code>*</code> – 匹配任意字符（非贪婪的）直到命中下一个字符或者整个 URL 的末尾，并创建一个 <code>splat</code> <a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params" target="_blank" rel="external">参数</a></li>
-</ul>
-<a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//匹配 /hello/michael 和 /hello/ryan</div><div class="line">&lt;Route path=&quot;/hello/:name&quot;&gt;         </div><div class="line">  </div><div class="line">  </div><div class="line">//匹配 /hello, /hello/02 和 /hello/01</div><div class="line">&lt;Route path=&quot;/hello(/:id)&quot;&gt;   </div><div class="line"></div><div class="line"></div><div class="line">//匹配 /files/hello.jpg和/files/path/to/hello.jpg</div><div class="line">&lt;Route path=&quot;/files/*.*&quot;&gt;</div></pre></td></tr></table></figure>
-<h2 id="Histories"><a href="#Histories" class="headerlink" title="Histories"></a>Histories</h2><p>常用的 history 有三种形式， 但是你也可以使用 React Router 实现自定义的 history。</p>
-<ul>
-<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#browserHistory" target="_blank" rel="external"><code>browserHistory</code></a> (推荐)</li>
-<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#hashHistory" target="_blank" rel="external"><code>hashHistory</code></a></li>
-<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#creatememoryhistory" target="_blank" rel="external"><code>createMemoryHistory</code></a></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Router history=&#123;browserHistory&#125;&gt;</div></pre></td></tr></table></figure>
-<h3 id="browserHistory"><a href="#browserHistory" class="headerlink" title="browserHistory"></a><code>browserHistory</code></h3><p>Browser history 是使用 React Router 的应用推荐的 history。它使用浏览器中的 <a href="https://developer.mozilla.org/en-US/docs/Web/API/History" target="_blank" rel="external">History</a> API 用于处理 URL，创建一个像<code>example.com/some/path</code>这样真实的 URL 。</p>
-<h2 id="在组件外部使用导航"><a href="#在组件外部使用导航" class="headerlink" title="在组件外部使用导航"></a>在组件外部使用导航</h2><p>虽然在组件内部可以使用 <code>this.context.router</code> 来实现导航，但许多应用想要在组件外部使用导航。使用Router组件上被赋予的history可以在组件外部实现导航。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;React-Router&quot;&gt;&lt;a href=&quot;#React-Router&quot; class=&quot;headerlink&quot; title=&quot;React-Router&quot;&gt;&lt;/a&gt;React-Router&lt;/h1&gt;&lt;h3 id=&quot;路径语法&quot;&gt;&lt;a href=&quot;#路径语法&quot; class=&quot;headerlink&quot; title=&quot;路径语法&quot;&gt;&lt;/a&gt;路径语法&lt;/h3&gt;&lt;p&gt;路由路径是匹配一个（或一部分）URL 的 &lt;a href=&quot;https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#routepattern&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;一个字符串模式&lt;/a&gt;。大部分的路由路径都可以直接按照字面量理解，除了以下几个特殊的符号：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;:paramName&lt;/code&gt; – 匹配一段位于 &lt;code&gt;/&lt;/code&gt;、&lt;code&gt;?&lt;/code&gt; 或 &lt;code&gt;#&lt;/code&gt; 之后的 URL。 命中的部分将被作为一个&lt;a href=&quot;https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参数&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;()&lt;/code&gt; – 在它内部的内容被认为是可选的&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;*&lt;/code&gt; – 匹配任意字符（非贪婪的）直到命中下一个字符或者整个 URL 的末尾，并创建一个 &lt;code&gt;splat&lt;/code&gt; &lt;a href=&quot;https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参数&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="React" scheme="http://adherentman.cn/categories/React/"/>
-    
-    
-      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
-    
-      <category term="React" scheme="http://adherentman.cn/tags/React/"/>
     
   </entry>
   
@@ -1463,101 +1570,6 @@
     
     
       <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue.js小记</title>
-    <link href="http://adherentman.cn/Vue.js%E5%B0%8F%E8%AE%B0.html"/>
-    <id>http://adherentman.cn/Vue.js小记.html</id>
-    <published>2017-04-28T07:54:00.000Z</published>
-    <updated>2017-05-26T08:37:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>#Vue小记</p>
-<h2 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a><strong>v-bind</strong></h2><ul>
-<li>缩写： <code>：</code></li>
-<li>修饰符<ul>
-<li><code>.prop</code> - 被用于绑定DOM属性</li>
-<li><code>.camel</code></li>
-</ul>
-</li>
-<li>用法</li>
-</ul>
-<p>动态的绑定一个或多个特性，或一个组件<code>prop</code>到表达式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a v-bind:href=<span class="string">"url"</span> href=<span class="string">"#"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></div></pre></td></tr></table></figure>
-<p>在这里<code>:href</code>是参数，通过<code>v-bind</code>指令将该元素的<code>href</code>属性与表达式的<code>url</code>绑定。</p>
-<a id="more"></a>
-<h2 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a><strong>v-if</strong></h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p v-<span class="keyword">if</span>=<span class="string">"seen"</span>&gt;Now you see me&lt;<span class="regexp">/p&gt;</span></div></pre></td></tr></table></figure>
-<p>这个<code>v-if</code>指令将判断<code>seen</code>的真假值来移出/插入<code>&lt;p&gt;</code>元素。</p>
-<h2 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a><strong>v-on</strong></h2><ul>
-<li>缩写：<code>@</code></li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a v-on:click=<span class="string">"doSomething"</span>&gt;</div></pre></td></tr></table></figure>
-<p>这个指令是用来监听DOM事件。</p>
-<h3 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h3><ul>
-<li><code>.stop</code></li>
-<li><code>.prevent</code></li>
-<li><code>.capture</code></li>
-<li><code>.self</code></li>
-<li><code>.once</code></li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 阻止单击事件冒泡 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click.stop</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 提交事件不再重载页面 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">v-on:submit.prevent</span>=<span class="string">"onSubmit"</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 修饰符可以串联  --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click.stop.prevent</span>=<span class="string">"doThat"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 只有修饰符 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">v-on:submit.prevent</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 添加事件侦听器时使用事件捕获模式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-on:click.capture</span>=<span class="string">"doThis"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 只当事件在该元素本身（而不是子元素）触发时触发回调 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-on:click.self</span>=<span class="string">"doThat"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">2.1.4新增</div><div class="line"><span class="comment">&lt;!-- 点击事件将只会触发一次 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click.once</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="按键修饰符"><a href="#按键修饰符" class="headerlink" title="按键修饰符"></a>按键修饰符</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 只有在 keyCode 是 13 时调用 vm.submit() --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-on:keyup.13</span>=<span class="string">"submit"</span>&gt;</span></div><div class="line">记住keyCode各种值很难所以提供了别名</div><div class="line"><span class="comment">&lt;!-- 同上 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-on:keyup.enter</span>=<span class="string">"submit"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 缩写语法 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> @<span class="attr">keyup.enter</span>=<span class="string">"submit"</span>&gt;</span></div></pre></td></tr></table></figure>
-<ul>
-<li><code>.enter</code></li>
-<li><code>.tab</code></li>
-<li><code>.delete</code>(捕获“删除”和“退格”按键)</li>
-<li><code>.esc</code></li>
-<li><code>.space</code></li>
-<li><code>.up</code></li>
-<li><code>.down</code></li>
-<li><code>.left</code></li>
-<li><code>.right</code></li>
-</ul>
-<p><strong>2.1.0新增</strong></p>
-<ul>
-<li><code>.ctrl</code></li>
-<li><code>.alt</code></li>
-<li><code>.shift</code></li>
-<li><code>.meta</code>(Mac上为(⌘)在windows上为(⊞))</li>
-</ul>
-<h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h2><p>我们用 <code>v-for</code> 指令根据一组数组的选项列表进行渲染。 <code>v-for</code> 指令需要以</p>
-<p> <code>item in items</code> 形式的特殊语法， <code>items</code> 是源数据数组并且 <code>item</code> 是数组元素迭代的别名。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"example-1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span></div><div class="line">    &#123;&#123; item.message &#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> example1 = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#example-1'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">items</span>: [</div><div class="line">      &#123;<span class="attr">message</span>: <span class="string">'Foo'</span> &#125;,</div><div class="line">      &#123;<span class="attr">message</span>: <span class="string">'Bar'</span> &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>结果：</p>
-<ul>
-<li>Foo</li>
-<li>Bar</li>
-</ul>
-<h2 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h2><p>你可以用 <code>v-model</code> 指令在表单控件元素上创建双向数据绑定。它会根据控件类型自动选取正确的方法来更新元素。尽管有些神奇，但 <code>v-model</code> 本质上不过是语法糖，它负责监听用户的输入事件以更新数据，并特别处理一些极端的例子。</p>
-<p>具体看</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;#Vue小记&lt;/p&gt;
-&lt;h2 id=&quot;v-bind&quot;&gt;&lt;a href=&quot;#v-bind&quot; class=&quot;headerlink&quot; title=&quot;v-bind&quot;&gt;&lt;/a&gt;&lt;strong&gt;v-bind&lt;/strong&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;缩写： &lt;code&gt;：&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;修饰符&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;.prop&lt;/code&gt; - 被用于绑定DOM属性&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;.camel&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;用法&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;动态的绑定一个或多个特性，或一个组件&lt;code&gt;prop&lt;/code&gt;到表达式&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;a v-bind:href=&lt;span class=&quot;string&quot;&gt;&quot;url&quot;&lt;/span&gt; href=&lt;span class=&quot;string&quot;&gt;&quot;#&quot;&lt;/span&gt;&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;在这里&lt;code&gt;:href&lt;/code&gt;是参数，通过&lt;code&gt;v-bind&lt;/code&gt;指令将该元素的&lt;code&gt;href&lt;/code&gt;属性与表达式的&lt;code&gt;url&lt;/code&gt;绑定。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Vue" scheme="http://adherentman.cn/categories/Vue/"/>
-    
-    
-      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
-    
-      <category term="Vue.js" scheme="http://adherentman.cn/tags/Vue-js/"/>
     
   </entry>
   
