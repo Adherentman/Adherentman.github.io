@@ -3,9 +3,9 @@
   
     
     <entry>
-      <title></title>
+      <title><![CDATA[JavaScript函数]]></title>
       <url>%2FJavaScript%E5%87%BD%E6%95%B0.html</url>
-      <content type="text"><![CDATA[JavaScript函数在JavaScript中，函数是]]></content>
+      <content type="text"><![CDATA[JavaScript函数在JavaScript中，函数是一等公民。]]></content>
     </entry>
 
     
