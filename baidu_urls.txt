@@ -1,3 +1,4 @@
+http://adherentman.cn/支付宝小程序.html
 http://adherentman.cn/CO函数，异步.html
 http://adherentman.cn/JavaScript函数.html
 http://adherentman.cn/React Native环境配置.html
