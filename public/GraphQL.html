@@ -1,0 +1,1101 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="GraphQL," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="壮壮-Technology" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="GraphQL()强类型 也就是说，你可以查询值类型：Int, Float, String, Boolean和ID GraphQL不是像MySQL或Redis这样直接面向数据的接口，而是面向你已经存在的应用代码的接口。 你可以把GraphQL看作是为了调用应用服务器上的方法的一些内嵌的RPC。 操作(operation)操作（Operations） GraphQL 规范支持两种操作：  query">
+<meta name="keywords" content="GraphQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GraphQL基本操作">
+<meta property="og:url" content="http://adherentman.cn/GraphQL.html">
+<meta property="og:site_name" content="壮壮-Technology">
+<meta property="og:description" content="GraphQL()强类型 也就是说，你可以查询值类型：Int, Float, String, Boolean和ID GraphQL不是像MySQL或Redis这样直接面向数据的接口，而是面向你已经存在的应用代码的接口。 你可以把GraphQL看作是为了调用应用服务器上的方法的一些内嵌的RPC。 操作(operation)操作（Operations） GraphQL 规范支持两种操作：  query">
+<meta property="og:updated_time" content="2017-08-12T10:50:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GraphQL基本操作">
+<meta name="twitter:description" content="GraphQL()强类型 也就是说，你可以查询值类型：Int, Float, String, Boolean和ID GraphQL不是像MySQL或Redis这样直接面向数据的接口，而是面向你已经存在的应用代码的接口。 你可以把GraphQL看作是为了调用应用服务器上的方法的一些内嵌的RPC。 操作(operation)操作（Operations） GraphQL 规范支持两种操作：  query">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6398696795836253000',
+      author: '徐大大'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://adherentman.cn/GraphQL.html"/>
+
+
+
+
+
+  <title> GraphQL基本操作 | 壮壮-Technology </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c695bc1693d95b40142d577a27c7180c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">壮壮-Technology</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">宠辱不惊，闲看庭前花落花开</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://adherentman.cn/GraphQL.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XuZiHao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="壮壮-Technology">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                GraphQL基本操作
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-17T16:02:36+08:00">
+                2017-07-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/GraphQL/" itemprop="url" rel="index">
+                    <span itemprop="name">GraphQL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="GraphQL"><a href="#GraphQL" class="headerlink" title="GraphQL()"></a>GraphQL()</h1><p>强类型</p>
+<p>也就是说，你可以查询值类型：<code>Int</code>, <code>Float</code>, <code>String</code>, <code>Boolean</code>和<code>ID</code></p>
+<p>GraphQL不是像MySQL或Redis这样直接面向数据的接口，而是面向你已经存在的应用代码的接口。</p>
+<p>你可以把GraphQL看作是为了调用应用服务器上的方法的一些内嵌的RPC。</p>
+<h2 id="操作-operation"><a href="#操作-operation" class="headerlink" title="操作(operation)"></a>操作(operation)</h2><p><strong>操作（Operations）</strong></p>
+<p>GraphQL 规范支持两种操作：</p>
+<ul>
+<li>query：仅获取数据（fetch）的只读请求</li>
+<li>mutation：获取数据后还有写操作的请求</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">query&#123;</div><div class="line">    clent(id:1)&#123;</div><div class="line">      id</div><div class="line">      name</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>client 是查询的operation</li>
+<li>(id:1)包含了传入给Query的参数</li>
+<li>查询包含id和name字段,这些字段也是我们希望查询可以返回的.</li>
+</ul>
+<a id="more"></a>
+<p>server会给这个查询返回什么：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"data"</span>: &#123;</div><div class="line">    <span class="attr">"client"</span>: &#123;</div><div class="line">      <span class="attr">"id"</span>: <span class="string">"1"</span>,</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"Uncle Charlie"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>server会返回一个JSON串。这个JSON的schema和查询的基本一致。</p>
+<h2 id="变量-Variable"><a href="#变量-Variable" class="headerlink" title="变量(Variable)"></a>变量(Variable)</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">query($clientId: Int) &#123;</div><div class="line">  client(id: $clientId) &#123;</div><div class="line">    name</div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  purchases(client_id: $clientId) &#123;</div><div class="line">    date</div><div class="line">    quantity</div><div class="line">    total</div><div class="line">    product &#123;</div><div class="line">      name</div><div class="line">      price</div><div class="line">      product_category &#123;</div><div class="line">        name</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    client &#123;</div><div class="line">      name</div><div class="line">      dob</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"clientId"</span>: <span class="number">1</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="Graphql的schema下"><a href="#Graphql的schema下" class="headerlink" title="Graphql的schema下"></a>Graphql的schema下</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">schema&#123;	</div><div class="line"></div><div class="line">	query: Query,</div><div class="line"></div><div class="line">	mutation: Mutation,</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Mutation（修改）"><a href="#Mutation（修改）" class="headerlink" title="Mutation（修改）"></a>Mutation（修改）</h2><p>增、删、改一类的operation在GraphQL里统称为<strong>变异（mutation，即修改数据）</strong></p>
+<p>GraphQL中将对数据的修改操作称为 mutation。在 GraphQL Schema 中按照如下形式来定义一个 mutation：</p>
+<p>mutation 查询和普通查询请求（query）的重要区别在于 mutation 操作是序列化执行的。例如 GraphQL 规范中给出的示例，服务器一定会序列化处理下面的 mutation 请求：</p>
+<p>请求结束时 theNumber 的值会是 2。</p>
+<ul>
+<li>create_client增加</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mutation &#123;</div><div class="line">  create_client (</div><div class="line">    name: "查理大叔"</div><div class="line">    dob: "2017/01/28"</div><div class="line">  ) &#123;</div><div class="line">    id </div><div class="line">    name</div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>update_client更新</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mutation &#123;</div><div class="line">  update_client (</div><div class="line">    id: 5</div><div class="line">    dob: "1990/01/01"</div><div class="line">  ) &#123;</div><div class="line">    id</div><div class="line">    name</div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>destroy_client删除</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mutation &#123;</div><div class="line">  destroy_client(id: 5) &#123;</div><div class="line">    name </div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h1><p>就像Rest以PUT／POST约定为修改服务器端数据一样，Mutations操作在GraphQL的意义就是修改数据库。就像官网中的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) &#123; //!表示必须填写的查询条件  </div><div class="line">  createReview(episode: $ep, review: $review) &#123;</div><div class="line">    stars</div><div class="line">    commentary</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&#123;</div><div class="line">  &quot;ep&quot;: &quot;JEDI&quot;,</div><div class="line">  &quot;review&quot;: &#123;</div><div class="line">    &quot;stars&quot;: 5,</div><div class="line">    &quot;commentary&quot;: &quot;This is a great movie!&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>需要注意的是，为了保证mutation操作不冲突，mutation只能序列执行。而query可以并行。</p>
+<h2 id="强类型"><a href="#强类型" class="headerlink" title="强类型"></a>强类型</h2><p>由于 GraphQL 是一个强类型语言，所以它可以在执行查询之前检查每个查询语句是否满足事先设定的 schema，符合则合法，如果查询语句不合法则不进行查询。</p>
+<h2 id="Fragments-组合"><a href="#Fragments-组合" class="headerlink" title="Fragments(组合)"></a>Fragments(组合)</h2><p>GraphQL 可以组合使用查询。比如可以定义一种叫 fragment 的东西，就是查询片断，然后我们可以在不同的地方重复的去使用查询。比如下面的这个例子：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  me &#123;</div><div class="line">    name</div><div class="line">    friends &#123;</div><div class="line">      name</div><div class="line">      events &#123;</div><div class="line">        name</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以转换成这样：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  me &#123;</div><div class="line">    name</div><div class="line">    friends &#123;</div><div class="line">      ...firendFragment</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">fragment friendFragment on User &#123;</div><div class="line">  name</div><div class="line">  events &#123;</div><div class="line">    name</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面定义了一个叫 friendFragment 的查询片断，它返回用户朋友的名字，还有参加的活动的名字，然后我们可以在其它的查询里面使用这个查询片断。</p>
+<p>简单的说，GraphQL 是一种<strong>描述请求数据方法的语法</strong>，通常用于客户端从服务端加载数据。GraphQL 有以下三个主要特征：</p>
+<ul>
+<li>它允许客户端指定具体所需的数据。</li>
+<li>它让从多个数据源汇总取数据变得更简单。</li>
+<li>它使用了类型系统来描述数据。</li>
+</ul>
+<p>一个 GraphQL API 主要由三个部分组成：<strong>schema（类型）</strong>，<strong>queries（查询）</strong> 以及 <strong>resolvers（解析器）</strong>。</p>
+<h1 id="Arguments-参数"><a href="#Arguments-参数" class="headerlink" title="Arguments(参数)"></a>Arguments(参数)</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  human(id: <span class="string">"1000"</span>) &#123;</div><div class="line">    name</div><div class="line">    height</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"data"</span>: &#123;</div><div class="line">    <span class="string">"human"</span>: &#123;</div><div class="line">      <span class="string">"name"</span>: <span class="string">"Luke Skywalker"</span>,</div><div class="line">      <span class="string">"height"</span>: <span class="number">1.72</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当然在字段里我们也可以传参数.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  human(id: <span class="string">"1000"</span>) &#123;</div><div class="line">    name</div><div class="line">    height(unit: FOOT<span class="comment">//or METER)</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"data"</span>: &#123;</div><div class="line">    <span class="string">"human"</span>: &#123;</div><div class="line">      <span class="string">"name"</span>: <span class="string">"Luke Skywalker"</span>,</div><div class="line">      <span class="string">"height"</span>: <span class="number">5.6430448</span> <span class="comment">// or 1.72</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="Aliases-别名"><a href="#Aliases-别名" class="headerlink" title="Aliases(别名)"></a>Aliases(别名)</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  empireHero: hero(episode: EMPIRE) &#123;</div><div class="line">    name</div><div class="line">  &#125;</div><div class="line">  jediHero: hero(episode: JEDI) &#123;</div><div class="line">    name</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"data"</span>: &#123;</div><div class="line">    <span class="attr">"empireHero"</span>: &#123;</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"Luke Skywalker"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"jediHero"</span>: &#123;</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"R2-D2"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Variables-变量"><a href="#Variables-变量" class="headerlink" title="Variables(变量)"></a>Variables(变量)</h2><p>当我们开始使用变量的时候,我们需要做三件事情</p>
+<blockquote>
+<ol>
+<li>Replace the static value in the query with <code>$variableName</code></li>
+<li>Declare <code>$variableName</code> as one of the variables accepted by the query</li>
+<li>Pass <code>variableName: value</code> in the separate, transport-specific (usually JSON) variables dictionary</li>
+</ol>
+</blockquote>
+<ol>
+<li>用<code>$</code> 替换查询中的静态值</li>
+<li>将<code>$</code> 声明为查询接受变量之一</li>
+<li>通常传递json.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">query</div><div class="line">HeroNameAndFriends(</div><div class="line">	$episode: Episode,</div><div class="line">	)&#123;</div><div class="line">	hero(</div><div class="line">	episode: $episode</div><div class="line">)&#123;</div><div class="line">	name</div><div class="line"> 	friends&#123;</div><div class="line">  	name</div><div class="line"> 	&#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//variables</span></div><div class="line">&#123;</div><div class="line">  <span class="string">"episode"</span>: <span class="string">"JEDI"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"data"</span>: &#123;</div><div class="line">    <span class="string">"hero"</span>: &#123;</div><div class="line">      <span class="string">"name"</span>: <span class="string">"R2-D2"</span>,</div><div class="line">      <span class="string">"friends"</span>: [</div><div class="line">        &#123;</div><div class="line">          <span class="string">"name"</span>: <span class="string">"Luke Skywalker"</span></div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">          <span class="string">"name"</span>: <span class="string">"Han Solo"</span></div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">          <span class="string">"name"</span>: <span class="string">"Leia Organa"</span></div><div class="line">        &#125;</div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="fields"><a href="#fields" class="headerlink" title="fields"></a>fields</h1><p>Fields就是客户端要求GraphQL返回的数据说明，一个Fields也可以包含参数</p>
+<h1 id="Root-fields-amp-resolvers"><a href="#Root-fields-amp-resolvers" class="headerlink" title="Root fields &amp; resolvers"></a>Root fields &amp; resolvers</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Query: &#123;</div><div class="line">  human(obj, args, context) &#123;</div><div class="line">    return context.db.loadHumanByID(args.id).then(</div><div class="line">      userData =&gt; new Human(userData)</div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>obj上一个对象，其对于根查询类型的字段通常不被使用</p>
+<p>args提供给GraphQL查询中的字段的参数。</p>
+<p>context提供给每个解析器并保存重要的上下文信息（如当前登录的用户）或访问数据库的值。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.png" alt="XuZiHao WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay.png" alt="XuZiHao Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/GraphQL/" rel="tag"># GraphQL</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/React-Router.html" rel="next" title="React-Router v3">
+                <i class="fa fa-chevron-left"></i> React-Router v3
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/评论功能迁移.html" rel="prev" title="多说挂了好久。现在换成来必力">
+                多说挂了好久。现在换成来必力 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTc3My82MzM5"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/1.jpg"
+               alt="XuZiHao" />
+          <p class="site-author-name" itemprop="name">XuZiHao</p>
+           
+              <p class="site-description motion-element" itemprop="description">🤔🤡🤔</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Adherentman" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5723659619/" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/xu-zi-hao-60/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-zhihu"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GraphQL"><span class="nav-number">1.</span> <span class="nav-text">GraphQL()</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#操作-operation"><span class="nav-number">1.1.</span> <span class="nav-text">操作(operation)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量-Variable"><span class="nav-number">1.2.</span> <span class="nav-text">变量(Variable)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Graphql的schema下"><span class="nav-number">2.</span> <span class="nav-text">Graphql的schema下</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mutation（修改）"><span class="nav-number">2.1.</span> <span class="nav-text">Mutation（修改）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改数据"><span class="nav-number">3.</span> <span class="nav-text">修改数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#强类型"><span class="nav-number">3.1.</span> <span class="nav-text">强类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fragments-组合"><span class="nav-number">3.2.</span> <span class="nav-text">Fragments(组合)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Arguments-参数"><span class="nav-number">4.</span> <span class="nav-text">Arguments(参数)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Aliases-别名"><span class="nav-number">5.</span> <span class="nav-text">Aliases(别名)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Variables-变量"><span class="nav-number">5.1.</span> <span class="nav-text">Variables(变量)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fields"><span class="nav-number">6.</span> <span class="nav-text">fields</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Root-fields-amp-resolvers"><span class="nav-number">7.</span> <span class="nav-text">Root fields & resolvers</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XuZiHao</span>
+</div>
+
+
+<div class="powered-by">
+  个人专属 
+</div>
+
+<div class="theme-info">
+  Adherent -
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

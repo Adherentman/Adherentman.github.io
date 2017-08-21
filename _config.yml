@@ -3,19 +3,26 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
-language:
-timezone:
+title: 壮壮-Technology
+subtitle: 宠辱不惊，闲看庭前花落花开
+description: 🤔🤡🤔
+author: XuZiHao
+language: zh-Hans
+timezone: Asia/Shanghai
+
+baidu_url_submit:
+  count: 100 # 提交最新的一个链接
+  host: www.adherentman.cn # 在百度站长平台中注册的域名
+  token: oFSiOuYljlc4AEmb # 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
+  path: baidu_urls.txt # 文本文档的地址， 新链接会保存在此文本文档里
+
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://adherentman.cn
 root: /
-permalink: :year/:month/:day/:title/
-permalink_defaults:
+permalink: :title.html
+permalink_defaults: 
 
 # Directory
 source_dir: source
@@ -26,6 +33,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -63,12 +71,21 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
- - type: git
-   repo: git@git.coding.net:Adherent/blog.git
-   branch: coding-pages
-  
+- type: git
+  repository: git@github.com:Adherentman/Adherentman.github.io.git
+  branch: master
+- type: git
+  repository: git@git.coding.net:Adherent/blog.git
+  branch: master
+- type: baidu_url_submitter

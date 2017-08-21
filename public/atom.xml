@@ -1,0 +1,1384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>壮壮-Technology</title>
+  <subtitle>宠辱不惊，闲看庭前花落花开</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://adherentman.cn/"/>
+  <updated>2017-08-20T12:54:16.000Z</updated>
+  <id>http://adherentman.cn/</id>
+  
+  <author>
+    <name>XuZiHao</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>支付宝小程序踩坑（一）</title>
+    <link href="http://adherentman.cn/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%B0%8F%E7%A8%8B%E5%BA%8F.html"/>
+    <id>http://adherentman.cn/支付宝小程序.html</id>
+    <published>2017-08-20T12:49:24.000Z</published>
+    <updated>2017-08-20T12:54:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="支付宝小程序"><a href="#支付宝小程序" class="headerlink" title="支付宝小程序"></a>支付宝小程序</h1><p>这是支付宝小程序编译器的主界面</p>
+<p><img src="/images/paytest1.png" alt="paytest1"></p>
+<p>这是 <strong>hello，world</strong>的文件树。是基于js语言。小程序开发者工具默认支持 ES5/ES6/ES7，推荐使用 ES6 以上语法。而且还内置了 <strong>ESLint</strong> 支持</p>
+<p><img src="/images/paytest2.png" alt="paytest2"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;支付宝小程序&quot;&gt;&lt;a href=&quot;#支付宝小程序&quot; class=&quot;headerlink&quot; title=&quot;支付宝小程序&quot;&gt;&lt;/a&gt;支付宝小程序&lt;/h1&gt;&lt;p&gt;这是支付宝小程序编译器的主界面&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/paytest1.png&quot;
+    
+    </summary>
+    
+      <category term="小程序" scheme="http://adherentman.cn/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="JavaScrip" scheme="http://adherentman.cn/tags/JavaScrip/"/>
+    
+      <category term="小程序" scheme="http://adherentman.cn/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CO函数，异步</title>
+    <link href="http://adherentman.cn/CO%E5%87%BD%E6%95%B0%EF%BC%8C%E5%BC%82%E6%AD%A5.html"/>
+    <id>http://adherentman.cn/CO函数，异步.html</id>
+    <published>2017-08-18T15:01:50.000Z</published>
+    <updated>2017-08-18T15:01:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="CO函数库"><a href="#CO函数库" class="headerlink" title="CO函数库"></a>CO函数库</h1><p><a href="https://github.com/tj/co" target="_blank" rel="external">co 函数库</a>是著名程序员 TJ Holowaychuk 于2013年6月发布的一个小工具，用于 Generator 函数的自动执行。</p>
+<p>有一个 Generator 函数，用于依次读取两个文件。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="keyword">var</span> gen = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>)</span>&#123;</div><div class="line">&gt;   <span class="keyword">var</span> f1 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/fstab'</span>);</div><div class="line">&gt;   <span class="keyword">var</span> f2 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/shells'</span>);</div><div class="line">&gt;   <span class="built_in">console</span>.log(f1.toString());</div><div class="line">&gt;   <span class="built_in">console</span>.log(f2.toString());</div><div class="line">&gt; &#125;;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>co 函数库可以让你不用编写 Generator 函数的执行器。</strong></p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="keyword">var</span> co = <span class="built_in">require</span>(<span class="string">'co'</span>);</div><div class="line">&gt; co(gen);</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，Generator 函数只要传入 co 函数，就会自动执行。</p>
+<p>co 函数返回一个 Promise 对象，因此可以用 then 方法添加回调函数。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; co(gen).then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">&gt;   <span class="built_in">console</span>.log(<span class="string">'Generator 函数执行完成'</span>);</div><div class="line">&gt; &#125;)</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="co-函数库的源码"><a href="#co-函数库的源码" class="headerlink" title="co 函数库的源码"></a>co 函数库的源码</h2><p>co 就是上面那个自动执行器的扩展，它的<a href="https://github.com/tj/co/blob/master/index.js" target="_blank" rel="external">源码</a>只有几十行，非常简单。</p>
+<p>首先，co 函数接受 Generator 函数作为参数，返回一个 Promise 对象。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="function"><span class="keyword">function</span> <span class="title">co</span>(<span class="params">gen</span>) </span>&#123;</div><div class="line">&gt;   <span class="keyword">var</span> ctx = <span class="keyword">this</span>;</div><div class="line">&gt;</div><div class="line">&gt;   <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">&gt;   &#125;);</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>在返回的 Promise 对象里面，co 先检查参数 gen 是否为 Generator 函数。如果是，就执行该函数，得到一个内部指针对象；如果不是就返回，并将 Promise 对象的状态改为 resolved 。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="function"><span class="keyword">function</span> <span class="title">co</span>(<span class="params">gen</span>) </span>&#123;</div><div class="line">&gt;   <span class="keyword">var</span> ctx = <span class="keyword">this</span>;</div><div class="line">&gt;</div><div class="line">&gt;   <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">&gt;     <span class="keyword">if</span> (<span class="keyword">typeof</span> gen === <span class="string">'function'</span>) gen = gen.call(ctx);</div><div class="line">&gt;     <span class="keyword">if</span> (!gen || <span class="keyword">typeof</span> gen.next !== <span class="string">'function'</span>) <span class="keyword">return</span> resolve(gen);</div><div class="line">&gt;   &#125;);</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>接着，co 将 Generator 函数的内部指针对象的 next 方法，包装成 onFulefilled 函数。这主要是为了能够捕捉抛出的错误。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="function"><span class="keyword">function</span> <span class="title">co</span>(<span class="params">gen</span>) </span>&#123;</div><div class="line">&gt;   <span class="keyword">var</span> ctx = <span class="keyword">this</span>;</div><div class="line">&gt;</div><div class="line">&gt;   <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">&gt;     <span class="keyword">if</span> (<span class="keyword">typeof</span> gen === <span class="string">'function'</span>) gen = gen.call(ctx);</div><div class="line">&gt;     <span class="keyword">if</span> (!gen || <span class="keyword">typeof</span> gen.next !== <span class="string">'function'</span>) <span class="keyword">return</span> resolve(gen);</div><div class="line">&gt;</div><div class="line">&gt;     onFulfilled();</div><div class="line">&gt;     <span class="function"><span class="keyword">function</span> <span class="title">onFulfilled</span>(<span class="params">res</span>) </span>&#123;</div><div class="line">&gt;       <span class="keyword">var</span> ret;</div><div class="line">&gt;       <span class="keyword">try</span> &#123;</div><div class="line">&gt;         ret = gen.next(res);</div><div class="line">&gt;       &#125; <span class="keyword">catch</span> (e) &#123;</div><div class="line">&gt;         <span class="keyword">return</span> reject(e);</div><div class="line">&gt;       &#125;</div><div class="line">&gt;       next(ret);</div><div class="line">&gt;     &#125;    </div><div class="line">&gt;   &#125;);</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>最后，就是关键的 next 函数，它会反复调用自身。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="function"><span class="keyword">function</span> <span class="title">next</span>(<span class="params">ret</span>) </span>&#123;</div><div class="line">&gt;   <span class="keyword">if</span> (ret.done) <span class="keyword">return</span> resolve(ret.value);</div><div class="line">&gt;   <span class="keyword">var</span> value = toPromise.call(ctx, ret.value);</div><div class="line">&gt;   <span class="keyword">if</span> (value &amp;&amp; isPromise(value)) <span class="keyword">return</span> value.then(onFulfilled, onRejected);</div><div class="line">&gt;   <span class="keyword">return</span> onRejected(<span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'You may only yield a function, promise, generator, array, or object, '</span></div><div class="line">&gt;         + <span class="string">'but the following object was passed: "'</span> + <span class="built_in">String</span>(ret.value) + <span class="string">'"'</span>));</div><div class="line">&gt;     &#125;</div><div class="line">&gt; &#125;);</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，next 函数的内部代码，一共只有四行命令。</p>
+<blockquote>
+<p>第一行，检查当前是否为 Generator 函数的最后一步，如果是就返回。</p>
+<p>第二行，确保每一步的返回值，是 Promise 对象。</p>
+<p>第三行，使用 then 方法，为返回值加上回调函数，然后通过 onFulfilled 函数再次调用 next 函数。</p>
+<p>第四行，在参数不符合要求的情况下（参数非 Thunk 函数和 Promise 对象），将 Promise 对象的状态改为 rejected，从而终止执行。</p>
+</blockquote>
+<h2 id="并发的异步操作"><a href="#并发的异步操作" class="headerlink" title="并发的异步操作"></a>并发的异步操作</h2><p>co 支持并发的异步操作，即允许某些操作同时进行，等到它们全部完成，才进行下一步。</p>
+<p>这时，要把并发的操作都放在数组或对象里面。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt; co(<span class="function"><span class="keyword">function</span>* (<span class="params"></span>)</span>&#123;</div><div class="line">&gt;   <span class="keyword">var</span> values = [n1,n2,n3];</div><div class="line">&gt;   <span class="keyword">yield</span> values.map(somethingAsync);</div><div class="line">&gt; &#125;);</div><div class="line">&gt; <span class="function"><span class="keyword">function</span>* <span class="title">somethingAsync</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">&gt;   <span class="keyword">return</span> y</div><div class="line">&gt; &#125;;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p># </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;CO函数库&quot;&gt;&lt;a href=&quot;#CO函数库&quot; class=&quot;headerlink&quot; title=&quot;CO函数库&quot;&gt;&lt;/a&gt;CO函数库&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/tj/co&quot; target=&quot;_blank&quot; rel=&quot;ex
+    
+    </summary>
+    
+      <category term="Javascript修仙之路" scheme="http://adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
+    
+      <category term="node.js" scheme="http://adherentman.cn/tags/node-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript函数</title>
+    <link href="http://adherentman.cn/JavaScript%E5%87%BD%E6%95%B0.html"/>
+    <id>http://adherentman.cn/JavaScript函数.html</id>
+    <published>2017-08-16T14:45:00.000Z</published>
+    <updated>2017-08-16T14:43:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="JavaScript函数"><a href="#JavaScript函数" class="headerlink" title="JavaScript函数"></a>JavaScript函数</h1><p>在JavaScript中，函数是一等公民。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;JavaScript函数&quot;&gt;&lt;a href=&quot;#JavaScript函数&quot; class=&quot;headerlink&quot; title=&quot;JavaScript函数&quot;&gt;&lt;/a&gt;JavaScript函数&lt;/h1&gt;&lt;p&gt;在JavaScript中，函数是一等公民。&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="Javascript基础" scheme="http://adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React Native iOS/android环境配置</title>
+    <link href="http://adherentman.cn/React%20Native%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html"/>
+    <id>http://adherentman.cn/React Native环境配置.html</id>
+    <published>2017-08-14T04:32:53.000Z</published>
+    <updated>2017-08-14T06:55:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="React-Native环境配置"><a href="#React-Native环境配置" class="headerlink" title="React Native环境配置"></a>React Native环境配置</h1><h1 id="Ios开发环境"><a href="#Ios开发环境" class="headerlink" title="Ios开发环境"></a>Ios开发环境</h1><p>因为我是在mac下搭建环境的。所以比较方便。</p>
+<ul>
+<li><p>Xcode时必须的！</p>
+</li>
+<li><blockquote>
+<p>brew install node        //电脑需要有node</p>
+<p>brew install watchman    //这是用来监视文件系统中的更改的工具</p>
+</blockquote>
+</li>
+<li><p>npm install -g react-native-cli</p>
+<p>然后我们打开 <strong>Xcode</strong></p>
+<p><img src="/images/xcode.png" alt="xcode"></p>
+<a id="more"></a>
+</li>
+</ul>
+<p>接下来我们需要执行命令</p>
+<p><strong>react-native init AwesomeProject</strong></p>
+<p>Then：我们需要在Xcode里打开</p>
+<p><img src="/images/xcode文件.png" alt="xcode文件"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">接着在终端里</div><div class="line">cd AwesomeProject</div><div class="line">then：</div><div class="line">react-native run-ios</div></pre></td></tr></table></figure>
+<p>接下来我们等就好了</p>
+<p><img src="/images/iphone6.png" alt="iphone6"></p>
+<p>这就是成功界面</p>
+<p>恭喜🎉！</p>
+<h1 id="Android环境"><a href="#Android环境" class="headerlink" title="Android环境"></a>Android环境</h1><p>第一步与ios一样</p>
+<ul>
+<li>brew install node      </li>
+<li>brew install watchman   </li>
+</ul>
+<p>我们就不做了。</p>
+<p>接下来</p>
+<h2 id="我们需要安装Java的环境。"><a href="#我们需要安装Java的环境。" class="headerlink" title="我们需要安装Java的环境。"></a>我们需要安装<code>Java</code>的环境。</h2><p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">Download and install JDK 8 or newer</a></p>
+<h2 id="安装Android环境"><a href="#安装Android环境" class="headerlink" title="安装Android环境"></a>安装<code>Android</code>环境</h2><ol>
+<li>安装 <strong><a href="https://developer.android.com/studio/index.html" target="_blank" rel="external">Android studio</a></strong> </li>
+<li><img src="/images/custon.png" alt="custon"></li>
+<li>勾选<code>Performance</code>和<code>Android Virtual Device</code><img src="/images/sdk.png" alt="sdk"></li>
+<li>安装完成后，在Android Studio的启动欢迎界面中选择<code>Configure | SDK Manager</code>。<img src="/images/config.png" alt="config"></li>
+<li>在<code>SDK Platforms</code>窗口中，选择<code>Show Package Details</code></li>
+</ol>
+<p><img src="/images/palt.png" alt="palt"></p>
+<p>然后tools里</p>
+<p><img src="/images/sdttool.png" alt="sdttool"></p>
+<p><img src="/images/sdktools.png" alt="sdktools"></p>
+<p><img src="/images/sdksuppt.png" alt="sdksuppt"></p>
+<h4 id="ANDROID-HOME环境变量"><a href="#ANDROID-HOME环境变量" class="headerlink" title="ANDROID_HOME环境变量"></a>ANDROID_HOME环境变量</h4><p>确保<code>ANDROID_HOME</code>环境变量正确地指向了你安装的Android SDK的路径。具体的做法是把下面的命令加入到<code>~/.bash_profile</code>文件中：(<strong>译注</strong>：~表示用户目录，即<code>/Users/你的用户名/</code>，而小数点开头的文件在Finder中是隐藏的，并且这个文件有可能并不存在。请在终端下使用<code>vi ~/.bash_profile</code>命令创建或编辑。如不熟悉vi操作，请点击<a href="http://www.eepw.com.cn/article/48018.htm" target="_blank" rel="external">这里</a>学习）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 如果你不是通过Android Studio安装的sdk，则其路径可能不同，请自行确定清楚。</div><div class="line">export ANDROID_HOME=~/Library/Android/sdk</div></pre></td></tr></table></figure>
+<p>然后使用下列命令使其立即生效（否则重启后才生效）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source ~/.bash_profile</div></pre></td></tr></table></figure>
+<p>可以使用<code>echo $ANDROID_HOME</code>检查此变量是否已正确设置。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>同样我们需要在<code>Android studio</code>中打开创建的文件夹下Android文件</p>
+<p>然后去build</p>
+<p><img src="/images/studio.png" alt="studio"></p>
+<p>圆圈是选手机机型。</p>
+<p>我们在正方形框框中先点击锤子然后点击绿色箭头之后在终端里输入以下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">react-native init AwesomeProject</div><div class="line">cd AwesomeProject</div><div class="line">react-native run-android</div></pre></td></tr></table></figure>
+<p>下面就是成功画面！恭喜🎉！<img src="/images/Android.png" alt="Android"></p>
+<h1 id="在搭建环境下踩得坑"><a href="#在搭建环境下踩得坑" class="headerlink" title="在搭建环境下踩得坑"></a>在搭建环境下踩得坑</h1><h2 id="Android下"><a href="#Android下" class="headerlink" title="Android下"></a>Android下</h2><p><img src="/images/安卓bug.png" alt="安卓bug"></p>
+<p>这是我运行安卓的时候遇到的问题。我们需要在 <strong>Android studio</strong>先启动一个手机模拟器再去终端里输入指令：<code>react-native run-android</code> 就可以了</p>
+<p><img src="/images/android tools.png" alt="android tools"></p>
+<p>这个问题是说Build Tools 23.0.0.1太低至少需要25.0.0</p>
+<p>但是我升级过后还不行。发现是配置文件里的问题。</p>
+<p><img src="/images/gaibuild.png" alt="gaibuild"></p>
+<p>这样就行啦！</p>
+<h2 id="Ios下"><a href="#Ios下" class="headerlink" title="Ios下"></a>Ios下</h2><p>具体出错问题描述找不到了，但是情况还是记得的。</p>
+<p>就是说我ios的虚拟机打开了但是我在上面看不见自己的项目。</p>
+<p>这时候google到答案。。</p>
+<p><img src="/images/ios解决问题1.png" alt="ios解决问题1"></p>
+<p>需要开一个终端，然后去在你的项目下<code>npm install</code> 就是这样。。具体情况我也不知道发生了什么哈哈哈</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;React-Native环境配置&quot;&gt;&lt;a href=&quot;#React-Native环境配置&quot; class=&quot;headerlink&quot; title=&quot;React Native环境配置&quot;&gt;&lt;/a&gt;React Native环境配置&lt;/h1&gt;&lt;h1 id=&quot;Ios开发环境&quot;&gt;&lt;a href=&quot;#Ios开发环境&quot; class=&quot;headerlink&quot; title=&quot;Ios开发环境&quot;&gt;&lt;/a&gt;Ios开发环境&lt;/h1&gt;&lt;p&gt;因为我是在mac下搭建环境的。所以比较方便。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Xcode时必须的！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;blockquote&gt;
+&lt;p&gt;brew install node        //电脑需要有node&lt;/p&gt;
+&lt;p&gt;brew install watchman    //这是用来监视文件系统中的更改的工具&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;npm install -g react-native-cli&lt;/p&gt;
+&lt;p&gt;然后我们打开 &lt;strong&gt;Xcode&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/xcode.png&quot; alt=&quot;xcode&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="React,React Native,iOS,Android" scheme="http://adherentman.cn/categories/React-React-Native-iOS-Android/"/>
+    
+    
+      <category term="React" scheme="http://adherentman.cn/tags/React/"/>
+    
+      <category term="React Native" scheme="http://adherentman.cn/tags/React-Native/"/>
+    
+      <category term="iOS" scheme="http://adherentman.cn/tags/iOS/"/>
+    
+      <category term="Android" scheme="http://adherentman.cn/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript对象</title>
+    <link href="http://adherentman.cn/Javascript%E5%AF%B9%E8%B1%A1.html"/>
+    <id>http://adherentman.cn/Javascript对象.html</id>
+    <published>2017-08-02T14:30:44.000Z</published>
+    <updated>2017-08-09T13:34:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Javascript对象"><a href="#Javascript对象" class="headerlink" title="Javascript对象"></a>Javascript对象</h1><p>在JavaScript中，数组是对象，函数是对象，正则表达式是对象。那么对象自然也是对象。</p>
+<ul>
+<li>JavaScript中的对象是无类型的。</li>
+<li>对象是属性的容器，其中每个属性都拥有名字和值。</li>
+<li>JavaScript包含一种原型链的特性，允许对象继承另一个对象的属性。</li>
+</ul>
+<h1 id="对象字面量"><a href="#对象字面量" class="headerlink" title="对象字面量"></a>对象字面量</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> empty_project = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> stooge = &#123;				<span class="comment">//对象字面量</span></div><div class="line">  <span class="string">"first-name"</span>: <span class="string">"Jerome"</span>,</div><div class="line">  <span class="string">"last-name"</span>: <span class="string">"Howard"</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>一个对象字面量就是包围在一对花括号中的零或多个“名/值”对。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> flight = &#123;</div><div class="line">  <span class="attr">airline</span>: <span class="string">"Oceanic"</span>,</div><div class="line">  <span class="attr">number</span>: <span class="number">815</span>,</div><div class="line">  <span class="attr">departure</span>: &#123;</div><div class="line">    <span class="attr">IATA</span>: <span class="string">"SYD"</span>,</div><div class="line">    <span class="attr">time</span>: <span class="string">"2014-09-22 14:55"</span>,</div><div class="line">    <span class="attr">city</span>: <span class="string">"Sydney"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">arrival</span>:&#123;</div><div class="line">    <span class="attr">IATA</span>: <span class="string">"LAX"</span>,</div><div class="line">    <span class="attr">time</span>: <span class="string">"2004-09-23 10:42"</span>,</div><div class="line">    <span class="attr">city</span>: <span class="string">"Los Angeles"</span></div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>属性的值可以从包括另一个对象字面量在内的任意表达式中获得。对象是可以嵌套的。</p>
+<h1 id="检索"><a href="#检索" class="headerlink" title="检索"></a>检索</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">stooge[<span class="string">"first-name"</span>] <span class="comment">//Jerome</span></div><div class="line">flight.departure.IATA <span class="comment">//SYD</span></div></pre></td></tr></table></figure>
+<p>需要检索对象里包含的值，可以采用[ ]后缀中括住一个字符串表达式的方式。</p>
+<p>但是最好用<code>.</code>表示法。因为它可读性好。</p>
+<p>我们去检索不存在的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">stooge[<span class="string">"middle-name"</span>]  <span class="comment">//undefined</span></div><div class="line">flight.status          <span class="comment">//undefined</span></div></pre></td></tr></table></figure>
+<p>||运算符可以用来填充默认值：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> middle = stooge[<span class="string">"middle-name"</span>] || <span class="string">"(none)"</span>;</div><div class="line"><span class="keyword">var</span> status = flight.status || <span class="string">"unkown"</span>;</div></pre></td></tr></table></figure>
+<p>如果我们从undefined的成员属性中取值会导致<code>TypeError</code>异常。这时候我们可以通过 <code>&amp;&amp;</code> 运算符来避免错误。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">flight.equipment 					<span class="comment">//undefined</span></div><div class="line">flight.equipment.model				<span class="comment">//throw "TypeError"</span></div><div class="line">flight.equipment &amp;&amp; flight.equipment.model 	<span class="comment">//undefined</span></div></pre></td></tr></table></figure>
+<h1 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h1><p>对象里的值可以通过赋值语句来更新。如果属性吗已经存在于对象里，那么这个属性的值会被替换。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">stooge[<span class="string">'first-name'</span>] = <span class="string">'Jerome'</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">stooge[<span class="string">'middle-name'</span>] = <span class="string">'Lester'</span>;</div><div class="line">stooge.nickname = <span class="string">'Curly'</span>;</div><div class="line">flight.equipment = &#123;</div><div class="line">  <span class="attr">model</span>: <span class="string">'Boeing 777'</span></div><div class="line">&#125;;</div><div class="line">flight.status = <span class="string">'overdue'</span>;</div></pre></td></tr></table></figure>
+<p>那么这些属性全部会扩充到对象中。</p>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>对象通过引用来传递，他们永远不会被<strong>复制</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = hi;</div><div class="line">x.hello = <span class="string">'what'</span>;</div><div class="line"><span class="keyword">var</span> how = hi.hello;</div><div class="line">	<span class="comment">// how为what。</span></div><div class="line"><span class="comment">//因为x和hi是指向同一个对象的引用。</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> a = &#123;&#125;,b = &#123;&#125;,c = &#123;&#125;;</div><div class="line"><span class="comment">//a,b,c每个都引用一个不同的对象</span></div><div class="line">a = b = c = &#123;&#125;;</div><div class="line"><span class="comment">//a,b,c都是引用同一个空对象</span></div></pre></td></tr></table></figure>
+<h1 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h1><p>每个对象都连接一个原型对象，并且可以从中继承属性。</p>
+<p>所有通过对象字面量创建的对象都连接到<code>Object.prototype</code>，它是JavaScript中的标配对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">Object</span>.beget !== <span class="string">'function'</span>)&#123;</div><div class="line">  <span class="built_in">Object</span>.create = <span class="function"><span class="keyword">function</span> (<span class="params">o</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">    F.prototype = o;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> F();</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> another_stooge = <span class="built_in">Object</span>.create(stooge);</div></pre></td></tr></table></figure>
+<p>Object增加一个create方法，这个方法创建一个使用原对象作为其原型的新对象。</p>
+<h2 id="原型连接在更新时是不起作用的"><a href="#原型连接在更新时是不起作用的" class="headerlink" title="原型连接在更新时是不起作用的"></a>原型连接在更新时是不起作用的</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">another_stooge[<span class="string">'first-name'</span>] = <span class="string">'Harry'</span>;</div><div class="line">another_stooge[<span class="string">'middle-name'</span>] = <span class="string">'Moses'</span>;</div><div class="line">another_stooge.nickname = <span class="string">'Moe'</span>;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>原型连接只有在检索值得时候才被用到。</p>
+<p>如果我们尝试去获取对象的某个属性值，但对象没有此属性名。</p>
+<p>JavaScript会从原型对象中获取属性值  ——&gt; 原型对象中没，就回去它原型中寻找 ——&gt;直到最后到达终点Object.prototype。</p>
+<p>假如想要的属性不存在于原型链，那么结果就只能是undefined。</p>
+<p>以上的过程为委托。</p>
+</blockquote>
+<h2 id="原型关系"><a href="#原型关系" class="headerlink" title="原型关系"></a>原型关系</h2><p>我们添加一个新的属性到<strong>原型</strong>中，该属性会立即对<strong>所有</strong>基于该原型创建的对象可见。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">stooge.profession = <span class="string">'actor'</span>;</div><div class="line">another_stooge.profession  <span class="comment">//'actor</span></div></pre></td></tr></table></figure>
+<h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><p>typeof操作符对确定属性的类型很有帮助。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typeof</span> flight.number	<span class="comment">//number</span></div><div class="line"><span class="keyword">typeof</span> flight.status 	<span class="comment">//string</span></div><div class="line"><span class="keyword">typeof</span> flight.arrival 	<span class="comment">//object</span></div><div class="line"><span class="keyword">typeof</span> flight.manifest 	<span class="comment">//undefined</span></div></pre></td></tr></table></figure>
+<p>原型链中的任何值都会产生值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typeof</span> flight.toString		<span class="comment">//function</span></div><div class="line"><span class="keyword">typeof</span> flight.constructor 	<span class="comment">//function</span></div></pre></td></tr></table></figure>
+<p>有两种方法去处理掉这些不需要的属性。</p>
+<ul>
+<li>第一个是让你的程序做检查并丢弃为函数的属性。</li>
+<li>另一个方法是<code>hasOwnProperty</code> 方法，如果对象拥有独有的属性，它将返回true。不会检查原型链</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">flight.hasOwnProperty(<span class="string">'number'</span>)			<span class="comment">//true</span></div><div class="line">flight.hasOwnProperty(<span class="string">'constructor'</span>)	<span class="comment">//true</span></div></pre></td></tr></table></figure>
+<h1 id="减少全局变量污染"><a href="#减少全局变量污染" class="headerlink" title="减少全局变量污染"></a>减少全局变量污染</h1><p>最小化使用全局变量的方法之一是为你的应用只创建一个<strong>唯一</strong>的全局变量！！</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> MYAPP = &#123;&#125;; 		<span class="comment">//该变量此时变成你的应用的容器</span></div><div class="line"></div><div class="line">MYAPP.stooge = &#123;</div><div class="line">  <span class="string">"first-name"</span>: <span class="string">"Joe"</span>,</div><div class="line">  <span class="string">"last-name"</span>: <span class="string">"Howard"</span></div><div class="line">&#125;;</div><div class="line">MYAPP.flight = &#123;</div><div class="line">  <span class="attr">airline</span>: <span class="string">"Oceanic"</span>,</div><div class="line">  <span class="attr">number</span>: <span class="number">815</span>,</div><div class="line">  <span class="attr">departure</span>: &#123;</div><div class="line">    <span class="attr">IATA</span>: <span class="string">"SYD"</span>,</div><div class="line">    <span class="attr">time</span>: <span class="string">"2004-09-22 14:55"</span>,</div><div class="line">    <span class="attr">city</span>: <span class="string">"Sydney"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">arrival</span>: &#123;</div><div class="line">    <span class="attr">IATA</span>: <span class="string">"LAX"</span>,</div><div class="line">    <span class="attr">time</span>: <span class="string">"2004-09-23 21:59"</span>,</div><div class="line">    <span class="attr">city</span>: <span class="string">"Los Angeles"</span></div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>只要把全局性的资源都纳入一个名称空间之下，你的<strong>程序与其他应用程序、组件、类库直接发送冲突的可能性就会显著降低。</strong></p>
+<p>因为<code>MYAPP.stooge</code>指向的是顶层结构。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Javascript对象&quot;&gt;&lt;a href=&quot;#Javascript对象&quot; class=&quot;headerlink&quot; title=&quot;Javascript对象&quot;&gt;&lt;/a&gt;Javascript对象&lt;/h1&gt;&lt;p&gt;在JavaScript中，数组是对象，函数是对象，正则表达式是对象。那么对象自然也是对象。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;JavaScript中的对象是无类型的。&lt;/li&gt;
+&lt;li&gt;对象是属性的容器，其中每个属性都拥有名字和值。&lt;/li&gt;
+&lt;li&gt;JavaScript包含一种原型链的特性，允许对象继承另一个对象的属性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;对象字面量&quot;&gt;&lt;a href=&quot;#对象字面量&quot; class=&quot;headerlink&quot; title=&quot;对象字面量&quot;&gt;&lt;/a&gt;对象字面量&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; empty_project = &amp;#123;&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; stooge = &amp;#123;				&lt;span class=&quot;comment&quot;&gt;//对象字面量&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;string&quot;&gt;&quot;first-name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;Jerome&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;string&quot;&gt;&quot;last-name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;Howard&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="Javascript基础" scheme="http://adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>异步操作</title>
+    <link href="http://adherentman.cn/%E5%BC%82%E6%AD%A5.html"/>
+    <id>http://adherentman.cn/异步.html</id>
+    <published>2017-08-01T11:35:44.000Z</published>
+    <updated>2017-08-18T15:00:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="异步操作"><a href="#异步操作" class="headerlink" title="异步操作"></a>异步操作</h1><h1 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h1><p>JavaScript 语言对异步编程的实现，就是回调函数。<strong>所谓回调函数，就是把任务的第二段单独写在一个函数里面，等到重新执行这个任务的时候，就直接调用这个函数。</strong>它的英语名字 callback，直译过来就是”重新调用”。</p>
+<p>读取文件进行处理，是这样写的:</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; fs.readFile(<span class="string">'/etc/passwd'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</div><div class="line">&gt;   <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</div><div class="line">&gt;   <span class="built_in">console</span>.log(data);</div><div class="line">&gt; &#125;);</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<a id="more"></a>
+<p>上面代码中，readFile 函数的第二个参数，就是回调函数，也就是任务的第二段。等到操作系统返回了 /etc/passwd 这个文件以后，回调函数才会执行。</p>
+<p>为什么 Node.js 约定，回调函数的第一个参数，必须是错误对象err？</p>
+<p>设计一个回调函数的时候，第一个参数是err，用于优先解决错误，后面再传递参数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">fs.readFile(filePath, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;  </div><div class="line">    <span class="keyword">if</span> (err) &#123;</div><div class="line">        <span class="comment">//handle the error</span></div><div class="line">    &#125;</div><div class="line">    <span class="comment">// use the data object</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>原因是执行分成两段，在这两段之间抛出的错误，程序无法捕捉，只能当作参数，传入第二段。</p>
+</blockquote>
+<h2 id="那么我们可以用Promise来解决"><a href="#那么我们可以用Promise来解决" class="headerlink" title="那么我们可以用Promise来解决"></a>那么我们可以用Promise来解决</h2><p>回调函数本身并没有问题，它的问题出现在多个回调函数嵌套。假定读取A文件之后，再读取B文件，代码如下。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt; fs.readFile(fileA, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</div><div class="line">&gt;   fs.readFile(fileB, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</div><div class="line">&gt;     <span class="comment">// ...</span></div><div class="line">&gt;   &#125;);</div><div class="line">&gt; &#125;);</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>如果依次读取多个文件，就会出现多重嵌套。代码就横向发展</p>
+<p>Promise就是为了解决这个问题而提出的。它不是新的语法功能，而是一种新的写法，允许将回调函数的横向加载，改成纵向加载。写法如下。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="keyword">var</span> readFile = <span class="built_in">require</span>(<span class="string">'fs-readfile-promise'</span>);</div><div class="line">&gt;</div><div class="line">&gt; readFile(fileA)</div><div class="line">&gt; .then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">&gt;   <span class="built_in">console</span>.log(data.toString());</div><div class="line">&gt; &#125;)</div><div class="line">&gt; .then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">&gt;   <span class="keyword">return</span> readFile(fileB);</div><div class="line">&gt; &#125;)</div><div class="line">&gt; .then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">&gt;   <span class="built_in">console</span>.log(data.toString());</div><div class="line">&gt; &#125;)</div><div class="line">&gt; .catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">&gt;   <span class="built_in">console</span>.log(err);</div><div class="line">&gt; &#125;);</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>我们会发现一眼看去都是一堆 then，原来的语义变得很不清楚。</p>
+<h2 id="那么我们就要用到Generator函数"><a href="#那么我们就要用到Generator函数" class="headerlink" title="那么我们就要用到Generator函数"></a>那么我们就要用到Generator函数</h2><p>我们可以这样去理解协程:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">dota2游戏开始了,你开始操刀祈求者--卡尔.</div><div class="line">这时你妈妈打电话让你赶紧把楼顶的被子和衣服收一下,这时候你很着急.</div><div class="line">你游戏才玩到一半,但是又不得不去执行你老妈的指令.</div><div class="line">没办法,你只好敲击F12选择了暂停游戏.</div><div class="line">紧接着你把被子和衣服收好了,再次敲击F12游戏继续开始.</div><div class="line">你开始了自己的3杀/4杀/5杀之旅,很舒服.</div></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>协程A(游戏开始)开始执行</li>
+<li>协程A执行到一半,暂停(敲击F12游戏暂停),执行权交给了协程B(收被子,衣服)</li>
+<li>(收好后)协程B交还执行权</li>
+<li>协程A(敲击F12游戏继续)恢复执行</li>
+</ul>
+</blockquote>
+<p>用代码来说:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">play</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">//...</span></div><div class="line">  <span class="keyword">var</span> f = <span class="keyword">yield</span> dota2;</div><div class="line">  <span class="comment">//...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面流程的协程A，就是异步任务，因为它分成两段（或多段）执行。</p>
+<h1 id="Generator函数概念"><a href="#Generator函数概念" class="headerlink" title="Generator函数概念"></a>Generator函数概念</h1><p>Generator 函数是协程在 ES6 的实现，最大特点就是可以交出函数的执行权（即暂停执行）。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="function"><span class="keyword">function</span>* <span class="title">gen</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">&gt;   <span class="keyword">var</span> y = <span class="keyword">yield</span> x + <span class="number">2</span>;</div><div class="line">&gt;   <span class="keyword">return</span> y;</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>其他的概念可以看我上篇<a href="http://adherentman.cn/Generator.html">Generator函数概念</a></p>
+<h1 id="Thunk-函数"><a href="#Thunk-函数" class="headerlink" title="Thunk 函数"></a>Thunk 函数</h1><p>编译器的”传名调用”实现，往往是将参数放到一个临时函数之中，再将这个临时函数传入函数体。这个临时函数就叫做 Thunk 函数。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">m</span>)</span>&#123;</div><div class="line">&gt;   <span class="keyword">return</span> m * <span class="number">2</span>;     </div><div class="line">&gt; &#125;</div><div class="line">&gt;</div><div class="line">&gt; f(x + <span class="number">5</span>);</div><div class="line">&gt;</div><div class="line">&gt; <span class="comment">// 等同于</span></div><div class="line">&gt;</div><div class="line">&gt; <span class="keyword">var</span> thunk = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">&gt;   <span class="keyword">return</span> x + <span class="number">5</span>;</div><div class="line">&gt; &#125;;</div><div class="line">&gt;</div><div class="line">&gt; <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">thunk</span>)</span>&#123;</div><div class="line">&gt;   <span class="keyword">return</span> thunk() * <span class="number">2</span>;</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，函数 f 的参数 被thunk函数替换了.</p>
+<p><strong>这就是 Thunk 函数的定义，它是”传名调用”的一种实现策略，用来替换某个表达式。</strong></p>
+<h1 id="终极武器—-Async函数"><a href="#终极武器—-Async函数" class="headerlink" title="终极武器—-Async函数"></a>终极武器—-Async函数</h1><p><strong>异步编程的最高境界，就是根本不用关心它是不是异步。</strong></p>
+<p>async 函数就是隧道尽头的亮光，很多人认为它是异步操作的终极解决方案。</p>
+<p><strong>所谓async函数，其实是Generator函数的语法糖。</strong></p>
+<p>前文有一个 Generator 函数，依次读取两个文件。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line">&gt;</div><div class="line">&gt; <span class="keyword">var</span> readFile = <span class="function"><span class="keyword">function</span> (<span class="params">fileName</span>)</span>&#123;</div><div class="line">&gt;   <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>)</span>&#123;</div><div class="line">&gt;     fs.readFile(fileName, <span class="function"><span class="keyword">function</span>(<span class="params">error, data</span>)</span>&#123;</div><div class="line">&gt;       <span class="keyword">if</span> (error) reject(error);</div><div class="line">&gt;       resolve(data);</div><div class="line">&gt;     &#125;);</div><div class="line">&gt;   &#125;);</div><div class="line">&gt; &#125;;</div><div class="line">&gt;</div><div class="line">&gt; <span class="keyword">var</span> gen = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>)</span>&#123;</div><div class="line">&gt;   <span class="keyword">var</span> f1 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/fstab'</span>);</div><div class="line">&gt;   <span class="keyword">var</span> f2 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/shells'</span>);</div><div class="line">&gt;   <span class="built_in">console</span>.log(f1.toString());</div><div class="line">&gt;   <span class="built_in">console</span>.log(f2.toString());</div><div class="line">&gt; &#125;;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>写成 async 函数，就是下面这样。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="keyword">var</span> asyncReadFile = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">&gt;   <span class="keyword">var</span> f1 = <span class="keyword">await</span> readFile(<span class="string">'/etc/fstab'</span>);</div><div class="line">&gt;   <span class="keyword">var</span> f2 = <span class="keyword">await</span> readFile(<span class="string">'/etc/shells'</span>);</div><div class="line">&gt;   <span class="built_in">console</span>.log(f1.toString());</div><div class="line">&gt;   <span class="built_in">console</span>.log(f2.toString());</div><div class="line">&gt; &#125;;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>一比较就会发现，async 函数就是将 Generator 函数的星号（*）替换成 async，将 yield 替换成 await，仅此而已。</p>
+<h2 id="async-函数的优点"><a href="#async-函数的优点" class="headerlink" title="async 函数的优点"></a>async 函数的优点</h2><p>async 函数对 Generator 函数的改进，体现在以下三点。</p>
+<p><strong>（1）内置执行器。</strong> Generator 函数的执行必须靠执行器，所以才有了 co 函数库，而 async 函数自带执行器。也就是说，async 函数的执行，与普通函数一模一样，只要一行。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="keyword">var</span> result = asyncReadFile();</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p> <strong>(2)</strong> 上面的代码调用了asyncReadFile函数,然后他就会自动执行,输出最后的结果.完全不像Generator函数,需要调用next方法,或者co模块,才能得到真正的执行,从而得到最终结果.</p>
+<p><strong>（3）更好的语义。</strong> async 和 await，比起星号和 yield，语义更清楚了。async 表示函数里有异步操作，await 表示紧跟在后面的表达式需要等待结果。</p>
+<p><strong>（4）更广的适用性。</strong> co 函数库约定，yield 命令后面只能是 Thunk 函数或 Promise 对象，而 async 函数的 await 命令后面，可以跟 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时等同于同步操作）。</p>
+<p><strong>(5）</strong>返回值是Promise，这比Generator函数返回的是Iterator对象方便多了。你可以用then()指定下一步操作。</p>
+<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p><code>async</code>函数的实现就是将<code>Generator</code>函数和自动执行器包装在一个函数中。如下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">args</span>) </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 等同于 </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">args</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> spawn(<span class="function"><span class="keyword">function</span>*(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"><span class="comment">// 自动执行器</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">spawn</span>(<span class="params">genF</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> gen = genF();</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params">nextF</span>) </span>&#123;</div><div class="line">      <span class="keyword">try</span> &#123;</div><div class="line">        <span class="keyword">var</span> next = nextF()</div><div class="line">      &#125; <span class="keyword">catch</span>(e) &#123;</div><div class="line">        <span class="keyword">return</span> reject(e)</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">if</span> (next.done) &#123;</div><div class="line">        <span class="keyword">return</span> resolve(next.value)</div><div class="line">      &#125;</div><div class="line">      <span class="built_in">Promise</span>.resolve(next.value).then(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</div><div class="line">        step(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> gen.next(v) &#125;)</div><div class="line">      &#125;,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        step(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> gen.throw(e) &#125;)</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">    step(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> gen.next(<span class="literal">undefined</span>) &#125;)</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="async函数用法"><a href="#async函数用法" class="headerlink" title="async函数用法"></a>async函数用法</h2><p>（1）<code>async</code>函数返回一个<code>Promise</code>对象，可以是<code>then()</code>方法添加回调函数。<br>（2）当函数执行时，一旦遇到<code>await()</code>就会先返回，等到触发的异步操作完成，再接着执行函数体内后面的语句。</p>
+<p>下面是一个延迟输出结果的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">timeout</span>(<span class="params">ms</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</div><div class="line">    setTimeout(resolve, ms)</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">asyncPrint</span>(<span class="params">value, ms</span>) </span>&#123;</div><div class="line">  <span class="keyword">await</span> timeout(ms)</div><div class="line">  <span class="built_in">console</span>.log(value)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 延迟500ms后输出 "Hello World!"</span></div><div class="line">asyncPrint(<span class="string">'Hello World!'</span>, <span class="number">500</span>)</div></pre></td></tr></table></figure>
+<h2 id="Async-后面是一个promise，await-后面也要跟一个promise"><a href="#Async-后面是一个promise，await-后面也要跟一个promise" class="headerlink" title="Async 后面是一个promise，await 后面也要跟一个promise"></a>Async 后面是一个promise，await 后面也要跟一个promise</h2><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>（1）<code>await</code>命令后面的<code>Promise</code>对象，运行结果可能是<code>reject</code>，所以最好把<code>await</code>命令放在<code>try...catch</code>代码块中。</p>
+<p>（2）<code>await</code>命令只能用在<code>async</code>函数中，用在普通函数中会报错。</p>
+<p>（3）<code>ES6</code>将<code>await</code>增加为保留字。如果使用这个词作为标识符，在<code>ES5</code>中是合法的，但是<code>ES6</code>会抛出 <code>SyntaxError</code>（语法错误）。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>阮一峰 《ES6标准入门》</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;异步操作&quot;&gt;&lt;a href=&quot;#异步操作&quot; class=&quot;headerlink&quot; title=&quot;异步操作&quot;&gt;&lt;/a&gt;异步操作&lt;/h1&gt;&lt;h1 id=&quot;回调函数&quot;&gt;&lt;a href=&quot;#回调函数&quot; class=&quot;headerlink&quot; title=&quot;回调函数&quot;&gt;&lt;/a&gt;回调函数&lt;/h1&gt;&lt;p&gt;JavaScript 语言对异步编程的实现，就是回调函数。&lt;strong&gt;所谓回调函数，就是把任务的第二段单独写在一个函数里面，等到重新执行这个任务的时候，就直接调用这个函数。&lt;/strong&gt;它的英语名字 callback，直译过来就是”重新调用”。&lt;/p&gt;
+&lt;p&gt;读取文件进行处理，是这样写的:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;gt; fs.readFile(&lt;span class=&quot;string&quot;&gt;&#39;/etc/passwd&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;err, data&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;gt;   &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (err) &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; err;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;gt;   &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(data);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;gt; &amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Javascript修仙之路" scheme="http://adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
+    
+      <category term="node.js" scheme="http://adherentman.cn/tags/node-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React-Redux、Redux</title>
+    <link href="http://adherentman.cn/redux.html"/>
+    <id>http://adherentman.cn/redux.html</id>
+    <published>2017-07-31T01:18:26.000Z</published>
+    <updated>2017-07-31T01:23:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>react无法让两个组件互相交流，使用对方数据。</p>
+<h1 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a>Redux</h1><ul>
+<li>需要回调通知state（等同于回调参数）-&gt;action</li>
+<li>需要根据回调处理（等同于父级方法） -&gt;reducer</li>
+<li>需要state(等同于总状态) -&gt;store</li>
+</ul>
+<p>现在您只需要记住 <code>reducer</code> 是一个函数，负责更新并返回一个新的<code>state</code></p>
+<p>而 <code>initialState</code> 主要用于前后端同构的数据同步</p>
+<a id="more"></a>
+<h2 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h2><ul>
+<li>是把数据从应用传到store的有效载荷。</li>
+<li>是store数据的唯一来源</li>
+<li>描述发生了什么的普通对象</li>
+<li>也可以理解成新闻的摘要-“任务列表里添加了学习Redux文档”。</li>
+</ul>
+<h2 id="Store"><a href="#Store" class="headerlink" title="Store"></a>Store</h2><ul>
+<li>Redux应用中只有一个单一的store</li>
+<li>维持应用的state</li>
+<li>提供 getState() 获取state</li>
+<li>提供dispatch() 更新state</li>
+<li>通过subscribe(listener) 注册监听器</li>
+<li>通过subscribe(listener) 返回的函数注销监听器.</li>
+<li>会把2个参数传入reducer：当前的state树和action。</li>
+</ul>
+<h2 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h2><h2 id="Reducer-1"><a href="#Reducer-1" class="headerlink" title="Reducer"></a>Reducer</h2><p>reducer就是实现(state,action) -&gt; newState的纯函数. 也就是真正处理state的地方.</p>
+<p>Redux不希望我们修改老的state ,而且通过直接返回新的state的方式去修改.</p>
+<ul>
+<li><strong>永远不要</strong>在 reducer 里做这些操作：<ul>
+<li>修改传入参数；</li>
+<li>执行有副作用的操作，如 API 请求和路由跳转；</li>
+<li>调用非纯函数，如 <code>Date.now()</code> 或 <code>Math.random()</code>。</li>
+</ul>
+</li>
+<li>指明根据action更新state。</li>
+</ul>
+<p>通俗点讲，就是 <code>reducer</code> 返回啥，<code>state</code> 就被替换成啥</p>
+<ul>
+<li>view(React)</li>
+<li>store(state)</li>
+<li>action</li>
+<li>reducer</li>
+</ul>
+<ul>
+<li>view(React) = 家具的摆放在视觉的效果上</li>
+<li>store(state) = 每个家具在空间内的坐标(如：电视的位置是x:10, y: 400)</li>
+<li>action = 小明分配任务(谁应该干什么)</li>
+<li>reducer = 具体任务都干些什么(把电视搬到沙发正对面然后靠墙的地方)</li>
+</ul>
+<p>所以这个过程应该是这样的：</p>
+<p><strong>view —&gt; action —&gt; reducer —&gt; store(state) —&gt; view</strong></p>
+<h1 id="React-Redux"><a href="#React-Redux" class="headerlink" title="React-Redux"></a>React-Redux</h1><ol>
+<li><p>Provider是一个普通组件，可以作为顶层app的分发点，它只需要store属性就可以。他会将state分发给所有被connect的组件，不管它在哪里，被嵌套多少层。</p>
+</li>
+<li><p>connect是真正的重点，它是一个科里化函数，意思是先接受两个参数（数据绑定mapStateToProps和事件绑定mapDispatchToProps），再接受一个参数（将要绑定的组件本身）：mapStateToProps：构建好Redux系统的时候，它会被自动初始化，但是你的React组件并不知道它的存在，因此你需要分拣出你需要的Redux状态，所以你需要绑定一个函数，它的参数是state，简单返回你关心的几个值。</p>
+</li>
+<li><p>mapDispatchToProps：声明好的action作为回调，也可以被注入到组件里，就是通过这个函数，它的参数是dispatch，通过redux的辅助方法bindActionCreator绑定所有action以及参数的dispatch，就可以作为属性在组件里面作为函数简单使用了，不需要手动dispatch。这个mapDispatchToProps是可选的，如果不传这个参数redux会简单把dispatch作为属性注入给组件，可以手动当做store.dispatch使用。这也是为什么要科里化的原因。</p>
+<p>做好以上流程Redux和React就可以工作了。简单地说就是：</p>
+<p>​</p>
+<p>1.顶层分发状态，让React组件被动地渲染。</p>
+<p>​</p>
+<p>2.监听事件，事件有权利回到所有状态顶层影响状态。</p>
+</li>
+</ol>
+<h1 id="Redux-与传统后端-MVC-的对照"><a href="#Redux-与传统后端-MVC-的对照" class="headerlink" title="Redux 与传统后端 MVC 的对照"></a>Redux 与传统后端 MVC 的对照</h1><table>
+<thead>
+<tr>
+<th>Redux</th>
+<th>传统后端 MVC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>store</code></td>
+<td>数据库实例</td>
+</tr>
+<tr>
+<td><code>state</code></td>
+<td>数据库中存储的数据</td>
+</tr>
+<tr>
+<td><code>dispatch(action)</code></td>
+<td>用户发起请求</td>
+</tr>
+<tr>
+<td><code>action: { type, payload }</code></td>
+<td><code>type</code> 表示请求的 URL，<code>payload</code> 表示请求的数据</td>
+</tr>
+<tr>
+<td><code>reducer</code></td>
+<td>路由 + 控制器（handler）</td>
+</tr>
+<tr>
+<td><code>reducer</code> 中的 <code>switch-case</code> 分支</td>
+<td>路由，根据 <code>action.type</code> 路由到对应的控制器</td>
+</tr>
+<tr>
+<td><code>reducer</code> 内部对 <code>state</code> 的处理</td>
+<td>控制器对数据库进行增删改操作</td>
+</tr>
+<tr>
+<td><code>reducer</code> 返回 <code>nextState</code></td>
+<td>将修改后的记录写回数据库</td>
+</tr>
+</tbody>
+</table>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="redux-三个基本原则"><a href="#redux-三个基本原则" class="headerlink" title="redux 三个基本原则"></a>redux 三个基本原则</h2><ol>
+<li>整个应用只有唯一一个 Store 实例</li>
+<li>State 只能通过触发 Action 来更改</li>
+<li>State 的更改 必须写成纯函数(Reducer)，(oldState, action) =&gt; newState，也就是每次更改总是返回一个新的 State</li>
+</ol>
+<h2 id="redux-两个显著的特点"><a href="#redux-两个显著的特点" class="headerlink" title="redux 两个显著的特点"></a>redux 两个显著的特点</h2><ol>
+<li>可预测性（Reducer 是纯函数）。</li>
+<li>扩展性强（middleware）。</li>
+</ol>
+<h2 id="reducer-可以根据场景分为以下几种"><a href="#reducer-可以根据场景分为以下几种" class="headerlink" title="reducer 可以根据场景分为以下几种:"></a>reducer 可以根据场景分为以下几种:</h2><ul>
+<li>root reducer :根reducer ,作为createStore的第一个参数</li>
+<li>slice reducer : 分片reducer,相对根reducer 来说的.用来操作state的一部分数据.多个分片reducer可以合并成一个根reducer.</li>
+<li>higher-order reducer : 高阶reducer 接受reducer作为函数/返回reducer作为返回的函数.</li>
+<li>case function: 功能函数,接受指定action后的更新逻辑,可以是简单的reducer函数,也可以接受其他参数.</li>
+</ul>
+<h2 id="reducer-的最佳实践主要分为以下几个部分"><a href="#reducer-的最佳实践主要分为以下几个部分" class="headerlink" title="reducer 的最佳实践主要分为以下几个部分"></a>reducer 的最佳实践主要分为以下几个部分</h2><ul>
+<li>抽离工具函数,以便复用.</li>
+<li>抽离功能函数(case function),精简reducer声明部分的代码</li>
+<li>根据数据类别拆分,维护多个独立的slice reducer.</li>
+<li>合并slice reducer.</li>
+<li>通过crossReducer在多个slice reducer中共享数据.</li>
+<li>减少reducer的模板代码.</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;react无法让两个组件互相交流，使用对方数据。&lt;/p&gt;
+&lt;h1 id=&quot;Redux&quot;&gt;&lt;a href=&quot;#Redux&quot; class=&quot;headerlink&quot; title=&quot;Redux&quot;&gt;&lt;/a&gt;Redux&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;需要回调通知state（等同于回调参数）-&amp;gt;action&lt;/li&gt;
+&lt;li&gt;需要根据回调处理（等同于父级方法） -&amp;gt;reducer&lt;/li&gt;
+&lt;li&gt;需要state(等同于总状态) -&amp;gt;store&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;现在您只需要记住 &lt;code&gt;reducer&lt;/code&gt; 是一个函数，负责更新并返回一个新的&lt;code&gt;state&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;而 &lt;code&gt;initialState&lt;/code&gt; 主要用于前后端同构的数据同步&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="React" scheme="http://adherentman.cn/categories/React/"/>
+    
+    
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
+    
+      <category term="React" scheme="http://adherentman.cn/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>初入Express</title>
+    <link href="http://adherentman.cn/Express.html"/>
+    <id>http://adherentman.cn/Express.html</id>
+    <published>2017-07-30T02:33:26.000Z</published>
+    <updated>2017-08-07T15:41:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Express"><a href="#Express" class="headerlink" title="Express"></a>Express</h1><h2 id="expressjs里的请求参数，4-x里只有3种-都引用官方例子"><a href="#expressjs里的请求参数，4-x里只有3种-都引用官方例子" class="headerlink" title="expressjs里的请求参数，4.x里只有3种(都引用官方例子)"></a>expressjs里的请求参数，4.x里只有3种(都引用官方例子)</h2><ul>
+<li>req.params</li>
+<li>req.body</li>
+<li>req.query</li>
+</ul>
+<h3 id="req-params"><a href="#req-params" class="headerlink" title="req.params"></a>req.params</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'/user/:id'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">  	res.send(<span class="string">'user'</span> + req.parms.id);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>就是取带冒号的参数.</p>
+<a id="more"></a>
+<h3 id="req-body"><a href="#req-body" class="headerlink" title="req.body"></a>req.body</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = <span class="built_in">require</span>(<span class="string">'express'</span>)();</div><div class="line"><span class="keyword">var</span> bodyParser = <span class="built_in">require</span>(<span class="string">'body-parser'</span>);</div><div class="line"><span class="keyword">var</span> multer = <span class="built_in">require</span>(<span class="string">'multer'</span>); </div><div class="line"></div><div class="line">app.use(bodyParser.json()); <span class="comment">// 用于解析application / json</span></div><div class="line">app.use(bodyParser.urlencoded(&#123; <span class="attr">extended</span>: <span class="literal">true</span> &#125;)); <span class="comment">// 用于解析 application/x-www-form-urlencoded</span></div><div class="line">app.use(multer()); <span class="comment">// 用于解析多部分/表单数据</span></div><div class="line"></div><div class="line">app.post(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(req.body);</div><div class="line">  res.json(req.body);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>req.body一定是post请求.但是在express里面依赖中间件bodyparser,不然req.body都没有.</li>
+</ul>
+<h3 id="req-query"><a href="#req-query" class="headerlink" title="req.query"></a>req.query</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// GET /search?q=tobi+ferret</span></div><div class="line">req.query.q</div><div class="line"><span class="comment">// =&gt; "tobi ferret"</span></div><div class="line"></div><div class="line"><span class="comment">// GET /shoes?order=desc&amp;shoe[color]=blue&amp;shoe[type]=converse</span></div><div class="line">req.query.order</div><div class="line"><span class="comment">// =&gt; "desc"</span></div><div class="line"></div><div class="line">req.query.shoe.color</div><div class="line"><span class="comment">// =&gt; "blue"</span></div><div class="line"></div><div class="line">req.query.shoe.type</div><div class="line"><span class="comment">// =&gt; "converse"</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Express&quot;&gt;&lt;a href=&quot;#Express&quot; class=&quot;headerlink&quot; title=&quot;Express&quot;&gt;&lt;/a&gt;Express&lt;/h1&gt;&lt;h2 id=&quot;expressjs里的请求参数，4-x里只有3种-都引用官方例子&quot;&gt;&lt;a href=&quot;#expressjs里的请求参数，4-x里只有3种-都引用官方例子&quot; class=&quot;headerlink&quot; title=&quot;expressjs里的请求参数，4.x里只有3种(都引用官方例子)&quot;&gt;&lt;/a&gt;expressjs里的请求参数，4.x里只有3种(都引用官方例子)&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;req.params&lt;/li&gt;
+&lt;li&gt;req.body&lt;/li&gt;
+&lt;li&gt;req.query&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;req-params&quot;&gt;&lt;a href=&quot;#req-params&quot; class=&quot;headerlink&quot; title=&quot;req.params&quot;&gt;&lt;/a&gt;req.params&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;app.get(&lt;span class=&quot;string&quot;&gt;&#39;/user/:id&#39;&lt;/span&gt;,&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;req,res&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  	res.send(&lt;span class=&quot;string&quot;&gt;&#39;user&#39;&lt;/span&gt; + req.parms.id);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;就是取带冒号的参数.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Node.js" scheme="http://adherentman.cn/categories/Node-js/"/>
+    
+    
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
+    
+      <category term="node.js" scheme="http://adherentman.cn/tags/node-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Generator函数</title>
+    <link href="http://adherentman.cn/Generator.html"/>
+    <id>http://adherentman.cn/Generator.html</id>
+    <published>2017-07-29T06:21:06.000Z</published>
+    <updated>2017-08-01T11:38:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Generator函数"><a href="#Generator函数" class="headerlink" title="Generator函数"></a>Generator函数</h1><p>Generator最大的特点就是定义的函数可以被暂停执行.</p>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>迭代器 iterator, infinite range, 可以暂停函数, lazy evaluation, 用来实现 async/await 啊, 棒棒哒.</p>
+<p>async generator/iterator </p>
+<blockquote>
+<p>摘自MDN</p>
+</blockquote>
+<p><strong>生成器</strong>对象是由一个 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/function*" target="_blank" rel="external">generator function</a> 返回的,并且它符合<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols#iterable" target="_blank" rel="external">可迭代协议</a>和<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols#iterator" target="_blank" rel="external">迭代器协议</a>。</p>
+<blockquote>
+<p>摘自ES6标准入门</p>
+</blockquote>
+<p>可以把它理解成一个状态机,封装了多个内部状态.还是一个遍历器对象生成函数.</p>
+<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">hi</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">yield</span> <span class="string">'nihao'</span>;</div><div class="line"><span class="keyword">yield</span> <span class="string">'hello'</span>;</div><div class="line"><span class="keyword">return</span> <span class="string">'ending'</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> hw = hi();</div><div class="line">hw.next();</div><div class="line">hw.next();</div><div class="line">hw.next();</div></pre></td></tr></table></figure>
+<p><img src="/images/generator.png" alt="generator"></p>
+<blockquote>
+<p>通过gen.next()取得的输出是一个对象，包含value和done两个属性，其中value是真正返回的值，而done则用来标识Generator是否已经执行完毕。因为自然数生成器是一个无限循环，所以不存在done: true的情况。</p>
+</blockquote>
+<p>在<code>Generator函数</code>返回的遍历器对象只有调用<code>next方法</code>才会遍历下一个内部状态,所以yield语句就是<strong>暂停标志</strong>.</p>
+<ul>
+<li>yield语句后面的表达式,只有当调用到next方法,内部指针指向该语句时才会执行.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">add</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">yield</span> <span class="number">123</span>+<span class="number">123</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//在上面代码里123+123不去求值.当有next();时,才去求值</span></div></pre></td></tr></table></figure>
+<ol>
+<li>每个yield将代码分割成两个部分，需要执行两次next才能执行完。</li>
+<li>yield其实由两个动作组成，<strong>输入</strong> + <strong>输出</strong>（输入在输出前面），每次执行next，代码会暂停在yield <strong>输出</strong>执行后，其它的语句不再执行（<strong>很重要</strong>）。</li>
+</ol>
+<h2 id="for…of循环"><a href="#for…of循环" class="headerlink" title="for…of循环"></a>for…of循环</h2><p>可以自动遍历generator函数,不用去调用next方法.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  yiled <span class="number">1</span>;</div><div class="line">  yiled <span class="number">2</span>;</div><div class="line">  yiled <span class="number">3</span>;</div><div class="line">  yiled <span class="number">4</span>;</div><div class="line">  yiled <span class="number">5</span>;</div><div class="line">  <span class="keyword">return</span> <span class="number">6</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> foo())&#123;</div><div class="line">  <span class="built_in">console</span>.log(v);</div><div class="line">&#125;</div><div class="line"><span class="comment">//1 2 3 4 5</span></div></pre></td></tr></table></figure>
+<h1 id="Generator函数的数据交换和错误处理"><a href="#Generator函数的数据交换和错误处理" class="headerlink" title="Generator函数的数据交换和错误处理"></a>Generator函数的数据交换和错误处理</h1><p><code>next()</code>方法返回值的<code>value</code>属性，是<code>Generator</code>函数向外输出的数据；<code>next()</code>方法还可以接受参数，向<code>Generator</code>函数体内输入数据。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">gen</span>(<span class="params">x</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> y = <span class="keyword">yield</span> x + <span class="number">2</span>;</div><div class="line">    <span class="keyword">return</span> y;</div><div class="line">&#125; </div><div class="line"></div><div class="line"><span class="keyword">var</span> g = gen(<span class="number">1</span>);</div><div class="line">g.next()      <span class="comment">// &#123; value: 3, done: false &#125;</span></div><div class="line">g.next(<span class="number">2</span>)     <span class="comment">// &#123; value: 2, done: true &#125;</span></div></pre></td></tr></table></figure>
+<p><code>Generator</code>函数内部还可以部署错误处理代码，捕获函数体外抛出的错误。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function* gen(x) &#123;</div><div class="line">    try &#123;</div><div class="line">        var y = yield x + 2</div><div class="line">    &#125; catch(e) &#123;</div><div class="line">        console.log(e)</div><div class="line">    &#125;</div><div class="line">    return y</div><div class="line">&#125;</div><div class="line"></div><div class="line">var g = gen(1);</div><div class="line">g.next();</div><div class="line">g.throw(&apos;出错了&apos;);</div></pre></td></tr></table></figure>
+<p>上面代码的最后一行，<code>Generator</code>函数体外，使用指针对象的<code>throw</code>方法抛出的错误，可以被函数体内的<code>try...catch</code> 代码块捕获。这意味着，出错的代码与处理错误的代码，实现了时间和空间上的分离，这对于异步编程无疑是很重要的。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Generator函数&quot;&gt;&lt;a href=&quot;#Generator函数&quot; class=&quot;headerlink&quot; title=&quot;Generator函数&quot;&gt;&lt;/a&gt;Generator函数&lt;/h1&gt;&lt;p&gt;Generator最大的特点就是定义的函数可以被暂停执行.&lt;/p&gt;
+&lt;h2 id=&quot;作用&quot;&gt;&lt;a href=&quot;#作用&quot; class=&quot;headerlink&quot; title=&quot;作用&quot;&gt;&lt;/a&gt;作用&lt;/h2&gt;&lt;p&gt;迭代器 iterator, infinite range, 可以暂停函数, lazy evaluation, 用来实现 async/await 啊, 棒棒哒.&lt;/p&gt;
+&lt;p&gt;async generator/iterator &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;摘自MDN&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;生成器&lt;/strong&gt;对象是由一个 &lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/function*&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;generator function&lt;/a&gt; 返回的,并且它符合&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols#iterable&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;可迭代协议&lt;/a&gt;和&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols#iterator&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;迭代器协议&lt;/a&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;摘自ES6标准入门&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可以把它理解成一个状态机,封装了多个内部状态.还是一个遍历器对象生成函数.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Javascript修仙之路" scheme="http://adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
+    
+      <category term="node.js" scheme="http://adherentman.cn/tags/node-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Promise</title>
+    <link href="http://adherentman.cn/Promise.html"/>
+    <id>http://adherentman.cn/Promise.html</id>
+    <published>2017-07-28T09:37:12.000Z</published>
+    <updated>2017-07-29T06:41:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(</div><div class="line"><span class="comment">/* executor */</span></div><div class="line">   <span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;...&#125;</div><div class="line">)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>executor 函数在Promise构造函数执行时同步执行，被传递resolve和reject函数（executor 函数在Promise构造函数返回新建对象前被调用）。</p>
+</blockquote>
+<p>一个 <code>Promise</code>有以下几种状态:</p>
+<ul>
+<li><em>pending</em>: 初始状态，不是成功或失败状态。</li>
+<li><em>fulfilled</em>: 意味着操作成功完成。</li>
+<li><em>rejected</em>: 意味着操作失败。</li>
+</ul>
+<a id="more"></a>
+<h1 id="Promise对象"><a href="#Promise对象" class="headerlink" title="Promise对象"></a>Promise对象</h1><ul>
+<li>Promise是一个构造函数</li>
+</ul>
+<ul>
+<li><p>对象的状态不受外界影响</p>
+</li>
+<li><p>一旦状态改变就不会再变,任何时候都可以得到这个结果.</p>
+<blockquote>
+<p>状态改变只有两种可能:从<code>Pending</code> 变为<code>Resolved</code>(‘’未完成’’变为’’成功’’将异步操作<strong>成功</strong>的结果作为参数传递出去)</p>
+<p>从<code>Pending</code>变为<code>Rejected</code>(“未完成”变为”失败”将异步操作报出<strong>错误</strong>的结果作为参数传递出去).</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="Promise原型"><a href="#Promise原型" class="headerlink" title="Promise原型"></a>Promise原型</h1><h2 id="then-方法"><a href="#then-方法" class="headerlink" title="then()方法"></a>then()方法</h2><h3 id="MDN的例子"><a href="#MDN的例子" class="headerlink" title="MDN的例子"></a>MDN的例子</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">  resolve(<span class="string">"Success!"</span>);</div><div class="line">  <span class="comment">// or</span></div><div class="line">  <span class="comment">// reject ("Error!");</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line">p1.then(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(value); <span class="comment">// Success!</span></div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">reason</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(reason); <span class="comment">// Error!</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><img src="/images/promise1.png" alt="promise1"></p>
+<p>当我把<code>reject</code>去掉注释</p>
+<p><img src="/images/promise2.png" alt="promise2"></p>
+<p><img src="/images/promise3.png" alt="promise3"></p>
+<p>说明<code>p1</code>已经被声明过了,而且状态改变过了就不会在改变了.</p>
+<p>我只能把<code>p1</code> 改成别的才能得到<code>Error</code>.</p>
+<h2 id="链式"><a href="#链式" class="headerlink" title="链式"></a>链式</h2><p>例子来自<es6标准入门></es6标准入门></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">getJSON(<span class="string">"/post/1.json"</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">post</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> getJSON(post.commentURL);</div><div class="line">&#125;).then(<span class="function"><span class="keyword">function</span> <span class="title">funcA</span>(<span class="params">comments</span>)</span>&#123;</div><div class="line">  consloe.log(<span class="string">"Resolved:"</span>,comments);</div><div class="line">&#125;,<span class="function"><span class="keyword">function</span> <span class="title">funcB</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">  consloe.log(<span class="string">"Rejected:"</span>,err);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>第一个then方法指定的回调函数返回的是另一个Promise对象.第二个then方法指定的回调函数会等待这个新的Promise对象状态发送变化再进行调用下面的<code>funcA</code>或者<code>funcB</code>函数.</p>
+<h2 id="catch-方法"><a href="#catch-方法" class="headerlink" title="catch()方法"></a>catch()方法</h2><p>例子来自<es6标准入门></es6标准入门></p>
+<p><strong>catch()</strong> 方法返回一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Promise" target="_blank" rel="external">Promise</a>，只处理拒绝的情况。它的行为与调用<strong>then()</strong>相同。</p>
+<p>其实是 <strong>.then(null,rejection)</strong> 的别名.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">p.then(<span class="function">(<span class="params">val</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"fulfilled:"</span>, val))</div><div class="line">	.catch(<span class="function">(<span class="params">err</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"rejected:"</span>, err));</div><div class="line"></div><div class="line"><span class="comment">//等同于</span></div><div class="line"></div><div class="line">p.then(<span class="function">(<span class="params">val</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"fulfilled"</span>, val))</div><div class="line">	.then(<span class="literal">null</span>,(err) =&gt; <span class="built_in">console</span>.log(<span class="string">"rejected:"</span>, val));</div></pre></td></tr></table></figure>
+<ul>
+<li>Promise对象的错误具有”冒泡”性质,会一直向后传递,直到被捕获为止.也就是说,错误总是会被下一个catch语句捕获.</li>
+</ul>
+<h1 id="Promise方法"><a href="#Promise方法" class="headerlink" title="Promise方法"></a>Promise方法</h1><h2 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all()"></a>Promise.all()</h2><p><strong>Promise.all(iterable)</strong> 方法指当所有在可迭代参数中的 promises 已完成，或者第一个传递的 promise（指 reject）失败时，返回 promise。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Promise</span>.all(iterable);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>iterable</p>
+<p>一个可迭代对象，例如 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Array" target="_blank" rel="external"><code>Array</code></a>。参见 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/iterable" target="_blank" rel="external">iterable</a>.</p>
+</blockquote>
+<p>来自<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/all" target="_blank" rel="external">MDN</a>的例子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> p1 = <span class="built_in">Promise</span>.resolve(<span class="number">3</span>);</div><div class="line"><span class="keyword">var</span> p2 = <span class="number">1337</span>;</div><div class="line"><span class="keyword">var</span> p3 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</div><div class="line">  setTimeout(resolve, <span class="number">100</span>, <span class="string">"foo"</span>);</div><div class="line">&#125;); </div><div class="line"></div><div class="line"><span class="built_in">Promise</span>.all([p1, p2, p3]).then(<span class="function"><span class="params">values</span> =&gt;</span> &#123; </div><div class="line">  <span class="built_in">console</span>.log(values); <span class="comment">// [3, 1337, "foo"] </span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="Promise-resolve-value"><a href="#Promise-resolve-value" class="headerlink" title="Promise.resolve(value)"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve" target="_blank" rel="external">Promise.resolve(value)</a></h2><h2 id="Promise-reject-reason"><a href="#Promise-reject-reason" class="headerlink" title="Promise.reject(reason)"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject" target="_blank" rel="external">Promise.reject(reason)</a></h2><h2 id="Promise-race-iterable"><a href="#Promise-race-iterable" class="headerlink" title="Promise.race(iterable)"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/race" target="_blank" rel="external">Promise.race(iterable)</a></h2><h1 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h1><p>一个回调函数，也被称为高阶函数，是一个被作为参数传递给另一个函数.</p>
+<p>你到一个商店买东西，刚好你要的东西没有货，于是你在店员那里留下了你的电话，过了几天店里有货了，店员就打了你的电话，然后你接到电话后就到店里去取了货。在这个例子里，你的电话号码就叫回调函数，你把电话留给店员就叫登记回调函数，店里后来有货了叫做触发了回调关联的事件，店员给你打电话叫做调用回调函数，你到店里去取货叫做响应回调事件。回答完毕。 </p>
+<p>作者：常溪玲链接：<a href="https://www.zhihu.com/question/19801131/answer/13005983来源：知乎著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。" target="_blank" rel="external">https://www.zhihu.com/question/19801131/answer/13005983来源：知乎著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Promise&quot;&gt;&lt;a href=&quot;#Promise&quot; class=&quot;headerlink&quot; title=&quot;Promise&quot;&gt;&lt;/a&gt;Promise&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Promise&lt;/span&gt;(&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* executor */&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;resolve,reject&lt;/span&gt;)&lt;/span&gt;&amp;#123;...&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;executor 函数在Promise构造函数执行时同步执行，被传递resolve和reject函数（executor 函数在Promise构造函数返回新建对象前被调用）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一个 &lt;code&gt;Promise&lt;/code&gt;有以下几种状态:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;pending&lt;/em&gt;: 初始状态，不是成功或失败状态。&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;fulfilled&lt;/em&gt;: 意味着操作成功完成。&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;rejected&lt;/em&gt;: 意味着操作失败。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="Javascript修仙之路" scheme="http://adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
+    
+      <category term="node.js" scheme="http://adherentman.cn/tags/node-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mongodb之旅(一)</title>
+    <link href="http://adherentman.cn/mongodb.html"/>
+    <id>http://adherentman.cn/mongodb.html</id>
+    <published>2017-07-27T13:18:35.000Z</published>
+    <updated>2017-07-28T12:37:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Mongodb之旅-一"><a href="#Mongodb之旅-一" class="headerlink" title="Mongodb之旅(一)"></a>Mongodb之旅(一)</h1><h2 id="插入-insertOne-Many"><a href="#插入-insertOne-Many" class="headerlink" title="插入,insertOne/Many"></a>插入,insertOne/Many</h2><h3 id="insertOne"><a href="#insertOne" class="headerlink" title="insertOne( )"></a>insertOne( )</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">db.inventory.insertOne(</div><div class="line">   &#123; item: &quot;canvas&quot;, qty: 100, tags: [&quot;cotton&quot;], size: &#123; h: 28, w: 35.5, uom: &quot;cm&quot; &#125; &#125;</div><div class="line">)</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="insertMany"><a href="#insertMany" class="headerlink" title="insertMany([ ])"></a>insertMany([ ])</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">db.inventory.insertMany([</div><div class="line">   &#123; item: &quot;journal&quot;, qty: 25, tags: [&quot;blank&quot;, &quot;red&quot;], size: &#123; h: 14, w: 21, uom: &quot;cm&quot; &#125; &#125;,</div><div class="line">   &#123; item: &quot;mat&quot;, qty: 85, tags: [&quot;gray&quot;], size: &#123; h: 27.9, w: 35.5, uom: &quot;cm&quot; &#125; &#125;,</div><div class="line">   &#123; item: &quot;mousepad&quot;, qty: 25, tags: [&quot;gel&quot;, &quot;blue&quot;], size: &#123; h: 19, w: 22.85, uom: &quot;cm&quot; &#125; &#125;</div><div class="line">])</div></pre></td></tr></table></figure>
+<h2 id="查找-find"><a href="#查找-find" class="headerlink" title="查找,find"></a>查找,find</h2><h3 id="find"><a href="#find" class="headerlink" title="find( )"></a>find( )</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.inventory.find( &#123;&#125; )</div></pre></td></tr></table></figure>
+<h2 id="更新-updateOne-Many"><a href="#更新-updateOne-Many" class="headerlink" title="更新,updateOne/Many"></a>更新,updateOne/Many</h2><h3 id="set"><a href="#set" class="headerlink" title="$set"></a>$set</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">db.memberplan.update(</div><div class="line"></div><div class="line">&#123;_id:&quot;xxx&quot;&#125;,</div><div class="line"></div><div class="line">&#123;$set:</div><div class="line"></div><div class="line">&#123;tags:[&quot;coats&quot;,&quot;outerwear&quot;]&#125;</div><div class="line"></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="currentDate-当前时间"><a href="#currentDate-当前时间" class="headerlink" title="$currentDate,当前时间"></a>$currentDate,当前时间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">db.inventory.updateOne(</div><div class="line">   &#123; item: &quot;paper&quot; &#125;,</div><div class="line">   &#123;</div><div class="line">	 $set: &#123; &quot;size.uom&quot;: &quot;cm&quot;, status: &quot;P&quot; &#125;,</div><div class="line">	 $currentDate: &#123; lastModified: true &#125;</div><div class="line">   &#125;</div><div class="line">)</div></pre></td></tr></table></figure>
+<h3 id="updateMany"><a href="#updateMany" class="headerlink" title="updateMany"></a>updateMany</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">db.inventory.updateMany(</div><div class="line">   &#123; &quot;qty&quot;: &#123; $lt: 50 &#125; &#125;,</div><div class="line">   &#123;</div><div class="line">     $set: &#123; &quot;size.uom&quot;: &quot;in&quot;, status: &quot;P&quot; &#125;,</div><div class="line">     $currentDate: &#123; lastModified: true &#125;</div><div class="line">   &#125;</div><div class="line">)</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Mongodb之旅-一&quot;&gt;&lt;a href=&quot;#Mongodb之旅-一&quot; class=&quot;headerlink&quot; title=&quot;Mongodb之旅(一)&quot;&gt;&lt;/a&gt;Mongodb之旅(一)&lt;/h1&gt;&lt;h2 id=&quot;插入-insertOne-Many&quot;&gt;&lt;a href=&quot;#插入-insertOne-Many&quot; class=&quot;headerlink&quot; title=&quot;插入,insertOne/Many&quot;&gt;&lt;/a&gt;插入,insertOne/Many&lt;/h2&gt;&lt;h3 id=&quot;insertOne&quot;&gt;&lt;a href=&quot;#insertOne&quot; class=&quot;headerlink&quot; title=&quot;insertOne( )&quot;&gt;&lt;/a&gt;insertOne( )&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;db.inventory.insertOne(&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &amp;#123; item: &amp;quot;canvas&amp;quot;, qty: 100, tags: [&amp;quot;cotton&amp;quot;], size: &amp;#123; h: 28, w: 35.5, uom: &amp;quot;cm&amp;quot; &amp;#125; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="数据库,Mongodb" scheme="http://adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93-Mongodb/"/>
+    
+    
+      <category term="数据库" scheme="http://adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="Mongodb" scheme="http://adherentman.cn/tags/Mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学Node日志(一)</title>
+    <link href="http://adherentman.cn/Node.html"/>
+    <id>http://adherentman.cn/Node.html</id>
+    <published>2017-07-26T12:53:08.000Z</published>
+    <updated>2017-07-28T12:40:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="学Node日志-一"><a href="#学Node日志-一" class="headerlink" title="学Node日志(一)"></a>学Node日志(一)</h1><h2 id="node实例"><a href="#node实例" class="headerlink" title="node实例"></a>node实例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> hostname = <span class="string">'127.0.0.1'</span>;</div><div class="line"><span class="keyword">const</span> port = <span class="number">9000</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</div><div class="line">    res.statusCode = <span class="number">200</span>;</div><div class="line">    res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/plain'</span>);</div><div class="line">    res.end(<span class="string">'Hello World\n'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">server.listen(port,hostname, () =&gt; &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'服务器运行在 http://$&#123;hostname&#125;:$&#123;port&#125;/'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<ul>
+<li><p><code>response.statusCode()</code>控制响应头刷新时将被发送到客户端的状态码</p>
+<ul>
+<li><code>res.statusCode = 200</code></li>
+</ul>
+<blockquote>
+<p>状态码</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1xx的代码代表请求已被接受，需要继续处理。2xx这一类型的状态码，代表请求已成功被服务器接收、理解、并接受。3xx 重定向。4xx 请求错误。5xx表示服务器错误。</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+<ul>
+<li><p><code>response.setHeader()</code> 响应头如果存在,则值会被覆盖</p>
+<blockquote>
+<p>如果要发送多个名称相同的响应头,则使用字符串数组</p>
+</blockquote>
+<ul>
+<li><code>res.setHeader(&#39;Content-Type&#39;,&#39;text/plain&#39;)</code></li>
+</ul>
+<blockquote>
+<p>Content-Type表明信息类型,缺省值为” text/plain”.它包含了主要类型（primary type）和次要类型（subtype）两个部分，两者之间用”/“分割.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">text/plain：纯文本，文件扩展名.txt</div><div class="line">text/html：HTML文本，文件扩展名.htm和.html</div><div class="line">image/jpeg：jpeg格式的图片，文件扩展名.jpg</div><div class="line">image/gif：GIF格式的图片，文件扩展名.gif</div><div class="line">audio/x-wave：WAVE格式的音频，文件扩展名.wav</div><div class="line">audio/mpeg：MP3格式的音频，文件扩展名.mp3</div><div class="line">video/mpeg：MPEG格式的视频，文件扩展名.mpg</div><div class="line">application/zip：PK-ZIP格式的压缩文件，文件扩展名.zip</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li><p><code>response.end()</code> 每次响应都必须调用 <code>response.end()</code> 方法.</p>
+<blockquote>
+<p>该方法会通知服务器,所有响应头和响应主体都已被发送,即服务器就将他看成已完成</p>
+</blockquote>
+<ul>
+<li><code>res.end(&#39;Hello World\n&#39;)</code></li>
+</ul>
+<blockquote>
+<p>Hello World已经被发送.</p>
+</blockquote>
+</li>
+<li><p><code>server.listen(port,hostname)</code>开始在指定的 <code>port</code> 和 <code>hostname</code> 上接受连接</p>
+</li>
+</ul>
+<h2 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h2><ul>
+<li>端口号是一个 16位的 uint, 所以其范围为 <strong>1 to 65535</strong> </li>
+</ul>
+<h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><ul>
+<li><p>定义的url格式笼统版本<code>&lt;scheme&gt;:&lt;scheme-specific-part&gt;</code></p>
+<blockquote>
+<p>scheme有我们很熟悉的<code>http</code>、<code>https</code>、<code>ftp</code>，以及著名的<code>ed2k</code>，<code>thunder</code></p>
+</blockquote>
+</li>
+<li><p>通常我们熟悉的url定义成这个样子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;scheme&gt;://&lt;user&gt;:&lt;password&gt;@&lt;host&gt;:&lt;port&gt;/&lt;url-path&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>用过ftp的估计能体会这么长的，网页上很少带auth信息，所以就精简成这样:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;scheme&gt;://&lt;host&gt;:&lt;port&gt;/&lt;url-path&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>在上面的例子中, scheme=http, host=localhost, port=3000, url-path=/.</p>
+</blockquote>
+<p>​</p>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;学Node日志-一&quot;&gt;&lt;a href=&quot;#学Node日志-一&quot; class=&quot;headerlink&quot; title=&quot;学Node日志(一)&quot;&gt;&lt;/a&gt;学Node日志(一)&lt;/h1&gt;&lt;h2 id=&quot;node实例&quot;&gt;&lt;a href=&quot;#node实例&quot; class=&quot;headerlink&quot; title=&quot;node实例&quot;&gt;&lt;/a&gt;node实例&lt;/h2&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; http = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;http&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; hostname = &lt;span class=&quot;string&quot;&gt;&#39;127.0.0.1&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; port = &lt;span class=&quot;number&quot;&gt;9000&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; server = http.createServer(&lt;span class=&quot;function&quot;&gt;(&lt;span class=&quot;params&quot;&gt;req,res&lt;/span&gt;) =&amp;gt;&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    res.statusCode = &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    res.setHeader(&lt;span class=&quot;string&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;text/plain&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    res.end(&lt;span class=&quot;string&quot;&gt;&#39;Hello World\n&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;server.listen(port,hostname, () =&amp;gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;服务器运行在 http://$&amp;#123;hostname&amp;#125;:$&amp;#123;port&amp;#125;/&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="Node.js" scheme="http://adherentman.cn/categories/Node-js/"/>
+    
+    
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
+    
+      <category term="node.js" scheme="http://adherentman.cn/tags/node-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git基本操作</title>
+    <link href="http://adherentman.cn/git.html"/>
+    <id>http://adherentman.cn/git.html</id>
+    <published>2017-07-25T12:47:00.000Z</published>
+    <updated>2017-08-10T11:04:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h1 id="Git-add"><a href="#Git-add" class="headerlink" title="Git add"></a>Git add</h1><p><code>git add -A</code> 和 <code>git add .</code> 和 <code>git add -u</code></p>
+<ul>
+<li>git add   <strong>.</strong> ：他会监控工作区的状态树，使用它会把工作时的<strong>所有变化提交</strong>到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>git add -u ：他仅监控<strong>已经被add的文件</strong>（即tracked file），他会将被修改的文件提交到暂存区。add -u 不会提交新文件（untracked file）。（git add –update的缩写)</li>
+<li>git add -A ：是上面两个功能的合集（git add –all的缩写）</li>
+</ul>
+<p>自我理解:</p>
+<ul>
+<li>git add -A  提交所有变化</li>
+<li>git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)</li>
+<li>git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件</li>
+</ul>
+<h1 id="commit过程"><a href="#commit过程" class="headerlink" title="commit过程"></a>commit过程</h1><ul>
+<li>git status  检查工作区是否干净</li>
+<li>git add 命令主要用于把我们要提交的文件的信息添加到索引库中。当我们使用git commit时，git将依据索引库中的内容来进行文件的提交。</li>
+<li>git commit -am “xxxxxxx”</li>
+<li>git branch </li>
+<li>git push origin xxxx</li>
+</ul>
+<h1 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h1><ul>
+<li>git branch -D xx <strong>删除本地分支</strong></li>
+<li>git push origin :br  (origin 后面有空格) <strong>删除远程分支</strong></li>
+</ul>
+<h1 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h1><ul>
+<li>git fetch origin cms:new  创建新本地分支new</li>
+<li>git branch   </li>
+<li>git merge new  合并</li>
+<li>git branch -D new 删除本地分支</li>
+</ul>
+<h1 id="diff"><a href="#diff" class="headerlink" title="diff"></a>diff</h1><p>查看自上次提交以来，本地代码改动的具体情况</p>
+<h1 id="Git-log"><a href="#Git-log" class="headerlink" title="Git log"></a>Git log</h1><p>在提交了若干更新之后，又或者克隆了某个项目，想回顾下提交历史，可以使用 <code>Git log</code> 命令查看</p>
+<h1 id="Git-show"><a href="#Git-show" class="headerlink" title="Git show"></a>Git show</h1><p>git show <commit-hash-id>查看某次commit的修改内容</commit-hash-id></p>
+<h1 id="Git-reset-–hard"><a href="#Git-reset-–hard" class="headerlink" title="Git reset –hard "></a>Git reset –hard <commit></commit></h1><p>现在让我们来重置回那次提交的状态：</p>
+<h1 id="Git-rebase"><a href="#Git-rebase" class="headerlink" title="Git rebase"></a>Git rebase</h1><p>对于git rebase, 你亦可以选择进行交互式的rebase。这种方法通常用于在向别处推送提交之前对它们进行重写。交互式rebase提供了一个简单易用的途径让你在和别人 分享提交之前对你的提交进行分割、合并或者重排序。在把从其他开发者处拉取的提交应用到本地时，你也可以使用交互式rebase对它们进行清理。</p>
+<p>如果你想在rebase的过程中对一部分提交进行修改，你可以在’git rebase’命令中加入’-i’或’–interactive’参数去调用交互模式。</p>
+<p>$ git rebase -i origin/master</p>
+<p>这个命令会执行交互式rebase操作，操作对象是那些自最后一次从origin仓库拉取或者向origin推送之后的所有提交。</p>
+<p>若想查看一下将被rebase的提交，可以用如下的log命令：</p>
+<p>$ git log github/master..</p>
+<h1 id="git-branch-a"><a href="#git-branch-a" class="headerlink" title="git branch -a"></a>git branch -a</h1><p>查看远程分支</p>
+<p>master<br>remotes/origin/HEAD -&gt; origin/master<br>remotes/origin/Release<br>remotes/origin/master</p>
+<h1 id="git-checkout-b-myRelease-origin-Release"><a href="#git-checkout-b-myRelease-origin-Release" class="headerlink" title="git checkout -b myRelease origin/Release"></a>git checkout -b myRelease origin/Release</h1><p>切换到 origin/Release分支，并在本地新建分支 myRelease</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Git&quot;&gt;&lt;a href=&quot;#Git&quot; class=&quot;headerlink&quot; title=&quot;Git&quot;&gt;&lt;/a&gt;Git&lt;/h1&gt;&lt;h1 id=&quot;Git-add&quot;&gt;&lt;a href=&quot;#Git-add&quot; class=&quot;headerlink&quot; title=&quot;Git add&quot;&gt;&lt;/a&gt;Git add&lt;/h1&gt;&lt;p&gt;&lt;code&gt;git add -A&lt;/code&gt; 和 &lt;code&gt;git add .&lt;/code&gt; 和 &lt;code&gt;git add -u&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;git add   &lt;strong&gt;.&lt;/strong&gt; ：他会监控工作区的状态树，使用它会把工作时的&lt;strong&gt;所有变化提交&lt;/strong&gt;到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="git" scheme="http://adherentman.cn/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://adherentman.cn/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实习谈业务时所学</title>
+    <link href="http://adherentman.cn/yewu.html"/>
+    <id>http://adherentman.cn/yewu.html</id>
+    <published>2017-07-24T14:33:00.000Z</published>
+    <updated>2017-07-27T13:21:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一些。。。"><a href="#一些。。。" class="headerlink" title="一些。。。"></a>一些。。。</h1><p>1.业务员可能都没有理清业务或者需求，需要自己去帮他们理清，好让自己设计开发的产品更健壮和在未来更有扩展性。</p>
+<a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一些。。。&quot;&gt;&lt;a href=&quot;#一些。。。&quot; class=&quot;headerlink&quot; title=&quot;一些。。。&quot;&gt;&lt;/a&gt;一些。。。&lt;/h1&gt;&lt;p&gt;1.业务员可能都没有理清业务或者需求，需要自己去帮他们理清，好让自己设计开发的产品更健壮和在未来更有扩展性。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Technology" scheme="http://adherentman.cn/categories/Technology/"/>
+    
+    
+      <category term="生活" scheme="http://adherentman.cn/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>多说挂了好久。现在换成来必力</title>
+    <link href="http://adherentman.cn/%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD%E8%BF%81%E7%A7%BB.html"/>
+    <id>http://adherentman.cn/评论功能迁移.html</id>
+    <published>2017-07-23T01:30:55.000Z</published>
+    <updated>2017-07-29T06:34:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="多说已挂，将评论迁移到来必力"><a href="#多说已挂，将评论迁移到来必力" class="headerlink" title="多说已挂，将评论迁移到来必力"></a>多说已挂，将评论迁移到来必力</h1><p>有很多可替代的方案</p>
+<ul>
+<li><a href="https://gentie.163.com/info.html" target="_blank" rel="external">网易云跟帖</a></li>
+<li><a href="http://changyan.kuaizhan.com/" target="_blank" rel="external">畅言</a></li>
+<li><a href="http://www.uyan.cc/" target="_blank" rel="external">友言</a></li>
+<li><a href="www.disqus.com">Disqus</a></li>
+<li><a href="https://livere.com/" target="_blank" rel="external">来必力</a></li>
+</ul>
+<a id="more"></a>
+<p>还有许多评论功能就不一一举例了.</p>
+<h2 id="具体说下该如何迁移"><a href="#具体说下该如何迁移" class="headerlink" title="具体说下该如何迁移"></a>具体说下该如何迁移</h2><p>因为我是hexo搭建的博客，然后我用的主题是next。</p>
+<p>打开<code>来必力</code>官网，注册完毕。</p>
+<p>登陆后我们来到管理页面。</p>
+<p>之后再点击代码管理，我们将会看见一堆代码。</p>
+<p><img src="/images/laibili.png" alt="laibili"></p>
+<p>我们在代码中找到data-uid：“xxxxxxxxxx”。</p>
+<p>这段将是我们要用的uid。</p>
+<p>打开主题文件下的<code>_config.yml</code>我们</p>
+<p><code>livere_uid: #your livere_uid</code></p>
+<p><img src="/images/pinglun.png" alt="pinglun"></p>
+<p>之后<code>hexo clean &amp;&amp; hexo g -d</code>即可</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;多说已挂，将评论迁移到来必力&quot;&gt;&lt;a href=&quot;#多说已挂，将评论迁移到来必力&quot; class=&quot;headerlink&quot; title=&quot;多说已挂，将评论迁移到来必力&quot;&gt;&lt;/a&gt;多说已挂，将评论迁移到来必力&lt;/h1&gt;&lt;p&gt;有很多可替代的方案&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://gentie.163.com/info.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;网易云跟帖&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://changyan.kuaizhan.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;畅言&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.uyan.cc/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;友言&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;www.disqus.com&quot;&gt;Disqus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://livere.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;来必力&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="Technology" scheme="http://adherentman.cn/categories/Technology/"/>
+    
+    
+      <category term="git" scheme="http://adherentman.cn/tags/git/"/>
+    
+      <category term="hexo" scheme="http://adherentman.cn/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GraphQL基本操作</title>
+    <link href="http://adherentman.cn/GraphQL.html"/>
+    <id>http://adherentman.cn/GraphQL.html</id>
+    <published>2017-07-17T08:02:36.000Z</published>
+    <updated>2017-08-12T10:50:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="GraphQL"><a href="#GraphQL" class="headerlink" title="GraphQL()"></a>GraphQL()</h1><p>强类型</p>
+<p>也就是说，你可以查询值类型：<code>Int</code>, <code>Float</code>, <code>String</code>, <code>Boolean</code>和<code>ID</code></p>
+<p>GraphQL不是像MySQL或Redis这样直接面向数据的接口，而是面向你已经存在的应用代码的接口。</p>
+<p>你可以把GraphQL看作是为了调用应用服务器上的方法的一些内嵌的RPC。</p>
+<h2 id="操作-operation"><a href="#操作-operation" class="headerlink" title="操作(operation)"></a>操作(operation)</h2><p><strong>操作（Operations）</strong></p>
+<p>GraphQL 规范支持两种操作：</p>
+<ul>
+<li>query：仅获取数据（fetch）的只读请求</li>
+<li>mutation：获取数据后还有写操作的请求</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">query&#123;</div><div class="line">    clent(id:1)&#123;</div><div class="line">      id</div><div class="line">      name</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>client 是查询的operation</li>
+<li>(id:1)包含了传入给Query的参数</li>
+<li>查询包含id和name字段,这些字段也是我们希望查询可以返回的.</li>
+</ul>
+<a id="more"></a>
+<p>server会给这个查询返回什么：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"data"</span>: &#123;</div><div class="line">    <span class="attr">"client"</span>: &#123;</div><div class="line">      <span class="attr">"id"</span>: <span class="string">"1"</span>,</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"Uncle Charlie"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>server会返回一个JSON串。这个JSON的schema和查询的基本一致。</p>
+<h2 id="变量-Variable"><a href="#变量-Variable" class="headerlink" title="变量(Variable)"></a>变量(Variable)</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">query($clientId: Int) &#123;</div><div class="line">  client(id: $clientId) &#123;</div><div class="line">    name</div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  purchases(client_id: $clientId) &#123;</div><div class="line">    date</div><div class="line">    quantity</div><div class="line">    total</div><div class="line">    product &#123;</div><div class="line">      name</div><div class="line">      price</div><div class="line">      product_category &#123;</div><div class="line">        name</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    client &#123;</div><div class="line">      name</div><div class="line">      dob</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"clientId"</span>: <span class="number">1</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="Graphql的schema下"><a href="#Graphql的schema下" class="headerlink" title="Graphql的schema下"></a>Graphql的schema下</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">schema&#123;	</div><div class="line"></div><div class="line">	query: Query,</div><div class="line"></div><div class="line">	mutation: Mutation,</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Mutation（修改）"><a href="#Mutation（修改）" class="headerlink" title="Mutation（修改）"></a>Mutation（修改）</h2><p>增、删、改一类的operation在GraphQL里统称为<strong>变异（mutation，即修改数据）</strong></p>
+<p>GraphQL中将对数据的修改操作称为 mutation。在 GraphQL Schema 中按照如下形式来定义一个 mutation：</p>
+<p>mutation 查询和普通查询请求（query）的重要区别在于 mutation 操作是序列化执行的。例如 GraphQL 规范中给出的示例，服务器一定会序列化处理下面的 mutation 请求：</p>
+<p>请求结束时 theNumber 的值会是 2。</p>
+<ul>
+<li>create_client增加</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mutation &#123;</div><div class="line">  create_client (</div><div class="line">    name: "查理大叔"</div><div class="line">    dob: "2017/01/28"</div><div class="line">  ) &#123;</div><div class="line">    id </div><div class="line">    name</div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>update_client更新</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mutation &#123;</div><div class="line">  update_client (</div><div class="line">    id: 5</div><div class="line">    dob: "1990/01/01"</div><div class="line">  ) &#123;</div><div class="line">    id</div><div class="line">    name</div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>destroy_client删除</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mutation &#123;</div><div class="line">  destroy_client(id: 5) &#123;</div><div class="line">    name </div><div class="line">    dob</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h1><p>就像Rest以PUT／POST约定为修改服务器端数据一样，Mutations操作在GraphQL的意义就是修改数据库。就像官网中的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) &#123; //!表示必须填写的查询条件  </div><div class="line">  createReview(episode: $ep, review: $review) &#123;</div><div class="line">    stars</div><div class="line">    commentary</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&#123;</div><div class="line">  &quot;ep&quot;: &quot;JEDI&quot;,</div><div class="line">  &quot;review&quot;: &#123;</div><div class="line">    &quot;stars&quot;: 5,</div><div class="line">    &quot;commentary&quot;: &quot;This is a great movie!&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>需要注意的是，为了保证mutation操作不冲突，mutation只能序列执行。而query可以并行。</p>
+<h2 id="强类型"><a href="#强类型" class="headerlink" title="强类型"></a>强类型</h2><p>由于 GraphQL 是一个强类型语言，所以它可以在执行查询之前检查每个查询语句是否满足事先设定的 schema，符合则合法，如果查询语句不合法则不进行查询。</p>
+<h2 id="Fragments-组合"><a href="#Fragments-组合" class="headerlink" title="Fragments(组合)"></a>Fragments(组合)</h2><p>GraphQL 可以组合使用查询。比如可以定义一种叫 fragment 的东西，就是查询片断，然后我们可以在不同的地方重复的去使用查询。比如下面的这个例子：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  me &#123;</div><div class="line">    name</div><div class="line">    friends &#123;</div><div class="line">      name</div><div class="line">      events &#123;</div><div class="line">        name</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以转换成这样：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  me &#123;</div><div class="line">    name</div><div class="line">    friends &#123;</div><div class="line">      ...firendFragment</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">fragment friendFragment on User &#123;</div><div class="line">  name</div><div class="line">  events &#123;</div><div class="line">    name</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面定义了一个叫 friendFragment 的查询片断，它返回用户朋友的名字，还有参加的活动的名字，然后我们可以在其它的查询里面使用这个查询片断。</p>
+<p>简单的说，GraphQL 是一种<strong>描述请求数据方法的语法</strong>，通常用于客户端从服务端加载数据。GraphQL 有以下三个主要特征：</p>
+<ul>
+<li>它允许客户端指定具体所需的数据。</li>
+<li>它让从多个数据源汇总取数据变得更简单。</li>
+<li>它使用了类型系统来描述数据。</li>
+</ul>
+<p>一个 GraphQL API 主要由三个部分组成：<strong>schema（类型）</strong>，<strong>queries（查询）</strong> 以及 <strong>resolvers（解析器）</strong>。</p>
+<h1 id="Arguments-参数"><a href="#Arguments-参数" class="headerlink" title="Arguments(参数)"></a>Arguments(参数)</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  human(id: <span class="string">"1000"</span>) &#123;</div><div class="line">    name</div><div class="line">    height</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"data"</span>: &#123;</div><div class="line">    <span class="string">"human"</span>: &#123;</div><div class="line">      <span class="string">"name"</span>: <span class="string">"Luke Skywalker"</span>,</div><div class="line">      <span class="string">"height"</span>: <span class="number">1.72</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当然在字段里我们也可以传参数.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  human(id: <span class="string">"1000"</span>) &#123;</div><div class="line">    name</div><div class="line">    height(unit: FOOT<span class="comment">//or METER)</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"data"</span>: &#123;</div><div class="line">    <span class="string">"human"</span>: &#123;</div><div class="line">      <span class="string">"name"</span>: <span class="string">"Luke Skywalker"</span>,</div><div class="line">      <span class="string">"height"</span>: <span class="number">5.6430448</span> <span class="comment">// or 1.72</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="Aliases-别名"><a href="#Aliases-别名" class="headerlink" title="Aliases(别名)"></a>Aliases(别名)</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  empireHero: hero(episode: EMPIRE) &#123;</div><div class="line">    name</div><div class="line">  &#125;</div><div class="line">  jediHero: hero(episode: JEDI) &#123;</div><div class="line">    name</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"data"</span>: &#123;</div><div class="line">    <span class="attr">"empireHero"</span>: &#123;</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"Luke Skywalker"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"jediHero"</span>: &#123;</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"R2-D2"</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Variables-变量"><a href="#Variables-变量" class="headerlink" title="Variables(变量)"></a>Variables(变量)</h2><p>当我们开始使用变量的时候,我们需要做三件事情</p>
+<blockquote>
+<ol>
+<li>Replace the static value in the query with <code>$variableName</code></li>
+<li>Declare <code>$variableName</code> as one of the variables accepted by the query</li>
+<li>Pass <code>variableName: value</code> in the separate, transport-specific (usually JSON) variables dictionary</li>
+</ol>
+</blockquote>
+<ol>
+<li>用<code>$</code> 替换查询中的静态值</li>
+<li>将<code>$</code> 声明为查询接受变量之一</li>
+<li>通常传递json.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">query</div><div class="line">HeroNameAndFriends(</div><div class="line">	$episode: Episode,</div><div class="line">	)&#123;</div><div class="line">	hero(</div><div class="line">	episode: $episode</div><div class="line">)&#123;</div><div class="line">	name</div><div class="line"> 	friends&#123;</div><div class="line">  	name</div><div class="line"> 	&#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//variables</span></div><div class="line">&#123;</div><div class="line">  <span class="string">"episode"</span>: <span class="string">"JEDI"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"data"</span>: &#123;</div><div class="line">    <span class="string">"hero"</span>: &#123;</div><div class="line">      <span class="string">"name"</span>: <span class="string">"R2-D2"</span>,</div><div class="line">      <span class="string">"friends"</span>: [</div><div class="line">        &#123;</div><div class="line">          <span class="string">"name"</span>: <span class="string">"Luke Skywalker"</span></div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">          <span class="string">"name"</span>: <span class="string">"Han Solo"</span></div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">          <span class="string">"name"</span>: <span class="string">"Leia Organa"</span></div><div class="line">        &#125;</div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="fields"><a href="#fields" class="headerlink" title="fields"></a>fields</h1><p>Fields就是客户端要求GraphQL返回的数据说明，一个Fields也可以包含参数</p>
+<h1 id="Root-fields-amp-resolvers"><a href="#Root-fields-amp-resolvers" class="headerlink" title="Root fields &amp; resolvers"></a>Root fields &amp; resolvers</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Query: &#123;</div><div class="line">  human(obj, args, context) &#123;</div><div class="line">    return context.db.loadHumanByID(args.id).then(</div><div class="line">      userData =&gt; new Human(userData)</div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>obj上一个对象，其对于根查询类型的字段通常不被使用</p>
+<p>args提供给GraphQL查询中的字段的参数。</p>
+<p>context提供给每个解析器并保存重要的上下文信息（如当前登录的用户）或访问数据库的值。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;GraphQL&quot;&gt;&lt;a href=&quot;#GraphQL&quot; class=&quot;headerlink&quot; title=&quot;GraphQL()&quot;&gt;&lt;/a&gt;GraphQL()&lt;/h1&gt;&lt;p&gt;强类型&lt;/p&gt;
+&lt;p&gt;也就是说，你可以查询值类型：&lt;code&gt;Int&lt;/code&gt;, &lt;code&gt;Float&lt;/code&gt;, &lt;code&gt;String&lt;/code&gt;, &lt;code&gt;Boolean&lt;/code&gt;和&lt;code&gt;ID&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;GraphQL不是像MySQL或Redis这样直接面向数据的接口，而是面向你已经存在的应用代码的接口。&lt;/p&gt;
+&lt;p&gt;你可以把GraphQL看作是为了调用应用服务器上的方法的一些内嵌的RPC。&lt;/p&gt;
+&lt;h2 id=&quot;操作-operation&quot;&gt;&lt;a href=&quot;#操作-operation&quot; class=&quot;headerlink&quot; title=&quot;操作(operation)&quot;&gt;&lt;/a&gt;操作(operation)&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;操作（Operations）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;GraphQL 规范支持两种操作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;query：仅获取数据（fetch）的只读请求&lt;/li&gt;
+&lt;li&gt;mutation：获取数据后还有写操作的请求&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;query&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    clent(id:1)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      id&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      name&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;client 是查询的operation&lt;/li&gt;
+&lt;li&gt;(id:1)包含了传入给Query的参数&lt;/li&gt;
+&lt;li&gt;查询包含id和name字段,这些字段也是我们希望查询可以返回的.&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="GraphQL" scheme="http://adherentman.cn/categories/GraphQL/"/>
+    
+    
+      <category term="GraphQL" scheme="http://adherentman.cn/tags/GraphQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React-Router v3</title>
+    <link href="http://adherentman.cn/React-Router.html"/>
+    <id>http://adherentman.cn/React-Router.html</id>
+    <published>2017-07-17T08:02:36.000Z</published>
+    <updated>2017-08-14T06:53:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="React-Router3"><a href="#React-Router3" class="headerlink" title="React-Router3"></a>React-Router3</h1><h3 id="路径语法"><a href="#路径语法" class="headerlink" title="路径语法"></a>路径语法</h3><p>路由路径是匹配一个（或一部分）URL 的 <a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#routepattern" target="_blank" rel="external">一个字符串模式</a>。大部分的路由路径都可以直接按照字面量理解，除了以下几个特殊的符号：</p>
+<ul>
+<li><code>:paramName</code> – 匹配一段位于 <code>/</code>、<code>?</code> 或 <code>#</code> 之后的 URL。 命中的部分将被作为一个<a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params" target="_blank" rel="external">参数</a></li>
+<li><code>()</code> – 在它内部的内容被认为是可选的</li>
+<li><code>*</code> – 匹配任意字符（非贪婪的）直到命中下一个字符或者整个 URL 的末尾，并创建一个 <code>splat</code> <a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params" target="_blank" rel="external">参数</a></li>
+</ul>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//匹配 /hello/michael 和 /hello/ryan</div><div class="line">&lt;Route path=&quot;/hello/:name&quot;&gt;         </div><div class="line">  </div><div class="line">  </div><div class="line">//匹配 /hello, /hello/02 和 /hello/01</div><div class="line">&lt;Route path=&quot;/hello(/:id)&quot;&gt;   </div><div class="line"></div><div class="line"></div><div class="line">//匹配 /files/hello.jpg和/files/path/to/hello.jpg</div><div class="line">&lt;Route path=&quot;/files/*.*&quot;&gt;</div></pre></td></tr></table></figure>
+<h2 id="Histories"><a href="#Histories" class="headerlink" title="Histories"></a>Histories</h2><p>常用的 history 有三种形式， 但是你也可以使用 React Router 实现自定义的 history。</p>
+<ul>
+<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#browserHistory" target="_blank" rel="external"><code>browserHistory</code></a> (推荐)</li>
+<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#hashHistory" target="_blank" rel="external"><code>hashHistory</code></a></li>
+<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#creatememoryhistory" target="_blank" rel="external"><code>createMemoryHistory</code></a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Router history=&#123;browserHistory&#125;&gt;</div></pre></td></tr></table></figure>
+<h3 id="browserHistory"><a href="#browserHistory" class="headerlink" title="browserHistory"></a><code>browserHistory</code></h3><p>Browser history 是使用 React Router 的应用推荐的 history。它使用浏览器中的 <a href="https://developer.mozilla.org/en-US/docs/Web/API/History" target="_blank" rel="external">History</a> API 用于处理 URL，创建一个像<code>example.com/some/path</code>这样真实的 URL 。</p>
+<h2 id="在组件外部使用导航"><a href="#在组件外部使用导航" class="headerlink" title="在组件外部使用导航"></a>在组件外部使用导航</h2><p>虽然在组件内部可以使用 <code>this.context.router</code> 来实现导航，但许多应用想要在组件外部使用导航。使用Router组件上被赋予的history可以在组件外部实现导航。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;React-Router3&quot;&gt;&lt;a href=&quot;#React-Router3&quot; class=&quot;headerlink&quot; title=&quot;React-Router3&quot;&gt;&lt;/a&gt;React-Router3&lt;/h1&gt;&lt;h3 id=&quot;路径语法&quot;&gt;&lt;a href=&quot;#路径语法&quot; class=&quot;headerlink&quot; title=&quot;路径语法&quot;&gt;&lt;/a&gt;路径语法&lt;/h3&gt;&lt;p&gt;路由路径是匹配一个（或一部分）URL 的 &lt;a href=&quot;https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#routepattern&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;一个字符串模式&lt;/a&gt;。大部分的路由路径都可以直接按照字面量理解，除了以下几个特殊的符号：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;:paramName&lt;/code&gt; – 匹配一段位于 &lt;code&gt;/&lt;/code&gt;、&lt;code&gt;?&lt;/code&gt; 或 &lt;code&gt;#&lt;/code&gt; 之后的 URL。 命中的部分将被作为一个&lt;a href=&quot;https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;()&lt;/code&gt; – 在它内部的内容被认为是可选的&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;*&lt;/code&gt; – 匹配任意字符（非贪婪的）直到命中下一个字符或者整个 URL 的末尾，并创建一个 &lt;code&gt;splat&lt;/code&gt; &lt;a href=&quot;https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参数&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="React" scheme="http://adherentman.cn/categories/React/"/>
+    
+    
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
+    
+      <category term="React" scheme="http://adherentman.cn/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库E-R图</title>
+    <link href="http://adherentman.cn/E-R%E5%9B%BE.html"/>
+    <id>http://adherentman.cn/E-R图.html</id>
+    <published>2017-07-17T08:02:36.000Z</published>
+    <updated>2017-07-17T08:06:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="E-R图"><a href="#E-R图" class="headerlink" title="E-R图"></a>E-R图</h1><p>E-R图是指实体-关系-属性三个基本概括数据的基本结构.</p>
+<p>强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。</p>
+<a id="more"></a>
+<ul>
+<li>ER图的实体（entity）即数据模型中的数据对象，例如人、学生、音乐都可以作为一个数据对象，用长方体来表示，每个实体都有自己的实体成员（entity member）或者说实体对象（entity instance），例如学生实体里包括张三、李四等，实体成员（entity member）/实体实例（entity instance） 不需要出现在ER图中。</li>
+</ul>
+<ul>
+<li>ER图的属性（attribute）即数据对象所具有的属性，例如学生具有姓名、学号、年级等属性，用椭圆形表示，属性分为唯一属性（ unique attribute）和非唯一属性，唯一属性指的是唯一可用来标识该实体实例或者成员的属性，用下划线表示，一般来讲实体都至少有一个唯一属性。</li>
+</ul>
+<ul>
+<li>ER图的关系（relationship）用来表现数据对象与数据对象之间的联系，例如学生的实体和成绩表的实体之间有一定的联系，每个学生都有自己的成绩表，这就是一种关系，关系用菱形来表示。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;E-R图&quot;&gt;&lt;a href=&quot;#E-R图&quot; class=&quot;headerlink&quot; title=&quot;E-R图&quot;&gt;&lt;/a&gt;E-R图&lt;/h1&gt;&lt;p&gt;E-R图是指实体-关系-属性三个基本概括数据的基本结构.&lt;/p&gt;
+&lt;p&gt;强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="数据库" scheme="http://adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React State与Props的小心思</title>
+    <link href="http://adherentman.cn/React-State%E4%B8%8EProps%E7%9A%84%E5%B0%8F%E5%BF%83%E6%80%9D.html"/>
+    <id>http://adherentman.cn/React-State与Props的小心思.html</id>
+    <published>2017-06-30T04:10:00.000Z</published>
+    <updated>2017-07-24T14:37:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>忙于期末考。。很久都没有更新博客了！因为找了个实习需要React所以这里写写自己在看React的官方文档中，遇到的问题。</p>
+<h1 id="Props与State很容易让我经常弄混"><a href="#Props与State很容易让我经常弄混" class="headerlink" title="Props与State很容易让我经常弄混"></a>Props与State很容易让我经常弄混</h1><h2 id="先来说说Props"><a href="#先来说说Props" class="headerlink" title="先来说说Props"></a>先来说说Props</h2><ul>
+<li>官方解释</li>
+</ul>
+<p>组件从概念上看就是函数，之后这个组件可以接受任意的输入值，并返回一个需要页面上展示的React元素。那么这个输入值就为<strong>props。</strong></p>
+<ul>
+<li>个人理解</li>
+</ul>
+<p><strong>props</strong>是不可变的，传入什么值进去，最后返回的也是传入的值。也就是说，只读。</p>
+<a id="more"></a>
+<h3 id="props父子传递"><a href="#props父子传递" class="headerlink" title="props父子传递"></a>props父子传递</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Uesr</span>(<span class="params">props</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span>(</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&#123;</span>'<span class="attr">abc</span>'+ <span class="attr">props.color</span>&#125;&gt;</span></span></div><div class="line">    &#123;props.children&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  );</div><div class="line">&#125;</div><div class="line">------------------------------------------------------------------------</div><div class="line">  </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">My</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span>(</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">User</span> <span class="attr">color</span>=<span class="string">"red"</span>&gt;</span></span></div><div class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>nihao<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">User</span>&gt;</span></div><div class="line">  );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在JSX标签内的任何内容都将通过<code>children</code>属性传入<code>User</code>。因为<code>User</code>在一个<code>div</code>内渲染了<code>{props.children}</code>，所以被传递的所有元素都会出现在最终输出中。</p>
+<p>其实，我们也可以不用children。借用React官方文档的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Contacts</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &lt;div className="Contacts" /&gt;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function Chat() &#123;</div><div class="line">  return &lt;div className="Chat" /&gt;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function SplitPane(props) &#123;</div><div class="line">  return (</div><div class="line">    &lt;div className="SplitPane"&gt;</div><div class="line">      &lt;div className="SplitPane-left"&gt;</div><div class="line">        &#123;props.left&#125;</div><div class="line">      &lt;/div&gt;</div><div class="line">      &lt;div className="SplitPane-right"&gt;</div><div class="line">        &#123;props.right&#125;</div><div class="line">      &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  );</div><div class="line">&#125;</div><div class="line"></div><div class="line">function App() &#123;</div><div class="line">  return (</div><div class="line">    &lt;SplitPane</div><div class="line">      left=&#123;</div><div class="line">        &lt;Contacts /&gt;</div><div class="line">      &#125;</div><div class="line">      right=&#123;</div><div class="line">        &lt;Chat /&gt;</div><div class="line">      &#125; /&gt;</div><div class="line">  );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="接下来State"><a href="#接下来State" class="headerlink" title="接下来State"></a>接下来State</h2><h3 id="state怎么工作？"><a href="#state怎么工作？" class="headerlink" title="state怎么工作？"></a>state怎么工作？</h3><p>通过调用setState(data,callback)方法，改变状态，就会触发React更新UI。</p>
+<h3 id="什么时候组件需要state呢？"><a href="#什么时候组件需要state呢？" class="headerlink" title="什么时候组件需要state呢？"></a>什么时候组件需要state呢？</h3><p>一般来说，大部分的组件应该从<code>props</code>属性中获取数据然后渲染。那么在！</p>
+<p><strong>用户输入，服务器交互，这些情况下会用到State</strong>。在官方上说，<strong>尽可能的保持你的组件无状态化。</strong></p>
+<p>通过看官方文档。。我发现他们的模式是：构建几个无状态的组件用来渲染数据，然后在这些之上去构建一个有状态的组件同用户和服务器交互，数据通过props传递给无状态组件。</p>
+<ul>
+<li>setState:更新组件状态。</li>
+<li>setState会触发diff算法：判断state和页面结果的区别，是否需要更新。</li>
+</ul>
+<h3 id="状态-state-和属性-props-对比"><a href="#状态-state-和属性-props-对比" class="headerlink" title="状态(state)和属性(props)对比"></a>状态(state)和属性(props)对比</h3><ul>
+<li>状态和属性都会触发render更新，都是纯JS对象</li>
+<li>状态：是和自己相关的，既不受父组件也不受子组件影响</li>
+<li>属性：本身是不能自己去修改的，只能从父组件获取属性，父组件也能修改它的属性</li>
+<li>根本的区别：组件在运行时需要去修改维护的就是状态</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;忙于期末考。。很久都没有更新博客了！因为找了个实习需要React所以这里写写自己在看React的官方文档中，遇到的问题。&lt;/p&gt;
+&lt;h1 id=&quot;Props与State很容易让我经常弄混&quot;&gt;&lt;a href=&quot;#Props与State很容易让我经常弄混&quot; class=&quot;headerlink&quot; title=&quot;Props与State很容易让我经常弄混&quot;&gt;&lt;/a&gt;Props与State很容易让我经常弄混&lt;/h1&gt;&lt;h2 id=&quot;先来说说Props&quot;&gt;&lt;a href=&quot;#先来说说Props&quot; class=&quot;headerlink&quot; title=&quot;先来说说Props&quot;&gt;&lt;/a&gt;先来说说Props&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;官方解释&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;组件从概念上看就是函数，之后这个组件可以接受任意的输入值，并返回一个需要页面上展示的React元素。那么这个输入值就为&lt;strong&gt;props。&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;个人理解&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;props&lt;/strong&gt;是不可变的，传入什么值进去，最后返回的也是传入的值。也就是说，只读。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="React" scheme="http://adherentman.cn/categories/React/"/>
+    
+    
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
+    
+      <category term="React" scheme="http://adherentman.cn/tags/React/"/>
+    
+      <category term="Webpack" scheme="http://adherentman.cn/tags/Webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript闭包</title>
+    <link href="http://adherentman.cn/JavaScript%E9%97%AD%E5%8C%85.html"/>
+    <id>http://adherentman.cn/JavaScript闭包.html</id>
+    <published>2017-05-22T05:44:44.000Z</published>
+    <updated>2017-05-26T09:47:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="闭包-bibao-Closures"><a href="#闭包-bibao-Closures" class="headerlink" title="闭包/bibao/Closures"></a>闭包/bibao/Closures</h1><h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><p>MDN对闭包的定义为：</p>
+<blockquote>
+<p>闭包是指那些能够访问自由变量的函数。</p>
+</blockquote>
+<p>阮老师对闭包的定义为：</p>
+<blockquote>
+<p> 闭包就是能够读取其他函数内部变量的函数。</p>
+<p> 可以把闭包简单理解成”定义在一个函数内部的函数”。</p>
+</blockquote>
+<p>红宝书对闭包的定义为：</p>
+<blockquote>
+<p>　闭包是指有权访问另一个函数作用域中的变量的函数</p>
+</blockquote>
+<p>那么圣经犀牛书对闭包定义为：</p>
+<blockquote>
+<p>函数对象可以通过作用域链相互关联起来，函数体内部的变量都可以保存在函数作用域内，这种特性在计算机科学文献中称为‘闭包’”</p>
+</blockquote>
+<a id="more"></a>
+<p><strong>我个人比较认同红宝书的定义。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(a); <span class="comment">// 2</span></div><div class="line">    &#125;</div><div class="line">    bar();</div><div class="line">&#125;</div><div class="line">foo();</div></pre></td></tr></table></figure>
+<p>我们来做一个数组求和</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> x+y;</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line">sum([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]);			<span class="comment">//18</span></div></pre></td></tr></table></figure>
+<p>但是我们想要返回函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">smallsum</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> x+y;</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> sum;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当我们想要用<code>smallsum</code>的时候返回的却是个函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = smallsum([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]);		<span class="comment">//function sum()</span></div></pre></td></tr></table></figure>
+<p>直到我们调用<code>result</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result();			<span class="comment">//18</span></div></pre></td></tr></table></figure>
+<p>在这个例子中，我发现内部函数<code>sum</code>可以调用外部函数<code>smallsum</code>的参数和局部变量。</p>
+<p>当我们调用<code>smallsum</code>的时候，每次调用都会产生一个新的函数。即使你传入的值相同。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result1 = smallsum([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]);</div><div class="line"><span class="keyword">var</span> result2 = smallsum([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]);</div><div class="line">result1 === result2; 			<span class="comment">//false</span></div></pre></td></tr></table></figure>
+<h2 id="假如"><a href="#假如" class="headerlink" title="假如"></a>假如</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">l</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> arr= [];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</div><div class="line">    arr.push(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> i;</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a= l();</div><div class="line"><span class="keyword">var</span> f1=a[<span class="number">0</span>];</div><div class="line"><span class="keyword">var</span> f2=a[<span class="number">1</span>];</div><div class="line"><span class="keyword">var</span> f3=a[<span class="number">2</span>];</div><div class="line"></div><div class="line">f1();	<span class="comment">//4</span></div><div class="line">f2();	<span class="comment">//4</span></div><div class="line">f3();	<span class="comment">//4</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">l</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> arr= [];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</div><div class="line">    arr.push((<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> n;</div><div class="line">      &#125;</div><div class="line">    &#125;)(i));</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> arr;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a= l();</div><div class="line"><span class="keyword">var</span> f1=a[<span class="number">0</span>];</div><div class="line"><span class="keyword">var</span> f2=a[<span class="number">1</span>];</div><div class="line"><span class="keyword">var</span> f3=a[<span class="number">2</span>];</div><div class="line"></div><div class="line">f1();		<span class="comment">//0</span></div><div class="line">f2();		<span class="comment">//1</span></div><div class="line">f3();		<span class="comment">//2</span></div></pre></td></tr></table></figure>
+<p>注意这里用了一个“创建一个匿名函数并立刻执行”的语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> n;</div><div class="line">&#125;)(<span class="number">1</span>); <span class="comment">//1</span></div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;闭包-bibao-Closures&quot;&gt;&lt;a href=&quot;#闭包-bibao-Closures&quot; class=&quot;headerlink&quot; title=&quot;闭包/bibao/Closures&quot;&gt;&lt;/a&gt;闭包/bibao/Closures&lt;/h1&gt;&lt;h2 id=&quot;什么是闭包&quot;&gt;&lt;a href=&quot;#什么是闭包&quot; class=&quot;headerlink&quot; title=&quot;什么是闭包&quot;&gt;&lt;/a&gt;什么是闭包&lt;/h2&gt;&lt;p&gt;MDN对闭包的定义为：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;闭包是指那些能够访问自由变量的函数。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;阮老师对闭包的定义为：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt; 闭包就是能够读取其他函数内部变量的函数。&lt;/p&gt;
+&lt;p&gt; 可以把闭包简单理解成”定义在一个函数内部的函数”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;红宝书对闭包的定义为：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;　闭包是指有权访问另一个函数作用域中的变量的函数&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;那么圣经犀牛书对闭包定义为：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;函数对象可以通过作用域链相互关联起来，函数体内部的变量都可以保存在函数作用域内，这种特性在计算机科学文献中称为‘闭包’”&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Javascript基础" scheme="http://adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
+    
+  </entry>
+  
+</feed>
