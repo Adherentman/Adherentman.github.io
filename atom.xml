@@ -168,16 +168,15 @@
     <link href="http://adherentman.cn/React%20Native%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html"/>
     <id>http://adherentman.cn/React Native环境配置.html</id>
     <published>2017-08-14T04:32:53.000Z</published>
-    <updated>2017-08-14T06:55:20.000Z</updated>
+    <updated>2017-08-22T07:01:00.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="React-Native环境配置"><a href="#React-Native环境配置" class="headerlink" title="React Native环境配置"></a>React Native环境配置</h1><h1 id="Ios开发环境"><a href="#Ios开发环境" class="headerlink" title="Ios开发环境"></a>Ios开发环境</h1><p>因为我是在mac下搭建环境的。所以比较方便。</p>
 <ul>
 <li><p>Xcode时必须的！</p>
 </li>
-<li><blockquote>
-<p>brew install node        //电脑需要有node</p>
-<p>brew install watchman    //这是用来监视文件系统中的更改的工具</p>
-</blockquote>
+<li><p>brew install node        //电脑需要有node</p>
+</li>
+<li><p>brew install watchman    //这是用来监视文件系统中的更改的工具</p>
 </li>
 <li><p>npm install -g react-native-cli</p>
 <p>然后我们打开 <strong>Xcode</strong></p>
@@ -246,10 +245,9 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Xcode时必须的！&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;blockquote&gt;
-&lt;p&gt;brew install node        //电脑需要有node&lt;/p&gt;
-&lt;p&gt;brew install watchman    //这是用来监视文件系统中的更改的工具&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;li&gt;&lt;p&gt;brew install node        //电脑需要有node&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;brew install watchman    //这是用来监视文件系统中的更改的工具&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;npm install -g react-native-cli&lt;/p&gt;
 &lt;p&gt;然后我们打开 &lt;strong&gt;Xcode&lt;/strong&gt;&lt;/p&gt;
