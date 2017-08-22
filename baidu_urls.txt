@@ -1,3 +1,4 @@
+http://adherentman.cn/使用阿里云oss踩得坑.html
 http://adherentman.cn/支付宝小程序.html
 http://adherentman.cn/CO函数，异步.html
 http://adherentman.cn/JavaScript函数.html
@@ -13,9 +14,9 @@ http://adherentman.cn/Node.html
 http://adherentman.cn/git.html
 http://adherentman.cn/yewu.html
 http://adherentman.cn/评论功能迁移.html
+http://adherentman.cn/E-R图.html
 http://adherentman.cn/GraphQL.html
 http://adherentman.cn/React-Router.html
-http://adherentman.cn/E-R图.html
 http://adherentman.cn/React-State与Props的小心思.html
 http://adherentman.cn/JavaScript闭包.html
 http://adherentman.cn/JavaScript作用域.html

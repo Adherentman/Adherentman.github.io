@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://adherentman.cn/"/>
-  <updated>2017-08-20T12:54:16.000Z</updated>
+  <updated>2017-08-22T06:46:25.000Z</updated>
   <id>http://adherentman.cn/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用阿里云oss踩得坑</title>
+    <link href="http://adherentman.cn/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91oss%E8%B8%A9%E5%BE%97%E5%9D%91.html"/>
+    <id>http://adherentman.cn/使用阿里云oss踩得坑.html</id>
+    <published>2017-08-22T06:44:24.000Z</published>
+    <updated>2017-08-22T06:46:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Provisional-headers-are-shown"><a href="#Provisional-headers-are-shown" class="headerlink" title="Provisional headers are shown"></a>Provisional headers are shown</h1><p>首先我现在console里看见以下报错：</p>
+<p><img src="/images/oss1.png" alt="oss1"></p>
+<a id="more"></a>
+<p>接着我去了network里看：</p>
+<p><img src="/images/oss3.png" alt="oss3"></p>
+<p>最后找到了根本问题所在：</p>
+<p>因为我在<strong>https</strong>的网页中，是不允许我去发<strong>http</strong>的请求，所以我需要去自己发起请求的client代码中加入secure：true。</p>
+<p><img src="/images/oss2.png" alt="oss2"></p>
+<h1 id="ErrorCode-AccessForbidden"><a href="#ErrorCode-AccessForbidden" class="headerlink" title="ErrorCode: AccessForbidden"></a>ErrorCode: AccessForbidden</h1><p><img src="/images/oss4.png" alt="oss4"></p>
+<p>如果遇到以上问题，那肯定是你的 <strong>CORS</strong>没有配置或者配置不对。</p>
+<p>我们需要到阿里云的的OSS控制台中做以下设置：</p>
+<p><img src="/images/oss5.png" alt="oss5"></p>
+<p>以下也是上述没设置好的错，错误为：<strong>出错请求的HTTP状态码</strong></p>
+<p><img src="/images/oss6.png" alt="oss6"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Provisional-headers-are-shown&quot;&gt;&lt;a href=&quot;#Provisional-headers-are-shown&quot; class=&quot;headerlink&quot; title=&quot;Provisional headers are shown&quot;&gt;&lt;/a&gt;Provisional headers are shown&lt;/h1&gt;&lt;p&gt;首先我现在console里看见以下报错：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/oss1.png&quot; alt=&quot;oss1&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="阿里云服务的使用" scheme="http://adherentman.cn/categories/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
+    
+      <category term="node.js" scheme="http://adherentman.cn/tags/node-js/"/>
+    
+  </entry>
   
   <entry>
     <title>支付宝小程序踩坑（一）</title>
@@ -1047,6 +1086,41 @@
   </entry>
   
   <entry>
+    <title>数据库E-R图</title>
+    <link href="http://adherentman.cn/E-R%E5%9B%BE.html"/>
+    <id>http://adherentman.cn/E-R图.html</id>
+    <published>2017-07-17T08:02:36.000Z</published>
+    <updated>2017-07-17T08:06:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="E-R图"><a href="#E-R图" class="headerlink" title="E-R图"></a>E-R图</h1><p>E-R图是指实体-关系-属性三个基本概括数据的基本结构.</p>
+<p>强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。</p>
+<a id="more"></a>
+<ul>
+<li>ER图的实体（entity）即数据模型中的数据对象，例如人、学生、音乐都可以作为一个数据对象，用长方体来表示，每个实体都有自己的实体成员（entity member）或者说实体对象（entity instance），例如学生实体里包括张三、李四等，实体成员（entity member）/实体实例（entity instance） 不需要出现在ER图中。</li>
+</ul>
+<ul>
+<li>ER图的属性（attribute）即数据对象所具有的属性，例如学生具有姓名、学号、年级等属性，用椭圆形表示，属性分为唯一属性（ unique attribute）和非唯一属性，唯一属性指的是唯一可用来标识该实体实例或者成员的属性，用下划线表示，一般来讲实体都至少有一个唯一属性。</li>
+</ul>
+<ul>
+<li>ER图的关系（relationship）用来表现数据对象与数据对象之间的联系，例如学生的实体和成绩表的实体之间有一定的联系，每个学生都有自己的成绩表，这就是一种关系，关系用菱形来表示。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;E-R图&quot;&gt;&lt;a href=&quot;#E-R图&quot; class=&quot;headerlink&quot; title=&quot;E-R图&quot;&gt;&lt;/a&gt;E-R图&lt;/h1&gt;&lt;p&gt;E-R图是指实体-关系-属性三个基本概括数据的基本结构.&lt;/p&gt;
+&lt;p&gt;强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="数据库" scheme="http://adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
     <title>GraphQL基本操作</title>
     <link href="http://adherentman.cn/GraphQL.html"/>
     <id>http://adherentman.cn/GraphQL.html</id>
@@ -1212,41 +1286,6 @@
   </entry>
   
   <entry>
-    <title>数据库E-R图</title>
-    <link href="http://adherentman.cn/E-R%E5%9B%BE.html"/>
-    <id>http://adherentman.cn/E-R图.html</id>
-    <published>2017-07-17T08:02:36.000Z</published>
-    <updated>2017-07-17T08:06:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="E-R图"><a href="#E-R图" class="headerlink" title="E-R图"></a>E-R图</h1><p>E-R图是指实体-关系-属性三个基本概括数据的基本结构.</p>
-<p>强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。</p>
-<a id="more"></a>
-<ul>
-<li>ER图的实体（entity）即数据模型中的数据对象，例如人、学生、音乐都可以作为一个数据对象，用长方体来表示，每个实体都有自己的实体成员（entity member）或者说实体对象（entity instance），例如学生实体里包括张三、李四等，实体成员（entity member）/实体实例（entity instance） 不需要出现在ER图中。</li>
-</ul>
-<ul>
-<li>ER图的属性（attribute）即数据对象所具有的属性，例如学生具有姓名、学号、年级等属性，用椭圆形表示，属性分为唯一属性（ unique attribute）和非唯一属性，唯一属性指的是唯一可用来标识该实体实例或者成员的属性，用下划线表示，一般来讲实体都至少有一个唯一属性。</li>
-</ul>
-<ul>
-<li>ER图的关系（relationship）用来表现数据对象与数据对象之间的联系，例如学生的实体和成绩表的实体之间有一定的联系，每个学生都有自己的成绩表，这就是一种关系，关系用菱形来表示。</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;E-R图&quot;&gt;&lt;a href=&quot;#E-R图&quot; class=&quot;headerlink&quot; title=&quot;E-R图&quot;&gt;&lt;/a&gt;E-R图&lt;/h1&gt;&lt;p&gt;E-R图是指实体-关系-属性三个基本概括数据的基本结构.&lt;/p&gt;
-&lt;p&gt;强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据库" scheme="http://adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="数据库" scheme="http://adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
     <title>React State与Props的小心思</title>
     <link href="http://adherentman.cn/React-State%E4%B8%8EProps%E7%9A%84%E5%B0%8F%E5%BF%83%E6%80%9D.html"/>
     <id>http://adherentman.cn/React-State与Props的小心思.html</id>
@@ -1305,79 +1344,6 @@
       <category term="React" scheme="http://adherentman.cn/tags/React/"/>
     
       <category term="Webpack" scheme="http://adherentman.cn/tags/Webpack/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript闭包</title>
-    <link href="http://adherentman.cn/JavaScript%E9%97%AD%E5%8C%85.html"/>
-    <id>http://adherentman.cn/JavaScript闭包.html</id>
-    <published>2017-05-22T05:44:44.000Z</published>
-    <updated>2017-05-26T09:47:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="闭包-bibao-Closures"><a href="#闭包-bibao-Closures" class="headerlink" title="闭包/bibao/Closures"></a>闭包/bibao/Closures</h1><h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><p>MDN对闭包的定义为：</p>
-<blockquote>
-<p>闭包是指那些能够访问自由变量的函数。</p>
-</blockquote>
-<p>阮老师对闭包的定义为：</p>
-<blockquote>
-<p> 闭包就是能够读取其他函数内部变量的函数。</p>
-<p> 可以把闭包简单理解成”定义在一个函数内部的函数”。</p>
-</blockquote>
-<p>红宝书对闭包的定义为：</p>
-<blockquote>
-<p>　闭包是指有权访问另一个函数作用域中的变量的函数</p>
-</blockquote>
-<p>那么圣经犀牛书对闭包定义为：</p>
-<blockquote>
-<p>函数对象可以通过作用域链相互关联起来，函数体内部的变量都可以保存在函数作用域内，这种特性在计算机科学文献中称为‘闭包’”</p>
-</blockquote>
-<a id="more"></a>
-<p><strong>我个人比较认同红宝书的定义。</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(a); <span class="comment">// 2</span></div><div class="line">    &#125;</div><div class="line">    bar();</div><div class="line">&#125;</div><div class="line">foo();</div></pre></td></tr></table></figure>
-<p>我们来做一个数组求和</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> x+y;</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line">sum([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]);			<span class="comment">//18</span></div></pre></td></tr></table></figure>
-<p>但是我们想要返回函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">smallsum</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> x+y;</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> sum;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>当我们想要用<code>smallsum</code>的时候返回的却是个函数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = smallsum([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]);		<span class="comment">//function sum()</span></div></pre></td></tr></table></figure>
-<p>直到我们调用<code>result</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result();			<span class="comment">//18</span></div></pre></td></tr></table></figure>
-<p>在这个例子中，我发现内部函数<code>sum</code>可以调用外部函数<code>smallsum</code>的参数和局部变量。</p>
-<p>当我们调用<code>smallsum</code>的时候，每次调用都会产生一个新的函数。即使你传入的值相同。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result1 = smallsum([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]);</div><div class="line"><span class="keyword">var</span> result2 = smallsum([<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]);</div><div class="line">result1 === result2; 			<span class="comment">//false</span></div></pre></td></tr></table></figure>
-<h2 id="假如"><a href="#假如" class="headerlink" title="假如"></a>假如</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">l</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> arr= [];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</div><div class="line">    arr.push(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> i;</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a= l();</div><div class="line"><span class="keyword">var</span> f1=a[<span class="number">0</span>];</div><div class="line"><span class="keyword">var</span> f2=a[<span class="number">1</span>];</div><div class="line"><span class="keyword">var</span> f3=a[<span class="number">2</span>];</div><div class="line"></div><div class="line">f1();	<span class="comment">//4</span></div><div class="line">f2();	<span class="comment">//4</span></div><div class="line">f3();	<span class="comment">//4</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">l</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> arr= [];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</div><div class="line">    arr.push((<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> n;</div><div class="line">      &#125;</div><div class="line">    &#125;)(i));</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> arr;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a= l();</div><div class="line"><span class="keyword">var</span> f1=a[<span class="number">0</span>];</div><div class="line"><span class="keyword">var</span> f2=a[<span class="number">1</span>];</div><div class="line"><span class="keyword">var</span> f3=a[<span class="number">2</span>];</div><div class="line"></div><div class="line">f1();		<span class="comment">//0</span></div><div class="line">f2();		<span class="comment">//1</span></div><div class="line">f3();		<span class="comment">//2</span></div></pre></td></tr></table></figure>
-<p>注意这里用了一个“创建一个匿名函数并立刻执行”的语法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> n;</div><div class="line">&#125;)(<span class="number">1</span>); <span class="comment">//1</span></div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;闭包-bibao-Closures&quot;&gt;&lt;a href=&quot;#闭包-bibao-Closures&quot; class=&quot;headerlink&quot; title=&quot;闭包/bibao/Closures&quot;&gt;&lt;/a&gt;闭包/bibao/Closures&lt;/h1&gt;&lt;h2 id=&quot;什么是闭包&quot;&gt;&lt;a href=&quot;#什么是闭包&quot; class=&quot;headerlink&quot; title=&quot;什么是闭包&quot;&gt;&lt;/a&gt;什么是闭包&lt;/h2&gt;&lt;p&gt;MDN对闭包的定义为：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;闭包是指那些能够访问自由变量的函数。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;阮老师对闭包的定义为：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt; 闭包就是能够读取其他函数内部变量的函数。&lt;/p&gt;
-&lt;p&gt; 可以把闭包简单理解成”定义在一个函数内部的函数”。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;红宝书对闭包的定义为：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;　闭包是指有权访问另一个函数作用域中的变量的函数&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;那么圣经犀牛书对闭包定义为：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;函数对象可以通过作用域链相互关联起来，函数体内部的变量都可以保存在函数作用域内，这种特性在计算机科学文献中称为‘闭包’”&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Javascript基础" scheme="http://adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
     
   </entry>
   
