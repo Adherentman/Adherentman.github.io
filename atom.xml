@@ -59,10 +59,11 @@
     <link href="http://adherentman.cn/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%B0%8F%E7%A8%8B%E5%BA%8F.html"/>
     <id>http://adherentman.cn/支付宝小程序.html</id>
     <published>2017-08-20T12:49:24.000Z</published>
-    <updated>2017-08-20T12:54:16.000Z</updated>
+    <updated>2017-08-22T06:57:48.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="支付宝小程序"><a href="#支付宝小程序" class="headerlink" title="支付宝小程序"></a>支付宝小程序</h1><p>这是支付宝小程序编译器的主界面</p>
 <p><img src="/images/paytest1.png" alt="paytest1"></p>
+<a id="more"></a>
 <p>这是 <strong>hello，world</strong>的文件树。是基于js语言。小程序开发者工具默认支持 ES5/ES6/ES7，推荐使用 ES6 以上语法。而且还内置了 <strong>ESLint</strong> 支持</p>
 <p><img src="/images/paytest2.png" alt="paytest2"></p>
 ]]></content>
@@ -70,7 +71,7 @@
     <summary type="html">
     
       &lt;h1 id=&quot;支付宝小程序&quot;&gt;&lt;a href=&quot;#支付宝小程序&quot; class=&quot;headerlink&quot; title=&quot;支付宝小程序&quot;&gt;&lt;/a&gt;支付宝小程序&lt;/h1&gt;&lt;p&gt;这是支付宝小程序编译器的主界面&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/paytest1.png&quot;
+&lt;p&gt;&lt;img src=&quot;/images/paytest1.png&quot; alt=&quot;paytest1&quot;&gt;&lt;/p&gt;
     
     </summary>
     
