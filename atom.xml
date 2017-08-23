@@ -144,7 +144,7 @@
     <link href="http://adherentman.cn/JavaScript%E5%87%BD%E6%95%B0.html"/>
     <id>http://adherentman.cn/JavaScript函数.html</id>
     <published>2017-08-16T14:45:00.000Z</published>
-    <updated>2017-08-23T15:11:53.000Z</updated>
+    <updated>2017-08-23T15:24:03.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="JavaScript函数"><a href="#JavaScript函数" class="headerlink" title="JavaScript函数"></a>JavaScript函数</h1><p>在JavaScript中，函数是一等公民。函数是第一型对象。</p>
 <p>所以说，我们可以将其视为其他任意类型的JavaScript对象。</p>
@@ -161,6 +161,18 @@
 <h1 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h1><p>回调函数的术语源于：我们定义一个函数，以便其他一些代码在适当的时机回头再调用他。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">useless</span>(<span class="params">callback</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> callback();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> text = <span class="string">'Demo arigato'</span>;</div><div class="line">assert(useless(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> text;</div><div class="line">&#125;) ===text, <span class="string">"This useless function works!"</span> + text);</div><div class="line"><span class="comment">//assert是测试函数</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">assert</span>(<span class="params">value, desc</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> li = <span class="built_in">document</span>.createElement(<span class="string">"li"</span>);</div><div class="line">  li.className = value ? <span class="string">"pase"</span> : <span class="string">"fail"</span>;</div><div class="line">  li.appendChild(<span class="built_in">document</span>.createTextNode(desc));</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">"results"</span>).appendChild(li);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="函数字面量"><a href="#函数字面量" class="headerlink" title="函数字面量"></a>函数字面量</h2><p>函数字面量由4个部分组成</p>
+<ul>
+<li>function关键字</li>
+<li>可选名称。</li>
+<li>括号内部，一个以逗号分隔的参数列表。</li>
+<li>包含在大括号内的一系列JavaScript语句叫 <strong>函数体</strong>。</li>
+</ul>
+<p>注意：</p>
+<blockquote>
+<p>所有的函数都有name属性，该属性保存的是他们的名称的字符串。</p>
+<p>当然没有名称的函数也有name属性，只是为空字符串。</p>
+</blockquote>
 ]]></content>
     
     <summary type="html">
