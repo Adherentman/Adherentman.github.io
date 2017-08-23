@@ -144,7 +144,7 @@
     <link href="http://adherentman.cn/JavaScript%E5%87%BD%E6%95%B0.html"/>
     <id>http://adherentman.cn/JavaScript函数.html</id>
     <published>2017-08-16T14:45:00.000Z</published>
-    <updated>2017-08-23T15:31:08.000Z</updated>
+    <updated>2017-08-23T15:33:02.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="JavaScript函数"><a href="#JavaScript函数" class="headerlink" title="JavaScript函数"></a>JavaScript函数</h1><p>在JavaScript中，函数是一等公民。函数是第一型对象。</p>
 <p>所以说，我们可以将其视为其他任意类型的JavaScript对象。</p>
@@ -176,6 +176,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> canFly = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p>这个函数我们可以通过它的引用 <strong>canFly</strong> 进行调用。它与canFly函数几乎一模一样，但是不一样的地方在于它的字符串值为” ”，而不是“canFly”。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.isDeadly = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>我们可以（ <strong>window.isDeadly() || isDeadly()</strong> ），其实这就跟命名函数几乎一模一样了。</p>
 ]]></content>
     
     <summary type="html">
