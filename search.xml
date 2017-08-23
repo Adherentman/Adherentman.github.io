@@ -26,7 +26,7 @@
     <entry>
       <title><![CDATA[JavaScript函数]]></title>
       <url>%2FJavaScript%E5%87%BD%E6%95%B0.html</url>
-      <content type="text"><![CDATA[JavaScript函数在JavaScript中，函数是一等公民。]]></content>
+      <content type="text"><![CDATA[JavaScript函数在JavaScript中，函数是一等公民。函数是第一型对象。 所以说，我们可以将其视为其他任意类型的JavaScript对象。 在JavaScript中函数可以： 可以赋值给变量，数组，或其他对象的属性 可以通过字面量进行创建 将其作为参数进行传递 可以作为函数的返回值进行返回 可以拥有动态创建并赋值的属性 最重要是的，它们还可以被调用。这些调用通常是以异步方式进行调用。 回调回调函数的术语源于：我们定义一个函数，以便其他一些代码在适当的时机回头再调用他。 123function useless(callback)&#123; return callback();&#125; 123456789101112var text = 'Demo arigato';assert(useless(function()&#123; return text;&#125;) ===text, "This useless function works!" + text);//assert是测试函数function assert(value, desc)&#123; var li = document.createElement("li"); li.className = value ? "pase" : "fail"; li.appendChild(document.createTextNode(desc)); document.getElementById("results").appendChild(li);&#125;;]]></content>
     </entry>
 
     
