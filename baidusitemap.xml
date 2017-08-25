@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://adherentman.cn/JavaScript%E5%8F%98%E9%87%8F.html</loc>
+    <lastmod>2017-08-25T16:06:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript变量+方法</title>
+        <pubTime>2017-04-24T05:55:00.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="Javascript基础" url="http://adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://adherentman.cn/JavaScript%E5%87%BD%E6%95%B0.html</loc>
     <lastmod>2017-08-24T11:43:54.000Z</lastmod>
     <data>
@@ -564,26 +584,6 @@
         <display>
         <title>JavaScript基本概念（高程3）</title>
         <pubTime>2017-04-11T02:49:00.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="Javascript基础" url="http://adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://adherentman.cn/JavaScript%E5%8F%98%E9%87%8F.html</loc>
-    <lastmod>2017-05-26T09:49:01.000Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript变量+方法</title>
-        <pubTime>2017-04-24T05:55:00.000Z</pubTime>
         
         <tag>JavaScript</tag>
          

@@ -1519,7 +1519,7 @@
       
         
           <h1 id="JavaScript变量-方法"><a href="#JavaScript变量-方法" class="headerlink" title="JavaScript变量+方法"></a>JavaScript变量+方法</h1><p>ECMAScript变量可能包含两种不同数据类型的值：基本类型值和引用类型值。</p>
-<p><strong>基本类型值</strong>指的是简单的数据段，而<strong>引用类型值</strong>指那些可能有多个值构成的对象。</p>
+<p><strong>基本类型值</strong>指的是简单的数据段，而<strong>引用类型值</strong>指那些可能有多个值构成的<strong>对象</strong>。</p>
 <h2 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTen</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">  num +=<span class="number">10</span>;</div><div class="line">  <span class="keyword">return</span> num;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> count =<span class="number">20</span>;</div><div class="line"><span class="keyword">var</span> result = addTen(count);</div><div class="line">alert(count); 		<span class="comment">//20,没变化</span></div><div class="line">alert(result);		<span class="comment">//30</span></div></pre></td></tr></table></figure>
 <p>在这上面看了高程三的话懵懵懂懂，实际上在说的是，要执行<code>alert(count);</code>时<code>count</code>只是把20复制给参数num，以便20在addTen()中使用，在函数里面num的值确实+10变成了30，但是不影响外部count的变量。</p>
           <!--noindex-->
