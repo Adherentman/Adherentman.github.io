@@ -164,9 +164,9 @@
     <link href="http://adherentman.cn/JavaScript%E5%87%BD%E6%95%B0.html"/>
     <id>http://adherentman.cn/JavaScript函数.html</id>
     <published>2017-08-16T14:45:00.000Z</published>
-    <updated>2017-08-24T11:43:54.000Z</updated>
+    <updated>2017-08-29T11:02:08.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="JavaScript函数"><a href="#JavaScript函数" class="headerlink" title="JavaScript函数"></a>JavaScript函数</h1><p>在JavaScript中，函数是一等公民。函数是第一型对象。</p>
+    <content type="html"><![CDATA[<h1 id="JavaScript函数"><a href="#JavaScript函数" class="headerlink" title="JavaScript函数"></a>JavaScript函数</h1><p>在JavaScript中，函数是<strong>一等公民</strong>。函数是<strong>第一型对象</strong>。</p>
 <p>所以说，我们可以将其视为其他任意类型的JavaScript对象。</p>
 <a id="more"></a>
 <p>在JavaScript中函数可以：</p>
@@ -201,7 +201,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;JavaScript函数&quot;&gt;&lt;a href=&quot;#JavaScript函数&quot; class=&quot;headerlink&quot; title=&quot;JavaScript函数&quot;&gt;&lt;/a&gt;JavaScript函数&lt;/h1&gt;&lt;p&gt;在JavaScript中，函数是一等公民。函数是第一型对象。&lt;/p&gt;
+      &lt;h1 id=&quot;JavaScript函数&quot;&gt;&lt;a href=&quot;#JavaScript函数&quot; class=&quot;headerlink&quot; title=&quot;JavaScript函数&quot;&gt;&lt;/a&gt;JavaScript函数&lt;/h1&gt;&lt;p&gt;在JavaScript中，函数是&lt;strong&gt;一等公民&lt;/strong&gt;。函数是&lt;strong&gt;第一型对象&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;所以说，我们可以将其视为其他任意类型的JavaScript对象。&lt;/p&gt;
     
     </summary>
