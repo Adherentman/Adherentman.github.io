@@ -218,13 +218,13 @@
     <link href="http://adherentman.cn/React%20Native%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html"/>
     <id>http://adherentman.cn/React Native环境配置.html</id>
     <published>2017-08-14T04:32:53.000Z</published>
-    <updated>2017-08-22T07:01:00.000Z</updated>
+    <updated>2017-08-30T08:17:49.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="React-Native环境配置"><a href="#React-Native环境配置" class="headerlink" title="React Native环境配置"></a>React Native环境配置</h1><h1 id="Ios开发环境"><a href="#Ios开发环境" class="headerlink" title="Ios开发环境"></a>Ios开发环境</h1><p>因为我是在mac下搭建环境的。所以比较方便。</p>
 <ul>
-<li><p>Xcode时必须的！</p>
+<li><p>Xcode时<strong>必须</strong>的！</p>
 </li>
-<li><p>brew install node        //电脑需要有node</p>
+<li><p>brew install node        //电脑需要有<strong>node</strong></p>
 </li>
 <li><p>brew install watchman    //这是用来监视文件系统中的更改的工具</p>
 </li>
@@ -293,9 +293,9 @@
     
       &lt;h1 id=&quot;React-Native环境配置&quot;&gt;&lt;a href=&quot;#React-Native环境配置&quot; class=&quot;headerlink&quot; title=&quot;React Native环境配置&quot;&gt;&lt;/a&gt;React Native环境配置&lt;/h1&gt;&lt;h1 id=&quot;Ios开发环境&quot;&gt;&lt;a href=&quot;#Ios开发环境&quot; class=&quot;headerlink&quot; title=&quot;Ios开发环境&quot;&gt;&lt;/a&gt;Ios开发环境&lt;/h1&gt;&lt;p&gt;因为我是在mac下搭建环境的。所以比较方便。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Xcode时必须的！&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Xcode时&lt;strong&gt;必须&lt;/strong&gt;的！&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;brew install node        //电脑需要有node&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;brew install node        //电脑需要有&lt;strong&gt;node&lt;/strong&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;brew install watchman    //这是用来监视文件系统中的更改的工具&lt;/p&gt;
 &lt;/li&gt;
