@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://adherentman.cn/React-Router.html</loc>
+    <lastmod>2017-08-31T06:51:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>React-Router v3</title>
+        <pubTime>2017-07-17T08:02:36.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>React</tag>
+         
+         
+           
+             
+              <breadCrumb title="React" url="http://adherentman.cn/categories/React/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://adherentman.cn/React%20Native%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html</loc>
     <lastmod>2017-08-30T08:17:49.000Z</lastmod>
     <data>
@@ -208,28 +230,6 @@
            
              
               <breadCrumb title="阿里云服务的使用" url="http://adherentman.cn/categories/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://adherentman.cn/React-Router.html</loc>
-    <lastmod>2017-08-14T06:53:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>React-Router v3</title>
-        <pubTime>2017-07-17T08:02:36.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>React</tag>
-         
-         
-           
-             
-              <breadCrumb title="React" url="http://adherentman.cn/categories/React/"/>
           
         </display>
     </data>

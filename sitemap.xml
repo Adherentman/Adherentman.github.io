@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://adherentman.cn/React-Router.html</loc>
+    
+    <lastmod>2017-08-31T06:51:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://adherentman.cn/React%20Native%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html</loc>
     
     <lastmod>2017-08-30T08:17:49.000Z</lastmod>
@@ -68,13 +75,6 @@
     <loc>http://adherentman.cn/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91oss%E8%B8%A9%E5%BE%97%E5%9D%91.html</loc>
     
     <lastmod>2017-08-22T06:46:25.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://adherentman.cn/React-Router.html</loc>
-    
-    <lastmod>2017-08-14T06:53:29.000Z</lastmod>
     
   </url>
   
