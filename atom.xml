@@ -405,9 +405,9 @@
     <link href="http://adherentman.cn/%E5%BC%82%E6%AD%A5.html"/>
     <id>http://adherentman.cn/异步.html</id>
     <published>2017-08-01T11:35:44.000Z</published>
-    <updated>2017-08-28T10:58:45.000Z</updated>
+    <updated>2017-09-01T10:03:45.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="异步操作"><a href="#异步操作" class="headerlink" title="异步操作"></a>异步操作</h1><h1 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h1><p>JavaScript 语言对异步编程的实现，就是回调函数。<strong>所谓回调函数，就是把任务的第二段单独写在一个函数里面，等到重新执行这个任务的时候，就直接调用这个函数。</strong>它的英语名字 callback，直译过来就是”重新调用”。</p>
+    <content type="html"><![CDATA[<h1 id="异步操作"><a href="#异步操作" class="headerlink" title="异步操作"></a>异步操作</h1><h1 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h1><p>JavaScript 语言对异步编程的实现，就是回调函数。<strong>所谓回调函数，就是把任务的第二段单独写在一个函数里面，等到重新执行这个任务的时候，就直接调用这个函数。</strong>它的英语名字 callback，直译过来就是”<strong>重新调用</strong>“。</p>
 <p>读取文件进行处理，是这样写的:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fs.readFile(<span class="string">'/etc/passwd'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</div><div class="line">  <span class="built_in">console</span>.log(data);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -472,7 +472,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;异步操作&quot;&gt;&lt;a href=&quot;#异步操作&quot; class=&quot;headerlink&quot; title=&quot;异步操作&quot;&gt;&lt;/a&gt;异步操作&lt;/h1&gt;&lt;h1 id=&quot;回调函数&quot;&gt;&lt;a href=&quot;#回调函数&quot; class=&quot;headerlink&quot; title=&quot;回调函数&quot;&gt;&lt;/a&gt;回调函数&lt;/h1&gt;&lt;p&gt;JavaScript 语言对异步编程的实现，就是回调函数。&lt;strong&gt;所谓回调函数，就是把任务的第二段单独写在一个函数里面，等到重新执行这个任务的时候，就直接调用这个函数。&lt;/strong&gt;它的英语名字 callback，直译过来就是”重新调用”。&lt;/p&gt;
+      &lt;h1 id=&quot;异步操作&quot;&gt;&lt;a href=&quot;#异步操作&quot; class=&quot;headerlink&quot; title=&quot;异步操作&quot;&gt;&lt;/a&gt;异步操作&lt;/h1&gt;&lt;h1 id=&quot;回调函数&quot;&gt;&lt;a href=&quot;#回调函数&quot; class=&quot;headerlink&quot; title=&quot;回调函数&quot;&gt;&lt;/a&gt;回调函数&lt;/h1&gt;&lt;p&gt;JavaScript 语言对异步编程的实现，就是回调函数。&lt;strong&gt;所谓回调函数，就是把任务的第二段单独写在一个函数里面，等到重新执行这个任务的时候，就直接调用这个函数。&lt;/strong&gt;它的英语名字 callback，直译过来就是”&lt;strong&gt;重新调用&lt;/strong&gt;“。&lt;/p&gt;
 &lt;p&gt;读取文件进行处理，是这样写的:&lt;/p&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;fs.readFile(&lt;span class=&quot;string&quot;&gt;&#39;/etc/passwd&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;err, data&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (err) &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; err;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(data);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
