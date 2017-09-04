@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://adherentman.cn/"/>
-  <updated>2017-08-26T06:56:12.000Z</updated>
+  <updated>2017-09-04T12:45:40.000Z</updated>
   <id>http://adherentman.cn/</id>
   
   <author>
@@ -14,6 +14,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习CSS(一)</title>
+    <link href="http://adherentman.cn/%E5%AD%A6CSS%EF%BC%88%E4%B8%80%EF%BC%89.html"/>
+    <id>http://adherentman.cn/学CSS（一）.html</id>
+    <published>2017-09-04T12:26:00.000Z</published>
+    <updated>2017-09-04T12:45:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="学习CSS（一）"><a href="#学习CSS（一）" class="headerlink" title="学习CSS（一）"></a>学习CSS（一）</h1><h1 id="给自己的要求"><a href="#给自己的要求" class="headerlink" title="给自己的要求"></a>给自己的要求</h1><ul>
+<li>class应该用在概念上相似的元素，这些元素可以出现在同一页面上的多个位置。</li>
+<li>ID应该用于不同的唯一的元素。</li>
+</ul>
+<h1 id="DTD（文档类型定义）"><a href="#DTD（文档类型定义）" class="headerlink" title="DTD（文档类型定义）"></a>DTD（文档类型定义）</h1><p>DOCTYPE声明是指HTML文档开头处的一行或两行代码。它描述使用哪个DTD。</p>
+<blockquote>
+<p>但是在HTML5中就不需要URL，浏览器一般不读取这些文件。而是只识别常见的DOCTYPE声明。<br><a id="more"></a></p>
+</blockquote>
+<h1 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h1><p>选择器最常用的两种： <strong>类型选择器</strong> 和 <strong>后代选择器</strong> 。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*类型选择器*/</span></div><div class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: black; &#125;</div><div class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font-weight</span>: bold; &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*后代选择器*/</span></div><div class="line"><span class="selector-tag">blockquote</span> <span class="selector-tag">p</span> &#123; <span class="attribute">padding</span>: <span class="number">15px</span>; &#125;</div></pre></td></tr></table></figure>
+<p>还有两种就是： <strong>ID选择器</strong> 和 <strong>类选择器</strong> 。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#intro</span> &#123; <span class="attribute">font-weight</span>: bold; &#125;			<span class="comment">/*ID选择器*/</span></div><div class="line"><span class="selector-class">.date-posted</span> &#123; <span class="attribute">color</span>: <span class="number">#ccc</span>; &#125;			<span class="comment">/*类选择器*/</span></div></pre></td></tr></table></figure>
+<p>但是类选择器和ID选择器用太多也不是很好。下面有一种方法可以以一种方式对主体和副的地方操作css</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#main-content h2 &#123; font-weight: 1.8em; &#125;</div><div class="line">#secondary-content h2 &#123; font-weight: 1.2em; &#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main-content"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">h2</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">	.....</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"secondary-content"</span>&gt;</span></div><div class="line">  	<span class="tag">&lt;<span class="name">h2</span>&gt;</span>Hi<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">  	....</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span> &#123; <span class="attribute">color </span>: blue; &#125;		<span class="comment">/*链接伪类*/</span></div><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123; <span class="attribute">color </span>: green; &#125;	<span class="comment">/*链接伪类*/</span></div><div class="line"><span class="comment">/*链接伪类只能用于锚元素*/</span></div><div class="line"></div><div class="line">动态伪类</div><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>, <span class="selector-tag">a</span><span class="selector-pseudo">:focus</span>, <span class="selector-tag">a</span><span class="selector-pseudo">:active</span> &#123; <span class="attribute">color</span>: red; &#125;		</div><div class="line"><span class="selector-tag">tr</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">background-color</span>: red; &#125;</div><div class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:focus</span> &#123; <span class="attribute">background-color</span>: yellow; &#125;</div><div class="line"></div><div class="line">伪类链接</div><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">color</span>: olive; &#125;</div></pre></td></tr></table></figure>
+<h2 id="通用选择器"><a href="#通用选择器" class="headerlink" title="通用选择器"></a>通用选择器</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">* &#123;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">  	<span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*删除每个元素上默认的浏览器内边距和外边距*/</span></div></pre></td></tr></table></figure>
+<h2 id="高级选择器之—-子选择器"><a href="#高级选择器之—-子选择器" class="headerlink" title="高级选择器之—-子选择器"></a>高级选择器之—-子选择器</h2><p>后代选择器选择一个元素的所有后代，那么子选择器就只选择元素的直接后代啦！</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">#nav&gt;li &#123;</div><div class="line">  font-size: 30px;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"nav"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/home/"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/Services/"</span>&gt;</span>Services<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  		<span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">        	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/Services/design"</span>&gt;</span>Design<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/Services/development"</span>&gt;</span>Development<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/Services/consultancy"</span>&gt;</span>Consultancy<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  		<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/contact"</span>&gt;</span>Contact Us<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="/images/css1.png" alt="css1"></p>
+<p>子选择器指定列表子元素的样式，但是不影响他的孙元素。</p>
+<p>还有根据一个元素与另一个元素的相邻关系对它应用样式。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;学习CSS（一）&quot;&gt;&lt;a href=&quot;#学习CSS（一）&quot; class=&quot;headerlink&quot; title=&quot;学习CSS（一）&quot;&gt;&lt;/a&gt;学习CSS（一）&lt;/h1&gt;&lt;h1 id=&quot;给自己的要求&quot;&gt;&lt;a href=&quot;#给自己的要求&quot; class=&quot;headerlink&quot; title=&quot;给自己的要求&quot;&gt;&lt;/a&gt;给自己的要求&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;class应该用在概念上相似的元素，这些元素可以出现在同一页面上的多个位置。&lt;/li&gt;
+&lt;li&gt;ID应该用于不同的唯一的元素。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;DTD（文档类型定义）&quot;&gt;&lt;a href=&quot;#DTD（文档类型定义）&quot; class=&quot;headerlink&quot; title=&quot;DTD（文档类型定义）&quot;&gt;&lt;/a&gt;DTD（文档类型定义）&lt;/h1&gt;&lt;p&gt;DOCTYPE声明是指HTML文档开头处的一行或两行代码。它描述使用哪个DTD。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;但是在HTML5中就不需要URL，浏览器一般不读取这些文件。而是只识别常见的DOCTYPE声明。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://adherentman.cn/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="http://adherentman.cn/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -1104,6 +1154,41 @@
   </entry>
   
   <entry>
+    <title>数据库E-R图</title>
+    <link href="http://adherentman.cn/E-R%E5%9B%BE.html"/>
+    <id>http://adherentman.cn/E-R图.html</id>
+    <published>2017-07-17T08:02:36.000Z</published>
+    <updated>2017-07-17T08:06:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="E-R图"><a href="#E-R图" class="headerlink" title="E-R图"></a>E-R图</h1><p>E-R图是指实体-关系-属性三个基本概括数据的基本结构.</p>
+<p>强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。</p>
+<a id="more"></a>
+<ul>
+<li>ER图的实体（entity）即数据模型中的数据对象，例如人、学生、音乐都可以作为一个数据对象，用长方体来表示，每个实体都有自己的实体成员（entity member）或者说实体对象（entity instance），例如学生实体里包括张三、李四等，实体成员（entity member）/实体实例（entity instance） 不需要出现在ER图中。</li>
+</ul>
+<ul>
+<li>ER图的属性（attribute）即数据对象所具有的属性，例如学生具有姓名、学号、年级等属性，用椭圆形表示，属性分为唯一属性（ unique attribute）和非唯一属性，唯一属性指的是唯一可用来标识该实体实例或者成员的属性，用下划线表示，一般来讲实体都至少有一个唯一属性。</li>
+</ul>
+<ul>
+<li>ER图的关系（relationship）用来表现数据对象与数据对象之间的联系，例如学生的实体和成绩表的实体之间有一定的联系，每个学生都有自己的成绩表，这就是一种关系，关系用菱形来表示。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;E-R图&quot;&gt;&lt;a href=&quot;#E-R图&quot; class=&quot;headerlink&quot; title=&quot;E-R图&quot;&gt;&lt;/a&gt;E-R图&lt;/h1&gt;&lt;p&gt;E-R图是指实体-关系-属性三个基本概括数据的基本结构.&lt;/p&gt;
+&lt;p&gt;强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="数据库" scheme="http://adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
     <title>GraphQL基本操作</title>
     <link href="http://adherentman.cn/GraphQL.html"/>
     <id>http://adherentman.cn/GraphQL.html</id>
@@ -1219,87 +1304,6 @@
     
     
       <category term="GraphQL" scheme="http://adherentman.cn/tags/GraphQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React-Router v3</title>
-    <link href="http://adherentman.cn/React-Router.html"/>
-    <id>http://adherentman.cn/React-Router.html</id>
-    <published>2017-07-17T08:02:36.000Z</published>
-    <updated>2017-08-31T06:51:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="React-Router3"><a href="#React-Router3" class="headerlink" title="React-Router3"></a>React-Router3</h1><h3 id="路径语法"><a href="#路径语法" class="headerlink" title="路径语法"></a>路径语法</h3><p>路由路径是匹配一个（或一部分）URL 的 <a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#routepattern" target="_blank" rel="external">一个字符串模式</a>。大部分的路由路径都可以直接按照字面量理解，除了以下几个特殊的符号：</p>
-<ul>
-<li><code>:paramName</code> – 匹配一段位于 <code>/</code>、<code>?</code> 或 <code>#</code> 之后的 URL。 命中的部分将被作为一个<a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params" target="_blank" rel="external">参数</a></li>
-<li><code>()</code> – 在它内部的内容被认为是可选的</li>
-<li><code>*</code> – 匹配任意字符（非贪婪的）直到命中下一个字符或者整个 URL 的末尾，并创建一个 <code>splat</code> <a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params" target="_blank" rel="external">参数</a></li>
-</ul>
-<a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//匹配 /hello/michael 和 /hello/ryan</div><div class="line">&lt;Route path=&quot;/hello/:name&quot;&gt;         </div><div class="line">  </div><div class="line">  </div><div class="line">//匹配 /hello, /hello/02 和 /hello/01</div><div class="line">&lt;Route path=&quot;/hello(/:id)&quot;&gt;   </div><div class="line"></div><div class="line"></div><div class="line">//匹配 /files/hello.jpg和/files/path/to/hello.jpg</div><div class="line">&lt;Route path=&quot;/files/*.*&quot;&gt;</div></pre></td></tr></table></figure>
-<h2 id="Histories"><a href="#Histories" class="headerlink" title="Histories"></a>Histories</h2><p>常用的 <strong>history</strong> 有三种形式， 但是你也可以使用 React Router 实现自定义的 history。</p>
-<ul>
-<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#browserHistory" target="_blank" rel="external"><code>browserHistory</code></a> (推荐)</li>
-<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#hashHistory" target="_blank" rel="external"><code>hashHistory</code></a></li>
-<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#creatememoryhistory" target="_blank" rel="external"><code>createMemoryHistory</code></a></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Router history=&#123;browserHistory&#125;&gt;</div></pre></td></tr></table></figure>
-<h3 id="browserHistory"><a href="#browserHistory" class="headerlink" title="browserHistory"></a><code>browserHistory</code></h3><p>Browser history 是使用 React Router 的应用推荐的 history。它使用浏览器中的 <a href="https://developer.mozilla.org/en-US/docs/Web/API/History" target="_blank" rel="external">History</a> API 用于处理 URL，创建一个像<code>example.com/some/path</code>这样真实的 URL 。</p>
-<h2 id="在组件外部使用导航"><a href="#在组件外部使用导航" class="headerlink" title="在组件外部使用导航"></a>在组件外部使用导航</h2><p>虽然在组件内部可以使用 <code>this.context.router</code> 来实现导航，但许多应用想要在组件外部使用导航。使用Router组件上被赋予的history可以在组件外部实现导航。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;React-Router3&quot;&gt;&lt;a href=&quot;#React-Router3&quot; class=&quot;headerlink&quot; title=&quot;React-Router3&quot;&gt;&lt;/a&gt;React-Router3&lt;/h1&gt;&lt;h3 id=&quot;路径语法&quot;&gt;&lt;a href=&quot;#路径语法&quot; class=&quot;headerlink&quot; title=&quot;路径语法&quot;&gt;&lt;/a&gt;路径语法&lt;/h3&gt;&lt;p&gt;路由路径是匹配一个（或一部分）URL 的 &lt;a href=&quot;https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#routepattern&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;一个字符串模式&lt;/a&gt;。大部分的路由路径都可以直接按照字面量理解，除了以下几个特殊的符号：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;:paramName&lt;/code&gt; – 匹配一段位于 &lt;code&gt;/&lt;/code&gt;、&lt;code&gt;?&lt;/code&gt; 或 &lt;code&gt;#&lt;/code&gt; 之后的 URL。 命中的部分将被作为一个&lt;a href=&quot;https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参数&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;()&lt;/code&gt; – 在它内部的内容被认为是可选的&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;*&lt;/code&gt; – 匹配任意字符（非贪婪的）直到命中下一个字符或者整个 URL 的末尾，并创建一个 &lt;code&gt;splat&lt;/code&gt; &lt;a href=&quot;https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参数&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="React" scheme="http://adherentman.cn/categories/React/"/>
-    
-    
-      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
-    
-      <category term="React" scheme="http://adherentman.cn/tags/React/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据库E-R图</title>
-    <link href="http://adherentman.cn/E-R%E5%9B%BE.html"/>
-    <id>http://adherentman.cn/E-R图.html</id>
-    <published>2017-07-17T08:02:36.000Z</published>
-    <updated>2017-07-17T08:06:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="E-R图"><a href="#E-R图" class="headerlink" title="E-R图"></a>E-R图</h1><p>E-R图是指实体-关系-属性三个基本概括数据的基本结构.</p>
-<p>强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。</p>
-<a id="more"></a>
-<ul>
-<li>ER图的实体（entity）即数据模型中的数据对象，例如人、学生、音乐都可以作为一个数据对象，用长方体来表示，每个实体都有自己的实体成员（entity member）或者说实体对象（entity instance），例如学生实体里包括张三、李四等，实体成员（entity member）/实体实例（entity instance） 不需要出现在ER图中。</li>
-</ul>
-<ul>
-<li>ER图的属性（attribute）即数据对象所具有的属性，例如学生具有姓名、学号、年级等属性，用椭圆形表示，属性分为唯一属性（ unique attribute）和非唯一属性，唯一属性指的是唯一可用来标识该实体实例或者成员的属性，用下划线表示，一般来讲实体都至少有一个唯一属性。</li>
-</ul>
-<ul>
-<li>ER图的关系（relationship）用来表现数据对象与数据对象之间的联系，例如学生的实体和成绩表的实体之间有一定的联系，每个学生都有自己的成绩表，这就是一种关系，关系用菱形来表示。</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;E-R图&quot;&gt;&lt;a href=&quot;#E-R图&quot; class=&quot;headerlink&quot; title=&quot;E-R图&quot;&gt;&lt;/a&gt;E-R图&lt;/h1&gt;&lt;p&gt;E-R图是指实体-关系-属性三个基本概括数据的基本结构.&lt;/p&gt;
-&lt;p&gt;强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据库" scheme="http://adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="数据库" scheme="http://adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
