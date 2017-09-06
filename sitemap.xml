@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://adherentman.cn/JavaScript%E5%87%BD%E6%95%B0.html</loc>
+    
+    <lastmod>2017-09-06T09:43:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://adherentman.cn/JavaScript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5copy.html</loc>
     
     <lastmod>2017-09-06T09:42:48.000Z</lastmod>
@@ -75,13 +82,6 @@
     <loc>http://adherentman.cn/React%20Native%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html</loc>
     
     <lastmod>2017-08-30T08:17:49.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://adherentman.cn/JavaScript%E5%87%BD%E6%95%B0.html</loc>
-    
-    <lastmod>2017-08-29T11:02:08.000Z</lastmod>
     
   </url>
   

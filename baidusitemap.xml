@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://adherentman.cn/JavaScript%E5%87%BD%E6%95%B0.html</loc>
+    <lastmod>2017-09-06T09:43:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript函数</title>
+        <pubTime>2017-08-16T14:45:00.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="Javascript基础" url="http://adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://adherentman.cn/JavaScript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5copy.html</loc>
     <lastmod>2017-09-06T09:42:48.000Z</lastmod>
     <data>
@@ -241,26 +261,6 @@
            
              
               <breadCrumb title="React,React Native,iOS,Android" url="http://adherentman.cn/categories/React-React-Native-iOS-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://adherentman.cn/JavaScript%E5%87%BD%E6%95%B0.html</loc>
-    <lastmod>2017-08-29T11:02:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript函数</title>
-        <pubTime>2017-08-16T14:45:00.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="Javascript基础" url="http://adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
           
         </display>
     </data>
