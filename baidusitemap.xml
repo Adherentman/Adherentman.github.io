@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://adherentman.cn/git.html</loc>
+    <lastmod>2017-09-06T09:40:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>Git基本操作</title>
+        <pubTime>2017-07-25T12:47:00.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="http://adherentman.cn/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://adherentman.cn/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%B0%8F%E7%A8%8B%E5%BA%8F.html</loc>
     <lastmod>2017-09-06T09:40:11.000Z</lastmod>
     <data>
@@ -281,26 +301,6 @@
            
              
               <breadCrumb title="GraphQL" url="http://adherentman.cn/categories/GraphQL/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://adherentman.cn/git.html</loc>
-    <lastmod>2017-08-10T11:04:43.000Z</lastmod>
-    <data>
-        <display>
-        <title>Git基本操作</title>
-        <pubTime>2017-07-25T12:47:00.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="http://adherentman.cn/categories/git/"/>
           
         </display>
     </data>
