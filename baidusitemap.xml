@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://adherentman.cn/%E5%AD%A6CSS%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
+    <lastmod>2017-09-06T09:44:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>学习CSS(一)</title>
+        <pubTime>2017-09-04T12:26:00.000Z</pubTime>
+        
+        <tag>CSS</tag>
+         
+         
+           
+             
+              <breadCrumb title="CSS" url="http://adherentman.cn/categories/CSS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://adherentman.cn/JavaScript%E5%87%BD%E6%95%B0.html</loc>
     <lastmod>2017-09-06T09:43:27.000Z</lastmod>
     <data>
@@ -123,26 +143,6 @@
            
              
               <breadCrumb title="小程序" url="http://adherentman.cn/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://adherentman.cn/%E5%AD%A6CSS%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
-    <lastmod>2017-09-06T09:39:05.000Z</lastmod>
-    <data>
-        <display>
-        <title>学习CSS(一)</title>
-        <pubTime>2017-09-04T12:26:00.000Z</pubTime>
-        
-        <tag>CSS</tag>
-         
-         
-           
-             
-              <breadCrumb title="CSS" url="http://adherentman.cn/categories/CSS/"/>
           
         </display>
     </data>
