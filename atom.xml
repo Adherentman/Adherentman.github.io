@@ -744,9 +744,9 @@
     <link href="http://adherentman.cn/Express.html"/>
     <id>http://adherentman.cn/Express.html</id>
     <published>2017-07-30T02:33:26.000Z</published>
-    <updated>2017-08-07T15:41:19.000Z</updated>
+    <updated>2017-09-06T09:41:52.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Express"><a href="#Express" class="headerlink" title="Express"></a>Express</h1><h2 id="expressjs里的请求参数，4-x里只有3种-都引用官方例子"><a href="#expressjs里的请求参数，4-x里只有3种-都引用官方例子" class="headerlink" title="expressjs里的请求参数，4.x里只有3种(都引用官方例子)"></a>expressjs里的请求参数，4.x里只有3种(都引用官方例子)</h2><ul>
+    <content type="html"><![CDATA[<h2 id="expressjs里的请求参数，4-x里只有3种-都引用官方例子"><a href="#expressjs里的请求参数，4-x里只有3种-都引用官方例子" class="headerlink" title="expressjs里的请求参数，4.x里只有3种(都引用官方例子)"></a>expressjs里的请求参数，4.x里只有3种(都引用官方例子)</h2><ul>
 <li>req.params</li>
 <li>req.body</li>
 <li>req.query</li>
@@ -763,7 +763,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Express&quot;&gt;&lt;a href=&quot;#Express&quot; class=&quot;headerlink&quot; title=&quot;Express&quot;&gt;&lt;/a&gt;Express&lt;/h1&gt;&lt;h2 id=&quot;expressjs里的请求参数，4-x里只有3种-都引用官方例子&quot;&gt;&lt;a href=&quot;#expressjs里的请求参数，4-x里只有3种-都引用官方例子&quot; class=&quot;headerlink&quot; title=&quot;expressjs里的请求参数，4.x里只有3种(都引用官方例子)&quot;&gt;&lt;/a&gt;expressjs里的请求参数，4.x里只有3种(都引用官方例子)&lt;/h2&gt;&lt;ul&gt;
+      &lt;h2 id=&quot;expressjs里的请求参数，4-x里只有3种-都引用官方例子&quot;&gt;&lt;a href=&quot;#expressjs里的请求参数，4-x里只有3种-都引用官方例子&quot; class=&quot;headerlink&quot; title=&quot;expressjs里的请求参数，4.x里只有3种(都引用官方例子)&quot;&gt;&lt;/a&gt;expressjs里的请求参数，4.x里只有3种(都引用官方例子)&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;req.params&lt;/li&gt;
 &lt;li&gt;req.body&lt;/li&gt;
 &lt;li&gt;req.query&lt;/li&gt;
