@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://adherentman.cn/JavaScript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5copy.html</loc>
+    <lastmod>2017-09-06T09:42:48.000Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript基本概念（高程3）</title>
+        <pubTime>2017-04-11T02:49:00.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="Javascript基础" url="http://adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://adherentman.cn/Express.html</loc>
     <lastmod>2017-09-06T09:41:52.000Z</lastmod>
     <data>
@@ -617,26 +637,6 @@
            
              
               <breadCrumb title="数据库" url="http://adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://adherentman.cn/JavaScript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5copy.html</loc>
-    <lastmod>2017-05-26T09:49:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript基本概念（高程3）</title>
-        <pubTime>2017-04-11T02:49:00.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="Javascript基础" url="http://adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
           
         </display>
     </data>
