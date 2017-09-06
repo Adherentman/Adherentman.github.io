@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://adherentman.cn/"/>
-  <updated>2017-09-06T09:44:54.000Z</updated>
+  <updated>2017-09-06T09:48:24.000Z</updated>
   <id>http://adherentman.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://adherentman.cn/%E5%AD%A6CSS%EF%BC%88%E4%B8%80%EF%BC%89.html"/>
     <id>http://adherentman.cn/学CSS（一）.html</id>
     <published>2017-09-04T12:26:00.000Z</published>
-    <updated>2017-09-06T09:44:54.000Z</updated>
+    <updated>2017-09-06T09:48:24.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="给自己的要求"><a href="#给自己的要求" class="headerlink" title="给自己的要求"></a>给自己的要求</h1><ul>
 <li>class应该用在概念上相似的元素，这些元素可以出现在同一页面上的多个位置。</li>
@@ -30,8 +30,8 @@
 <blockquote>
 <p>但是在HTML5中就不需要URL，浏览器一般不读取这些文件。而是只识别常见的DOCTYPE声明。</p>
 </blockquote>
-<a id="more"></a>
 <h1 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h1><p>选择器最常用的两种： <strong>类型选择器</strong> 和 <strong>后代选择器</strong> 。</p>
+<a id="more"></a>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*类型选择器*/</span></div><div class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: black; &#125;</div><div class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font-weight</span>: bold; &#125;</div></pre></td></tr></table></figure>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*后代选择器*/</span></div><div class="line"><span class="selector-tag">blockquote</span> <span class="selector-tag">p</span> &#123; <span class="attribute">padding</span>: <span class="number">15px</span>; &#125;</div></pre></td></tr></table></figure>
 <p>还有两种就是： <strong>ID选择器</strong> 和 <strong>类选择器</strong> 。</p>
@@ -120,6 +120,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;但是在HTML5中就不需要URL，浏览器一般不读取这些文件。而是只识别常见的DOCTYPE声明。&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;h1 id=&quot;选择器&quot;&gt;&lt;a href=&quot;#选择器&quot; class=&quot;headerlink&quot; title=&quot;选择器&quot;&gt;&lt;/a&gt;选择器&lt;/h1&gt;&lt;p&gt;选择器最常用的两种： &lt;strong&gt;类型选择器&lt;/strong&gt; 和 &lt;strong&gt;后代选择器&lt;/strong&gt; 。&lt;/p&gt;
     
     </summary>
     
