@@ -313,7 +313,7 @@
     <link href="http://adherentman.cn/React%20Native%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html"/>
     <id>http://adherentman.cn/React Native环境配置.html</id>
     <published>2017-08-14T04:32:53.000Z</published>
-    <updated>2017-08-30T08:17:49.000Z</updated>
+    <updated>2017-09-06T09:46:29.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="React-Native环境配置"><a href="#React-Native环境配置" class="headerlink" title="React Native环境配置"></a>React Native环境配置</h1><h1 id="Ios开发环境"><a href="#Ios开发环境" class="headerlink" title="Ios开发环境"></a>Ios开发环境</h1><p>因为我是在mac下搭建环境的。所以比较方便。</p>
 <ul>
@@ -400,7 +400,7 @@
     
     </summary>
     
-      <category term="React,React Native,iOS,Android" scheme="http://adherentman.cn/categories/React-React-Native-iOS-Android/"/>
+      <category term="React Native" scheme="http://adherentman.cn/categories/React-Native/"/>
     
     
       <category term="React" scheme="http://adherentman.cn/tags/React/"/>
