@@ -19,7 +19,7 @@
     <entry>
       <title><![CDATA[支付宝小程序踩坑（一）]]></title>
       <url>%2F%E6%94%AF%E4%BB%98%E5%AE%9D%E5%B0%8F%E7%A8%8B%E5%BA%8F.html</url>
-      <content type="text"><![CDATA[支付宝小程序这是支付宝小程序编译器的主界面 这是 hello，world的文件树。是基于js语言。小程序开发者工具默认支持 ES5/ES6/ES7，推荐使用 ES6 以上语法。而且还内置了 ESLint 支持]]></content>
+      <content type="text"><![CDATA[这是支付宝小程序编译器的主界面 这是 hello，world的文件树。是基于js语言。小程序开发者工具默认支持 ES5/ES6/ES7，推荐使用 ES6 以上语法。而且还内置了 ESLint 支持]]></content>
     </entry>
 
     
