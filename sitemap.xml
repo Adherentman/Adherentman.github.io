@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://adherentman.cn/Generator.html</loc>
+    
+    <lastmod>2017-09-06T09:41:16.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://adherentman.cn/git.html</loc>
     
     <lastmod>2017-09-06T09:40:39.000Z</lastmod>
@@ -61,13 +68,6 @@
     <loc>http://adherentman.cn/JavaScript%E5%87%BD%E6%95%B0.html</loc>
     
     <lastmod>2017-08-29T11:02:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://adherentman.cn/Generator.html</loc>
-    
-    <lastmod>2017-08-27T08:35:24.000Z</lastmod>
     
   </url>
   

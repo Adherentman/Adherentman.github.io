@@ -787,9 +787,9 @@
     <link href="http://adherentman.cn/Generator.html"/>
     <id>http://adherentman.cn/Generator.html</id>
     <published>2017-07-29T06:21:06.000Z</published>
-    <updated>2017-08-27T08:35:24.000Z</updated>
+    <updated>2017-09-06T09:41:16.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Generator函数"><a href="#Generator函数" class="headerlink" title="Generator函数"></a>Generator函数</h1><p>Generator最大的特点就是定义的函数可以被<strong>暂停执行</strong>.</p>
+    <content type="html"><![CDATA[<p>Generator最大的特点就是定义的函数可以被<strong>暂停执行</strong>.</p>
 <h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>迭代器 iterator, infinite range, 可以暂停函数, lazy evaluation, 用来实现 async/await 啊, 棒棒哒.</p>
 <p>async generator/iterator </p>
 <blockquote>
@@ -826,7 +826,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Generator函数&quot;&gt;&lt;a href=&quot;#Generator函数&quot; class=&quot;headerlink&quot; title=&quot;Generator函数&quot;&gt;&lt;/a&gt;Generator函数&lt;/h1&gt;&lt;p&gt;Generator最大的特点就是定义的函数可以被&lt;strong&gt;暂停执行&lt;/strong&gt;.&lt;/p&gt;
+      &lt;p&gt;Generator最大的特点就是定义的函数可以被&lt;strong&gt;暂停执行&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;作用&quot;&gt;&lt;a href=&quot;#作用&quot; class=&quot;headerlink&quot; title=&quot;作用&quot;&gt;&lt;/a&gt;作用&lt;/h2&gt;&lt;p&gt;迭代器 iterator, infinite range, 可以暂停函数, lazy evaluation, 用来实现 async/await 啊, 棒棒哒.&lt;/p&gt;
 &lt;p&gt;async generator/iterator &lt;/p&gt;
 &lt;blockquote&gt;
