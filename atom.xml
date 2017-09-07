@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://adherentman.cn/"/>
-  <updated>2017-09-07T04:49:47.000Z</updated>
+  <updated>2017-09-07T05:23:56.000Z</updated>
   <id>http://adherentman.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://adherentman.cn/%E5%AD%A6%E4%B9%A0CSS(%E4%BA%8C).html"/>
     <id>http://adherentman.cn/学习CSS(二).html</id>
     <published>2017-09-06T09:38:00.000Z</published>
-    <updated>2017-09-07T04:49:47.000Z</updated>
+    <updated>2017-09-07T05:23:56.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h1><p>页面上的每个元素被看做一个矩形框，这个框由元素的内容、内边距（padding）、边框（border）、和外边距（margin）组成。</p>
 <p>##外边距叠加</p>
@@ -46,7 +46,12 @@
 <h2 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h2><p>如果对一个元素进行相对定位，其实就是让这个元素“相对于”它的起点移动。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">#myBox &#123;</div><div class="line">width: 200px;</div><div class="line">height: 200px;</div><div class="line">background: red;</div><div class="line">&#125;</div><div class="line">#myBox1 &#123;</div><div class="line">position: relative;</div><div class="line">width: 200px;</div><div class="line">height: 200px;</div><div class="line">background: blue;</div><div class="line">&#125;</div><div class="line">#myBox2 &#123;</div><div class="line">position: relative;</div><div class="line">left: 20px;</div><div class="line">top: 20px;</div><div class="line">width: 200px;</div><div class="line">height: 200px;</div><div class="line">background: gray;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myBox"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myBox1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myBox2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><img src="/images/css9.png" alt="css9"></p>
-<h2 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h2>]]></content>
+<h2 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h2><p>绝对定位使元素的位置与文档流无关。</p>
+<p>绝对定位的元素的位置是相对于距离它最近的那个已定位的祖先元素确定的。如果元素没有已定位的祖先元素，那么它的位置是相对于初始包含块的。</p>
+<p>接下来我们让一个文本段落对准一个大框的右下角：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#branding &#123;</div><div class="line">width: 20em;</div><div class="line">height: 10em;</div><div class="line">position: relative;</div><div class="line">background: black;</div><div class="line">&#125;</div><div class="line">#branding .tel &#123;</div><div class="line">position: absolute;</div><div class="line">right: 1em;</div><div class="line">bottom: 1em;</div><div class="line">text-align: right;</div><div class="line">color: white;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"branding"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"tel"</span>&gt;</span>Tel: 0845 838 6163<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="/images/css10.png" alt="css10"></p>
+]]></content>
     
     <summary type="html">
     
