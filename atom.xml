@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://adherentman.cn/"/>
-  <updated>2017-09-07T05:23:56.000Z</updated>
+  <updated>2017-09-07T05:58:52.000Z</updated>
   <id>http://adherentman.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://adherentman.cn/%E5%AD%A6%E4%B9%A0CSS(%E4%BA%8C).html"/>
     <id>http://adherentman.cn/学习CSS(二).html</id>
     <published>2017-09-06T09:38:00.000Z</published>
-    <updated>2017-09-07T05:23:56.000Z</updated>
+    <updated>2017-09-07T05:58:52.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h1><p>页面上的每个元素被看做一个矩形框，这个框由元素的内容、内边距（padding）、边框（border）、和外边距（margin）组成。</p>
 <p>##外边距叠加</p>
