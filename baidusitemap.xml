@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>http://adherentman.cn/React%20Native%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html</loc>
+    <lastmod>2017-09-18T01:28:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>React Native iOS/android环境配置</title>
+        <pubTime>2017-08-14T04:32:53.000Z</pubTime>
+        
+        <tag>React</tag>
+         
+        <tag>React Native</tag>
+         
+        <tag>iOS</tag>
+         
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="React Native" url="http://adherentman.cn/categories/React-Native/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://adherentman.cn/JavaScript%E5%87%BD%E6%95%B0.html</loc>
     <lastmod>2017-09-13T06:31:17.000Z</lastmod>
     <data>
@@ -57,32 +83,6 @@
            
              
               <breadCrumb title="CSS" url="http://adherentman.cn/categories/CSS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://adherentman.cn/React%20Native%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html</loc>
-    <lastmod>2017-09-06T09:46:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>React Native iOS/android环境配置</title>
-        <pubTime>2017-08-14T04:32:53.000Z</pubTime>
-        
-        <tag>React</tag>
-         
-        <tag>React Native</tag>
-         
-        <tag>iOS</tag>
-         
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="React Native" url="http://adherentman.cn/categories/React-Native/"/>
           
         </display>
     </data>

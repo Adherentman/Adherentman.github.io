@@ -402,7 +402,7 @@
     <link href="http://adherentman.cn/React%20Native%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html"/>
     <id>http://adherentman.cn/React Native环境配置.html</id>
     <published>2017-08-14T04:32:53.000Z</published>
-    <updated>2017-09-06T09:46:29.000Z</updated>
+    <updated>2017-09-18T01:28:27.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="React-Native环境配置"><a href="#React-Native环境配置" class="headerlink" title="React Native环境配置"></a>React Native环境配置</h1><h1 id="Ios开发环境"><a href="#Ios开发环境" class="headerlink" title="Ios开发环境"></a>Ios开发环境</h1><p>因为我是在mac下搭建环境的。所以比较方便。</p>
 <ul>
@@ -424,7 +424,7 @@
 <p><img src="/images/xcode文件.png" alt="xcode文件"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">接着在终端里</div><div class="line">cd AwesomeProject</div><div class="line">then：</div><div class="line">react-native run-ios</div></pre></td></tr></table></figure>
 <p>接下来我们等就好了</p>
-<p><img src="/images/iphone6.png" alt="iphone6"></p>
+<p><img src="/images/iphonex.png" alt="iphone6"></p>
 <p>这就是成功界面</p>
 <p>恭喜🎉！</p>
 <h1 id="Android环境"><a href="#Android环境" class="headerlink" title="Android环境"></a>Android环境</h1><p>第一步与ios一样</p>
