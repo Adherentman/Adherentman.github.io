@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://adherentman.cn/"/>
-  <updated>2017-09-07T06:33:42.000Z</updated>
+  <updated>2017-09-22T09:51:26.000Z</updated>
   <id>http://adherentman.cn/</id>
   
   <author>
@@ -14,6 +14,93 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React生命周期</title>
+    <link href="http://adherentman.cn/React%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html"/>
+    <id>http://adherentman.cn/React生命周期.html</id>
+    <published>2017-09-22T09:48:00.000Z</published>
+    <updated>2017-09-22T09:51:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="React生命周期"><a href="#React生命周期" class="headerlink" title="React生命周期"></a>React生命周期</h1><p>生命周期可能经历如下三个经历：</p>
+<blockquote>
+<p>装载过程(Mount): 把组件第一次在DOM树中渲染的过程；</p>
+<p>更新过程(Update): 组件被重新渲染的过程;</p>
+<p>卸载过程(Unmount): 组件从DOM中删除的过程;</p>
+</blockquote>
+<a id="more"></a>
+<p>接下来，一个一个解释：</p>
+<h2 id="装载过程"><a href="#装载过程" class="headerlink" title="装载过程"></a>装载过程</h2><ol>
+<li>constructor</li>
+<li>getInitialState</li>
+<li>getDefaultProps</li>
+<li>componentWillMount</li>
+<li>render</li>
+<li>componentDidMount</li>
+</ol>
+<h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><ul>
+<li>一个React组件需要constructor，往往是为了达到下面的目的<ul>
+<li>初始化state，因为组件生命周期中任何函数都可能要访问state</li>
+<li>绑定成员函数的this环境<ul>
+<li>举个例子：</li>
+<li>this.onClickIncrementButton = this.onClickIncrementButton.bind(this);</li>
+<li>这条语句的作用，就是通过<strong>bind方法</strong>让当前实例中onClickIncrementButton函数被调用时，this始终是指向当前组件实例。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><ul>
+<li><p><code>getInitialState</code>和<code>getDefaultProps</code>是在React.createClass方法创造的组件类才会用到。</p>
+<ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> Sample = React.createClass (&#123;</div><div class="line">    <span class="attr">getInitialState</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> &#123;<span class="attr">foo</span>: <span class="string">'bar'</span>&#125;;</div><div class="line">    &#125;,</div><div class="line">  	<span class="attr">getDefaultProps</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> &#123;<span class="attr">sampleProp</span>: <span class="number">0</span>&#125;;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>在ES6的话</p>
+<ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Sample</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(props) &#123;</div><div class="line">    <span class="keyword">super</span>(props);</div><div class="line">    <span class="keyword">this</span>.state = &#123;</div><div class="line">     <span class="attr">foo</span>: <span class="string">'bar'</span></div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line">Sample.defaultProps = &#123;</div><div class="line">  <span class="attr">sampleProp</span>: <span class="number">0</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><ul>
+<li><code>render</code>函数是一个纯函数。完全根据this.state 和  this.props来决定返回的结果，而且不要产生任何副作用。</li>
+<li>在render函数中去<strong>调用this.setState毫无疑问是错误</strong>的。因为一个纯函数不应该<strong>引起状态的改变</strong>。</li>
+</ul>
+<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><ul>
+<li>在装载过程中，<code>componentWillMount</code>会在调用<code>render</code>函数之前调用。<ul>
+<li><code>componentDidMount</code>会在调用<code>render</code>函数之后调用。</li>
+</ul>
+</li>
+<li>这两个函数是<code>render</code>函数的前哨和后卫。</li>
+<li>但是一般我们都不用定义<code>componentWillMount</code>,因为这个函数发生在”将要装载”的时候，这个时候没有任何渲染出来的结果。即使我们去调用this.setState修改状态也不会引发重新绘制。<ul>
+<li>也就是说所有可以在<code>componentWillMount</code>中做的事情，我们都可以提前到<code>constructor</code>中去做。</li>
+</ul>
+</li>
+<li>现在我们来说说<code>componentDidMount</code>这个函数，</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;React生命周期&quot;&gt;&lt;a href=&quot;#React生命周期&quot; class=&quot;headerlink&quot; title=&quot;React生命周期&quot;&gt;&lt;/a&gt;React生命周期&lt;/h1&gt;&lt;p&gt;生命周期可能经历如下三个经历：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;装载过程(Mount): 把组件第一次在DOM树中渲染的过程；&lt;/p&gt;
+&lt;p&gt;更新过程(Update): 组件被重新渲染的过程;&lt;/p&gt;
+&lt;p&gt;卸载过程(Unmount): 组件从DOM中删除的过程;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="React" scheme="http://adherentman.cn/categories/React/"/>
+    
+    
+      <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
+    
+      <category term="React" scheme="http://adherentman.cn/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>学习CSS(二)</title>
@@ -313,7 +400,7 @@
     <link href="http://adherentman.cn/JavaScript%E5%87%BD%E6%95%B0.html"/>
     <id>http://adherentman.cn/JavaScript函数.html</id>
     <published>2017-08-16T14:45:00.000Z</published>
-    <updated>2017-09-13T06:31:17.000Z</updated>
+    <updated>2017-09-22T09:50:14.000Z</updated>
     
     <content type="html"><![CDATA[<p>在JavaScript中，函数是<strong>一等公民</strong>。函数是<strong>第一型对象</strong>。</p>
 <p>所以说，我们可以将其视为其他任意类型的JavaScript对象。</p>
@@ -390,7 +477,7 @@
     
     </summary>
     
-      <category term="Javascript基础" scheme="http://adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
+      <category term="Javascript修仙之旅" scheme="http://adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
     
     
       <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
@@ -402,7 +489,7 @@
     <link href="http://adherentman.cn/React%20Native%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html"/>
     <id>http://adherentman.cn/React Native环境配置.html</id>
     <published>2017-08-14T04:32:53.000Z</published>
-    <updated>2017-09-18T01:28:27.000Z</updated>
+    <updated>2017-09-18T01:30:40.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="React-Native环境配置"><a href="#React-Native环境配置" class="headerlink" title="React Native环境配置"></a>React Native环境配置</h1><h1 id="Ios开发环境"><a href="#Ios开发环境" class="headerlink" title="Ios开发环境"></a>Ios开发环境</h1><p>因为我是在mac下搭建环境的。所以比较方便。</p>
 <ul>
@@ -424,7 +511,7 @@
 <p><img src="/images/xcode文件.png" alt="xcode文件"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">接着在终端里</div><div class="line">cd AwesomeProject</div><div class="line">then：</div><div class="line">react-native run-ios</div></pre></td></tr></table></figure>
 <p>接下来我们等就好了</p>
-<p><img src="/images/iphonex.png" alt="iphone6"></p>
+<p><img src="/images/iphonex.png" alt="iphonex"></p>
 <p>这就是成功界面</p>
 <p>恭喜🎉！</p>
 <h1 id="Android环境"><a href="#Android环境" class="headerlink" title="Android环境"></a>Android环境</h1><p>第一步与ios一样</p>
@@ -507,7 +594,7 @@
     <link href="http://adherentman.cn/Javascript%E5%AF%B9%E8%B1%A1.html"/>
     <id>http://adherentman.cn/Javascript对象.html</id>
     <published>2017-08-02T14:30:44.000Z</published>
-    <updated>2017-08-09T13:34:34.000Z</updated>
+    <updated>2017-09-22T09:50:10.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Javascript对象"><a href="#Javascript对象" class="headerlink" title="Javascript对象"></a>Javascript对象</h1><p>在JavaScript中，数组是对象，函数是对象，正则表达式是对象。那么对象自然也是对象。</p>
 <ul>
@@ -577,7 +664,7 @@
     
     </summary>
     
-      <category term="Javascript基础" scheme="http://adherentman.cn/categories/Javascript%E5%9F%BA%E7%A1%80/"/>
+      <category term="Javascript修仙之旅" scheme="http://adherentman.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
     
     
       <category term="JavaScript" scheme="http://adherentman.cn/tags/JavaScript/"/>
@@ -1284,41 +1371,6 @@
       <category term="git" scheme="http://adherentman.cn/tags/git/"/>
     
       <category term="hexo" scheme="http://adherentman.cn/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据库E-R图</title>
-    <link href="http://adherentman.cn/E-R%E5%9B%BE.html"/>
-    <id>http://adherentman.cn/E-R图.html</id>
-    <published>2017-07-17T08:02:36.000Z</published>
-    <updated>2017-07-17T08:06:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="E-R图"><a href="#E-R图" class="headerlink" title="E-R图"></a>E-R图</h1><p>E-R图是指实体-关系-属性三个基本概括数据的基本结构.</p>
-<p>强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。</p>
-<a id="more"></a>
-<ul>
-<li>ER图的实体（entity）即数据模型中的数据对象，例如人、学生、音乐都可以作为一个数据对象，用长方体来表示，每个实体都有自己的实体成员（entity member）或者说实体对象（entity instance），例如学生实体里包括张三、李四等，实体成员（entity member）/实体实例（entity instance） 不需要出现在ER图中。</li>
-</ul>
-<ul>
-<li>ER图的属性（attribute）即数据对象所具有的属性，例如学生具有姓名、学号、年级等属性，用椭圆形表示，属性分为唯一属性（ unique attribute）和非唯一属性，唯一属性指的是唯一可用来标识该实体实例或者成员的属性，用下划线表示，一般来讲实体都至少有一个唯一属性。</li>
-</ul>
-<ul>
-<li>ER图的关系（relationship）用来表现数据对象与数据对象之间的联系，例如学生的实体和成绩表的实体之间有一定的联系，每个学生都有自己的成绩表，这就是一种关系，关系用菱形来表示。</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;E-R图&quot;&gt;&lt;a href=&quot;#E-R图&quot; class=&quot;headerlink&quot; title=&quot;E-R图&quot;&gt;&lt;/a&gt;E-R图&lt;/h1&gt;&lt;p&gt;E-R图是指实体-关系-属性三个基本概括数据的基本结构.&lt;/p&gt;
-&lt;p&gt;强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据库" scheme="http://adherentman.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="数据库" scheme="http://adherentman.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
