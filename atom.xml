@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://adherentman.cn/"/>
-  <updated>2017-09-22T09:51:26.000Z</updated>
+  <updated>2017-09-24T12:42:49.000Z</updated>
   <id>http://adherentman.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://adherentman.cn/React%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html"/>
     <id>http://adherentman.cn/React生命周期.html</id>
     <published>2017-09-22T09:48:00.000Z</published>
-    <updated>2017-09-22T09:51:26.000Z</updated>
+    <updated>2017-09-24T12:42:49.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="React生命周期"><a href="#React生命周期" class="headerlink" title="React生命周期"></a>React生命周期</h1><p>生命周期可能经历如下三个经历：</p>
 <blockquote>
@@ -78,7 +78,24 @@
 <li>也就是说所有可以在<code>componentWillMount</code>中做的事情，我们都可以提前到<code>constructor</code>中去做。</li>
 </ul>
 </li>
-<li>现在我们来说说<code>componentDidMount</code>这个函数，</li>
+<li>我们来说说<code>componentDidMount</code>这个函数，它仅在浏览器端执行。</li>
+</ul>
+<h2 id="更新过程"><a href="#更新过程" class="headerlink" title="更新过程"></a>更新过程</h2><ol>
+<li>componentWillReceiveProps</li>
+<li>shouldComponentUpdate</li>
+<li>componentWillUpdate</li>
+<li>render</li>
+<li>componentDidUpdate</li>
+</ol>
+<h3 id="1-1"><a href="#1-1" class="headerlink" title="1"></a>1</h3><ul>
+<li><code>componentWillReceiveProps</code><ul>
+<li>只要是父组件的<code>render</code>函数被调用，在<code>render</code>函数里面被渲染的子组件就会经历更新过程。不管父组件传给子组件的props有没有改变，都会触发子组件的<code>componentWillReceiveProps</code>函数。</li>
+<li>还有，通过<code>this.setState</code>方法触发的更新过程不会调用这个函数。<ul>
+<li>因为这个函数适合根据新的<code>props</code>值来计算出是不是要更新内部状态<code>state</code>。更新组件内部状态的方法就是<code>this.setState</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 ]]></content>
     
