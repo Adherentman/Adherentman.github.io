@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://adherentman.cn/"/>
-  <updated>2017-09-24T12:42:49.000Z</updated>
+  <updated>2017-09-25T11:46:24.000Z</updated>
   <id>http://adherentman.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://adherentman.cn/React%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html"/>
     <id>http://adherentman.cn/React生命周期.html</id>
     <published>2017-09-22T09:48:00.000Z</published>
-    <updated>2017-09-24T12:42:49.000Z</updated>
+    <updated>2017-09-25T11:46:24.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="React生命周期"><a href="#React生命周期" class="headerlink" title="React生命周期"></a>React生命周期</h1><p>生命周期可能经历如下三个经历：</p>
 <blockquote>
@@ -96,6 +96,25 @@
 </li>
 </ul>
 </li>
+</ul>
+<h3 id="2-1"><a href="#2-1" class="headerlink" title="2"></a>2</h3><ul>
+<li><code>shouldComponentUpdate(nextProps, nextState)</code><ul>
+<li>这个函数重要因为，它决定了一个组件什么时候不需要渲染。</li>
+<li>这个函数返回一个布尔值，告诉React库这个组件在这次更新过程中是否要继续。</li>
+<li>在更新过程中，React库首先会调用<code>shouldComponentUpdate</code>函数<ul>
+<li>如果这个函数返回一个<code>true</code>，那就会继续更新过程，接下来调用render函数。</li>
+<li>反之如果得到一个<code>false</code>，那就立刻停止更新过程，也就不会引发后续的渲染了。</li>
+</ul>
+</li>
+<li>说这个函数重要，是因为我们使用恰当的话，能够大大挺高<code>React</code>组件的性能。</li>
+</ul>
+</li>
+</ul>
+<h2 id="卸载过程"><a href="#卸载过程" class="headerlink" title="卸载过程"></a>卸载过程</h2><ol>
+<li>componentWillUnmount</li>
+</ol>
+<h3 id="1-2"><a href="#1-2" class="headerlink" title="1"></a>1</h3><ul>
+<li>当React组件要从DOM树上删除掉之前，对应的<code>componentWillUnmount</code>函数会被调用。</li>
 </ul>
 ]]></content>
     
