@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://adherentman.cn/redux.html</loc>
+    <lastmod>2017-11-09T14:43:10.000Z</lastmod>
+    <data>
+        <display>
+        <title>React-Redux和Redux</title>
+        <pubTime>2017-07-31T01:18:26.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>React</tag>
+         
+         
+           
+             
+              <breadCrumb title="React" url="http://adherentman.cn/categories/React/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://adherentman.cn/%E4%BE%8B%E5%8F%A5.html</loc>
     <lastmod>2017-10-18T12:26:23.000Z</lastmod>
     <data>
@@ -511,28 +533,6 @@
            
              
               <breadCrumb title="GraphQL" url="http://adherentman.cn/categories/GraphQL/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://adherentman.cn/redux.html</loc>
-    <lastmod>2017-07-31T01:23:38.000Z</lastmod>
-    <data>
-        <display>
-        <title>React-Redux、Redux</title>
-        <pubTime>2017-07-31T01:18:26.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>React</tag>
-         
-         
-           
-             
-              <breadCrumb title="React" url="http://adherentman.cn/categories/React/"/>
           
         </display>
     </data>
