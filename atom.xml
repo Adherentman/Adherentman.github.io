@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://adherentman.cn/"/>
-  <updated>2017-11-12T07:19:28.000Z</updated>
+  <updated>2017-11-12T07:49:30.000Z</updated>
   <id>http://adherentman.cn/</id>
   
   <author>
@@ -20,19 +20,107 @@
     <link href="http://adherentman.cn/%E3%80%8A%E7%BC%96%E7%A0%81%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html"/>
     <id>http://adherentman.cn/《编码》读书笔记.html</id>
     <published>2017-11-12T06:21:00.000Z</published>
-    <updated>2017-11-12T07:19:28.000Z</updated>
+    <updated>2017-11-12T07:49:30.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="十进制，八进制，四进制，二进制"><a href="#十进制，八进制，四进制，二进制" class="headerlink" title="十进制，八进制，四进制，二进制"></a>十进制，八进制，四进制，二进制</h1><p>在十进制中我们计数方式是：0、 1、 2、 3、 4、 5、 6、 7、 8、 9。</p>
+    <content type="html"><![CDATA[<h1 id="十进制，八进制，四进制，二进制"><a href="#十进制，八进制，四进制，二进制" class="headerlink" title="十进制，八进制，四进制，二进制"></a>十进制，八进制，四进制，二进制</h1><blockquote>
+<p>在十进制中我们计数方式是：0、 1、 2、 3、 4、 5、 6、 7、 8、 9。</p>
 <p>在八进制中我们计数方式是：0、 1、 2、 3、 4、 5、 6、 7。</p>
 <p>在四进制中我们计数方式是：0、 1、 2、 3。</p>
-<p>在二进制中我们计数方式是：0、 1。</p>
-<p>下面提供一个模板，这个模板可以将一个数转换最大长度为8的二进制数：</p>
+<p>在二进制中我们计数方式是：0、 1。<br><a id="more"></a><br>下面提供一个模板，这个模板可以将一个数转换最大长度为8的二进制数：</p>
+</blockquote>
 <p><img src="/images/二进制模板.png" alt="二进制模板"></p>
+<p><img src="/images/二进制模板计算.png" alt="二进制模板计算"></p>
+<p>这就是使用方法。如果要十进制转化成二进制的话，也可以用这个模板，只不过是把乘改成除就行啦。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">二进制数</th>
+<th style="text-align:center">十进制数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0000</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0001</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">0010</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">0011</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">0100</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">0101</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">0110</td>
+<td style="text-align:center">6</td>
+</tr>
+<tr>
+<td style="text-align:center">0111</td>
+<td style="text-align:center">7</td>
+</tr>
+<tr>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">8</td>
+</tr>
+<tr>
+<td style="text-align:center">1001</td>
+<td style="text-align:center">9</td>
+</tr>
+<tr>
+<td style="text-align:center">1010</td>
+<td style="text-align:center">10</td>
+</tr>
+<tr>
+<td style="text-align:center">1011</td>
+<td style="text-align:center">11</td>
+</tr>
+<tr>
+<td style="text-align:center">1100</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td style="text-align:center">1101</td>
+<td style="text-align:center">13</td>
+</tr>
+<tr>
+<td style="text-align:center">1110</td>
+<td style="text-align:center">14</td>
+</tr>
+<tr>
+<td style="text-align:center">1111</td>
+<td style="text-align:center">15</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>在最右边一直是 0 和 1 之间交替</li>
+<li>右边第二列是 每2个0 和 每2个1 之间相互交替</li>
+<li>第三列是 每4个0 和 每4个1 之间相互交替</li>
+<li>第四列是 每8个0 和 每8个1 之间相互交替</li>
+<li>所以只要再重复这16个数字并且在每个数字前面加一个1就可以很容易的写出后面的16个数字。</li>
+</ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;十进制，八进制，四进制，二进制&quot;&gt;&lt;a href=&quot;#十进制，八进制，四进制，二进制&quot; class=&quot;headerlink&quot; title=&quot;十进制，八进制，四进制，二进制&quot;&gt;&lt;/a&gt;十进制，八进制，四进制，二进制&lt;/h1&gt;&lt;p&gt;在十进制中我们计数方式是：0、 1、
+      &lt;h1 id=&quot;十进制，八进制，四进制，二进制&quot;&gt;&lt;a href=&quot;#十进制，八进制，四进制，二进制&quot; class=&quot;headerlink&quot; title=&quot;十进制，八进制，四进制，二进制&quot;&gt;&lt;/a&gt;十进制，八进制，四进制，二进制&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;在十进制中我们计数方式是：0、 1、 2、 3、 4、 5、 6、 7、 8、 9。&lt;/p&gt;
+&lt;p&gt;在八进制中我们计数方式是：0、 1、 2、 3、 4、 5、 6、 7。&lt;/p&gt;
+&lt;p&gt;在四进制中我们计数方式是：0、 1、 2、 3。&lt;/p&gt;
+&lt;p&gt;在二进制中我们计数方式是：0、 1。&lt;br&gt;
     
     </summary>
     
@@ -48,7 +136,7 @@
     <link href="http://adherentman.cn/%E3%80%8A%E5%9B%BE%E8%A7%A3HTTP%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html"/>
     <id>http://adherentman.cn/《图解HTTP》读书笔记.html</id>
     <published>2017-11-07T06:21:00.000Z</published>
-    <updated>2017-11-12T07:20:10.000Z</updated>
+    <updated>2017-11-12T07:48:17.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="TCP-IP协议族"><a href="#TCP-IP协议族" class="headerlink" title="TCP/IP协议族"></a>TCP/IP协议族</h1><ul>
 <li>TCP/IP协议族按层次分别分为四层<ul>
