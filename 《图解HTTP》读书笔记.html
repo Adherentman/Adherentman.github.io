@@ -89,19 +89,19 @@
 
 
 
-<meta name="description" content="TCP/IP协议族 TCP/IP协议族按层次分别分为四层 应用层 传输层 网络层 数据链路层">
+<meta name="description" content="图解HTTPTCP/IP协议族 TCP/IP协议族按层次分别分为四层 应用层 传输层 网络层 数据链路层">
 <meta name="keywords" content="读书笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《图解HTTP》读书笔记">
 <meta property="og:url" content="http://adherentman.cn/《图解HTTP》读书笔记.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="TCP/IP协议族 TCP/IP协议族按层次分别分为四层 应用层 传输层 网络层 数据链路层">
-<meta property="og:image" content="http://adherentman.cn/images/TCPIP分层.png">
-<meta property="og:updated_time" content="2017-11-12T08:55:47.000Z">
+<meta property="og:description" content="图解HTTPTCP/IP协议族 TCP/IP协议族按层次分别分为四层 应用层 传输层 网络层 数据链路层">
+<meta property="og:image" content="http://ozar6ogjb.bkt.clouddn.com/TCPIP%E5%88%86%E5%B1%82.png">
+<meta property="og:updated_time" content="2017-11-13T08:03:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《图解HTTP》读书笔记">
-<meta name="twitter:description" content="TCP/IP协议族 TCP/IP协议族按层次分别分为四层 应用层 传输层 网络层 数据链路层">
-<meta name="twitter:image" content="http://adherentman.cn/images/TCPIP分层.png">
+<meta name="twitter:description" content="图解HTTPTCP/IP协议族 TCP/IP协议族按层次分别分为四层 应用层 传输层 网络层 数据链路层">
+<meta name="twitter:image" content="http://ozar6ogjb.bkt.clouddn.com/TCPIP%E5%88%86%E5%B1%82.png">
 
 
 
@@ -427,7 +427,7 @@
       
 
       
-        <h1 id="TCP-IP协议族"><a href="#TCP-IP协议族" class="headerlink" title="TCP/IP协议族"></a>TCP/IP协议族</h1><ul>
+        <h1 id="图解HTTP"><a href="#图解HTTP" class="headerlink" title="图解HTTP"></a>图解HTTP</h1><h2 id="TCP-IP协议族"><a href="#TCP-IP协议族" class="headerlink" title="TCP/IP协议族"></a>TCP/IP协议族</h2><ul>
 <li>TCP/IP协议族按层次分别分为四层<ul>
 <li>应用层</li>
 <li>传输层</li>
@@ -437,13 +437,119 @@
 </li>
 </ul>
 <a id="more"></a>
-<p><img src="/images/TCPIP分层.png" alt="TCP/IP通信传输流"></p>
+<p><img src="http://ozar6ogjb.bkt.clouddn.com/TCPIP%E5%88%86%E5%B1%82.png" alt="TCP/IP通信传输流"></p>
 <p>URI, URL, URN</p>
 <ul>
 <li>“A Uniform Resource Identifier (URI) 是一个紧凑的字符串用来标示抽象或物理资源。”</li>
 <li>URL， URN是URI的子集，除了确定一个资源，还提供一种定位该资源的主要访问机制</li>
 <li>换句通俗易懂的话说：</li>
 <li>URN作用就好像一个人的名字，URL就像一个人的地址。再换句话说：URN确定了东西的身份，URL提供了找到他的方式。</li>
+</ul>
+<h2 id="状态码的类别"><a href="#状态码的类别" class="headerlink" title="状态码的类别"></a>状态码的类别</h2><table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left">类别</th>
+<th style="text-align:left">原因短语</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1xx</td>
+<td style="text-align:left">Informational(信息状态码)</td>
+<td style="text-align:left">接受的请求正在处理</td>
+</tr>
+<tr>
+<td style="text-align:left">2xx</td>
+<td style="text-align:left">Success(成功状态码)</td>
+<td style="text-align:left">请求正常处理完毕</td>
+</tr>
+<tr>
+<td style="text-align:left">3xx</td>
+<td style="text-align:left">Redirection(重定向状态码)</td>
+<td style="text-align:left">需要进行附加操作以完成请求</td>
+</tr>
+<tr>
+<td style="text-align:left">4xx</td>
+<td style="text-align:left">Client Error(客户端错误状态码)</td>
+<td style="text-align:left">服务器无法处理请求</td>
+</tr>
+<tr>
+<td style="text-align:left">5xx</td>
+<td style="text-align:left">Server Error(服务器错误状态代码)</td>
+<td style="text-align:left">服务器处理请求出错</td>
+</tr>
+</tbody>
+</table>
+<p>最具有代表性的14个状态码：</p>
+<p><em><strong>2xx成功</strong></em></p>
+<ul>
+<li>200 OK<ul>
+<li>表示从客户端发来的请求在服务器端被正常处理了。</li>
+</ul>
+</li>
+<li>204 No Content<ul>
+<li>代表服务器接受的请求已成功处理，但在返回的响应报文中不含实体的主体部分。</li>
+</ul>
+</li>
+<li>206 Partial Content<ul>
+<li>表示客户端进行了范围请求，而服务器成功执行了这部分的GET请求。</li>
+</ul>
+</li>
+</ul>
+<p><em><strong>3xx重定向</strong></em></p>
+<p>当301， 302， 303响应状态码返回时，几乎所有的浏览器都会把POST改成GET，并删除请求报文内的主体，之后请求会自动再次发送。</p>
+<ul>
+<li>301 Moved Permanently<ul>
+<li>永久性重定向。</li>
+</ul>
+</li>
+<li>302 Found<ul>
+<li>临时性重定向。</li>
+</ul>
+</li>
+<li>303 See Other<ul>
+<li>由于请求对应的资源存在着另一个URI，应使用GET方法定向获取请求的资源。</li>
+</ul>
+</li>
+<li>304 Not Modified<ul>
+<li>表示客户端发送附带条件的请求时，服务器端允许请求访问资源，但因发生请求为满足条件的情况后，直接返回304 Not Modified（服务器端资源未改变，可直接使用客户端未过期的缓存）。</li>
+</ul>
+</li>
+<li>307 Temporary Redirect<ul>
+<li>临时重定向。该状态码与302有相同的含义，但是307不会从POST变成GET。</li>
+</ul>
+</li>
+</ul>
+<p><em><strong>4xx客户端错误</strong></em></p>
+<ul>
+<li>400 Bad Request<ul>
+<li>表示请求报文中存在语法错误。</li>
+</ul>
+</li>
+<li>401 Unauthorized<ul>
+<li>表示发送的请求需要有通过HTTP认证的认证信息。</li>
+</ul>
+</li>
+<li>403 Forbidden<ul>
+<li>表明对请求资源的访问被服务器拒绝了。</li>
+</ul>
+</li>
+<li>404 Not Found<ul>
+<li>表明服务器上没有请求的资源。</li>
+</ul>
+</li>
+</ul>
+<p><em><strong>5xx服务器错误</strong></em></p>
+<ul>
+<li>500 Internal Server Error<ul>
+<li>表明服务器在执行请求时发生了错误。</li>
+</ul>
+</li>
+<li>503 Service Unavailbale<ul>
+<li>表明服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。</li>
+</ul>
+</li>
 </ul>
 
       
@@ -687,7 +793,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP-IP协议族"><span class="nav-number">1.</span> <span class="nav-text">TCP/IP协议族</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#图解HTTP"><span class="nav-number">1.</span> <span class="nav-text">图解HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP协议族"><span class="nav-number">1.1.</span> <span class="nav-text">TCP/IP协议族</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状态码的类别"><span class="nav-number">1.2.</span> <span class="nav-text">状态码的类别</span></a></li></ol></li></ol></div>
             
 
           </div>
