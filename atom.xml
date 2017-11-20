@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2017-11-12T07:56:05.000Z</updated>
+  <updated>2017-11-20T08:01:58.000Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -16,130 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>《编码》读书笔记</title>
-    <link href="http://xuzihao.fun/%E3%80%8A%E7%BC%96%E7%A0%81%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html"/>
-    <id>http://xuzihao.fun/《编码》读书笔记.html</id>
-    <published>2017-11-12T06:21:00.000Z</published>
-    <updated>2017-11-12T07:56:05.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="十进制，八进制，四进制，二进制"><a href="#十进制，八进制，四进制，二进制" class="headerlink" title="十进制，八进制，四进制，二进制"></a>十进制，八进制，四进制，二进制</h1><blockquote>
-<p>在十进制中我们计数方式是：0、 1、 2、 3、 4、 5、 6、 7、 8、 9。</p>
-<p>在八进制中我们计数方式是：0、 1、 2、 3、 4、 5、 6、 7。</p>
-<p>在四进制中我们计数方式是：0、 1、 2、 3。</p>
-<p>在二进制中我们计数方式是：0、 1。</p>
-</blockquote>
-<a id="more"></a>
-<p>下面提供一个模板，这个模板可以将一个数转换最大长度为8的二进制数：</p>
-<p><img src="/images/二进制模板.png" alt="二进制模板"></p>
-<p><img src="/images/二进制模板计算.png" alt="二进制模板计算"></p>
-<p>这就是使用方法。如果要十进制转化成二进制的话，也可以用这个模板，只不过是把乘改成除就行啦。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">二进制数</th>
-<th style="text-align:center">十进制数</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0000</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">0001</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">0010</td>
-<td style="text-align:center">2</td>
-</tr>
-<tr>
-<td style="text-align:center">0011</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td style="text-align:center">0100</td>
-<td style="text-align:center">4</td>
-</tr>
-<tr>
-<td style="text-align:center">0101</td>
-<td style="text-align:center">5</td>
-</tr>
-<tr>
-<td style="text-align:center">0110</td>
-<td style="text-align:center">6</td>
-</tr>
-<tr>
-<td style="text-align:center">0111</td>
-<td style="text-align:center">7</td>
-</tr>
-<tr>
-<td style="text-align:center">1000</td>
-<td style="text-align:center">8</td>
-</tr>
-<tr>
-<td style="text-align:center">1001</td>
-<td style="text-align:center">9</td>
-</tr>
-<tr>
-<td style="text-align:center">1010</td>
-<td style="text-align:center">10</td>
-</tr>
-<tr>
-<td style="text-align:center">1011</td>
-<td style="text-align:center">11</td>
-</tr>
-<tr>
-<td style="text-align:center">1100</td>
-<td style="text-align:center">12</td>
-</tr>
-<tr>
-<td style="text-align:center">1101</td>
-<td style="text-align:center">13</td>
-</tr>
-<tr>
-<td style="text-align:center">1110</td>
-<td style="text-align:center">14</td>
-</tr>
-<tr>
-<td style="text-align:center">1111</td>
-<td style="text-align:center">15</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>在最右边一直是 0 和 1 之间交替</li>
-<li>右边第二列是 每2个0 和 每2个1 之间相互交替</li>
-<li>第三列是 每4个0 和 每4个1 之间相互交替</li>
-<li>第四列是 每8个0 和 每8个1 之间相互交替</li>
-<li>所以只要再重复这16个数字并且在每个数字前面加一个1就可以很容易的写出后面的16个数字。</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;十进制，八进制，四进制，二进制&quot;&gt;&lt;a href=&quot;#十进制，八进制，四进制，二进制&quot; class=&quot;headerlink&quot; title=&quot;十进制，八进制，四进制，二进制&quot;&gt;&lt;/a&gt;十进制，八进制，四进制，二进制&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;在十进制中我们计数方式是：0、 1、 2、 3、 4、 5、 6、 7、 8、 9。&lt;/p&gt;
-&lt;p&gt;在八进制中我们计数方式是：0、 1、 2、 3、 4、 5、 6、 7。&lt;/p&gt;
-&lt;p&gt;在四进制中我们计数方式是：0、 1、 2、 3。&lt;/p&gt;
-&lt;p&gt;在二进制中我们计数方式是：0、 1。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="读书笔记" scheme="http://xuzihao.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="读书笔记" scheme="http://xuzihao.fun/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
     <title>《图解HTTP》读书笔记</title>
     <link href="http://xuzihao.fun/%E3%80%8A%E5%9B%BE%E8%A7%A3HTTP%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html"/>
     <id>http://xuzihao.fun/《图解HTTP》读书笔记.html</id>
-    <published>2017-11-07T06:21:00.000Z</published>
-    <updated>2017-11-13T08:03:48.000Z</updated>
+    <published>2017-11-20T08:01:00.000Z</published>
+    <updated>2017-11-20T08:01:58.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="图解HTTP"><a href="#图解HTTP" class="headerlink" title="图解HTTP"></a>图解HTTP</h1><h2 id="TCP-IP协议族"><a href="#TCP-IP协议族" class="headerlink" title="TCP/IP协议族"></a>TCP/IP协议族</h2><ul>
 <li>TCP/IP协议族按层次分别分为四层<ul>
@@ -265,6 +146,64 @@
 </ul>
 </li>
 </ul>
+<h2 id="通信数据转发程序：代理、网关、隧道"><a href="#通信数据转发程序：代理、网关、隧道" class="headerlink" title="通信数据转发程序：代理、网关、隧道"></a>通信数据转发程序：代理、网关、隧道</h2><h3 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h3><p>代理服务器的基本行为就是接收客户端发送的请求后转发给其他服务器。<strong>代理不改变请求URI</strong>，会直接发送给前方持有资源的目标服务器。</p>
+<p>持有资源实体的服务器称为<strong>源服务器</strong>，从源服务器返回的响应经过代理服务器后再传给客户端。</p>
+<p>使用代理服务器的理由：</p>
+<ul>
+<li>利用缓存技术，减少网络带宽的流量。</li>
+<li>组织内部针对特定网站的访问控制，以获取访问日志为主要目的。</li>
+</ul>
+<p>代理有两种基准分类： 一种是是否使用了缓存，另一种是是否会修改报文。</p>
+<p>缓存代理：代理转发响应式，<strong>缓存代理</strong>会预先将资源的副本保存在代理服务器上。</p>
+<p>透明代理：转发请求或响应时，不对报文做任何加工的代理类型被称为<strong>透明代理</strong>。反之，如果对报文内容进行加工的代理就叫做<strong>非透明代理</strong>。</p>
+<h3 id="网关"><a href="#网关" class="headerlink" title="网关"></a>网关</h3><p>网关能使通信线路上的服务器提供非HTTP协议服务。</p>
+<p>利用网关能提高通信的安全性。</p>
+<p>比如说：网关可以连接数据库。还有在我们淘宝购物用信用卡结账的时候，网关可以和信用卡结算系统联动。</p>
+<h3 id="隧道"><a href="#隧道" class="headerlink" title="隧道"></a>隧道</h3><p>隧道可按要求建立起一条与其他服务器的通信线路，届时使用SSL等加密手段进行通信。</p>
+<p>也就是说，隧道本身是不会去解析HTTP请求的，他只是作为一个很安全的通道去让客户端与服务器相连。</p>
+<h2 id="HTTP首部"><a href="#HTTP首部" class="headerlink" title="HTTP首部"></a>HTTP首部</h2><h3 id="HTTP请求报文"><a href="#HTTP请求报文" class="headerlink" title="HTTP请求报文"></a>HTTP请求报文</h3><p>在请求中，HTTP报文由方法、URI、HTTP版本、HTTP首部字段等部分构成</p>
+<h3 id="HTTP响应报文"><a href="#HTTP响应报文" class="headerlink" title="HTTP响应报文"></a>HTTP响应报文</h3><p>在响应中，HTTP报文由HTTP版本、状态码（数字和原因短语）、HTTP首部字段 3部分构成。</p>
+<h3 id="HTTP首部字段"><a href="#HTTP首部字段" class="headerlink" title="HTTP首部字段"></a>HTTP首部字段</h3><p>使用首部字段是为了给浏览器和服务器提供报文主体大小，所使用的语言、认证信息等内容。</p>
+<p>HTTP首部字段是由<strong>首部字段名</strong>和<strong>字段值</strong>构成：</p>
+<blockquote>
+<p>首部字段名： 字段值</p>
+</blockquote>
+<p>在HTTP首部中，以Content-Type这个字段来表示报文主题的对象类型：</p>
+<blockquote>
+<p>Content-Type: text/html</p>
+<p>首部字段名：     字段值</p>
+</blockquote>
+<p>而且在字段值对应单个HTTP首部字段可以有多个值。</p>
+<blockquote>
+<p>Keep-Alive: timeout=15, max=100</p>
+</blockquote>
+<h3 id="4种HTTP首部字段类型"><a href="#4种HTTP首部字段类型" class="headerlink" title="4种HTTP首部字段类型"></a>4种HTTP首部字段类型</h3><ul>
+<li>通用首部字段<ul>
+<li>请求报文和响应报文两端都会使用的首部</li>
+</ul>
+</li>
+<li>请求首部字段<ul>
+<li>从客户端向服务器端发送请求报文时使用的首部。<ul>
+<li>补充了请求的附加内容、客户端信息、响应内容相关优化级等信息</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>响应首部字段<ul>
+<li>从服务器向客户端返回响应报文时使用的首部。<ul>
+<li>补充了响应的附加内容，也会要求客户端附加额外的内容信息。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>实体首部字段<ul>
+<li>针对请求报文和响应豹纹的实体部分使用的首部<ul>
+<li>补充了资源内容更新时间等与实体有关的信息。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 ]]></content>
     
     <summary type="html">
@@ -278,6 +217,125 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="读书笔记" scheme="http://xuzihao.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="读书笔记" scheme="http://xuzihao.fun/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《编码》读书笔记</title>
+    <link href="http://xuzihao.fun/%E3%80%8A%E7%BC%96%E7%A0%81%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html"/>
+    <id>http://xuzihao.fun/《编码》读书笔记.html</id>
+    <published>2017-11-12T06:21:00.000Z</published>
+    <updated>2017-11-12T07:56:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="十进制，八进制，四进制，二进制"><a href="#十进制，八进制，四进制，二进制" class="headerlink" title="十进制，八进制，四进制，二进制"></a>十进制，八进制，四进制，二进制</h1><blockquote>
+<p>在十进制中我们计数方式是：0、 1、 2、 3、 4、 5、 6、 7、 8、 9。</p>
+<p>在八进制中我们计数方式是：0、 1、 2、 3、 4、 5、 6、 7。</p>
+<p>在四进制中我们计数方式是：0、 1、 2、 3。</p>
+<p>在二进制中我们计数方式是：0、 1。</p>
+</blockquote>
+<a id="more"></a>
+<p>下面提供一个模板，这个模板可以将一个数转换最大长度为8的二进制数：</p>
+<p><img src="/images/二进制模板.png" alt="二进制模板"></p>
+<p><img src="/images/二进制模板计算.png" alt="二进制模板计算"></p>
+<p>这就是使用方法。如果要十进制转化成二进制的话，也可以用这个模板，只不过是把乘改成除就行啦。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">二进制数</th>
+<th style="text-align:center">十进制数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0000</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0001</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">0010</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">0011</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">0100</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:center">0101</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">0110</td>
+<td style="text-align:center">6</td>
+</tr>
+<tr>
+<td style="text-align:center">0111</td>
+<td style="text-align:center">7</td>
+</tr>
+<tr>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">8</td>
+</tr>
+<tr>
+<td style="text-align:center">1001</td>
+<td style="text-align:center">9</td>
+</tr>
+<tr>
+<td style="text-align:center">1010</td>
+<td style="text-align:center">10</td>
+</tr>
+<tr>
+<td style="text-align:center">1011</td>
+<td style="text-align:center">11</td>
+</tr>
+<tr>
+<td style="text-align:center">1100</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td style="text-align:center">1101</td>
+<td style="text-align:center">13</td>
+</tr>
+<tr>
+<td style="text-align:center">1110</td>
+<td style="text-align:center">14</td>
+</tr>
+<tr>
+<td style="text-align:center">1111</td>
+<td style="text-align:center">15</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>在最右边一直是 0 和 1 之间交替</li>
+<li>右边第二列是 每2个0 和 每2个1 之间相互交替</li>
+<li>第三列是 每4个0 和 每4个1 之间相互交替</li>
+<li>第四列是 每8个0 和 每8个1 之间相互交替</li>
+<li>所以只要再重复这16个数字并且在每个数字前面加一个1就可以很容易的写出后面的16个数字。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;十进制，八进制，四进制，二进制&quot;&gt;&lt;a href=&quot;#十进制，八进制，四进制，二进制&quot; class=&quot;headerlink&quot; title=&quot;十进制，八进制，四进制，二进制&quot;&gt;&lt;/a&gt;十进制，八进制，四进制，二进制&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;在十进制中我们计数方式是：0、 1、 2、 3、 4、 5、 6、 7、 8、 9。&lt;/p&gt;
+&lt;p&gt;在八进制中我们计数方式是：0、 1、 2、 3、 4、 5、 6、 7。&lt;/p&gt;
+&lt;p&gt;在四进制中我们计数方式是：0、 1、 2、 3。&lt;/p&gt;
+&lt;p&gt;在二进制中我们计数方式是：0、 1。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
