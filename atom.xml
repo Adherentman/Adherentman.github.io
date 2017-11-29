@@ -243,7 +243,7 @@
     <link href="http://xuzihao.fun/%E3%80%8A%E7%BC%96%E7%A0%81%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html"/>
     <id>http://xuzihao.fun/《编码》读书笔记.html</id>
     <published>2017-11-12T06:21:00.000Z</published>
-    <updated>2017-11-12T07:56:05.000Z</updated>
+    <updated>2017-11-12T07:56:30.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="十进制，八进制，四进制，二进制"><a href="#十进制，八进制，四进制，二进制" class="headerlink" title="十进制，八进制，四进制，二进制"></a>十进制，八进制，四进制，二进制</h1><blockquote>
 <p>在十进制中我们计数方式是：0、 1、 2、 3、 4、 5、 6、 7、 8、 9。</p>
@@ -1377,7 +1377,7 @@
     <link href="http://xuzihao.fun/Javascript%E5%AF%B9%E8%B1%A1.html"/>
     <id>http://xuzihao.fun/Javascript对象.html</id>
     <published>2017-08-02T14:30:44.000Z</published>
-    <updated>2017-09-22T09:50:10.000Z</updated>
+    <updated>2017-11-29T15:09:27.708Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Javascript对象"><a href="#Javascript对象" class="headerlink" title="Javascript对象"></a>Javascript对象</h1><p>在JavaScript中，数组是对象，函数是对象，正则表达式是对象。那么对象自然也是对象。</p>
 <ul>
@@ -1385,12 +1385,41 @@
 <li>对象是属性的容器，其中每个属性都拥有名字和值。</li>
 <li>JavaScript包含一种原型链的特性，允许对象继承另一个对象的属性。</li>
 </ul>
-<h1 id="对象字面量"><a href="#对象字面量" class="headerlink" title="对象字面量"></a>对象字面量</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> empty_project = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> stooge = &#123;				<span class="comment">//对象字面量</span></div><div class="line">  <span class="string">"first-name"</span>: <span class="string">"Jerome"</span>,</div><div class="line">  <span class="string">"last-name"</span>: <span class="string">"Howard"</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <a id="more"></a>
+<ul>
+<li>对象最常见的用法<ul>
+<li>创建（create）</li>
+<li>设置（set）</li>
+<li>查找（query）</li>
+<li>删除（delete）</li>
+<li>检测（test）</li>
+<li>枚举（enumerate）</li>
+</ul>
+</li>
+<li>每个属性还有一些与之相关的值，称为<strong>属性特性</strong><ul>
+<li>可写</li>
+<li>可枚举</li>
+<li>可配置</li>
+</ul>
+</li>
+<li>除了包含属性之外，每个对象还拥有三个相关的对象特性<ul>
+<li>对象的原型(prototype)</li>
+<li>对象的类(class)</li>
+<li>对象的扩展标记</li>
+</ul>
+</li>
+<li>内置对象，如<strong>数组，函数，日期，和正则表达式都是内置对象</strong></li>
+<li>宿主对象，简单的理解就是BOM、DOM和自己定义的对象</li>
+<li>自定义对象，就是我们自己创建的对象</li>
+<li>自有属性，直接在对象中定义的属性</li>
+<li>继承属性，在对象原型对象中定义的属性。</li>
+</ul>
+<h2 id="new创建对象"><a href="#new创建对象" class="headerlink" title="new创建对象"></a>new创建对象</h2><p><code>new</code> 运算符创建并初始化一个新对象。关键字new后跟随一个<strong>函数</strong>调用。<br>这个<strong>函数</strong>称做<strong>构造函数</strong>。</p>
+<h2 id="对象字面量"><a href="#对象字面量" class="headerlink" title="对象字面量"></a>对象字面量</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> empty_project = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> stooge = &#123;				<span class="comment">//对象字面量</span></div><div class="line">  <span class="string">"first-name"</span>: <span class="string">"Jerome"</span>,</div><div class="line">  <span class="string">"last-name"</span>: <span class="string">"Howard"</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p>一个对象字面量就是包围在一对花括号中的零或多个“名/值”对。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> flight = &#123;</div><div class="line">  <span class="attr">airline</span>: <span class="string">"Oceanic"</span>,</div><div class="line">  <span class="attr">number</span>: <span class="number">815</span>,</div><div class="line">  <span class="attr">departure</span>: &#123;</div><div class="line">    <span class="attr">IATA</span>: <span class="string">"SYD"</span>,</div><div class="line">    <span class="attr">time</span>: <span class="string">"2014-09-22 14:55"</span>,</div><div class="line">    <span class="attr">city</span>: <span class="string">"Sydney"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">arrival</span>:&#123;</div><div class="line">    <span class="attr">IATA</span>: <span class="string">"LAX"</span>,</div><div class="line">    <span class="attr">time</span>: <span class="string">"2004-09-23 10:42"</span>,</div><div class="line">    <span class="attr">city</span>: <span class="string">"Los Angeles"</span></div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p>属性的值可以从包括另一个对象字面量在内的任意表达式中获得。对象是可以嵌套的。</p>
-<h1 id="检索"><a href="#检索" class="headerlink" title="检索"></a>检索</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">stooge[<span class="string">"first-name"</span>] <span class="comment">//Jerome</span></div><div class="line">flight.departure.IATA <span class="comment">//SYD</span></div></pre></td></tr></table></figure>
+<h2 id="属性的查询"><a href="#属性的查询" class="headerlink" title="属性的查询"></a>属性的查询</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">stooge[<span class="string">"first-name"</span>] <span class="comment">//Jerome</span></div><div class="line">flight.departure.IATA <span class="comment">//SYD</span></div></pre></td></tr></table></figure>
 <p>需要检索对象里包含的值，可以采用[ ]后缀中括住一个字符串表达式的方式。</p>
 <p>但是最好用<code>.</code>表示法。因为它可读性好。</p>
 <p>我们去检索不存在的：</p>
@@ -1399,17 +1428,19 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> middle = stooge[<span class="string">"middle-name"</span>] || <span class="string">"(none)"</span>;</div><div class="line"><span class="keyword">var</span> status = flight.status || <span class="string">"unkown"</span>;</div></pre></td></tr></table></figure>
 <p>如果我们从undefined的成员属性中取值会导致<code>TypeError</code>异常。这时候我们可以通过 <code>&amp;&amp;</code> 运算符来避免错误。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">flight.equipment 					<span class="comment">//undefined</span></div><div class="line">flight.equipment.model				<span class="comment">//throw "TypeError"</span></div><div class="line">flight.equipment &amp;&amp; flight.equipment.model 	<span class="comment">//undefined</span></div></pre></td></tr></table></figure>
-<h1 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h1><p>对象里的值可以通过赋值语句来更新。如果属性吗已经存在于对象里，那么这个属性的值会被替换。</p>
+<h2 id="属性的设置"><a href="#属性的设置" class="headerlink" title="属性的设置"></a>属性的设置</h2><p>对象里的值可以通过赋值语句来更新。如果属性吗已经存在于对象里，那么这个属性的值会被替换。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">stooge[<span class="string">'first-name'</span>] = <span class="string">'Jerome'</span>;</div></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">stooge[<span class="string">'middle-name'</span>] = <span class="string">'Lester'</span>;</div><div class="line">stooge.nickname = <span class="string">'Curly'</span>;</div><div class="line">flight.equipment = &#123;</div><div class="line">  <span class="attr">model</span>: <span class="string">'Boeing 777'</span></div><div class="line">&#125;;</div><div class="line">flight.status = <span class="string">'overdue'</span>;</div></pre></td></tr></table></figure>
 <p>那么这些属性全部会扩充到对象中。</p>
-<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>对象通过引用来传递，他们永远不会被<strong>复制</strong></p>
+<h2 id="关联数组的对象"><a href="#关联数组的对象" class="headerlink" title="关联数组的对象"></a>关联数组的对象</h2><p><code>object[&quot;property&quot;]</code>，这个看起来更像数组，但是这个数组元素是通过字符串索引。这种数组就是<strong>关联数组</strong>，别名“散列”，“映射”，“字典”。<strong>JavaScript对象都是关联数组</strong>。</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>对象通过引用来传递，他们永远不会被<strong>复制</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = hi;</div><div class="line">x.hello = <span class="string">'what'</span>;</div><div class="line"><span class="keyword">var</span> how = hi.hello;</div><div class="line">	<span class="comment">// how为what。</span></div><div class="line"><span class="comment">//因为x和hi是指向同一个对象的引用。</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> a = &#123;&#125;,b = &#123;&#125;,c = &#123;&#125;;</div><div class="line"><span class="comment">//a,b,c每个都引用一个不同的对象</span></div><div class="line">a = b = c = &#123;&#125;;</div><div class="line"><span class="comment">//a,b,c都是引用同一个空对象</span></div></pre></td></tr></table></figure>
-<h1 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h1><p>每个对象都连接一个原型对象，并且可以从中继承属性。</p>
+<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><p>每个对象都连接着另一个对象相关联，这个对象就是原型。而且每一个对象都可以从原型继承属性。</p>
 <p>所有通过对象字面量创建的对象都连接到<code>Object.prototype</code>，它是JavaScript中的标配对象。</p>
+<p>那么由new Date()创建的Date对象的属性同时继承自<code>Date.prototype</code>和<code>Object.prototype</code>。这一系列链接在一起的原型对象，就是我们所说的<strong>原型链</strong>。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">Object</span>.beget !== <span class="string">'function'</span>)&#123;</div><div class="line">  <span class="built_in">Object</span>.create = <span class="function"><span class="keyword">function</span> (<span class="params">o</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">    F.prototype = o;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> F();</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> another_stooge = <span class="built_in">Object</span>.create(stooge);</div></pre></td></tr></table></figure>
 <p>Object增加一个create方法，这个方法创建一个使用原对象作为其原型的新对象。</p>
-<h2 id="原型连接在更新时是不起作用的"><a href="#原型连接在更新时是不起作用的" class="headerlink" title="原型连接在更新时是不起作用的"></a>原型连接在更新时是不起作用的</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">another_stooge[<span class="string">'first-name'</span>] = <span class="string">'Harry'</span>;</div><div class="line">another_stooge[<span class="string">'middle-name'</span>] = <span class="string">'Moses'</span>;</div><div class="line">another_stooge.nickname = <span class="string">'Moe'</span>;</div></pre></td></tr></table></figure>
+<h3 id="原型连接在更新时是不起作用的"><a href="#原型连接在更新时是不起作用的" class="headerlink" title="原型连接在更新时是不起作用的"></a>原型连接在更新时是不起作用的</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">another_stooge[<span class="string">'first-name'</span>] = <span class="string">'Harry'</span>;</div><div class="line">another_stooge[<span class="string">'middle-name'</span>] = <span class="string">'Moses'</span>;</div><div class="line">another_stooge.nickname = <span class="string">'Moe'</span>;</div></pre></td></tr></table></figure>
 <blockquote>
 <p>原型连接只有在检索值得时候才被用到。</p>
 <p>如果我们尝试去获取对象的某个属性值，但对象没有此属性名。</p>
@@ -1417,9 +1448,9 @@
 <p>假如想要的属性不存在于原型链，那么结果就只能是undefined。</p>
 <p>以上的过程为委托。</p>
 </blockquote>
-<h2 id="原型关系"><a href="#原型关系" class="headerlink" title="原型关系"></a>原型关系</h2><p>我们添加一个新的属性到<strong>原型</strong>中，该属性会立即对<strong>所有</strong>基于该原型创建的对象可见。</p>
+<h3 id="原型关系"><a href="#原型关系" class="headerlink" title="原型关系"></a>原型关系</h3><p>我们添加一个新的属性到<strong>原型</strong>中，该属性会立即对<strong>所有</strong>基于该原型创建的对象可见。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">stooge.profession = <span class="string">'actor'</span>;</div><div class="line">another_stooge.profession  <span class="comment">//'actor</span></div></pre></td></tr></table></figure>
-<h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><p>typeof操作符对确定属性的类型很有帮助。</p>
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>typeof操作符对确定属性的类型很有帮助。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typeof</span> flight.number	<span class="comment">//number</span></div><div class="line"><span class="keyword">typeof</span> flight.status 	<span class="comment">//string</span></div><div class="line"><span class="keyword">typeof</span> flight.arrival 	<span class="comment">//object</span></div><div class="line"><span class="keyword">typeof</span> flight.manifest 	<span class="comment">//undefined</span></div></pre></td></tr></table></figure>
 <p>原型链中的任何值都会产生值</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typeof</span> flight.toString		<span class="comment">//function</span></div><div class="line"><span class="keyword">typeof</span> flight.constructor 	<span class="comment">//function</span></div></pre></td></tr></table></figure>
@@ -1429,7 +1460,7 @@
 <li>另一个方法是<code>hasOwnProperty</code> 方法，如果对象拥有独有的属性，它将返回true。不会检查原型链</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">flight.hasOwnProperty(<span class="string">'number'</span>)			<span class="comment">//true</span></div><div class="line">flight.hasOwnProperty(<span class="string">'constructor'</span>)	<span class="comment">//true</span></div></pre></td></tr></table></figure>
-<h1 id="减少全局变量污染"><a href="#减少全局变量污染" class="headerlink" title="减少全局变量污染"></a>减少全局变量污染</h1><p>最小化使用全局变量的方法之一是为你的应用只创建一个<strong>唯一</strong>的全局变量！！</p>
+<h2 id="减少全局变量污染"><a href="#减少全局变量污染" class="headerlink" title="减少全局变量污染"></a>减少全局变量污染</h2><p>最小化使用全局变量的方法之一是为你的应用只创建一个<strong>唯一</strong>的全局变量！！</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> MYAPP = &#123;&#125;; 		<span class="comment">//该变量此时变成你的应用的容器</span></div><div class="line"></div><div class="line">MYAPP.stooge = &#123;</div><div class="line">  <span class="string">"first-name"</span>: <span class="string">"Joe"</span>,</div><div class="line">  <span class="string">"last-name"</span>: <span class="string">"Howard"</span></div><div class="line">&#125;;</div><div class="line">MYAPP.flight = &#123;</div><div class="line">  <span class="attr">airline</span>: <span class="string">"Oceanic"</span>,</div><div class="line">  <span class="attr">number</span>: <span class="number">815</span>,</div><div class="line">  <span class="attr">departure</span>: &#123;</div><div class="line">    <span class="attr">IATA</span>: <span class="string">"SYD"</span>,</div><div class="line">    <span class="attr">time</span>: <span class="string">"2004-09-22 14:55"</span>,</div><div class="line">    <span class="attr">city</span>: <span class="string">"Sydney"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">arrival</span>: &#123;</div><div class="line">    <span class="attr">IATA</span>: <span class="string">"LAX"</span>,</div><div class="line">    <span class="attr">time</span>: <span class="string">"2004-09-23 21:59"</span>,</div><div class="line">    <span class="attr">city</span>: <span class="string">"Los Angeles"</span></div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p>只要把全局性的资源都纳入一个名称空间之下，你的<strong>程序与其他应用程序、组件、类库直接发送冲突的可能性就会显著降低。</strong></p>
 <p>因为<code>MYAPP.stooge</code>指向的是顶层结构。</p>
@@ -1443,7 +1474,6 @@
 &lt;li&gt;对象是属性的容器，其中每个属性都拥有名字和值。&lt;/li&gt;
 &lt;li&gt;JavaScript包含一种原型链的特性，允许对象继承另一个对象的属性。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&quot;对象字面量&quot;&gt;&lt;a href=&quot;#对象字面量&quot; class=&quot;headerlink&quot; title=&quot;对象字面量&quot;&gt;&lt;/a&gt;对象字面量&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; empty_project = &amp;#123;&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; stooge = &amp;#123;				&lt;span class=&quot;comment&quot;&gt;//对象字面量&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;string&quot;&gt;&quot;first-name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;Jerome&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;string&quot;&gt;&quot;last-name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;Howard&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -1493,7 +1523,7 @@
 <p>上面流程的协程A，就是异步任务，因为它分成两段（或多段）执行。</p>
 <h1 id="Generator函数概念"><a href="#Generator函数概念" class="headerlink" title="Generator函数概念"></a>Generator函数概念</h1><p>Generator 函数是协程在 ES6 的实现，最大特点就是可以交出函数的执行权（即暂停执行）。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">gen</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> y = <span class="keyword">yield</span> x + <span class="number">2</span>;</div><div class="line">  <span class="keyword">return</span> y;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>其他的概念可以看我上篇<a href="http://adherentman.cn/Generator.html">Generator函数概念</a></p>
+<p>其他的概念可以看我上篇<a href="http://adherentman.cn/Generator.html" target="_blank" rel="external">Generator函数概念</a></p>
 <h1 id="Thunk-函数"><a href="#Thunk-函数" class="headerlink" title="Thunk 函数"></a>Thunk 函数</h1><p>编译器的”传名调用”实现，往往是将参数放到一个临时函数之中，再将这个临时函数传入函数体。这个临时函数就叫做 Thunk 函数。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">m</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> m * <span class="number">2</span>;     </div><div class="line">&#125;</div><div class="line"></div><div class="line">f(x + <span class="number">5</span>);</div><div class="line"></div><div class="line"><span class="comment">// 等同于</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> thunk = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> x + <span class="number">5</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">thunk</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> thunk() * <span class="number">2</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>上面代码中，函数 f 的参数 被thunk函数替换了.</p>

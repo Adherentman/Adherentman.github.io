@@ -457,7 +457,7 @@
 <p>上面流程的协程A，就是异步任务，因为它分成两段（或多段）执行。</p>
 <h1 id="Generator函数概念"><a href="#Generator函数概念" class="headerlink" title="Generator函数概念"></a>Generator函数概念</h1><p>Generator 函数是协程在 ES6 的实现，最大特点就是可以交出函数的执行权（即暂停执行）。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">gen</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> y = <span class="keyword">yield</span> x + <span class="number">2</span>;</div><div class="line">  <span class="keyword">return</span> y;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>其他的概念可以看我上篇<a href="http://adherentman.cn/Generator.html">Generator函数概念</a></p>
+<p>其他的概念可以看我上篇<a href="http://adherentman.cn/Generator.html" target="_blank" rel="external">Generator函数概念</a></p>
 <h1 id="Thunk-函数"><a href="#Thunk-函数" class="headerlink" title="Thunk 函数"></a>Thunk 函数</h1><p>编译器的”传名调用”实现，往往是将参数放到一个临时函数之中，再将这个临时函数传入函数体。这个临时函数就叫做 Thunk 函数。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">m</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> m * <span class="number">2</span>;     </div><div class="line">&#125;</div><div class="line"></div><div class="line">f(x + <span class="number">5</span>);</div><div class="line"></div><div class="line"><span class="comment">// 等同于</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> thunk = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> x + <span class="number">5</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">thunk</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> thunk() * <span class="number">2</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>上面代码中，函数 f 的参数 被thunk函数替换了.</p>
@@ -648,7 +648,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -659,7 +659,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
