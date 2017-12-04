@@ -4,6 +4,54 @@
 
     
   <url>
+    <loc>http://xuzihao.fun/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
+    <lastmod>2017-12-04T07:31:40.616Z</lastmod>
+    <data>
+        <display>
+        <title>计算机网络读书笔记（一）</title>
+        <pubTime>2017-12-04T07:29:00.000Z</pubTime>
+        
+        <tag>读书笔记</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书笔记" url="http://xuzihao.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+          
+             
+              <breadCrumb title="网络" url="http://xuzihao.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xuzihao.fun/mongodb.html</loc>
+    <lastmod>2017-12-04T07:31:34.342Z</lastmod>
+    <data>
+        <display>
+        <title>Mongodb之旅(一)</title>
+        <pubTime>2017-07-27T13:18:35.000Z</pubTime>
+        
+        <tag>数据库</tag>
+         
+        <tag>Mongodb</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据库" url="http://xuzihao.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+          
+             
+              <breadCrumb title="Mongodb" url="http://xuzihao.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Mongodb/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xuzihao.fun/Javascript%E5%AF%B9%E8%B1%A1.html</loc>
     <lastmod>2017-12-01T14:18:49.103Z</lastmod>
     <data>
@@ -688,28 +736,6 @@
            
              
               <breadCrumb title="Node.js" url="http://xuzihao.fun/categories/Node-js/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xuzihao.fun/mongodb.html</loc>
-    <lastmod>2017-07-28T12:37:04.000Z</lastmod>
-    <data>
-        <display>
-        <title>Mongodb之旅(一)</title>
-        <pubTime>2017-07-27T13:18:35.000Z</pubTime>
-        
-        <tag>数据库</tag>
-         
-        <tag>Mongodb</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据库,Mongodb" url="http://xuzihao.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93-Mongodb/"/>
           
         </display>
     </data>
