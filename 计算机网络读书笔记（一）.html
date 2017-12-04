@@ -89,17 +89,19 @@
 
 
 
-<meta name="description" content="🤔🤡🤔">
+<meta name="description" content="服务原语   原语 含义     LISTEN 阻塞操作，等待入境连接请求   CONNECT 与等待中的对等实体建立连接   ACCEPT 接受来自对等实体的入境连接请求   RECEIVE 阻塞操作，等待入境报文   SEND 给对等实体发送一个报文   DISCONNECT 终止一个连接    服务和协议服务和协议是两个截然不同的概念。 服务： 是指某一层向它上一层提供的一组原语（操作）。服">
 <meta name="keywords" content="读书笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络读书笔记（一）">
 <meta property="og:url" content="http://xuzihao.fun/计算机网络读书笔记（一）.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="🤔🤡🤔">
-<meta property="og:updated_time" content="2017-12-04T07:35:36.055Z">
+<meta property="og:description" content="服务原语   原语 含义     LISTEN 阻塞操作，等待入境连接请求   CONNECT 与等待中的对等实体建立连接   ACCEPT 接受来自对等实体的入境连接请求   RECEIVE 阻塞操作，等待入境报文   SEND 给对等实体发送一个报文   DISCONNECT 终止一个连接    服务和协议服务和协议是两个截然不同的概念。 服务： 是指某一层向它上一层提供的一组原语（操作）。服">
+<meta property="og:image" content="http://ozar6ogjb.bkt.clouddn.com/%E6%9C%8D%E5%8A%A1%E5%92%8C%E5%8D%8F%E8%AE%AE.png">
+<meta property="og:updated_time" content="2017-12-04T08:20:32.617Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络读书笔记（一）">
-<meta name="twitter:description" content="🤔🤡🤔">
+<meta name="twitter:description" content="服务原语   原语 含义     LISTEN 阻塞操作，等待入境连接请求   CONNECT 与等待中的对等实体建立连接   ACCEPT 接受来自对等实体的入境连接请求   RECEIVE 阻塞操作，等待入境报文   SEND 给对等实体发送一个报文   DISCONNECT 终止一个连接    服务和协议服务和协议是两个截然不同的概念。 服务： 是指某一层向它上一层提供的一组原语（操作）。服">
+<meta name="twitter:image" content="http://ozar6ogjb.bkt.clouddn.com/%E6%9C%8D%E5%8A%A1%E5%92%8C%E5%8D%8F%E8%AE%AE.png">
 
 
 
@@ -436,7 +438,49 @@
       
 
       
-        
+        <h2 id="服务原语"><a href="#服务原语" class="headerlink" title="服务原语"></a>服务原语</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">原语</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">LISTEN</td>
+<td style="text-align:left">阻塞操作，等待入境连接请求</td>
+</tr>
+<tr>
+<td style="text-align:left">CONNECT</td>
+<td style="text-align:left">与等待中的对等实体建立连接</td>
+</tr>
+<tr>
+<td style="text-align:left">ACCEPT</td>
+<td style="text-align:left">接受来自对等实体的入境连接请求</td>
+</tr>
+<tr>
+<td style="text-align:left">RECEIVE</td>
+<td style="text-align:left">阻塞操作，等待入境报文</td>
+</tr>
+<tr>
+<td style="text-align:left">SEND</td>
+<td style="text-align:left">给对等实体发送一个报文</td>
+</tr>
+<tr>
+<td style="text-align:left">DISCONNECT</td>
+<td style="text-align:left">终止一个连接</td>
+</tr>
+</tbody>
+</table>
+<h2 id="服务和协议"><a href="#服务和协议" class="headerlink" title="服务和协议"></a>服务和协议</h2><p>服务和协议是两个截然不同的概念。</p>
+<p><strong>服务：</strong></p>
+<p>是指某一层向它上一层提供的一组原语（操作）。服务定义了该层准备代表其用户执行哪些操作，但是它不会去考虑如何实现这些操作。低层是服务提供者，上层是服务用户。</p>
+<p><strong>协议：</strong></p>
+<p>协议是一组规则，规定了同一层上对等实体之间所交换的数据包或者报文的格式和含义。</p>
+<p><strong>服务涉及层与层之间的接口！！！！那么，协议设计不同机器上两个对等实体之间发送的数据包</strong></p>
+<p><img src="http://ozar6ogjb.bkt.clouddn.com/%E6%9C%8D%E5%8A%A1%E5%92%8C%E5%8D%8F%E8%AE%AE.png" alt="服务和协议"></p>
+<p>用编程语言来说的话，服务就好像是面向对象语言中的抽象数据类型或者对象。</p>
+
       
     </div>
 
@@ -556,8 +600,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/1.jpg"
@@ -655,6 +708,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#服务原语"><span class="nav-number">1.</span> <span class="nav-text">服务原语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务和协议"><span class="nav-number">2.</span> <span class="nav-text">服务和协议</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
