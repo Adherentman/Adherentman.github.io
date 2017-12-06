@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2017-12-04T08:20:32.617Z</updated>
+  <updated>2017-12-06T14:05:41.931Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -14,6 +14,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>BOM</title>
+    <link href="http://xuzihao.fun/BOM.html"/>
+    <id>http://xuzihao.fun/BOM.html</id>
+    <published>2017-12-06T13:42:00.000Z</published>
+    <updated>2017-12-06T14:05:41.931Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h2><p>它既是window对象的属性，也是document对象的属性。</p>
+<ul>
+<li>location.hash        “#contents”</li>
+<li>location.host                 “www.wrox.com:80”</li>
+<li>location.hostname       “www.wrox.com”</li>
+<li>location.href                  “http:/www.wrox.com”</li>
+<li>location.pathname       “/WileyCDA/“</li>
+<li>location.port                  “8080”</li>
+<li>location.protocol           “http:”</li>
+<li>location.search              “?q=javascript”<a id="more"></a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;location对象&quot;&gt;&lt;a href=&quot;#location对象&quot; class=&quot;headerlink&quot; title=&quot;location对象&quot;&gt;&lt;/a&gt;location对象&lt;/h2&gt;&lt;p&gt;它既是window对象的属性，也是document对象的属性。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;location.hash        “#contents”&lt;/li&gt;
+&lt;li&gt;location.host                 “www.wrox.com:80”&lt;/li&gt;
+&lt;li&gt;location.hostname       “www.wrox.com”&lt;/li&gt;
+&lt;li&gt;location.href                  “http:/www.wrox.com”&lt;/li&gt;
+&lt;li&gt;location.pathname       “/WileyCDA/“&lt;/li&gt;
+&lt;li&gt;location.port                  “8080”&lt;/li&gt;
+&lt;li&gt;location.protocol           “http:”&lt;/li&gt;
+&lt;li&gt;location.search              “?q=javascript”
+    
+    </summary>
+    
+      <category term="BOM" scheme="http://xuzihao.fun/categories/BOM/"/>
+    
+    
+      <category term="BOM" scheme="http://xuzihao.fun/tags/BOM/"/>
+    
+  </entry>
   
   <entry>
     <title>计算机网络读书笔记（一）</title>
@@ -428,211 +470,6 @@
   </entry>
   
   <entry>
-    <title>英语例句</title>
-    <link href="http://xuzihao.fun/%E4%BE%8B%E5%8F%A5.html"/>
-    <id>http://xuzihao.fun/例句.html</id>
-    <published>2017-10-18T12:24:00.000Z</published>
-    <updated>2017-11-12T07:57:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li>No sooner ····· then      <ul>
-<li>一。。。就。</li>
-</ul>
-</li>
-<li>not so much …as<ul>
-<li>与其。。不如</li>
-</ul>
-</li>
-<li><p>no more…than</p>
-<ul>
-<li><p>不过，仅仅；至多，同。。。一样不</p>
-<a id="more"></a></li>
-</ul>
-</li>
-<li>as…as<ul>
-<li>像。。。一样</li>
-</ul>
-</li>
-<li><p>imagined + sth. + to be + adj.    </p>
-<ul>
-<li>为复合宾语解构</li>
-</ul>
-</li>
-<li><p>put forward to do sth.</p>
-<ul>
-<li>提出要求做某事</li>
-</ul>
-</li>
-<li>get sth. done<ul>
-<li>把某事做了</li>
-</ul>
-</li>
-<li>would rather <ul>
-<li>引导从句的虚拟结构中，如果表示对现在或将来情况的愿望，从句用<strong>过去时</strong>。</li>
-<li>如果是对过去情况的虚拟，从句用<strong>过去完成时</strong>。</li>
-</ul>
-</li>
-<li>never, hardly, seldom, little, not until, not, not only, no sooner, no    longer, nowhere, by no means <ul>
-<li>以上位于句首需要部分倒装</li>
-</ul>
-</li>
-<li>keep diary<ul>
-<li>记日记</li>
-</ul>
-</li>
-<li>can’t help doing sth.<ul>
-<li>忍不住做。。。</li>
-</ul>
-</li>
-<li>be worth doing<ul>
-<li>某（事或物）值得做</li>
-</ul>
-</li>
-<li>be worthy to be done 或 sth. is worthy of being done 以及 sb. be worhty of doing sth. 或者 sb. be worthy to do sth.<ul>
-<li>和 worth 的意思一样</li>
-</ul>
-</li>
-<li>It is/was /will be the first time that …句式<ul>
-<li>主句谓语是is，从句用现在完成时</li>
-<li>主句谓语是was，从句谓语用过去完成时</li>
-<li>主句谓语是will be，从句谓语用一般现在时</li>
-</ul>
-</li>
-<li>be appropriate for sb. 或 be appropriate to do sth.<ul>
-<li>固定搭配</li>
-</ul>
-</li>
-<li>appreciate + doing sth.<ul>
-<li>感激做某事</li>
-</ul>
-</li>
-<li>but to do,但是but之前出现了 do/does/did/done就要 but do</li>
-<li>no mood | in the mood<ul>
-<li>没有心情 | 有好心情</li>
-</ul>
-</li>
-<li>the impression of + doing sth.<ul>
-<li>做过某事的印象</li>
-</ul>
-</li>
-<li>have a(the) right to sth.<ul>
-<li>享有。。的权利</li>
-</ul>
-</li>
-<li>do nothing but <ul>
-<li>此结构后要求动词原形</li>
-</ul>
-</li>
-<li>need doing / need to done<ul>
-<li>需要被</li>
-</ul>
-</li>
-<li>sb. spend some time doing sth.<ul>
-<li>花时间做某事</li>
-</ul>
-</li>
-<li>a large amount of, a great deal of <ul>
-<li>固定搭配</li>
-</ul>
-</li>
-<li>将来时除了有be going to, will + do, 还有be to do, be about to do.</li>
-<li>play a part in<ul>
-<li>在。。。起作用。</li>
-</ul>
-</li>
-<li>must have + 过去分词<ul>
-<li>过去一定做了某事，表示对过去的肯定推测。</li>
-</ul>
-</li>
-<li>could have + 过去分词<ul>
-<li>本来能够做….</li>
-</ul>
-</li>
-<li>another + 基数词 + 名词复数<ul>
-<li>另外/在多少个</li>
-<li>I want another three apples.</li>
-<li>我还需要三个苹果。</li>
-</ul>
-</li>
-<li>mind doing sth.<ul>
-<li>介意做某事</li>
-</ul>
-</li>
-<li>to help you to out <ul>
-<li>表示目的</li>
-</ul>
-</li>
-<li>be going to + 一般现在时（leaves）</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;No sooner ····· then      &lt;ul&gt;
-&lt;li&gt;一。。。就。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;not so much …as&lt;ul&gt;
-&lt;li&gt;与其。。不如&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;no more…than&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;不过，仅仅；至多，同。。。一样不&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英语单词</title>
-    <link href="http://xuzihao.fun/%E5%8D%95%E8%AF%8D.html"/>
-    <id>http://xuzihao.fun/单词.html</id>
-    <published>2017-10-18T12:24:00.000Z</published>
-    <updated>2017-11-12T07:57:05.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li>delicate| 易碎的</li>
-<li>idleness| 懒惰</li>
-<li>tell the truth | 说实话</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li>tell a lie / tell lies| 说谎话</li>
-<li>hold the view 持某种看法;认为.</li>
-<li>in view of | 鉴于，考虑到</li>
-<li>working on | 从事于；致力于</li>
-<li>set free | 释放</li>
-<li>run into | 偶然</li>
-<li>allow | 允许，给予(人)</li>
-<li>for fear of | 生怕，以免</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;delicate| 易碎的&lt;/li&gt;
-&lt;li&gt;idleness| 懒惰&lt;/li&gt;
-&lt;li&gt;tell the truth | 说实话&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
-    
-  </entry>
-  
-  <entry>
     <title>英语时态</title>
     <link href="http://xuzihao.fun/%E6%97%B6%E6%80%81.html"/>
     <id>http://xuzihao.fun/时态.html</id>
@@ -824,6 +661,211 @@
 &lt;li&gt;现在完成时&lt;/li&gt;
 &lt;li&gt;现在完成进行时&lt;/li&gt;
 &lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>英语单词</title>
+    <link href="http://xuzihao.fun/%E5%8D%95%E8%AF%8D.html"/>
+    <id>http://xuzihao.fun/单词.html</id>
+    <published>2017-10-18T12:24:00.000Z</published>
+    <updated>2017-11-12T07:57:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>delicate| 易碎的</li>
+<li>idleness| 懒惰</li>
+<li>tell the truth | 说实话</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>tell a lie / tell lies| 说谎话</li>
+<li>hold the view 持某种看法;认为.</li>
+<li>in view of | 鉴于，考虑到</li>
+<li>working on | 从事于；致力于</li>
+<li>set free | 释放</li>
+<li>run into | 偶然</li>
+<li>allow | 允许，给予(人)</li>
+<li>for fear of | 生怕，以免</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;delicate| 易碎的&lt;/li&gt;
+&lt;li&gt;idleness| 懒惰&lt;/li&gt;
+&lt;li&gt;tell the truth | 说实话&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>英语例句</title>
+    <link href="http://xuzihao.fun/%E4%BE%8B%E5%8F%A5.html"/>
+    <id>http://xuzihao.fun/例句.html</id>
+    <published>2017-10-18T12:24:00.000Z</published>
+    <updated>2017-11-12T07:57:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>No sooner ····· then      <ul>
+<li>一。。。就。</li>
+</ul>
+</li>
+<li>not so much …as<ul>
+<li>与其。。不如</li>
+</ul>
+</li>
+<li><p>no more…than</p>
+<ul>
+<li><p>不过，仅仅；至多，同。。。一样不</p>
+<a id="more"></a></li>
+</ul>
+</li>
+<li>as…as<ul>
+<li>像。。。一样</li>
+</ul>
+</li>
+<li><p>imagined + sth. + to be + adj.    </p>
+<ul>
+<li>为复合宾语解构</li>
+</ul>
+</li>
+<li><p>put forward to do sth.</p>
+<ul>
+<li>提出要求做某事</li>
+</ul>
+</li>
+<li>get sth. done<ul>
+<li>把某事做了</li>
+</ul>
+</li>
+<li>would rather <ul>
+<li>引导从句的虚拟结构中，如果表示对现在或将来情况的愿望，从句用<strong>过去时</strong>。</li>
+<li>如果是对过去情况的虚拟，从句用<strong>过去完成时</strong>。</li>
+</ul>
+</li>
+<li>never, hardly, seldom, little, not until, not, not only, no sooner, no    longer, nowhere, by no means <ul>
+<li>以上位于句首需要部分倒装</li>
+</ul>
+</li>
+<li>keep diary<ul>
+<li>记日记</li>
+</ul>
+</li>
+<li>can’t help doing sth.<ul>
+<li>忍不住做。。。</li>
+</ul>
+</li>
+<li>be worth doing<ul>
+<li>某（事或物）值得做</li>
+</ul>
+</li>
+<li>be worthy to be done 或 sth. is worthy of being done 以及 sb. be worhty of doing sth. 或者 sb. be worthy to do sth.<ul>
+<li>和 worth 的意思一样</li>
+</ul>
+</li>
+<li>It is/was /will be the first time that …句式<ul>
+<li>主句谓语是is，从句用现在完成时</li>
+<li>主句谓语是was，从句谓语用过去完成时</li>
+<li>主句谓语是will be，从句谓语用一般现在时</li>
+</ul>
+</li>
+<li>be appropriate for sb. 或 be appropriate to do sth.<ul>
+<li>固定搭配</li>
+</ul>
+</li>
+<li>appreciate + doing sth.<ul>
+<li>感激做某事</li>
+</ul>
+</li>
+<li>but to do,但是but之前出现了 do/does/did/done就要 but do</li>
+<li>no mood | in the mood<ul>
+<li>没有心情 | 有好心情</li>
+</ul>
+</li>
+<li>the impression of + doing sth.<ul>
+<li>做过某事的印象</li>
+</ul>
+</li>
+<li>have a(the) right to sth.<ul>
+<li>享有。。的权利</li>
+</ul>
+</li>
+<li>do nothing but <ul>
+<li>此结构后要求动词原形</li>
+</ul>
+</li>
+<li>need doing / need to done<ul>
+<li>需要被</li>
+</ul>
+</li>
+<li>sb. spend some time doing sth.<ul>
+<li>花时间做某事</li>
+</ul>
+</li>
+<li>a large amount of, a great deal of <ul>
+<li>固定搭配</li>
+</ul>
+</li>
+<li>将来时除了有be going to, will + do, 还有be to do, be about to do.</li>
+<li>play a part in<ul>
+<li>在。。。起作用。</li>
+</ul>
+</li>
+<li>must have + 过去分词<ul>
+<li>过去一定做了某事，表示对过去的肯定推测。</li>
+</ul>
+</li>
+<li>could have + 过去分词<ul>
+<li>本来能够做….</li>
+</ul>
+</li>
+<li>another + 基数词 + 名词复数<ul>
+<li>另外/在多少个</li>
+<li>I want another three apples.</li>
+<li>我还需要三个苹果。</li>
+</ul>
+</li>
+<li>mind doing sth.<ul>
+<li>介意做某事</li>
+</ul>
+</li>
+<li>to help you to out <ul>
+<li>表示目的</li>
+</ul>
+</li>
+<li>be going to + 一般现在时（leaves）</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;No sooner ····· then      &lt;ul&gt;
+&lt;li&gt;一。。。就。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;not so much …as&lt;ul&gt;
+&lt;li&gt;与其。。不如&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;no more…than&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不过，仅仅；至多，同。。。一样不&lt;/p&gt;
     
     </summary>
     
@@ -1934,91 +1976,6 @@
 &lt;p&gt;摘自ES6标准入门&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;可以把它理解成一个状态机,封装了多个内部状态.还是一个遍历器对象生成函数.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Javascript修仙之路" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
-    
-    
-      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
-    
-      <category term="node.js" scheme="http://xuzihao.fun/tags/node-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Promise</title>
-    <link href="http://xuzihao.fun/Promise.html"/>
-    <id>http://xuzihao.fun/Promise.html</id>
-    <published>2017-07-28T09:37:12.000Z</published>
-    <updated>2017-07-29T06:41:56.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(</div><div class="line"><span class="comment">/* executor */</span></div><div class="line">   <span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;...&#125;</div><div class="line">)</div></pre></td></tr></table></figure>
-<blockquote>
-<p>executor 函数在Promise构造函数执行时同步执行，被传递resolve和reject函数（executor 函数在Promise构造函数返回新建对象前被调用）。</p>
-</blockquote>
-<p>一个 <code>Promise</code>有以下几种状态:</p>
-<ul>
-<li><em>pending</em>: 初始状态，不是成功或失败状态。</li>
-<li><em>fulfilled</em>: 意味着操作成功完成。</li>
-<li><em>rejected</em>: 意味着操作失败。</li>
-</ul>
-<a id="more"></a>
-<h1 id="Promise对象"><a href="#Promise对象" class="headerlink" title="Promise对象"></a>Promise对象</h1><ul>
-<li>Promise是一个构造函数</li>
-</ul>
-<ul>
-<li><p>对象的状态不受外界影响</p>
-</li>
-<li><p>一旦状态改变就不会再变,任何时候都可以得到这个结果.</p>
-<blockquote>
-<p>状态改变只有两种可能:从<code>Pending</code> 变为<code>Resolved</code>(‘’未完成’’变为’’成功’’将异步操作<strong>成功</strong>的结果作为参数传递出去)</p>
-<p>从<code>Pending</code>变为<code>Rejected</code>(“未完成”变为”失败”将异步操作报出<strong>错误</strong>的结果作为参数传递出去).</p>
-</blockquote>
-</li>
-</ul>
-<h1 id="Promise原型"><a href="#Promise原型" class="headerlink" title="Promise原型"></a>Promise原型</h1><h2 id="then-方法"><a href="#then-方法" class="headerlink" title="then()方法"></a>then()方法</h2><h3 id="MDN的例子"><a href="#MDN的例子" class="headerlink" title="MDN的例子"></a>MDN的例子</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> p1 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">  resolve(<span class="string">"Success!"</span>);</div><div class="line">  <span class="comment">// or</span></div><div class="line">  <span class="comment">// reject ("Error!");</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line">p1.then(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(value); <span class="comment">// Success!</span></div><div class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">reason</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(reason); <span class="comment">// Error!</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p><img src="/images/promise1.png" alt="promise1"></p>
-<p>当我把<code>reject</code>去掉注释</p>
-<p><img src="/images/promise2.png" alt="promise2"></p>
-<p><img src="/images/promise3.png" alt="promise3"></p>
-<p>说明<code>p1</code>已经被声明过了,而且状态改变过了就不会在改变了.</p>
-<p>我只能把<code>p1</code> 改成别的才能得到<code>Error</code>.</p>
-<h2 id="链式"><a href="#链式" class="headerlink" title="链式"></a>链式</h2><p>例子来自<es6标准入门></es6标准入门></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">getJSON(<span class="string">"/post/1.json"</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">post</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> getJSON(post.commentURL);</div><div class="line">&#125;).then(<span class="function"><span class="keyword">function</span> <span class="title">funcA</span>(<span class="params">comments</span>)</span>&#123;</div><div class="line">  consloe.log(<span class="string">"Resolved:"</span>,comments);</div><div class="line">&#125;,<span class="function"><span class="keyword">function</span> <span class="title">funcB</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">  consloe.log(<span class="string">"Rejected:"</span>,err);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>第一个then方法指定的回调函数返回的是另一个Promise对象.第二个then方法指定的回调函数会等待这个新的Promise对象状态发送变化再进行调用下面的<code>funcA</code>或者<code>funcB</code>函数.</p>
-<h2 id="catch-方法"><a href="#catch-方法" class="headerlink" title="catch()方法"></a>catch()方法</h2><p>例子来自<es6标准入门></es6标准入门></p>
-<p><strong>catch()</strong> 方法返回一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Promise" target="_blank" rel="external">Promise</a>，只处理拒绝的情况。它的行为与调用<strong>then()</strong>相同。</p>
-<p>其实是 <strong>.then(null,rejection)</strong> 的别名.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">p.then(<span class="function">(<span class="params">val</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"fulfilled:"</span>, val))</div><div class="line">	.catch(<span class="function">(<span class="params">err</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"rejected:"</span>, err));</div><div class="line"></div><div class="line"><span class="comment">//等同于</span></div><div class="line"></div><div class="line">p.then(<span class="function">(<span class="params">val</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">"fulfilled"</span>, val))</div><div class="line">	.then(<span class="literal">null</span>,(err) =&gt; <span class="built_in">console</span>.log(<span class="string">"rejected:"</span>, val));</div></pre></td></tr></table></figure>
-<ul>
-<li>Promise对象的错误具有”冒泡”性质,会一直向后传递,直到被捕获为止.也就是说,错误总是会被下一个catch语句捕获.</li>
-</ul>
-<h1 id="Promise方法"><a href="#Promise方法" class="headerlink" title="Promise方法"></a>Promise方法</h1><h2 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all()"></a>Promise.all()</h2><p><strong>Promise.all(iterable)</strong> 方法指当所有在可迭代参数中的 promises 已完成，或者第一个传递的 promise（指 reject）失败时，返回 promise。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Promise</span>.all(iterable);</div></pre></td></tr></table></figure>
-<blockquote>
-<p>iterable</p>
-<p>一个可迭代对象，例如 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Array" target="_blank" rel="external"><code>Array</code></a>。参见 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/iterable" target="_blank" rel="external">iterable</a>.</p>
-</blockquote>
-<p>来自<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/all" target="_blank" rel="external">MDN</a>的例子</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> p1 = <span class="built_in">Promise</span>.resolve(<span class="number">3</span>);</div><div class="line"><span class="keyword">var</span> p2 = <span class="number">1337</span>;</div><div class="line"><span class="keyword">var</span> p3 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</div><div class="line">  setTimeout(resolve, <span class="number">100</span>, <span class="string">"foo"</span>);</div><div class="line">&#125;); </div><div class="line"></div><div class="line"><span class="built_in">Promise</span>.all([p1, p2, p3]).then(<span class="function"><span class="params">values</span> =&gt;</span> &#123; </div><div class="line">  <span class="built_in">console</span>.log(values); <span class="comment">// [3, 1337, "foo"] </span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h2 id="Promise-resolve-value"><a href="#Promise-resolve-value" class="headerlink" title="Promise.resolve(value)"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve" target="_blank" rel="external">Promise.resolve(value)</a></h2><h2 id="Promise-reject-reason"><a href="#Promise-reject-reason" class="headerlink" title="Promise.reject(reason)"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject" target="_blank" rel="external">Promise.reject(reason)</a></h2><h2 id="Promise-race-iterable"><a href="#Promise-race-iterable" class="headerlink" title="Promise.race(iterable)"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/race" target="_blank" rel="external">Promise.race(iterable)</a></h2><h1 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h1><p>一个回调函数，也被称为高阶函数，是一个被作为参数传递给另一个函数.</p>
-<p>你到一个商店买东西，刚好你要的东西没有货，于是你在店员那里留下了你的电话，过了几天店里有货了，店员就打了你的电话，然后你接到电话后就到店里去取了货。在这个例子里，你的电话号码就叫回调函数，你把电话留给店员就叫登记回调函数，店里后来有货了叫做触发了回调关联的事件，店员给你打电话叫做调用回调函数，你到店里去取货叫做响应回调事件。回答完毕。 </p>
-<p>作者：常溪玲链接：<a href="https://www.zhihu.com/question/19801131/answer/13005983来源：知乎著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。" target="_blank" rel="external">https://www.zhihu.com/question/19801131/answer/13005983来源：知乎著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Promise&quot;&gt;&lt;a href=&quot;#Promise&quot; class=&quot;headerlink&quot; title=&quot;Promise&quot;&gt;&lt;/a&gt;Promise&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Promise&lt;/span&gt;(&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* executor */&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;resolve,reject&lt;/span&gt;)&lt;/span&gt;&amp;#123;...&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;executor 函数在Promise构造函数执行时同步执行，被传递resolve和reject函数（executor 函数在Promise构造函数返回新建对象前被调用）。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;一个 &lt;code&gt;Promise&lt;/code&gt;有以下几种状态:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;pending&lt;/em&gt;: 初始状态，不是成功或失败状态。&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;fulfilled&lt;/em&gt;: 意味着操作成功完成。&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;rejected&lt;/em&gt;: 意味着操作失败。&lt;/li&gt;
-&lt;/ul&gt;
     
     </summary>
     
