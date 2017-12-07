@@ -57,16 +57,7 @@
     <link rel="icon" href="/img/favicon.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="location对象它既是window对象的属性，也是document对象的属性。
-
-location.hash        “#contents”
-location.host                 “www.wrox.com:80”
-location.hostname       “www.wrox.com”
-location.href                  “http:/www.wrox.com”
-location.pathname       “/WileyCDA/“
-location.port                  “8080”
-location.protocol           “http:”
-location.search              “?q=javascript”">
+    <meta name="description" itemprop="description" content="location对象它既是window对象的属性，也是document对象的属性。">
     <meta name="keywords" content="null,BOM">
     <meta name="theme-color" content="#0097A7">
 
@@ -247,21 +238,12 @@ location.search              “?q=javascript”">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="BOM | 壮壮-Technology">
     <meta property="og:image" content="/img/favicon.png">
-    <meta property="og:description" content="location对象它既是window对象的属性，也是document对象的属性。
-
-location.hash        “#contents”
-location.host                 “www.wrox.com:80”
-location.hostname       “www.wrox.com”
-location.href                  “http:/www.wrox.com”
-location.pathname       “/WileyCDA/“
-location.port                  “8080”
-location.protocol           “http:”
-location.search              “?q=javascript”">
+    <meta property="og:description" content="location对象它既是window对象的属性，也是document对象的属性。">
     <meta property="og:article:tag" content="BOM"> 
 
     
         <meta property="article:published_time" content="Wed Dec 06 2017 21:42:00 GMT+0800">
-        <meta property="article:modified_time" content="Wed Dec 06 2017 22:05:41 GMT+0800">
+        <meta property="article:modified_time" content="Thu Dec 07 2017 21:21:18 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -284,7 +266,7 @@ location.search              “?q=javascript”">
     "mainEntityOfPage": "http://xuzihao.fun/BOM.html",
     "headline": "BOM",
     "datePublished": "Wed Dec 06 2017 21:42:00 GMT+0800",
-    "dateModified": "Wed Dec 06 2017 22:05:41 GMT+0800",
+    "dateModified": "Thu Dec 07 2017 21:21:18 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "XuZiHao",
@@ -303,16 +285,7 @@ location.search              “?q=javascript”">
         }
     },
     "keywords": ",BOMnull",
-    "description": "location对象它既是window对象的属性，也是document对象的属性。
-
-location.hash        “#contents”
-location.host                 “www.wrox.com:80”
-location.hostname       “www.wrox.com”
-location.href                  “http:/www.wrox.com”
-location.pathname       “/WileyCDA/“
-location.port                  “8080”
-location.protocol           “http:”
-location.search              “?q=javascript”",
+    "description": "location对象它既是window对象的属性，也是document对象的属性。",
 }
 </script>
 
@@ -386,7 +359,7 @@ location.search              “?q=javascript”",
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#location对象"><span class="post-toc-number">1.</span> <span class="post-toc-text">location对象</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#location对象"><span class="post-toc-number">1.</span> <span class="post-toc-text">location对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#位置操作"><span class="post-toc-number">2.</span> <span class="post-toc-text">位置操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#navigator对象"><span class="post-toc-number">3.</span> <span class="post-toc-text">navigator对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#screen对象"><span class="post-toc-number">4.</span> <span class="post-toc-text">screen对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#history对象"><span class="post-toc-number">5.</span> <span class="post-toc-text">history对象</span></a></li></ol>
     </ul>
     
 
@@ -560,15 +533,74 @@ location.search              “?q=javascript”",
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h2 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h2><p>它既是window对象的属性，也是document对象的属性。</p>
+<a id="more"></a>
 <ul>
-<li>location.hash        “#contents”</li>
-<li>location.host                 “www.wrox.com:80”</li>
-<li>location.hostname       “www.wrox.com”</li>
-<li>location.href                  “http:/www.wrox.com”</li>
-<li>location.pathname       “/WileyCDA/“</li>
-<li>location.port                  “8080”</li>
-<li>location.protocol           “http:”</li>
-<li>location.search              “?q=javascript”<a id="more"></a></li>
+<li>location.hash        “#contents”<ul>
+<li>返回URL中的hash，如果URL中不包含散列，则返回空字符串</li>
+</ul>
+</li>
+<li>location.host                 “www.wrox.com:80”<ul>
+<li>返回服务器名称和端口号</li>
+</ul>
+</li>
+<li>location.hostname       “www.wrox.com”<ul>
+<li>返回不带端口号的服务器名称</li>
+</ul>
+</li>
+<li>location.href                  “http:/www.wrox.com”<ul>
+<li>返回当前加载页面的完整URL</li>
+</ul>
+</li>
+<li>location.pathname       “/WileyCDA/“<ul>
+<li>返回URL中的目录和（或者）文件名</li>
+</ul>
+</li>
+<li>location.port                  “8080”<ul>
+<li>返回URL中指定的端口号</li>
+</ul>
+</li>
+<li>location.protocol           “http:”<ul>
+<li>返回页面使用的协议</li>
+</ul>
+</li>
+<li>location.search              “?q=javascript”<ul>
+<li>返回URL的查询字符串，字符串以问号开头</li>
+</ul>
+</li>
+</ul>
+<h2 id="位置操作"><a href="#位置操作" class="headerlink" title="位置操作"></a>位置操作</h2><ul>
+<li>location.assign <ul>
+<li>可以立即打开新URL，而且还在浏览器的历史记录中生成一条记录</li>
+</ul>
+</li>
+<li>location.replace             <ul>
+<li>导航到的URL，不会在历史记录中生成新纪录，用户不能回到前一个页面。</li>
+</ul>
+</li>
+<li>location.reload <ul>
+<li>不传递任何参数，页面就会以最有效的方式重新加载</li>
+<li>要强制从服务器重新加载，那么就需要给个参数为<strong>true</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator" target="_blank" rel="external">查看MDN</a></p>
+<h2 id="screen对象"><a href="#screen对象" class="headerlink" title="screen对象"></a>screen对象</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Screen" target="_blank" rel="external">查看MDN</a></p>
+<h2 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h2><ul>
+<li>history.go(-1)        后退一页</li>
+<li>history.go(1)                 前进一页，以此类推</li>
+<li>history.go(“wrox.com”)       跳转到最近的wrox.com</li>
+</ul>
+<p>如果历史记录中不包含该字符串的话，那么这个方法什么也不做</p>
+<p>还有两个简写方法,方法可以模仿浏览器的“后退” 和 “前进” 按钮。</p>
+<ul>
+<li>history.back</li>
+<li>history.forward</li>
+</ul>
+<ul>
+<li>history.length<ul>
+<li>这个length属性保存着历史记录的数量。</li>
+</ul>
+</li>
 </ul>
 
         

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2017-12-06T14:05:41.931Z</updated>
+  <updated>2017-12-07T13:21:18.162Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -20,33 +20,83 @@
     <link href="http://xuzihao.fun/BOM.html"/>
     <id>http://xuzihao.fun/BOM.html</id>
     <published>2017-12-06T13:42:00.000Z</published>
-    <updated>2017-12-06T14:05:41.931Z</updated>
+    <updated>2017-12-07T13:21:18.162Z</updated>
     
     <content type="html"><![CDATA[<h2 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h2><p>它既是window对象的属性，也是document对象的属性。</p>
+<a id="more"></a>
 <ul>
-<li>location.hash        “#contents”</li>
-<li>location.host                 “www.wrox.com:80”</li>
-<li>location.hostname       “www.wrox.com”</li>
-<li>location.href                  “http:/www.wrox.com”</li>
-<li>location.pathname       “/WileyCDA/“</li>
-<li>location.port                  “8080”</li>
-<li>location.protocol           “http:”</li>
-<li>location.search              “?q=javascript”<a id="more"></a></li>
+<li>location.hash        “#contents”<ul>
+<li>返回URL中的hash，如果URL中不包含散列，则返回空字符串</li>
+</ul>
+</li>
+<li>location.host                 “www.wrox.com:80”<ul>
+<li>返回服务器名称和端口号</li>
+</ul>
+</li>
+<li>location.hostname       “www.wrox.com”<ul>
+<li>返回不带端口号的服务器名称</li>
+</ul>
+</li>
+<li>location.href                  “http:/www.wrox.com”<ul>
+<li>返回当前加载页面的完整URL</li>
+</ul>
+</li>
+<li>location.pathname       “/WileyCDA/“<ul>
+<li>返回URL中的目录和（或者）文件名</li>
+</ul>
+</li>
+<li>location.port                  “8080”<ul>
+<li>返回URL中指定的端口号</li>
+</ul>
+</li>
+<li>location.protocol           “http:”<ul>
+<li>返回页面使用的协议</li>
+</ul>
+</li>
+<li>location.search              “?q=javascript”<ul>
+<li>返回URL的查询字符串，字符串以问号开头</li>
+</ul>
+</li>
+</ul>
+<h2 id="位置操作"><a href="#位置操作" class="headerlink" title="位置操作"></a>位置操作</h2><ul>
+<li>location.assign <ul>
+<li>可以立即打开新URL，而且还在浏览器的历史记录中生成一条记录</li>
+</ul>
+</li>
+<li>location.replace             <ul>
+<li>导航到的URL，不会在历史记录中生成新纪录，用户不能回到前一个页面。</li>
+</ul>
+</li>
+<li>location.reload <ul>
+<li>不传递任何参数，页面就会以最有效的方式重新加载</li>
+<li>要强制从服务器重新加载，那么就需要给个参数为<strong>true</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator" target="_blank" rel="external">查看MDN</a></p>
+<h2 id="screen对象"><a href="#screen对象" class="headerlink" title="screen对象"></a>screen对象</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Screen" target="_blank" rel="external">查看MDN</a></p>
+<h2 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h2><ul>
+<li>history.go(-1)        后退一页</li>
+<li>history.go(1)                 前进一页，以此类推</li>
+<li>history.go(“wrox.com”)       跳转到最近的wrox.com</li>
+</ul>
+<p>如果历史记录中不包含该字符串的话，那么这个方法什么也不做</p>
+<p>还有两个简写方法,方法可以模仿浏览器的“后退” 和 “前进” 按钮。</p>
+<ul>
+<li>history.back</li>
+<li>history.forward</li>
+</ul>
+<ul>
+<li>history.length<ul>
+<li>这个length属性保存着历史记录的数量。</li>
+</ul>
+</li>
 </ul>
 ]]></content>
     
     <summary type="html">
     
       &lt;h2 id=&quot;location对象&quot;&gt;&lt;a href=&quot;#location对象&quot; class=&quot;headerlink&quot; title=&quot;location对象&quot;&gt;&lt;/a&gt;location对象&lt;/h2&gt;&lt;p&gt;它既是window对象的属性，也是document对象的属性。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;location.hash        “#contents”&lt;/li&gt;
-&lt;li&gt;location.host                 “www.wrox.com:80”&lt;/li&gt;
-&lt;li&gt;location.hostname       “www.wrox.com”&lt;/li&gt;
-&lt;li&gt;location.href                  “http:/www.wrox.com”&lt;/li&gt;
-&lt;li&gt;location.pathname       “/WileyCDA/“&lt;/li&gt;
-&lt;li&gt;location.port                  “8080”&lt;/li&gt;
-&lt;li&gt;location.protocol           “http:”&lt;/li&gt;
-&lt;li&gt;location.search              “?q=javascript”
     
     </summary>
     
