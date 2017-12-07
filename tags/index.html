@@ -43,7 +43,7 @@
     
     <title>
         
-            标签 | 
+            tags | 
         
         壮壮-Technology
     </title>
@@ -232,7 +232,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://xuzihao.fun/tags/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签 | 壮壮-Technology">
+    <meta property="og:title" content="tags | 壮壮-Technology">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="🤔🤡🤔">
     
@@ -289,162 +289,57 @@
 
 <!-- Layouts -->
 
-    <!-- Post Module -->
-    <div class="material-post_container">
+    <!-- Tags Cloud -->
+    <style>
+    #bottom{
+        position: relative;
+    }
 
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+    @media screen and (max-width: 480px) {
+        .material-tagscloud{
+            margin: 6em 2em 0;
+        }
+    }
 
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * 19 + 1);
+    .material-tagscloud a{
+        text-decoration:none;
+        padding: 1px 9px;
+        margin: 9px 1px;
+        line-height: 40px;
+        white-space: nowrap;
+        transition: .6s;
+        opacity: .85;
+    }
 
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
+    .material-tagscloud a:hover{
+        transition: .6s;
+        opacity: 1;
+        background: #FAFAFA;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    }
+</style>
+
+<div class=" material-tagscloud">
+    <div class="material-post mdl-grid">
+        <a href="/tags/Android/" style="font-size: 16px; color: #757575">Android</a> <a href="/tags/BOM/" style="font-size: 16px; color: #757575">BOM</a> <a href="/tags/C/" style="font-size: 16px; color: #757575">C</a> <a href="/tags/CSS/" style="font-size: 19.17px; color: #676767">CSS</a> <a href="/tags/English/" style="font-size: 22.33px; color: #595959">English</a> <a href="/tags/GraphQL/" style="font-size: 16px; color: #757575">GraphQL</a> <a href="/tags/Java/" style="font-size: 16px; color: #757575">Java</a> <a href="/tags/JavaScript/" style="font-size: 35px; color: #212121">JavaScript</a> <a href="/tags/Mongodb/" style="font-size: 16px; color: #757575">Mongodb</a> <a href="/tags/PHP/" style="font-size: 16px; color: #757575">PHP</a> <a href="/tags/Python/" style="font-size: 16px; color: #757575">Python</a> <a href="/tags/React/" style="font-size: 28.67px; color: #3d3d3d">React</a> <a href="/tags/React-Native/" style="font-size: 16px; color: #757575">React Native</a> <a href="/tags/Vue-js/" style="font-size: 16px; color: #757575">Vue.js</a> <a href="/tags/Webpack/" style="font-size: 19.17px; color: #676767">Webpack</a> <a href="/tags/git/" style="font-size: 25.5px; color: #4b4b4b">git</a> <a href="/tags/go/" style="font-size: 16px; color: #757575">go</a> <a href="/tags/hexo/" style="font-size: 22.33px; color: #595959">hexo</a> <a href="/tags/iOS/" style="font-size: 16px; color: #757575">iOS</a> <a href="/tags/node-js/" style="font-size: 31.83px; color: #2f2f2f">node.js</a> <a href="/tags/php/" style="font-size: 16px; color: #757575">php</a> <a href="/tags/小程序/" style="font-size: 16px; color: #757575">小程序</a> <a href="/tags/数据库/" style="font-size: 19.17px; color: #676767">数据库</a> <a href="/tags/生活/" style="font-size: 16px; color: #757575">生活</a> <a href="/tags/读书笔记/" style="font-size: 22.33px; color: #595959">读书笔记</a>
+    </div>
+</div>
+
+
+<script type="text/ls-javascript" id="page-tagcloud-script">
+    var adjustFooter = function() {
+        if( ($('#bottom').offset().top + $('#bottom').outerHeight() ) < $(window).height() ) {
+            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
+            $('#bottom').css('bottom', '-' + footerBottom + 'px');
+        }
+    };
+
+    $(document).ready(function() {
+        adjustFooter();
+    });
 </script>
 
-        
-    
-            <p class="article-headline-p">
-                标签
-            </p>
-        </div>
 
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>XuZiHao</strong>
-        <span>3月 21, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-
-    <!-- Tags (bookmark) -->
-    
-
-    <!-- Share -->
-    
-        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=标签&url=http://xuzihao.fun/tags/index.html&pic=http://xuzihao.fun/img/favicon.png&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=标签&url=http://xuzihao.fun/tags/index.html&via=XuZiHao" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://xuzihao.fun/tags/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Facebook
-            </li>
-        </a>
-    
-
-    <!-- Share Google+ -->
-    
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://xuzihao.fun/tags/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Google+
-            </li>
-        </a>
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
-    
-</div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        
-        
-    
-
-    
-</div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-</nav>
-
-        </div>
-    </div>
 
 
 
@@ -529,6 +424,8 @@
             </ul>
         </li>
         
+            <li class="divider"></li>
+        
     
 
     <!-- Categories  -->
@@ -536,7 +433,7 @@
         <li class="dropdown">
             <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
                 
-                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                    <i class="material-icons sidebar-material-icons">view_module</i>
                 
                 分类
                 <b class="caret"></b>
@@ -552,11 +449,31 @@
     <!-- Pages  -->
     
         <li>
-            <a href="/about" title="About">
+            <a href="/about" title="关于我">
                 
                     <i class="material-icons sidebar-material-icons">person</i>
                 
-                About
+                关于我
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">work</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">turned_in</i>
+                
+                标签云
             </a>
         </li>
         

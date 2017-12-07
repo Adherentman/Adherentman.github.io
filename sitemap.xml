@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://xuzihao.fun/tags/index.html</loc>
+    
+    <lastmod>2017-12-07T01:26:42.028Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://xuzihao.fun/timeline/timeline.html</loc>
+    
+    <lastmod>2017-12-07T01:25:50.239Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://xuzihao.fun/BOM.html</loc>
     
     <lastmod>2017-12-06T14:05:41.931Z</lastmod>
@@ -327,13 +341,6 @@
     <loc>http://xuzihao.fun/categories/index.html</loc>
     
     <lastmod>2017-03-21T12:58:44.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://xuzihao.fun/tags/index.html</loc>
-    
-    <lastmod>2017-03-21T12:58:00.000Z</lastmod>
     
   </url>
   
