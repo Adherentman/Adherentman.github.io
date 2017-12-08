@@ -247,7 +247,7 @@
 
     
         <meta property="article:published_time" content="Fri Dec 08 2017 22:05:00 GMT+0800">
-        <meta property="article:modified_time" content="Fri Dec 08 2017 22:33:13 GMT+0800">
+        <meta property="article:modified_time" content="Fri Dec 08 2017 23:38:05 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -270,7 +270,7 @@
     "mainEntityOfPage": "http://xuzihao.fun/C++初体验.html",
     "headline": "C++ 初体验",
     "datePublished": "Fri Dec 08 2017 22:05:00 GMT+0800",
-    "dateModified": "Fri Dec 08 2017 22:33:13 GMT+0800",
+    "dateModified": "Fri Dec 08 2017 23:38:05 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "XuZiHao",
@@ -527,6 +527,19 @@
 </tr>
 </tbody>
 </table>
+<p>有一些基本类型可以使用一个或多个类型装饰符进行修饰：</p>
+<ul>
+<li>signed</li>
+<li>unsigned</li>
+<li>short</li>
+<li>long</li>
+</ul>
+<h2 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h2><p>枚举大家可能都听过吧，它其实就是将变量的值一一列举出来，在这提醒下！变量的值只能在列举出来的值的范围内。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">enum</span> animal &#123; dog, cat, pig &#125; c;</div><div class="line">c = cat;</div><div class="line"><span class="comment">//这段代码意思为 变量c的类型为animal，最后c被赋值给cat。</span></div></pre></td></tr></table></figure>
+<p>在默认情况下第一个名称的值为0，第二个名称值为1，第三个名称的值为2.</p>
+<p>如果我这有写：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">enum</span> animal &#123; dog, cat=<span class="number">5</span>, pig &#125;;</div></pre></td></tr></table></figure>
+<p>在这里，cat的值为5，那么pig值为6.</p>
 
             
         </div>

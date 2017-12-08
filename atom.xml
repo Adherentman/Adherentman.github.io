@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2017-12-08T14:33:13.914Z</updated>
+  <updated>2017-12-08T15:38:05.409Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://xuzihao.fun/C++%E5%88%9D%E4%BD%93%E9%AA%8C.html"/>
     <id>http://xuzihao.fun/C++初体验.html</id>
     <published>2017-12-08T14:05:00.000Z</published>
-    <updated>2017-12-08T14:33:13.914Z</updated>
+    <updated>2017-12-08T15:38:05.409Z</updated>
     
     <content type="html"><![CDATA[<h2 id="First"><a href="#First" class="headerlink" title="First"></a>First</h2><p>Clion给我建的第一个C++文件如下<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello, World!"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>那么我在想这和平常写得js不同啊，那个<code>std::</code>是啥…</p>
@@ -68,6 +68,19 @@
 </tr>
 </tbody>
 </table>
+<p>有一些基本类型可以使用一个或多个类型装饰符进行修饰：</p>
+<ul>
+<li>signed</li>
+<li>unsigned</li>
+<li>short</li>
+<li>long</li>
+</ul>
+<h2 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h2><p>枚举大家可能都听过吧，它其实就是将变量的值一一列举出来，在这提醒下！变量的值只能在列举出来的值的范围内。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">enum</span> animal &#123; dog, cat, pig &#125; c;</div><div class="line">c = cat;</div><div class="line"><span class="comment">//这段代码意思为 变量c的类型为animal，最后c被赋值给cat。</span></div></pre></td></tr></table></figure>
+<p>在默认情况下第一个名称的值为0，第二个名称值为1，第三个名称的值为2.</p>
+<p>如果我这有写：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">enum</span> animal &#123; dog, cat=<span class="number">5</span>, pig &#125;;</div></pre></td></tr></table></figure>
+<p>在这里，cat的值为5，那么pig值为6.</p>
 ]]></content>
     
     <summary type="html">

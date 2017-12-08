@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[C++ 初体验]]></title>
       <url>%2FC%2B%2B%E5%88%9D%E4%BD%93%E9%AA%8C.html</url>
-      <content type="text"><![CDATA[FirstClion给我建的第一个C++文件如下123456#include &lt;iostream&gt;int main() &#123; std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl; return 0;&#125; 那么我在想这和平常写得js不同啊，那个std::是啥… 经过强大的搜索引擎我知道了！这玩意儿就是一个类（std）啊（输入输出标准），它包括了cin成员和cout成员。 当我加了using namespace std;以后，我才能使用它的成员。我的c++程序可以写成: 12345678910#include &lt;iostream&gt;using namespace std; // main() 是程序开始执行的地方 int main()&#123; cout &lt;&lt; "Hello World"; // 输出 Hello World return 0;&#125; 那我又发现 namespace这个东西。原来它是指标识符的各种可见范围。 C++数据类型讲到数据类型。。我这个写惯了动态语言的人。。。诶西。强制让我写静态有点不行惯，没办法只能去写啊！ C++有七种数据类型： 类型 关键字 布尔型 bool 字符型 Char 整型 int 浮点型 float 双浮点型 double 无类型 void 宽字符型 wchar_t]]></content>
+      <content type="text"><![CDATA[FirstClion给我建的第一个C++文件如下123456#include &lt;iostream&gt;int main() &#123; std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl; return 0;&#125; 那么我在想这和平常写得js不同啊，那个std::是啥… 经过强大的搜索引擎我知道了！这玩意儿就是一个类（std）啊（输入输出标准），它包括了cin成员和cout成员。 当我加了using namespace std;以后，我才能使用它的成员。我的c++程序可以写成: 12345678910#include &lt;iostream&gt;using namespace std; // main() 是程序开始执行的地方 int main()&#123; cout &lt;&lt; "Hello World"; // 输出 Hello World return 0;&#125; 那我又发现 namespace这个东西。原来它是指标识符的各种可见范围。 C++数据类型讲到数据类型。。我这个写惯了动态语言的人。。。诶西。强制让我写静态有点不行惯，没办法只能去写啊！ C++有七种数据类型： 类型 关键字 布尔型 bool 字符型 Char 整型 int 浮点型 float 双浮点型 double 无类型 void 宽字符型 wchar_t 有一些基本类型可以使用一个或多个类型装饰符进行修饰： signed unsigned short long 枚举类型枚举大家可能都听过吧，它其实就是将变量的值一一列举出来，在这提醒下！变量的值只能在列举出来的值的范围内。 123enum animal &#123; dog, cat, pig &#125; c;c = cat;//这段代码意思为 变量c的类型为animal，最后c被赋值给cat。 在默认情况下第一个名称的值为0，第二个名称值为1，第三个名称的值为2. 如果我这有写： 1enum animal &#123; dog, cat=5, pig &#125;; 在这里，cat的值为5，那么pig值为6.]]></content>
     </entry>
 
     
