@@ -432,6 +432,73 @@
     <div class="post_entry-content mdl-color-text--grey-600 mdl-card__supporting-text">
         <!-- Post Title -->
         <p class="post_entry-title">
+            <a href="/React-State与Props的小心思.html">React State与Props的小心思</a>
+        </p>
+
+        <!-- Post Excerpt -->
+        <p class="post_entry-excerpt">
+            
+                忙于期末考。。很久都没有更新博客了！因为找了个实习需要React所以这里写写自己在看React的官方文档中，遇到的问题。
+Props与State很容易让我经常弄混先来说说Props
+官方解释
+
+组件从概念上看就是函数，之后这个组件可以接受任意的输入值，并返回一个需要页面上展示的React元素。那么这个输入值就为props。
+
+个人理解
+
+props是不可变的，传入什么值进去，最后返回的也是传入的值。也就是说，只读。
+            
+            &nbsp;&nbsp;&nbsp;
+            <span>
+                <a href="/React-State与Props的小心思.html" target="_self">阅读全文</a>
+            </span>
+        </p>
+
+        <!-- Post Tags -->
+        <ul class="post_entry-tags-list"><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="/tags/React/">React</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="/tags/Webpack/">Webpack</a></li></ul>
+    </div>
+
+    <!-- Post_entry Footer -->
+    <div class="post_entry-footer">
+        <div class="post_entry-footer-border"></div>
+        <div class="post_entry-footer-info">
+            <div class="post_entry-footer-date">
+                6月 30, 2017
+            </div>
+            <div class="post_entry-footer-comment">
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            
+        
+    
+        
+            
+            
+                <!-- Isolation Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post_entry Header -->
+    
+        <!-- Post Header Info -->
+        <div class="post_entry-header_info without-thumbnail">
+            <!-- Author Avatar & Name -->
+            <img src="/img/avatar.jpeg" class="avatar-img" width="44px" height="44px" alt="XuZiHao's avatar">
+            <span class="name-span">XuZiHao</span>
+        </div>
+
+        <!-- Null Thumbnail -->
+        <div class="post_thumbnail-null">
+    
+        </div>
+
+    <!-- Post_entry Content -->
+    <div class="post_entry-content mdl-color-text--grey-600 mdl-card__supporting-text">
+        <!-- Post Title -->
+        <p class="post_entry-title">
             <a href="/JavaScript闭包.html">JavaScript闭包</a>
         </p>
 
@@ -786,24 +853,26 @@ v-bind
     <div class="post_entry-content mdl-color-text--grey-600 mdl-card__supporting-text">
         <!-- Post Title -->
         <p class="post_entry-title">
-            <a href="/Es6箭头函数.html">ES6箭头函数</a>
+            <a href="/初入React.html">初入React+Webpack(入门)</a>
         </p>
 
         <!-- Post Excerpt -->
         <p class="post_entry-excerpt">
             
-                简单地说，
-12345var a = x =&gt; x;//var a =function(x)&#123;  return x;&#125;;
-这个就是最简单的箭头函数。
+                因为需要做一个自己的小想法以后需要去实现把这个想法变成项目，在重多得框架中选择React.js，因为它需要学习成本，所以我觉得我在学习的过程中能学到很多东西。
+通过npm使用React建议在 React 中使用 CommonJS 模块系统，比如 browserify 或 webpack。使用 react 和 react-dom npm 包.
+我使用webpack来安装React DOM的
+12$ npm install --save react react-dom babelify babel-preset-react$ browserify -t [ babelify --presets [ react ] ] main.js -o bundle.js
+那么第一步肯定是创建Hello World啦~
             
             &nbsp;&nbsp;&nbsp;
             <span>
-                <a href="/Es6箭头函数.html" target="_self">阅读全文</a>
+                <a href="/初入React.html" target="_self">阅读全文</a>
             </span>
         </p>
 
         <!-- Post Tags -->
-        <ul class="post_entry-tags-list"><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+        <ul class="post_entry-tags-list"><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="/tags/React/">React</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="/tags/Webpack/">Webpack</a></li></ul>
     </div>
 
     <!-- Post_entry Footer -->
@@ -847,26 +916,24 @@ v-bind
     <div class="post_entry-content mdl-color-text--grey-600 mdl-card__supporting-text">
         <!-- Post Title -->
         <p class="post_entry-title">
-            <a href="/初入React.html">初入React+Webpack(入门)</a>
+            <a href="/Es6箭头函数.html">ES6箭头函数</a>
         </p>
 
         <!-- Post Excerpt -->
         <p class="post_entry-excerpt">
             
-                因为需要做一个自己的小想法以后需要去实现把这个想法变成项目，在重多得框架中选择React.js，因为它需要学习成本，所以我觉得我在学习的过程中能学到很多东西。
-通过npm使用React建议在 React 中使用 CommonJS 模块系统，比如 browserify 或 webpack。使用 react 和 react-dom npm 包.
-我使用webpack来安装React DOM的
-12$ npm install --save react react-dom babelify babel-preset-react$ browserify -t [ babelify --presets [ react ] ] main.js -o bundle.js
-那么第一步肯定是创建Hello World啦~
+                简单地说，
+12345var a = x =&gt; x;//var a =function(x)&#123;  return x;&#125;;
+这个就是最简单的箭头函数。
             
             &nbsp;&nbsp;&nbsp;
             <span>
-                <a href="/初入React.html" target="_self">阅读全文</a>
+                <a href="/Es6箭头函数.html" target="_self">阅读全文</a>
             </span>
         </p>
 
         <!-- Post Tags -->
-        <ul class="post_entry-tags-list"><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="/tags/React/">React</a></li><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="/tags/Webpack/">Webpack</a></li></ul>
+        <ul class="post_entry-tags-list"><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
     </div>
 
     <!-- Post_entry Footer -->
@@ -1001,83 +1068,6 @@ v-bind
         <div class="post_entry-footer-info">
             <div class="post_entry-footer-date">
                 4月 11, 2017
-            </div>
-            <div class="post_entry-footer-comment">
-                
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-            
-        
-    
-        
-            
-            
-                <!-- Isolation Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post_entry Header -->
-    
-        <!-- Post Header Info -->
-        <div class="post_entry-header_info without-thumbnail">
-            <!-- Author Avatar & Name -->
-            <img src="/img/avatar.jpeg" class="avatar-img" width="44px" height="44px" alt="XuZiHao's avatar">
-            <span class="name-span">XuZiHao</span>
-        </div>
-
-        <!-- Null Thumbnail -->
-        <div class="post_thumbnail-null">
-    
-        </div>
-
-    <!-- Post_entry Content -->
-    <div class="post_entry-content mdl-color-text--grey-600 mdl-card__supporting-text">
-        <!-- Post Title -->
-        <p class="post_entry-title">
-            <a href="/Javascript Dom编程艺术学习笔记一（第三章兼高程三）.html">Javascript DOM编程艺术学习笔记一（第三章兼高程三）</a>
-        </p>
-
-        <!-- Post Excerpt -->
-        <p class="post_entry-excerpt">
-            
-                1.Dom基础Element
-三种DOM方法可获取元素节点，分别是通过元素ID、通过标签名字和通过类名字来获取
-getElementById  
-
-
- 根据Id获取元素节点
-
-
-getElementByTagName  
-
-
-根据Html获取元素节点
-
-
-getElementByClassName  
-
-
-根据ClassName（class）获取元素节点
-
-            
-            &nbsp;&nbsp;&nbsp;
-            <span>
-                <a href="/Javascript Dom编程艺术学习笔记一（第三章兼高程三）.html" target="_self">阅读全文</a>
-            </span>
-        </p>
-
-        <!-- Post Tags -->
-        <ul class="post_entry-tags-list"><li class="post_entry-tags-list-item"><a class="post_entry-tags-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-    </div>
-
-    <!-- Post_entry Footer -->
-    <div class="post_entry-footer">
-        <div class="post_entry-footer-border"></div>
-        <div class="post_entry-footer-info">
-            <div class="post_entry-footer-date">
-                3月 26, 2017
             </div>
             <div class="post_entry-footer-comment">
                 
