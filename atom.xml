@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2017-12-09T06:27:28.000Z</updated>
+  <updated>2017-12-10T10:35:26.925Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -14,6 +14,173 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DOM</title>
+    <link href="http://xuzihao.fun/DOM.html"/>
+    <id>http://xuzihao.fun/DOM.html</id>
+    <published>2017-12-10T07:17:00.000Z</published>
+    <updated>2017-12-10T10:35:26.925Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="文档对象模型"><a href="#文档对象模型" class="headerlink" title="文档对象模型"></a>文档对象模型</h1><p>一点小差异，IE中所有DOM对象都是以COM对象的形式实现的。</p>
+<h2 id="节点属性"><a href="#节点属性" class="headerlink" title="节点属性"></a>节点属性</h2><p>每个节点的属性</p>
+<ul>
+<li>childNodes<ul>
+<li>它里面有一个对象叫NodeList</li>
+</ul>
+</li>
+<li>patentNode</li>
+<li>previousSibling</li>
+<li>nextSibling</li>
+<li>ownerDoucment</li>
+</ul>
+<h2 id="Node类型"><a href="#Node类型" class="headerlink" title="Node类型"></a>Node类型</h2><ul>
+<li>appendChild（）<ul>
+<li>向childNodes列表的末尾添加一个节点</li>
+</ul>
+</li>
+<li>insertBefour()<ul>
+<li>​把节点放在childNodes列表的特定位置，它接受两参数要插入的节点，和作为参照的节点。</li>
+</ul>
+</li>
+<li>replaceChild()<ul>
+<li>把节点替换，这个方法接受两个参数：要插入的节点和要替换的节点</li>
+</ul>
+</li>
+<li>removeChild()<ul>
+<li>看英文就知道remove,移除。就只接受一个参数：就是你要移除的节点。</li>
+</ul>
+</li>
+<li>cloneNode()<ul>
+<li>这个方法接受一个布尔值参数，在参数为true进行深复制，反之则执行浅复制。</li>
+</ul>
+</li>
+<li>normalize()<ul>
+<li>处理文档树中的文本节点。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Document类型"><a href="#Document类型" class="headerlink" title="Document类型"></a>Document类型</h2><p>nodeType的值是9.</p>
+<p>document的对象是window对象的一个属性，因此可以将其作为全局对象来访问。</p>
+<p>查找元素的方法：</p>
+<ul>
+<li>getElementById()</li>
+<li>getElementByTagName()</li>
+<li>getElementByName()</li>
+<li>document.anchors<ul>
+<li>包含文档中所有带name特性的<a>元素</a></li>
+</ul>
+</li>
+<li>document.applets<ul>
+<li>包含文档中所有的<applet>元素​</applet></li>
+</ul>
+</li>
+<li>document.forms</li>
+<li>document.images</li>
+<li>document.links<ul>
+<li>包含文档中所有带href特性的<a>元素</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Element类型"><a href="#Element类型" class="headerlink" title="Element类型"></a>Element类型</h2><p>nodeType的值是1。</p>
+<p>它提供了对元素标签名、子节点及特性的访问。</p>
+<p>操作特性的DOM方法：</p>
+<ul>
+<li>getAttribute()</li>
+<li>setAttribute()</li>
+<li>removeAttribute()</li>
+</ul>
+<p>attributes属性中包含一个NamedNodeMap，与NodeList类似，也是一个“动态”的集合。<br>NamedNodeMap对象有下列方法</p>
+<ul>
+<li>getNamedItem(name)<ul>
+<li>返回nodeName属性等于name的节点</li>
+</ul>
+</li>
+<li>removeNamedItem(name)<ul>
+<li>从列表移除nodeName属性等于name的节点</li>
+</ul>
+</li>
+<li>setNamedItem(node)<ul>
+<li>向列表中添加节点，以节点的nodeName属性为索引</li>
+</ul>
+</li>
+<li>item(pos)<ul>
+<li>返回位于数字pos属性位置处的节点。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Text类型"><a href="#Text类型" class="headerlink" title="Text类型"></a>Text类型</h2><p>nodeType的值是3</p>
+<p>下列方法可以操作节点中的文本：</p>
+<ul>
+<li>appendData(text)<ul>
+<li>将text添加到节点的末尾</li>
+</ul>
+</li>
+<li>deleteData(offset, count)<ul>
+<li>从<strong>offset</strong>指定的位置开始删除<strong>count</strong>个字符</li>
+</ul>
+</li>
+<li>insertData(offset, text)<ul>
+<li>在<strong>offset</strong>指定的位置插入<strong>text</strong></li>
+</ul>
+</li>
+<li>replaceData(offset, count, text)<ul>
+<li>用<strong>text</strong>替换从<strong>offset</strong>指定的位置开始到<strong>offset + count</strong>为止处的文本</li>
+</ul>
+</li>
+<li>splitText(offset)<ul>
+<li>从<strong>offset</strong>指定的位置将当前文本节点分成两个文本节点</li>
+</ul>
+</li>
+<li><p>substringData(offset, count)</p>
+<ul>
+<li>提取从<strong>offset</strong>指定的位置开始到<strong>offset + count</strong>为止处的字符串</li>
+</ul>
+</li>
+<li><p>document.createTextNode()</p>
+<ul>
+<li>接受一个参数就是，要插入的文本内容</li>
+<li>document.createTextNode(“<strong>Hello</strong> world!”);</li>
+</ul>
+</li>
+</ul>
+<h3 id="文本节点合并"><a href="#文本节点合并" class="headerlink" title="文本节点合并"></a>文本节点合并</h3><p>normalize()</p>
+<h3 id="文本节点分割"><a href="#文本节点分割" class="headerlink" title="文本节点分割"></a>文本节点分割</h3><p>splitText()</p>
+<h2 id="Comment类型"><a href="#Comment类型" class="headerlink" title="Comment类型"></a>Comment类型</h2><p>nodeType的值是8</p>
+<p>Comment类型与Text类型继承自相同的基类，所以它拥有除了splitText()之外的所有字符串操作方法。<br>document.createComment()<br>创建注释节点</p>
+<h2 id="CDATASection类型"><a href="#CDATASection类型" class="headerlink" title="CDATASection类型"></a>CDATASection类型</h2><p>nodeType的值是4</p>
+<p>CDATA区域只会出现在XML文档中</p>
+<h2 id="DocumentType类型"><a href="#DocumentType类型" class="headerlink" title="DocumentType类型"></a>DocumentType类型</h2><p>nodeType的值是10</p>
+<p>DocumentType包含着与文档的doctype有关的所有信息。</p>
+<h2 id="DocumentFragment类型"><a href="#DocumentFragment类型" class="headerlink" title="DocumentFragment类型"></a>DocumentFragment类型</h2><p>nodeType的值是11</p>
+<p>DocumentFragment 接口表示一个没有父级文件的最小文档对象。它被当做一个轻量版的 Document 使用，用于存储已排好版的或尚未打理好格式的XML片段。最大的区别是因为DocumentFragment不是真实DOM树的一部分，它的变化不会引起DOM树的重新渲染的操作(reflow) ，且不会导致性能等问题。</p>
+<p>该接口继承 Node 的全部方法，并实现了 ParentNode 接口中的方法。</p>
+<h2 id="Attr类型"><a href="#Attr类型" class="headerlink" title="Attr类型"></a>Attr类型</h2><p>nodeType的值是2.</p>
+<p>Attr对象有三个属性：name、 value、 specified</p>
+<p>#总结：<br>DOM由各种节点构成：</p>
+<ol>
+<li>最基本的节点类型是Node;所有其他类型都继承自Node。</li>
+<li>Document类型表示整个文档，是一组分层节点的根节点。在JS中document对象是Document的一个实例。</li>
+<li>Element节点表示文档中所有HTML或XML元素，可以用来操作这些元素的内容和特性。</li>
+<li>还有一些节点就是文本内容啊、注释、文档类型、CDATA区域和文档片段。</li>
+<li>理解DOM的关键，就是理解DOM对性能的影响。DOM操作是Js程序中开销最大的部分，因此访问NodeList导致的问题为最多。所以每次访问NodeList对象，都会运行一次查询。</li>
+<li><strong>尽量减少DOM操作！！！</strong></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;文档对象模型&quot;&gt;&lt;a href=&quot;#文档对象模型&quot; class=&quot;headerlink&quot; title=&quot;文档对象模型&quot;&gt;&lt;/a&gt;文档对象模型&lt;/h1&gt;&lt;p&gt;一点小差异，IE中所有DOM对象都是以COM对象的形式实现的。&lt;/p&gt;
+&lt;h2 id=&quot;节点属性&quot;&gt;&lt;a h
+    
+    </summary>
+    
+      <category term="JavaScript修仙之旅" scheme="http://xuzihao.fun/categories/JavaScript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
+    
+    
+      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>C++ 初体验</title>
@@ -219,10 +386,10 @@
     
     </summary>
     
-      <category term="BOM" scheme="http://xuzihao.fun/categories/BOM/"/>
+      <category term="JavaScript" scheme="http://xuzihao.fun/categories/JavaScript/"/>
     
     
-      <category term="BOM" scheme="http://xuzihao.fun/tags/BOM/"/>
+      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
     
   </entry>
   
@@ -639,208 +806,6 @@
   </entry>
   
   <entry>
-    <title>英语时态</title>
-    <link href="http://xuzihao.fun/%E6%97%B6%E6%80%81.html"/>
-    <id>http://xuzihao.fun/时态.html</id>
-    <published>2017-10-18T12:24:00.000Z</published>
-    <updated>2017-11-12T07:57:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="英语语法——时态"><a href="#英语语法——时态" class="headerlink" title="英语语法——时态"></a>英语语法——时态</h1><p>时间概念包含四种，<strong>过去</strong>、<strong>现在</strong>、<strong>将来</strong>和<strong>过去将来</strong>。</p>
-<p>动作方面包含四种，<strong>一般</strong>、<strong>进行</strong>、<strong>完成</strong>和<strong>完成进行</strong>。</p>
-<p>将时间概念和动作方面结合一起，就能构成16种时态。</p>
-<ul>
-<li>一般现在时</li>
-<li>现在进行时</li>
-<li>现在完成时</li>
-<li>现在完成进行时</li>
-</ul>
-<a id="more"></a>
-<p><br></p>
-<ul>
-<li>一般过去时</li>
-<li>过去进行时</li>
-<li>过去完成时</li>
-<li><p>过去完成进行时<br><br></p>
-</li>
-<li><p>一般将来时</p>
-</li>
-<li>将来进行时</li>
-<li>将来完成时</li>
-<li>将来完成进行时</li>
-</ul>
-<p><br></p>
-<ul>
-<li>一般过去将来时</li>
-<li>一般过去将来进行时</li>
-<li>一般过去将来完成时</li>
-<li>一般过去将来完成进行</li>
-</ul>
-<blockquote>
-<p><a href="https://www.zhihu.com/question/19721822" target="_blank" rel="external">以下图片和部分文字参考自知乎赛门喵</a></p>
-</blockquote>
-<p><img src="/image/时态.jpg" alt="时态"></p>
-<p>谓语动词有「时间」和「状态」两个属性。结构上也由「时间+时间状态」构成</p>
-<p><strong>将上图总结成一个表：</strong></p>
-<p><img src="/image/时态总结.jpg" alt="时态总结"></p>
-<p>表格中的「助动词」突出「时间」，「主动词」突出动作「状态」。</p>
-<p>动词原形通过两次变形，第一次具有了「动作状态」属性。第二次具有了「时间」属性，完成到了谓语动词的转换。</p>
-<p>「时间」+「动作状态」的方式，一方面帮助了我们了解时态的的本质，更让我们可以毫不费力的记住16种时态。</p>
-<h2 id="接下来细致的说明这16种时态"><a href="#接下来细致的说明这16种时态" class="headerlink" title="接下来细致的说明这16种时态"></a>接下来细致的说明这16种时态</h2><ul>
-<li><h3 id="一般"><a href="#一般" class="headerlink" title="一般"></a>一般</h3><ul>
-<li>概念：仅仅陈诉一个事实（fact）</li>
-<li>形式：动词原形，我们用play。</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">I played baskerball. 								我过去（以前）打篮球。</div><div class="line">I play baskerball.								我现在打篮球。</div><div class="line">I will play baskerball.								我将要打篮球。</div><div class="line">I didn&apos;t know if he would come.  						我不知道她是否回来。</div></pre></td></tr></table></figure>
-<blockquote>
-<p>did + play = played = 过去 + 一般体 = 一般过去时</p>
-<p>do/does + play = play/plays = 现在 + 一般体 = 一般现在时</p>
-<p>will + play = will play = 将来 + 一般体 = 一般将来时</p>
-<p>would + come = would come = 过去将来 + 一般体 = 一般过去将来时</p>
-</blockquote>
-<ul>
-<li><h3 id="进行"><a href="#进行" class="headerlink" title="进行"></a>进行</h3><ul>
-<li><p>概念：表示动作正在发生</p>
-</li>
-<li><p>形式：ing</p>
-<ul>
-<li><h4 id="过去进行时-was-were"><a href="#过去进行时-was-were" class="headerlink" title="过去进行时(was/ were)"></a>过去进行时(was/ were)</h4><p>We were discussing the decoration problem 10 minutes ago.<br>10分钟前，我们正讨论装修的问题。</p>
-<p>​<br><br>I was cooking when you <strong><em>knocked</em></strong> at the door.</p>
-<p>你敲门时我正在做饭。</p>
-</li>
-<li><h4 id="现在进行时-am-is-are"><a href="#现在进行时-am-is-are" class="headerlink" title="现在进行时(am/ is/ are)"></a>现在进行时(am/ is/ are)</h4><p>I’m felling better now.                    </p>
-<p><strong>//表示正在进行的动作</strong></p>
-<p>我现在感觉好多了。</p>
-<p><br><br>We are leaving tomorrow.               </p>
-<p><strong>//有些瞬间动词用进行时表将来</strong></p>
-<p>我们明天离开。</p>
-<p><br><br>​     He is always asking such foolish questions.            </p>
-<p>  <strong>//表示某动作反复发生</strong></p>
-<p>​  他总是问如此愚蠢的问题。</p>
-<p><br><br>​  You are being modest.                    </p>
-<p>​  <strong>//“an, are, is+bing” 强调被描述情况或状态的暂时性。</strong></p>
-<p>​  你这会儿倒是挺谦虚的。</p>
-<p>  <br><br>  he is buying a new bike soon.        </p>
-<p>  <strong>//在时间和条件状语从句中，现在进行时表示将来的动作。</strong></p>
-<p>  她不久将买一辆新自行车。    </p>
-</li>
-<li><h4 id="将来进行时-will-be"><a href="#将来进行时-will-be" class="headerlink" title="将来进行时(will be)"></a>将来进行时(will be)</h4><p>The train will be leaving in a second.</p>
-<p>火车就要开了。</p>
-<p>What will you be doing this time tomorrow？</p>
-<p>明天这个时候你将做什么？</p>
-</li>
-<li><h4 id="过去将来进行时-should-be-would-be"><a href="#过去将来进行时-should-be-would-be" class="headerlink" title="过去将来进行时(should be/ would be)"></a>过去将来进行时(should be/ would be)</h4><p>I never realized that someday I would be living in Africa.</p>
-<p>我以前从没想过将来有一天我会生活在非洲。 </p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h3 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h3><ul>
-<li><p>概念：表示动作完成了</p>
-</li>
-<li><p>形式：过去分词，drunk</p>
-<ul>
-<li><h4 id="过去完成时-had-done"><a href="#过去完成时-had-done" class="headerlink" title="过去完成时(had) + done"></a>过去完成时(had) + done</h4><p>Up to the end of last year, the aim <strong>had been achieved</strong> to cut energy use by 80%.            </p>
-<p><strong>//过去的过去的动作或状态，“up to/ before/ by + 过去时间”作时间状语。</strong></p>
-<p>到去年年底，已经实现节能80%的目标。</p>
-<p><br></p>
-<p>There <strong>had been</strong> someone in our room just now, because i noticed a burning cigarette end on the floor when we opened the front door.</p>
-<p><strong>//过去的过去。这种逻辑关系通过上下文体现</strong></p>
-<p>刚才有人在我们的房间里，因为我们打开前门进来时，我注意到地板上有一个仍在燃烧的烟头</p>
-</li>
-<li><h4 id="现在完成时-hava-has-done"><a href="#现在完成时-hava-has-done" class="headerlink" title="现在完成时(hava/ has) + done"></a>现在完成时(hava/ has) + done</h4><p>She <strong>has won</strong> prizes for her records.</p>
-<p><strong>//表示从过去某时刻开始，持续到现在的动作或情况，并且有可能会继续延续下去。</strong></p>
-<p>她的唱片曾获奖过几次奖。</p>
-<p><br><br>For years i <strong>have been interested</strong> in engineering.</p>
-<p><strong>//时间状语常用since加一个过去的时间点，或for加一段时间</strong></p>
-<p>多年来，我一直对工程学感兴趣。</p>
-<p><br><br>I <strong>have been here</strong> since last June.</p>
-<p>从去年6月起，我一直在这里。</p>
-<p><br><br>A moment please, I <strong>have almost finished</strong> the report.</p>
-<p><strong>//表示发生在过去， 但对现在仍有影响的动作或情况，通常用瞬间动词“arrive begin, find, give, finish, lose”</strong></p>
-<p>稍等，我的报告就快完成了。</p>
-</li>
-<li><h4 id="将来完成时-will-have-done"><a href="#将来完成时-will-have-done" class="headerlink" title="将来完成时(will have) + done"></a>将来完成时(will have) + done</h4><p>If you come at 6 p.m, I shall not yet <strong>have finished</strong> dinner.</p>
-<p><strong>//表示将来某一时间之前完成的动作，并往往对将来某一时间产生影响。</strong></p>
-<p>你若下午6点来，我还没吃完晚饭呢。</p>
-<p><br><br>You must take a taxi, otherwise the train <strong>will have</strong> left <strong>by the time</strong> you get to the station.</p>
-<p><strong>//常用 “before + 将来时间点”或“by + 将来时间点”作时间状语</strong></p>
-<p>你必须坐出租，否则等你到了车站火车都开走了。</p>
-<p><br><br>Before long, he <strong>will have forgotten</strong> all about the matter.</p>
-<p>过不久，他就将把这事儿忘记了。</p>
-</li>
-<li><h4 id="过去将来完成时-would-have-done"><a href="#过去将来完成时-would-have-done" class="headerlink" title="过去将来完成时(would have) + done"></a>过去将来完成时(would have) + done</h4><p>He said that he <strong>would have done</strong> with my camera by the end of next week.</p>
-<p><strong>//表示在过去将来某一时间以前发生的动作，并往往会对过去将来某一时间产生影响</strong></p>
-<p>他说到下周末就不用我的照相机了。</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h3 id="完成进行"><a href="#完成进行" class="headerlink" title="完成进行"></a>完成进行</h3><ul>
-<li>概念： 表明动作(暂时)完成了，并且还要继续</li>
-<li><p>形式： been + (base form) ing</p>
-<ul>
-<li><h4 id="过去完成进行时-had-been-doing"><a href="#过去完成进行时-had-been-doing" class="headerlink" title="过去完成进行时(had) + been doing"></a>过去完成进行时(had) + been doing</h4><p>He was tired. He <strong>had been working</strong> all day.</p>
-<p><strong>//和过去完成时一样，过去完成进行时也必须以一个过去的事就为前提。</strong></p>
-<p>他累了，他工作了一整天。</p>
-<p>It <strong>had been raining</strong> heavily for two days and the ground was very wet.</p>
-<p>连着下了两天大雨，地上很湿。</p>
-</li>
-<li><h4 id="现在完成进行时-have-has-been-doing"><a href="#现在完成进行时-have-has-been-doing" class="headerlink" title="现在完成进行时(have/ has) + been doing"></a>现在完成进行时(have/ has) + been doing</h4><p>We <strong>have been working</strong> on this project for over a month now.</p>
-<p><strong>//表示某一动作开始于过去某一时间，延续或重复的出现至今，或将继续延续至将来。</strong></p>
-<p>到目前为止，我们一直在处理那个项目，已经花了一个多月时间了。</p>
-<p><strong>//与现在完成时相比，现在完成时进行时更强调在从过去到现在的时间里，动作或状态一直持续或一直反复出现。</strong></p>
-</li>
-<li><h4 id="将来完成进行时-will-have-been-doing"><a href="#将来完成进行时-will-have-been-doing" class="headerlink" title="将来完成进行时(will have) + been doing"></a>将来完成进行时(will have) + been doing</h4><p>If we don’t hurry up the store <strong>will have been closing</strong> before we get there.</p>
-<p><strong>//表示动作从某一时间开始一直延续到将来某一时间。</strong></p>
-<p>如果我们不快一点儿， 等到了那儿，商店早关门了。</p>
-<p>By then, we <strong>will have been cooperating</strong> for half a year.</p>
-<p>到那时为止，我们就将会合作半年了。</p>
-</li>
-<li><h4 id="过去将来完成进行时-would-have-been-doing"><a href="#过去将来完成进行时-would-have-been-doing" class="headerlink" title="过去将来完成进行时(would have) + been doing"></a>过去将来完成进行时(would have) + been doing</h4><p>He said that by the end of July he <strong>would have been studing</strong> German for six months.</p>
-<p><strong>//表示动作从过去某一时间开始一直延续到过去将来某一时间</strong></p>
-<p>他说到7月底，他学德语就有半年了。</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><br><br><br></p>
-<p>  <a href="https://link.zhihu.com/?target=http%3A//blog.tarwon.com/english-grammar.html/" target="_blank" rel="external">以下未满18岁请自动屏蔽LoVe 这段我无意间看见</a></p>
-<blockquote>
-<p><strong>一般现在时:I make love with her everyday.</strong><br>一般过去时:I made love with her yesterday.<br>一般将来时:I will make love with her tomorrow.</p>
-<p><strong>现在进行时:I am making love with her.</strong><br>过去进行时:I was making love with her at this time yesterday.<br>将来进行时:I will be making love with her at this time tomorrow.</p>
-<p><strong>现在完成时:I have made love with her by now.</strong><br>过去完成时:I had made love with her before yesterday.<br>将来完成时:I will have made love with her by tomorrow.</p>
-<p><strong>现在完成进行时:I have been making love with her for two hours.</strong><br>过去完成进行时:I had been making love with her for two hours when her husband came in.<br>将来完成进行时:I will have been making love with her for two hours when her husband wakes up tomorrow morning.</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;英语语法——时态&quot;&gt;&lt;a href=&quot;#英语语法——时态&quot; class=&quot;headerlink&quot; title=&quot;英语语法——时态&quot;&gt;&lt;/a&gt;英语语法——时态&lt;/h1&gt;&lt;p&gt;时间概念包含四种，&lt;strong&gt;过去&lt;/strong&gt;、&lt;strong&gt;现在&lt;/strong&gt;、&lt;strong&gt;将来&lt;/strong&gt;和&lt;strong&gt;过去将来&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;动作方面包含四种，&lt;strong&gt;一般&lt;/strong&gt;、&lt;strong&gt;进行&lt;/strong&gt;、&lt;strong&gt;完成&lt;/strong&gt;和&lt;strong&gt;完成进行&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;将时间概念和动作方面结合一起，就能构成16种时态。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;一般现在时&lt;/li&gt;
-&lt;li&gt;现在进行时&lt;/li&gt;
-&lt;li&gt;现在完成时&lt;/li&gt;
-&lt;li&gt;现在完成进行时&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
-    
-  </entry>
-  
-  <entry>
     <title>英语单词</title>
     <link href="http://xuzihao.fun/%E5%8D%95%E8%AF%8D.html"/>
     <id>http://xuzihao.fun/单词.html</id>
@@ -1035,6 +1000,208 @@
 &lt;li&gt;&lt;p&gt;no more…than&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;不过，仅仅；至多，同。。。一样不&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>英语时态</title>
+    <link href="http://xuzihao.fun/%E6%97%B6%E6%80%81.html"/>
+    <id>http://xuzihao.fun/时态.html</id>
+    <published>2017-10-18T12:24:00.000Z</published>
+    <updated>2017-11-12T07:57:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="英语语法——时态"><a href="#英语语法——时态" class="headerlink" title="英语语法——时态"></a>英语语法——时态</h1><p>时间概念包含四种，<strong>过去</strong>、<strong>现在</strong>、<strong>将来</strong>和<strong>过去将来</strong>。</p>
+<p>动作方面包含四种，<strong>一般</strong>、<strong>进行</strong>、<strong>完成</strong>和<strong>完成进行</strong>。</p>
+<p>将时间概念和动作方面结合一起，就能构成16种时态。</p>
+<ul>
+<li>一般现在时</li>
+<li>现在进行时</li>
+<li>现在完成时</li>
+<li>现在完成进行时</li>
+</ul>
+<a id="more"></a>
+<p><br></p>
+<ul>
+<li>一般过去时</li>
+<li>过去进行时</li>
+<li>过去完成时</li>
+<li><p>过去完成进行时<br><br></p>
+</li>
+<li><p>一般将来时</p>
+</li>
+<li>将来进行时</li>
+<li>将来完成时</li>
+<li>将来完成进行时</li>
+</ul>
+<p><br></p>
+<ul>
+<li>一般过去将来时</li>
+<li>一般过去将来进行时</li>
+<li>一般过去将来完成时</li>
+<li>一般过去将来完成进行</li>
+</ul>
+<blockquote>
+<p><a href="https://www.zhihu.com/question/19721822" target="_blank" rel="external">以下图片和部分文字参考自知乎赛门喵</a></p>
+</blockquote>
+<p><img src="/image/时态.jpg" alt="时态"></p>
+<p>谓语动词有「时间」和「状态」两个属性。结构上也由「时间+时间状态」构成</p>
+<p><strong>将上图总结成一个表：</strong></p>
+<p><img src="/image/时态总结.jpg" alt="时态总结"></p>
+<p>表格中的「助动词」突出「时间」，「主动词」突出动作「状态」。</p>
+<p>动词原形通过两次变形，第一次具有了「动作状态」属性。第二次具有了「时间」属性，完成到了谓语动词的转换。</p>
+<p>「时间」+「动作状态」的方式，一方面帮助了我们了解时态的的本质，更让我们可以毫不费力的记住16种时态。</p>
+<h2 id="接下来细致的说明这16种时态"><a href="#接下来细致的说明这16种时态" class="headerlink" title="接下来细致的说明这16种时态"></a>接下来细致的说明这16种时态</h2><ul>
+<li><h3 id="一般"><a href="#一般" class="headerlink" title="一般"></a>一般</h3><ul>
+<li>概念：仅仅陈诉一个事实（fact）</li>
+<li>形式：动词原形，我们用play。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">I played baskerball. 								我过去（以前）打篮球。</div><div class="line">I play baskerball.								我现在打篮球。</div><div class="line">I will play baskerball.								我将要打篮球。</div><div class="line">I didn&apos;t know if he would come.  						我不知道她是否回来。</div></pre></td></tr></table></figure>
+<blockquote>
+<p>did + play = played = 过去 + 一般体 = 一般过去时</p>
+<p>do/does + play = play/plays = 现在 + 一般体 = 一般现在时</p>
+<p>will + play = will play = 将来 + 一般体 = 一般将来时</p>
+<p>would + come = would come = 过去将来 + 一般体 = 一般过去将来时</p>
+</blockquote>
+<ul>
+<li><h3 id="进行"><a href="#进行" class="headerlink" title="进行"></a>进行</h3><ul>
+<li><p>概念：表示动作正在发生</p>
+</li>
+<li><p>形式：ing</p>
+<ul>
+<li><h4 id="过去进行时-was-were"><a href="#过去进行时-was-were" class="headerlink" title="过去进行时(was/ were)"></a>过去进行时(was/ were)</h4><p>We were discussing the decoration problem 10 minutes ago.<br>10分钟前，我们正讨论装修的问题。</p>
+<p>​<br><br>I was cooking when you <strong><em>knocked</em></strong> at the door.</p>
+<p>你敲门时我正在做饭。</p>
+</li>
+<li><h4 id="现在进行时-am-is-are"><a href="#现在进行时-am-is-are" class="headerlink" title="现在进行时(am/ is/ are)"></a>现在进行时(am/ is/ are)</h4><p>I’m felling better now.                    </p>
+<p><strong>//表示正在进行的动作</strong></p>
+<p>我现在感觉好多了。</p>
+<p><br><br>We are leaving tomorrow.               </p>
+<p><strong>//有些瞬间动词用进行时表将来</strong></p>
+<p>我们明天离开。</p>
+<p><br><br>​     He is always asking such foolish questions.            </p>
+<p>  <strong>//表示某动作反复发生</strong></p>
+<p>​  他总是问如此愚蠢的问题。</p>
+<p><br><br>​  You are being modest.                    </p>
+<p>​  <strong>//“an, are, is+bing” 强调被描述情况或状态的暂时性。</strong></p>
+<p>​  你这会儿倒是挺谦虚的。</p>
+<p>  <br><br>  he is buying a new bike soon.        </p>
+<p>  <strong>//在时间和条件状语从句中，现在进行时表示将来的动作。</strong></p>
+<p>  她不久将买一辆新自行车。    </p>
+</li>
+<li><h4 id="将来进行时-will-be"><a href="#将来进行时-will-be" class="headerlink" title="将来进行时(will be)"></a>将来进行时(will be)</h4><p>The train will be leaving in a second.</p>
+<p>火车就要开了。</p>
+<p>What will you be doing this time tomorrow？</p>
+<p>明天这个时候你将做什么？</p>
+</li>
+<li><h4 id="过去将来进行时-should-be-would-be"><a href="#过去将来进行时-should-be-would-be" class="headerlink" title="过去将来进行时(should be/ would be)"></a>过去将来进行时(should be/ would be)</h4><p>I never realized that someday I would be living in Africa.</p>
+<p>我以前从没想过将来有一天我会生活在非洲。 </p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h3 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h3><ul>
+<li><p>概念：表示动作完成了</p>
+</li>
+<li><p>形式：过去分词，drunk</p>
+<ul>
+<li><h4 id="过去完成时-had-done"><a href="#过去完成时-had-done" class="headerlink" title="过去完成时(had) + done"></a>过去完成时(had) + done</h4><p>Up to the end of last year, the aim <strong>had been achieved</strong> to cut energy use by 80%.            </p>
+<p><strong>//过去的过去的动作或状态，“up to/ before/ by + 过去时间”作时间状语。</strong></p>
+<p>到去年年底，已经实现节能80%的目标。</p>
+<p><br></p>
+<p>There <strong>had been</strong> someone in our room just now, because i noticed a burning cigarette end on the floor when we opened the front door.</p>
+<p><strong>//过去的过去。这种逻辑关系通过上下文体现</strong></p>
+<p>刚才有人在我们的房间里，因为我们打开前门进来时，我注意到地板上有一个仍在燃烧的烟头</p>
+</li>
+<li><h4 id="现在完成时-hava-has-done"><a href="#现在完成时-hava-has-done" class="headerlink" title="现在完成时(hava/ has) + done"></a>现在完成时(hava/ has) + done</h4><p>She <strong>has won</strong> prizes for her records.</p>
+<p><strong>//表示从过去某时刻开始，持续到现在的动作或情况，并且有可能会继续延续下去。</strong></p>
+<p>她的唱片曾获奖过几次奖。</p>
+<p><br><br>For years i <strong>have been interested</strong> in engineering.</p>
+<p><strong>//时间状语常用since加一个过去的时间点，或for加一段时间</strong></p>
+<p>多年来，我一直对工程学感兴趣。</p>
+<p><br><br>I <strong>have been here</strong> since last June.</p>
+<p>从去年6月起，我一直在这里。</p>
+<p><br><br>A moment please, I <strong>have almost finished</strong> the report.</p>
+<p><strong>//表示发生在过去， 但对现在仍有影响的动作或情况，通常用瞬间动词“arrive begin, find, give, finish, lose”</strong></p>
+<p>稍等，我的报告就快完成了。</p>
+</li>
+<li><h4 id="将来完成时-will-have-done"><a href="#将来完成时-will-have-done" class="headerlink" title="将来完成时(will have) + done"></a>将来完成时(will have) + done</h4><p>If you come at 6 p.m, I shall not yet <strong>have finished</strong> dinner.</p>
+<p><strong>//表示将来某一时间之前完成的动作，并往往对将来某一时间产生影响。</strong></p>
+<p>你若下午6点来，我还没吃完晚饭呢。</p>
+<p><br><br>You must take a taxi, otherwise the train <strong>will have</strong> left <strong>by the time</strong> you get to the station.</p>
+<p><strong>//常用 “before + 将来时间点”或“by + 将来时间点”作时间状语</strong></p>
+<p>你必须坐出租，否则等你到了车站火车都开走了。</p>
+<p><br><br>Before long, he <strong>will have forgotten</strong> all about the matter.</p>
+<p>过不久，他就将把这事儿忘记了。</p>
+</li>
+<li><h4 id="过去将来完成时-would-have-done"><a href="#过去将来完成时-would-have-done" class="headerlink" title="过去将来完成时(would have) + done"></a>过去将来完成时(would have) + done</h4><p>He said that he <strong>would have done</strong> with my camera by the end of next week.</p>
+<p><strong>//表示在过去将来某一时间以前发生的动作，并往往会对过去将来某一时间产生影响</strong></p>
+<p>他说到下周末就不用我的照相机了。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h3 id="完成进行"><a href="#完成进行" class="headerlink" title="完成进行"></a>完成进行</h3><ul>
+<li>概念： 表明动作(暂时)完成了，并且还要继续</li>
+<li><p>形式： been + (base form) ing</p>
+<ul>
+<li><h4 id="过去完成进行时-had-been-doing"><a href="#过去完成进行时-had-been-doing" class="headerlink" title="过去完成进行时(had) + been doing"></a>过去完成进行时(had) + been doing</h4><p>He was tired. He <strong>had been working</strong> all day.</p>
+<p><strong>//和过去完成时一样，过去完成进行时也必须以一个过去的事就为前提。</strong></p>
+<p>他累了，他工作了一整天。</p>
+<p>It <strong>had been raining</strong> heavily for two days and the ground was very wet.</p>
+<p>连着下了两天大雨，地上很湿。</p>
+</li>
+<li><h4 id="现在完成进行时-have-has-been-doing"><a href="#现在完成进行时-have-has-been-doing" class="headerlink" title="现在完成进行时(have/ has) + been doing"></a>现在完成进行时(have/ has) + been doing</h4><p>We <strong>have been working</strong> on this project for over a month now.</p>
+<p><strong>//表示某一动作开始于过去某一时间，延续或重复的出现至今，或将继续延续至将来。</strong></p>
+<p>到目前为止，我们一直在处理那个项目，已经花了一个多月时间了。</p>
+<p><strong>//与现在完成时相比，现在完成时进行时更强调在从过去到现在的时间里，动作或状态一直持续或一直反复出现。</strong></p>
+</li>
+<li><h4 id="将来完成进行时-will-have-been-doing"><a href="#将来完成进行时-will-have-been-doing" class="headerlink" title="将来完成进行时(will have) + been doing"></a>将来完成进行时(will have) + been doing</h4><p>If we don’t hurry up the store <strong>will have been closing</strong> before we get there.</p>
+<p><strong>//表示动作从某一时间开始一直延续到将来某一时间。</strong></p>
+<p>如果我们不快一点儿， 等到了那儿，商店早关门了。</p>
+<p>By then, we <strong>will have been cooperating</strong> for half a year.</p>
+<p>到那时为止，我们就将会合作半年了。</p>
+</li>
+<li><h4 id="过去将来完成进行时-would-have-been-doing"><a href="#过去将来完成进行时-would-have-been-doing" class="headerlink" title="过去将来完成进行时(would have) + been doing"></a>过去将来完成进行时(would have) + been doing</h4><p>He said that by the end of July he <strong>would have been studing</strong> German for six months.</p>
+<p><strong>//表示动作从过去某一时间开始一直延续到过去将来某一时间</strong></p>
+<p>他说到7月底，他学德语就有半年了。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><br><br><br></p>
+<p>  <a href="https://link.zhihu.com/?target=http%3A//blog.tarwon.com/english-grammar.html/" target="_blank" rel="external">以下未满18岁请自动屏蔽LoVe 这段我无意间看见</a></p>
+<blockquote>
+<p><strong>一般现在时:I make love with her everyday.</strong><br>一般过去时:I made love with her yesterday.<br>一般将来时:I will make love with her tomorrow.</p>
+<p><strong>现在进行时:I am making love with her.</strong><br>过去进行时:I was making love with her at this time yesterday.<br>将来进行时:I will be making love with her at this time tomorrow.</p>
+<p><strong>现在完成时:I have made love with her by now.</strong><br>过去完成时:I had made love with her before yesterday.<br>将来完成时:I will have made love with her by tomorrow.</p>
+<p><strong>现在完成进行时:I have been making love with her for two hours.</strong><br>过去完成进行时:I had been making love with her for two hours when her husband came in.<br>将来完成进行时:I will have been making love with her for two hours when her husband wakes up tomorrow morning.</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;英语语法——时态&quot;&gt;&lt;a href=&quot;#英语语法——时态&quot; class=&quot;headerlink&quot; title=&quot;英语语法——时态&quot;&gt;&lt;/a&gt;英语语法——时态&lt;/h1&gt;&lt;p&gt;时间概念包含四种，&lt;strong&gt;过去&lt;/strong&gt;、&lt;strong&gt;现在&lt;/strong&gt;、&lt;strong&gt;将来&lt;/strong&gt;和&lt;strong&gt;过去将来&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;动作方面包含四种，&lt;strong&gt;一般&lt;/strong&gt;、&lt;strong&gt;进行&lt;/strong&gt;、&lt;strong&gt;完成&lt;/strong&gt;和&lt;strong&gt;完成进行&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;将时间概念和动作方面结合一起，就能构成16种时态。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一般现在时&lt;/li&gt;
+&lt;li&gt;现在进行时&lt;/li&gt;
+&lt;li&gt;现在完成时&lt;/li&gt;
+&lt;li&gt;现在完成进行时&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -2044,49 +2211,6 @@
       <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
     
       <category term="React" scheme="http://xuzihao.fun/tags/React/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>初入Express</title>
-    <link href="http://xuzihao.fun/Express.html"/>
-    <id>http://xuzihao.fun/Express.html</id>
-    <published>2017-07-30T02:33:26.000Z</published>
-    <updated>2017-09-06T09:41:52.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="expressjs里的请求参数，4-x里只有3种-都引用官方例子"><a href="#expressjs里的请求参数，4-x里只有3种-都引用官方例子" class="headerlink" title="expressjs里的请求参数，4.x里只有3种(都引用官方例子)"></a>expressjs里的请求参数，4.x里只有3种(都引用官方例子)</h2><ul>
-<li>req.params</li>
-<li>req.body</li>
-<li>req.query</li>
-</ul>
-<h3 id="req-params"><a href="#req-params" class="headerlink" title="req.params"></a>req.params</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'/user/:id'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">  	res.send(<span class="string">'user'</span> + req.parms.id);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>就是取带冒号的参数.</p>
-<a id="more"></a>
-<h3 id="req-body"><a href="#req-body" class="headerlink" title="req.body"></a>req.body</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = <span class="built_in">require</span>(<span class="string">'express'</span>)();</div><div class="line"><span class="keyword">var</span> bodyParser = <span class="built_in">require</span>(<span class="string">'body-parser'</span>);</div><div class="line"><span class="keyword">var</span> multer = <span class="built_in">require</span>(<span class="string">'multer'</span>); </div><div class="line"></div><div class="line">app.use(bodyParser.json()); <span class="comment">// 用于解析application / json</span></div><div class="line">app.use(bodyParser.urlencoded(&#123; <span class="attr">extended</span>: <span class="literal">true</span> &#125;)); <span class="comment">// 用于解析 application/x-www-form-urlencoded</span></div><div class="line">app.use(multer()); <span class="comment">// 用于解析多部分/表单数据</span></div><div class="line"></div><div class="line">app.post(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(req.body);</div><div class="line">  res.json(req.body);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<ul>
-<li>req.body一定是post请求.但是在express里面依赖中间件bodyparser,不然req.body都没有.</li>
-</ul>
-<h3 id="req-query"><a href="#req-query" class="headerlink" title="req.query"></a>req.query</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// GET /search?q=tobi+ferret</span></div><div class="line">req.query.q</div><div class="line"><span class="comment">// =&gt; "tobi ferret"</span></div><div class="line"></div><div class="line"><span class="comment">// GET /shoes?order=desc&amp;shoe[color]=blue&amp;shoe[type]=converse</span></div><div class="line">req.query.order</div><div class="line"><span class="comment">// =&gt; "desc"</span></div><div class="line"></div><div class="line">req.query.shoe.color</div><div class="line"><span class="comment">// =&gt; "blue"</span></div><div class="line"></div><div class="line">req.query.shoe.type</div><div class="line"><span class="comment">// =&gt; "converse"</span></div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;expressjs里的请求参数，4-x里只有3种-都引用官方例子&quot;&gt;&lt;a href=&quot;#expressjs里的请求参数，4-x里只有3种-都引用官方例子&quot; class=&quot;headerlink&quot; title=&quot;expressjs里的请求参数，4.x里只有3种(都引用官方例子)&quot;&gt;&lt;/a&gt;expressjs里的请求参数，4.x里只有3种(都引用官方例子)&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;req.params&lt;/li&gt;
-&lt;li&gt;req.body&lt;/li&gt;
-&lt;li&gt;req.query&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;req-params&quot;&gt;&lt;a href=&quot;#req-params&quot; class=&quot;headerlink&quot; title=&quot;req.params&quot;&gt;&lt;/a&gt;req.params&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;app.get(&lt;span class=&quot;string&quot;&gt;&#39;/user/:id&#39;&lt;/span&gt;,&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;req,res&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  	res.send(&lt;span class=&quot;string&quot;&gt;&#39;user&#39;&lt;/span&gt; + req.parms.id);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;就是取带冒号的参数.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Node.js" scheme="http://xuzihao.fun/categories/Node-js/"/>
-    
-    
-      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
-    
-      <category term="node.js" scheme="http://xuzihao.fun/tags/node-js/"/>
     
   </entry>
   

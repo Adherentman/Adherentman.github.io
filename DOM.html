@@ -47,7 +47,7 @@
     
     <title>
         
-            分类: C++ | 
+            DOM | 
         
         壮壮-Technology
     </title>
@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="🤔🤡🤔">
-    <meta name="keywords" content="null">
+    <meta name="keywords" content="null,JavaScript">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -219,7 +219,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="壮壮-Technology">
-    <meta name="msapplication-starturl" content="http://xuzihao.fun/categories/C/">
+    <meta name="msapplication-starturl" content="http://xuzihao.fun/DOM.html">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="壮壮-Technology">
@@ -234,13 +234,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://xuzihao.fun/categories/C/">
+    <meta property="og:url" content="http://xuzihao.fun/DOM.html">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: C++ | 壮壮-Technology">
+    <meta property="og:title" content="DOM | 壮壮-Technology">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="🤔🤡🤔">
-    
+    <meta property="og:article:tag" content="JavaScript"> 
 
+    
+        <meta property="article:published_time" content="Sun Dec 10 2017 15:17:00 GMT+0800">
+        <meta property="article:modified_time" content="Sun Dec 10 2017 18:35:26 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -248,13 +251,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://xuzihao.fun/categories/C/index.html" />
+        <link rel="canonical" href="http://xuzihao.fun/DOM.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://xuzihao.fun/DOM.html",
+    "headline": "DOM",
+    "datePublished": "Sun Dec 10 2017 15:17:00 GMT+0800",
+    "dateModified": "Sun Dec 10 2017 18:35:26 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "XuZiHao",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpeg"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "壮壮-Technology",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",JavaScriptnull",
+    "description": "🤔🤡🤔",
+}
+</script>
 
 
     
@@ -297,96 +330,404 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#文档对象模型"><span class="post-toc-number">1.</span> <span class="post-toc-text">文档对象模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#节点属性"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">节点属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Node类型"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Node类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Document类型"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Document类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Element类型"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Element类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Text类型"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Text类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文本节点合并"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">文本节点合并</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文本节点分割"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">文本节点分割</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Comment类型"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">Comment类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CDATASection类型"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">CDATASection类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DocumentType类型"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">DocumentType类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DocumentFragment类型"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">DocumentFragment类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Attr类型"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">Attr类型</span></a></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="http://ozar6ogjb.bkt.clouddn.com/c++.jpeg">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://ozar6ogjb.bkt.clouddn.com/DOM.jpg)">
+    
+            <p class="article-headline-p">
+                DOM
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpeg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>XuZiHao</strong>
+        <span>12月 10, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
     
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/C++初体验.html">C++ 初体验</a></p>
-    </div>
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a>
+    </ul>
+    
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
         
-            First
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
         
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/C++初体验.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpeg" width="44px" height="44px" alt="XuZiHao's avatar">
-            </div>
-            <div>
-                <strong>XuZiHao</strong>
-                <span>12月 08, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/C/">C++</a>
-              </span>
-            
+    
 
-            
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=DOM&url=http://xuzihao.fun/DOM.html&pic=http://xuzihao.fun/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
 
-            
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=DOM&url=http://xuzihao.fun/DOM.html&via=XuZiHao" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://xuzihao.fun/DOM.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://xuzihao.fun/DOM.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://xuzihao.fun/DOM.html&title=DOM" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=壮壮-Technology&title=DOM&summary=🤔🤡🤔&pics=http://xuzihao.fun/img/favicon.png&url=http://xuzihao.fun/DOM.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=http://xuzihao.fun/DOM.html&text=DOM" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+    
 </div>
 
-            
-            
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="文档对象模型"><a href="#文档对象模型" class="headerlink" title="文档对象模型"></a>文档对象模型</h1><p>一点小差异，IE中所有DOM对象都是以COM对象的形式实现的。</p>
+<h2 id="节点属性"><a href="#节点属性" class="headerlink" title="节点属性"></a>节点属性</h2><p>每个节点的属性</p>
+<ul>
+<li>childNodes<ul>
+<li>它里面有一个对象叫NodeList</li>
+</ul>
+</li>
+<li>patentNode</li>
+<li>previousSibling</li>
+<li>nextSibling</li>
+<li>ownerDoucment</li>
+</ul>
+<h2 id="Node类型"><a href="#Node类型" class="headerlink" title="Node类型"></a>Node类型</h2><ul>
+<li>appendChild（）<ul>
+<li>向childNodes列表的末尾添加一个节点</li>
+</ul>
+</li>
+<li>insertBefour()<ul>
+<li>​把节点放在childNodes列表的特定位置，它接受两参数要插入的节点，和作为参照的节点。</li>
+</ul>
+</li>
+<li>replaceChild()<ul>
+<li>把节点替换，这个方法接受两个参数：要插入的节点和要替换的节点</li>
+</ul>
+</li>
+<li>removeChild()<ul>
+<li>看英文就知道remove,移除。就只接受一个参数：就是你要移除的节点。</li>
+</ul>
+</li>
+<li>cloneNode()<ul>
+<li>这个方法接受一个布尔值参数，在参数为true进行深复制，反之则执行浅复制。</li>
+</ul>
+</li>
+<li>normalize()<ul>
+<li>处理文档树中的文本节点。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Document类型"><a href="#Document类型" class="headerlink" title="Document类型"></a>Document类型</h2><p>nodeType的值是9.</p>
+<p>document的对象是window对象的一个属性，因此可以将其作为全局对象来访问。</p>
+<p>查找元素的方法：</p>
+<ul>
+<li>getElementById()</li>
+<li>getElementByTagName()</li>
+<li>getElementByName()</li>
+<li>document.anchors<ul>
+<li>包含文档中所有带name特性的<a>元素</a></li>
+</ul>
+</li>
+<li>document.applets<ul>
+<li>包含文档中所有的<applet>元素​</applet></li>
+</ul>
+</li>
+<li>document.forms</li>
+<li>document.images</li>
+<li>document.links<ul>
+<li>包含文档中所有带href特性的<a>元素</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="Element类型"><a href="#Element类型" class="headerlink" title="Element类型"></a>Element类型</h2><p>nodeType的值是1。</p>
+<p>它提供了对元素标签名、子节点及特性的访问。</p>
+<p>操作特性的DOM方法：</p>
+<ul>
+<li>getAttribute()</li>
+<li>setAttribute()</li>
+<li>removeAttribute()</li>
+</ul>
+<p>attributes属性中包含一个NamedNodeMap，与NodeList类似，也是一个“动态”的集合。<br>NamedNodeMap对象有下列方法</p>
+<ul>
+<li>getNamedItem(name)<ul>
+<li>返回nodeName属性等于name的节点</li>
+</ul>
+</li>
+<li>removeNamedItem(name)<ul>
+<li>从列表移除nodeName属性等于name的节点</li>
+</ul>
+</li>
+<li>setNamedItem(node)<ul>
+<li>向列表中添加节点，以节点的nodeName属性为索引</li>
+</ul>
+</li>
+<li>item(pos)<ul>
+<li>返回位于数字pos属性位置处的节点。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Text类型"><a href="#Text类型" class="headerlink" title="Text类型"></a>Text类型</h2><p>nodeType的值是3</p>
+<p>下列方法可以操作节点中的文本：</p>
+<ul>
+<li>appendData(text)<ul>
+<li>将text添加到节点的末尾</li>
+</ul>
+</li>
+<li>deleteData(offset, count)<ul>
+<li>从<strong>offset</strong>指定的位置开始删除<strong>count</strong>个字符</li>
+</ul>
+</li>
+<li>insertData(offset, text)<ul>
+<li>在<strong>offset</strong>指定的位置插入<strong>text</strong></li>
+</ul>
+</li>
+<li>replaceData(offset, count, text)<ul>
+<li>用<strong>text</strong>替换从<strong>offset</strong>指定的位置开始到<strong>offset + count</strong>为止处的文本</li>
+</ul>
+</li>
+<li>splitText(offset)<ul>
+<li>从<strong>offset</strong>指定的位置将当前文本节点分成两个文本节点</li>
+</ul>
+</li>
+<li><p>substringData(offset, count)</p>
+<ul>
+<li>提取从<strong>offset</strong>指定的位置开始到<strong>offset + count</strong>为止处的字符串</li>
+</ul>
+</li>
+<li><p>document.createTextNode()</p>
+<ul>
+<li>接受一个参数就是，要插入的文本内容</li>
+<li>document.createTextNode(“<strong>Hello</strong> world!”);</li>
+</ul>
+</li>
+</ul>
+<h3 id="文本节点合并"><a href="#文本节点合并" class="headerlink" title="文本节点合并"></a>文本节点合并</h3><p>normalize()</p>
+<h3 id="文本节点分割"><a href="#文本节点分割" class="headerlink" title="文本节点分割"></a>文本节点分割</h3><p>splitText()</p>
+<h2 id="Comment类型"><a href="#Comment类型" class="headerlink" title="Comment类型"></a>Comment类型</h2><p>nodeType的值是8</p>
+<p>Comment类型与Text类型继承自相同的基类，所以它拥有除了splitText()之外的所有字符串操作方法。<br>document.createComment()<br>创建注释节点</p>
+<h2 id="CDATASection类型"><a href="#CDATASection类型" class="headerlink" title="CDATASection类型"></a>CDATASection类型</h2><p>nodeType的值是4</p>
+<p>CDATA区域只会出现在XML文档中</p>
+<h2 id="DocumentType类型"><a href="#DocumentType类型" class="headerlink" title="DocumentType类型"></a>DocumentType类型</h2><p>nodeType的值是10</p>
+<p>DocumentType包含着与文档的doctype有关的所有信息。</p>
+<h2 id="DocumentFragment类型"><a href="#DocumentFragment类型" class="headerlink" title="DocumentFragment类型"></a>DocumentFragment类型</h2><p>nodeType的值是11</p>
+<p>DocumentFragment 接口表示一个没有父级文件的最小文档对象。它被当做一个轻量版的 Document 使用，用于存储已排好版的或尚未打理好格式的XML片段。最大的区别是因为DocumentFragment不是真实DOM树的一部分，它的变化不会引起DOM树的重新渲染的操作(reflow) ，且不会导致性能等问题。</p>
+<p>该接口继承 Node 的全部方法，并实现了 ParentNode 接口中的方法。</p>
+<h2 id="Attr类型"><a href="#Attr类型" class="headerlink" title="Attr类型"></a>Attr类型</h2><p>nodeType的值是2.</p>
+<p>Attr对象有三个属性：name、 value、 specified</p>
+<p>#总结：<br>DOM由各种节点构成：</p>
+<ol>
+<li>最基本的节点类型是Node;所有其他类型都继承自Node。</li>
+<li>Document类型表示整个文档，是一组分层节点的根节点。在JS中document对象是Document的一个实例。</li>
+<li>Element节点表示文档中所有HTML或XML元素，可以用来操作这些元素的内容和特性。</li>
+<li>还有一些节点就是文本内容啊、注释、文档类型、CDATA区域和文档片段。</li>
+<li>理解DOM的关键，就是理解DOM对性能的影响。DOM操作是Js程序中开销最大的部分，因此访问NodeList导致的问题为最多。所以每次访问NodeList对象，都会运行一次查询。</li>
+<li><strong>尽量减少DOM操作！！！</strong></li>
+</ol>
+
         
     
 
     
+</div>
 
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
 
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
+                
 
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 来必力 -->
+<div id="livere-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTc3My82MzM5">
+	<script type="text/ls-javascript" id="livere-comment-js">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+</div>
+</div>
+<style>
+    #livere-comment{
+        background-color: #eee;
+        padding: 2pc;
     }
-</script>
+</style>
 
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
     
-</div>
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/C++初体验.html" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
