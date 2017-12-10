@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2017-12-10T10:35:26.925Z</updated>
+  <updated>2017-12-10T15:17:34.603Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://xuzihao.fun/DOM.html"/>
     <id>http://xuzihao.fun/DOM.html</id>
     <published>2017-12-10T07:17:00.000Z</published>
-    <updated>2017-12-10T10:35:26.925Z</updated>
+    <updated>2017-12-10T15:17:34.603Z</updated>
     
     <content type="html"><![CDATA[<h1 id="文档对象模型"><a href="#文档对象模型" class="headerlink" title="文档对象模型"></a>文档对象模型</h1><p>一点小差异，IE中所有DOM对象都是以COM对象的形式实现的。</p>
 <h2 id="节点属性"><a href="#节点属性" class="headerlink" title="节点属性"></a>节点属性</h2><p>每个节点的属性</p>
@@ -166,7 +166,44 @@
 <li>理解DOM的关键，就是理解DOM对性能的影响。DOM操作是Js程序中开销最大的部分，因此访问NodeList导致的问题为最多。所以每次访问NodeList对象，都会运行一次查询。</li>
 <li><strong>尽量减少DOM操作！！！</strong></li>
 </ol>
-]]></content>
+<h2 id="DOM扩展"><a href="#DOM扩展" class="headerlink" title="DOM扩展"></a>DOM扩展</h2><p>Leval 1两个方法：</p>
+<ol>
+<li>querySelector()</li>
+<li>querySelectorAll()</li>
+</ol>
+<p>Level 2 的一个方法：</p>
+<ol>
+<li>matchesSelector()</li>
+</ol>
+<h3 id="元素遍历"><a href="#元素遍历" class="headerlink" title="元素遍历"></a>元素遍历</h3><p>Element Traversal API 为DOM元素添加了以下5个属性：</p>
+<ol>
+<li>childElementCount: 返回子元素的个数</li>
+<li>firstElementChild：指向第一个子元素</li>
+<li>lastElementChild：指向最后一个子元素</li>
+<li>previousElementSibling ：指向前一个同辈元素</li>
+<li>nextElementSibling：指向后一个同辈元素</li>
+</ol>
+<h3 id="与类相关的扩充"><a href="#与类相关的扩充" class="headerlink" title="与类相关的扩充"></a>与类相关的扩充</h3><p>1.getElementsByClassName()<br>2.classList</p>
+<p>classList属性有以下方法：</p>
+<ul>
+<li>add(value)</li>
+<li>contains(value)</li>
+<li>remove(value)</li>
+<li>toggle(value)</li>
+</ul>
+<h3 id="焦点管理"><a href="#焦点管理" class="headerlink" title="焦点管理"></a>焦点管理</h3><p>document.actoveElement()<br>document.hasFocus()</p>
+<h3 id="插入标记"><a href="#插入标记" class="headerlink" title="插入标记"></a>插入标记</h3><ul>
+<li>innerHTML</li>
+<li>outerHTML</li>
+<li>insertAdjacentHTML()方法<ul>
+<li>beforebegin: 在<strong>当前元素之前</strong>插入一个紧邻的同辈元素</li>
+<li>afterbegin：在<strong>当前元素之下</strong>插入一个新的子元素或<strong>第一个子元素之前</strong>再插入新的子元素</li>
+<li>beforeend：在<strong>当前元素之下</strong>插入一个新的子元素或在<strong>最后一个子元素之</strong>后再插入新的子元素</li>
+<li>afterend：在<strong>当前元素之后</strong>插入一个紧邻的同辈元素。</li>
+</ul>
+</li>
+</ul>
+<h3 id="scrollIntoView"><a href="#scrollIntoView" class="headerlink" title="scrollIntoView()"></a>scrollIntoView()</h3>]]></content>
     
     <summary type="html">
     
