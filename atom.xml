@@ -1862,7 +1862,7 @@
     <link href="http://xuzihao.fun/Javascript%E5%AF%B9%E8%B1%A1.html"/>
     <id>http://xuzihao.fun/Javascript对象.html</id>
     <published>2017-08-02T14:30:44.000Z</published>
-    <updated>2017-12-01T14:18:49.103Z</updated>
+    <updated>2017-12-13T13:38:42.480Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Javascript对象"><a href="#Javascript对象" class="headerlink" title="Javascript对象"></a>Javascript对象</h1><p>在JavaScript中，数组是对象，函数是对象，正则表达式是对象。那么对象自然也是对象。</p>
 <ul>
@@ -1870,7 +1870,7 @@
 <li>对象是属性的容器，其中每个属性都拥有名字和值。</li>
 <li>JavaScript包含一种原型链的特性，允许对象继承另一个对象的属性。</li>
 </ul>
-<p><img src="http://ozar6ogjb.bkt.clouddn.com/_proto_.jpg" alt="\__proto__与prototype"></p>
+<p>一张简略图<br><img src="http://ozar6ogjb.bkt.clouddn.com/yuanxin.png" alt="简略"><br><img src="http://ozar6ogjb.bkt.clouddn.com/_proto_.jpg" alt="\__proto__与prototype"></p>
 <a id="more"></a>
 <ul>
 <li>对象最常见的用法<ul>
@@ -1994,7 +1994,7 @@
 &lt;li&gt;对象是属性的容器，其中每个属性都拥有名字和值。&lt;/li&gt;
 &lt;li&gt;JavaScript包含一种原型链的特性，允许对象继承另一个对象的属性。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;http://ozar6ogjb.bkt.clouddn.com/_proto_.jpg&quot; alt=&quot;\__proto__与prototype&quot;&gt;&lt;/p&gt;
+&lt;p&gt;一张简略图&lt;br&gt;&lt;img src=&quot;http://ozar6ogjb.bkt.clouddn.com/yuanxin.png&quot; alt=&quot;简略&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://ozar6ogjb.bkt.clouddn.com/_proto_.jpg&quot; alt=&quot;\__proto__与prototype&quot;&gt;&lt;/p&gt;
     
     </summary>
     
