@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2017-12-10T15:17:34.603Z</updated>
+  <updated>2017-12-13T13:43:10.305Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://xuzihao.fun/DOM.html"/>
     <id>http://xuzihao.fun/DOM.html</id>
     <published>2017-12-10T07:17:00.000Z</published>
-    <updated>2017-12-10T15:17:34.603Z</updated>
+    <updated>2017-12-13T13:43:10.305Z</updated>
     
     <content type="html"><![CDATA[<h1 id="文档对象模型"><a href="#文档对象模型" class="headerlink" title="文档对象模型"></a>文档对象模型</h1><p>一点小差异，IE中所有DOM对象都是以COM对象的形式实现的。</p>
 <h2 id="节点属性"><a href="#节点属性" class="headerlink" title="节点属性"></a>节点属性</h2><p>每个节点的属性</p>
@@ -212,7 +212,7 @@
     
     </summary>
     
-      <category term="JavaScript修仙之旅" scheme="http://xuzihao.fun/categories/JavaScript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
+      <category term="Javascript修仙之旅" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
     
     
       <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
@@ -423,7 +423,7 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://xuzihao.fun/categories/JavaScript/"/>
+      <category term="Javascript修仙之旅" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
     
     
       <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
@@ -1613,7 +1613,7 @@
     <link href="http://xuzihao.fun/CO%E5%87%BD%E6%95%B0%EF%BC%8C%E5%BC%82%E6%AD%A5.html"/>
     <id>http://xuzihao.fun/CO函数，异步.html</id>
     <published>2017-08-18T15:01:50.000Z</published>
-    <updated>2017-09-02T00:13:02.000Z</updated>
+    <updated>2017-12-13T13:43:03.967Z</updated>
     
     <content type="html"><![CDATA[<h1 id="CO函数库"><a href="#CO函数库" class="headerlink" title="CO函数库"></a>CO函数库</h1><p><a href="https://github.com/tj/co" target="_blank" rel="external">co 函数库</a>是著名程序员 TJ Holowaychuk 于2013年6月发布的一个小工具，用于 <strong>Generator 函数的自动执行</strong>。</p>
 <p>有一个 Generator 函数，用于依次读取两个文件。</p>
@@ -1654,7 +1654,7 @@
     
     </summary>
     
-      <category term="Javascript修仙之路" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+      <category term="Javascript修仙之旅" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
     
     
       <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
@@ -2010,7 +2010,7 @@
     <link href="http://xuzihao.fun/%E5%BC%82%E6%AD%A5.html"/>
     <id>http://xuzihao.fun/异步.html</id>
     <published>2017-08-01T11:35:44.000Z</published>
-    <updated>2017-09-01T10:03:45.000Z</updated>
+    <updated>2017-12-13T13:42:50.654Z</updated>
     
     <content type="html"><![CDATA[<h1 id="异步操作"><a href="#异步操作" class="headerlink" title="异步操作"></a>异步操作</h1><h1 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h1><p>JavaScript 语言对异步编程的实现，就是回调函数。<strong>所谓回调函数，就是把任务的第二段单独写在一个函数里面，等到重新执行这个任务的时候，就直接调用这个函数。</strong>它的英语名字 callback，直译过来就是”<strong>重新调用</strong>“。</p>
 <p>读取文件进行处理，是这样写的:</p>
@@ -2083,7 +2083,7 @@
     
     </summary>
     
-      <category term="Javascript修仙之路" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E8%B7%AF/"/>
+      <category term="Javascript修仙之旅" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
     
     
       <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
