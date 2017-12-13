@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://xuzihao.fun/DOM.html</loc>
+    <lastmod>2017-12-13T13:47:24.096Z</lastmod>
+    <data>
+        <display>
+        <title>DOM</title>
+        <pubTime>2017-12-10T07:17:00.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="Javascript修仙之旅" url="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xuzihao.fun/Promise.html</loc>
     <lastmod>2017-12-13T13:44:10.501Z</lastmod>
     <data>
@@ -94,26 +114,6 @@
         <display>
         <title>ES6箭头函数</title>
         <pubTime>2017-04-27T07:29:00.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="Javascript修仙之旅" url="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xuzihao.fun/DOM.html</loc>
-    <lastmod>2017-12-13T13:43:10.305Z</lastmod>
-    <data>
-        <display>
-        <title>DOM</title>
-        <pubTime>2017-12-10T07:17:00.000Z</pubTime>
         
         <tag>JavaScript</tag>
          

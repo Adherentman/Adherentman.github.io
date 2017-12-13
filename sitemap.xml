@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://xuzihao.fun/DOM.html</loc>
+    
+    <lastmod>2017-12-13T13:47:24.096Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://xuzihao.fun/Promise.html</loc>
     
     <lastmod>2017-12-13T13:44:10.501Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://xuzihao.fun/Es6%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.html</loc>
     
     <lastmod>2017-12-13T13:43:15.410Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://xuzihao.fun/DOM.html</loc>
-    
-    <lastmod>2017-12-13T13:43:10.305Z</lastmod>
     
   </url>
   
