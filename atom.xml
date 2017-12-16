@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2017-12-13T13:47:24.096Z</updated>
+  <updated>2017-12-16T12:12:19.187Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -14,6 +14,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Parcel-typescript-react初尝试</title>
+    <link href="http://xuzihao.fun/Parcel.html"/>
+    <id>http://xuzihao.fun/Parcel.html</id>
+    <published>2017-12-16T12:12:19.187Z</published>
+    <updated>2017-12-16T12:12:19.187Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Parcel是啥？"><a href="#Parcel是啥？" class="headerlink" title="Parcel是啥？"></a>Parcel是啥？</h2><p>平常打包工具我们会去选择Webpack，但是我们都发现去使用webpack要么就去社区里找配置好的或者自己去看文档去配一大堆插件啊等等，但是我们在开发中还会遇到很多问题。有一句话说得好，配好了的Webpack就别动了。。因为下一步你继续配的话，你也不知道会发生什么。</p>
+<p>那么现在有一个真正的0配置打包工具，拿来就用岂不是美滋滋？<br><img src="https://user-gold-cdn.xitu.io/2017/12/16/1605f23cdc841184?w=1964&amp;h=702&amp;f=jpeg&amp;s=247628" alt="parcel"><br>这是官网的介绍，网址如下：<a href="http://www.css88.com/doc/parcel/" target="_blank" rel="external">Parcel</a></p>
+<a id="more"></a>
+<h2 id="进入正题"><a href="#进入正题" class="headerlink" title="进入正题"></a>进入正题</h2><p>现在很多人用<strong>React</strong>，并且还用上了<strong>Typescript</strong>！配置Webpack用<code>tsc</code>可太麻烦了。我们来看看Parcel是怎么做到的。</p>
+<ol>
+<li>mkdir parcel-typescript-react-example</li>
+<li>yarn init</li>
+<li>mkdir src</li>
+<li>tsc –init</li>
+</ol>
+<p>接着我们需要<code>yarn add</code> 一些玩意儿:</p>
+<ul>
+<li>yarn add parcel-bundler react react-dom typescript babel-preset-react @types/react @types/react-dom</li>
+</ul>
+<p>接下来我们在根目录下创建<code>index.html</code>:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>parcel-typescript-react-example<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"./src/styles.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./src/index.tsx"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>在<code>src</code>文件中我们创建 <code>index.tsc</code> 和 <code>styes.css</code>:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">  render()&#123;</div><div class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">App</span>/&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">"root"</span>));</div></pre></td></tr></table></figure></p>
+<p>CSS文件<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">* &#123;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">18</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>我们的<code>package.json</code>如下：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"name"</span>: <span class="string">"parcel-react"</span>,</div><div class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</div><div class="line">  <span class="attr">"main"</span>: <span class="string">"src/index.tsx"</span>,</div><div class="line">  <span class="attr">"license"</span>: <span class="string">"MIT"</span>,</div><div class="line">  <span class="attr">"scripts"</span>: &#123;</div><div class="line">    <span class="attr">"start"</span>: <span class="string">"parcel index.html"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"dependencies"</span>: &#123;</div><div class="line">    <span class="attr">"@types/react"</span>: <span class="string">"^16.0.30"</span>,</div><div class="line">    <span class="attr">"@types/react-dom"</span>: <span class="string">"^16.0.3"</span>,</div><div class="line">    <span class="attr">"react"</span>: <span class="string">"^16.2.0"</span>,</div><div class="line">    <span class="attr">"react-dom"</span>: <span class="string">"^16.2.0"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"devDependencies"</span>: &#123;</div><div class="line">    <span class="attr">"babel-preset-react"</span>: <span class="string">"^6.24.1"</span>,</div><div class="line">    <span class="attr">"parcel-bundler"</span>: <span class="string">"^1.0.3"</span>,</div><div class="line">    <span class="attr">"typescript"</span>: <span class="string">"^2.6.2"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这样我们就可以打开终端-&gt; cd parcel-typescript-react-example -&gt; yarn start</p>
+<p>静候佳音，然后<code>locahost://1234</code>就能看见火红的Hello World！啦</p>
+<p>大家也可以到我的<a href="https://github.com/Adherentman/parcel-typescript-react-example" target="_blank" rel="external">github-parcel-typescript-react-example
+</a>去 clone 代码。</p>
+<p>欢迎start、issues~</p>
+<p>也可以看看我github中的其他玩意儿！</p>
+<p>以下是我的博客：</p>
+<ul>
+<li><a href="https://github.com/Adherentman" target="_blank" rel="external">github</a></li>
+<li><a href="http://xuzihao.fun/">blog</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Parcel是啥？&quot;&gt;&lt;a href=&quot;#Parcel是啥？&quot; class=&quot;headerlink&quot; title=&quot;Parcel是啥？&quot;&gt;&lt;/a&gt;Parcel是啥？&lt;/h2&gt;&lt;p&gt;平常打包工具我们会去选择Webpack，但是我们都发现去使用webpack要么就去社区里找配置好的或者自己去看文档去配一大堆插件啊等等，但是我们在开发中还会遇到很多问题。有一句话说得好，配好了的Webpack就别动了。。因为下一步你继续配的话，你也不知道会发生什么。&lt;/p&gt;
+&lt;p&gt;那么现在有一个真正的0配置打包工具，拿来就用岂不是美滋滋？&lt;br&gt;&lt;img src=&quot;https://user-gold-cdn.xitu.io/2017/12/16/1605f23cdc841184?w=1964&amp;amp;h=702&amp;amp;f=jpeg&amp;amp;s=247628&quot; alt=&quot;parcel&quot;&gt;&lt;br&gt;这是官网的介绍，网址如下：&lt;a href=&quot;http://www.css88.com/doc/parcel/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Parcel&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Javascript修仙之旅" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
+    
+    
+      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>DOM</title>
@@ -855,211 +907,6 @@
   </entry>
   
   <entry>
-    <title>英语单词</title>
-    <link href="http://xuzihao.fun/%E5%8D%95%E8%AF%8D.html"/>
-    <id>http://xuzihao.fun/单词.html</id>
-    <published>2017-10-18T12:24:00.000Z</published>
-    <updated>2017-11-12T07:57:05.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li>delicate| 易碎的</li>
-<li>idleness| 懒惰</li>
-<li>tell the truth | 说实话</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li>tell a lie / tell lies| 说谎话</li>
-<li>hold the view 持某种看法;认为.</li>
-<li>in view of | 鉴于，考虑到</li>
-<li>working on | 从事于；致力于</li>
-<li>set free | 释放</li>
-<li>run into | 偶然</li>
-<li>allow | 允许，给予(人)</li>
-<li>for fear of | 生怕，以免</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;delicate| 易碎的&lt;/li&gt;
-&lt;li&gt;idleness| 懒惰&lt;/li&gt;
-&lt;li&gt;tell the truth | 说实话&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英语例句</title>
-    <link href="http://xuzihao.fun/%E4%BE%8B%E5%8F%A5.html"/>
-    <id>http://xuzihao.fun/例句.html</id>
-    <published>2017-10-18T12:24:00.000Z</published>
-    <updated>2017-11-12T07:57:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li>No sooner ····· then      <ul>
-<li>一。。。就。</li>
-</ul>
-</li>
-<li>not so much …as<ul>
-<li>与其。。不如</li>
-</ul>
-</li>
-<li><p>no more…than</p>
-<ul>
-<li><p>不过，仅仅；至多，同。。。一样不</p>
-<a id="more"></a></li>
-</ul>
-</li>
-<li>as…as<ul>
-<li>像。。。一样</li>
-</ul>
-</li>
-<li><p>imagined + sth. + to be + adj.    </p>
-<ul>
-<li>为复合宾语解构</li>
-</ul>
-</li>
-<li><p>put forward to do sth.</p>
-<ul>
-<li>提出要求做某事</li>
-</ul>
-</li>
-<li>get sth. done<ul>
-<li>把某事做了</li>
-</ul>
-</li>
-<li>would rather <ul>
-<li>引导从句的虚拟结构中，如果表示对现在或将来情况的愿望，从句用<strong>过去时</strong>。</li>
-<li>如果是对过去情况的虚拟，从句用<strong>过去完成时</strong>。</li>
-</ul>
-</li>
-<li>never, hardly, seldom, little, not until, not, not only, no sooner, no    longer, nowhere, by no means <ul>
-<li>以上位于句首需要部分倒装</li>
-</ul>
-</li>
-<li>keep diary<ul>
-<li>记日记</li>
-</ul>
-</li>
-<li>can’t help doing sth.<ul>
-<li>忍不住做。。。</li>
-</ul>
-</li>
-<li>be worth doing<ul>
-<li>某（事或物）值得做</li>
-</ul>
-</li>
-<li>be worthy to be done 或 sth. is worthy of being done 以及 sb. be worhty of doing sth. 或者 sb. be worthy to do sth.<ul>
-<li>和 worth 的意思一样</li>
-</ul>
-</li>
-<li>It is/was /will be the first time that …句式<ul>
-<li>主句谓语是is，从句用现在完成时</li>
-<li>主句谓语是was，从句谓语用过去完成时</li>
-<li>主句谓语是will be，从句谓语用一般现在时</li>
-</ul>
-</li>
-<li>be appropriate for sb. 或 be appropriate to do sth.<ul>
-<li>固定搭配</li>
-</ul>
-</li>
-<li>appreciate + doing sth.<ul>
-<li>感激做某事</li>
-</ul>
-</li>
-<li>but to do,但是but之前出现了 do/does/did/done就要 but do</li>
-<li>no mood | in the mood<ul>
-<li>没有心情 | 有好心情</li>
-</ul>
-</li>
-<li>the impression of + doing sth.<ul>
-<li>做过某事的印象</li>
-</ul>
-</li>
-<li>have a(the) right to sth.<ul>
-<li>享有。。的权利</li>
-</ul>
-</li>
-<li>do nothing but <ul>
-<li>此结构后要求动词原形</li>
-</ul>
-</li>
-<li>need doing / need to done<ul>
-<li>需要被</li>
-</ul>
-</li>
-<li>sb. spend some time doing sth.<ul>
-<li>花时间做某事</li>
-</ul>
-</li>
-<li>a large amount of, a great deal of <ul>
-<li>固定搭配</li>
-</ul>
-</li>
-<li>将来时除了有be going to, will + do, 还有be to do, be about to do.</li>
-<li>play a part in<ul>
-<li>在。。。起作用。</li>
-</ul>
-</li>
-<li>must have + 过去分词<ul>
-<li>过去一定做了某事，表示对过去的肯定推测。</li>
-</ul>
-</li>
-<li>could have + 过去分词<ul>
-<li>本来能够做….</li>
-</ul>
-</li>
-<li>another + 基数词 + 名词复数<ul>
-<li>另外/在多少个</li>
-<li>I want another three apples.</li>
-<li>我还需要三个苹果。</li>
-</ul>
-</li>
-<li>mind doing sth.<ul>
-<li>介意做某事</li>
-</ul>
-</li>
-<li>to help you to out <ul>
-<li>表示目的</li>
-</ul>
-</li>
-<li>be going to + 一般现在时（leaves）</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;No sooner ····· then      &lt;ul&gt;
-&lt;li&gt;一。。。就。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;not so much …as&lt;ul&gt;
-&lt;li&gt;与其。。不如&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;no more…than&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;不过，仅仅；至多，同。。。一样不&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
-    
-  </entry>
-  
-  <entry>
     <title>英语时态</title>
     <link href="http://xuzihao.fun/%E6%97%B6%E6%80%81.html"/>
     <id>http://xuzihao.fun/时态.html</id>
@@ -1250,6 +1097,211 @@
 &lt;li&gt;现在进行时&lt;/li&gt;
 &lt;li&gt;现在完成时&lt;/li&gt;
 &lt;li&gt;现在完成进行时&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>英语例句</title>
+    <link href="http://xuzihao.fun/%E4%BE%8B%E5%8F%A5.html"/>
+    <id>http://xuzihao.fun/例句.html</id>
+    <published>2017-10-18T12:24:00.000Z</published>
+    <updated>2017-11-12T07:57:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>No sooner ····· then      <ul>
+<li>一。。。就。</li>
+</ul>
+</li>
+<li>not so much …as<ul>
+<li>与其。。不如</li>
+</ul>
+</li>
+<li><p>no more…than</p>
+<ul>
+<li><p>不过，仅仅；至多，同。。。一样不</p>
+<a id="more"></a></li>
+</ul>
+</li>
+<li>as…as<ul>
+<li>像。。。一样</li>
+</ul>
+</li>
+<li><p>imagined + sth. + to be + adj.    </p>
+<ul>
+<li>为复合宾语解构</li>
+</ul>
+</li>
+<li><p>put forward to do sth.</p>
+<ul>
+<li>提出要求做某事</li>
+</ul>
+</li>
+<li>get sth. done<ul>
+<li>把某事做了</li>
+</ul>
+</li>
+<li>would rather <ul>
+<li>引导从句的虚拟结构中，如果表示对现在或将来情况的愿望，从句用<strong>过去时</strong>。</li>
+<li>如果是对过去情况的虚拟，从句用<strong>过去完成时</strong>。</li>
+</ul>
+</li>
+<li>never, hardly, seldom, little, not until, not, not only, no sooner, no    longer, nowhere, by no means <ul>
+<li>以上位于句首需要部分倒装</li>
+</ul>
+</li>
+<li>keep diary<ul>
+<li>记日记</li>
+</ul>
+</li>
+<li>can’t help doing sth.<ul>
+<li>忍不住做。。。</li>
+</ul>
+</li>
+<li>be worth doing<ul>
+<li>某（事或物）值得做</li>
+</ul>
+</li>
+<li>be worthy to be done 或 sth. is worthy of being done 以及 sb. be worhty of doing sth. 或者 sb. be worthy to do sth.<ul>
+<li>和 worth 的意思一样</li>
+</ul>
+</li>
+<li>It is/was /will be the first time that …句式<ul>
+<li>主句谓语是is，从句用现在完成时</li>
+<li>主句谓语是was，从句谓语用过去完成时</li>
+<li>主句谓语是will be，从句谓语用一般现在时</li>
+</ul>
+</li>
+<li>be appropriate for sb. 或 be appropriate to do sth.<ul>
+<li>固定搭配</li>
+</ul>
+</li>
+<li>appreciate + doing sth.<ul>
+<li>感激做某事</li>
+</ul>
+</li>
+<li>but to do,但是but之前出现了 do/does/did/done就要 but do</li>
+<li>no mood | in the mood<ul>
+<li>没有心情 | 有好心情</li>
+</ul>
+</li>
+<li>the impression of + doing sth.<ul>
+<li>做过某事的印象</li>
+</ul>
+</li>
+<li>have a(the) right to sth.<ul>
+<li>享有。。的权利</li>
+</ul>
+</li>
+<li>do nothing but <ul>
+<li>此结构后要求动词原形</li>
+</ul>
+</li>
+<li>need doing / need to done<ul>
+<li>需要被</li>
+</ul>
+</li>
+<li>sb. spend some time doing sth.<ul>
+<li>花时间做某事</li>
+</ul>
+</li>
+<li>a large amount of, a great deal of <ul>
+<li>固定搭配</li>
+</ul>
+</li>
+<li>将来时除了有be going to, will + do, 还有be to do, be about to do.</li>
+<li>play a part in<ul>
+<li>在。。。起作用。</li>
+</ul>
+</li>
+<li>must have + 过去分词<ul>
+<li>过去一定做了某事，表示对过去的肯定推测。</li>
+</ul>
+</li>
+<li>could have + 过去分词<ul>
+<li>本来能够做….</li>
+</ul>
+</li>
+<li>another + 基数词 + 名词复数<ul>
+<li>另外/在多少个</li>
+<li>I want another three apples.</li>
+<li>我还需要三个苹果。</li>
+</ul>
+</li>
+<li>mind doing sth.<ul>
+<li>介意做某事</li>
+</ul>
+</li>
+<li>to help you to out <ul>
+<li>表示目的</li>
+</ul>
+</li>
+<li>be going to + 一般现在时（leaves）</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;No sooner ····· then      &lt;ul&gt;
+&lt;li&gt;一。。。就。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;not so much …as&lt;ul&gt;
+&lt;li&gt;与其。。不如&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;no more…than&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不过，仅仅；至多，同。。。一样不&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>英语单词</title>
+    <link href="http://xuzihao.fun/%E5%8D%95%E8%AF%8D.html"/>
+    <id>http://xuzihao.fun/单词.html</id>
+    <published>2017-10-18T12:24:00.000Z</published>
+    <updated>2017-11-12T07:57:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>delicate| 易碎的</li>
+<li>idleness| 懒惰</li>
+<li>tell the truth | 说实话</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>tell a lie / tell lies| 说谎话</li>
+<li>hold the view 持某种看法;认为.</li>
+<li>in view of | 鉴于，考虑到</li>
+<li>working on | 从事于；致力于</li>
+<li>set free | 释放</li>
+<li>run into | 偶然</li>
+<li>allow | 允许，给予(人)</li>
+<li>for fear of | 生怕，以免</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;delicate| 易碎的&lt;/li&gt;
+&lt;li&gt;idleness| 懒惰&lt;/li&gt;
+&lt;li&gt;tell the truth | 说实话&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
@@ -2101,165 +2153,6 @@
       <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
     
       <category term="node.js" scheme="http://xuzihao.fun/tags/node-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React-Redux和Redux</title>
-    <link href="http://xuzihao.fun/redux.html"/>
-    <id>http://xuzihao.fun/redux.html</id>
-    <published>2017-07-31T01:18:26.000Z</published>
-    <updated>2017-11-09T14:43:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>react无法让两个组件互相交流，使用对方数据。</p>
-<h1 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a>Redux</h1><ul>
-<li>需要回调通知state（等同于回调参数）-&gt;action</li>
-<li>需要根据回调处理（等同于父级方法） -&gt;reducer</li>
-<li>需要state(等同于总状态) -&gt;store</li>
-</ul>
-<p>现在您只需要记住 <code>reducer</code> 是一个函数，负责更新并返回一个新的<code>state</code></p>
-<p>而 <code>initialState</code> 主要用于前后端同构的数据同步</p>
-<a id="more"></a>
-<h2 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h2><ul>
-<li>是把数据从应用传到store的有效载荷。</li>
-<li>是store数据的唯一来源</li>
-<li>描述发生了什么的普通对象</li>
-<li>也可以理解成新闻的摘要-“任务列表里添加了学习Redux文档”。</li>
-</ul>
-<h2 id="Store"><a href="#Store" class="headerlink" title="Store"></a>Store</h2><ul>
-<li>Redux应用中只有一个单一的store</li>
-<li>维持应用的state</li>
-<li>提供 getState() 获取state</li>
-<li>提供dispatch() 更新state</li>
-<li>通过subscribe(listener) 注册监听器</li>
-<li>通过subscribe(listener) 返回的函数注销监听器.</li>
-<li>会把2个参数传入reducer：当前的state树和action。</li>
-</ul>
-<h2 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h2><h2 id="Reducer-1"><a href="#Reducer-1" class="headerlink" title="Reducer"></a>Reducer</h2><p>reducer就是实现(state,action) -&gt; newState的纯函数. 也就是真正处理state的地方.</p>
-<p>Redux不希望我们修改老的state ,而且通过直接返回新的state的方式去修改.</p>
-<ul>
-<li><strong>永远不要</strong>在 reducer 里做这些操作：<ul>
-<li>修改传入参数；</li>
-<li>执行有副作用的操作，如 API 请求和路由跳转；</li>
-<li>调用非纯函数，如 <code>Date.now()</code> 或 <code>Math.random()</code>。</li>
-</ul>
-</li>
-<li>指明根据action更新state。</li>
-</ul>
-<p>通俗点讲，就是 <code>reducer</code> 返回啥，<code>state</code> 就被替换成啥</p>
-<ul>
-<li>view(React)</li>
-<li>store(state)</li>
-<li>action</li>
-<li>reducer</li>
-</ul>
-<ul>
-<li>view(React) = 家具的摆放在视觉的效果上</li>
-<li>store(state) = 每个家具在空间内的坐标(如：电视的位置是x:10, y: 400)</li>
-<li>action = 小明分配任务(谁应该干什么)</li>
-<li>reducer = 具体任务都干些什么(把电视搬到沙发正对面然后靠墙的地方)</li>
-</ul>
-<p>所以这个过程应该是这样的：</p>
-<p><strong>view —&gt; action —&gt; reducer —&gt; store(state) —&gt; view</strong></p>
-<h1 id="React-Redux"><a href="#React-Redux" class="headerlink" title="React-Redux"></a>React-Redux</h1><ol>
-<li><p>Provider是一个普通组件，可以作为顶层app的分发点，它只需要store属性就可以。他会将state分发给所有被connect的组件，不管它在哪里，被嵌套多少层。</p>
-</li>
-<li><p>connect是真正的重点，它是一个科里化函数，意思是先接受两个参数（数据绑定mapStateToProps和事件绑定mapDispatchToProps），再接受一个参数（将要绑定的组件本身）：mapStateToProps：构建好Redux系统的时候，它会被自动初始化，但是你的React组件并不知道它的存在，因此你需要分拣出你需要的Redux状态，所以你需要绑定一个函数，它的参数是state，简单返回你关心的几个值。</p>
-</li>
-<li><p>mapDispatchToProps：声明好的action作为回调，也可以被注入到组件里，就是通过这个函数，它的参数是dispatch，通过redux的辅助方法bindActionCreator绑定所有action以及参数的dispatch，就可以作为属性在组件里面作为函数简单使用了，不需要手动dispatch。这个mapDispatchToProps是可选的，如果不传这个参数redux会简单把dispatch作为属性注入给组件，可以手动当做store.dispatch使用。这也是为什么要科里化的原因。</p>
-<p>做好以上流程Redux和React就可以工作了。简单地说就是：</p>
-<p>​</p>
-<p>1.顶层分发状态，让React组件被动地渲染。</p>
-<p>​</p>
-<p>2.监听事件，事件有权利回到所有状态顶层影响状态。</p>
-</li>
-</ol>
-<h1 id="Redux-与传统后端-MVC-的对照"><a href="#Redux-与传统后端-MVC-的对照" class="headerlink" title="Redux 与传统后端 MVC 的对照"></a>Redux 与传统后端 MVC 的对照</h1><table>
-<thead>
-<tr>
-<th>Redux</th>
-<th>传统后端 MVC</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>store</code></td>
-<td>数据库实例</td>
-</tr>
-<tr>
-<td><code>state</code></td>
-<td>数据库中存储的数据</td>
-</tr>
-<tr>
-<td><code>dispatch(action)</code></td>
-<td>用户发起请求</td>
-</tr>
-<tr>
-<td><code>action: { type, payload }</code></td>
-<td><code>type</code> 表示请求的 URL，<code>payload</code> 表示请求的数据</td>
-</tr>
-<tr>
-<td><code>reducer</code></td>
-<td>路由 + 控制器（handler）</td>
-</tr>
-<tr>
-<td><code>reducer</code> 中的 <code>switch-case</code> 分支</td>
-<td>路由，根据 <code>action.type</code> 路由到对应的控制器</td>
-</tr>
-<tr>
-<td><code>reducer</code> 内部对 <code>state</code> 的处理</td>
-<td>控制器对数据库进行增删改操作</td>
-</tr>
-<tr>
-<td><code>reducer</code> 返回 <code>nextState</code></td>
-<td>将修改后的记录写回数据库</td>
-</tr>
-</tbody>
-</table>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="redux-三个基本原则"><a href="#redux-三个基本原则" class="headerlink" title="redux 三个基本原则"></a>redux 三个基本原则</h2><ol>
-<li>整个应用只有唯一一个 Store 实例</li>
-<li>State 只能通过触发 Action 来更改</li>
-<li>State 的更改 必须写成纯函数(Reducer)，(oldState, action) =&gt; newState，也就是每次更改总是返回一个新的 State</li>
-</ol>
-<h2 id="redux-两个显著的特点"><a href="#redux-两个显著的特点" class="headerlink" title="redux 两个显著的特点"></a>redux 两个显著的特点</h2><ol>
-<li>可预测性（Reducer 是纯函数）。</li>
-<li>扩展性强（middleware）。</li>
-</ol>
-<h2 id="reducer-可以根据场景分为以下几种"><a href="#reducer-可以根据场景分为以下几种" class="headerlink" title="reducer 可以根据场景分为以下几种:"></a>reducer 可以根据场景分为以下几种:</h2><ul>
-<li>root reducer :根reducer ,作为createStore的第一个参数</li>
-<li>slice reducer : 分片reducer,相对根reducer 来说的.用来操作state的一部分数据.多个分片reducer可以合并成一个根reducer.</li>
-<li>higher-order reducer : 高阶reducer 接受reducer作为函数/返回reducer作为返回的函数.</li>
-<li>case function: 功能函数,接受指定action后的更新逻辑,可以是简单的reducer函数,也可以接受其他参数.</li>
-</ul>
-<h2 id="reducer-的最佳实践主要分为以下几个部分"><a href="#reducer-的最佳实践主要分为以下几个部分" class="headerlink" title="reducer 的最佳实践主要分为以下几个部分"></a>reducer 的最佳实践主要分为以下几个部分</h2><ul>
-<li>抽离工具函数,以便复用.</li>
-<li>抽离功能函数(case function),精简reducer声明部分的代码</li>
-<li>根据数据类别拆分,维护多个独立的slice reducer.</li>
-<li>合并slice reducer.</li>
-<li>通过crossReducer在多个slice reducer中共享数据.</li>
-<li>减少reducer的模板代码.</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;react无法让两个组件互相交流，使用对方数据。&lt;/p&gt;
-&lt;h1 id=&quot;Redux&quot;&gt;&lt;a href=&quot;#Redux&quot; class=&quot;headerlink&quot; title=&quot;Redux&quot;&gt;&lt;/a&gt;Redux&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;需要回调通知state（等同于回调参数）-&amp;gt;action&lt;/li&gt;
-&lt;li&gt;需要根据回调处理（等同于父级方法） -&amp;gt;reducer&lt;/li&gt;
-&lt;li&gt;需要state(等同于总状态) -&amp;gt;store&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;现在您只需要记住 &lt;code&gt;reducer&lt;/code&gt; 是一个函数，负责更新并返回一个新的&lt;code&gt;state&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;而 &lt;code&gt;initialState&lt;/code&gt; 主要用于前后端同构的数据同步&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="React" scheme="http://xuzihao.fun/categories/React/"/>
-    
-    
-      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
-    
-      <category term="React" scheme="http://xuzihao.fun/tags/React/"/>
     
   </entry>
   

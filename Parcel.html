@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript,node.js," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -81,19 +81,19 @@
 
 
 
-<meta name="description" content="Generator最大的特点就是定义的函数可以被暂停执行. 作用迭代器 iterator, infinite range, 可以暂停函数, lazy evaluation, 用来实现 async/await 啊, 棒棒哒. async generator/iterator   摘自MDN  生成器对象是由一个 generator function 返回的,并且它符合可迭代协议和迭代器协议。  摘自">
-<meta name="keywords" content="JavaScript,node.js">
+<meta name="description" content="Parcel是啥？平常打包工具我们会去选择Webpack，但是我们都发现去使用webpack要么就去社区里找配置好的或者自己去看文档去配一大堆插件啊等等，但是我们在开发中还会遇到很多问题。有一句话说得好，配好了的Webpack就别动了。。因为下一步你继续配的话，你也不知道会发生什么。 那么现在有一个真正的0配置打包工具，拿来就用岂不是美滋滋？这是官网的介绍，网址如下：Parcel">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Generator函数">
-<meta property="og:url" content="http://xuzihao.fun/Generator.html">
+<meta property="og:title" content="Parcel-typescript-react初尝试">
+<meta property="og:url" content="http://xuzihao.fun/Parcel.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="Generator最大的特点就是定义的函数可以被暂停执行. 作用迭代器 iterator, infinite range, 可以暂停函数, lazy evaluation, 用来实现 async/await 啊, 棒棒哒. async generator/iterator   摘自MDN  生成器对象是由一个 generator function 返回的,并且它符合可迭代协议和迭代器协议。  摘自">
-<meta property="og:image" content="http://xuzihao.fun/images/generator.png">
-<meta property="og:updated_time" content="2017-12-13T13:43:30.557Z">
+<meta property="og:description" content="Parcel是啥？平常打包工具我们会去选择Webpack，但是我们都发现去使用webpack要么就去社区里找配置好的或者自己去看文档去配一大堆插件啊等等，但是我们在开发中还会遇到很多问题。有一句话说得好，配好了的Webpack就别动了。。因为下一步你继续配的话，你也不知道会发生什么。 那么现在有一个真正的0配置打包工具，拿来就用岂不是美滋滋？这是官网的介绍，网址如下：Parcel">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/12/16/1605f23cdc841184?w=1964&h=702&f=jpeg&s=247628">
+<meta property="og:updated_time" content="2017-12-16T12:12:19.187Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Generator函数">
-<meta name="twitter:description" content="Generator最大的特点就是定义的函数可以被暂停执行. 作用迭代器 iterator, infinite range, 可以暂停函数, lazy evaluation, 用来实现 async/await 啊, 棒棒哒. async generator/iterator   摘自MDN  生成器对象是由一个 generator function 返回的,并且它符合可迭代协议和迭代器协议。  摘自">
-<meta name="twitter:image" content="http://xuzihao.fun/images/generator.png">
+<meta name="twitter:title" content="Parcel-typescript-react初尝试">
+<meta name="twitter:description" content="Parcel是啥？平常打包工具我们会去选择Webpack，但是我们都发现去使用webpack要么就去社区里找配置好的或者自己去看文档去配一大堆插件啊等等，但是我们在开发中还会遇到很多问题。有一句话说得好，配好了的Webpack就别动了。。因为下一步你继续配的话，你也不知道会发生什么。 那么现在有一个真正的0配置打包工具，拿来就用岂不是美滋滋？这是官网的介绍，网址如下：Parcel">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2017/12/16/1605f23cdc841184?w=1964&h=702&f=jpeg&s=247628">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://xuzihao.fun/Generator.html"/>
+  <link rel="canonical" href="http://xuzihao.fun/Parcel.html"/>
 
 
 
 
 
-  <title>Generator函数 | 壮壮-Technology</title>
+  <title>Parcel-typescript-react初尝试 | 壮壮-Technology</title>
   
 
 
@@ -266,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/Generator.html">
+    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/Parcel.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XuZiHao">
@@ -283,7 +283,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Generator函数</h2>
+          <h2 class="post-title" itemprop="name headline">Parcel-typescript-react初尝试</h2>
         
 
         <div class="post-meta">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-29T14:21:06+08:00">
-                2017-07-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-16T20:12:19+08:00">
+                2017-12-16
               </time>
             
 
@@ -355,39 +355,35 @@
       
 
       
-        <p>Generator最大的特点就是定义的函数可以被<strong>暂停执行</strong>.</p>
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>迭代器 iterator, infinite range, 可以暂停函数, lazy evaluation, 用来实现 async/await 啊, 棒棒哒.</p>
-<p>async generator/iterator </p>
-<blockquote>
-<p>摘自MDN</p>
-</blockquote>
-<p><strong>生成器</strong>对象是由一个 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/function*" target="_blank" rel="external">generator function</a> 返回的,并且它符合<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols#iterable" target="_blank" rel="external">可迭代协议</a>和<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols#iterator" target="_blank" rel="external">迭代器协议</a>。</p>
-<blockquote>
-<p>摘自ES6标准入门</p>
-</blockquote>
-<p>可以把它理解成一个状态机,封装了多个内部状态.还是一个遍历器对象生成函数.</p>
+        <h2 id="Parcel是啥？"><a href="#Parcel是啥？" class="headerlink" title="Parcel是啥？"></a>Parcel是啥？</h2><p>平常打包工具我们会去选择Webpack，但是我们都发现去使用webpack要么就去社区里找配置好的或者自己去看文档去配一大堆插件啊等等，但是我们在开发中还会遇到很多问题。有一句话说得好，配好了的Webpack就别动了。。因为下一步你继续配的话，你也不知道会发生什么。</p>
+<p>那么现在有一个真正的0配置打包工具，拿来就用岂不是美滋滋？<br><img src="https://user-gold-cdn.xitu.io/2017/12/16/1605f23cdc841184?w=1964&amp;h=702&amp;f=jpeg&amp;s=247628" alt="parcel"><br>这是官网的介绍，网址如下：<a href="http://www.css88.com/doc/parcel/" target="_blank" rel="external">Parcel</a></p>
 <a id="more"></a>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">hi</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">yield</span> <span class="string">'nihao'</span>;</div><div class="line"><span class="keyword">yield</span> <span class="string">'hello'</span>;</div><div class="line"><span class="keyword">return</span> <span class="string">'ending'</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> hw = hi();</div><div class="line">hw.next();</div><div class="line">hw.next();</div><div class="line">hw.next();</div></pre></td></tr></table></figure>
-<p><img src="/images/generator.png" alt="generator"></p>
-<blockquote>
-<p>通过gen.next()取得的输出是一个对象，包含value和done两个属性，其中value是真正返回的值，而done则用来标识Generator是否已经执行完毕。因为自然数生成器是一个无限循环，所以不存在done: true的情况。</p>
-</blockquote>
-<p>在<code>Generator函数</code>返回的遍历器对象只有调用<code>next方法</code>才会遍历下一个内部状态,所以yield语句就是<strong>暂停标志</strong>.</p>
-<ul>
-<li>yield语句后面的表达式,只有当调用到next方法,内部指针指向该语句时才会执行.</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">add</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">yield</span> <span class="number">123</span>+<span class="number">123</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//在上面代码里123+123不去求值.当有next();时,才去求值</span></div></pre></td></tr></table></figure>
+<h2 id="进入正题"><a href="#进入正题" class="headerlink" title="进入正题"></a>进入正题</h2><p>现在很多人用<strong>React</strong>，并且还用上了<strong>Typescript</strong>！配置Webpack用<code>tsc</code>可太麻烦了。我们来看看Parcel是怎么做到的。</p>
 <ol>
-<li>每个yield将代码分割成两个部分，需要执行两次next才能执行完。</li>
-<li>yield其实由两个动作组成，<strong>输入</strong> + <strong>输出</strong>（输入在输出前面），每次执行next，代码会暂停在yield <strong>输出</strong>执行后，其它的语句不再执行（<strong>很重要</strong>）。</li>
+<li>mkdir parcel-typescript-react-example</li>
+<li>yarn init</li>
+<li>mkdir src</li>
+<li>tsc –init</li>
 </ol>
-<h2 id="for…of循环"><a href="#for…of循环" class="headerlink" title="for…of循环"></a>for…of循环</h2><p>可以自动遍历generator函数,不用去调用next方法.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  yiled <span class="number">1</span>;</div><div class="line">  yiled <span class="number">2</span>;</div><div class="line">  yiled <span class="number">3</span>;</div><div class="line">  yiled <span class="number">4</span>;</div><div class="line">  yiled <span class="number">5</span>;</div><div class="line">  <span class="keyword">return</span> <span class="number">6</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> foo())&#123;</div><div class="line">  <span class="built_in">console</span>.log(v);</div><div class="line">&#125;</div><div class="line"><span class="comment">//1 2 3 4 5</span></div></pre></td></tr></table></figure>
-<h1 id="Generator函数的数据交换和错误处理"><a href="#Generator函数的数据交换和错误处理" class="headerlink" title="Generator函数的数据交换和错误处理"></a>Generator函数的数据交换和错误处理</h1><p><code>next()</code>方法返回值的<code>value</code>属性，是<code>Generator</code>函数向外输出的数据；<code>next()</code>方法还可以接受参数，向<code>Generator</code>函数体内输入数据。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">gen</span>(<span class="params">x</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> y = <span class="keyword">yield</span> x + <span class="number">2</span>;</div><div class="line">    <span class="keyword">return</span> y;</div><div class="line">&#125; </div><div class="line"></div><div class="line"><span class="keyword">var</span> g = gen(<span class="number">1</span>);</div><div class="line">g.next()      <span class="comment">// &#123; value: 3, done: false &#125;</span></div><div class="line">g.next(<span class="number">2</span>)     <span class="comment">// &#123; value: 2, done: true &#125;</span></div></pre></td></tr></table></figure>
-<p><code>Generator</code>函数内部还可以部署错误处理代码，捕获函数体外抛出的错误。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function* gen(x) &#123;</div><div class="line">    try &#123;</div><div class="line">        var y = yield x + 2</div><div class="line">    &#125; catch(e) &#123;</div><div class="line">        console.log(e)</div><div class="line">    &#125;</div><div class="line">    return y</div><div class="line">&#125;</div><div class="line"></div><div class="line">var g = gen(1);</div><div class="line">g.next();</div><div class="line">g.throw(&apos;出错了&apos;);</div></pre></td></tr></table></figure>
-<p>上面代码的最后一行，<code>Generator</code>函数体外，使用指针对象的<code>throw</code>方法抛出的错误，可以被函数体内的<code>try...catch</code> 代码块捕获。这意味着，出错的代码与处理错误的代码，实现了时间和空间上的分离，这对于异步编程无疑是很重要的。</p>
+<p>接着我们需要<code>yarn add</code> 一些玩意儿:</p>
+<ul>
+<li>yarn add parcel-bundler react react-dom typescript babel-preset-react @types/react @types/react-dom</li>
+</ul>
+<p>接下来我们在根目录下创建<code>index.html</code>:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>parcel-typescript-react-example<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"./src/styles.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./src/index.tsx"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>在<code>src</code>文件中我们创建 <code>index.tsc</code> 和 <code>styes.css</code>:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">  render()&#123;</div><div class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">App</span>/&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">"root"</span>));</div></pre></td></tr></table></figure></p>
+<p>CSS文件<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">* &#123;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">18</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>我们的<code>package.json</code>如下：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"name"</span>: <span class="string">"parcel-react"</span>,</div><div class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</div><div class="line">  <span class="attr">"main"</span>: <span class="string">"src/index.tsx"</span>,</div><div class="line">  <span class="attr">"license"</span>: <span class="string">"MIT"</span>,</div><div class="line">  <span class="attr">"scripts"</span>: &#123;</div><div class="line">    <span class="attr">"start"</span>: <span class="string">"parcel index.html"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"dependencies"</span>: &#123;</div><div class="line">    <span class="attr">"@types/react"</span>: <span class="string">"^16.0.30"</span>,</div><div class="line">    <span class="attr">"@types/react-dom"</span>: <span class="string">"^16.0.3"</span>,</div><div class="line">    <span class="attr">"react"</span>: <span class="string">"^16.2.0"</span>,</div><div class="line">    <span class="attr">"react-dom"</span>: <span class="string">"^16.2.0"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"devDependencies"</span>: &#123;</div><div class="line">    <span class="attr">"babel-preset-react"</span>: <span class="string">"^6.24.1"</span>,</div><div class="line">    <span class="attr">"parcel-bundler"</span>: <span class="string">"^1.0.3"</span>,</div><div class="line">    <span class="attr">"typescript"</span>: <span class="string">"^2.6.2"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这样我们就可以打开终端-&gt; cd parcel-typescript-react-example -&gt; yarn start</p>
+<p>静候佳音，然后<code>locahost://1234</code>就能看见火红的Hello World！啦</p>
+<p>大家也可以到我的<a href="https://github.com/Adherentman/parcel-typescript-react-example" target="_blank" rel="external">github-parcel-typescript-react-example
+</a>去 clone 代码。</p>
+<p>欢迎start、issues~</p>
+<p>也可以看看我github中的其他玩意儿！</p>
+<p>以下是我的博客：</p>
+<ul>
+<li><a href="https://github.com/Adherentman" target="_blank" rel="external">github</a></li>
+<li><a href="http://xuzihao.fun/">blog</a></li>
+</ul>
 
       
     </div>
@@ -436,8 +432,6 @@
           
             <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
-            <a href="/tags/node-js/" rel="tag"># node.js</a>
-          
         </div>
       
 
@@ -449,8 +443,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Promise.html" rel="next" title="Promise">
-                <i class="fa fa-chevron-left"></i> Promise
+              <a href="/DOM.html" rel="next" title="DOM">
+                <i class="fa fa-chevron-left"></i> DOM
               </a>
             
           </div>
@@ -458,10 +452,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Express.html" rel="prev" title="初入Express">
-                初入Express <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -602,7 +592,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#作用"><span class="nav-number">1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for…of循环"><span class="nav-number">2.</span> <span class="nav-text">for…of循环</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Generator函数的数据交换和错误处理"><span class="nav-number"></span> <span class="nav-text">Generator函数的数据交换和错误处理</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Parcel是啥？"><span class="nav-number">1.</span> <span class="nav-text">Parcel是啥？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进入正题"><span class="nav-number">2.</span> <span class="nav-text">进入正题</span></a></li></ol></div>
             
 
           </div>
