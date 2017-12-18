@@ -263,6 +263,185 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/《你不知道的JavaScript（上）》读书笔记.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XuZiHao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="壮壮-Technology">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/《你不知道的JavaScript（上）》读书笔记.html" itemprop="url">《你不知道的JavaScript（上）》读书笔记</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-18T15:39:30+08:00">
+                2017-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">读书笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="This"><a href="#This" class="headerlink" title="This"></a>This</h2><p>在JS中This让我们捉摸不透。看了《你不知道的JavaScript（上）》让我对this有了更胜的认识。</p>
+<p>总结一下：</p>
+<p>This实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用。</p>
+<p>那么我们要去判断一个运行中函数的<code>this</code>绑定，我们需要先知道：</p>
+<ol>
+<li>函数在哪里被直接调用？</li>
+<li>找到之后，我们需要去通过四条顺序规则去判断<code>this</code>的绑定对象</li>
+</ol>
+<blockquote>
+<ol>
+<li><p>是否是被<code>new</code>调用的？是的话那就绑定到新的创建对象。</p>
+<ol>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;       <span class="keyword">var</span> bar = <span class="keyword">new</span> foo()</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<ol>
+<li><p>是否被<code>call</code>或者<code>apply</code>或者<code>bind</code>调用？是的话那就绑定到指定的对象。</p>
+<ol>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;       <span class="keyword">var</span> bar = call(obj, <span class="number">2</span>);</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<ol>
+<li><p>是否由上下文调用？是的话那就绑定到那个上下文对象。</p>
+</li>
+<li><p>默认：在默认情况下，如果我们在严格模式下则为<code>undefined</code>，否则我们会绑定到全局对象</p>
+</li>
+</ol>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/Parcel.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1358,7 +1537,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/时态.html">
+    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/单词.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XuZiHao">
@@ -1377,7 +1556,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/时态.html" itemprop="url">英语时态</a></h2>
+                <a class="post-title-link" href="/单词.html" itemprop="url">英语单词</a></h2>
         
 
         <div class="post-meta">
@@ -1450,18 +1629,14 @@
 
       
         
-          <h1 id="英语语法——时态"><a href="#英语语法——时态" class="headerlink" title="英语语法——时态"></a>英语语法——时态</h1><p>时间概念包含四种，<strong>过去</strong>、<strong>现在</strong>、<strong>将来</strong>和<strong>过去将来</strong>。</p>
-<p>动作方面包含四种，<strong>一般</strong>、<strong>进行</strong>、<strong>完成</strong>和<strong>完成进行</strong>。</p>
-<p>将时间概念和动作方面结合一起，就能构成16种时态。</p>
-<ul>
-<li>一般现在时</li>
-<li>现在进行时</li>
-<li>现在完成时</li>
-<li>现在完成进行时</li>
+          <ul>
+<li>delicate| 易碎的</li>
+<li>idleness| 懒惰</li>
+<li>tell the truth | 说实话</li>
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/时态.html#more" rel="contents">
+            <a class="btn" href="/单词.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1656,156 +1831,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/单词.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="XuZiHao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="壮壮-Technology">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/单词.html" itemprop="url">英语单词</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-18T20:24:00+08:00">
-                2017-10-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/日常/" itemprop="url" rel="index">
-                    <span itemprop="name">日常</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ul>
-<li>delicate| 易碎的</li>
-<li>idleness| 懒惰</li>
-<li>tell the truth | 说实话</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/单词.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1856,7 +1881,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

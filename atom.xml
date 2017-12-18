@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2017-12-16T12:17:07.171Z</updated>
+  <updated>2017-12-18T07:51:18.137Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -14,6 +14,67 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《你不知道的JavaScript（上）》读书笔记</title>
+    <link href="http://xuzihao.fun/%E3%80%8A%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84JavaScript%EF%BC%88%E4%B8%8A%EF%BC%89%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html"/>
+    <id>http://xuzihao.fun/《你不知道的JavaScript（上）》读书笔记.html</id>
+    <published>2017-12-18T07:39:30.000Z</published>
+    <updated>2017-12-18T07:51:18.137Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="This"><a href="#This" class="headerlink" title="This"></a>This</h2><p>在JS中This让我们捉摸不透。看了《你不知道的JavaScript（上）》让我对this有了更胜的认识。</p>
+<p>总结一下：</p>
+<p>This实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用。</p>
+<p>那么我们要去判断一个运行中函数的<code>this</code>绑定，我们需要先知道：</p>
+<ol>
+<li>函数在哪里被直接调用？</li>
+<li>找到之后，我们需要去通过四条顺序规则去判断<code>this</code>的绑定对象</li>
+</ol>
+<blockquote>
+<ol>
+<li><p>是否是被<code>new</code>调用的？是的话那就绑定到新的创建对象。</p>
+<ol>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;       <span class="keyword">var</span> bar = <span class="keyword">new</span> foo()</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<ol>
+<li><p>是否被<code>call</code>或者<code>apply</code>或者<code>bind</code>调用？是的话那就绑定到指定的对象。</p>
+<ol>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;       <span class="keyword">var</span> bar = call(obj, <span class="number">2</span>);</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<ol>
+<li><p>是否由上下文调用？是的话那就绑定到那个上下文对象。</p>
+</li>
+<li><p>默认：在默认情况下，如果我们在严格模式下则为<code>undefined</code>，否则我们会绑定到全局对象</p>
+</li>
+</ol>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;This&quot;&gt;&lt;a href=&quot;#This&quot; class=&quot;headerlink&quot; title=&quot;This&quot;&gt;&lt;/a&gt;This&lt;/h2&gt;&lt;p&gt;在JS中This让我们捉摸不透。看了《你不知道的JavaScript（上）》让我对this有了更胜的认识。&lt;/p&gt;
+&lt;p&gt;总
+    
+    </summary>
+    
+      <category term="读书笔记" scheme="http://xuzihao.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="读书笔记" scheme="http://xuzihao.fun/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>Parcel-typescript-react初尝试</title>
@@ -907,6 +968,211 @@
   </entry>
   
   <entry>
+    <title>英语单词</title>
+    <link href="http://xuzihao.fun/%E5%8D%95%E8%AF%8D.html"/>
+    <id>http://xuzihao.fun/单词.html</id>
+    <published>2017-10-18T12:24:00.000Z</published>
+    <updated>2017-11-12T07:57:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>delicate| 易碎的</li>
+<li>idleness| 懒惰</li>
+<li>tell the truth | 说实话</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>tell a lie / tell lies| 说谎话</li>
+<li>hold the view 持某种看法;认为.</li>
+<li>in view of | 鉴于，考虑到</li>
+<li>working on | 从事于；致力于</li>
+<li>set free | 释放</li>
+<li>run into | 偶然</li>
+<li>allow | 允许，给予(人)</li>
+<li>for fear of | 生怕，以免</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;delicate| 易碎的&lt;/li&gt;
+&lt;li&gt;idleness| 懒惰&lt;/li&gt;
+&lt;li&gt;tell the truth | 说实话&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>英语例句</title>
+    <link href="http://xuzihao.fun/%E4%BE%8B%E5%8F%A5.html"/>
+    <id>http://xuzihao.fun/例句.html</id>
+    <published>2017-10-18T12:24:00.000Z</published>
+    <updated>2017-11-12T07:57:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>No sooner ····· then      <ul>
+<li>一。。。就。</li>
+</ul>
+</li>
+<li>not so much …as<ul>
+<li>与其。。不如</li>
+</ul>
+</li>
+<li><p>no more…than</p>
+<ul>
+<li><p>不过，仅仅；至多，同。。。一样不</p>
+<a id="more"></a></li>
+</ul>
+</li>
+<li>as…as<ul>
+<li>像。。。一样</li>
+</ul>
+</li>
+<li><p>imagined + sth. + to be + adj.    </p>
+<ul>
+<li>为复合宾语解构</li>
+</ul>
+</li>
+<li><p>put forward to do sth.</p>
+<ul>
+<li>提出要求做某事</li>
+</ul>
+</li>
+<li>get sth. done<ul>
+<li>把某事做了</li>
+</ul>
+</li>
+<li>would rather <ul>
+<li>引导从句的虚拟结构中，如果表示对现在或将来情况的愿望，从句用<strong>过去时</strong>。</li>
+<li>如果是对过去情况的虚拟，从句用<strong>过去完成时</strong>。</li>
+</ul>
+</li>
+<li>never, hardly, seldom, little, not until, not, not only, no sooner, no    longer, nowhere, by no means <ul>
+<li>以上位于句首需要部分倒装</li>
+</ul>
+</li>
+<li>keep diary<ul>
+<li>记日记</li>
+</ul>
+</li>
+<li>can’t help doing sth.<ul>
+<li>忍不住做。。。</li>
+</ul>
+</li>
+<li>be worth doing<ul>
+<li>某（事或物）值得做</li>
+</ul>
+</li>
+<li>be worthy to be done 或 sth. is worthy of being done 以及 sb. be worhty of doing sth. 或者 sb. be worthy to do sth.<ul>
+<li>和 worth 的意思一样</li>
+</ul>
+</li>
+<li>It is/was /will be the first time that …句式<ul>
+<li>主句谓语是is，从句用现在完成时</li>
+<li>主句谓语是was，从句谓语用过去完成时</li>
+<li>主句谓语是will be，从句谓语用一般现在时</li>
+</ul>
+</li>
+<li>be appropriate for sb. 或 be appropriate to do sth.<ul>
+<li>固定搭配</li>
+</ul>
+</li>
+<li>appreciate + doing sth.<ul>
+<li>感激做某事</li>
+</ul>
+</li>
+<li>but to do,但是but之前出现了 do/does/did/done就要 but do</li>
+<li>no mood | in the mood<ul>
+<li>没有心情 | 有好心情</li>
+</ul>
+</li>
+<li>the impression of + doing sth.<ul>
+<li>做过某事的印象</li>
+</ul>
+</li>
+<li>have a(the) right to sth.<ul>
+<li>享有。。的权利</li>
+</ul>
+</li>
+<li>do nothing but <ul>
+<li>此结构后要求动词原形</li>
+</ul>
+</li>
+<li>need doing / need to done<ul>
+<li>需要被</li>
+</ul>
+</li>
+<li>sb. spend some time doing sth.<ul>
+<li>花时间做某事</li>
+</ul>
+</li>
+<li>a large amount of, a great deal of <ul>
+<li>固定搭配</li>
+</ul>
+</li>
+<li>将来时除了有be going to, will + do, 还有be to do, be about to do.</li>
+<li>play a part in<ul>
+<li>在。。。起作用。</li>
+</ul>
+</li>
+<li>must have + 过去分词<ul>
+<li>过去一定做了某事，表示对过去的肯定推测。</li>
+</ul>
+</li>
+<li>could have + 过去分词<ul>
+<li>本来能够做….</li>
+</ul>
+</li>
+<li>another + 基数词 + 名词复数<ul>
+<li>另外/在多少个</li>
+<li>I want another three apples.</li>
+<li>我还需要三个苹果。</li>
+</ul>
+</li>
+<li>mind doing sth.<ul>
+<li>介意做某事</li>
+</ul>
+</li>
+<li>to help you to out <ul>
+<li>表示目的</li>
+</ul>
+</li>
+<li>be going to + 一般现在时（leaves）</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;No sooner ····· then      &lt;ul&gt;
+&lt;li&gt;一。。。就。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;not so much …as&lt;ul&gt;
+&lt;li&gt;与其。。不如&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;no more…than&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不过，仅仅；至多，同。。。一样不&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
     <title>英语时态</title>
     <link href="http://xuzihao.fun/%E6%97%B6%E6%80%81.html"/>
     <id>http://xuzihao.fun/时态.html</id>
@@ -1097,211 +1363,6 @@
 &lt;li&gt;现在进行时&lt;/li&gt;
 &lt;li&gt;现在完成时&lt;/li&gt;
 &lt;li&gt;现在完成进行时&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英语例句</title>
-    <link href="http://xuzihao.fun/%E4%BE%8B%E5%8F%A5.html"/>
-    <id>http://xuzihao.fun/例句.html</id>
-    <published>2017-10-18T12:24:00.000Z</published>
-    <updated>2017-11-12T07:57:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li>No sooner ····· then      <ul>
-<li>一。。。就。</li>
-</ul>
-</li>
-<li>not so much …as<ul>
-<li>与其。。不如</li>
-</ul>
-</li>
-<li><p>no more…than</p>
-<ul>
-<li><p>不过，仅仅；至多，同。。。一样不</p>
-<a id="more"></a></li>
-</ul>
-</li>
-<li>as…as<ul>
-<li>像。。。一样</li>
-</ul>
-</li>
-<li><p>imagined + sth. + to be + adj.    </p>
-<ul>
-<li>为复合宾语解构</li>
-</ul>
-</li>
-<li><p>put forward to do sth.</p>
-<ul>
-<li>提出要求做某事</li>
-</ul>
-</li>
-<li>get sth. done<ul>
-<li>把某事做了</li>
-</ul>
-</li>
-<li>would rather <ul>
-<li>引导从句的虚拟结构中，如果表示对现在或将来情况的愿望，从句用<strong>过去时</strong>。</li>
-<li>如果是对过去情况的虚拟，从句用<strong>过去完成时</strong>。</li>
-</ul>
-</li>
-<li>never, hardly, seldom, little, not until, not, not only, no sooner, no    longer, nowhere, by no means <ul>
-<li>以上位于句首需要部分倒装</li>
-</ul>
-</li>
-<li>keep diary<ul>
-<li>记日记</li>
-</ul>
-</li>
-<li>can’t help doing sth.<ul>
-<li>忍不住做。。。</li>
-</ul>
-</li>
-<li>be worth doing<ul>
-<li>某（事或物）值得做</li>
-</ul>
-</li>
-<li>be worthy to be done 或 sth. is worthy of being done 以及 sb. be worhty of doing sth. 或者 sb. be worthy to do sth.<ul>
-<li>和 worth 的意思一样</li>
-</ul>
-</li>
-<li>It is/was /will be the first time that …句式<ul>
-<li>主句谓语是is，从句用现在完成时</li>
-<li>主句谓语是was，从句谓语用过去完成时</li>
-<li>主句谓语是will be，从句谓语用一般现在时</li>
-</ul>
-</li>
-<li>be appropriate for sb. 或 be appropriate to do sth.<ul>
-<li>固定搭配</li>
-</ul>
-</li>
-<li>appreciate + doing sth.<ul>
-<li>感激做某事</li>
-</ul>
-</li>
-<li>but to do,但是but之前出现了 do/does/did/done就要 but do</li>
-<li>no mood | in the mood<ul>
-<li>没有心情 | 有好心情</li>
-</ul>
-</li>
-<li>the impression of + doing sth.<ul>
-<li>做过某事的印象</li>
-</ul>
-</li>
-<li>have a(the) right to sth.<ul>
-<li>享有。。的权利</li>
-</ul>
-</li>
-<li>do nothing but <ul>
-<li>此结构后要求动词原形</li>
-</ul>
-</li>
-<li>need doing / need to done<ul>
-<li>需要被</li>
-</ul>
-</li>
-<li>sb. spend some time doing sth.<ul>
-<li>花时间做某事</li>
-</ul>
-</li>
-<li>a large amount of, a great deal of <ul>
-<li>固定搭配</li>
-</ul>
-</li>
-<li>将来时除了有be going to, will + do, 还有be to do, be about to do.</li>
-<li>play a part in<ul>
-<li>在。。。起作用。</li>
-</ul>
-</li>
-<li>must have + 过去分词<ul>
-<li>过去一定做了某事，表示对过去的肯定推测。</li>
-</ul>
-</li>
-<li>could have + 过去分词<ul>
-<li>本来能够做….</li>
-</ul>
-</li>
-<li>another + 基数词 + 名词复数<ul>
-<li>另外/在多少个</li>
-<li>I want another three apples.</li>
-<li>我还需要三个苹果。</li>
-</ul>
-</li>
-<li>mind doing sth.<ul>
-<li>介意做某事</li>
-</ul>
-</li>
-<li>to help you to out <ul>
-<li>表示目的</li>
-</ul>
-</li>
-<li>be going to + 一般现在时（leaves）</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;No sooner ····· then      &lt;ul&gt;
-&lt;li&gt;一。。。就。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;not so much …as&lt;ul&gt;
-&lt;li&gt;与其。。不如&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;no more…than&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;不过，仅仅；至多，同。。。一样不&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英语单词</title>
-    <link href="http://xuzihao.fun/%E5%8D%95%E8%AF%8D.html"/>
-    <id>http://xuzihao.fun/单词.html</id>
-    <published>2017-10-18T12:24:00.000Z</published>
-    <updated>2017-11-12T07:57:05.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li>delicate| 易碎的</li>
-<li>idleness| 懒惰</li>
-<li>tell the truth | 说实话</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li>tell a lie / tell lies| 说谎话</li>
-<li>hold the view 持某种看法;认为.</li>
-<li>in view of | 鉴于，考虑到</li>
-<li>working on | 从事于；致力于</li>
-<li>set free | 释放</li>
-<li>run into | 偶然</li>
-<li>allow | 允许，给予(人)</li>
-<li>for fear of | 生怕，以免</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;delicate| 易碎的&lt;/li&gt;
-&lt;li&gt;idleness| 懒惰&lt;/li&gt;
-&lt;li&gt;tell the truth | 说实话&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
@@ -2066,93 +2127,6 @@
     
     
       <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Promise &amp;&amp; Generator &amp;&amp; Async</title>
-    <link href="http://xuzihao.fun/%E5%BC%82%E6%AD%A5.html"/>
-    <id>http://xuzihao.fun/异步.html</id>
-    <published>2017-08-01T11:35:44.000Z</published>
-    <updated>2017-12-13T13:42:50.654Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="异步操作"><a href="#异步操作" class="headerlink" title="异步操作"></a>异步操作</h1><h1 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h1><p>JavaScript 语言对异步编程的实现，就是回调函数。<strong>所谓回调函数，就是把任务的第二段单独写在一个函数里面，等到重新执行这个任务的时候，就直接调用这个函数。</strong>它的英语名字 callback，直译过来就是”<strong>重新调用</strong>“。</p>
-<p>读取文件进行处理，是这样写的:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fs.readFile(<span class="string">'/etc/passwd'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</div><div class="line">  <span class="built_in">console</span>.log(data);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>上面代码中，readFile 函数的第二个参数，就是回调函数，也就是任务的第二段。等到操作系统返回了 /etc/passwd 这个文件以后，回调函数才会执行。</p>
-<p><strong>为什么 Node.js 约定，回调函数的第一个参数，必须是错误对象err？</strong></p>
-<p>设计一个回调函数的时候，第一个参数是err，用于优先解决错误，后面再传递参数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">fs.readFile(filePath, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;  </div><div class="line">    <span class="keyword">if</span> (err) &#123;</div><div class="line">        <span class="comment">//handle the error</span></div><div class="line">    &#125;</div><div class="line">    <span class="comment">// use the data object</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<blockquote>
-<p>原因是执行分成两段，在这两段之间抛出的错误，程序无法捕捉，只能当作参数，传入第二段。</p>
-</blockquote>
-<h2 id="那么我们可以用Promise来解决"><a href="#那么我们可以用Promise来解决" class="headerlink" title="那么我们可以用Promise来解决"></a>那么我们可以用Promise来解决</h2><p>回调函数本身并没有问题，它的问题出现在多个回调函数嵌套。假定读取A文件之后，再读取B文件，代码如下。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">fs.readFile(fileA, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</div><div class="line">  fs.readFile(fileB, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>如果依次读取多个文件，就会出现多重嵌套。代码就横向发展</p>
-<p>Promise就是为了解决这个问题而提出的。它不是新的语法功能，而是一种新的写法，允许将回调函数的横向加载，改成纵向加载。写法如下。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> readFile = <span class="built_in">require</span>(<span class="string">'fs-readfile-promise'</span>);</div><div class="line"></div><div class="line">readFile(fileA)</div><div class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(data.toString());</div><div class="line">&#125;)</div><div class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> readFile(fileB);</div><div class="line">&#125;)</div><div class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(data.toString());</div><div class="line">&#125;)</div><div class="line">.catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(err);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>我们会发现一眼看去都是一堆 then，原来的语义变得很不清楚。</p>
-<h2 id="那么我们就要用到Generator函数"><a href="#那么我们就要用到Generator函数" class="headerlink" title="那么我们就要用到Generator函数"></a>那么我们就要用到Generator函数</h2><p>我们可以这样去理解协程:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">dota2游戏开始了,你开始操刀祈求者--卡尔.</div><div class="line">这时你妈妈打电话让你赶紧把楼顶的被子和衣服收一下,这时候你很着急.</div><div class="line">你游戏才玩到一半,但是又不得不去执行你老妈的指令.</div><div class="line">没办法,你只好敲击F12选择了暂停游戏.</div><div class="line">紧接着你把被子和衣服收好了,再次敲击F12游戏继续开始.</div><div class="line">你开始了自己的3杀/4杀/5杀之旅,很舒服.</div></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>协程A(游戏开始)开始执行</li>
-<li>协程A执行到一半,暂停(敲击F12游戏暂停),执行权交给了协程B(收被子,衣服)</li>
-<li>(收好后)协程B交还执行权</li>
-<li>协程A(敲击F12游戏继续)恢复执行</li>
-</ul>
-</blockquote>
-<p>用代码来说:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">play</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">//...</span></div><div class="line">  <span class="keyword">var</span> f = <span class="keyword">yield</span> dota2;</div><div class="line">  <span class="comment">//...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面流程的协程A，就是异步任务，因为它分成两段（或多段）执行。</p>
-<h1 id="Generator函数概念"><a href="#Generator函数概念" class="headerlink" title="Generator函数概念"></a>Generator函数概念</h1><p>Generator 函数是协程在 ES6 的实现，最大特点就是可以交出函数的执行权（即暂停执行）。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">gen</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> y = <span class="keyword">yield</span> x + <span class="number">2</span>;</div><div class="line">  <span class="keyword">return</span> y;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>其他的概念可以看我上篇<a href="http://adherentman.cn/Generator.html" target="_blank" rel="external">Generator函数概念</a></p>
-<h1 id="Thunk-函数"><a href="#Thunk-函数" class="headerlink" title="Thunk 函数"></a>Thunk 函数</h1><p>编译器的”传名调用”实现，往往是将参数放到一个临时函数之中，再将这个临时函数传入函数体。这个临时函数就叫做 Thunk 函数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">m</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> m * <span class="number">2</span>;     </div><div class="line">&#125;</div><div class="line"></div><div class="line">f(x + <span class="number">5</span>);</div><div class="line"></div><div class="line"><span class="comment">// 等同于</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> thunk = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> x + <span class="number">5</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">thunk</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> thunk() * <span class="number">2</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面代码中，函数 f 的参数 被thunk函数替换了.</p>
-<p><strong>这就是 Thunk 函数的定义，它是”传名调用”的一种实现策略，用来替换某个表达式。</strong></p>
-<h1 id="终极武器—-Async函数"><a href="#终极武器—-Async函数" class="headerlink" title="终极武器—-Async函数"></a>终极武器—-Async函数</h1><p><strong>异步编程的最高境界，就是根本不用关心它是不是异步。</strong></p>
-<p>async 函数就是隧道尽头的亮光，很多人认为它是异步操作的终极解决方案。</p>
-<p><strong>所谓async函数，其实是Generator函数的语法糖。</strong></p>
-<p>前文有一个 Generator 函数，依次读取两个文件。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> readFile = <span class="function"><span class="keyword">function</span> (<span class="params">fileName</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>)</span>&#123;</div><div class="line">    fs.readFile(fileName, <span class="function"><span class="keyword">function</span>(<span class="params">error, data</span>)</span>&#123;</div><div class="line">      <span class="keyword">if</span> (error) reject(error);</div><div class="line">      resolve(data);</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> gen = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> f1 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/fstab'</span>);</div><div class="line">  <span class="keyword">var</span> f2 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/shells'</span>);</div><div class="line">  <span class="built_in">console</span>.log(f1.toString());</div><div class="line">  <span class="built_in">console</span>.log(f2.toString());</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>写成 async 函数，就是下面这样。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> asyncReadFile = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> f1 = <span class="keyword">await</span> readFile(<span class="string">'/etc/fstab'</span>);</div><div class="line">  <span class="keyword">var</span> f2 = <span class="keyword">await</span> readFile(<span class="string">'/etc/shells'</span>);</div><div class="line">  <span class="built_in">console</span>.log(f1.toString());</div><div class="line">  <span class="built_in">console</span>.log(f2.toString());</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>一比较就会发现，async 函数就是将 Generator 函数的星号（*）替换成 async，将 yield 替换成 await，仅此而已。</p>
-<h2 id="async-函数的优点"><a href="#async-函数的优点" class="headerlink" title="async 函数的优点"></a>async 函数的优点</h2><p>async 函数对 Generator 函数的改进，体现在以下三点。</p>
-<p><strong>（1）内置执行器。</strong> Generator 函数的执行必须靠执行器，所以才有了 co 函数库，而 async 函数自带执行器。也就是说，async 函数的执行，与普通函数一模一样，只要一行。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = asyncReadFile();</div></pre></td></tr></table></figure>
-<p> <strong>(2)</strong> 上面的代码调用了asyncReadFile函数,然后他就会自动执行,输出最后的结果.完全不像Generator函数,需要调用next方法,或者co模块,才能得到真正的执行,从而得到最终结果.</p>
-<p><strong>（3）更好的语义。</strong> async 和 await，比起星号和 yield，语义更清楚了。async 表示函数里有异步操作，await 表示紧跟在后面的表达式需要等待结果。</p>
-<p><strong>（4）更广的适用性。</strong> co 函数库约定，yield 命令后面只能是 Thunk 函数或 Promise 对象，而 async 函数的 await 命令后面，可以跟 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时等同于同步操作）。</p>
-<p><strong>(5）</strong>返回值是Promise，这比Generator函数返回的是Iterator对象方便多了。你可以用then()指定下一步操作。</p>
-<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p><code>async</code>函数的实现就是将<code>Generator</code>函数和自动执行器包装在一个函数中。如下代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">args</span>) </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 等同于 </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">args</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> spawn(<span class="function"><span class="keyword">function</span>*(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"><span class="comment">// 自动执行器</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">spawn</span>(<span class="params">genF</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> gen = genF();</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">step</span>(<span class="params">nextF</span>) </span>&#123;</div><div class="line">      <span class="keyword">try</span> &#123;</div><div class="line">        <span class="keyword">var</span> next = nextF()</div><div class="line">      &#125; <span class="keyword">catch</span>(e) &#123;</div><div class="line">        <span class="keyword">return</span> reject(e)</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">if</span> (next.done) &#123;</div><div class="line">        <span class="keyword">return</span> resolve(next.value)</div><div class="line">      &#125;</div><div class="line">      <span class="built_in">Promise</span>.resolve(next.value).then(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</div><div class="line">        step(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> gen.next(v) &#125;)</div><div class="line">      &#125;,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        step(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> gen.throw(e) &#125;)</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">    step(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> gen.next(<span class="literal">undefined</span>) &#125;)</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="async函数用法"><a href="#async函数用法" class="headerlink" title="async函数用法"></a>async函数用法</h2><p>（1）<code>async</code>函数返回一个<code>Promise</code>对象，可以是<code>then()</code>方法添加回调函数。<br>（2）当函数执行时，一旦遇到<code>await()</code>就会先返回，等到触发的异步操作完成，再接着执行函数体内后面的语句。</p>
-<p>下面是一个延迟输出结果的例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">timeout</span>(<span class="params">ms</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</div><div class="line">    setTimeout(resolve, ms)</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">asyncPrint</span>(<span class="params">value, ms</span>) </span>&#123;</div><div class="line">  <span class="keyword">await</span> timeout(ms)</div><div class="line">  <span class="built_in">console</span>.log(value)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 延迟500ms后输出 "Hello World!"</span></div><div class="line">asyncPrint(<span class="string">'Hello World!'</span>, <span class="number">500</span>)</div></pre></td></tr></table></figure>
-<h2 id="Async-后面是一个promise，await-后面也要跟一个promise"><a href="#Async-后面是一个promise，await-后面也要跟一个promise" class="headerlink" title="Async 后面是一个promise，await 后面也要跟一个promise"></a>Async 后面是一个promise，await 后面也要跟一个promise</h2><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>（1）<code>await</code>命令后面的<code>Promise</code>对象，运行结果可能是<code>reject</code>，所以最好把<code>await</code>命令放在<code>try...catch</code>代码块中。</p>
-<p>（2）<code>await</code>命令只能用在<code>async</code>函数中，用在普通函数中会报错。</p>
-<p>（3）<code>ES6</code>将<code>await</code>增加为保留字。如果使用这个词作为标识符，在<code>ES5</code>中是合法的，但是<code>ES6</code>会抛出 <code>SyntaxError</code>（语法错误）。</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>阮一峰 《ES6标准入门》</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;异步操作&quot;&gt;&lt;a href=&quot;#异步操作&quot; class=&quot;headerlink&quot; title=&quot;异步操作&quot;&gt;&lt;/a&gt;异步操作&lt;/h1&gt;&lt;h1 id=&quot;回调函数&quot;&gt;&lt;a href=&quot;#回调函数&quot; class=&quot;headerlink&quot; title=&quot;回调函数&quot;&gt;&lt;/a&gt;回调函数&lt;/h1&gt;&lt;p&gt;JavaScript 语言对异步编程的实现，就是回调函数。&lt;strong&gt;所谓回调函数，就是把任务的第二段单独写在一个函数里面，等到重新执行这个任务的时候，就直接调用这个函数。&lt;/strong&gt;它的英语名字 callback，直译过来就是”&lt;strong&gt;重新调用&lt;/strong&gt;“。&lt;/p&gt;
-&lt;p&gt;读取文件进行处理，是这样写的:&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;fs.readFile(&lt;span class=&quot;string&quot;&gt;&#39;/etc/passwd&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;err, data&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (err) &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; err;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(data);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="Javascript修仙之旅" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
-    
-    
-      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
-    
-      <category term="node.js" scheme="http://xuzihao.fun/tags/node-js/"/>
     
   </entry>
   
