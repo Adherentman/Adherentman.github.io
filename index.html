@@ -355,35 +355,16 @@
 
       
         
-          
-            <h2 id="This"><a href="#This" class="headerlink" title="This"></a>This</h2><p>在JS中This让我们捉摸不透。看了《你不知道的JavaScript（上）》让我对this有了更胜的认识。</p>
+          <h2 id="This"><a href="#This" class="headerlink" title="This"></a>This</h2><p>在JS中This让我们捉摸不透。看了《你不知道的JavaScript（上）》让我对this有了更胜的认识。</p>
 <p>总结一下：</p>
 <p>This实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用。</p>
-<p>那么我们要去判断一个运行中函数的<code>this</code>绑定，我们需要先知道：</p>
-<ol>
-<li>函数在哪里被直接调用？</li>
-<li>找到之后，我们需要去通过四条顺序规则去判断<code>this</code>的绑定对象</li>
-</ol>
-<h3 id="四条顺序"><a href="#四条顺序" class="headerlink" title="四条顺序"></a>四条顺序</h3><ol>
-<li><p>是否是被<code>new</code>调用的？是的话那就绑定到新的创建对象。</p>
-<ol>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> bar = <span class="keyword">new</span> foo()</div></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>是否被<code>call</code>或者<code>apply</code>或者<code>bind</code>调用？是的话那就绑定到指定的对象。</p>
-<ol>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> bar = call(obj, <span class="number">2</span>);</div></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>是否由上下文调用？是的话那就绑定到那个上下文对象。</p>
-</li>
-<li><p>默认：在默认情况下，如果我们在严格模式下则为<code>undefined</code>，否则我们会绑定到全局对象</p>
-</li>
-</ol>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/《你不知道的JavaScript（上）》读书笔记.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
