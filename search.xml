@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[《你不知道的JavaScript（上）》读书笔记]]></title>
       <url>%2F%E3%80%8A%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84JavaScript%EF%BC%88%E4%B8%8A%EF%BC%89%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html</url>
-      <content type="text"><![CDATA[This在JS中This让我们捉摸不透。看了《你不知道的JavaScript（上）》让我对this有了更胜的认识。 总结一下： This实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用。 那么我们要去判断一个运行中函数的this绑定，我们需要先知道： 函数在哪里被直接调用？ 找到之后，我们需要去通过四条顺序规则去判断this的绑定对象 是否是被new调用的？是的话那就绑定到新的创建对象。 12&gt; var bar = new foo()&gt; &gt; 是否被call或者apply或者bind调用？是的话那就绑定到指定的对象。 12&gt; var bar = call(obj, 2);&gt; &gt; 是否由上下文调用？是的话那就绑定到那个上下文对象。 默认：在默认情况下，如果我们在严格模式下则为undefined，否则我们会绑定到全局对象]]></content>
+      <content type="text"><![CDATA[This在JS中This让我们捉摸不透。看了《你不知道的JavaScript（上）》让我对this有了更胜的认识。 总结一下： This实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用。 那么我们要去判断一个运行中函数的this绑定，我们需要先知道： 函数在哪里被直接调用？ 找到之后，我们需要去通过四条顺序规则去判断this的绑定对象 四条顺序 是否是被new调用的？是的话那就绑定到新的创建对象。 1var bar = new foo() 是否被call或者apply或者bind调用？是的话那就绑定到指定的对象。 1var bar = call(obj, 2); 是否由上下文调用？是的话那就绑定到那个上下文对象。 默认：在默认情况下，如果我们在严格模式下则为undefined，否则我们会绑定到全局对象]]></content>
     </entry>
 
     

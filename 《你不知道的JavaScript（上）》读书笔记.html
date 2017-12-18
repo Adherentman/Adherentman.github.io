@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="This在JS中This让我们捉摸不透。看了《你不知道的JavaScript（上）》让我对this有了更胜的认识。 总结一下： This实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用。 那么我们要去判断一个运行中函数的this绑定，我们需要先知道：  函数在哪里被直接调用？ 找到之后，我们需要去通过四条顺序规则去判断this的绑定对象    是否是被new调用的？是的话那就">
+<meta name="description" content="This在JS中This让我们捉摸不透。看了《你不知道的JavaScript（上）》让我对this有了更胜的认识。 总结一下： This实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用。 那么我们要去判断一个运行中函数的this绑定，我们需要先知道：  函数在哪里被直接调用？ 找到之后，我们需要去通过四条顺序规则去判断this的绑定对象  四条顺序 是否是被new调用的？是的">
 <meta name="keywords" content="读书笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《你不知道的JavaScript（上）》读书笔记">
 <meta property="og:url" content="http://xuzihao.fun/《你不知道的JavaScript（上）》读书笔记.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="This在JS中This让我们捉摸不透。看了《你不知道的JavaScript（上）》让我对this有了更胜的认识。 总结一下： This实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用。 那么我们要去判断一个运行中函数的this绑定，我们需要先知道：  函数在哪里被直接调用？ 找到之后，我们需要去通过四条顺序规则去判断this的绑定对象    是否是被new调用的？是的话那就">
-<meta property="og:updated_time" content="2017-12-18T07:51:18.137Z">
+<meta property="og:description" content="This在JS中This让我们捉摸不透。看了《你不知道的JavaScript（上）》让我对this有了更胜的认识。 总结一下： This实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用。 那么我们要去判断一个运行中函数的this绑定，我们需要先知道：  函数在哪里被直接调用？ 找到之后，我们需要去通过四条顺序规则去判断this的绑定对象  四条顺序 是否是被new调用的？是的">
+<meta property="og:updated_time" content="2017-12-18T07:56:31.334Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《你不知道的JavaScript（上）》读书笔记">
-<meta name="twitter:description" content="This在JS中This让我们捉摸不透。看了《你不知道的JavaScript（上）》让我对this有了更胜的认识。 总结一下： This实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用。 那么我们要去判断一个运行中函数的this绑定，我们需要先知道：  函数在哪里被直接调用？ 找到之后，我们需要去通过四条顺序规则去判断this的绑定对象    是否是被new调用的？是的话那就">
+<meta name="twitter:description" content="This在JS中This让我们捉摸不透。看了《你不知道的JavaScript（上）》让我对this有了更胜的认识。 总结一下： This实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用。 那么我们要去判断一个运行中函数的this绑定，我们需要先知道：  函数在哪里被直接调用？ 找到之后，我们需要去通过四条顺序规则去判断this的绑定对象  四条顺序 是否是被new调用的？是的">
 
 
 
@@ -361,36 +361,24 @@
 <li>函数在哪里被直接调用？</li>
 <li>找到之后，我们需要去通过四条顺序规则去判断<code>this</code>的绑定对象</li>
 </ol>
-<blockquote>
-<ol>
+<h3 id="四条顺序"><a href="#四条顺序" class="headerlink" title="四条顺序"></a>四条顺序</h3><ol>
 <li><p>是否是被<code>new</code>调用的？是的话那就绑定到新的创建对象。</p>
 <ol>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;       <span class="keyword">var</span> bar = <span class="keyword">new</span> foo()</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> bar = <span class="keyword">new</span> foo()</div></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
-</ol>
-</blockquote>
-<p>&gt;</p>
-<blockquote>
-<ol>
 <li><p>是否被<code>call</code>或者<code>apply</code>或者<code>bind</code>调用？是的话那就绑定到指定的对象。</p>
 <ol>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;       <span class="keyword">var</span> bar = call(obj, <span class="number">2</span>);</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> bar = call(obj, <span class="number">2</span>);</div></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
-</ol>
-</blockquote>
-<p>&gt;</p>
-<blockquote>
-<ol>
 <li><p>是否由上下文调用？是的话那就绑定到那个上下文对象。</p>
 </li>
 <li><p>默认：在默认情况下，如果我们在严格模式下则为<code>undefined</code>，否则我们会绑定到全局对象</p>
 </li>
 </ol>
-</blockquote>
 
       
     </div>
@@ -599,7 +587,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#This"><span class="nav-number">1.</span> <span class="nav-text">This</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#This"><span class="nav-number">1.</span> <span class="nav-text">This</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#四条顺序"><span class="nav-number">1.1.</span> <span class="nav-text">四条顺序</span></a></li></ol></li></ol></div>
             
 
           </div>
