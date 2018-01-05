@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript,node.js," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -88,17 +88,17 @@
 
 
 
-<meta name="description" content="expressjs里的请求参数，4.x里只有3种(都引用官方例子) req.params req.body req.query  req.params123app.get(&apos;/user/:id&apos;,function(req,res)&amp;#123;  	res.send(&apos;user&apos; + req.parms.id);&amp;#125;); 就是取带冒号的参数.">
-<meta name="keywords" content="JavaScript,node.js">
+<meta name="description" content="JSON最近大量接触JSON 所以我特意去JSON标准(短短的8页，大家也可以看看)看了下，还参阅了许多资料，总结一下JSON 我们先来看一个JSON的组成： 123&amp;#123;  &quot;propertyName&quot;: &quot;propertyValue&quot;&amp;#125;  property(属性/键值对) propertyName(属性名/键) propertyValue(属性值)  JSON可以表示四种基本类">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="初入Express">
-<meta property="og:url" content="http://xuzihao.fun/Express.html">
+<meta property="og:title" content="JSON看这篇就行了">
+<meta property="og:url" content="http://xuzihao.fun/JSON.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="expressjs里的请求参数，4.x里只有3种(都引用官方例子) req.params req.body req.query  req.params123app.get(&apos;/user/:id&apos;,function(req,res)&amp;#123;  	res.send(&apos;user&apos; + req.parms.id);&amp;#125;); 就是取带冒号的参数.">
-<meta property="og:updated_time" content="2017-09-06T09:41:52.000Z">
+<meta property="og:description" content="JSON最近大量接触JSON 所以我特意去JSON标准(短短的8页，大家也可以看看)看了下，还参阅了许多资料，总结一下JSON 我们先来看一个JSON的组成： 123&amp;#123;  &quot;propertyName&quot;: &quot;propertyValue&quot;&amp;#125;  property(属性/键值对) propertyName(属性名/键) propertyValue(属性值)  JSON可以表示四种基本类">
+<meta property="og:updated_time" content="2018-01-05T13:28:06.790Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="初入Express">
-<meta name="twitter:description" content="expressjs里的请求参数，4.x里只有3种(都引用官方例子) req.params req.body req.query  req.params123app.get(&apos;/user/:id&apos;,function(req,res)&amp;#123;  	res.send(&apos;user&apos; + req.parms.id);&amp;#125;); 就是取带冒号的参数.">
+<meta name="twitter:title" content="JSON看这篇就行了">
+<meta name="twitter:description" content="JSON最近大量接触JSON 所以我特意去JSON标准(短短的8页，大家也可以看看)看了下，还参阅了许多资料，总结一下JSON 我们先来看一个JSON的组成： 123&amp;#123;  &quot;propertyName&quot;: &quot;propertyValue&quot;&amp;#125;  property(属性/键值对) propertyName(属性名/键) propertyValue(属性值)  JSON可以表示四种基本类">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://xuzihao.fun/Express.html"/>
+  <link rel="canonical" href="http://xuzihao.fun/JSON.html"/>
 
 
 
 
 
-  <title>初入Express | 壮壮-Technology</title>
+  <title>JSON看这篇就行了 | 壮壮-Technology</title>
   
 
 
@@ -271,7 +271,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/Express.html">
+    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/JSON.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XuZiHao">
@@ -288,7 +288,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">初入Express</h2>
+          <h2 class="post-title" itemprop="name headline">JSON看这篇就行了</h2>
         
 
         <div class="post-meta">
@@ -300,8 +300,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-30T10:33:26+08:00">
-                2017-07-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-05T21:27:00+08:00">
+                2018-01-05
               </time>
             
 
@@ -323,8 +323,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Node-js/" itemprop="url" rel="index">
-                    <span itemprop="name">Node.js</span>
+                  <a href="/categories/Javascript修仙之旅/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript修仙之旅</span>
                   </a>
                 </span>
 
@@ -341,9 +341,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Express.html#comments" itemprop="discussionUrl">
+                <a href="/JSON.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="Express.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="JSON.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -376,19 +376,57 @@
       
 
       
-        <h2 id="expressjs里的请求参数，4-x里只有3种-都引用官方例子"><a href="#expressjs里的请求参数，4-x里只有3种-都引用官方例子" class="headerlink" title="expressjs里的请求参数，4.x里只有3种(都引用官方例子)"></a>expressjs里的请求参数，4.x里只有3种(都引用官方例子)</h2><ul>
-<li>req.params</li>
-<li>req.body</li>
-<li>req.query</li>
+        <h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><p>最近大量接触<code>JSON</code> 所以我特意去<a href="https://www.rfc-editor.org/rfc/rfc4627.txt" target="_blank" rel="external"><code>JSON</code>标准</a>(短短的8页，大家也可以看看)看了下，还参阅了许多资料，总结一下<code>JSON</code></p>
+<p>我们先来看一个<code>JSON</code>的组成：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"propertyName"</span>: <span class="string">"propertyValue"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>property(属性/键值对)</li>
+<li>propertyName(属性名/键)</li>
+<li>propertyValue(属性值)</li>
+</ol>
+<p>JSON可以表示四种基本类型（string(字符串)、number(数字）、booleans(布尔值)、null（空））和两个结构化类型（Object(对象)、Arrarys（数组））</p>
+<h2 id="书写"><a href="#书写" class="headerlink" title="书写"></a>书写</h2><h3 id="逗号"><a href="#逗号" class="headerlink" title="逗号"></a>逗号</h3><p>最后一个属性后不能有逗号</p>
+<h3 id="双引号"><a href="#双引号" class="headerlink" title="双引号"></a>双引号</h3><p>在标准中都使用了双引号。因为所有的属性必须在双引号内。但是布尔值或者数字可以不用引号。</p>
+<h3 id="结构层次"><a href="#结构层次" class="headerlink" title="结构层次"></a>结构层次</h3><p>在设计<code>JSON</code> 的时候，我们都能看见可扩展和不可扩展的JSON结构。其中最主要的就2种，一种为扁平化数据，还有结构层次。</p>
+<p>先讲讲我在知乎上看见的问题：</p>
+<p>正常情况有一个JSON应为：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123; </div><div class="line">    "name": "Javascript权威指南"，</div><div class="line">    "chapters:": 500,</div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    "name": "Javascript高级程序设计",</div><div class="line">    "chapters": 500,</div><div class="line">  &#125;,</div><div class="line">  &#123;...&#125;,</div><div class="line">  &#123;...&#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<p>这样看是很完美，但是有些人会这样设计？</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">    "Javascript权威指南"： 500</div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    "Javascript高级程序设计": 500</div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<p>那么我们就可以看出2种设计的问题，第二种无法扩展有木有！！而且。。他们为啥要把<strong>数据内容带入属性名！！</strong></p>
+<p>ok！我们知道了一点，不要把<strong>数据内容带入属性名</strong>。</p>
+<p>接下来扁平化数据：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"Image"</span>: &#123;</div><div class="line">    <span class="attr">"width"</span>: <span class="number">800</span>,</div><div class="line">    <span class="attr">"Height"</span>: <span class="number">600</span>,</div><div class="line">    <span class="attr">"Title"</span>:  <span class="string">"View from 15th Floor"</span>,</div><div class="line">    <span class="attr">"ThumbnailUrl"</span>: <span class="string">"http://www.example.com/image/481989943"</span>,</div><div class="line">    <span class="attr">"ThumbnailHeight"</span>: <span class="number">125</span>,</div><div class="line">    <span class="attr">"ThumbnailWidth"</span>: <span class="number">100</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>结构层次：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"Image"</span>: &#123;</div><div class="line">    <span class="attr">"Width"</span>:  <span class="number">800</span>,</div><div class="line">    <span class="attr">"Height"</span>: <span class="number">600</span>,</div><div class="line">    <span class="attr">"Title"</span>:  <span class="string">"View from 15th Floor"</span>,</div><div class="line">    <span class="attr">"Thumbnail"</span>: &#123;</div><div class="line">      <span class="attr">"Url"</span>:    <span class="string">"http://www.example.com/image/481989943"</span>,</div><div class="line">      <span class="attr">"Height"</span>: <span class="number">125</span>,</div><div class="line">      <span class="attr">"Width"</span>:  <span class="string">"100"</span></div><div class="line">    &#125;,</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>JSON中本应该以数据元素扁平化方式呈现。</p>
+<p>但是结构层次对我们开发人员更加的友好有意义。</p>
+<p>具体情况看自己的选择。</p>
+<h2 id="下面讲点细的"><a href="#下面讲点细的" class="headerlink" title="下面讲点细的"></a>下面讲点细的</h2><h3 id="属性名规范"><a href="#属性名规范" class="headerlink" title="属性名规范"></a>属性名规范</h3><ul>
+<li>属性名应该一看就知道啥用</li>
+<li>属性名必须是驼峰，ASCII码字符串</li>
+<li>首字符必须是字母，_ （下划线），$(美元符号)</li>
+<li>避免使用js中的保留字</li>
+<li>数组类型应该是复数，其他属性名都为单数</li>
 </ul>
-<h3 id="req-params"><a href="#req-params" class="headerlink" title="req.params"></a>req.params</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'/user/:id'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">  	res.send(<span class="string">'user'</span> + req.parms.id);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>就是取带冒号的参数.</p>
-<a id="more"></a>
-<h3 id="req-body"><a href="#req-body" class="headerlink" title="req.body"></a>req.body</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app = <span class="built_in">require</span>(<span class="string">'express'</span>)();</div><div class="line"><span class="keyword">var</span> bodyParser = <span class="built_in">require</span>(<span class="string">'body-parser'</span>);</div><div class="line"><span class="keyword">var</span> multer = <span class="built_in">require</span>(<span class="string">'multer'</span>); </div><div class="line"></div><div class="line">app.use(bodyParser.json()); <span class="comment">// 用于解析application / json</span></div><div class="line">app.use(bodyParser.urlencoded(&#123; <span class="attr">extended</span>: <span class="literal">true</span> &#125;)); <span class="comment">// 用于解析 application/x-www-form-urlencoded</span></div><div class="line">app.use(multer()); <span class="comment">// 用于解析多部分/表单数据</span></div><div class="line"></div><div class="line">app.post(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(req.body);</div><div class="line">  res.json(req.body);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<ul>
-<li>req.body一定是post请求.但是在express里面依赖中间件bodyparser,不然req.body都没有.</li>
+<h3 id="属性值规范"><a href="#属性值规范" class="headerlink" title="属性值规范"></a>属性值规范</h3><ul>
+<li>属性值应该为四种基本类型（string(字符串)、number(数字）、booleans(布尔值)、null（空））和两个结构化类型（Object(对象)、Arrarys（数组））</li>
+<li>其他的具体可以看我下面给出的参考资料链接</li>
 </ul>
-<h3 id="req-query"><a href="#req-query" class="headerlink" title="req.query"></a>req.query</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// GET /search?q=tobi+ferret</span></div><div class="line">req.query.q</div><div class="line"><span class="comment">// =&gt; "tobi ferret"</span></div><div class="line"></div><div class="line"><span class="comment">// GET /shoes?order=desc&amp;shoe[color]=blue&amp;shoe[type]=converse</span></div><div class="line">req.query.order</div><div class="line"><span class="comment">// =&gt; "desc"</span></div><div class="line"></div><div class="line">req.query.shoe.color</div><div class="line"><span class="comment">// =&gt; "blue"</span></div><div class="line"></div><div class="line">req.query.shoe.type</div><div class="line"><span class="comment">// =&gt; "converse"</span></div></pre></td></tr></table></figure>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
+<li>JSON.parse()<ul>
+<li>解析一个JSON将他转换成JavaScript值或对象</li>
+</ul>
+</li>
+<li>JSON.stringify()<ul>
+<li>把一个对象或者值转换成JSON字符串</li>
+</ul>
+</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://github.com/darcyliu/google-styleguide/blob/master/JSONStyleGuide.md" target="_blank" rel="external">JSON风格指南</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON" target="_blank" rel="external">JSON-MDN</a></li>
+</ul>
 
       
     </div>
@@ -408,8 +446,6 @@
           
             <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
-            <a href="/tags/node-js/" rel="tag"># node.js</a>
-          
         </div>
       
 
@@ -421,8 +457,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Generator.html" rel="next" title="Generator函数">
-                <i class="fa fa-chevron-left"></i> Generator函数
+              <a href="/2017年总结.html" rel="next" title="2017年自己的前端总结">
+                <i class="fa fa-chevron-left"></i> 2017年自己的前端总结
               </a>
             
           </div>
@@ -430,10 +466,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/redux.html" rel="prev" title="React-Redux和Redux">
-                React-Redux和Redux <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -614,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#expressjs里的请求参数，4-x里只有3种-都引用官方例子"><span class="nav-number">1.</span> <span class="nav-text">expressjs里的请求参数，4.x里只有3种(都引用官方例子)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#req-params"><span class="nav-number">1.1.</span> <span class="nav-text">req.params</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#req-body"><span class="nav-number">1.2.</span> <span class="nav-text">req.body</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#req-query"><span class="nav-number">1.3.</span> <span class="nav-text">req.query</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JSON"><span class="nav-number">1.</span> <span class="nav-text">JSON</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#书写"><span class="nav-number">1.1.</span> <span class="nav-text">书写</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#逗号"><span class="nav-number">1.1.1.</span> <span class="nav-text">逗号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双引号"><span class="nav-number">1.1.2.</span> <span class="nav-text">双引号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结构层次"><span class="nav-number">1.1.3.</span> <span class="nav-text">结构层次</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下面讲点细的"><span class="nav-number">1.2.</span> <span class="nav-text">下面讲点细的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#属性名规范"><span class="nav-number">1.2.1.</span> <span class="nav-text">属性名规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性值规范"><span class="nav-number">1.2.2.</span> <span class="nav-text">属性值规范</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">1.3.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">1.4.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -811,9 +843,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://xuzihao.fun/Express.html';
-          this.page.identifier = 'Express.html';
-          this.page.title = '初入Express';
+          this.page.url = 'http://xuzihao.fun/JSON.html';
+          this.page.identifier = 'JSON.html';
+          this.page.title = 'JSON看这篇就行了';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://xuzihao.disqus.com/embed.js';

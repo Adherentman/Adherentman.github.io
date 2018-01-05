@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2017-12-28T16:23:57.403Z</updated>
+  <updated>2018-01-05T13:28:06.790Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -14,6 +14,79 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JSON看这篇就行了</title>
+    <link href="http://xuzihao.fun/JSON.html"/>
+    <id>http://xuzihao.fun/JSON.html</id>
+    <published>2018-01-05T13:27:00.000Z</published>
+    <updated>2018-01-05T13:28:06.790Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><p>最近大量接触<code>JSON</code> 所以我特意去<a href="https://www.rfc-editor.org/rfc/rfc4627.txt" target="_blank" rel="external"><code>JSON</code>标准</a>(短短的8页，大家也可以看看)看了下，还参阅了许多资料，总结一下<code>JSON</code></p>
+<p>我们先来看一个<code>JSON</code>的组成：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"propertyName"</span>: <span class="string">"propertyValue"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>property(属性/键值对)</li>
+<li>propertyName(属性名/键)</li>
+<li>propertyValue(属性值)</li>
+</ol>
+<p>JSON可以表示四种基本类型（string(字符串)、number(数字）、booleans(布尔值)、null（空））和两个结构化类型（Object(对象)、Arrarys（数组））</p>
+<h2 id="书写"><a href="#书写" class="headerlink" title="书写"></a>书写</h2><h3 id="逗号"><a href="#逗号" class="headerlink" title="逗号"></a>逗号</h3><p>最后一个属性后不能有逗号</p>
+<h3 id="双引号"><a href="#双引号" class="headerlink" title="双引号"></a>双引号</h3><p>在标准中都使用了双引号。因为所有的属性必须在双引号内。但是布尔值或者数字可以不用引号。</p>
+<h3 id="结构层次"><a href="#结构层次" class="headerlink" title="结构层次"></a>结构层次</h3><p>在设计<code>JSON</code> 的时候，我们都能看见可扩展和不可扩展的JSON结构。其中最主要的就2种，一种为扁平化数据，还有结构层次。</p>
+<p>先讲讲我在知乎上看见的问题：</p>
+<p>正常情况有一个JSON应为：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123; </div><div class="line">    "name": "Javascript权威指南"，</div><div class="line">    "chapters:": 500,</div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    "name": "Javascript高级程序设计",</div><div class="line">    "chapters": 500,</div><div class="line">  &#125;,</div><div class="line">  &#123;...&#125;,</div><div class="line">  &#123;...&#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<p>这样看是很完美，但是有些人会这样设计？</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">    "Javascript权威指南"： 500</div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    "Javascript高级程序设计": 500</div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<p>那么我们就可以看出2种设计的问题，第二种无法扩展有木有！！而且。。他们为啥要把<strong>数据内容带入属性名！！</strong></p>
+<p>ok！我们知道了一点，不要把<strong>数据内容带入属性名</strong>。</p>
+<p>接下来扁平化数据：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"Image"</span>: &#123;</div><div class="line">    <span class="attr">"width"</span>: <span class="number">800</span>,</div><div class="line">    <span class="attr">"Height"</span>: <span class="number">600</span>,</div><div class="line">    <span class="attr">"Title"</span>:  <span class="string">"View from 15th Floor"</span>,</div><div class="line">    <span class="attr">"ThumbnailUrl"</span>: <span class="string">"http://www.example.com/image/481989943"</span>,</div><div class="line">    <span class="attr">"ThumbnailHeight"</span>: <span class="number">125</span>,</div><div class="line">    <span class="attr">"ThumbnailWidth"</span>: <span class="number">100</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>结构层次：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"Image"</span>: &#123;</div><div class="line">    <span class="attr">"Width"</span>:  <span class="number">800</span>,</div><div class="line">    <span class="attr">"Height"</span>: <span class="number">600</span>,</div><div class="line">    <span class="attr">"Title"</span>:  <span class="string">"View from 15th Floor"</span>,</div><div class="line">    <span class="attr">"Thumbnail"</span>: &#123;</div><div class="line">      <span class="attr">"Url"</span>:    <span class="string">"http://www.example.com/image/481989943"</span>,</div><div class="line">      <span class="attr">"Height"</span>: <span class="number">125</span>,</div><div class="line">      <span class="attr">"Width"</span>:  <span class="string">"100"</span></div><div class="line">    &#125;,</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>JSON中本应该以数据元素扁平化方式呈现。</p>
+<p>但是结构层次对我们开发人员更加的友好有意义。</p>
+<p>具体情况看自己的选择。</p>
+<h2 id="下面讲点细的"><a href="#下面讲点细的" class="headerlink" title="下面讲点细的"></a>下面讲点细的</h2><h3 id="属性名规范"><a href="#属性名规范" class="headerlink" title="属性名规范"></a>属性名规范</h3><ul>
+<li>属性名应该一看就知道啥用</li>
+<li>属性名必须是驼峰，ASCII码字符串</li>
+<li>首字符必须是字母，_ （下划线），$(美元符号)</li>
+<li>避免使用js中的保留字</li>
+<li>数组类型应该是复数，其他属性名都为单数</li>
+</ul>
+<h3 id="属性值规范"><a href="#属性值规范" class="headerlink" title="属性值规范"></a>属性值规范</h3><ul>
+<li>属性值应该为四种基本类型（string(字符串)、number(数字）、booleans(布尔值)、null（空））和两个结构化类型（Object(对象)、Arrarys（数组））</li>
+<li>其他的具体可以看我下面给出的参考资料链接</li>
+</ul>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
+<li>JSON.parse()<ul>
+<li>解析一个JSON将他转换成JavaScript值或对象</li>
+</ul>
+</li>
+<li>JSON.stringify()<ul>
+<li>把一个对象或者值转换成JSON字符串</li>
+</ul>
+</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://github.com/darcyliu/google-styleguide/blob/master/JSONStyleGuide.md" target="_blank" rel="external">JSON风格指南</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON" target="_blank" rel="external">JSON-MDN</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;JSON&quot;&gt;&lt;a href=&quot;#JSON&quot; class=&quot;headerlink&quot; title=&quot;JSON&quot;&gt;&lt;/a&gt;JSON&lt;/h1&gt;&lt;p&gt;最近大量接触&lt;code&gt;JSON&lt;/code&gt; 所以我特意去&lt;a href=&quot;https://www.rfc-editor.
+    
+    </summary>
+    
+      <category term="Javascript修仙之旅" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
+    
+    
+      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>2017年自己的前端总结</title>
@@ -1970,111 +2043,6 @@
     
     
       <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React Native iOS/android环境配置</title>
-    <link href="http://xuzihao.fun/React%20Native%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.html"/>
-    <id>http://xuzihao.fun/React Native环境配置.html</id>
-    <published>2017-08-14T04:32:53.000Z</published>
-    <updated>2017-09-18T01:30:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="React-Native环境配置"><a href="#React-Native环境配置" class="headerlink" title="React Native环境配置"></a>React Native环境配置</h1><h1 id="Ios开发环境"><a href="#Ios开发环境" class="headerlink" title="Ios开发环境"></a>Ios开发环境</h1><p>因为我是在mac下搭建环境的。所以比较方便。</p>
-<ul>
-<li><p>Xcode时<strong>必须</strong>的！</p>
-</li>
-<li><p>brew install node        //电脑需要有<strong>node</strong></p>
-</li>
-<li><p>brew install watchman    //这是用来监视文件系统中的更改的工具</p>
-</li>
-<li><p>npm install -g react-native-cli</p>
-<p>然后我们打开 <strong>Xcode</strong></p>
-<p><img src="/images/xcode.png" alt="xcode"></p>
-<a id="more"></a>
-</li>
-</ul>
-<p>接下来我们需要执行命令</p>
-<p><strong>react-native init AwesomeProject</strong></p>
-<p>Then：我们需要在Xcode里打开</p>
-<p><img src="/images/xcode文件.png" alt="xcode文件"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">接着在终端里</div><div class="line">cd AwesomeProject</div><div class="line">then：</div><div class="line">react-native run-ios</div></pre></td></tr></table></figure>
-<p>接下来我们等就好了</p>
-<p><img src="/images/iphonex.png" alt="iphonex"></p>
-<p>这就是成功界面</p>
-<p>恭喜🎉！</p>
-<h1 id="Android环境"><a href="#Android环境" class="headerlink" title="Android环境"></a>Android环境</h1><p>第一步与ios一样</p>
-<ul>
-<li>brew install node      </li>
-<li>brew install watchman   </li>
-</ul>
-<p>我们就不做了。</p>
-<p>接下来</p>
-<h2 id="我们需要安装Java的环境。"><a href="#我们需要安装Java的环境。" class="headerlink" title="我们需要安装Java的环境。"></a>我们需要安装<code>Java</code>的环境。</h2><p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">Download and install JDK 8 or newer</a></p>
-<h2 id="安装Android环境"><a href="#安装Android环境" class="headerlink" title="安装Android环境"></a>安装<code>Android</code>环境</h2><ol>
-<li>安装 <strong><a href="https://developer.android.com/studio/index.html" target="_blank" rel="external">Android studio</a></strong> </li>
-<li><img src="/images/custon.png" alt="custon"></li>
-<li>勾选<code>Performance</code>和<code>Android Virtual Device</code><img src="/images/sdk.png" alt="sdk"></li>
-<li>安装完成后，在Android Studio的启动欢迎界面中选择<code>Configure | SDK Manager</code>。<img src="/images/config.png" alt="config"></li>
-<li>在<code>SDK Platforms</code>窗口中，选择<code>Show Package Details</code></li>
-</ol>
-<p><img src="/images/palt.png" alt="palt"></p>
-<p>然后tools里</p>
-<p><img src="/images/sdttool.png" alt="sdttool"></p>
-<p><img src="/images/sdktools.png" alt="sdktools"></p>
-<p><img src="/images/sdksuppt.png" alt="sdksuppt"></p>
-<h4 id="ANDROID-HOME环境变量"><a href="#ANDROID-HOME环境变量" class="headerlink" title="ANDROID_HOME环境变量"></a>ANDROID_HOME环境变量</h4><p>确保<code>ANDROID_HOME</code>环境变量正确地指向了你安装的Android SDK的路径。具体的做法是把下面的命令加入到<code>~/.bash_profile</code>文件中：(<strong>译注</strong>：~表示用户目录，即<code>/Users/你的用户名/</code>，而小数点开头的文件在Finder中是隐藏的，并且这个文件有可能并不存在。请在终端下使用<code>vi ~/.bash_profile</code>命令创建或编辑。如不熟悉vi操作，请点击<a href="http://www.eepw.com.cn/article/48018.htm" target="_blank" rel="external">这里</a>学习）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 如果你不是通过Android Studio安装的sdk，则其路径可能不同，请自行确定清楚。</div><div class="line">export ANDROID_HOME=~/Library/Android/sdk</div></pre></td></tr></table></figure>
-<p>然后使用下列命令使其立即生效（否则重启后才生效）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source ~/.bash_profile</div></pre></td></tr></table></figure>
-<p>可以使用<code>echo $ANDROID_HOME</code>检查此变量是否已正确设置。</p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>同样我们需要在<code>Android studio</code>中打开创建的文件夹下Android文件</p>
-<p>然后去build</p>
-<p><img src="/images/studio.png" alt="studio"></p>
-<p>圆圈是选手机机型。</p>
-<p>我们在正方形框框中先点击锤子然后点击绿色箭头之后在终端里输入以下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">react-native init AwesomeProject</div><div class="line">cd AwesomeProject</div><div class="line">react-native run-android</div></pre></td></tr></table></figure>
-<p>下面就是成功画面！恭喜🎉！<img src="/images/Android.png" alt="Android"></p>
-<h1 id="在搭建环境下踩得坑"><a href="#在搭建环境下踩得坑" class="headerlink" title="在搭建环境下踩得坑"></a>在搭建环境下踩得坑</h1><h2 id="Android下"><a href="#Android下" class="headerlink" title="Android下"></a>Android下</h2><p><img src="/images/安卓bug.png" alt="安卓bug"></p>
-<p>这是我运行安卓的时候遇到的问题。我们需要在 <strong>Android studio</strong>先启动一个手机模拟器再去终端里输入指令：<code>react-native run-android</code> 就可以了</p>
-<p><img src="/images/android tools.png" alt="android tools"></p>
-<p>这个问题是说Build Tools 23.0.0.1太低至少需要25.0.0</p>
-<p>但是我升级过后还不行。发现是配置文件里的问题。</p>
-<p><img src="/images/gaibuild.png" alt="gaibuild"></p>
-<p>这样就行啦！</p>
-<h2 id="Ios下"><a href="#Ios下" class="headerlink" title="Ios下"></a>Ios下</h2><p>具体出错问题描述找不到了，但是情况还是记得的。</p>
-<p>就是说我ios的虚拟机打开了但是我在上面看不见自己的项目。</p>
-<p>这时候google到答案。。</p>
-<p><img src="/images/ios解决问题1.png" alt="ios解决问题1"></p>
-<p>需要开一个终端，然后去在你的项目下<code>npm install</code> 就是这样。。具体情况我也不知道发生了什么哈哈哈</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;React-Native环境配置&quot;&gt;&lt;a href=&quot;#React-Native环境配置&quot; class=&quot;headerlink&quot; title=&quot;React Native环境配置&quot;&gt;&lt;/a&gt;React Native环境配置&lt;/h1&gt;&lt;h1 id=&quot;Ios开发环境&quot;&gt;&lt;a href=&quot;#Ios开发环境&quot; class=&quot;headerlink&quot; title=&quot;Ios开发环境&quot;&gt;&lt;/a&gt;Ios开发环境&lt;/h1&gt;&lt;p&gt;因为我是在mac下搭建环境的。所以比较方便。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Xcode时&lt;strong&gt;必须&lt;/strong&gt;的！&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;brew install node        //电脑需要有&lt;strong&gt;node&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;brew install watchman    //这是用来监视文件系统中的更改的工具&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;npm install -g react-native-cli&lt;/p&gt;
-&lt;p&gt;然后我们打开 &lt;strong&gt;Xcode&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/xcode.png&quot; alt=&quot;xcode&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="React Native" scheme="http://xuzihao.fun/categories/React-Native/"/>
-    
-    
-      <category term="React" scheme="http://xuzihao.fun/tags/React/"/>
-    
-      <category term="React Native" scheme="http://xuzihao.fun/tags/React-Native/"/>
-    
-      <category term="iOS" scheme="http://xuzihao.fun/tags/iOS/"/>
-    
-      <category term="Android" scheme="http://xuzihao.fun/tags/Android/"/>
     
   </entry>
   
