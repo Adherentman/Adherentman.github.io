@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-01-05T13:28:06.790Z</updated>
+  <updated>2018-01-05T13:29:13.991Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://xuzihao.fun/JSON.html"/>
     <id>http://xuzihao.fun/JSON.html</id>
     <published>2018-01-05T13:27:00.000Z</published>
-    <updated>2018-01-05T13:28:06.790Z</updated>
+    <updated>2018-01-05T13:29:13.991Z</updated>
     
     <content type="html"><![CDATA[<h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><p>最近大量接触<code>JSON</code> 所以我特意去<a href="https://www.rfc-editor.org/rfc/rfc4627.txt" target="_blank" rel="external"><code>JSON</code>标准</a>(短短的8页，大家也可以看看)看了下，还参阅了许多资料，总结一下<code>JSON</code></p>
 <p>我们先来看一个<code>JSON</code>的组成：</p>
@@ -31,6 +31,7 @@
 <li>propertyValue(属性值)</li>
 </ol>
 <p>JSON可以表示四种基本类型（string(字符串)、number(数字）、booleans(布尔值)、null（空））和两个结构化类型（Object(对象)、Arrarys（数组））</p>
+<a id="more"></a>
 <h2 id="书写"><a href="#书写" class="headerlink" title="书写"></a>书写</h2><h3 id="逗号"><a href="#逗号" class="headerlink" title="逗号"></a>逗号</h3><p>最后一个属性后不能有逗号</p>
 <h3 id="双引号"><a href="#双引号" class="headerlink" title="双引号"></a>双引号</h3><p>在标准中都使用了双引号。因为所有的属性必须在双引号内。但是布尔值或者数字可以不用引号。</p>
 <h3 id="结构层次"><a href="#结构层次" class="headerlink" title="结构层次"></a>结构层次</h3><p>在设计<code>JSON</code> 的时候，我们都能看见可扩展和不可扩展的JSON结构。其中最主要的就2种，一种为扁平化数据，还有结构层次。</p>
@@ -77,7 +78,15 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;JSON&quot;&gt;&lt;a href=&quot;#JSON&quot; class=&quot;headerlink&quot; title=&quot;JSON&quot;&gt;&lt;/a&gt;JSON&lt;/h1&gt;&lt;p&gt;最近大量接触&lt;code&gt;JSON&lt;/code&gt; 所以我特意去&lt;a href=&quot;https://www.rfc-editor.
+      &lt;h1 id=&quot;JSON&quot;&gt;&lt;a href=&quot;#JSON&quot; class=&quot;headerlink&quot; title=&quot;JSON&quot;&gt;&lt;/a&gt;JSON&lt;/h1&gt;&lt;p&gt;最近大量接触&lt;code&gt;JSON&lt;/code&gt; 所以我特意去&lt;a href=&quot;https://www.rfc-editor.org/rfc/rfc4627.txt&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;code&gt;JSON&lt;/code&gt;标准&lt;/a&gt;(短短的8页，大家也可以看看)看了下，还参阅了许多资料，总结一下&lt;code&gt;JSON&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;我们先来看一个&lt;code&gt;JSON&lt;/code&gt;的组成：&lt;/p&gt;
+&lt;figure class=&quot;highlight json&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attr&quot;&gt;&quot;propertyName&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;propertyValue&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol&gt;
+&lt;li&gt;property(属性/键值对)&lt;/li&gt;
+&lt;li&gt;propertyName(属性名/键)&lt;/li&gt;
+&lt;li&gt;propertyValue(属性值)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;JSON可以表示四种基本类型（string(字符串)、number(数字）、booleans(布尔值)、null（空））和两个结构化类型（Object(对象)、Arrarys（数组））&lt;/p&gt;
     
     </summary>
     
