@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-01-25T12:52:12.843Z</updated>
+  <updated>2018-01-30T13:50:40.411Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React-Native踩得坑持续更新</title>
+    <link href="http://xuzihao.fun/React-Native%E8%B8%A9%E5%9D%91.html"/>
+    <id>http://xuzihao.fun/React-Native踩坑.html</id>
+    <published>2018-01-30T13:46:59.212Z</published>
+    <updated>2018-01-30T13:50:40.411Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="用nativebase遇到的fontFamily的问题"><a href="#用nativebase遇到的fontFamily的问题" class="headerlink" title="用nativebase遇到的fontFamily的问题"></a>用nativebase遇到的fontFamily的问题</h2><p><img src="http://ozar6ogjb.bkt.clouddn.com/expo-font-family.png" alt="选区_022"></p>
+<p><a href="https://github.com/GeekyAnts/NativeBase-KitchenSink/blob/CRNA/App.js#L13" target="_blank" rel="external">https://github.com/GeekyAnts/NativeBase-KitchenSink/blob/CRNA/App.js#L13</a></p>
+<h3 id="在RN中CSS、display不能为none"><a href="#在RN中CSS、display不能为none" class="headerlink" title="在RN中CSS、display不能为none"></a>在RN中CSS、display不能为none</h3><p><img src="http://ozar6ogjb.bkt.clouddn.com/rn-timed-out.png" alt="选区_027"></p>
+<p>​    </p>
+<p>​    {display: ‘none’} cause this bug</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;用nativebase遇到的fontFamily的问题&quot;&gt;&lt;a href=&quot;#用nativebase遇到的fontFamily的问题&quot; class=&quot;headerlink&quot; title=&quot;用nativebase遇到的fontFamily的问题&quot;&gt;&lt;/a&gt;用nati
+    
+    </summary>
+    
+      <category term="React Native" scheme="http://xuzihao.fun/categories/React-Native/"/>
+    
+    
+      <category term="React Native" scheme="http://xuzihao.fun/tags/React-Native/"/>
+    
+  </entry>
   
   <entry>
     <title>初入Node</title>
@@ -1173,6 +1200,48 @@
   </entry>
   
   <entry>
+    <title>英语单词</title>
+    <link href="http://xuzihao.fun/%E5%8D%95%E8%AF%8D.html"/>
+    <id>http://xuzihao.fun/单词.html</id>
+    <published>2017-10-18T12:24:00.000Z</published>
+    <updated>2017-11-12T07:57:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>delicate| 易碎的</li>
+<li>idleness| 懒惰</li>
+<li>tell the truth | 说实话</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>tell a lie / tell lies| 说谎话</li>
+<li>hold the view 持某种看法;认为.</li>
+<li>in view of | 鉴于，考虑到</li>
+<li>working on | 从事于；致力于</li>
+<li>set free | 释放</li>
+<li>run into | 偶然</li>
+<li>allow | 允许，给予(人)</li>
+<li>for fear of | 生怕，以免</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;delicate| 易碎的&lt;/li&gt;
+&lt;li&gt;idleness| 懒惰&lt;/li&gt;
+&lt;li&gt;tell the truth | 说实话&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
     <title>英语例句</title>
     <link href="http://xuzihao.fun/%E4%BE%8B%E5%8F%A5.html"/>
     <id>http://xuzihao.fun/例句.html</id>
@@ -1526,48 +1595,6 @@
 &lt;li&gt;现在进行时&lt;/li&gt;
 &lt;li&gt;现在完成时&lt;/li&gt;
 &lt;li&gt;现在完成进行时&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英语单词</title>
-    <link href="http://xuzihao.fun/%E5%8D%95%E8%AF%8D.html"/>
-    <id>http://xuzihao.fun/单词.html</id>
-    <published>2017-10-18T12:24:00.000Z</published>
-    <updated>2017-11-12T07:57:05.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li>delicate| 易碎的</li>
-<li>idleness| 懒惰</li>
-<li>tell the truth | 说实话</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li>tell a lie / tell lies| 说谎话</li>
-<li>hold the view 持某种看法;认为.</li>
-<li>in view of | 鉴于，考虑到</li>
-<li>working on | 从事于；致力于</li>
-<li>set free | 释放</li>
-<li>run into | 偶然</li>
-<li>allow | 允许，给予(人)</li>
-<li>for fear of | 生怕，以免</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;delicate| 易碎的&lt;/li&gt;
-&lt;li&gt;idleness| 懒惰&lt;/li&gt;
-&lt;li&gt;tell the truth | 说实话&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
@@ -1935,61 +1962,6 @@
     
     
       <category term="小程序" scheme="http://xuzihao.fun/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CO函数，异步</title>
-    <link href="http://xuzihao.fun/CO%E5%87%BD%E6%95%B0%EF%BC%8C%E5%BC%82%E6%AD%A5.html"/>
-    <id>http://xuzihao.fun/CO函数，异步.html</id>
-    <published>2017-08-18T15:01:50.000Z</published>
-    <updated>2017-12-13T13:43:03.967Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="CO函数库"><a href="#CO函数库" class="headerlink" title="CO函数库"></a>CO函数库</h1><p><a href="https://github.com/tj/co" target="_blank" rel="external">co 函数库</a>是著名程序员 TJ Holowaychuk 于2013年6月发布的一个小工具，用于 <strong>Generator 函数的自动执行</strong>。</p>
-<p>有一个 Generator 函数，用于依次读取两个文件。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> gen = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> f1 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/fstab'</span>);</div><div class="line">  <span class="keyword">var</span> f2 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/shells'</span>);</div><div class="line">  <span class="built_in">console</span>.log(f1.toString());</div><div class="line">  <span class="built_in">console</span>.log(f2.toString());</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<p><strong>co 函数库可以让你不用编写 Generator 函数的执行器。</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> co = <span class="built_in">require</span>(<span class="string">'co'</span>);</div><div class="line">co(gen);</div></pre></td></tr></table></figure>
-<p>上面代码中，Generator 函数只要传入 co 函数，就会自动执行。</p>
-<p>co 函数返回一个 Promise 对象，因此可以用 then 方法添加回调函数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">co(gen).then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Generator 函数执行完成'</span>);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h2 id="co-函数库的源码"><a href="#co-函数库的源码" class="headerlink" title="co 函数库的源码"></a>co 函数库的源码</h2><p>co 就是上面那个自动执行器的扩展，它的<a href="https://github.com/tj/co/blob/master/index.js" target="_blank" rel="external">源码</a>只有几十行，非常简单。</p>
-<p>首先，co 函数接受 Generator 函数作为参数，返回一个 Promise 对象。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">co</span>(<span class="params">gen</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> ctx = <span class="keyword">this</span>;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在返回的 Promise 对象里面，co 先检查参数 gen 是否为 Generator 函数。如果是，就执行该函数，得到一个内部指针对象；如果不是就返回，并将 Promise 对象的状态改为 resolved 。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">co</span>(<span class="params">gen</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> ctx = <span class="keyword">this</span>;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> gen === <span class="string">'function'</span>) gen = gen.call(ctx);</div><div class="line">    <span class="keyword">if</span> (!gen || <span class="keyword">typeof</span> gen.next !== <span class="string">'function'</span>) <span class="keyword">return</span> resolve(gen);</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>接着，co 将 Generator 函数的内部指针对象的 next 方法，包装成 onFulefilled 函数。这主要是为了能够捕捉抛出的错误。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">co</span>(<span class="params">gen</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> ctx = <span class="keyword">this</span>;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> gen === <span class="string">'function'</span>) gen = gen.call(ctx);</div><div class="line">    <span class="keyword">if</span> (!gen || <span class="keyword">typeof</span> gen.next !== <span class="string">'function'</span>) <span class="keyword">return</span> resolve(gen);</div><div class="line"></div><div class="line">    onFulfilled();</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">onFulfilled</span>(<span class="params">res</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> ret;</div><div class="line">      <span class="keyword">try</span> &#123;</div><div class="line">        ret = gen.next(res);</div><div class="line">      &#125; <span class="keyword">catch</span> (e) &#123;</div><div class="line">        <span class="keyword">return</span> reject(e);</div><div class="line">      &#125;</div><div class="line">      next(ret);</div><div class="line">    &#125;    </div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>最后，就是关键的 next 函数，它会反复调用自身。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">next</span>(<span class="params">ret</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (ret.done) <span class="keyword">return</span> resolve(ret.value);</div><div class="line">  <span class="keyword">var</span> value = toPromise.call(ctx, ret.value);</div><div class="line">  <span class="keyword">if</span> (value &amp;&amp; isPromise(value)) <span class="keyword">return</span> value.then(onFulfilled, onRejected);</div><div class="line">  <span class="keyword">return</span> onRejected(<span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'You may only yield a function, promise, generator, array, or object, '</span></div><div class="line">        + <span class="string">'but the following object was passed: "'</span> + <span class="built_in">String</span>(ret.value) + <span class="string">'"'</span>));</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>上面代码中，next 函数的内部代码，一共只有四行命令。</p>
-<blockquote>
-<p>第一行，检查当前是否为 Generator 函数的最后一步，如果是就返回。</p>
-<p>第二行，确保每一步的返回值，是 Promise 对象。</p>
-<p>第三行，使用 then 方法，为返回值加上回调函数，然后通过 onFulfilled 函数再次调用 next 函数。</p>
-<p>第四行，在参数不符合要求的情况下（参数非 Thunk 函数和 Promise 对象），将 Promise 对象的状态改为 rejected，从而终止执行。</p>
-</blockquote>
-<h2 id="并发的异步操作"><a href="#并发的异步操作" class="headerlink" title="并发的异步操作"></a>并发的异步操作</h2><p>co 支持并发的异步操作，即允许某些操作同时进行，等到它们全部完成，才进行下一步。</p>
-<p>这时，要把并发的操作都放在数组或对象里面。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">co(<span class="function"><span class="keyword">function</span>* (<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> values = [n1,n2,n3];</div><div class="line">  <span class="keyword">yield</span> values.map(somethingAsync);</div><div class="line">&#125;);</div><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">somethingAsync</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> y</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p># </p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;CO函数库&quot;&gt;&lt;a href=&quot;#CO函数库&quot; class=&quot;headerlink&quot; title=&quot;CO函数库&quot;&gt;&lt;/a&gt;CO函数库&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/tj/co&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;co 函数库&lt;/a&gt;是著名程序员 TJ Holowaychuk 于2013年6月发布的一个小工具，用于 &lt;strong&gt;Generator 函数的自动执行&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;有一个 Generator 函数，用于依次读取两个文件。&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; gen = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;* (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; f1 = &lt;span class=&quot;keyword&quot;&gt;yield&lt;/span&gt; readFile(&lt;span class=&quot;string&quot;&gt;&#39;/etc/fstab&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; f2 = &lt;span class=&quot;keyword&quot;&gt;yield&lt;/span&gt; readFile(&lt;span class=&quot;string&quot;&gt;&#39;/etc/shells&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(f1.toString());&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(f2.toString());&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="Javascript修仙之旅" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
-    
-    
-      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
-    
-      <category term="node.js" scheme="http://xuzihao.fun/tags/node-js/"/>
     
   </entry>
   
