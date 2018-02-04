@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-01-30T13:50:40.411Z</updated>
+  <updated>2018-02-04T06:52:51.820Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -16,13 +16,77 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Kaldi语音识别初用</title>
+    <link href="http://xuzihao.fun/kaldi%E6%96%87%E6%A1%A3.html"/>
+    <id>http://xuzihao.fun/kaldi文档.html</id>
+    <published>2018-02-04T06:50:32.416Z</published>
+    <updated>2018-02-04T06:52:51.820Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Kaldi启用"><a href="#Kaldi启用" class="headerlink" title="Kaldi启用"></a>Kaldi启用</h1><h2 id="INSTALL"><a href="#INSTALL" class="headerlink" title="INSTALL"></a>INSTALL</h2><ol>
+<li>在 tools/ 下跑 extras/check_dependencies.sh<ol>
+<li>然后跑make</li>
+</ol>
+</li>
+<li>之后在 src/ 下跑 ./configure –shared 在跑这句命令之前一定要先执行第一条<ol>
+<li>make depend</li>
+<li>make<a id="more"></a>
+<h3 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h3></li>
+</ol>
+</li>
+</ol>
+<h4 id="修改路径"><a href="#修改路径" class="headerlink" title="修改路径"></a>修改路径</h4><p>设置n = 4</p>
+<p>在kaldi/egs 下跑 <code>vi thchs30/s5/run.sh</code> </p>
+<p><code>thchs=/home/xuzihao/kaldi/egs/thchs30/thchs30-openslr</code></p>
+<p>然后修改/thchs30/s5/cmd.sh为本地跑：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">export train_cms = run.pl</div><div class="line">export decode_cmd = run.pl</div><div class="line">export mkgraph_cmd = run.pl</div><div class="line">export cuda_cmd = run.pl</div><div class="line">​`</div></pre></td></tr></table></figure>
+<p>运行：</p>
+<p>cd到s5目录下去跑</p>
+<p><code>sudo ./run.sh</code></p>
+<p>静候佳音</p>
+<h2 id="识别自己的wav"><a href="#识别自己的wav" class="headerlink" title="识别自己的wav"></a>识别自己的wav</h2><p>之后我们来到<code>tools/</code>下，去安装<code>./install_portaudio.sh</code>。</p>
+<p>等安装完毕后我们到<code>src/</code>下，去 <code>make ext</code>去编译扩展程序。</p>
+<h2 id="找例子"><a href="#找例子" class="headerlink" title="找例子"></a>找例子</h2><p>万事具备，然后我们到egs下，打开voxforge文件夹，去把里面online_demo文件夹直接拷到thchs30下，之后我们在online_demo里建2个文件夹,一个为online-data，一个为work。</p>
+<p>之后我们在online-data下建两个文件夹分别为audio和models。audio下放你的wav文件，models建一个名为tri1的文件夹，之后我们把<code>s5/exp/tri1</code>下的final.mdl和35.mdl(这是final.mdl的快捷方式)拷到<code>online-data/models/tri1</code>下。</p>
+<p>然后把<code>s5/exp/tri/graph_word</code>里面的words.txt和HCLG.fst文件(如果你没有这两文件，说明你还没把模型训练好)拷到<code>online-data/models/tri1</code>下。</p>
+<h2 id="运行例子"><a href="#运行例子" class="headerlink" title="运行例子"></a>运行例子</h2><p>我们在online_demo下<code>vi run.sh</code>。</p>
+<p>之后我们把以下注释掉:</p>
+<p>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">if [ ! -s $&#123;data_file&#125;.tar.bz2 ]; then</div><div class="line">    echo &quot;Downloading test models and data ...&quot;</div><div class="line">    wget -T 10 -t 3 $data_url;</div><div class="line">    if [ ! -s $&#123;data_file&#125;.tar.bz2 ]; then</div><div class="line">        echo &quot;Download of $data_file has failed!&quot;</div><div class="line">        exit 1</div><div class="line">    fi</div><div class="line">fi</div></pre></td></tr></table></figure></p>
+<p>然后在找到下面这句将其路径改成tri1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ac_model_type=tri1</div></pre></td></tr></table></figure>
+<p>然后把下面的也改了注意看<code>online-wav-gmm-decode-faster</code>就行了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">online-wav-gmm-decode-faster --verbose=1 --rt-min=0.8 --rt-max=0.85\</div><div class="line">--max-active=4000 --beam=12.0 --acoustic-scale=0.0769 \</div><div class="line">scp:$decode_dir/input.scp $ac_model/final.mdl</div></pre></td></tr></table></figure>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>然后我们直接在online_demo下<code>./run.sh</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Kaldi启用&quot;&gt;&lt;a href=&quot;#Kaldi启用&quot; class=&quot;headerlink&quot; title=&quot;Kaldi启用&quot;&gt;&lt;/a&gt;Kaldi启用&lt;/h1&gt;&lt;h2 id=&quot;INSTALL&quot;&gt;&lt;a href=&quot;#INSTALL&quot; class=&quot;headerlink&quot; title=&quot;INSTALL&quot;&gt;&lt;/a&gt;INSTALL&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;在 tools/ 下跑 extras/check_dependencies.sh&lt;ol&gt;
+&lt;li&gt;然后跑make&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;之后在 src/ 下跑 ./configure –shared 在跑这句命令之前一定要先执行第一条&lt;ol&gt;
+&lt;li&gt;make depend&lt;/li&gt;
+&lt;li&gt;make
+    
+    </summary>
+    
+      <category term="机器学习" scheme="http://xuzihao.fun/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="http://xuzihao.fun/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>React-Native踩得坑持续更新</title>
     <link href="http://xuzihao.fun/React-Native%E8%B8%A9%E5%9D%91.html"/>
     <id>http://xuzihao.fun/React-Native踩坑.html</id>
     <published>2018-01-30T13:46:59.212Z</published>
-    <updated>2018-01-30T13:50:40.411Z</updated>
+    <updated>2018-02-04T06:53:42.836Z</updated>
     
     <content type="html"><![CDATA[<h2 id="用nativebase遇到的fontFamily的问题"><a href="#用nativebase遇到的fontFamily的问题" class="headerlink" title="用nativebase遇到的fontFamily的问题"></a>用nativebase遇到的fontFamily的问题</h2><p><img src="http://ozar6ogjb.bkt.clouddn.com/expo-font-family.png" alt="选区_022"></p>
+<a id="more"></a>
 <p><a href="https://github.com/GeekyAnts/NativeBase-KitchenSink/blob/CRNA/App.js#L13" target="_blank" rel="external">https://github.com/GeekyAnts/NativeBase-KitchenSink/blob/CRNA/App.js#L13</a></p>
 <h3 id="在RN中CSS、display不能为none"><a href="#在RN中CSS、display不能为none" class="headerlink" title="在RN中CSS、display不能为none"></a>在RN中CSS、display不能为none</h3><p><img src="http://ozar6ogjb.bkt.clouddn.com/rn-timed-out.png" alt="选区_027"></p>
 <p>​    </p>
@@ -31,7 +95,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;用nativebase遇到的fontFamily的问题&quot;&gt;&lt;a href=&quot;#用nativebase遇到的fontFamily的问题&quot; class=&quot;headerlink&quot; title=&quot;用nativebase遇到的fontFamily的问题&quot;&gt;&lt;/a&gt;用nati
+      &lt;h2 id=&quot;用nativebase遇到的fontFamily的问题&quot;&gt;&lt;a href=&quot;#用nativebase遇到的fontFamily的问题&quot; class=&quot;headerlink&quot; title=&quot;用nativebase遇到的fontFamily的问题&quot;&gt;&lt;/a&gt;用nativebase遇到的fontFamily的问题&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://ozar6ogjb.bkt.clouddn.com/expo-font-family.png&quot; alt=&quot;选区_022&quot;&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1934,34 +1998,6 @@
       <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
     
       <category term="node.js" scheme="http://xuzihao.fun/tags/node-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>支付宝小程序踩坑（一）</title>
-    <link href="http://xuzihao.fun/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%B0%8F%E7%A8%8B%E5%BA%8F.html"/>
-    <id>http://xuzihao.fun/支付宝小程序.html</id>
-    <published>2017-08-20T12:49:24.000Z</published>
-    <updated>2017-11-12T07:50:53.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>这是支付宝小程序编译器的主界面</p>
-<p><img src="/images/paytest1.png" alt="paytest1"></p>
-<a id="more"></a>
-<p>这是 <strong>hello，world</strong>的文件树。是基于js语言。小程序开发者工具默认支持 ES5/ES6/ES7，推荐使用 ES6 以上语法。而且还内置了 <strong>ESLint</strong> 支持</p>
-<p><img src="/images/paytest2.png" alt="paytest2"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这是支付宝小程序编译器的主界面&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/paytest1.png&quot; alt=&quot;paytest1&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="小程序" scheme="http://xuzihao.fun/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    
-      <category term="小程序" scheme="http://xuzihao.fun/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   

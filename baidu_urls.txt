@@ -1,3 +1,4 @@
+http://xuzihao.fun/kaldi文档.html
 http://xuzihao.fun/React-Native踩坑.html
 http://xuzihao.fun/初入Node.html
 http://xuzihao.fun/JSON.html
@@ -32,17 +33,17 @@ http://xuzihao.fun/Node.html
 http://xuzihao.fun/git.html
 http://xuzihao.fun/yewu.html
 http://xuzihao.fun/评论功能迁移.html
+http://xuzihao.fun/GraphQL.html
 http://xuzihao.fun/E-R图.html
 http://xuzihao.fun/React-Router.html
-http://xuzihao.fun/GraphQL.html
 http://xuzihao.fun/React-State与Props的小心思.html
 http://xuzihao.fun/JavaScript闭包.html
 http://xuzihao.fun/JavaScript作用域.html
 http://xuzihao.fun/JavaScript——16道算法题.html
 http://xuzihao.fun/前端面试题.html
 http://xuzihao.fun/Vue.js小记.html
-http://xuzihao.fun/Es6箭头函数.html
 http://xuzihao.fun/初入React.html
+http://xuzihao.fun/Es6箭头函数.html
 http://xuzihao.fun/JavaScript变量.html
 http://xuzihao.fun/JavaScript基本概念copy.html
 http://xuzihao.fun/Javascript Dom编程艺术学习笔记一（第三章兼高程三）.html
