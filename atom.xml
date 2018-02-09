@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-02-04T06:52:51.820Z</updated>
+  <updated>2018-02-09T09:50:18.236Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -14,6 +14,355 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript基本概念（高程3）</title>
+    <link href="http://xuzihao.fun/Prettier-Options.html"/>
+    <id>http://xuzihao.fun/Prettier-Options.html</id>
+    <published>2018-02-09T09:50:00.000Z</published>
+    <updated>2018-02-09T09:50:18.236Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Prettier-Option"><a href="#Prettier-Option" class="headerlink" title="Prettier Option"></a>Prettier Option</h1><p>.Prettierrc</p>
+<p>Cli是在终端使用，</p>
+<p>Api是在<code>.Prettierrc</code>中设置使用<br><a id="more"></a></p>
+<h2 id="printWidth"><a href="#printWidth" class="headerlink" title="printWidth"></a>printWidth</h2><p>打印宽度指定打印将换行的行长。</p>
+<table>
+<thead>
+<tr>
+<th>Default</th>
+<th style="text-align:center">Cli Override</th>
+<th style="text-align:center">Api Override</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>80</td>
+<td style="text-align:center">–print-width <int></int></td>
+<td style="text-align:center">printWidth: <int></int></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Tab-Width"><a href="#Tab-Width" class="headerlink" title="Tab Width"></a>Tab Width</h2><p>指定每个缩进的空格数。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Cli Override</th>
+<th style="text-align:center">Api Override</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">–tab-width <int></int></td>
+<td style="text-align:center">tabWidth: <int></int></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2><p>用<code>Tab</code>缩进而不是空格</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Cli Override</th>
+<th style="text-align:center">Api Override</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">false</td>
+<td style="text-align:center">–use-tabs <int></int></td>
+<td style="text-align:center">useTabs: <bool></bool></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Semicolons"><a href="#Semicolons" class="headerlink" title="Semicolons"></a>Semicolons</h2><p>在语句的末尾打印分号。</p>
+<p>有效的选项：</p>
+<ul>
+<li>true  - 在每个语句的末尾添加一个分号。</li>
+<li>false - 只在可能引入ASI故障的行的开头添加分号。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Cli Override</th>
+<th style="text-align:center">Api Override</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">true</td>
+<td style="text-align:center">–no-semi <int></int></td>
+<td style="text-align:center">semi: <bool></bool></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Quotes"><a href="#Quotes" class="headerlink" title="Quotes"></a>Quotes</h2><p>使用单引号而不是双引号。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Cli Override</th>
+<th style="text-align:center">Api Override</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">false</td>
+<td style="text-align:center">–single-quote</td>
+<td style="text-align:center">singleQuote: <bool></bool></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Trailing-Commas"><a href="#Trailing-Commas" class="headerlink" title="Trailing Commas"></a>Trailing Commas</h2><p>多行时，尽可能打印尾随逗号。 （例如，一个单行数组永远不会得到尾随的逗号。）</p>
+<p>有效选项：</p>
+<ul>
+<li>none - 没有尾随逗号。</li>
+<li>es5 - 在ES5中有效的尾随逗号（object，arrays等）</li>
+<li>all - 尽可能尾随逗号（包括函数参数）。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Cli Override</th>
+<th style="text-align:center">Api Override</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">None</td>
+<td style="text-align:center">–trailing-comma &lt;none\</td>
+<td style="text-align:center">es5\</td>
+<td>all&gt;</td>
+<td>trailingComma: “&lt;none\</td>
+<td>es5\</td>
+<td>all&gt;”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Bracket-Spacing"><a href="#Bracket-Spacing" class="headerlink" title="Bracket Spacing"></a>Bracket Spacing</h2><p>在对象文字中的括号之间打印空格。</p>
+<p>选项：</p>
+<ul>
+<li>true - Example { foo: bar }</li>
+<li>flase - Example {foo: bar}</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Default</th>
+<th>Cli Override</th>
+<th>Api Override</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">true</td>
+<td>–no-bracket-spacing</td>
+<td>bracketSpacing: <bool></bool></td>
+</tr>
+</tbody>
+</table>
+<h2 id="JSX-Brackets"><a href="#JSX-Brackets" class="headerlink" title="JSX Brackets"></a>JSX Brackets</h2><p>将多行JSX元素的 <code>&gt;</code> 放在最后一行的末尾，而不是单独放在下一行（不适用于自闭元素）。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Cli Override</th>
+<th style="text-align:center">Api Override</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">false</td>
+<td style="text-align:center">–jsx-bracket-same-line</td>
+<td style="text-align:center">jsxBracketSameLine: <bool></bool></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Arrow-Function-Parentheses"><a href="#Arrow-Function-Parentheses" class="headerlink" title="Arrow Function Parentheses"></a>Arrow Function Parentheses</h2><p>围绕一个唯一的箭头函数参数包括括号。</p>
+<p>选项：</p>
+<ul>
+<li>avoid - 尽可能省略括号 Example： x =&gt; x</li>
+<li>always - 总是包括括号 Example： (x) =&gt; x</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Cli Override</th>
+<th style="text-align:center">Api Override</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">avoid</td>
+<td style="text-align:center">–arrow-parens &lt;avoid\</td>
+<td style="text-align:center">always&gt;</td>
+<td>arrowParens: “&lt;avoid\</td>
+<td>always&gt;”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Range"><a href="#Range" class="headerlink" title="Range"></a>Range</h2><p>只格式化文件的一部分。</p>
+<p>这两个选项可用于格式化以给定字符偏移（分别包含和排除）开始和结束的代码。范围将延伸:</p>
+<ul>
+<li>返回到包含选定语句的第一行的开头。 </li>
+<li>转到选定语句的末尾。</li>
+</ul>
+<p>这些选项不能与cursorOffset一起使用。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Cli Override</th>
+<th style="text-align:center">Api Override</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">–range-start <int></int></td>
+<td style="text-align:center">rangeStart: <int></int></td>
+</tr>
+<tr>
+<td style="text-align:center">Infinity</td>
+<td style="text-align:center">–range-end <int></int></td>
+<td style="text-align:center">rangeEnd: <int></int></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Parser"><a href="#Parser" class="headerlink" title="Parser"></a>Parser</h2><p>指定使用哪个分析器。</p>
+<p>Babylon和流解析器都支持相同的JavaScript特性（包括Flow）。Prettier会自动从输入文件路径中推断解析器，所以你不需要改变这个设置。</p>
+<p>Built-in parsers:</p>
+<ul>
+<li><a href="https://github.com/babel/babel/tree/master/packages/babylon" target="_blank" rel="external"><code>babylon</code></a></li>
+<li><a href="https://github.com/facebook/flow/tree/master/src/parser" target="_blank" rel="external"><code>flow</code></a></li>
+<li><a href="https://github.com/eslint/typescript-eslint-parser" target="_blank" rel="external"><code>typescript</code></a> <em>Since v1.4.0</em></li>
+<li><a href="https://github.com/postcss/postcss" target="_blank" rel="external"><code>postcss</code></a> <em>Since v1.4.0</em></li>
+<li><a href="https://github.com/babel/babylon/tree/f09eb3200f57ea94d51c2a5b1facf2149fb406bf#babylonparseexpressioncode-options" target="_blank" rel="external"><code>json</code></a> <em>Since v1.5.0</em></li>
+<li><a href="https://github.com/graphql/graphql-js/tree/master/src/language" target="_blank" rel="external"><code>graphql</code></a> <em>Since v1.5.0</em></li>
+<li><a href="https://github.com/wooorm/remark/tree/master/packages/remark-parse" target="_blank" rel="external"><code>markdown</code></a> <em>Since v1.8.0</em></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Default</th>
+<th style="text-align:left">Cli Override</th>
+<th style="text-align:left">Api Override</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">babylon</td>
+<td style="text-align:left">–parser <string><br>–parser ./my-parser</string></td>
+<td style="text-align:left">parser: “<string>“<br>parser: require(“./my-parser”)</string></td>
+</tr>
+</tbody>
+</table>
+<h2 id="FilePath"><a href="#FilePath" class="headerlink" title="FilePath"></a>FilePath</h2><p>指定输入文件路径。这将被用来做解析器推理。</p>
+<p>例如，以下将使用postcss解析器：</p>
+<blockquote>
+<p>cat foo | prettier –stdin-filepath foo.css</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Default</th>
+<th>Cli Override</th>
+<th>Api Override</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>–stdin-filepath <string></string></td>
+<td>filepath: “<string>“</string></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Require-pragma"><a href="#Require-pragma" class="headerlink" title="Require pragma"></a>Require pragma</h2><p>Prettier可以限制自己只能格式化文件顶部包含特殊注释的文件，称为杂注。逐渐将大型，无格式的代码库转换为漂亮的代码库时，这非常有用。</p>
+<p>例如，当提供–require-pragma时，将会格式化具有以下第一个注释的文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * @prettier</div><div class="line"> */</div></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * @format</div><div class="line"> */</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Cli Override</th>
+<th style="text-align:center">Api Override</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">false</td>
+<td style="text-align:center">–require-pragma</td>
+<td style="text-align:center">requirePragma: <bool></bool></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Insert-Pragma"><a href="#Insert-Pragma" class="headerlink" title="Insert Pragma"></a>Insert Pragma</h2><p>Prettier的可以在文件的顶部插入一个特殊的@format标记，指定文件已被格式化为Prettier。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Cli Override</th>
+<th style="text-align:center">Api Override</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">false</td>
+<td style="text-align:center">–insert-pragma</td>
+<td style="text-align:center">insertPragma: <bool></bool></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Prose-Wrap"><a href="#Prose-Wrap" class="headerlink" title="Prose Wrap"></a>Prose Wrap</h2><p>默认情况下，由于某些服务使用了对换行符敏感的呈现器，因此Prettier会按原样包装降价文本。</p>
+<p>选项：</p>
+<ul>
+<li><code>&quot;always&quot;</code> - 如果超出了打印宽度，请将散的包好。</li>
+<li><code>&quot;never&quot;</code> - 不包散的。</li>
+<li><code>&quot;preserve&quot;</code> - 按原样包散的。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Cli Override</th>
+<th style="text-align:center">Api Override</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">“preserve”</td>
+<td style="text-align:center">–prose-wrap &lt;always\</td>
+<td style="text-align:center">never\</td>
+<td>preserve&gt;</td>
+<td>proseWrap: “&lt;always\</td>
+<td>never\</td>
+<td>preserve&gt;”</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Prettier-Option&quot;&gt;&lt;a href=&quot;#Prettier-Option&quot; class=&quot;headerlink&quot; title=&quot;Prettier Option&quot;&gt;&lt;/a&gt;Prettier Option&lt;/h1&gt;&lt;p&gt;.Prettierrc&lt;/p&gt;
+&lt;p&gt;Cli是在终端使用，&lt;/p&gt;
+&lt;p&gt;Api是在&lt;code&gt;.Prettierrc&lt;/code&gt;中设置使用&lt;br&gt;
+    
+    </summary>
+    
+      <category term="前端工具" scheme="http://xuzihao.fun/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="前端工具" scheme="http://xuzihao.fun/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>Kaldi语音识别初用</title>
@@ -1264,211 +1613,6 @@
   </entry>
   
   <entry>
-    <title>英语单词</title>
-    <link href="http://xuzihao.fun/%E5%8D%95%E8%AF%8D.html"/>
-    <id>http://xuzihao.fun/单词.html</id>
-    <published>2017-10-18T12:24:00.000Z</published>
-    <updated>2017-11-12T07:57:05.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li>delicate| 易碎的</li>
-<li>idleness| 懒惰</li>
-<li>tell the truth | 说实话</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li>tell a lie / tell lies| 说谎话</li>
-<li>hold the view 持某种看法;认为.</li>
-<li>in view of | 鉴于，考虑到</li>
-<li>working on | 从事于；致力于</li>
-<li>set free | 释放</li>
-<li>run into | 偶然</li>
-<li>allow | 允许，给予(人)</li>
-<li>for fear of | 生怕，以免</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;delicate| 易碎的&lt;/li&gt;
-&lt;li&gt;idleness| 懒惰&lt;/li&gt;
-&lt;li&gt;tell the truth | 说实话&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英语例句</title>
-    <link href="http://xuzihao.fun/%E4%BE%8B%E5%8F%A5.html"/>
-    <id>http://xuzihao.fun/例句.html</id>
-    <published>2017-10-18T12:24:00.000Z</published>
-    <updated>2017-11-12T07:57:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li>No sooner ····· then      <ul>
-<li>一。。。就。</li>
-</ul>
-</li>
-<li>not so much …as<ul>
-<li>与其。。不如</li>
-</ul>
-</li>
-<li><p>no more…than</p>
-<ul>
-<li><p>不过，仅仅；至多，同。。。一样不</p>
-<a id="more"></a></li>
-</ul>
-</li>
-<li>as…as<ul>
-<li>像。。。一样</li>
-</ul>
-</li>
-<li><p>imagined + sth. + to be + adj.    </p>
-<ul>
-<li>为复合宾语解构</li>
-</ul>
-</li>
-<li><p>put forward to do sth.</p>
-<ul>
-<li>提出要求做某事</li>
-</ul>
-</li>
-<li>get sth. done<ul>
-<li>把某事做了</li>
-</ul>
-</li>
-<li>would rather <ul>
-<li>引导从句的虚拟结构中，如果表示对现在或将来情况的愿望，从句用<strong>过去时</strong>。</li>
-<li>如果是对过去情况的虚拟，从句用<strong>过去完成时</strong>。</li>
-</ul>
-</li>
-<li>never, hardly, seldom, little, not until, not, not only, no sooner, no    longer, nowhere, by no means <ul>
-<li>以上位于句首需要部分倒装</li>
-</ul>
-</li>
-<li>keep diary<ul>
-<li>记日记</li>
-</ul>
-</li>
-<li>can’t help doing sth.<ul>
-<li>忍不住做。。。</li>
-</ul>
-</li>
-<li>be worth doing<ul>
-<li>某（事或物）值得做</li>
-</ul>
-</li>
-<li>be worthy to be done 或 sth. is worthy of being done 以及 sb. be worhty of doing sth. 或者 sb. be worthy to do sth.<ul>
-<li>和 worth 的意思一样</li>
-</ul>
-</li>
-<li>It is/was /will be the first time that …句式<ul>
-<li>主句谓语是is，从句用现在完成时</li>
-<li>主句谓语是was，从句谓语用过去完成时</li>
-<li>主句谓语是will be，从句谓语用一般现在时</li>
-</ul>
-</li>
-<li>be appropriate for sb. 或 be appropriate to do sth.<ul>
-<li>固定搭配</li>
-</ul>
-</li>
-<li>appreciate + doing sth.<ul>
-<li>感激做某事</li>
-</ul>
-</li>
-<li>but to do,但是but之前出现了 do/does/did/done就要 but do</li>
-<li>no mood | in the mood<ul>
-<li>没有心情 | 有好心情</li>
-</ul>
-</li>
-<li>the impression of + doing sth.<ul>
-<li>做过某事的印象</li>
-</ul>
-</li>
-<li>have a(the) right to sth.<ul>
-<li>享有。。的权利</li>
-</ul>
-</li>
-<li>do nothing but <ul>
-<li>此结构后要求动词原形</li>
-</ul>
-</li>
-<li>need doing / need to done<ul>
-<li>需要被</li>
-</ul>
-</li>
-<li>sb. spend some time doing sth.<ul>
-<li>花时间做某事</li>
-</ul>
-</li>
-<li>a large amount of, a great deal of <ul>
-<li>固定搭配</li>
-</ul>
-</li>
-<li>将来时除了有be going to, will + do, 还有be to do, be about to do.</li>
-<li>play a part in<ul>
-<li>在。。。起作用。</li>
-</ul>
-</li>
-<li>must have + 过去分词<ul>
-<li>过去一定做了某事，表示对过去的肯定推测。</li>
-</ul>
-</li>
-<li>could have + 过去分词<ul>
-<li>本来能够做….</li>
-</ul>
-</li>
-<li>another + 基数词 + 名词复数<ul>
-<li>另外/在多少个</li>
-<li>I want another three apples.</li>
-<li>我还需要三个苹果。</li>
-</ul>
-</li>
-<li>mind doing sth.<ul>
-<li>介意做某事</li>
-</ul>
-</li>
-<li>to help you to out <ul>
-<li>表示目的</li>
-</ul>
-</li>
-<li>be going to + 一般现在时（leaves）</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;No sooner ····· then      &lt;ul&gt;
-&lt;li&gt;一。。。就。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;not so much …as&lt;ul&gt;
-&lt;li&gt;与其。。不如&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;no more…than&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;不过，仅仅；至多，同。。。一样不&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
-    
-  </entry>
-  
-  <entry>
     <title>英语时态</title>
     <link href="http://xuzihao.fun/%E6%97%B6%E6%80%81.html"/>
     <id>http://xuzihao.fun/时态.html</id>
@@ -1659,6 +1803,211 @@
 &lt;li&gt;现在进行时&lt;/li&gt;
 &lt;li&gt;现在完成时&lt;/li&gt;
 &lt;li&gt;现在完成进行时&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>英语例句</title>
+    <link href="http://xuzihao.fun/%E4%BE%8B%E5%8F%A5.html"/>
+    <id>http://xuzihao.fun/例句.html</id>
+    <published>2017-10-18T12:24:00.000Z</published>
+    <updated>2017-11-12T07:57:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>No sooner ····· then      <ul>
+<li>一。。。就。</li>
+</ul>
+</li>
+<li>not so much …as<ul>
+<li>与其。。不如</li>
+</ul>
+</li>
+<li><p>no more…than</p>
+<ul>
+<li><p>不过，仅仅；至多，同。。。一样不</p>
+<a id="more"></a></li>
+</ul>
+</li>
+<li>as…as<ul>
+<li>像。。。一样</li>
+</ul>
+</li>
+<li><p>imagined + sth. + to be + adj.    </p>
+<ul>
+<li>为复合宾语解构</li>
+</ul>
+</li>
+<li><p>put forward to do sth.</p>
+<ul>
+<li>提出要求做某事</li>
+</ul>
+</li>
+<li>get sth. done<ul>
+<li>把某事做了</li>
+</ul>
+</li>
+<li>would rather <ul>
+<li>引导从句的虚拟结构中，如果表示对现在或将来情况的愿望，从句用<strong>过去时</strong>。</li>
+<li>如果是对过去情况的虚拟，从句用<strong>过去完成时</strong>。</li>
+</ul>
+</li>
+<li>never, hardly, seldom, little, not until, not, not only, no sooner, no    longer, nowhere, by no means <ul>
+<li>以上位于句首需要部分倒装</li>
+</ul>
+</li>
+<li>keep diary<ul>
+<li>记日记</li>
+</ul>
+</li>
+<li>can’t help doing sth.<ul>
+<li>忍不住做。。。</li>
+</ul>
+</li>
+<li>be worth doing<ul>
+<li>某（事或物）值得做</li>
+</ul>
+</li>
+<li>be worthy to be done 或 sth. is worthy of being done 以及 sb. be worhty of doing sth. 或者 sb. be worthy to do sth.<ul>
+<li>和 worth 的意思一样</li>
+</ul>
+</li>
+<li>It is/was /will be the first time that …句式<ul>
+<li>主句谓语是is，从句用现在完成时</li>
+<li>主句谓语是was，从句谓语用过去完成时</li>
+<li>主句谓语是will be，从句谓语用一般现在时</li>
+</ul>
+</li>
+<li>be appropriate for sb. 或 be appropriate to do sth.<ul>
+<li>固定搭配</li>
+</ul>
+</li>
+<li>appreciate + doing sth.<ul>
+<li>感激做某事</li>
+</ul>
+</li>
+<li>but to do,但是but之前出现了 do/does/did/done就要 but do</li>
+<li>no mood | in the mood<ul>
+<li>没有心情 | 有好心情</li>
+</ul>
+</li>
+<li>the impression of + doing sth.<ul>
+<li>做过某事的印象</li>
+</ul>
+</li>
+<li>have a(the) right to sth.<ul>
+<li>享有。。的权利</li>
+</ul>
+</li>
+<li>do nothing but <ul>
+<li>此结构后要求动词原形</li>
+</ul>
+</li>
+<li>need doing / need to done<ul>
+<li>需要被</li>
+</ul>
+</li>
+<li>sb. spend some time doing sth.<ul>
+<li>花时间做某事</li>
+</ul>
+</li>
+<li>a large amount of, a great deal of <ul>
+<li>固定搭配</li>
+</ul>
+</li>
+<li>将来时除了有be going to, will + do, 还有be to do, be about to do.</li>
+<li>play a part in<ul>
+<li>在。。。起作用。</li>
+</ul>
+</li>
+<li>must have + 过去分词<ul>
+<li>过去一定做了某事，表示对过去的肯定推测。</li>
+</ul>
+</li>
+<li>could have + 过去分词<ul>
+<li>本来能够做….</li>
+</ul>
+</li>
+<li>another + 基数词 + 名词复数<ul>
+<li>另外/在多少个</li>
+<li>I want another three apples.</li>
+<li>我还需要三个苹果。</li>
+</ul>
+</li>
+<li>mind doing sth.<ul>
+<li>介意做某事</li>
+</ul>
+</li>
+<li>to help you to out <ul>
+<li>表示目的</li>
+</ul>
+</li>
+<li>be going to + 一般现在时（leaves）</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;No sooner ····· then      &lt;ul&gt;
+&lt;li&gt;一。。。就。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;not so much …as&lt;ul&gt;
+&lt;li&gt;与其。。不如&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;no more…than&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不过，仅仅；至多，同。。。一样不&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>英语单词</title>
+    <link href="http://xuzihao.fun/%E5%8D%95%E8%AF%8D.html"/>
+    <id>http://xuzihao.fun/单词.html</id>
+    <published>2017-10-18T12:24:00.000Z</published>
+    <updated>2017-11-12T07:57:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>delicate| 易碎的</li>
+<li>idleness| 懒惰</li>
+<li>tell the truth | 说实话</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>tell a lie / tell lies| 说谎话</li>
+<li>hold the view 持某种看法;认为.</li>
+<li>in view of | 鉴于，考虑到</li>
+<li>working on | 从事于；致力于</li>
+<li>set free | 释放</li>
+<li>run into | 偶然</li>
+<li>allow | 允许，给予(人)</li>
+<li>for fear of | 生怕，以免</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;delicate| 易碎的&lt;/li&gt;
+&lt;li&gt;idleness| 懒惰&lt;/li&gt;
+&lt;li&gt;tell the truth | 说实话&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
@@ -1959,45 +2308,6 @@
     
     
       <category term="CSS" scheme="http://xuzihao.fun/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用阿里云oss踩得坑</title>
-    <link href="http://xuzihao.fun/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91oss%E8%B8%A9%E5%BE%97%E5%9D%91.html"/>
-    <id>http://xuzihao.fun/使用阿里云oss踩得坑.html</id>
-    <published>2017-08-22T06:44:24.000Z</published>
-    <updated>2017-08-22T06:46:25.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Provisional-headers-are-shown"><a href="#Provisional-headers-are-shown" class="headerlink" title="Provisional headers are shown"></a>Provisional headers are shown</h1><p>首先我现在console里看见以下报错：</p>
-<p><img src="/images/oss1.png" alt="oss1"></p>
-<a id="more"></a>
-<p>接着我去了network里看：</p>
-<p><img src="/images/oss3.png" alt="oss3"></p>
-<p>最后找到了根本问题所在：</p>
-<p>因为我在<strong>https</strong>的网页中，是不允许我去发<strong>http</strong>的请求，所以我需要去自己发起请求的client代码中加入secure：true。</p>
-<p><img src="/images/oss2.png" alt="oss2"></p>
-<h1 id="ErrorCode-AccessForbidden"><a href="#ErrorCode-AccessForbidden" class="headerlink" title="ErrorCode: AccessForbidden"></a>ErrorCode: AccessForbidden</h1><p><img src="/images/oss4.png" alt="oss4"></p>
-<p>如果遇到以上问题，那肯定是你的 <strong>CORS</strong>没有配置或者配置不对。</p>
-<p>我们需要到阿里云的的OSS控制台中做以下设置：</p>
-<p><img src="/images/oss5.png" alt="oss5"></p>
-<p>以下也是上述没设置好的错，错误为：<strong>出错请求的HTTP状态码</strong></p>
-<p><img src="/images/oss6.png" alt="oss6"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Provisional-headers-are-shown&quot;&gt;&lt;a href=&quot;#Provisional-headers-are-shown&quot; class=&quot;headerlink&quot; title=&quot;Provisional headers are shown&quot;&gt;&lt;/a&gt;Provisional headers are shown&lt;/h1&gt;&lt;p&gt;首先我现在console里看见以下报错：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/oss1.png&quot; alt=&quot;oss1&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="阿里云服务的使用" scheme="http://xuzihao.fun/categories/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    
-    
-      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
-    
-      <category term="node.js" scheme="http://xuzihao.fun/tags/node-js/"/>
     
   </entry>
   
