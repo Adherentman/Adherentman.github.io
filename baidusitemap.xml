@@ -5,10 +5,10 @@
     
   <url>
     <loc>http://xuzihao.fun/Prettier-Options.html</loc>
-    <lastmod>2018-02-09T09:50:18.236Z</lastmod>
+    <lastmod>2018-03-05T07:27:16.739Z</lastmod>
     <data>
         <display>
-        <title>JavaScript基本概念（高程3）</title>
+        <title>Prettier Option</title>
         <pubTime>2018-02-09T09:50:00.000Z</pubTime>
         
         <tag>前端工具</tag>
@@ -17,6 +17,26 @@
            
              
               <breadCrumb title="前端工具" url="http://xuzihao.fun/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xuzihao.fun/Css3%E9%80%89%E6%8B%A9%E5%99%A8.html</loc>
+    <lastmod>2018-03-05T07:26:02.427Z</lastmod>
+    <data>
+        <display>
+        <title>CSS3选择器</title>
+        <pubTime>2018-03-05T07:23:00.000Z</pubTime>
+        
+        <tag>CSS</tag>
+         
+         
+           
+             
+              <breadCrumb title="CSS" url="http://xuzihao.fun/categories/CSS/"/>
           
         </display>
     </data>

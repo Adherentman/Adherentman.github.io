@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-02-09T09:50:18.236Z</updated>
+  <updated>2018-03-05T07:26:02.427Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -16,11 +16,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>JavaScript基本概念（高程3）</title>
+    <title>CSS3选择器</title>
+    <link href="http://xuzihao.fun/Css3%E9%80%89%E6%8B%A9%E5%99%A8.html"/>
+    <id>http://xuzihao.fun/Css3选择器.html</id>
+    <published>2018-03-05T07:23:00.000Z</published>
+    <updated>2018-03-05T07:26:02.427Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Css3选择器"><a href="#Css3选择器" class="headerlink" title="Css3选择器"></a>Css3选择器</h1><p>在写css最基本的就是如何去选择节点去改变样式了。特地做了个思维导图把现有的选择器都做成了个思维导图，有不足的地方大家来提意见！</p>
+<p><img src="http://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/CSS3%E9%80%89%E6%8B%A9%E5%99%A8.png" alt="CSS选择器"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Css3选择器&quot;&gt;&lt;a href=&quot;#Css3选择器&quot; class=&quot;headerlink&quot; title=&quot;Css3选择器&quot;&gt;&lt;/a&gt;Css3选择器&lt;/h1&gt;&lt;p&gt;在写css最基本的就是如何去选择节点去改变样式了。特地做了个思维导图把现有的选择器都做成了个思维导图
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://xuzihao.fun/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="http://xuzihao.fun/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Prettier Option</title>
     <link href="http://xuzihao.fun/Prettier-Options.html"/>
     <id>http://xuzihao.fun/Prettier-Options.html</id>
     <published>2018-02-09T09:50:00.000Z</published>
-    <updated>2018-02-09T09:50:18.236Z</updated>
+    <updated>2018-03-05T07:27:16.739Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Prettier-Option"><a href="#Prettier-Option" class="headerlink" title="Prettier Option"></a>Prettier Option</h1><p>.Prettierrc</p>
 <p>Cli是在终端使用，</p>
@@ -1613,208 +1637,6 @@
   </entry>
   
   <entry>
-    <title>英语时态</title>
-    <link href="http://xuzihao.fun/%E6%97%B6%E6%80%81.html"/>
-    <id>http://xuzihao.fun/时态.html</id>
-    <published>2017-10-18T12:24:00.000Z</published>
-    <updated>2017-11-12T07:57:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="英语语法——时态"><a href="#英语语法——时态" class="headerlink" title="英语语法——时态"></a>英语语法——时态</h1><p>时间概念包含四种，<strong>过去</strong>、<strong>现在</strong>、<strong>将来</strong>和<strong>过去将来</strong>。</p>
-<p>动作方面包含四种，<strong>一般</strong>、<strong>进行</strong>、<strong>完成</strong>和<strong>完成进行</strong>。</p>
-<p>将时间概念和动作方面结合一起，就能构成16种时态。</p>
-<ul>
-<li>一般现在时</li>
-<li>现在进行时</li>
-<li>现在完成时</li>
-<li>现在完成进行时</li>
-</ul>
-<a id="more"></a>
-<p><br></p>
-<ul>
-<li>一般过去时</li>
-<li>过去进行时</li>
-<li>过去完成时</li>
-<li><p>过去完成进行时<br><br></p>
-</li>
-<li><p>一般将来时</p>
-</li>
-<li>将来进行时</li>
-<li>将来完成时</li>
-<li>将来完成进行时</li>
-</ul>
-<p><br></p>
-<ul>
-<li>一般过去将来时</li>
-<li>一般过去将来进行时</li>
-<li>一般过去将来完成时</li>
-<li>一般过去将来完成进行</li>
-</ul>
-<blockquote>
-<p><a href="https://www.zhihu.com/question/19721822" target="_blank" rel="external">以下图片和部分文字参考自知乎赛门喵</a></p>
-</blockquote>
-<p><img src="/image/时态.jpg" alt="时态"></p>
-<p>谓语动词有「时间」和「状态」两个属性。结构上也由「时间+时间状态」构成</p>
-<p><strong>将上图总结成一个表：</strong></p>
-<p><img src="/image/时态总结.jpg" alt="时态总结"></p>
-<p>表格中的「助动词」突出「时间」，「主动词」突出动作「状态」。</p>
-<p>动词原形通过两次变形，第一次具有了「动作状态」属性。第二次具有了「时间」属性，完成到了谓语动词的转换。</p>
-<p>「时间」+「动作状态」的方式，一方面帮助了我们了解时态的的本质，更让我们可以毫不费力的记住16种时态。</p>
-<h2 id="接下来细致的说明这16种时态"><a href="#接下来细致的说明这16种时态" class="headerlink" title="接下来细致的说明这16种时态"></a>接下来细致的说明这16种时态</h2><ul>
-<li><h3 id="一般"><a href="#一般" class="headerlink" title="一般"></a>一般</h3><ul>
-<li>概念：仅仅陈诉一个事实（fact）</li>
-<li>形式：动词原形，我们用play。</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">I played baskerball. 								我过去（以前）打篮球。</div><div class="line">I play baskerball.								我现在打篮球。</div><div class="line">I will play baskerball.								我将要打篮球。</div><div class="line">I didn&apos;t know if he would come.  						我不知道她是否回来。</div></pre></td></tr></table></figure>
-<blockquote>
-<p>did + play = played = 过去 + 一般体 = 一般过去时</p>
-<p>do/does + play = play/plays = 现在 + 一般体 = 一般现在时</p>
-<p>will + play = will play = 将来 + 一般体 = 一般将来时</p>
-<p>would + come = would come = 过去将来 + 一般体 = 一般过去将来时</p>
-</blockquote>
-<ul>
-<li><h3 id="进行"><a href="#进行" class="headerlink" title="进行"></a>进行</h3><ul>
-<li><p>概念：表示动作正在发生</p>
-</li>
-<li><p>形式：ing</p>
-<ul>
-<li><h4 id="过去进行时-was-were"><a href="#过去进行时-was-were" class="headerlink" title="过去进行时(was/ were)"></a>过去进行时(was/ were)</h4><p>We were discussing the decoration problem 10 minutes ago.<br>10分钟前，我们正讨论装修的问题。</p>
-<p>​<br><br>I was cooking when you <strong><em>knocked</em></strong> at the door.</p>
-<p>你敲门时我正在做饭。</p>
-</li>
-<li><h4 id="现在进行时-am-is-are"><a href="#现在进行时-am-is-are" class="headerlink" title="现在进行时(am/ is/ are)"></a>现在进行时(am/ is/ are)</h4><p>I’m felling better now.                    </p>
-<p><strong>//表示正在进行的动作</strong></p>
-<p>我现在感觉好多了。</p>
-<p><br><br>We are leaving tomorrow.               </p>
-<p><strong>//有些瞬间动词用进行时表将来</strong></p>
-<p>我们明天离开。</p>
-<p><br><br>​     He is always asking such foolish questions.            </p>
-<p>  <strong>//表示某动作反复发生</strong></p>
-<p>​  他总是问如此愚蠢的问题。</p>
-<p><br><br>​  You are being modest.                    </p>
-<p>​  <strong>//“an, are, is+bing” 强调被描述情况或状态的暂时性。</strong></p>
-<p>​  你这会儿倒是挺谦虚的。</p>
-<p>  <br><br>  he is buying a new bike soon.        </p>
-<p>  <strong>//在时间和条件状语从句中，现在进行时表示将来的动作。</strong></p>
-<p>  她不久将买一辆新自行车。    </p>
-</li>
-<li><h4 id="将来进行时-will-be"><a href="#将来进行时-will-be" class="headerlink" title="将来进行时(will be)"></a>将来进行时(will be)</h4><p>The train will be leaving in a second.</p>
-<p>火车就要开了。</p>
-<p>What will you be doing this time tomorrow？</p>
-<p>明天这个时候你将做什么？</p>
-</li>
-<li><h4 id="过去将来进行时-should-be-would-be"><a href="#过去将来进行时-should-be-would-be" class="headerlink" title="过去将来进行时(should be/ would be)"></a>过去将来进行时(should be/ would be)</h4><p>I never realized that someday I would be living in Africa.</p>
-<p>我以前从没想过将来有一天我会生活在非洲。 </p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h3 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h3><ul>
-<li><p>概念：表示动作完成了</p>
-</li>
-<li><p>形式：过去分词，drunk</p>
-<ul>
-<li><h4 id="过去完成时-had-done"><a href="#过去完成时-had-done" class="headerlink" title="过去完成时(had) + done"></a>过去完成时(had) + done</h4><p>Up to the end of last year, the aim <strong>had been achieved</strong> to cut energy use by 80%.            </p>
-<p><strong>//过去的过去的动作或状态，“up to/ before/ by + 过去时间”作时间状语。</strong></p>
-<p>到去年年底，已经实现节能80%的目标。</p>
-<p><br></p>
-<p>There <strong>had been</strong> someone in our room just now, because i noticed a burning cigarette end on the floor when we opened the front door.</p>
-<p><strong>//过去的过去。这种逻辑关系通过上下文体现</strong></p>
-<p>刚才有人在我们的房间里，因为我们打开前门进来时，我注意到地板上有一个仍在燃烧的烟头</p>
-</li>
-<li><h4 id="现在完成时-hava-has-done"><a href="#现在完成时-hava-has-done" class="headerlink" title="现在完成时(hava/ has) + done"></a>现在完成时(hava/ has) + done</h4><p>She <strong>has won</strong> prizes for her records.</p>
-<p><strong>//表示从过去某时刻开始，持续到现在的动作或情况，并且有可能会继续延续下去。</strong></p>
-<p>她的唱片曾获奖过几次奖。</p>
-<p><br><br>For years i <strong>have been interested</strong> in engineering.</p>
-<p><strong>//时间状语常用since加一个过去的时间点，或for加一段时间</strong></p>
-<p>多年来，我一直对工程学感兴趣。</p>
-<p><br><br>I <strong>have been here</strong> since last June.</p>
-<p>从去年6月起，我一直在这里。</p>
-<p><br><br>A moment please, I <strong>have almost finished</strong> the report.</p>
-<p><strong>//表示发生在过去， 但对现在仍有影响的动作或情况，通常用瞬间动词“arrive begin, find, give, finish, lose”</strong></p>
-<p>稍等，我的报告就快完成了。</p>
-</li>
-<li><h4 id="将来完成时-will-have-done"><a href="#将来完成时-will-have-done" class="headerlink" title="将来完成时(will have) + done"></a>将来完成时(will have) + done</h4><p>If you come at 6 p.m, I shall not yet <strong>have finished</strong> dinner.</p>
-<p><strong>//表示将来某一时间之前完成的动作，并往往对将来某一时间产生影响。</strong></p>
-<p>你若下午6点来，我还没吃完晚饭呢。</p>
-<p><br><br>You must take a taxi, otherwise the train <strong>will have</strong> left <strong>by the time</strong> you get to the station.</p>
-<p><strong>//常用 “before + 将来时间点”或“by + 将来时间点”作时间状语</strong></p>
-<p>你必须坐出租，否则等你到了车站火车都开走了。</p>
-<p><br><br>Before long, he <strong>will have forgotten</strong> all about the matter.</p>
-<p>过不久，他就将把这事儿忘记了。</p>
-</li>
-<li><h4 id="过去将来完成时-would-have-done"><a href="#过去将来完成时-would-have-done" class="headerlink" title="过去将来完成时(would have) + done"></a>过去将来完成时(would have) + done</h4><p>He said that he <strong>would have done</strong> with my camera by the end of next week.</p>
-<p><strong>//表示在过去将来某一时间以前发生的动作，并往往会对过去将来某一时间产生影响</strong></p>
-<p>他说到下周末就不用我的照相机了。</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h3 id="完成进行"><a href="#完成进行" class="headerlink" title="完成进行"></a>完成进行</h3><ul>
-<li>概念： 表明动作(暂时)完成了，并且还要继续</li>
-<li><p>形式： been + (base form) ing</p>
-<ul>
-<li><h4 id="过去完成进行时-had-been-doing"><a href="#过去完成进行时-had-been-doing" class="headerlink" title="过去完成进行时(had) + been doing"></a>过去完成进行时(had) + been doing</h4><p>He was tired. He <strong>had been working</strong> all day.</p>
-<p><strong>//和过去完成时一样，过去完成进行时也必须以一个过去的事就为前提。</strong></p>
-<p>他累了，他工作了一整天。</p>
-<p>It <strong>had been raining</strong> heavily for two days and the ground was very wet.</p>
-<p>连着下了两天大雨，地上很湿。</p>
-</li>
-<li><h4 id="现在完成进行时-have-has-been-doing"><a href="#现在完成进行时-have-has-been-doing" class="headerlink" title="现在完成进行时(have/ has) + been doing"></a>现在完成进行时(have/ has) + been doing</h4><p>We <strong>have been working</strong> on this project for over a month now.</p>
-<p><strong>//表示某一动作开始于过去某一时间，延续或重复的出现至今，或将继续延续至将来。</strong></p>
-<p>到目前为止，我们一直在处理那个项目，已经花了一个多月时间了。</p>
-<p><strong>//与现在完成时相比，现在完成时进行时更强调在从过去到现在的时间里，动作或状态一直持续或一直反复出现。</strong></p>
-</li>
-<li><h4 id="将来完成进行时-will-have-been-doing"><a href="#将来完成进行时-will-have-been-doing" class="headerlink" title="将来完成进行时(will have) + been doing"></a>将来完成进行时(will have) + been doing</h4><p>If we don’t hurry up the store <strong>will have been closing</strong> before we get there.</p>
-<p><strong>//表示动作从某一时间开始一直延续到将来某一时间。</strong></p>
-<p>如果我们不快一点儿， 等到了那儿，商店早关门了。</p>
-<p>By then, we <strong>will have been cooperating</strong> for half a year.</p>
-<p>到那时为止，我们就将会合作半年了。</p>
-</li>
-<li><h4 id="过去将来完成进行时-would-have-been-doing"><a href="#过去将来完成进行时-would-have-been-doing" class="headerlink" title="过去将来完成进行时(would have) + been doing"></a>过去将来完成进行时(would have) + been doing</h4><p>He said that by the end of July he <strong>would have been studing</strong> German for six months.</p>
-<p><strong>//表示动作从过去某一时间开始一直延续到过去将来某一时间</strong></p>
-<p>他说到7月底，他学德语就有半年了。</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><br><br><br></p>
-<p>  <a href="https://link.zhihu.com/?target=http%3A//blog.tarwon.com/english-grammar.html/" target="_blank" rel="external">以下未满18岁请自动屏蔽LoVe 这段我无意间看见</a></p>
-<blockquote>
-<p><strong>一般现在时:I make love with her everyday.</strong><br>一般过去时:I made love with her yesterday.<br>一般将来时:I will make love with her tomorrow.</p>
-<p><strong>现在进行时:I am making love with her.</strong><br>过去进行时:I was making love with her at this time yesterday.<br>将来进行时:I will be making love with her at this time tomorrow.</p>
-<p><strong>现在完成时:I have made love with her by now.</strong><br>过去完成时:I had made love with her before yesterday.<br>将来完成时:I will have made love with her by tomorrow.</p>
-<p><strong>现在完成进行时:I have been making love with her for two hours.</strong><br>过去完成进行时:I had been making love with her for two hours when her husband came in.<br>将来完成进行时:I will have been making love with her for two hours when her husband wakes up tomorrow morning.</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;英语语法——时态&quot;&gt;&lt;a href=&quot;#英语语法——时态&quot; class=&quot;headerlink&quot; title=&quot;英语语法——时态&quot;&gt;&lt;/a&gt;英语语法——时态&lt;/h1&gt;&lt;p&gt;时间概念包含四种，&lt;strong&gt;过去&lt;/strong&gt;、&lt;strong&gt;现在&lt;/strong&gt;、&lt;strong&gt;将来&lt;/strong&gt;和&lt;strong&gt;过去将来&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;动作方面包含四种，&lt;strong&gt;一般&lt;/strong&gt;、&lt;strong&gt;进行&lt;/strong&gt;、&lt;strong&gt;完成&lt;/strong&gt;和&lt;strong&gt;完成进行&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;将时间概念和动作方面结合一起，就能构成16种时态。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;一般现在时&lt;/li&gt;
-&lt;li&gt;现在进行时&lt;/li&gt;
-&lt;li&gt;现在完成时&lt;/li&gt;
-&lt;li&gt;现在完成进行时&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
-    
-  </entry>
-  
-  <entry>
     <title>英语例句</title>
     <link href="http://xuzihao.fun/%E4%BE%8B%E5%8F%A5.html"/>
     <id>http://xuzihao.fun/例句.html</id>
@@ -2020,6 +1842,208 @@
   </entry>
   
   <entry>
+    <title>英语时态</title>
+    <link href="http://xuzihao.fun/%E6%97%B6%E6%80%81.html"/>
+    <id>http://xuzihao.fun/时态.html</id>
+    <published>2017-10-18T12:24:00.000Z</published>
+    <updated>2017-11-12T07:57:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="英语语法——时态"><a href="#英语语法——时态" class="headerlink" title="英语语法——时态"></a>英语语法——时态</h1><p>时间概念包含四种，<strong>过去</strong>、<strong>现在</strong>、<strong>将来</strong>和<strong>过去将来</strong>。</p>
+<p>动作方面包含四种，<strong>一般</strong>、<strong>进行</strong>、<strong>完成</strong>和<strong>完成进行</strong>。</p>
+<p>将时间概念和动作方面结合一起，就能构成16种时态。</p>
+<ul>
+<li>一般现在时</li>
+<li>现在进行时</li>
+<li>现在完成时</li>
+<li>现在完成进行时</li>
+</ul>
+<a id="more"></a>
+<p><br></p>
+<ul>
+<li>一般过去时</li>
+<li>过去进行时</li>
+<li>过去完成时</li>
+<li><p>过去完成进行时<br><br></p>
+</li>
+<li><p>一般将来时</p>
+</li>
+<li>将来进行时</li>
+<li>将来完成时</li>
+<li>将来完成进行时</li>
+</ul>
+<p><br></p>
+<ul>
+<li>一般过去将来时</li>
+<li>一般过去将来进行时</li>
+<li>一般过去将来完成时</li>
+<li>一般过去将来完成进行</li>
+</ul>
+<blockquote>
+<p><a href="https://www.zhihu.com/question/19721822" target="_blank" rel="external">以下图片和部分文字参考自知乎赛门喵</a></p>
+</blockquote>
+<p><img src="/image/时态.jpg" alt="时态"></p>
+<p>谓语动词有「时间」和「状态」两个属性。结构上也由「时间+时间状态」构成</p>
+<p><strong>将上图总结成一个表：</strong></p>
+<p><img src="/image/时态总结.jpg" alt="时态总结"></p>
+<p>表格中的「助动词」突出「时间」，「主动词」突出动作「状态」。</p>
+<p>动词原形通过两次变形，第一次具有了「动作状态」属性。第二次具有了「时间」属性，完成到了谓语动词的转换。</p>
+<p>「时间」+「动作状态」的方式，一方面帮助了我们了解时态的的本质，更让我们可以毫不费力的记住16种时态。</p>
+<h2 id="接下来细致的说明这16种时态"><a href="#接下来细致的说明这16种时态" class="headerlink" title="接下来细致的说明这16种时态"></a>接下来细致的说明这16种时态</h2><ul>
+<li><h3 id="一般"><a href="#一般" class="headerlink" title="一般"></a>一般</h3><ul>
+<li>概念：仅仅陈诉一个事实（fact）</li>
+<li>形式：动词原形，我们用play。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">I played baskerball. 								我过去（以前）打篮球。</div><div class="line">I play baskerball.								我现在打篮球。</div><div class="line">I will play baskerball.								我将要打篮球。</div><div class="line">I didn&apos;t know if he would come.  						我不知道她是否回来。</div></pre></td></tr></table></figure>
+<blockquote>
+<p>did + play = played = 过去 + 一般体 = 一般过去时</p>
+<p>do/does + play = play/plays = 现在 + 一般体 = 一般现在时</p>
+<p>will + play = will play = 将来 + 一般体 = 一般将来时</p>
+<p>would + come = would come = 过去将来 + 一般体 = 一般过去将来时</p>
+</blockquote>
+<ul>
+<li><h3 id="进行"><a href="#进行" class="headerlink" title="进行"></a>进行</h3><ul>
+<li><p>概念：表示动作正在发生</p>
+</li>
+<li><p>形式：ing</p>
+<ul>
+<li><h4 id="过去进行时-was-were"><a href="#过去进行时-was-were" class="headerlink" title="过去进行时(was/ were)"></a>过去进行时(was/ were)</h4><p>We were discussing the decoration problem 10 minutes ago.<br>10分钟前，我们正讨论装修的问题。</p>
+<p>​<br><br>I was cooking when you <strong><em>knocked</em></strong> at the door.</p>
+<p>你敲门时我正在做饭。</p>
+</li>
+<li><h4 id="现在进行时-am-is-are"><a href="#现在进行时-am-is-are" class="headerlink" title="现在进行时(am/ is/ are)"></a>现在进行时(am/ is/ are)</h4><p>I’m felling better now.                    </p>
+<p><strong>//表示正在进行的动作</strong></p>
+<p>我现在感觉好多了。</p>
+<p><br><br>We are leaving tomorrow.               </p>
+<p><strong>//有些瞬间动词用进行时表将来</strong></p>
+<p>我们明天离开。</p>
+<p><br><br>​     He is always asking such foolish questions.            </p>
+<p>  <strong>//表示某动作反复发生</strong></p>
+<p>​  他总是问如此愚蠢的问题。</p>
+<p><br><br>​  You are being modest.                    </p>
+<p>​  <strong>//“an, are, is+bing” 强调被描述情况或状态的暂时性。</strong></p>
+<p>​  你这会儿倒是挺谦虚的。</p>
+<p>  <br><br>  he is buying a new bike soon.        </p>
+<p>  <strong>//在时间和条件状语从句中，现在进行时表示将来的动作。</strong></p>
+<p>  她不久将买一辆新自行车。    </p>
+</li>
+<li><h4 id="将来进行时-will-be"><a href="#将来进行时-will-be" class="headerlink" title="将来进行时(will be)"></a>将来进行时(will be)</h4><p>The train will be leaving in a second.</p>
+<p>火车就要开了。</p>
+<p>What will you be doing this time tomorrow？</p>
+<p>明天这个时候你将做什么？</p>
+</li>
+<li><h4 id="过去将来进行时-should-be-would-be"><a href="#过去将来进行时-should-be-would-be" class="headerlink" title="过去将来进行时(should be/ would be)"></a>过去将来进行时(should be/ would be)</h4><p>I never realized that someday I would be living in Africa.</p>
+<p>我以前从没想过将来有一天我会生活在非洲。 </p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h3 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h3><ul>
+<li><p>概念：表示动作完成了</p>
+</li>
+<li><p>形式：过去分词，drunk</p>
+<ul>
+<li><h4 id="过去完成时-had-done"><a href="#过去完成时-had-done" class="headerlink" title="过去完成时(had) + done"></a>过去完成时(had) + done</h4><p>Up to the end of last year, the aim <strong>had been achieved</strong> to cut energy use by 80%.            </p>
+<p><strong>//过去的过去的动作或状态，“up to/ before/ by + 过去时间”作时间状语。</strong></p>
+<p>到去年年底，已经实现节能80%的目标。</p>
+<p><br></p>
+<p>There <strong>had been</strong> someone in our room just now, because i noticed a burning cigarette end on the floor when we opened the front door.</p>
+<p><strong>//过去的过去。这种逻辑关系通过上下文体现</strong></p>
+<p>刚才有人在我们的房间里，因为我们打开前门进来时，我注意到地板上有一个仍在燃烧的烟头</p>
+</li>
+<li><h4 id="现在完成时-hava-has-done"><a href="#现在完成时-hava-has-done" class="headerlink" title="现在完成时(hava/ has) + done"></a>现在完成时(hava/ has) + done</h4><p>She <strong>has won</strong> prizes for her records.</p>
+<p><strong>//表示从过去某时刻开始，持续到现在的动作或情况，并且有可能会继续延续下去。</strong></p>
+<p>她的唱片曾获奖过几次奖。</p>
+<p><br><br>For years i <strong>have been interested</strong> in engineering.</p>
+<p><strong>//时间状语常用since加一个过去的时间点，或for加一段时间</strong></p>
+<p>多年来，我一直对工程学感兴趣。</p>
+<p><br><br>I <strong>have been here</strong> since last June.</p>
+<p>从去年6月起，我一直在这里。</p>
+<p><br><br>A moment please, I <strong>have almost finished</strong> the report.</p>
+<p><strong>//表示发生在过去， 但对现在仍有影响的动作或情况，通常用瞬间动词“arrive begin, find, give, finish, lose”</strong></p>
+<p>稍等，我的报告就快完成了。</p>
+</li>
+<li><h4 id="将来完成时-will-have-done"><a href="#将来完成时-will-have-done" class="headerlink" title="将来完成时(will have) + done"></a>将来完成时(will have) + done</h4><p>If you come at 6 p.m, I shall not yet <strong>have finished</strong> dinner.</p>
+<p><strong>//表示将来某一时间之前完成的动作，并往往对将来某一时间产生影响。</strong></p>
+<p>你若下午6点来，我还没吃完晚饭呢。</p>
+<p><br><br>You must take a taxi, otherwise the train <strong>will have</strong> left <strong>by the time</strong> you get to the station.</p>
+<p><strong>//常用 “before + 将来时间点”或“by + 将来时间点”作时间状语</strong></p>
+<p>你必须坐出租，否则等你到了车站火车都开走了。</p>
+<p><br><br>Before long, he <strong>will have forgotten</strong> all about the matter.</p>
+<p>过不久，他就将把这事儿忘记了。</p>
+</li>
+<li><h4 id="过去将来完成时-would-have-done"><a href="#过去将来完成时-would-have-done" class="headerlink" title="过去将来完成时(would have) + done"></a>过去将来完成时(would have) + done</h4><p>He said that he <strong>would have done</strong> with my camera by the end of next week.</p>
+<p><strong>//表示在过去将来某一时间以前发生的动作，并往往会对过去将来某一时间产生影响</strong></p>
+<p>他说到下周末就不用我的照相机了。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h3 id="完成进行"><a href="#完成进行" class="headerlink" title="完成进行"></a>完成进行</h3><ul>
+<li>概念： 表明动作(暂时)完成了，并且还要继续</li>
+<li><p>形式： been + (base form) ing</p>
+<ul>
+<li><h4 id="过去完成进行时-had-been-doing"><a href="#过去完成进行时-had-been-doing" class="headerlink" title="过去完成进行时(had) + been doing"></a>过去完成进行时(had) + been doing</h4><p>He was tired. He <strong>had been working</strong> all day.</p>
+<p><strong>//和过去完成时一样，过去完成进行时也必须以一个过去的事就为前提。</strong></p>
+<p>他累了，他工作了一整天。</p>
+<p>It <strong>had been raining</strong> heavily for two days and the ground was very wet.</p>
+<p>连着下了两天大雨，地上很湿。</p>
+</li>
+<li><h4 id="现在完成进行时-have-has-been-doing"><a href="#现在完成进行时-have-has-been-doing" class="headerlink" title="现在完成进行时(have/ has) + been doing"></a>现在完成进行时(have/ has) + been doing</h4><p>We <strong>have been working</strong> on this project for over a month now.</p>
+<p><strong>//表示某一动作开始于过去某一时间，延续或重复的出现至今，或将继续延续至将来。</strong></p>
+<p>到目前为止，我们一直在处理那个项目，已经花了一个多月时间了。</p>
+<p><strong>//与现在完成时相比，现在完成时进行时更强调在从过去到现在的时间里，动作或状态一直持续或一直反复出现。</strong></p>
+</li>
+<li><h4 id="将来完成进行时-will-have-been-doing"><a href="#将来完成进行时-will-have-been-doing" class="headerlink" title="将来完成进行时(will have) + been doing"></a>将来完成进行时(will have) + been doing</h4><p>If we don’t hurry up the store <strong>will have been closing</strong> before we get there.</p>
+<p><strong>//表示动作从某一时间开始一直延续到将来某一时间。</strong></p>
+<p>如果我们不快一点儿， 等到了那儿，商店早关门了。</p>
+<p>By then, we <strong>will have been cooperating</strong> for half a year.</p>
+<p>到那时为止，我们就将会合作半年了。</p>
+</li>
+<li><h4 id="过去将来完成进行时-would-have-been-doing"><a href="#过去将来完成进行时-would-have-been-doing" class="headerlink" title="过去将来完成进行时(would have) + been doing"></a>过去将来完成进行时(would have) + been doing</h4><p>He said that by the end of July he <strong>would have been studing</strong> German for six months.</p>
+<p><strong>//表示动作从过去某一时间开始一直延续到过去将来某一时间</strong></p>
+<p>他说到7月底，他学德语就有半年了。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><br><br><br></p>
+<p>  <a href="https://link.zhihu.com/?target=http%3A//blog.tarwon.com/english-grammar.html/" target="_blank" rel="external">以下未满18岁请自动屏蔽LoVe 这段我无意间看见</a></p>
+<blockquote>
+<p><strong>一般现在时:I make love with her everyday.</strong><br>一般过去时:I made love with her yesterday.<br>一般将来时:I will make love with her tomorrow.</p>
+<p><strong>现在进行时:I am making love with her.</strong><br>过去进行时:I was making love with her at this time yesterday.<br>将来进行时:I will be making love with her at this time tomorrow.</p>
+<p><strong>现在完成时:I have made love with her by now.</strong><br>过去完成时:I had made love with her before yesterday.<br>将来完成时:I will have made love with her by tomorrow.</p>
+<p><strong>现在完成进行时:I have been making love with her for two hours.</strong><br>过去完成进行时:I had been making love with her for two hours when her husband came in.<br>将来完成进行时:I will have been making love with her for two hours when her husband wakes up tomorrow morning.</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;英语语法——时态&quot;&gt;&lt;a href=&quot;#英语语法——时态&quot; class=&quot;headerlink&quot; title=&quot;英语语法——时态&quot;&gt;&lt;/a&gt;英语语法——时态&lt;/h1&gt;&lt;p&gt;时间概念包含四种，&lt;strong&gt;过去&lt;/strong&gt;、&lt;strong&gt;现在&lt;/strong&gt;、&lt;strong&gt;将来&lt;/strong&gt;和&lt;strong&gt;过去将来&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;动作方面包含四种，&lt;strong&gt;一般&lt;/strong&gt;、&lt;strong&gt;进行&lt;/strong&gt;、&lt;strong&gt;完成&lt;/strong&gt;和&lt;strong&gt;完成进行&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;将时间概念和动作方面结合一起，就能构成16种时态。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一般现在时&lt;/li&gt;
+&lt;li&gt;现在进行时&lt;/li&gt;
+&lt;li&gt;现在完成时&lt;/li&gt;
+&lt;li&gt;现在完成进行时&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
     <title>React生命周期</title>
     <link href="http://xuzihao.fun/React%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html"/>
     <id>http://xuzihao.fun/React生命周期.html</id>
@@ -2185,122 +2209,6 @@
 &lt;p&gt;本小节参考&lt;a href=&quot;http://www.w3school.com.cn/css/css_margin_collapsing.asp&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;W3school&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;当一个元素出现在另一个元素上面时，第一个元素的下外边距与第二个元素的上外边距会发生合并。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/images/css4.gif&quot; alt=&quot;css4&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="CSS" scheme="http://xuzihao.fun/categories/CSS/"/>
-    
-    
-      <category term="CSS" scheme="http://xuzihao.fun/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>学习CSS(一)</title>
-    <link href="http://xuzihao.fun/%E5%AD%A6CSS%EF%BC%88%E4%B8%80%EF%BC%89.html"/>
-    <id>http://xuzihao.fun/学CSS（一）.html</id>
-    <published>2017-09-04T12:26:00.000Z</published>
-    <updated>2017-09-06T09:48:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="给自己的要求"><a href="#给自己的要求" class="headerlink" title="给自己的要求"></a>给自己的要求</h1><ul>
-<li>class应该用在概念上相似的元素，这些元素可以出现在同一页面上的多个位置。</li>
-<li>ID应该用于不同的唯一的元素。</li>
-</ul>
-<h1 id="DTD（文档类型定义）"><a href="#DTD（文档类型定义）" class="headerlink" title="DTD（文档类型定义）"></a>DTD（文档类型定义）</h1><p>DOCTYPE声明是指HTML文档开头处的一行或两行代码。它描述使用哪个DTD。</p>
-<blockquote>
-<p>但是在HTML5中就不需要URL，浏览器一般不读取这些文件。而是只识别常见的DOCTYPE声明。</p>
-</blockquote>
-<h1 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h1><p>选择器最常用的两种： <strong>类型选择器</strong> 和 <strong>后代选择器</strong> 。</p>
-<a id="more"></a>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*类型选择器*/</span></div><div class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: black; &#125;</div><div class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">font-weight</span>: bold; &#125;</div></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*后代选择器*/</span></div><div class="line"><span class="selector-tag">blockquote</span> <span class="selector-tag">p</span> &#123; <span class="attribute">padding</span>: <span class="number">15px</span>; &#125;</div></pre></td></tr></table></figure>
-<p>还有两种就是： <strong>ID选择器</strong> 和 <strong>类选择器</strong> 。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#intro</span> &#123; <span class="attribute">font-weight</span>: bold; &#125;			<span class="comment">/*ID选择器*/</span></div><div class="line"><span class="selector-class">.date-posted</span> &#123; <span class="attribute">color</span>: <span class="number">#ccc</span>; &#125;			<span class="comment">/*类选择器*/</span></div></pre></td></tr></table></figure>
-<p>但是类选择器和ID选择器用太多也不是很好。下面有一种方法可以以一种方式对主体和副的地方操作css</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#main-content h2 &#123; font-weight: 1.8em; &#125;</div><div class="line">#secondary-content h2 &#123; font-weight: 1.2em; &#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main-content"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">h2</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">	.....</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"secondary-content"</span>&gt;</span></div><div class="line">  	<span class="tag">&lt;<span class="name">h2</span>&gt;</span>Hi<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">  	....</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span> &#123; <span class="attribute">color </span>: blue; &#125;		<span class="comment">/*链接伪类*/</span></div><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123; <span class="attribute">color </span>: green; &#125;	<span class="comment">/*链接伪类*/</span></div><div class="line"><span class="comment">/*链接伪类只能用于锚元素*/</span></div><div class="line"></div><div class="line">动态伪类</div><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>, <span class="selector-tag">a</span><span class="selector-pseudo">:focus</span>, <span class="selector-tag">a</span><span class="selector-pseudo">:active</span> &#123; <span class="attribute">color</span>: red; &#125;		</div><div class="line"><span class="selector-tag">tr</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">background-color</span>: red; &#125;</div><div class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:focus</span> &#123; <span class="attribute">background-color</span>: yellow; &#125;</div><div class="line"></div><div class="line">伪类链接</div><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">color</span>: olive; &#125;</div></pre></td></tr></table></figure>
-<h2 id="通用选择器"><a href="#通用选择器" class="headerlink" title="通用选择器"></a>通用选择器</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">* &#123;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">  	<span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*删除每个元素上默认的浏览器内边距和外边距*/</span></div></pre></td></tr></table></figure>
-<h2 id="高级选择器之—-子选择器"><a href="#高级选择器之—-子选择器" class="headerlink" title="高级选择器之—-子选择器"></a>高级选择器之—-子选择器</h2><p>后代选择器选择一个元素的所有后代，那么子选择器就只选择元素的直接后代啦！</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">#nav&gt;li &#123;</div><div class="line">  font-size: 30px;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"nav"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/home/"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/Services/"</span>&gt;</span>Services<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  		<span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">        	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/Services/design"</span>&gt;</span>Design<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/Services/development"</span>&gt;</span>Development<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/Services/consultancy"</span>&gt;</span>Consultancy<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  		<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/contact"</span>&gt;</span>Contact Us<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><img src="/images/css1.png" alt="css1"></p>
-<p>子选择器指定列表子元素的样式，但是不影响他的孙元素。</p>
-<p>还有根据一个元素与另一个元素的相邻关系对它应用样式。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">h2 + p &#123;</div><div class="line">  font-size: 1.4em;</div><div class="line">  font-weight: blod;</div><div class="line">  color: #777;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>I'm here<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>wow,me too<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><img src="/images/css2.png" alt="css2"></p>
-<p>更新于2017-09-05 21：30</p>
-<h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[title=hi]</div><div class="line">&#123;</div><div class="line">border:5px solid blue;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>可以应用样式：<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">title</span>=<span class="string">"hi"</span> <span class="attr">src</span>=<span class="string">"/nihao.gif"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">title</span>=<span class="string">"hi"</span> <span class="attr">href</span>=<span class="string">"/"</span>&gt;</span>W3School<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">hr</span> /&gt;</span></div></pre></td></tr></table></figure>
-<h1 id="层叠和特殊性"><a href="#层叠和特殊性" class="headerlink" title="层叠和特殊性"></a>层叠和特殊性</h1><h3 id="层叠性"><a href="#层叠性" class="headerlink" title="层叠性"></a>层叠性</h3><p>有 <strong>!important</strong> 标志的规则，它优先于任何规则。</p>
-<h3 id="特殊性"><a href="#特殊性" class="headerlink" title="特殊性"></a>特殊性</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">选择器</th>
-<th style="text-align:center">特殊性</th>
-<th style="text-align:center">以10为基数的特殊性</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Style=“ ”</td>
-<td style="text-align:center">1,0,0,0</td>
-<td style="text-align:center">1000</td>
-</tr>
-<tr>
-<td style="text-align:center">#wrapper #content {}</td>
-<td style="text-align:center">0,2,0,0</td>
-<td style="text-align:center">200</td>
-</tr>
-<tr>
-<td style="text-align:center">#content .datePosted {}</td>
-<td style="text-align:center">0,1,1,0</td>
-<td style="text-align:center">110</td>
-</tr>
-<tr>
-<td style="text-align:center">div#content {}</td>
-<td style="text-align:center">0,1,0,1</td>
-<td style="text-align:center">101</td>
-</tr>
-<tr>
-<td style="text-align:center">#content {}</td>
-<td style="text-align:center">0,1,0,0</td>
-<td style="text-align:center">100</td>
-</tr>
-<tr>
-<td style="text-align:center">p.comment .dateposted {}</td>
-<td style="text-align:center">0,0,2,1</td>
-<td style="text-align:center">21</td>
-</tr>
-<tr>
-<td style="text-align:center">p.comment {}</td>
-<td style="text-align:center">0,0,1,1</td>
-<td style="text-align:center">11</td>
-</tr>
-<tr>
-<td style="text-align:center">div p {}</td>
-<td style="text-align:center">0,0,0,2</td>
-<td style="text-align:center">2</td>
-</tr>
-<tr>
-<td style="text-align:center">p {}</td>
-<td style="text-align:center">0,0,0,1</td>
-<td style="text-align:center">1</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">#content div#main-content h2&#123;</div><div class="line">color: gray;</div><div class="line">&#125;</div><div class="line">#content #main-content&gt;h2 &#123;</div><div class="line">color: blue;</div><div class="line">&#125;</div><div class="line">body #content div[div="main-content"] h2 &#123;</div><div class="line">color: green;</div><div class="line">&#125;</div><div class="line">#main-content div.news-story h2 &#123;</div><div class="line">color: orange;</div><div class="line">&#125;</div><div class="line">#main-content [class="news-story"] h2 &#123;</div><div class="line">color: yellow;</div><div class="line">&#125;</div><div class="line">div#main-content div.news-story h2.first &#123;</div><div class="line">color: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"content"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main-content"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>哇<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"news-story"</span>&gt;</span>   </div><div class="line">      <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"first"</span>&gt;</span>BigBong<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>嘻嘻<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><img src="/images/css3.png" alt="css3"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;给自己的要求&quot;&gt;&lt;a href=&quot;#给自己的要求&quot; class=&quot;headerlink&quot; title=&quot;给自己的要求&quot;&gt;&lt;/a&gt;给自己的要求&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;class应该用在概念上相似的元素，这些元素可以出现在同一页面上的多个位置。&lt;/li&gt;
-&lt;li&gt;ID应该用于不同的唯一的元素。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;DTD（文档类型定义）&quot;&gt;&lt;a href=&quot;#DTD（文档类型定义）&quot; class=&quot;headerlink&quot; title=&quot;DTD（文档类型定义）&quot;&gt;&lt;/a&gt;DTD（文档类型定义）&lt;/h1&gt;&lt;p&gt;DOCTYPE声明是指HTML文档开头处的一行或两行代码。它描述使用哪个DTD。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;但是在HTML5中就不需要URL，浏览器一般不读取这些文件。而是只识别常见的DOCTYPE声明。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;选择器&quot;&gt;&lt;a href=&quot;#选择器&quot; class=&quot;headerlink&quot; title=&quot;选择器&quot;&gt;&lt;/a&gt;选择器&lt;/h1&gt;&lt;p&gt;选择器最常用的两种： &lt;strong&gt;类型选择器&lt;/strong&gt; 和 &lt;strong&gt;后代选择器&lt;/strong&gt; 。&lt;/p&gt;
     
     </summary>
     
