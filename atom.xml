@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-03-05T07:26:02.427Z</updated>
+  <updated>2018-03-10T13:25:31.041Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据结构与算法学习</title>
+    <link href="http://xuzihao.fun/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95.html"/>
+    <id>http://xuzihao.fun/数据结构与算法.html</id>
+    <published>2018-03-10T07:33:07.614Z</published>
+    <updated>2018-03-10T13:25:31.041Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">binary_search</span>(<span class="params">array, item</span>)</span>&#123;</div><div class="line">    <span class="keyword">let</span> low = <span class="number">0</span>;</div><div class="line">    <span class="keyword">let</span> high = array.length - <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span>(low &lt;= high)&#123;</div><div class="line">        <span class="keyword">let</span> mid = (low + high) / <span class="number">2</span> &gt;&gt; <span class="number">0</span>;</div><div class="line">        <span class="keyword">let</span> guess = array[mid];</div><div class="line">        <span class="keyword">if</span>(guess == item)&#123;</div><div class="line">            <span class="keyword">return</span> mid;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(guess &gt; item)&#123;</div><div class="line">            high = mid - <span class="number">1</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            low = mid + <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="string">'没有该数字'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * </div><div class="line"> * @param &#123;array&#125; 传入一个需要排序的数组 </div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">quicksort</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span> (arr.length &lt;= <span class="number">1</span>) &#123; <span class="keyword">return</span> arr; &#125;</div><div class="line">  <span class="keyword">let</span> pivotIndex = arr.length / <span class="number">2</span> &gt;&gt; <span class="number">0</span>;</div><div class="line">  <span class="keyword">let</span> pivot = arr.splice(pivotIndex, <span class="number">1</span>)[<span class="number">0</span>];</div><div class="line">  <span class="keyword">let</span> left = [];</div><div class="line">  <span class="keyword">let</span> right = [];</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</div><div class="line">    <span class="keyword">if</span>(arr[i]&lt;pivot)&#123;</div><div class="line">      left.push(arr[i]);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      right.push(arr[i]);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> quicksort(left).concat([pivot], quicksort(right));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h2><ul>
+<li>模拟映射关系；</li>
+<li>防止重复；</li>
+<li>缓存/ 记住数据，以免服务器再通过处理来生成它们。</li>
+<li>一旦填装因子超过0.7 ，就该调整散列表的长度。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;二分查找&quot;&gt;&lt;a href=&quot;#二分查找&quot; class=&quot;headerlink&quot; title=&quot;二分查找&quot;&gt;&lt;/a&gt;二分查找&lt;/h2&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;binary_search&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;array, item&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; low = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; high = array.length - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt;(low &amp;lt;= high)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; mid = (low + high) / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; &amp;gt;&amp;gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; guess = array[mid];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(guess == item)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; mid;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(guess &amp;gt; item)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            high = mid - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            low = mid + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;没有该数字&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="数据结构与算法" scheme="http://xuzihao.fun/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="数据结构与算法" scheme="http://xuzihao.fun/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS3选择器</title>
@@ -1637,211 +1668,6 @@
   </entry>
   
   <entry>
-    <title>英语例句</title>
-    <link href="http://xuzihao.fun/%E4%BE%8B%E5%8F%A5.html"/>
-    <id>http://xuzihao.fun/例句.html</id>
-    <published>2017-10-18T12:24:00.000Z</published>
-    <updated>2017-11-12T07:57:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li>No sooner ····· then      <ul>
-<li>一。。。就。</li>
-</ul>
-</li>
-<li>not so much …as<ul>
-<li>与其。。不如</li>
-</ul>
-</li>
-<li><p>no more…than</p>
-<ul>
-<li><p>不过，仅仅；至多，同。。。一样不</p>
-<a id="more"></a></li>
-</ul>
-</li>
-<li>as…as<ul>
-<li>像。。。一样</li>
-</ul>
-</li>
-<li><p>imagined + sth. + to be + adj.    </p>
-<ul>
-<li>为复合宾语解构</li>
-</ul>
-</li>
-<li><p>put forward to do sth.</p>
-<ul>
-<li>提出要求做某事</li>
-</ul>
-</li>
-<li>get sth. done<ul>
-<li>把某事做了</li>
-</ul>
-</li>
-<li>would rather <ul>
-<li>引导从句的虚拟结构中，如果表示对现在或将来情况的愿望，从句用<strong>过去时</strong>。</li>
-<li>如果是对过去情况的虚拟，从句用<strong>过去完成时</strong>。</li>
-</ul>
-</li>
-<li>never, hardly, seldom, little, not until, not, not only, no sooner, no    longer, nowhere, by no means <ul>
-<li>以上位于句首需要部分倒装</li>
-</ul>
-</li>
-<li>keep diary<ul>
-<li>记日记</li>
-</ul>
-</li>
-<li>can’t help doing sth.<ul>
-<li>忍不住做。。。</li>
-</ul>
-</li>
-<li>be worth doing<ul>
-<li>某（事或物）值得做</li>
-</ul>
-</li>
-<li>be worthy to be done 或 sth. is worthy of being done 以及 sb. be worhty of doing sth. 或者 sb. be worthy to do sth.<ul>
-<li>和 worth 的意思一样</li>
-</ul>
-</li>
-<li>It is/was /will be the first time that …句式<ul>
-<li>主句谓语是is，从句用现在完成时</li>
-<li>主句谓语是was，从句谓语用过去完成时</li>
-<li>主句谓语是will be，从句谓语用一般现在时</li>
-</ul>
-</li>
-<li>be appropriate for sb. 或 be appropriate to do sth.<ul>
-<li>固定搭配</li>
-</ul>
-</li>
-<li>appreciate + doing sth.<ul>
-<li>感激做某事</li>
-</ul>
-</li>
-<li>but to do,但是but之前出现了 do/does/did/done就要 but do</li>
-<li>no mood | in the mood<ul>
-<li>没有心情 | 有好心情</li>
-</ul>
-</li>
-<li>the impression of + doing sth.<ul>
-<li>做过某事的印象</li>
-</ul>
-</li>
-<li>have a(the) right to sth.<ul>
-<li>享有。。的权利</li>
-</ul>
-</li>
-<li>do nothing but <ul>
-<li>此结构后要求动词原形</li>
-</ul>
-</li>
-<li>need doing / need to done<ul>
-<li>需要被</li>
-</ul>
-</li>
-<li>sb. spend some time doing sth.<ul>
-<li>花时间做某事</li>
-</ul>
-</li>
-<li>a large amount of, a great deal of <ul>
-<li>固定搭配</li>
-</ul>
-</li>
-<li>将来时除了有be going to, will + do, 还有be to do, be about to do.</li>
-<li>play a part in<ul>
-<li>在。。。起作用。</li>
-</ul>
-</li>
-<li>must have + 过去分词<ul>
-<li>过去一定做了某事，表示对过去的肯定推测。</li>
-</ul>
-</li>
-<li>could have + 过去分词<ul>
-<li>本来能够做….</li>
-</ul>
-</li>
-<li>another + 基数词 + 名词复数<ul>
-<li>另外/在多少个</li>
-<li>I want another three apples.</li>
-<li>我还需要三个苹果。</li>
-</ul>
-</li>
-<li>mind doing sth.<ul>
-<li>介意做某事</li>
-</ul>
-</li>
-<li>to help you to out <ul>
-<li>表示目的</li>
-</ul>
-</li>
-<li>be going to + 一般现在时（leaves）</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;No sooner ····· then      &lt;ul&gt;
-&lt;li&gt;一。。。就。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;not so much …as&lt;ul&gt;
-&lt;li&gt;与其。。不如&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;no more…than&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;不过，仅仅；至多，同。。。一样不&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英语单词</title>
-    <link href="http://xuzihao.fun/%E5%8D%95%E8%AF%8D.html"/>
-    <id>http://xuzihao.fun/单词.html</id>
-    <published>2017-10-18T12:24:00.000Z</published>
-    <updated>2017-11-12T07:57:05.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li>delicate| 易碎的</li>
-<li>idleness| 懒惰</li>
-<li>tell the truth | 说实话</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li>tell a lie / tell lies| 说谎话</li>
-<li>hold the view 持某种看法;认为.</li>
-<li>in view of | 鉴于，考虑到</li>
-<li>working on | 从事于；致力于</li>
-<li>set free | 释放</li>
-<li>run into | 偶然</li>
-<li>allow | 允许，给予(人)</li>
-<li>for fear of | 生怕，以免</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;delicate| 易碎的&lt;/li&gt;
-&lt;li&gt;idleness| 懒惰&lt;/li&gt;
-&lt;li&gt;tell the truth | 说实话&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
-    
-  </entry>
-  
-  <entry>
     <title>英语时态</title>
     <link href="http://xuzihao.fun/%E6%97%B6%E6%80%81.html"/>
     <id>http://xuzihao.fun/时态.html</id>
@@ -2044,6 +1870,211 @@
   </entry>
   
   <entry>
+    <title>英语单词</title>
+    <link href="http://xuzihao.fun/%E5%8D%95%E8%AF%8D.html"/>
+    <id>http://xuzihao.fun/单词.html</id>
+    <published>2017-10-18T12:24:00.000Z</published>
+    <updated>2017-11-12T07:57:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>delicate| 易碎的</li>
+<li>idleness| 懒惰</li>
+<li>tell the truth | 说实话</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>tell a lie / tell lies| 说谎话</li>
+<li>hold the view 持某种看法;认为.</li>
+<li>in view of | 鉴于，考虑到</li>
+<li>working on | 从事于；致力于</li>
+<li>set free | 释放</li>
+<li>run into | 偶然</li>
+<li>allow | 允许，给予(人)</li>
+<li>for fear of | 生怕，以免</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;delicate| 易碎的&lt;/li&gt;
+&lt;li&gt;idleness| 懒惰&lt;/li&gt;
+&lt;li&gt;tell the truth | 说实话&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>英语例句</title>
+    <link href="http://xuzihao.fun/%E4%BE%8B%E5%8F%A5.html"/>
+    <id>http://xuzihao.fun/例句.html</id>
+    <published>2017-10-18T12:24:00.000Z</published>
+    <updated>2017-11-12T07:57:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>No sooner ····· then      <ul>
+<li>一。。。就。</li>
+</ul>
+</li>
+<li>not so much …as<ul>
+<li>与其。。不如</li>
+</ul>
+</li>
+<li><p>no more…than</p>
+<ul>
+<li><p>不过，仅仅；至多，同。。。一样不</p>
+<a id="more"></a></li>
+</ul>
+</li>
+<li>as…as<ul>
+<li>像。。。一样</li>
+</ul>
+</li>
+<li><p>imagined + sth. + to be + adj.    </p>
+<ul>
+<li>为复合宾语解构</li>
+</ul>
+</li>
+<li><p>put forward to do sth.</p>
+<ul>
+<li>提出要求做某事</li>
+</ul>
+</li>
+<li>get sth. done<ul>
+<li>把某事做了</li>
+</ul>
+</li>
+<li>would rather <ul>
+<li>引导从句的虚拟结构中，如果表示对现在或将来情况的愿望，从句用<strong>过去时</strong>。</li>
+<li>如果是对过去情况的虚拟，从句用<strong>过去完成时</strong>。</li>
+</ul>
+</li>
+<li>never, hardly, seldom, little, not until, not, not only, no sooner, no    longer, nowhere, by no means <ul>
+<li>以上位于句首需要部分倒装</li>
+</ul>
+</li>
+<li>keep diary<ul>
+<li>记日记</li>
+</ul>
+</li>
+<li>can’t help doing sth.<ul>
+<li>忍不住做。。。</li>
+</ul>
+</li>
+<li>be worth doing<ul>
+<li>某（事或物）值得做</li>
+</ul>
+</li>
+<li>be worthy to be done 或 sth. is worthy of being done 以及 sb. be worhty of doing sth. 或者 sb. be worthy to do sth.<ul>
+<li>和 worth 的意思一样</li>
+</ul>
+</li>
+<li>It is/was /will be the first time that …句式<ul>
+<li>主句谓语是is，从句用现在完成时</li>
+<li>主句谓语是was，从句谓语用过去完成时</li>
+<li>主句谓语是will be，从句谓语用一般现在时</li>
+</ul>
+</li>
+<li>be appropriate for sb. 或 be appropriate to do sth.<ul>
+<li>固定搭配</li>
+</ul>
+</li>
+<li>appreciate + doing sth.<ul>
+<li>感激做某事</li>
+</ul>
+</li>
+<li>but to do,但是but之前出现了 do/does/did/done就要 but do</li>
+<li>no mood | in the mood<ul>
+<li>没有心情 | 有好心情</li>
+</ul>
+</li>
+<li>the impression of + doing sth.<ul>
+<li>做过某事的印象</li>
+</ul>
+</li>
+<li>have a(the) right to sth.<ul>
+<li>享有。。的权利</li>
+</ul>
+</li>
+<li>do nothing but <ul>
+<li>此结构后要求动词原形</li>
+</ul>
+</li>
+<li>need doing / need to done<ul>
+<li>需要被</li>
+</ul>
+</li>
+<li>sb. spend some time doing sth.<ul>
+<li>花时间做某事</li>
+</ul>
+</li>
+<li>a large amount of, a great deal of <ul>
+<li>固定搭配</li>
+</ul>
+</li>
+<li>将来时除了有be going to, will + do, 还有be to do, be about to do.</li>
+<li>play a part in<ul>
+<li>在。。。起作用。</li>
+</ul>
+</li>
+<li>must have + 过去分词<ul>
+<li>过去一定做了某事，表示对过去的肯定推测。</li>
+</ul>
+</li>
+<li>could have + 过去分词<ul>
+<li>本来能够做….</li>
+</ul>
+</li>
+<li>another + 基数词 + 名词复数<ul>
+<li>另外/在多少个</li>
+<li>I want another three apples.</li>
+<li>我还需要三个苹果。</li>
+</ul>
+</li>
+<li>mind doing sth.<ul>
+<li>介意做某事</li>
+</ul>
+</li>
+<li>to help you to out <ul>
+<li>表示目的</li>
+</ul>
+</li>
+<li>be going to + 一般现在时（leaves）</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;No sooner ····· then      &lt;ul&gt;
+&lt;li&gt;一。。。就。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;not so much …as&lt;ul&gt;
+&lt;li&gt;与其。。不如&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;no more…than&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不过，仅仅；至多，同。。。一样不&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
     <title>React生命周期</title>
     <link href="http://xuzihao.fun/React%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html"/>
     <id>http://xuzihao.fun/React生命周期.html</id>
@@ -2163,59 +2194,6 @@
       <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
     
       <category term="React" scheme="http://xuzihao.fun/tags/React/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>学习CSS(二)</title>
-    <link href="http://xuzihao.fun/%E5%AD%A6%E4%B9%A0CSS(%E4%BA%8C).html"/>
-    <id>http://xuzihao.fun/学习CSS(二).html</id>
-    <published>2017-09-06T09:38:00.000Z</published>
-    <updated>2017-09-07T06:33:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h1><p>页面上的每个元素被看做一个矩形框，这个框由元素的内容、内边距（padding）、边框（border）、和外边距（margin）组成。</p>
-<p>外边距叠加</p>
-<p>本小节参考<a href="http://www.w3school.com.cn/css/css_margin_collapsing.asp" target="_blank" rel="external">W3school</a>。</p>
-<p>当一个元素出现在另一个元素上面时，第一个元素的下外边距与第二个元素的上外边距会发生合并。</p>
-<p><img src="/images/css4.gif" alt="css4"></p>
-<a id="more"></a>
-<p>当一个元素包含在另一个元素中时（假设没有内边距或边框把外边距分隔开），它们的上和/或下外边距也会发生合并。</p>
-<p><img src="/images/css5.gif" alt="css5"></p>
-<p>尽管看上去有些奇怪，但是外边距甚至可以与自身发生合并。</p>
-<p>假设有一个空元素，它有外边距，但是没有边框或填充。在这种情况下，上外边距与下外边距就碰到了一起，它们会发生合并：</p>
-<p><img src="/images/css6.gif" alt="css7"></p>
-<p>如果这个外边距遇到另一个元素的外边距，它还会发生合并：</p>
-<p><img src="/images/css8.gif" alt="css7"></p>
-<p>外边距合并初看上去可能有点奇怪，但是实际上，它是有意义的。以由几个段落组成的典型文本页面为例。第一个段落上面的空间等于段落的上外边距。如果没有外边距合并，后续所有段落之间的外边距都将是相邻上外边距和下外边距的和。这意味着段落之间的空间是页面顶部的两倍。如果发生外边距合并，段落之间的上外边距和下外边距就合并在一起，这样各处的距离就一致了。</p>
-<h1 id="定位概述"><a href="#定位概述" class="headerlink" title="定位概述"></a>定位概述</h1><p>可视化格式模型和定位模型。</p>
-<h2 id="可视化格式模型"><a href="#可视化格式模型" class="headerlink" title="可视化格式模型"></a>可视化格式模型</h2><p><code>h1</code>,<code>p</code>,<code>div</code>等元素常常称为块级元素。</p>
-<p><code>strong</code>,<code>span</code>等元素称为行内元素。</p>
-<p>当行内元素你把它们的<code>display</code>属性设置成<code>block</code>，此元素会被显示为块级元素。</p>
-<p>块级框从上到下一个接一个地垂直排列。</p>
-<h2 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h2><p>如果对一个元素进行相对定位，其实就是让这个元素“相对于”它的起点移动。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">#myBox &#123;</div><div class="line">width: 200px;</div><div class="line">height: 200px;</div><div class="line">background: red;</div><div class="line">&#125;</div><div class="line">#myBox1 &#123;</div><div class="line">position: relative;</div><div class="line">width: 200px;</div><div class="line">height: 200px;</div><div class="line">background: blue;</div><div class="line">&#125;</div><div class="line">#myBox2 &#123;</div><div class="line">position: relative;</div><div class="line">left: 20px;</div><div class="line">top: 20px;</div><div class="line">width: 200px;</div><div class="line">height: 200px;</div><div class="line">background: gray;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myBox"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myBox1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myBox2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><img src="/images/css9.png" alt="css9"></p>
-<h2 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h2><p>绝对定位使元素的位置与文档流无关。</p>
-<p>绝对定位的元素的位置是相对于距离它最近的那个已定位的祖先元素确定的。如果元素没有已定位的祖先元素，那么它的位置是相对于初始包含块的。</p>
-<p>接下来我们让一个文本段落对准一个大框的右下角：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#branding &#123;</div><div class="line">width: 20em;</div><div class="line">height: 10em;</div><div class="line">position: relative;</div><div class="line">background: black;</div><div class="line">&#125;</div><div class="line">#branding .tel &#123;</div><div class="line">position: absolute;</div><div class="line">right: 1em;</div><div class="line">bottom: 1em;</div><div class="line">text-align: right;</div><div class="line">color: white;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"branding"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"tel"</span>&gt;</span>Tel: 0845 838 6163<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><img src="/images/css10.png" alt="css10"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;盒模型&quot;&gt;&lt;a href=&quot;#盒模型&quot; class=&quot;headerlink&quot; title=&quot;盒模型&quot;&gt;&lt;/a&gt;盒模型&lt;/h1&gt;&lt;p&gt;页面上的每个元素被看做一个矩形框，这个框由元素的内容、内边距（padding）、边框（border）、和外边距（margin）组成。&lt;/p&gt;
-&lt;p&gt;外边距叠加&lt;/p&gt;
-&lt;p&gt;本小节参考&lt;a href=&quot;http://www.w3school.com.cn/css/css_margin_collapsing.asp&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;W3school&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;当一个元素出现在另一个元素上面时，第一个元素的下外边距与第二个元素的上外边距会发生合并。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/css4.gif&quot; alt=&quot;css4&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="CSS" scheme="http://xuzihao.fun/categories/CSS/"/>
-    
-    
-      <category term="CSS" scheme="http://xuzihao.fun/tags/CSS/"/>
     
   </entry>
   
