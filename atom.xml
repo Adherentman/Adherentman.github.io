@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-03-17T07:43:26.135Z</updated>
+  <updated>2018-03-18T14:51:37.131Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS3外轮廓</title>
+    <link href="http://xuzihao.fun/CSS%E5%A4%96%E8%BD%AE%E5%BB%93.html"/>
+    <id>http://xuzihao.fun/CSS外轮廓.html</id>
+    <published>2018-03-18T14:38:00.000Z</published>
+    <updated>2018-03-18T14:51:37.131Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Outline"><a href="#Outline" class="headerlink" title="Outline"></a>Outline</h1><p>看一个Outline的例子：<a href="https://codepan.net/gist/7a96f5e15ee26e3523fd17c577c01c61" target="_blank" rel="external">outline</a></p>
+<p>在下面看见一个div也有类似的效果。但是我们打开开发者工具看会发现。下面用<code>outline</code>实现的外边框中border是<code>-</code>。</p>
+<h2 id="outline和border对比"><a href="#outline和border对比" class="headerlink" title="outline和border对比"></a>outline和border对比</h2><ul>
+<li>border属于盒模型的一部分，会直接影响盒子大小。</li>
+<li>outline则是将边框画在盒子上，不会影响该框。所以它不会破坏网页布局。</li>
+<li>border创建是可以显示单边的，而outline是不行的。看demo：<a href="https://codepan.net/gist/92abb7960aed0c5917f235f1a6180e5c" target="_blank" rel="external">单边</a></li>
+<li>border只可以外轮廓，而outline可以借助<code>outline-offset</code>设成负值就可以实现内轮廓，而设成正值就是外轮廓。看demo：<a href="https://codepan.net/gist/de786dc265e45ebefcd6a54614b348c4" target="_blank" rel="external">内轮廓</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Outline&quot;&gt;&lt;a href=&quot;#Outline&quot; class=&quot;headerlink&quot; title=&quot;Outline&quot;&gt;&lt;/a&gt;Outline&lt;/h1&gt;&lt;p&gt;看一个Outline的例子：&lt;a href=&quot;https://codepan.net/gist/7a
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://xuzihao.fun/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="http://xuzihao.fun/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title>Cookie、Session</title>
@@ -1723,208 +1753,6 @@
     
     
       <category term="读书笔记" scheme="http://xuzihao.fun/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英语时态</title>
-    <link href="http://xuzihao.fun/%E6%97%B6%E6%80%81.html"/>
-    <id>http://xuzihao.fun/时态.html</id>
-    <published>2017-10-18T12:24:00.000Z</published>
-    <updated>2017-11-12T07:57:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="英语语法——时态"><a href="#英语语法——时态" class="headerlink" title="英语语法——时态"></a>英语语法——时态</h1><p>时间概念包含四种，<strong>过去</strong>、<strong>现在</strong>、<strong>将来</strong>和<strong>过去将来</strong>。</p>
-<p>动作方面包含四种，<strong>一般</strong>、<strong>进行</strong>、<strong>完成</strong>和<strong>完成进行</strong>。</p>
-<p>将时间概念和动作方面结合一起，就能构成16种时态。</p>
-<ul>
-<li>一般现在时</li>
-<li>现在进行时</li>
-<li>现在完成时</li>
-<li>现在完成进行时</li>
-</ul>
-<a id="more"></a>
-<p><br></p>
-<ul>
-<li>一般过去时</li>
-<li>过去进行时</li>
-<li>过去完成时</li>
-<li><p>过去完成进行时<br><br></p>
-</li>
-<li><p>一般将来时</p>
-</li>
-<li>将来进行时</li>
-<li>将来完成时</li>
-<li>将来完成进行时</li>
-</ul>
-<p><br></p>
-<ul>
-<li>一般过去将来时</li>
-<li>一般过去将来进行时</li>
-<li>一般过去将来完成时</li>
-<li>一般过去将来完成进行</li>
-</ul>
-<blockquote>
-<p><a href="https://www.zhihu.com/question/19721822" target="_blank" rel="external">以下图片和部分文字参考自知乎赛门喵</a></p>
-</blockquote>
-<p><img src="/image/时态.jpg" alt="时态"></p>
-<p>谓语动词有「时间」和「状态」两个属性。结构上也由「时间+时间状态」构成</p>
-<p><strong>将上图总结成一个表：</strong></p>
-<p><img src="/image/时态总结.jpg" alt="时态总结"></p>
-<p>表格中的「助动词」突出「时间」，「主动词」突出动作「状态」。</p>
-<p>动词原形通过两次变形，第一次具有了「动作状态」属性。第二次具有了「时间」属性，完成到了谓语动词的转换。</p>
-<p>「时间」+「动作状态」的方式，一方面帮助了我们了解时态的的本质，更让我们可以毫不费力的记住16种时态。</p>
-<h2 id="接下来细致的说明这16种时态"><a href="#接下来细致的说明这16种时态" class="headerlink" title="接下来细致的说明这16种时态"></a>接下来细致的说明这16种时态</h2><ul>
-<li><h3 id="一般"><a href="#一般" class="headerlink" title="一般"></a>一般</h3><ul>
-<li>概念：仅仅陈诉一个事实（fact）</li>
-<li>形式：动词原形，我们用play。</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">I played baskerball. 								我过去（以前）打篮球。</div><div class="line">I play baskerball.								我现在打篮球。</div><div class="line">I will play baskerball.								我将要打篮球。</div><div class="line">I didn&apos;t know if he would come.  						我不知道她是否回来。</div></pre></td></tr></table></figure>
-<blockquote>
-<p>did + play = played = 过去 + 一般体 = 一般过去时</p>
-<p>do/does + play = play/plays = 现在 + 一般体 = 一般现在时</p>
-<p>will + play = will play = 将来 + 一般体 = 一般将来时</p>
-<p>would + come = would come = 过去将来 + 一般体 = 一般过去将来时</p>
-</blockquote>
-<ul>
-<li><h3 id="进行"><a href="#进行" class="headerlink" title="进行"></a>进行</h3><ul>
-<li><p>概念：表示动作正在发生</p>
-</li>
-<li><p>形式：ing</p>
-<ul>
-<li><h4 id="过去进行时-was-were"><a href="#过去进行时-was-were" class="headerlink" title="过去进行时(was/ were)"></a>过去进行时(was/ were)</h4><p>We were discussing the decoration problem 10 minutes ago.<br>10分钟前，我们正讨论装修的问题。</p>
-<p>​<br><br>I was cooking when you <strong><em>knocked</em></strong> at the door.</p>
-<p>你敲门时我正在做饭。</p>
-</li>
-<li><h4 id="现在进行时-am-is-are"><a href="#现在进行时-am-is-are" class="headerlink" title="现在进行时(am/ is/ are)"></a>现在进行时(am/ is/ are)</h4><p>I’m felling better now.                    </p>
-<p><strong>//表示正在进行的动作</strong></p>
-<p>我现在感觉好多了。</p>
-<p><br><br>We are leaving tomorrow.               </p>
-<p><strong>//有些瞬间动词用进行时表将来</strong></p>
-<p>我们明天离开。</p>
-<p><br><br>​     He is always asking such foolish questions.            </p>
-<p>  <strong>//表示某动作反复发生</strong></p>
-<p>​  他总是问如此愚蠢的问题。</p>
-<p><br><br>​  You are being modest.                    </p>
-<p>​  <strong>//“an, are, is+bing” 强调被描述情况或状态的暂时性。</strong></p>
-<p>​  你这会儿倒是挺谦虚的。</p>
-<p>  <br><br>  he is buying a new bike soon.        </p>
-<p>  <strong>//在时间和条件状语从句中，现在进行时表示将来的动作。</strong></p>
-<p>  她不久将买一辆新自行车。    </p>
-</li>
-<li><h4 id="将来进行时-will-be"><a href="#将来进行时-will-be" class="headerlink" title="将来进行时(will be)"></a>将来进行时(will be)</h4><p>The train will be leaving in a second.</p>
-<p>火车就要开了。</p>
-<p>What will you be doing this time tomorrow？</p>
-<p>明天这个时候你将做什么？</p>
-</li>
-<li><h4 id="过去将来进行时-should-be-would-be"><a href="#过去将来进行时-should-be-would-be" class="headerlink" title="过去将来进行时(should be/ would be)"></a>过去将来进行时(should be/ would be)</h4><p>I never realized that someday I would be living in Africa.</p>
-<p>我以前从没想过将来有一天我会生活在非洲。 </p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h3 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h3><ul>
-<li><p>概念：表示动作完成了</p>
-</li>
-<li><p>形式：过去分词，drunk</p>
-<ul>
-<li><h4 id="过去完成时-had-done"><a href="#过去完成时-had-done" class="headerlink" title="过去完成时(had) + done"></a>过去完成时(had) + done</h4><p>Up to the end of last year, the aim <strong>had been achieved</strong> to cut energy use by 80%.            </p>
-<p><strong>//过去的过去的动作或状态，“up to/ before/ by + 过去时间”作时间状语。</strong></p>
-<p>到去年年底，已经实现节能80%的目标。</p>
-<p><br></p>
-<p>There <strong>had been</strong> someone in our room just now, because i noticed a burning cigarette end on the floor when we opened the front door.</p>
-<p><strong>//过去的过去。这种逻辑关系通过上下文体现</strong></p>
-<p>刚才有人在我们的房间里，因为我们打开前门进来时，我注意到地板上有一个仍在燃烧的烟头</p>
-</li>
-<li><h4 id="现在完成时-hava-has-done"><a href="#现在完成时-hava-has-done" class="headerlink" title="现在完成时(hava/ has) + done"></a>现在完成时(hava/ has) + done</h4><p>She <strong>has won</strong> prizes for her records.</p>
-<p><strong>//表示从过去某时刻开始，持续到现在的动作或情况，并且有可能会继续延续下去。</strong></p>
-<p>她的唱片曾获奖过几次奖。</p>
-<p><br><br>For years i <strong>have been interested</strong> in engineering.</p>
-<p><strong>//时间状语常用since加一个过去的时间点，或for加一段时间</strong></p>
-<p>多年来，我一直对工程学感兴趣。</p>
-<p><br><br>I <strong>have been here</strong> since last June.</p>
-<p>从去年6月起，我一直在这里。</p>
-<p><br><br>A moment please, I <strong>have almost finished</strong> the report.</p>
-<p><strong>//表示发生在过去， 但对现在仍有影响的动作或情况，通常用瞬间动词“arrive begin, find, give, finish, lose”</strong></p>
-<p>稍等，我的报告就快完成了。</p>
-</li>
-<li><h4 id="将来完成时-will-have-done"><a href="#将来完成时-will-have-done" class="headerlink" title="将来完成时(will have) + done"></a>将来完成时(will have) + done</h4><p>If you come at 6 p.m, I shall not yet <strong>have finished</strong> dinner.</p>
-<p><strong>//表示将来某一时间之前完成的动作，并往往对将来某一时间产生影响。</strong></p>
-<p>你若下午6点来，我还没吃完晚饭呢。</p>
-<p><br><br>You must take a taxi, otherwise the train <strong>will have</strong> left <strong>by the time</strong> you get to the station.</p>
-<p><strong>//常用 “before + 将来时间点”或“by + 将来时间点”作时间状语</strong></p>
-<p>你必须坐出租，否则等你到了车站火车都开走了。</p>
-<p><br><br>Before long, he <strong>will have forgotten</strong> all about the matter.</p>
-<p>过不久，他就将把这事儿忘记了。</p>
-</li>
-<li><h4 id="过去将来完成时-would-have-done"><a href="#过去将来完成时-would-have-done" class="headerlink" title="过去将来完成时(would have) + done"></a>过去将来完成时(would have) + done</h4><p>He said that he <strong>would have done</strong> with my camera by the end of next week.</p>
-<p><strong>//表示在过去将来某一时间以前发生的动作，并往往会对过去将来某一时间产生影响</strong></p>
-<p>他说到下周末就不用我的照相机了。</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h3 id="完成进行"><a href="#完成进行" class="headerlink" title="完成进行"></a>完成进行</h3><ul>
-<li>概念： 表明动作(暂时)完成了，并且还要继续</li>
-<li><p>形式： been + (base form) ing</p>
-<ul>
-<li><h4 id="过去完成进行时-had-been-doing"><a href="#过去完成进行时-had-been-doing" class="headerlink" title="过去完成进行时(had) + been doing"></a>过去完成进行时(had) + been doing</h4><p>He was tired. He <strong>had been working</strong> all day.</p>
-<p><strong>//和过去完成时一样，过去完成进行时也必须以一个过去的事就为前提。</strong></p>
-<p>他累了，他工作了一整天。</p>
-<p>It <strong>had been raining</strong> heavily for two days and the ground was very wet.</p>
-<p>连着下了两天大雨，地上很湿。</p>
-</li>
-<li><h4 id="现在完成进行时-have-has-been-doing"><a href="#现在完成进行时-have-has-been-doing" class="headerlink" title="现在完成进行时(have/ has) + been doing"></a>现在完成进行时(have/ has) + been doing</h4><p>We <strong>have been working</strong> on this project for over a month now.</p>
-<p><strong>//表示某一动作开始于过去某一时间，延续或重复的出现至今，或将继续延续至将来。</strong></p>
-<p>到目前为止，我们一直在处理那个项目，已经花了一个多月时间了。</p>
-<p><strong>//与现在完成时相比，现在完成时进行时更强调在从过去到现在的时间里，动作或状态一直持续或一直反复出现。</strong></p>
-</li>
-<li><h4 id="将来完成进行时-will-have-been-doing"><a href="#将来完成进行时-will-have-been-doing" class="headerlink" title="将来完成进行时(will have) + been doing"></a>将来完成进行时(will have) + been doing</h4><p>If we don’t hurry up the store <strong>will have been closing</strong> before we get there.</p>
-<p><strong>//表示动作从某一时间开始一直延续到将来某一时间。</strong></p>
-<p>如果我们不快一点儿， 等到了那儿，商店早关门了。</p>
-<p>By then, we <strong>will have been cooperating</strong> for half a year.</p>
-<p>到那时为止，我们就将会合作半年了。</p>
-</li>
-<li><h4 id="过去将来完成进行时-would-have-been-doing"><a href="#过去将来完成进行时-would-have-been-doing" class="headerlink" title="过去将来完成进行时(would have) + been doing"></a>过去将来完成进行时(would have) + been doing</h4><p>He said that by the end of July he <strong>would have been studing</strong> German for six months.</p>
-<p><strong>//表示动作从过去某一时间开始一直延续到过去将来某一时间</strong></p>
-<p>他说到7月底，他学德语就有半年了。</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><br><br><br></p>
-<p>  <a href="https://link.zhihu.com/?target=http%3A//blog.tarwon.com/english-grammar.html/" target="_blank" rel="external">以下未满18岁请自动屏蔽LoVe 这段我无意间看见</a></p>
-<blockquote>
-<p><strong>一般现在时:I make love with her everyday.</strong><br>一般过去时:I made love with her yesterday.<br>一般将来时:I will make love with her tomorrow.</p>
-<p><strong>现在进行时:I am making love with her.</strong><br>过去进行时:I was making love with her at this time yesterday.<br>将来进行时:I will be making love with her at this time tomorrow.</p>
-<p><strong>现在完成时:I have made love with her by now.</strong><br>过去完成时:I had made love with her before yesterday.<br>将来完成时:I will have made love with her by tomorrow.</p>
-<p><strong>现在完成进行时:I have been making love with her for two hours.</strong><br>过去完成进行时:I had been making love with her for two hours when her husband came in.<br>将来完成进行时:I will have been making love with her for two hours when her husband wakes up tomorrow morning.</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;英语语法——时态&quot;&gt;&lt;a href=&quot;#英语语法——时态&quot; class=&quot;headerlink&quot; title=&quot;英语语法——时态&quot;&gt;&lt;/a&gt;英语语法——时态&lt;/h1&gt;&lt;p&gt;时间概念包含四种，&lt;strong&gt;过去&lt;/strong&gt;、&lt;strong&gt;现在&lt;/strong&gt;、&lt;strong&gt;将来&lt;/strong&gt;和&lt;strong&gt;过去将来&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;动作方面包含四种，&lt;strong&gt;一般&lt;/strong&gt;、&lt;strong&gt;进行&lt;/strong&gt;、&lt;strong&gt;完成&lt;/strong&gt;和&lt;strong&gt;完成进行&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;将时间概念和动作方面结合一起，就能构成16种时态。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;一般现在时&lt;/li&gt;
-&lt;li&gt;现在进行时&lt;/li&gt;
-&lt;li&gt;现在完成时&lt;/li&gt;
-&lt;li&gt;现在完成进行时&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
     
   </entry>
   
