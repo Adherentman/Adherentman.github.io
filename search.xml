@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[浅谈]]></title>
       <url>%2F%E6%B5%85%E8%B0%88%3Cscript%3E.html</url>
-      <content type="text"><![CDATA[? 这不就是直接执行script脚本吗？ 以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。 属性拥有7个属性，没想到吧！ async boolean 异步执行该脚本 defer boolean 通知浏览器该脚本将在文档完成解析后，触发 DOMContentLoaded 事件前执行 integrity 包含用户代理可用于验证已提取资源是否已无意外操作的内联元数据 src type text crossorigin 使那些将静态资源放在另外一个域名的站点打印错误信息 知道了那几个属性接下来，来看看以下图： 第一个光秃秃的说明了，在html解析中，如果有的话，html会在Script下载并且执行的时候，暂停解析。 第二个带async属性的，如图所示，也就是他下载Script的时候是异步的，但是只要Script文件下好了，那么就马上执行。 第三个带defer属性的，其实和上面带async属性一样都是异步执行去下载Script文件的。但是在这个带有defer的则是在html全部解析完毕之后才去执行Script文件。而且它是按照加载顺序执行脚本的，这一点要善加利用。显然 defer 是最接近我们对于应用脚本加载和执行的要求的]]></content>
+      <content type="text"><![CDATA[? 这不就是直接执行script脚本吗？ 以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。 属性拥有7个属性，没想到吧！ async boolean 异步执行该脚本 defer boolean 通知浏览器该脚本将在文档完成解析后，触发 DOMContentLoaded 事件前执行 integrity 包含用户代理可用于验证已提取资源是否已无意外操作的内联元数据 src type text crossorigin 使那些将静态资源放在另外一个域名的站点打印错误信息 知道了那几个属性接下来，来看看下面这个图： 第一个光秃秃的说明了，在html解析中，如果有的话，html会在Script下载并且执行的时候，暂停解析。 第二个带async属性的，如图所示，也就是他下载Script的时候是异步的，但是只要Script文件下好了，那么就马上执行。 第三个带defer属性的，其实和上面带async属性一样都是异步执行去下载Script文件的。但是在这个带有defer的则是在html全部解析完毕之后才去执行Script文件。而且它是按照加载顺序执行脚本的，这一点要善加利用。显然 defer 是最接近我们对于应用脚本加载和执行的要求的]]></content>
     </entry>
 
     
