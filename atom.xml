@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-03-19T13:35:04.966Z</updated>
+  <updated>2018-03-19T13:49:01.961Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://xuzihao.fun/%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html"/>
     <id>http://xuzihao.fun/浅谈script标签.html</id>
     <published>2018-03-19T12:57:11.911Z</published>
-    <updated>2018-03-19T13:35:04.966Z</updated>
+    <updated>2018-03-19T13:49:01.961Z</updated>
     
     <content type="html"><![CDATA[<p><code>&lt;script&gt;</code> ? 这不就是直接执行script脚本吗？</p>
 <p>以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。</p>
@@ -59,6 +59,10 @@
 <li>第二个带<code>async</code>属性的<code>&lt;script&gt;</code>，如图所示，也就是他下载<code>Script</code>的时候是异步的，但是只要<code>Script</code>文件下好了，那么就马上执行。</li>
 <li>第三个带<code>defer</code>属性的<code>&lt;script&gt;</code>，其实和上面带<code>async</code>属性一样都是异步执行去下载<code>Script</code>文件的。但是在这个带有<code>defer</code>的则是在<code>html</code>全部解析完毕之后才去执行<code>Script</code>文件。而且它是按照加载顺序执行脚本的，这一点要善加利用。显然 <code>defer</code> 是最接近我们对于应用脚本加载和执行的要求的</li>
 </ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/script" target="_blank" rel="external">MDN</a></li>
+<li><a href="https://segmentfault.com/a/1190000006778717" target="_blank" rel="external">SegmentFault</a></li>
+</ul>
 ]]></content>
     
     <summary type="html">

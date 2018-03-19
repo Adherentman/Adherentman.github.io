@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[浅谈script标签]]></title>
       <url>%2F%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html</url>
-      <content type="text"><![CDATA[&lt;script&gt; ? 这不就是直接执行script脚本吗？ 以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。 属性&lt;script&gt;拥有7个属性，没想到吧！ async boolean 异步执行该脚本，但不保证按照指定它们的先后顺序执行 defer boolean 通知浏览器该脚本将在文档完成解析后遇到&lt;/html&gt;，并会按照它们出现的先后顺序执行。但会在触发 DOMContentLoaded 事件前执行。 integrity 包含用户代理可用于验证已提取资源是否已无意外操作的内联元数据 src type text crossorigin 使那些将静态资源放在另外一个域名的站点打印错误信息 在XHTML文档中，要把async属性设置为 async = “async”, defer = “defer” 知道了那几个属性接下来，来看看下面这个图： 第一个光秃秃的&lt;script&gt;说明了，在html解析中，如果有&lt;script&gt;的话，html会在Script下载并且执行的时候，暂停解析。 第二个带async属性的&lt;script&gt;，如图所示，也就是他下载Script的时候是异步的，但是只要Script文件下好了，那么就马上执行。 第三个带defer属性的&lt;script&gt;，其实和上面带async属性一样都是异步执行去下载Script文件的。但是在这个带有defer的则是在html全部解析完毕之后才去执行Script文件。而且它是按照加载顺序执行脚本的，这一点要善加利用。显然 defer 是最接近我们对于应用脚本加载和执行的要求的]]></content>
+      <content type="text"><![CDATA[&lt;script&gt; ? 这不就是直接执行script脚本吗？ 以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。 属性&lt;script&gt;拥有7个属性，没想到吧！ async boolean 异步执行该脚本，但不保证按照指定它们的先后顺序执行 defer boolean 通知浏览器该脚本将在文档完成解析后遇到&lt;/html&gt;，并会按照它们出现的先后顺序执行。但会在触发 DOMContentLoaded 事件前执行。 integrity 包含用户代理可用于验证已提取资源是否已无意外操作的内联元数据 src type text crossorigin 使那些将静态资源放在另外一个域名的站点打印错误信息 在XHTML文档中，要把async属性设置为 async = “async”, defer = “defer” 知道了那几个属性接下来，来看看下面这个图： 第一个光秃秃的&lt;script&gt;说明了，在html解析中，如果有&lt;script&gt;的话，html会在Script下载并且执行的时候，暂停解析。 第二个带async属性的&lt;script&gt;，如图所示，也就是他下载Script的时候是异步的，但是只要Script文件下好了，那么就马上执行。 第三个带defer属性的&lt;script&gt;，其实和上面带async属性一样都是异步执行去下载Script文件的。但是在这个带有defer的则是在html全部解析完毕之后才去执行Script文件。而且它是按照加载顺序执行脚本的，这一点要善加利用。显然 defer 是最接近我们对于应用脚本加载和执行的要求的 参考 MDN SegmentFault]]></content>
     </entry>
 
     
