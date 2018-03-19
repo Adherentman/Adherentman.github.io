@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-03-19T13:16:01.056Z</updated>
+  <updated>2018-03-19T13:16:33.972Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="http://xuzihao.fun/%E6%B5%85%E8%B0%88%3Cscript%3E.html"/>
     <id>http://xuzihao.fun/浅谈&lt;script&gt;.html</id>
     <published>2018-03-19T12:57:11.911Z</published>
-    <updated>2018-03-19T13:16:01.056Z</updated>
+    <updated>2018-03-19T13:16:33.972Z</updated>
     
-    <content type="html"><![CDATA[<p><script> ? 这不就是直接执行script脚本吗？</p>
+    <content type="html"><![CDATA[<p><code>&lt;script&gt;</code> ? 这不就是直接执行script脚本吗？</p>
 <p>以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。</p>
 <a id="more"></a>
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p><script>拥有7个属性，没想到吧！</p>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p><code>&lt;script&gt;</code>拥有7个属性，没想到吧！</p>
 <ul>
 <li><strong>async</strong><ul>
 <li>boolean</li>
@@ -52,15 +52,15 @@
 <p>知道了那几个属性接下来，来看看下面这个图：</p>
 <p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%3Cscript%3E.png" alt=""></p>
 <ol>
-<li>第一个光秃秃的<script>说明了，在<code>html</code>解析中，如果有<script>的话，<code>html</code>会在<code>Script</code>下载并且执行的时候，暂停解析。</li>
-<li>第二个带<code>async</code>属性的<script>，如图所示，也就是他下载<code>Script</code>的时候是异步的，但是只要<code>Script</code>文件下好了，那么就马上执行。</li>
-<li>第三个带<code>defer</code>属性的<script>，其实和上面带<code>async</code>属性一样都是异步执行去下载<code>Script</code>文件的。但是在这个带有<code>defer</code>的则是在<code>html</code>全部解析完毕之后才去执行<code>Script</code>文件。而且它是按照加载顺序执行脚本的，这一点要善加利用。显然 <code>defer</code> 是最接近我们对于应用脚本加载和执行的要求的</li>
+<li>第一个光秃秃的<code>&lt;script&gt;</code>说明了，在<code>html</code>解析中，如果有<code>&lt;script&gt;</code>的话，<code>html</code>会在<code>Script</code>下载并且执行的时候，暂停解析。</li>
+<li>第二个带<code>async</code>属性的<code>&lt;script&gt;</code>，如图所示，也就是他下载<code>Script</code>的时候是异步的，但是只要<code>Script</code>文件下好了，那么就马上执行。</li>
+<li>第三个带<code>defer</code>属性的<code>&lt;script&gt;</code>，其实和上面带<code>async</code>属性一样都是异步执行去下载<code>Script</code>文件的。但是在这个带有<code>defer</code>的则是在<code>html</code>全部解析完毕之后才去执行<code>Script</code>文件。而且它是按照加载顺序执行脚本的，这一点要善加利用。显然 <code>defer</code> 是最接近我们对于应用脚本加载和执行的要求的</li>
 </ol>
-</script></p>]]></content>
+]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;script&gt; ? 这不就是直接执行script脚本吗？&lt;/p&gt;
+      &lt;p&gt;&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; ? 这不就是直接执行script脚本吗？&lt;/p&gt;
 &lt;p&gt;以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。&lt;/p&gt;
     
     </summary>

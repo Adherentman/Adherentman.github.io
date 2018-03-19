@@ -88,17 +88,19 @@
 
 
 
-<meta name="description" content="? 这不就是直接执行script脚本吗？ 以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。">
+<meta name="description" content="&amp;lt;script&amp;gt; ? 这不就是直接执行script脚本吗？ 以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈script标签">
 <meta property="og:url" content="http://xuzihao.fun/浅谈<script>.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="? 这不就是直接执行script脚本吗？ 以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。">
-<meta property="og:updated_time" content="2018-03-19T13:16:01.056Z">
+<meta property="og:description" content="&amp;lt;script&amp;gt; ? 这不就是直接执行script脚本吗？ 以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。">
+<meta property="og:image" content="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%3Cscript%3E.png">
+<meta property="og:updated_time" content="2018-03-19T13:16:33.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈script标签">
-<meta name="twitter:description" content="? 这不就是直接执行script脚本吗？ 以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。">
+<meta name="twitter:description" content="&amp;lt;script&amp;gt; ? 这不就是直接执行script脚本吗？ 以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。">
+<meta name="twitter:image" content="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%3Cscript%3E.png">
 
 
 
@@ -376,10 +378,10 @@
       
 
       
-        <p><script> ? 这不就是直接执行script脚本吗？</p>
+        <p><code>&lt;script&gt;</code> ? 这不就是直接执行script脚本吗？</p>
 <p>以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。</p>
 <a id="more"></a>
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p><script>拥有7个属性，没想到吧！</p>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p><code>&lt;script&gt;</code>拥有7个属性，没想到吧！</p>
 <ul>
 <li><strong>async</strong><ul>
 <li>boolean</li>
@@ -406,11 +408,11 @@
 <p>知道了那几个属性接下来，来看看下面这个图：</p>
 <p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%3Cscript%3E.png" alt=""></p>
 <ol>
-<li>第一个光秃秃的<script>说明了，在<code>html</code>解析中，如果有<script>的话，<code>html</code>会在<code>Script</code>下载并且执行的时候，暂停解析。</li>
-<li>第二个带<code>async</code>属性的<script>，如图所示，也就是他下载<code>Script</code>的时候是异步的，但是只要<code>Script</code>文件下好了，那么就马上执行。</li>
-<li>第三个带<code>defer</code>属性的<script>，其实和上面带<code>async</code>属性一样都是异步执行去下载<code>Script</code>文件的。但是在这个带有<code>defer</code>的则是在<code>html</code>全部解析完毕之后才去执行<code>Script</code>文件。而且它是按照加载顺序执行脚本的，这一点要善加利用。显然 <code>defer</code> 是最接近我们对于应用脚本加载和执行的要求的</li>
+<li>第一个光秃秃的<code>&lt;script&gt;</code>说明了，在<code>html</code>解析中，如果有<code>&lt;script&gt;</code>的话，<code>html</code>会在<code>Script</code>下载并且执行的时候，暂停解析。</li>
+<li>第二个带<code>async</code>属性的<code>&lt;script&gt;</code>，如图所示，也就是他下载<code>Script</code>的时候是异步的，但是只要<code>Script</code>文件下好了，那么就马上执行。</li>
+<li>第三个带<code>defer</code>属性的<code>&lt;script&gt;</code>，其实和上面带<code>async</code>属性一样都是异步执行去下载<code>Script</code>文件的。但是在这个带有<code>defer</code>的则是在<code>html</code>全部解析完毕之后才去执行<code>Script</code>文件。而且它是按照加载顺序执行脚本的，这一点要善加利用。显然 <code>defer</code> 是最接近我们对于应用脚本加载和执行的要求的</li>
 </ol>
-</script></p>
+
       
     </div>
     
@@ -510,8 +512,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -604,6 +615,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#属性"><span class="nav-number">1.</span> <span class="nav-text">属性</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
