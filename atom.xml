@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-03-18T14:51:37.131Z</updated>
+  <updated>2018-03-19T13:13:56.767Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -14,6 +14,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浅谈&lt;script&gt;</title>
+    <link href="http://xuzihao.fun/%E6%B5%85%E8%B0%88%3Cscript%3E.html"/>
+    <id>http://xuzihao.fun/浅谈&lt;script&gt;.html</id>
+    <published>2018-03-19T12:57:11.911Z</published>
+    <updated>2018-03-19T13:13:56.767Z</updated>
+    
+    <content type="html"><![CDATA[<p><script> ? 这不就是直接执行script脚本吗？</p>
+<p>以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。</p>
+<a id="more"></a>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p><script>拥有7个属性，没想到吧！</p>
+<ul>
+<li><strong>async</strong><ul>
+<li>boolean</li>
+<li>异步执行该脚本</li>
+</ul>
+</li>
+<li><strong>defer</strong><ul>
+<li>boolean</li>
+<li>通知浏览器该脚本将在文档完成解析后，触发 <code>DOMContentLoaded</code> 事件前执行</li>
+</ul>
+</li>
+<li><strong>integrity</strong><ul>
+<li>包含用户代理可用于验证已提取资源是否已无意外操作的内联元数据</li>
+</ul>
+</li>
+<li><strong>src</strong></li>
+<li><strong>type</strong></li>
+<li><strong>text</strong></li>
+<li><strong>crossorigin</strong><ul>
+<li>使那些将静态资源放在另外一个域名的站点打印错误信息</li>
+</ul>
+</li>
+</ul>
+<p>知道了那几个属性接下来，来看看以下图：</p>
+<p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%3Cscript%3E.png" alt=""></p>
+<ol>
+<li>第一个光秃秃的<script>说明了，在<code>html</code>解析中，如果有<script>的话，<code>html</code>会在<code>Script</code>下载并且执行的时候，暂停解析。</li>
+<li>第二个带<code>async</code>属性的<script>，如图所示，也就是他下载<code>Script</code>的时候是异步的，但是只要<code>Script</code>文件下好了，那么就马上执行。</li>
+<li>第三个带<code>defer</code>属性的<script>，其实和上面带<code>async</code>属性一样都是异步执行去下载<code>Script</code>文件的。但是在这个带有<code>defer</code>的则是在<code>html</code>全部解析完毕之后才去执行<code>Script</code>文件。而且它是按照加载顺序执行脚本的，这一点要善加利用。显然 <code>defer</code> 是最接近我们对于应用脚本加载和执行的要求的</li>
+</ol>
+</script></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;script&gt; ? 这不就是直接执行script脚本吗？&lt;/p&gt;
+&lt;p&gt;以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Javascript修仙之旅" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
+    
+    
+      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS3外轮廓</title>
@@ -1753,169 +1810,6 @@
     
     
       <category term="读书笔记" scheme="http://xuzihao.fun/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>英语例句</title>
-    <link href="http://xuzihao.fun/%E4%BE%8B%E5%8F%A5.html"/>
-    <id>http://xuzihao.fun/例句.html</id>
-    <published>2017-10-18T12:24:00.000Z</published>
-    <updated>2017-11-12T07:57:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li>No sooner ····· then      <ul>
-<li>一。。。就。</li>
-</ul>
-</li>
-<li>not so much …as<ul>
-<li>与其。。不如</li>
-</ul>
-</li>
-<li><p>no more…than</p>
-<ul>
-<li><p>不过，仅仅；至多，同。。。一样不</p>
-<a id="more"></a></li>
-</ul>
-</li>
-<li>as…as<ul>
-<li>像。。。一样</li>
-</ul>
-</li>
-<li><p>imagined + sth. + to be + adj.    </p>
-<ul>
-<li>为复合宾语解构</li>
-</ul>
-</li>
-<li><p>put forward to do sth.</p>
-<ul>
-<li>提出要求做某事</li>
-</ul>
-</li>
-<li>get sth. done<ul>
-<li>把某事做了</li>
-</ul>
-</li>
-<li>would rather <ul>
-<li>引导从句的虚拟结构中，如果表示对现在或将来情况的愿望，从句用<strong>过去时</strong>。</li>
-<li>如果是对过去情况的虚拟，从句用<strong>过去完成时</strong>。</li>
-</ul>
-</li>
-<li>never, hardly, seldom, little, not until, not, not only, no sooner, no    longer, nowhere, by no means <ul>
-<li>以上位于句首需要部分倒装</li>
-</ul>
-</li>
-<li>keep diary<ul>
-<li>记日记</li>
-</ul>
-</li>
-<li>can’t help doing sth.<ul>
-<li>忍不住做。。。</li>
-</ul>
-</li>
-<li>be worth doing<ul>
-<li>某（事或物）值得做</li>
-</ul>
-</li>
-<li>be worthy to be done 或 sth. is worthy of being done 以及 sb. be worhty of doing sth. 或者 sb. be worthy to do sth.<ul>
-<li>和 worth 的意思一样</li>
-</ul>
-</li>
-<li>It is/was /will be the first time that …句式<ul>
-<li>主句谓语是is，从句用现在完成时</li>
-<li>主句谓语是was，从句谓语用过去完成时</li>
-<li>主句谓语是will be，从句谓语用一般现在时</li>
-</ul>
-</li>
-<li>be appropriate for sb. 或 be appropriate to do sth.<ul>
-<li>固定搭配</li>
-</ul>
-</li>
-<li>appreciate + doing sth.<ul>
-<li>感激做某事</li>
-</ul>
-</li>
-<li>but to do,但是but之前出现了 do/does/did/done就要 but do</li>
-<li>no mood | in the mood<ul>
-<li>没有心情 | 有好心情</li>
-</ul>
-</li>
-<li>the impression of + doing sth.<ul>
-<li>做过某事的印象</li>
-</ul>
-</li>
-<li>have a(the) right to sth.<ul>
-<li>享有。。的权利</li>
-</ul>
-</li>
-<li>do nothing but <ul>
-<li>此结构后要求动词原形</li>
-</ul>
-</li>
-<li>need doing / need to done<ul>
-<li>需要被</li>
-</ul>
-</li>
-<li>sb. spend some time doing sth.<ul>
-<li>花时间做某事</li>
-</ul>
-</li>
-<li>a large amount of, a great deal of <ul>
-<li>固定搭配</li>
-</ul>
-</li>
-<li>将来时除了有be going to, will + do, 还有be to do, be about to do.</li>
-<li>play a part in<ul>
-<li>在。。。起作用。</li>
-</ul>
-</li>
-<li>must have + 过去分词<ul>
-<li>过去一定做了某事，表示对过去的肯定推测。</li>
-</ul>
-</li>
-<li>could have + 过去分词<ul>
-<li>本来能够做….</li>
-</ul>
-</li>
-<li>another + 基数词 + 名词复数<ul>
-<li>另外/在多少个</li>
-<li>I want another three apples.</li>
-<li>我还需要三个苹果。</li>
-</ul>
-</li>
-<li>mind doing sth.<ul>
-<li>介意做某事</li>
-</ul>
-</li>
-<li>to help you to out <ul>
-<li>表示目的</li>
-</ul>
-</li>
-<li>be going to + 一般现在时（leaves）</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;No sooner ····· then      &lt;ul&gt;
-&lt;li&gt;一。。。就。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;not so much …as&lt;ul&gt;
-&lt;li&gt;与其。。不如&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;no more…than&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;不过，仅仅；至多，同。。。一样不&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="English" scheme="http://xuzihao.fun/tags/English/"/>
     
   </entry>
   
