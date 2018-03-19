@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-03-19T13:14:23.515Z</updated>
+  <updated>2018-03-19T13:16:01.056Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>浅谈&lt;script&gt;</title>
+    <title>浅谈script标签</title>
     <link href="http://xuzihao.fun/%E6%B5%85%E8%B0%88%3Cscript%3E.html"/>
     <id>http://xuzihao.fun/浅谈&lt;script&gt;.html</id>
     <published>2018-03-19T12:57:11.911Z</published>
-    <updated>2018-03-19T13:14:23.515Z</updated>
+    <updated>2018-03-19T13:16:01.056Z</updated>
     
     <content type="html"><![CDATA[<p><script> ? 这不就是直接执行script脚本吗？</p>
 <p>以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。</p>
