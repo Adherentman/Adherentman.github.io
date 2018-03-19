@@ -1,4 +1,4 @@
-http://xuzihao.fun/浅谈<script>.html
+http://xuzihao.fun/浅谈script标签.html
 http://xuzihao.fun/CSS外轮廓.html
 http://xuzihao.fun/Cookie-Session.html
 http://xuzihao.fun/CSS3transform.html
