@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="壮壮-Technology">
 <meta property="og:description" content="&amp;lt;script&amp;gt; ? 这不就是直接执行script脚本吗？ 以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。">
 <meta property="og:image" content="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%3Cscript%3E.png">
-<meta property="og:updated_time" content="2018-03-19T13:16:33.972Z">
+<meta property="og:updated_time" content="2018-03-19T13:35:04.966Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈script标签">
 <meta name="twitter:description" content="&amp;lt;script&amp;gt; ? 这不就是直接执行script脚本吗？ 以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。">
@@ -385,12 +385,12 @@
 <ul>
 <li><strong>async</strong><ul>
 <li>boolean</li>
-<li>异步执行该脚本</li>
+<li>异步执行该脚本，但不保证按照指定它们的先后顺序执行</li>
 </ul>
 </li>
 <li><strong>defer</strong><ul>
 <li>boolean</li>
-<li>通知浏览器该脚本将在文档完成解析后，触发 <code>DOMContentLoaded</code> 事件前执行</li>
+<li>通知浏览器该脚本将在文档完成解析后遇到<code>&lt;/html&gt;</code>，并会按照它们出现的先后顺序执行。但会在触发 <code>DOMContentLoaded</code> 事件前执行。</li>
 </ul>
 </li>
 <li><strong>integrity</strong><ul>
@@ -405,6 +405,9 @@
 </ul>
 </li>
 </ul>
+<blockquote>
+<p>在XHTML文档中，要把async属性设置为 async = “async”, defer = “defer”</p>
+</blockquote>
 <p>知道了那几个属性接下来，来看看下面这个图：</p>
 <p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%3Cscript%3E.png" alt=""></p>
 <ol>

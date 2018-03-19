@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-03-19T13:16:33.972Z</updated>
+  <updated>2018-03-19T13:35:04.966Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://xuzihao.fun/%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html"/>
     <id>http://xuzihao.fun/浅谈script标签.html</id>
     <published>2018-03-19T12:57:11.911Z</published>
-    <updated>2018-03-19T13:16:33.972Z</updated>
+    <updated>2018-03-19T13:35:04.966Z</updated>
     
     <content type="html"><![CDATA[<p><code>&lt;script&gt;</code> ? 这不就是直接执行script脚本吗？</p>
 <p>以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。</p>
@@ -29,12 +29,12 @@
 <ul>
 <li><strong>async</strong><ul>
 <li>boolean</li>
-<li>异步执行该脚本</li>
+<li>异步执行该脚本，但不保证按照指定它们的先后顺序执行</li>
 </ul>
 </li>
 <li><strong>defer</strong><ul>
 <li>boolean</li>
-<li>通知浏览器该脚本将在文档完成解析后，触发 <code>DOMContentLoaded</code> 事件前执行</li>
+<li>通知浏览器该脚本将在文档完成解析后遇到<code>&lt;/html&gt;</code>，并会按照它们出现的先后顺序执行。但会在触发 <code>DOMContentLoaded</code> 事件前执行。</li>
 </ul>
 </li>
 <li><strong>integrity</strong><ul>
@@ -49,6 +49,9 @@
 </ul>
 </li>
 </ul>
+<blockquote>
+<p>在XHTML文档中，要把async属性设置为 async = “async”, defer = “defer”</p>
+</blockquote>
 <p>知道了那几个属性接下来，来看看下面这个图：</p>
 <p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%3Cscript%3E.png" alt=""></p>
 <ol>
@@ -77,10 +80,10 @@
     <link href="http://xuzihao.fun/CSS%E5%A4%96%E8%BD%AE%E5%BB%93.html"/>
     <id>http://xuzihao.fun/CSS外轮廓.html</id>
     <published>2018-03-18T14:38:00.000Z</published>
-    <updated>2018-03-18T14:51:37.131Z</updated>
+    <updated>2018-03-19T13:21:36.585Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Outline"><a href="#Outline" class="headerlink" title="Outline"></a>Outline</h1><p>看一个Outline的例子：<a href="https://codepan.net/gist/7a96f5e15ee26e3523fd17c577c01c61" target="_blank" rel="external">outline</a></p>
-<p>在下面看见一个div也有类似的效果。但是我们打开开发者工具看会发现。下面用<code>outline</code>实现的外边框中border是<code>-</code>。</p>
+<p>在下面看见一个div也有类似的效果。但是我们打开开发者工具看会发现。下面用<code>outline</code>实现的外边框中border为<code>-</code>。</p>
 <h2 id="outline和border对比"><a href="#outline和border对比" class="headerlink" title="outline和border对比"></a>outline和border对比</h2><ul>
 <li>border属于盒模型的一部分，会直接影响盒子大小。</li>
 <li>outline则是将边框画在盒子上，不会影响该框。所以它不会破坏网页布局。</li>
