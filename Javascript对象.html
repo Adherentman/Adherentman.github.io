@@ -88,21 +88,21 @@
 
 
 
-<meta name="description" content="Javascript对象JavaScript对象可以通过两种形式定义： 声明（文字）形式和构造形式 1234567//声明形式var object = &amp;#123;  a:1&amp;#125;;//构造形式var b = new Object();b.key = 1;	//给b添加个属性 通过这两种形式我发现一个大问题！ 用构造函数去创建对象我们只能通过.去添加属性，那真是可太麻烦了。。所以我基本上都用">
+<meta name="description" content="Javascript对象JavaScript对象可以通过两种形式定义： 声明（文字）形式和构造形式 1234567//声明形式var object = &amp;#123;  a:1&amp;#125;;//构造形式var b = new Object();b.key = 1;	//给b添加个属性">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript对象">
 <meta property="og:url" content="http://xuzihao.fun/Javascript对象.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="Javascript对象JavaScript对象可以通过两种形式定义： 声明（文字）形式和构造形式 1234567//声明形式var object = &amp;#123;  a:1&amp;#125;;//构造形式var b = new Object();b.key = 1;	//给b添加个属性 通过这两种形式我发现一个大问题！ 用构造函数去创建对象我们只能通过.去添加属性，那真是可太麻烦了。。所以我基本上都用">
+<meta property="og:description" content="Javascript对象JavaScript对象可以通过两种形式定义： 声明（文字）形式和构造形式 1234567//声明形式var object = &amp;#123;  a:1&amp;#125;;//构造形式var b = new Object();b.key = 1;	//给b添加个属性">
 <meta property="og:image" content="http://ozar6ogjb.bkt.clouddn.com/getOwnPropertyDescriptor.png">
 <meta property="og:image" content="http://ozar6ogjb.bkt.clouddn.com/defineProperty.png">
 <meta property="og:image" content="http://ozar6ogjb.bkt.clouddn.com/yuanxin.png">
 <meta property="og:image" content="http://ozar6ogjb.bkt.clouddn.com/_proto_.jpg">
-<meta property="og:updated_time" content="2017-12-23T13:36:54.619Z">
+<meta property="og:updated_time" content="2018-03-19T08:24:47.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript对象">
-<meta name="twitter:description" content="Javascript对象JavaScript对象可以通过两种形式定义： 声明（文字）形式和构造形式 1234567//声明形式var object = &amp;#123;  a:1&amp;#125;;//构造形式var b = new Object();b.key = 1;	//给b添加个属性 通过这两种形式我发现一个大问题！ 用构造函数去创建对象我们只能通过.去添加属性，那真是可太麻烦了。。所以我基本上都用">
+<meta name="twitter:description" content="Javascript对象JavaScript对象可以通过两种形式定义： 声明（文字）形式和构造形式 1234567//声明形式var object = &amp;#123;  a:1&amp;#125;;//构造形式var b = new Object();b.key = 1;	//给b添加个属性">
 <meta name="twitter:image" content="http://ozar6ogjb.bkt.clouddn.com/getOwnPropertyDescriptor.png">
 
 
@@ -383,6 +383,7 @@
       
         <h1 id="Javascript对象"><a href="#Javascript对象" class="headerlink" title="Javascript对象"></a>Javascript对象</h1><p>JavaScript对象可以通过两种形式定义： 声明（文字）形式和构造形式</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//声明形式</span></div><div class="line"><span class="keyword">var</span> object = &#123;</div><div class="line">  <span class="attr">a</span>:<span class="number">1</span></div><div class="line">&#125;;</div><div class="line"><span class="comment">//构造形式</span></div><div class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">b.key = <span class="number">1</span>;	<span class="comment">//给b添加个属性</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>通过这两种形式我发现一个大问题！</p>
 <p>用构造函数去创建对象我们只能通过<code>.</code>去添加属性，那真是可太麻烦了。。所以我基本上都用声明形式去创建对象。</p>
 <p>那么我想要得到<code>b</code>中<code>key</code>的值呢？？</p>
@@ -423,7 +424,7 @@
 <li>JavaScript包含一种原型链的特性，允许对象继承另一个对象的属性。</li>
 </ul>
 <p>一张简略图<br><img src="http://ozar6ogjb.bkt.clouddn.com/yuanxin.png" alt="简略"><br><img src="http://ozar6ogjb.bkt.clouddn.com/_proto_.jpg" alt="\__proto__与prototype"></p>
-<a id="more"></a>
+<!--more-->
 <ul>
 <li>对象最常见的用法<ul>
 <li>创建（create）</li>
