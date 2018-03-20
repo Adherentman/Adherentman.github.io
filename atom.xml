@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-03-19T13:49:01.961Z</updated>
+  <updated>2018-03-20T15:37:41.692Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -14,6 +14,103 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ajax与Fetch？</title>
+    <link href="http://xuzihao.fun/Ajax%E4%B8%8EFetch.html"/>
+    <id>http://xuzihao.fun/Ajax与Fetch.html</id>
+    <published>2018-03-20T14:47:33.812Z</published>
+    <updated>2018-03-20T15:37:41.692Z</updated>
+    
+    <content type="html"><![CDATA[<p>虽说现有Fetch和Axios，但我们还是需要了解下当初那传奇的Ajax！</p>
+<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p>Ajax是基于XMLHttpRequest对象来请求数据的。所以我们需要先了解下XMLHttpRequest对象。<br><a id="more"></a><br>当我们发起一个请求时：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reqListener</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.responseText);</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">xhr.onload = reqListener;</div><div class="line">xhr.open(<span class="string">"get"</span>, <span class="string">"yourfile.txt"</span>, <span class="literal">false</span>)</div><div class="line">xhr.send();</div></pre></td></tr></table></figure>
+<p>那么逐条解释，</p>
+<p>XMLHttpRequest简称XHR。</p>
+<p>在XHR的属性有<code>responseText</code>，也就是代码第2行中，它是作为<em>响应主体被返回的文本</em>，而且无论内容类型是什么，它们都会保存在该属性中。</p>
+<hr>
+
+<p>第4行代码，构造函数XMLHttpRequest初始化了一个XMLHttpRequest对象。</p>
+<hr>
+
+<p>第5行代码，看以下图：</p>
+<p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/XMLHttpRequest.png" alt=""></p>
+<p>我们会发现<code>onload</code>是XMLHttpRequestEventTarget的事件处理程序的接口。</p>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequestEventTarget/onabort" target="_blank" rel="external">XMLHttpRequestEventTarget.onabort</a><ul>
+<li>当请求失败时调用该方法</li>
+</ul>
+</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequestEventTarget/onerror" target="_blank" rel="external">XMLHttpRequestEventTarget.onerror</a><ul>
+<li>当请求发生错误时调用该方法</li>
+</ul>
+</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequestEventTarget/onload" target="_blank" rel="external">XMLHttpRequestEventTarget.onload</a><ul>
+<li>当一个HTTP请求正确加载出内容后返回时调用。</li>
+</ul>
+</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequestEventTarget/onloadstart" target="_blank" rel="external">XMLHttpRequestEventTarget.onloadstart</a><ul>
+<li>当一个HTTP请求开始加载数据时调用。</li>
+</ul>
+</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequestEventTarget/onprogress" target="_blank" rel="external">XMLHttpRequestEventTarget.onprogress</a><ul>
+<li>间歇调用该方法用来获取请求过程中的信息。</li>
+</ul>
+</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequestEventTarget/ontimeout" target="_blank" rel="external">XMLHttpRequestEventTarget.ontimeout</a><ul>
+<li>当时间超时时调用；只有通过设置XMLHttpRequest对象的timeout属性来发生超时时，这种情况才会发生。</li>
+</ul>
+</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequestEventTarget/onloadend" target="_blank" rel="external">XMLHttpRequestEventTarget.onloadend</a><ul>
+<li>当内容加载完成，不管失败与否，都会调用该方法</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>参考资料<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequestEventTarget" target="_blank" rel="external">MDN</a></p>
+</blockquote>
+<hr>
+
+<p>第6行就都是XMLHttpRequest对象的<strong>方法</strong>。</p>
+<ul>
+<li>open(method, url, async, user, password)<ul>
+<li>请求使用Http的方法，如method = ‘GET’ | ‘POST’ | ‘PUT’ | ‘DELET’</li>
+<li>url就是url</li>
+<li>async： boolean。是否异步操作。如果为false只有你得到服务器返回的数据send()方法才会返回数据。如果为值为true，一个对开发者透明的通知会发送到相关的事件监听者。</li>
+<li>user，password: 可选参数,为授权使用</li>
+</ul>
+</li>
+<li>另外在我们<strong>接收到响应之前</strong>还可以调用abort()方法来取消异步请求。</li>
+</ul>
+<hr>
+
+<p>当然XMLHttpRequest对象也有一些重要的属性而且这个对象也继承了EvenTarget和XMLHttpRequestEvenTarget的属性（如上图所示）。</p>
+<p>最重要的是当<strong>readyState</strong>属性的值由一个值变为另一个值得时候，都会触发一次<strong>readystatechange</strong>事件。</p>
+<p>那么<strong>readyState</strong>有哪些值呢？</p>
+<ul>
+<li>0，未初始化。还没调用open()方法</li>
+<li>1，启动。已经调用了open()方法</li>
+<li>2，发送。已经调用了send()方法</li>
+<li>3，接受。已经接收到部分响应数据</li>
+<li>4，完成。已经接收到全部的响应数据，而且已经可以再客户端使用了。</li>
+</ul>
+<p>我们一般对值为4这个阶段感兴趣。因为这时候所有的数据已经到位了，我们就可以做许多事情了。比如说：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</div><div class="line">        balbalbal......</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;虽说现有Fetch和Axios，但我们还是需要了解下当初那传奇的Ajax！&lt;/p&gt;
+&lt;h2 id=&quot;Ajax&quot;&gt;&lt;a href=&quot;#Ajax&quot; class=&quot;headerlink&quot; title=&quot;Ajax&quot;&gt;&lt;/a&gt;Ajax&lt;/h2&gt;&lt;p&gt;Ajax是基于XMLHttpRequest对象来请求数据的。所以我们需要先了解下XMLHttpRequest对象。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Javascript修仙之旅" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
+    
+    
+      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>浅谈script标签</title>
@@ -1691,125 +1788,6 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="读书笔记" scheme="http://xuzihao.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="读书笔记" scheme="http://xuzihao.fun/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《编码》读书笔记</title>
-    <link href="http://xuzihao.fun/%E3%80%8A%E7%BC%96%E7%A0%81%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html"/>
-    <id>http://xuzihao.fun/《编码》读书笔记.html</id>
-    <published>2017-11-12T06:21:00.000Z</published>
-    <updated>2017-11-12T07:56:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="十进制，八进制，四进制，二进制"><a href="#十进制，八进制，四进制，二进制" class="headerlink" title="十进制，八进制，四进制，二进制"></a>十进制，八进制，四进制，二进制</h1><blockquote>
-<p>在十进制中我们计数方式是：0、 1、 2、 3、 4、 5、 6、 7、 8、 9。</p>
-<p>在八进制中我们计数方式是：0、 1、 2、 3、 4、 5、 6、 7。</p>
-<p>在四进制中我们计数方式是：0、 1、 2、 3。</p>
-<p>在二进制中我们计数方式是：0、 1。</p>
-</blockquote>
-<a id="more"></a>
-<p>下面提供一个模板，这个模板可以将一个数转换最大长度为8的二进制数：</p>
-<p><img src="/images/二进制模板.png" alt="二进制模板"></p>
-<p><img src="/images/二进制模板计算.png" alt="二进制模板计算"></p>
-<p>这就是使用方法。如果要十进制转化成二进制的话，也可以用这个模板，只不过是把乘改成除就行啦。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">二进制数</th>
-<th style="text-align:center">十进制数</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0000</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">0001</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">0010</td>
-<td style="text-align:center">2</td>
-</tr>
-<tr>
-<td style="text-align:center">0011</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td style="text-align:center">0100</td>
-<td style="text-align:center">4</td>
-</tr>
-<tr>
-<td style="text-align:center">0101</td>
-<td style="text-align:center">5</td>
-</tr>
-<tr>
-<td style="text-align:center">0110</td>
-<td style="text-align:center">6</td>
-</tr>
-<tr>
-<td style="text-align:center">0111</td>
-<td style="text-align:center">7</td>
-</tr>
-<tr>
-<td style="text-align:center">1000</td>
-<td style="text-align:center">8</td>
-</tr>
-<tr>
-<td style="text-align:center">1001</td>
-<td style="text-align:center">9</td>
-</tr>
-<tr>
-<td style="text-align:center">1010</td>
-<td style="text-align:center">10</td>
-</tr>
-<tr>
-<td style="text-align:center">1011</td>
-<td style="text-align:center">11</td>
-</tr>
-<tr>
-<td style="text-align:center">1100</td>
-<td style="text-align:center">12</td>
-</tr>
-<tr>
-<td style="text-align:center">1101</td>
-<td style="text-align:center">13</td>
-</tr>
-<tr>
-<td style="text-align:center">1110</td>
-<td style="text-align:center">14</td>
-</tr>
-<tr>
-<td style="text-align:center">1111</td>
-<td style="text-align:center">15</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>在最右边一直是 0 和 1 之间交替</li>
-<li>右边第二列是 每2个0 和 每2个1 之间相互交替</li>
-<li>第三列是 每4个0 和 每4个1 之间相互交替</li>
-<li>第四列是 每8个0 和 每8个1 之间相互交替</li>
-<li>所以只要再重复这16个数字并且在每个数字前面加一个1就可以很容易的写出后面的16个数字。</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;十进制，八进制，四进制，二进制&quot;&gt;&lt;a href=&quot;#十进制，八进制，四进制，二进制&quot; class=&quot;headerlink&quot; title=&quot;十进制，八进制，四进制，二进制&quot;&gt;&lt;/a&gt;十进制，八进制，四进制，二进制&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;在十进制中我们计数方式是：0、 1、 2、 3、 4、 5、 6、 7、 8、 9。&lt;/p&gt;
-&lt;p&gt;在八进制中我们计数方式是：0、 1、 2、 3、 4、 5、 6、 7。&lt;/p&gt;
-&lt;p&gt;在四进制中我们计数方式是：0、 1、 2、 3。&lt;/p&gt;
-&lt;p&gt;在二进制中我们计数方式是：0、 1。&lt;/p&gt;
-&lt;/blockquote&gt;
     
     </summary>
     

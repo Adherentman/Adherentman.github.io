@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="生活," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -88,17 +88,19 @@
 
 
 
-<meta name="description" content="一些。。。1.业务员可能都没有理清业务或者需求，需要自己去帮他们理清，好让自己设计开发的产品更健壮和在未来更有扩展性。">
-<meta name="keywords" content="生活">
+<meta name="description" content="虽说现有Fetch和Axios，但我们还是需要了解下当初那传奇的Ajax！ AjaxAjax是基于XMLHttpRequest对象来请求数据的。所以我们需要先了解下XMLHttpRequest对象。">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="实习谈业务时所学">
-<meta property="og:url" content="http://xuzihao.fun/yewu.html">
+<meta property="og:title" content="Ajax与Fetch？">
+<meta property="og:url" content="http://xuzihao.fun/Ajax与Fetch.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="一些。。。1.业务员可能都没有理清业务或者需求，需要自己去帮他们理清，好让自己设计开发的产品更健壮和在未来更有扩展性。">
-<meta property="og:updated_time" content="2017-07-27T13:21:26.000Z">
+<meta property="og:description" content="虽说现有Fetch和Axios，但我们还是需要了解下当初那传奇的Ajax！ AjaxAjax是基于XMLHttpRequest对象来请求数据的。所以我们需要先了解下XMLHttpRequest对象。">
+<meta property="og:image" content="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/XMLHttpRequest.png">
+<meta property="og:updated_time" content="2018-03-20T15:37:41.692Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="实习谈业务时所学">
-<meta name="twitter:description" content="一些。。。1.业务员可能都没有理清业务或者需求，需要自己去帮他们理清，好让自己设计开发的产品更健壮和在未来更有扩展性。">
+<meta name="twitter:title" content="Ajax与Fetch？">
+<meta name="twitter:description" content="虽说现有Fetch和Axios，但我们还是需要了解下当初那传奇的Ajax！ AjaxAjax是基于XMLHttpRequest对象来请求数据的。所以我们需要先了解下XMLHttpRequest对象。">
+<meta name="twitter:image" content="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/XMLHttpRequest.png">
 
 
 
@@ -128,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://xuzihao.fun/yewu.html"/>
+  <link rel="canonical" href="http://xuzihao.fun/Ajax与Fetch.html"/>
 
 
 
 
 
-  <title>实习谈业务时所学 | 壮壮-Technology</title>
+  <title>Ajax与Fetch？ | 壮壮-Technology</title>
   
 
 
@@ -271,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/yewu.html">
+    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/Ajax与Fetch.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XuZiHao">
@@ -288,7 +290,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">实习谈业务时所学</h2>
+          <h2 class="post-title" itemprop="name headline">Ajax与Fetch？</h2>
         
 
         <div class="post-meta">
@@ -300,8 +302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-24T22:33:00+08:00">
-                2017-07-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-20T22:47:33+08:00">
+                2018-03-20
               </time>
             
 
@@ -323,8 +325,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Technology/" itemprop="url" rel="index">
-                    <span itemprop="name">Technology</span>
+                  <a href="/categories/Javascript修仙之旅/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript修仙之旅</span>
                   </a>
                 </span>
 
@@ -341,9 +343,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/yewu.html#comments" itemprop="discussionUrl">
+                <a href="/Ajax与Fetch.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="yewu.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="Ajax与Fetch.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -376,8 +378,81 @@
       
 
       
-        <h1 id="一些。。。"><a href="#一些。。。" class="headerlink" title="一些。。。"></a>一些。。。</h1><p>1.业务员可能都没有理清业务或者需求，需要自己去帮他们理清，好让自己设计开发的产品更健壮和在未来更有扩展性。</p>
-<a id="more"></a>
+        <p>虽说现有Fetch和Axios，但我们还是需要了解下当初那传奇的Ajax！</p>
+<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p>Ajax是基于XMLHttpRequest对象来请求数据的。所以我们需要先了解下XMLHttpRequest对象。<br><a id="more"></a><br>当我们发起一个请求时：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reqListener</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.responseText);</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">xhr.onload = reqListener;</div><div class="line">xhr.open(<span class="string">"get"</span>, <span class="string">"yourfile.txt"</span>, <span class="literal">false</span>)</div><div class="line">xhr.send();</div></pre></td></tr></table></figure>
+<p>那么逐条解释，</p>
+<p>XMLHttpRequest简称XHR。</p>
+<p>在XHR的属性有<code>responseText</code>，也就是代码第2行中，它是作为<em>响应主体被返回的文本</em>，而且无论内容类型是什么，它们都会保存在该属性中。</p>
+<hr>
+
+<p>第4行代码，构造函数XMLHttpRequest初始化了一个XMLHttpRequest对象。</p>
+<hr>
+
+<p>第5行代码，看以下图：</p>
+<p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/XMLHttpRequest.png" alt=""></p>
+<p>我们会发现<code>onload</code>是XMLHttpRequestEventTarget的事件处理程序的接口。</p>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequestEventTarget/onabort" target="_blank" rel="external">XMLHttpRequestEventTarget.onabort</a><ul>
+<li>当请求失败时调用该方法</li>
+</ul>
+</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequestEventTarget/onerror" target="_blank" rel="external">XMLHttpRequestEventTarget.onerror</a><ul>
+<li>当请求发生错误时调用该方法</li>
+</ul>
+</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequestEventTarget/onload" target="_blank" rel="external">XMLHttpRequestEventTarget.onload</a><ul>
+<li>当一个HTTP请求正确加载出内容后返回时调用。</li>
+</ul>
+</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequestEventTarget/onloadstart" target="_blank" rel="external">XMLHttpRequestEventTarget.onloadstart</a><ul>
+<li>当一个HTTP请求开始加载数据时调用。</li>
+</ul>
+</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequestEventTarget/onprogress" target="_blank" rel="external">XMLHttpRequestEventTarget.onprogress</a><ul>
+<li>间歇调用该方法用来获取请求过程中的信息。</li>
+</ul>
+</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequestEventTarget/ontimeout" target="_blank" rel="external">XMLHttpRequestEventTarget.ontimeout</a><ul>
+<li>当时间超时时调用；只有通过设置XMLHttpRequest对象的timeout属性来发生超时时，这种情况才会发生。</li>
+</ul>
+</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequestEventTarget/onloadend" target="_blank" rel="external">XMLHttpRequestEventTarget.onloadend</a><ul>
+<li>当内容加载完成，不管失败与否，都会调用该方法</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>参考资料<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequestEventTarget" target="_blank" rel="external">MDN</a></p>
+</blockquote>
+<hr>
+
+<p>第6行就都是XMLHttpRequest对象的<strong>方法</strong>。</p>
+<ul>
+<li>open(method, url, async, user, password)<ul>
+<li>请求使用Http的方法，如method = ‘GET’ | ‘POST’ | ‘PUT’ | ‘DELET’</li>
+<li>url就是url</li>
+<li>async： boolean。是否异步操作。如果为false只有你得到服务器返回的数据send()方法才会返回数据。如果为值为true，一个对开发者透明的通知会发送到相关的事件监听者。</li>
+<li>user，password: 可选参数,为授权使用</li>
+</ul>
+</li>
+<li>另外在我们<strong>接收到响应之前</strong>还可以调用abort()方法来取消异步请求。</li>
+</ul>
+<hr>
+
+<p>当然XMLHttpRequest对象也有一些重要的属性而且这个对象也继承了EvenTarget和XMLHttpRequestEvenTarget的属性（如上图所示）。</p>
+<p>最重要的是当<strong>readyState</strong>属性的值由一个值变为另一个值得时候，都会触发一次<strong>readystatechange</strong>事件。</p>
+<p>那么<strong>readyState</strong>有哪些值呢？</p>
+<ul>
+<li>0，未初始化。还没调用open()方法</li>
+<li>1，启动。已经调用了open()方法</li>
+<li>2，发送。已经调用了send()方法</li>
+<li>3，接受。已经接收到部分响应数据</li>
+<li>4，完成。已经接收到全部的响应数据，而且已经可以再客户端使用了。</li>
+</ul>
+<p>我们一般对值为4这个阶段感兴趣。因为这时候所有的数据已经到位了，我们就可以做许多事情了。比如说：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</div><div class="line">        balbalbal......</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -394,7 +469,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/生活/" rel="tag"># 生活</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -407,8 +482,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/评论功能迁移.html" rel="next" title="多说挂了好久。现在换成来必力">
-                <i class="fa fa-chevron-left"></i> 多说挂了好久。现在换成来必力
+              <a href="/浅谈script标签.html" rel="next" title="浅谈script标签">
+                <i class="fa fa-chevron-left"></i> 浅谈script标签
               </a>
             
           </div>
@@ -416,10 +491,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/git.html" rel="prev" title="Git基本操作">
-                Git基本操作 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -594,7 +665,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一些。。。"><span class="nav-number">1.</span> <span class="nav-text">一些。。。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax"><span class="nav-number">1.</span> <span class="nav-text">Ajax</span></a></li></ol></div>
             
 
           </div>
@@ -791,9 +862,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://xuzihao.fun/yewu.html';
-          this.page.identifier = 'yewu.html';
-          this.page.title = '实习谈业务时所学';
+          this.page.url = 'http://xuzihao.fun/Ajax与Fetch.html';
+          this.page.identifier = 'Ajax与Fetch.html';
+          this.page.title = 'Ajax与Fetch？';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://xuzihao.disqus.com/embed.js';
