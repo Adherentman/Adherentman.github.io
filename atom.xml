@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-03-21T14:14:33.291Z</updated>
+  <updated>2018-03-23T15:01:13.428Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -14,6 +14,83 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>同源与跨域资源共享</title>
+    <link href="http://xuzihao.fun/%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB.html"/>
+    <id>http://xuzihao.fun/跨域资源共享.html</id>
+    <published>2018-03-23T12:53:35.483Z</published>
+    <updated>2018-03-23T15:01:13.428Z</updated>
+    
+    <content type="html"><![CDATA[<p>说到跨域，我们需要先说说什么是同源策略。</p>
+<h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><p>浏览器安全的基石是”同源政策”（<a href="https://en.wikipedia.org/wiki/Same-origin_policy" target="_blank" rel="external">same-origin policy</a>）。</p>
+<p>也就是说要满足以下条件：</p>
+<blockquote>
+<ol>
+<li>协议相同</li>
+<li>域名相同</li>
+<li>端口相同</li>
+</ol>
+</blockquote>
+<p>也就是说，如果两个页面的协议，端口（如果有指定）和域名都相同，则两个页面具有相同的<strong>源</strong>。</p>
+<p>同源政策的目的，是为了保证用户信息的安全，防止恶意的网站窃取数据。</p>
+<p>如果非同源，共有三种行为受到限制：</p>
+<blockquote>
+<ol>
+<li>Cookie、LocalStorage 和 IndexDB 无法读取。</li>
+<li>DOM 无法获得。</li>
+<li>AJAX 请求不能发送。</li>
+</ol>
+</blockquote>
+<p>同源策略是对XMLHTTPRequest的一种约束。所以有时候我们想要去获取别的消息，我们需要跨过同源策略。</p>
+<p>但是有些的跨域请求是被允许的比如：</p>
+<ul>
+<li><code>&lt;script&gt;</code>标签</li>
+<li><code>&lt;link&gt;</code>标签</li>
+<li><code>&lt;img&gt;</code>标签</li>
+<li><code>&lt;a&gt;</code>标签</li>
+<li><code>&lt;video&gt;</code>和 <code>&lt;audio&gt;</code>嵌入多媒体资源。</li>
+<li><code>&lt;iframe&gt;</code>与<code>&lt;frame&gt;</code></li>
+</ul>
+<h2 id="CORS跨域资源共享"><a href="#CORS跨域资源共享" class="headerlink" title="CORS跨域资源共享"></a>CORS跨域资源共享</h2><p>那么为了解决这个问题，CORS横空出世！</p>
+<p>IE8可以通过XDomainRequest对象支持CORS。</p>
+<p>其他浏览器我们都可以通过XMLHttpRequest对象支持CORS。</p>
+<p>跨域资源共享标准新增了一组 HTTP 首部字段，允许服务器声明哪些源站有权限访问哪些资源。</p>
+<p>其实CORS背后的思想就是，使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功，还是应该失败。</p>
+<p>CORS分简单请求和非简单请求，满足以下条件就为简单请求：</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="external">简单请求</a></p>
+<h2 id="HTTP-响应首部字段"><a href="#HTTP-响应首部字段" class="headerlink" title="HTTP 响应首部字段"></a>HTTP 响应首部字段</h2><h3 id="Access-Control-Allow-Origin"><a href="#Access-Control-Allow-Origin" class="headerlink" title="Access-Control-Allow-Origin"></a>Access-Control-Allow-Origin</h3><p>根据Reuqest请求头中的<em>Origin</em>来判断该请求的资源是否可以被共享。</p>
+<h3 id="Access-Control-Allow-Credentials"><a href="#Access-Control-Allow-Credentials" class="headerlink" title="Access-Control-Allow-Credentials"></a>Access-Control-Allow-Credentials</h3><p>该字段可选。它的值是一个布尔值，表示是否允许发送Cookie。</p>
+<h3 id="Access-Control-Expose-Headers"><a href="#Access-Control-Expose-Headers" class="headerlink" title="Access-Control-Expose-Headers"></a>Access-Control-Expose-Headers</h3><p>让服务器把允许浏览器访问的头放入白名单</p>
+<p>在跨域访问时，XMLHttpRequest对象的getResponseHeader()方法只能拿到一些最基本的响应头，Cache-Control、Content-Language、Content-Type、Expires、Last-Modified、Pragma，如果要访问其他头，则需要服务器设置本响应头</p>
+<h3 id="Access-Control-Allow-Credentials-1"><a href="#Access-Control-Allow-Credentials-1" class="headerlink" title="Access-Control-Allow-Credentials"></a>Access-Control-Allow-Credentials</h3><p>指定了当浏览器的<code>credentials</code>设置为true时是否允许浏览器读取response的内容。</p>
+<p>所以我们需要<strong>附带身份凭证的请求</strong>:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">xhr.withCredentials = <span class="literal">true</span>;</div></pre></td></tr></table></figure>
+<p>我们不这样去做处理的话，即使服务器同意发送Cookie，浏览器也不会发送。或者，服务器要求设置Cookie，浏览器也不会处理。</p>
+<h2 id="HTTP请求首部字段"><a href="#HTTP请求首部字段" class="headerlink" title="HTTP请求首部字段"></a>HTTP请求首部字段</h2><p>用于发起跨域请求的首部字段，其实这些字段都不用我们去手动设置。当我们使用 XMLHttpRequest 对象发起跨域请求时，它们已经被设置就绪。</p>
+<ul>
+<li>Origin</li>
+<li>Access-Control-Request-Method</li>
+<li>Access-Control-Request-Headers</li>
+</ul>
+<blockquote>
+<p>参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="external">MDN-HTTP请求首部字段</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;说到跨域，我们需要先说说什么是同源策略。&lt;/p&gt;
+&lt;h2 id=&quot;同源策略&quot;&gt;&lt;a href=&quot;#同源策略&quot; class=&quot;headerlink&quot; title=&quot;同源策略&quot;&gt;&lt;/a&gt;同源策略&lt;/h2&gt;&lt;p&gt;浏览器安全的基石是”同源政策”（&lt;a href=&quot;https://e
+    
+    </summary>
+    
+      <category term="Javascript修仙之旅" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
+    
+    
+      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>Ajax与Fetch？</title>
@@ -143,7 +220,7 @@
     <link href="http://xuzihao.fun/%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html"/>
     <id>http://xuzihao.fun/浅谈script标签.html</id>
     <published>2018-03-19T12:57:11.911Z</published>
-    <updated>2018-03-19T13:49:01.961Z</updated>
+    <updated>2018-03-23T14:18:39.533Z</updated>
     
     <content type="html"><![CDATA[<p><code>&lt;script&gt;</code> ? 这不就是直接执行script脚本吗？</p>
 <p>以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。</p>
@@ -168,7 +245,7 @@
 <li><strong>type</strong></li>
 <li><strong>text</strong></li>
 <li><strong>crossorigin</strong><ul>
-<li>使那些将静态资源放在另外一个域名的站点打印错误信息</li>
+<li>使那些将静态资源放在另外一个域名的站点打印错误信息,就是将跨域报错变为同源报错</li>
 </ul>
 </li>
 </ul>
@@ -1595,229 +1672,6 @@
       <category term="读书笔记" scheme="http://xuzihao.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
       <category term="网络" scheme="http://xuzihao.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%BD%91%E7%BB%9C/"/>
-    
-    
-      <category term="读书笔记" scheme="http://xuzihao.fun/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《图解HTTP》读书笔记</title>
-    <link href="http://xuzihao.fun/%E3%80%8A%E5%9B%BE%E8%A7%A3HTTP%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html"/>
-    <id>http://xuzihao.fun/《图解HTTP》读书笔记.html</id>
-    <published>2017-11-24T14:52:00.000Z</published>
-    <updated>2017-11-24T14:52:51.604Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="图解HTTP"><a href="#图解HTTP" class="headerlink" title="图解HTTP"></a>图解HTTP</h1><h2 id="TCP-IP协议族"><a href="#TCP-IP协议族" class="headerlink" title="TCP/IP协议族"></a>TCP/IP协议族</h2><ul>
-<li>TCP/IP协议族按层次分别分为四层<ul>
-<li>应用层</li>
-<li>传输层</li>
-<li>网络层</li>
-<li>数据链路层</li>
-</ul>
-</li>
-</ul>
-<a id="more"></a>
-<p><img src="http://ozar6ogjb.bkt.clouddn.com/TCPIP%E5%88%86%E5%B1%82.png" alt="TCP/IP通信传输流"></p>
-<p>URI, URL, URN</p>
-<ul>
-<li>“A Uniform Resource Identifier (URI) 是一个紧凑的字符串用来标示抽象或物理资源。”</li>
-<li>URL， URN是URI的子集，除了确定一个资源，还提供一种定位该资源的主要访问机制</li>
-<li>换句通俗易懂的话说：</li>
-<li>URN作用就好像一个人的名字，URL就像一个人的地址。再换句话说：URN确定了东西的身份，URL提供了找到他的方式。</li>
-</ul>
-<h2 id="状态码的类别"><a href="#状态码的类别" class="headerlink" title="状态码的类别"></a>状态码的类别</h2><table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:left">类别</th>
-<th style="text-align:left">原因短语</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">1xx</td>
-<td style="text-align:left">Informational(信息状态码)</td>
-<td style="text-align:left">接受的请求正在处理</td>
-</tr>
-<tr>
-<td style="text-align:left">2xx</td>
-<td style="text-align:left">Success(成功状态码)</td>
-<td style="text-align:left">请求正常处理完毕</td>
-</tr>
-<tr>
-<td style="text-align:left">3xx</td>
-<td style="text-align:left">Redirection(重定向状态码)</td>
-<td style="text-align:left">需要进行附加操作以完成请求</td>
-</tr>
-<tr>
-<td style="text-align:left">4xx</td>
-<td style="text-align:left">Client Error(客户端错误状态码)</td>
-<td style="text-align:left">服务器无法处理请求</td>
-</tr>
-<tr>
-<td style="text-align:left">5xx</td>
-<td style="text-align:left">Server Error(服务器错误状态代码)</td>
-<td style="text-align:left">服务器处理请求出错</td>
-</tr>
-</tbody>
-</table>
-<p>最具有代表性的14个状态码：</p>
-<p><em><strong>2xx成功</strong></em></p>
-<ul>
-<li>200 OK<ul>
-<li>表示从客户端发来的请求在服务器端被正常处理了。</li>
-</ul>
-</li>
-<li>204 No Content<ul>
-<li>代表服务器接受的请求已成功处理，但在返回的响应报文中不含实体的主体部分。</li>
-</ul>
-</li>
-<li>206 Partial Content<ul>
-<li>表示客户端进行了范围请求，而服务器成功执行了这部分的GET请求。</li>
-</ul>
-</li>
-</ul>
-<p><em><strong>3xx重定向</strong></em></p>
-<p>当301， 302， 303响应状态码返回时，几乎所有的浏览器都会把POST改成GET，并删除请求报文内的主体，之后请求会自动再次发送。</p>
-<ul>
-<li>301 Moved Permanently<ul>
-<li>永久性重定向。</li>
-</ul>
-</li>
-<li>302 Found<ul>
-<li>临时性重定向。</li>
-</ul>
-</li>
-<li>303 See Other<ul>
-<li>由于请求对应的资源存在着另一个URI，应使用GET方法定向获取请求的资源。</li>
-</ul>
-</li>
-<li>304 Not Modified<ul>
-<li>表示客户端发送附带条件的请求时，服务器端允许请求访问资源，但因发生请求为满足条件的情况后，直接返回304 Not Modified（服务器端资源未改变，可直接使用客户端未过期的缓存）。</li>
-</ul>
-</li>
-<li>307 Temporary Redirect<ul>
-<li>临时重定向。该状态码与302有相同的含义，但是307不会从POST变成GET。</li>
-</ul>
-</li>
-</ul>
-<p><em><strong>4xx客户端错误</strong></em></p>
-<ul>
-<li>400 Bad Request<ul>
-<li>表示请求报文中存在语法错误。</li>
-</ul>
-</li>
-<li>401 Unauthorized<ul>
-<li>表示发送的请求需要有通过HTTP认证的认证信息。</li>
-</ul>
-</li>
-<li>403 Forbidden<ul>
-<li>表明对请求资源的访问被服务器拒绝了。</li>
-</ul>
-</li>
-<li>404 Not Found<ul>
-<li>表明服务器上没有请求的资源。</li>
-</ul>
-</li>
-</ul>
-<p><em><strong>5xx服务器错误</strong></em></p>
-<ul>
-<li>500 Internal Server Error<ul>
-<li>表明服务器在执行请求时发生了错误。</li>
-</ul>
-</li>
-<li>503 Service Unavailbale<ul>
-<li>表明服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。</li>
-</ul>
-</li>
-</ul>
-<h2 id="通信数据转发程序：代理、网关、隧道"><a href="#通信数据转发程序：代理、网关、隧道" class="headerlink" title="通信数据转发程序：代理、网关、隧道"></a>通信数据转发程序：代理、网关、隧道</h2><h3 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h3><p>代理服务器的基本行为就是接收客户端发送的请求后转发给其他服务器。<strong>代理不改变请求URI</strong>，会直接发送给前方持有资源的目标服务器。</p>
-<p>持有资源实体的服务器称为<strong>源服务器</strong>，从源服务器返回的响应经过代理服务器后再传给客户端。</p>
-<p>使用代理服务器的理由：</p>
-<ul>
-<li>利用缓存技术，减少网络带宽的流量。</li>
-<li>组织内部针对特定网站的访问控制，以获取访问日志为主要目的。</li>
-</ul>
-<p>代理有两种基准分类： 一种是是否使用了缓存，另一种是是否会修改报文。</p>
-<p>缓存代理：代理转发响应式，<strong>缓存代理</strong>会预先将资源的副本保存在代理服务器上。</p>
-<p>透明代理：转发请求或响应时，不对报文做任何加工的代理类型被称为<strong>透明代理</strong>。反之，如果对报文内容进行加工的代理就叫做<strong>非透明代理</strong>。</p>
-<h3 id="网关"><a href="#网关" class="headerlink" title="网关"></a>网关</h3><p>网关能使通信线路上的服务器提供非HTTP协议服务。</p>
-<p>利用网关能提高通信的安全性。</p>
-<p>比如说：网关可以连接数据库。还有在我们淘宝购物用信用卡结账的时候，网关可以和信用卡结算系统联动。</p>
-<h3 id="隧道"><a href="#隧道" class="headerlink" title="隧道"></a>隧道</h3><p>隧道可按要求建立起一条与其他服务器的通信线路，届时使用SSL等加密手段进行通信。</p>
-<p>也就是说，隧道本身是不会去解析HTTP请求的，他只是作为一个很安全的通道去让客户端与服务器相连。</p>
-<h2 id="HTTP首部"><a href="#HTTP首部" class="headerlink" title="HTTP首部"></a>HTTP首部</h2><h3 id="HTTP请求报文"><a href="#HTTP请求报文" class="headerlink" title="HTTP请求报文"></a>HTTP请求报文</h3><p>在请求中，HTTP报文由方法、URI、HTTP版本、HTTP首部字段等部分构成</p>
-<h3 id="HTTP响应报文"><a href="#HTTP响应报文" class="headerlink" title="HTTP响应报文"></a>HTTP响应报文</h3><p>在响应中，HTTP报文由HTTP版本、状态码（数字和原因短语）、HTTP首部字段 3部分构成。</p>
-<h3 id="HTTP首部字段"><a href="#HTTP首部字段" class="headerlink" title="HTTP首部字段"></a>HTTP首部字段</h3><p>使用首部字段是为了给浏览器和服务器提供报文主体大小，所使用的语言、认证信息等内容。</p>
-<p>HTTP首部字段是由<strong>首部字段名</strong>和<strong>字段值</strong>构成：</p>
-<blockquote>
-<p>首部字段名： 字段值</p>
-</blockquote>
-<p>在HTTP首部中，以Content-Type这个字段来表示报文主题的对象类型：</p>
-<blockquote>
-<p>Content-Type: text/html</p>
-<p>首部字段名：     字段值</p>
-</blockquote>
-<p>而且在字段值对应单个HTTP首部字段可以有多个值。</p>
-<blockquote>
-<p>Keep-Alive: timeout=15, max=100</p>
-</blockquote>
-<h3 id="4种HTTP首部字段类型"><a href="#4种HTTP首部字段类型" class="headerlink" title="4种HTTP首部字段类型"></a>4种HTTP首部字段类型</h3><ul>
-<li>通用首部字段<ul>
-<li>请求报文和响应报文两端都会使用的首部</li>
-</ul>
-</li>
-<li>请求首部字段<ul>
-<li>从客户端向服务器端发送请求报文时使用的首部。<ul>
-<li>补充了请求的附加内容、客户端信息、响应内容相关优化级等信息</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>响应首部字段<ul>
-<li>从服务器向客户端返回响应报文时使用的首部。<ul>
-<li>补充了响应的附加内容，也会要求客户端附加额外的内容信息。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>实体首部字段<ul>
-<li>针对请求报文和响应豹纹的实体部分使用的首部<ul>
-<li>补充了资源内容更新时间等与实体有关的信息。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="HTTP的缺点"><a href="#HTTP的缺点" class="headerlink" title="HTTP的缺点"></a>HTTP的缺点</h2><ul>
-<li>通信使用的明文（不加密），可能会被窃听。</li>
-<li>不验证通信方的身份，因此有可能遭遇伪装。</li>
-<li>无法证明报文的完整性，所以有可能已遭篡改。</li>
-</ul>
-<h2 id="HTTP使用的认证方式"><a href="#HTTP使用的认证方式" class="headerlink" title="HTTP使用的认证方式"></a>HTTP使用的认证方式</h2><ul>
-<li>BASIC认证（基本认证）</li>
-<li>DIGEST认证（摘要认证）</li>
-<li>SSL客户端认证</li>
-<li>FormBase认证（基于表单认证）</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;图解HTTP&quot;&gt;&lt;a href=&quot;#图解HTTP&quot; class=&quot;headerlink&quot; title=&quot;图解HTTP&quot;&gt;&lt;/a&gt;图解HTTP&lt;/h1&gt;&lt;h2 id=&quot;TCP-IP协议族&quot;&gt;&lt;a href=&quot;#TCP-IP协议族&quot; class=&quot;headerlink&quot; title=&quot;TCP/IP协议族&quot;&gt;&lt;/a&gt;TCP/IP协议族&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;TCP/IP协议族按层次分别分为四层&lt;ul&gt;
-&lt;li&gt;应用层&lt;/li&gt;
-&lt;li&gt;传输层&lt;/li&gt;
-&lt;li&gt;网络层&lt;/li&gt;
-&lt;li&gt;数据链路层&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="读书笔记" scheme="http://xuzihao.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
       <category term="读书笔记" scheme="http://xuzihao.fun/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
