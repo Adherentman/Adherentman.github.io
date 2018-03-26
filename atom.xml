@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-03-23T15:01:13.428Z</updated>
+  <updated>2018-03-26T14:09:56.264Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -16,11 +16,49 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Mac通过ssh连接ecs</title>
+    <link href="http://xuzihao.fun/mac%E8%BF%9E%E6%8E%A5ssh.html"/>
+    <id>http://xuzihao.fun/mac连接ssh.html</id>
+    <published>2018-03-26T13:55:10.689Z</published>
+    <updated>2018-03-26T14:09:56.264Z</updated>
+    
+    <content type="html"><![CDATA[<p>通过学生优惠买了半年的阿里云服务器ecs！好便宜啊。。想想马上就毕业了，甚至有点小可惜不能时间长点享受优惠。。</p>
+<a id="more"></a>
+<p>那不说多的直接进入正题。</p>
+<p>起初通过阿里云控制台进行远程控制自己买的云服务器。。总是感觉在网页端操作终端有点变扭，就准备用tmux直接通过ssh连接我自己的云服务器。</p>
+<p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%E9%98%BF%E9%87%8C%E4%BA%91ecs%E6%8A%A5%E9%94%99.png" alt=""></p>
+<p>它居然说！！！</p>
+<p>Timed out!!</p>
+<p>这是Why！！</p>
+<p>之后帮助中心走了一遭，发现原来我是安全组没配置。。</p>
+<p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9B%B4%E5%A4%9A.png" alt=""></p>
+<p>然后我们点击安全组配置。</p>
+<p>之后进入重点！</p>
+<p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%E9%98%BF%E9%87%8C%E4%BA%91ces%E5%87%BA%E5%85%A5.png" alt=""></p>
+<p>我们在出和入都配置一样的设置。</p>
+<p>然后我们就可以愉快的去终端里通过ssh连接我们的云服务器啦~</p>
+<p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/ssh%E5%89%AF%E6%9C%AC.png" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;通过学生优惠买了半年的阿里云服务器ecs！好便宜啊。。想想马上就毕业了，甚至有点小可惜不能时间长点享受优惠。。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="阿里云服务的使用" scheme="http://xuzihao.fun/categories/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="Linux" scheme="http://xuzihao.fun/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>同源与跨域资源共享</title>
     <link href="http://xuzihao.fun/%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB.html"/>
     <id>http://xuzihao.fun/跨域资源共享.html</id>
     <published>2018-03-23T12:53:35.483Z</published>
-    <updated>2018-03-23T15:01:13.428Z</updated>
+    <updated>2018-03-26T13:53:48.550Z</updated>
     
     <content type="html"><![CDATA[<p>说到跨域，我们需要先说说什么是同源策略。</p>
 <h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><p>浏览器安全的基石是”同源政策”（<a href="https://en.wikipedia.org/wiki/Same-origin_policy" target="_blank" rel="external">same-origin policy</a>）。</p>
@@ -34,6 +72,7 @@
 </blockquote>
 <p>也就是说，如果两个页面的协议，端口（如果有指定）和域名都相同，则两个页面具有相同的<strong>源</strong>。</p>
 <p>同源政策的目的，是为了保证用户信息的安全，防止恶意的网站窃取数据。</p>
+<a id="more"></a>
 <p>如果非同源，共有三种行为受到限制：</p>
 <blockquote>
 <ol>
@@ -81,7 +120,17 @@
     <summary type="html">
     
       &lt;p&gt;说到跨域，我们需要先说说什么是同源策略。&lt;/p&gt;
-&lt;h2 id=&quot;同源策略&quot;&gt;&lt;a href=&quot;#同源策略&quot; class=&quot;headerlink&quot; title=&quot;同源策略&quot;&gt;&lt;/a&gt;同源策略&lt;/h2&gt;&lt;p&gt;浏览器安全的基石是”同源政策”（&lt;a href=&quot;https://e
+&lt;h2 id=&quot;同源策略&quot;&gt;&lt;a href=&quot;#同源策略&quot; class=&quot;headerlink&quot; title=&quot;同源策略&quot;&gt;&lt;/a&gt;同源策略&lt;/h2&gt;&lt;p&gt;浏览器安全的基石是”同源政策”（&lt;a href=&quot;https://en.wikipedia.org/wiki/Same-origin_policy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;same-origin policy&lt;/a&gt;）。&lt;/p&gt;
+&lt;p&gt;也就是说要满足以下条件：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;协议相同&lt;/li&gt;
+&lt;li&gt;域名相同&lt;/li&gt;
+&lt;li&gt;端口相同&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;也就是说，如果两个页面的协议，端口（如果有指定）和域名都相同，则两个页面具有相同的&lt;strong&gt;源&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;同源政策的目的，是为了保证用户信息的安全，防止恶意的网站窃取数据。&lt;/p&gt;
     
     </summary>
     
@@ -1605,76 +1654,6 @@
     
     
       <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机网络读书笔记（一）</title>
-    <link href="http://xuzihao.fun/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89.html"/>
-    <id>http://xuzihao.fun/计算机网络读书笔记（一）.html</id>
-    <published>2017-12-04T07:29:00.000Z</published>
-    <updated>2017-12-04T08:20:32.617Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="服务原语"><a href="#服务原语" class="headerlink" title="服务原语"></a>服务原语</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">原语</th>
-<th style="text-align:left">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">LISTEN</td>
-<td style="text-align:left">阻塞操作，等待入境连接请求</td>
-</tr>
-<tr>
-<td style="text-align:left">CONNECT</td>
-<td style="text-align:left">与等待中的对等实体建立连接</td>
-</tr>
-<tr>
-<td style="text-align:left">ACCEPT</td>
-<td style="text-align:left">接受来自对等实体的入境连接请求</td>
-</tr>
-<tr>
-<td style="text-align:left">RECEIVE</td>
-<td style="text-align:left">阻塞操作，等待入境报文</td>
-</tr>
-<tr>
-<td style="text-align:left">SEND</td>
-<td style="text-align:left">给对等实体发送一个报文</td>
-</tr>
-<tr>
-<td style="text-align:left">DISCONNECT</td>
-<td style="text-align:left">终止一个连接</td>
-</tr>
-</tbody>
-</table>
-<h2 id="服务和协议"><a href="#服务和协议" class="headerlink" title="服务和协议"></a>服务和协议</h2><p>服务和协议是两个截然不同的概念。</p>
-<p><strong>服务：</strong></p>
-<p>是指某一层向它上一层提供的一组原语（操作）。服务定义了该层准备代表其用户执行哪些操作，但是它不会去考虑如何实现这些操作。低层是服务提供者，上层是服务用户。</p>
-<p><strong>协议：</strong></p>
-<p>协议是一组规则，规定了同一层上对等实体之间所交换的数据包或者报文的格式和含义。</p>
-<p><strong>服务涉及层与层之间的接口！！！！那么，协议设计不同机器上两个对等实体之间发送的数据包</strong></p>
-<p><img src="http://ozar6ogjb.bkt.clouddn.com/%E6%9C%8D%E5%8A%A1%E5%92%8C%E5%8D%8F%E8%AE%AE.png" alt="服务和协议"></p>
-<p>用编程语言来说的话，服务就好像是面向对象语言中的抽象数据类型或者对象。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;服务原语&quot;&gt;&lt;a href=&quot;#服务原语&quot; class=&quot;headerlink&quot; title=&quot;服务原语&quot;&gt;&lt;/a&gt;服务原语&lt;/h2&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&quot;text-align:left&quot;&gt;原语&lt;/th&gt;
-&lt;th styl
-    
-    </summary>
-    
-      <category term="读书笔记" scheme="http://xuzihao.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="网络" scheme="http://xuzihao.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%BD%91%E7%BB%9C/"/>
-    
-    
-      <category term="读书笔记" scheme="http://xuzihao.fun/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
