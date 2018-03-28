@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="React Native," />
 
 
 
@@ -88,17 +88,17 @@
 
 
 
-<meta name="description" content="说到跨域，我们需要先说说什么是同源策略。 同源策略浏览器安全的基石是”同源政策”（same-origin policy）。 也就是说要满足以下条件：   协议相同 域名相同 端口相同   也就是说，如果两个页面的协议，端口（如果有指定）和域名都相同，则两个页面具有相同的源。 同源政策的目的，是为了保证用户信息的安全，防止恶意的网站窃取数据。">
-<meta name="keywords" content="JavaScript">
+<meta name="description" content="微软 CodePush 使用安装yarn global add code-push-cli 注册账户code-push register 会弹出一个浏览器,让你注册,可以使用 github 帐号对其进行授权,授权成功会给一串 Token,点击复制，在控制进行粘贴回车(或者使用 code-push login 命令)。">
+<meta name="keywords" content="React Native">
 <meta property="og:type" content="article">
-<meta property="og:title" content="同源与跨域资源共享">
-<meta property="og:url" content="http://xuzihao.fun/跨域资源共享.html">
+<meta property="og:title" content="ReactNative热更新之微软CodePush">
+<meta property="og:url" content="http://xuzihao.fun/ReactNativeCodePush.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="说到跨域，我们需要先说说什么是同源策略。 同源策略浏览器安全的基石是”同源政策”（same-origin policy）。 也就是说要满足以下条件：   协议相同 域名相同 端口相同   也就是说，如果两个页面的协议，端口（如果有指定）和域名都相同，则两个页面具有相同的源。 同源政策的目的，是为了保证用户信息的安全，防止恶意的网站窃取数据。">
-<meta property="og:updated_time" content="2018-03-26T13:53:48.550Z">
+<meta property="og:description" content="微软 CodePush 使用安装yarn global add code-push-cli 注册账户code-push register 会弹出一个浏览器,让你注册,可以使用 github 帐号对其进行授权,授权成功会给一串 Token,点击复制，在控制进行粘贴回车(或者使用 code-push login 命令)。">
+<meta property="og:updated_time" content="2018-03-28T14:16:55.431Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="同源与跨域资源共享">
-<meta name="twitter:description" content="说到跨域，我们需要先说说什么是同源策略。 同源策略浏览器安全的基石是”同源政策”（same-origin policy）。 也就是说要满足以下条件：   协议相同 域名相同 端口相同   也就是说，如果两个页面的协议，端口（如果有指定）和域名都相同，则两个页面具有相同的源。 同源政策的目的，是为了保证用户信息的安全，防止恶意的网站窃取数据。">
+<meta name="twitter:title" content="ReactNative热更新之微软CodePush">
+<meta name="twitter:description" content="微软 CodePush 使用安装yarn global add code-push-cli 注册账户code-push register 会弹出一个浏览器,让你注册,可以使用 github 帐号对其进行授权,授权成功会给一串 Token,点击复制，在控制进行粘贴回车(或者使用 code-push login 命令)。">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://xuzihao.fun/跨域资源共享.html"/>
+  <link rel="canonical" href="http://xuzihao.fun/ReactNativeCodePush.html"/>
 
 
 
 
 
-  <title>同源与跨域资源共享 | 壮壮-Technology</title>
+  <title>ReactNative热更新之微软CodePush | 壮壮-Technology</title>
   
 
 
@@ -271,7 +271,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/跨域资源共享.html">
+    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/ReactNativeCodePush.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XuZiHao">
@@ -288,7 +288,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">同源与跨域资源共享</h2>
+          <h2 class="post-title" itemprop="name headline">ReactNative热更新之微软CodePush</h2>
         
 
         <div class="post-meta">
@@ -300,8 +300,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-23T20:53:35+08:00">
-                2018-03-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T22:10:23+08:00">
+                2018-03-28
               </time>
             
 
@@ -323,8 +323,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript修仙之旅/" itemprop="url" rel="index">
-                    <span itemprop="name">Javascript修仙之旅</span>
+                  <a href="/categories/React-Native/" itemprop="url" rel="index">
+                    <span itemprop="name">React Native</span>
                   </a>
                 </span>
 
@@ -341,9 +341,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/跨域资源共享.html#comments" itemprop="discussionUrl">
+                <a href="/ReactNativeCodePush.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="跨域资源共享.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="ReactNativeCodePush.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -376,61 +376,66 @@
       
 
       
-        <p>说到跨域，我们需要先说说什么是同源策略。</p>
-<h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><p>浏览器安全的基石是”同源政策”（<a href="https://en.wikipedia.org/wiki/Same-origin_policy" target="_blank" rel="external">same-origin policy</a>）。</p>
-<p>也就是说要满足以下条件：</p>
-<blockquote>
-<ol>
-<li>协议相同</li>
-<li>域名相同</li>
-<li>端口相同</li>
-</ol>
-</blockquote>
-<p>也就是说，如果两个页面的协议，端口（如果有指定）和域名都相同，则两个页面具有相同的<strong>源</strong>。</p>
-<p>同源政策的目的，是为了保证用户信息的安全，防止恶意的网站窃取数据。</p>
+        <h1 id="微软-CodePush-使用"><a href="#微软-CodePush-使用" class="headerlink" title="微软 CodePush 使用"></a>微软 CodePush 使用</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><code>yarn global add code-push-cli</code></p>
+<h2 id="注册账户"><a href="#注册账户" class="headerlink" title="注册账户"></a>注册账户</h2><p><code>code-push register</code></p>
+<p>会弹出一个浏览器,让你注册,可以使用 github 帐号对其进行授权,授权成功会给一串 Token,点击复制，在控制进行粘贴回车(或者使用 code-push login 命令)。</p>
 <a id="more"></a>
-<p>如果非同源，共有三种行为受到限制：</p>
-<blockquote>
-<ol>
-<li>Cookie、LocalStorage 和 IndexDB 无法读取。</li>
-<li>DOM 无法获得。</li>
-<li>AJAX 请求不能发送。</li>
+<h2 id="CodePush-登录相关命令"><a href="#CodePush-登录相关命令" class="headerlink" title="CodePush 登录相关命令"></a>CodePush 登录相关命令</h2><ul>
+<li>code-push login 登陆</li>
+<li>code-push logout 注销</li>
+<li>code-push access-key ls 列出登陆的 token</li>
+<li>code-push access-key rm 删除某个 access-key</li>
+</ul>
+<h2 id="CodePush-创建-App-相关命令"><a href="#CodePush-创建-App-相关命令" class="headerlink" title="CodePush 创建 App 相关命令"></a>CodePush 创建 App 相关命令</h2><ul>
+<li>code-push app add<ul>
+<li>如: code-push app add yimutest-ios ios/android react-native</li>
+</ul>
+</li>
+<li>code-push app add<ul>
+<li>在账号里面添加一个新的 app</li>
+</ul>
+</li>
+<li>code-push app remove<ul>
+<li>rm 在账号里移除一个 app</li>
+</ul>
+</li>
+<li>code-push app rename<ul>
+<li>重命名一个存在 app</li>
+</ul>
+</li>
+<li>code-push app list<ul>
+<li>ls 列出账号下面的所有 app</li>
+</ul>
+</li>
+<li>code-push app transfer<ul>
+<li>把 app 的所有权转移到另外一个账号</li>
+</ul>
+</li>
+</ul>
+<h2 id="在项目中-加包"><a href="#在项目中-加包" class="headerlink" title="在项目中  加包"></a>在项目中  加包</h2><ol>
+<li><code>yarn add react-native-code-push</code></li>
+<li><code>react-native link</code></li>
 </ol>
+<p>之后会让你将刚才添加的 ios/Android App 的 Staging Key 复制粘贴到这里</p>
+<p>Staging 为测试的 key，Production 为生产打包时用的 key。</p>
+<p>如果忘了  则在终端下做查看:</p>
+<p><code>code-push deployment ls 您的应用名 -k</code></p>
+<h2 id="App-js"><a href="#App-js" class="headerlink" title="App.js"></a>App.js</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> codePush <span class="keyword">from</span> <span class="string">"react-native-code-push"</span>;</div><div class="line"><span class="keyword">const</span> codePushOptions = &#123; <span class="attr">checkFrequency</span>: codePush.CheckFrequency.MANUAL &#125;;</div><div class="line"></div><div class="line">componentDidMount()&#123;</div><div class="line">  codePush.sync(&#123;</div><div class="line">    <span class="attr">updateDialog</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">installMode</span>: codePush.InstallMode.IMMEDIATE,</div><div class="line">    <span class="attr">mandatoryInstallMode</span>:codePush.InstallMode.IMMEDIATE,</div><div class="line">    <span class="comment">//deploymentKey为刚才生成的,打包哪个平台的App就使用哪个Key,这里用IOS的打包测试</span></div><div class="line">    deploymentKey: <span class="string">'xxxxxxx'</span>,</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>附上其他的详细 API: <a href="https://github.com/Microsoft/react-native-code-push/blob/master/docs/api-js.md" target="_blank" rel="external">详细配置</a></p>
+<h2 id="发布新版本"><a href="#发布新版本" class="headerlink" title="发布新版本"></a>发布新版本</h2><blockquote>
+<p><code>code-push release &lt;应用名称&gt; &lt;Bundles所在目录&gt; &lt;对应的应用版本&gt; --deploymentName： 更新环境 --description： 更新描述 --mandatory： 是否强制更新</code></p>
+<p><code>code-push release codepush01 ./bundles/ 1.0.0 --deploymentName Production --description &quot;我也不知道要写啥&quot; --mandatory false</code></p>
 </blockquote>
-<p>同源策略是对XMLHTTPRequest的一种约束。所以有时候我们想要去获取别的消息，我们需要跨过同源策略。</p>
-<p>但是有些的跨域请求是被允许的比如：</p>
-<ul>
-<li><code>&lt;script&gt;</code>标签</li>
-<li><code>&lt;link&gt;</code>标签</li>
-<li><code>&lt;img&gt;</code>标签</li>
-<li><code>&lt;a&gt;</code>标签</li>
-<li><code>&lt;video&gt;</code>和 <code>&lt;audio&gt;</code>嵌入多媒体资源。</li>
-<li><code>&lt;iframe&gt;</code>与<code>&lt;frame&gt;</code></li>
-</ul>
-<h2 id="CORS跨域资源共享"><a href="#CORS跨域资源共享" class="headerlink" title="CORS跨域资源共享"></a>CORS跨域资源共享</h2><p>那么为了解决这个问题，CORS横空出世！</p>
-<p>IE8可以通过XDomainRequest对象支持CORS。</p>
-<p>其他浏览器我们都可以通过XMLHttpRequest对象支持CORS。</p>
-<p>跨域资源共享标准新增了一组 HTTP 首部字段，允许服务器声明哪些源站有权限访问哪些资源。</p>
-<p>其实CORS背后的思想就是，使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功，还是应该失败。</p>
-<p>CORS分简单请求和非简单请求，满足以下条件就为简单请求：</p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="external">简单请求</a></p>
-<h2 id="HTTP-响应首部字段"><a href="#HTTP-响应首部字段" class="headerlink" title="HTTP 响应首部字段"></a>HTTP 响应首部字段</h2><h3 id="Access-Control-Allow-Origin"><a href="#Access-Control-Allow-Origin" class="headerlink" title="Access-Control-Allow-Origin"></a>Access-Control-Allow-Origin</h3><p>根据Reuqest请求头中的<em>Origin</em>来判断该请求的资源是否可以被共享。</p>
-<h3 id="Access-Control-Allow-Credentials"><a href="#Access-Control-Allow-Credentials" class="headerlink" title="Access-Control-Allow-Credentials"></a>Access-Control-Allow-Credentials</h3><p>该字段可选。它的值是一个布尔值，表示是否允许发送Cookie。</p>
-<h3 id="Access-Control-Expose-Headers"><a href="#Access-Control-Expose-Headers" class="headerlink" title="Access-Control-Expose-Headers"></a>Access-Control-Expose-Headers</h3><p>让服务器把允许浏览器访问的头放入白名单</p>
-<p>在跨域访问时，XMLHttpRequest对象的getResponseHeader()方法只能拿到一些最基本的响应头，Cache-Control、Content-Language、Content-Type、Expires、Last-Modified、Pragma，如果要访问其他头，则需要服务器设置本响应头</p>
-<h3 id="Access-Control-Allow-Credentials-1"><a href="#Access-Control-Allow-Credentials-1" class="headerlink" title="Access-Control-Allow-Credentials"></a>Access-Control-Allow-Credentials</h3><p>指定了当浏览器的<code>credentials</code>设置为true时是否允许浏览器读取response的内容。</p>
-<p>所以我们需要<strong>附带身份凭证的请求</strong>:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">xhr.withCredentials = <span class="literal">true</span>;</div></pre></td></tr></table></figure>
-<p>我们不这样去做处理的话，即使服务器同意发送Cookie，浏览器也不会发送。或者，服务器要求设置Cookie，浏览器也不会处理。</p>
-<h2 id="HTTP请求首部字段"><a href="#HTTP请求首部字段" class="headerlink" title="HTTP请求首部字段"></a>HTTP请求首部字段</h2><p>用于发起跨域请求的首部字段，其实这些字段都不用我们去手动设置。当我们使用 XMLHttpRequest 对象发起跨域请求时，它们已经被设置就绪。</p>
-<ul>
-<li>Origin</li>
-<li>Access-Control-Request-Method</li>
-<li>Access-Control-Request-Headers</li>
-</ul>
-<blockquote>
-<p>参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="external">MDN-HTTP请求首部字段</a></p>
-</blockquote>
+<ol>
+<li><code>code-push app add aaa-ios ios react-native</code></li>
+<li><code>yarn start-ios</code></li>
+</ol>
+<h3 id="Android-新版本发布"><a href="#Android-新版本发布" class="headerlink" title="Android 新版本发布"></a>Android 新版本发布</h3><p>修改 App.js 的 deploymentKey 为安卓的</p>
+<ol>
+<li><code>deploymentKey:&#39;android key&#39;</code></li>
+<li><code>code-push release-react aaa-android android</code></li>
+<li><code>yarn start-android</code></li>
+</ol>
 
       
     </div>
@@ -448,7 +453,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/React-Native/" rel="tag"># React Native</a>
           
         </div>
       
@@ -461,8 +466,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Ajax与Fetch.html" rel="next" title="Ajax与Fetch？">
-                <i class="fa fa-chevron-left"></i> Ajax与Fetch？
+              <a href="/mac连接ssh.html" rel="next" title="Mac通过ssh连接ecs">
+                <i class="fa fa-chevron-left"></i> Mac通过ssh连接ecs
               </a>
             
           </div>
@@ -470,10 +475,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/mac连接ssh.html" rel="prev" title="Mac通过ssh连接ecs">
-                Mac通过ssh连接ecs <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -648,7 +649,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#同源策略"><span class="nav-number">1.</span> <span class="nav-text">同源策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CORS跨域资源共享"><span class="nav-number">2.</span> <span class="nav-text">CORS跨域资源共享</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-响应首部字段"><span class="nav-number">3.</span> <span class="nav-text">HTTP 响应首部字段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Access-Control-Allow-Origin"><span class="nav-number">3.1.</span> <span class="nav-text">Access-Control-Allow-Origin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Access-Control-Allow-Credentials"><span class="nav-number">3.2.</span> <span class="nav-text">Access-Control-Allow-Credentials</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Access-Control-Expose-Headers"><span class="nav-number">3.3.</span> <span class="nav-text">Access-Control-Expose-Headers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Access-Control-Allow-Credentials-1"><span class="nav-number">3.4.</span> <span class="nav-text">Access-Control-Allow-Credentials</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP请求首部字段"><span class="nav-number">4.</span> <span class="nav-text">HTTP请求首部字段</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#微软-CodePush-使用"><span class="nav-number">1.</span> <span class="nav-text">微软 CodePush 使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注册账户"><span class="nav-number">1.2.</span> <span class="nav-text">注册账户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CodePush-登录相关命令"><span class="nav-number">1.3.</span> <span class="nav-text">CodePush 登录相关命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CodePush-创建-App-相关命令"><span class="nav-number">1.4.</span> <span class="nav-text">CodePush 创建 App 相关命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在项目中-加包"><span class="nav-number">1.5.</span> <span class="nav-text">在项目中  加包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#App-js"><span class="nav-number">1.6.</span> <span class="nav-text">App.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布新版本"><span class="nav-number">1.7.</span> <span class="nav-text">发布新版本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Android-新版本发布"><span class="nav-number">1.7.1.</span> <span class="nav-text">Android 新版本发布</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -845,9 +846,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://xuzihao.fun/跨域资源共享.html';
-          this.page.identifier = '跨域资源共享.html';
-          this.page.title = '同源与跨域资源共享';
+          this.page.url = 'http://xuzihao.fun/ReactNativeCodePush.html';
+          this.page.identifier = 'ReactNativeCodePush.html';
+          this.page.title = 'ReactNative热更新之微软CodePush';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://xuzihao.disqus.com/embed.js';

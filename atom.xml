@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-03-26T14:09:56.264Z</updated>
+  <updated>2018-03-28T14:16:55.431Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -14,6 +14,90 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ReactNative热更新之微软CodePush</title>
+    <link href="http://xuzihao.fun/ReactNativeCodePush.html"/>
+    <id>http://xuzihao.fun/ReactNativeCodePush.html</id>
+    <published>2018-03-28T14:10:23.014Z</published>
+    <updated>2018-03-28T14:16:55.431Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="微软-CodePush-使用"><a href="#微软-CodePush-使用" class="headerlink" title="微软 CodePush 使用"></a>微软 CodePush 使用</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><code>yarn global add code-push-cli</code></p>
+<h2 id="注册账户"><a href="#注册账户" class="headerlink" title="注册账户"></a>注册账户</h2><p><code>code-push register</code></p>
+<p>会弹出一个浏览器,让你注册,可以使用 github 帐号对其进行授权,授权成功会给一串 Token,点击复制，在控制进行粘贴回车(或者使用 code-push login 命令)。</p>
+<a id="more"></a>
+<h2 id="CodePush-登录相关命令"><a href="#CodePush-登录相关命令" class="headerlink" title="CodePush 登录相关命令"></a>CodePush 登录相关命令</h2><ul>
+<li>code-push login 登陆</li>
+<li>code-push logout 注销</li>
+<li>code-push access-key ls 列出登陆的 token</li>
+<li>code-push access-key rm 删除某个 access-key</li>
+</ul>
+<h2 id="CodePush-创建-App-相关命令"><a href="#CodePush-创建-App-相关命令" class="headerlink" title="CodePush 创建 App 相关命令"></a>CodePush 创建 App 相关命令</h2><ul>
+<li>code-push app add<ul>
+<li>如: code-push app add yimutest-ios ios/android react-native</li>
+</ul>
+</li>
+<li>code-push app add<ul>
+<li>在账号里面添加一个新的 app</li>
+</ul>
+</li>
+<li>code-push app remove<ul>
+<li>rm 在账号里移除一个 app</li>
+</ul>
+</li>
+<li>code-push app rename<ul>
+<li>重命名一个存在 app</li>
+</ul>
+</li>
+<li>code-push app list<ul>
+<li>ls 列出账号下面的所有 app</li>
+</ul>
+</li>
+<li>code-push app transfer<ul>
+<li>把 app 的所有权转移到另外一个账号</li>
+</ul>
+</li>
+</ul>
+<h2 id="在项目中-加包"><a href="#在项目中-加包" class="headerlink" title="在项目中  加包"></a>在项目中  加包</h2><ol>
+<li><code>yarn add react-native-code-push</code></li>
+<li><code>react-native link</code></li>
+</ol>
+<p>之后会让你将刚才添加的 ios/Android App 的 Staging Key 复制粘贴到这里</p>
+<p>Staging 为测试的 key，Production 为生产打包时用的 key。</p>
+<p>如果忘了  则在终端下做查看:</p>
+<p><code>code-push deployment ls 您的应用名 -k</code></p>
+<h2 id="App-js"><a href="#App-js" class="headerlink" title="App.js"></a>App.js</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> codePush <span class="keyword">from</span> <span class="string">"react-native-code-push"</span>;</div><div class="line"><span class="keyword">const</span> codePushOptions = &#123; <span class="attr">checkFrequency</span>: codePush.CheckFrequency.MANUAL &#125;;</div><div class="line"></div><div class="line">componentDidMount()&#123;</div><div class="line">  codePush.sync(&#123;</div><div class="line">    <span class="attr">updateDialog</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">installMode</span>: codePush.InstallMode.IMMEDIATE,</div><div class="line">    <span class="attr">mandatoryInstallMode</span>:codePush.InstallMode.IMMEDIATE,</div><div class="line">    <span class="comment">//deploymentKey为刚才生成的,打包哪个平台的App就使用哪个Key,这里用IOS的打包测试</span></div><div class="line">    deploymentKey: <span class="string">'xxxxxxx'</span>,</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>附上其他的详细 API: <a href="https://github.com/Microsoft/react-native-code-push/blob/master/docs/api-js.md" target="_blank" rel="external">详细配置</a></p>
+<h2 id="发布新版本"><a href="#发布新版本" class="headerlink" title="发布新版本"></a>发布新版本</h2><blockquote>
+<p><code>code-push release &lt;应用名称&gt; &lt;Bundles所在目录&gt; &lt;对应的应用版本&gt; --deploymentName： 更新环境 --description： 更新描述 --mandatory： 是否强制更新</code></p>
+<p><code>code-push release codepush01 ./bundles/ 1.0.0 --deploymentName Production --description &quot;我也不知道要写啥&quot; --mandatory false</code></p>
+</blockquote>
+<ol>
+<li><code>code-push app add aaa-ios ios react-native</code></li>
+<li><code>yarn start-ios</code></li>
+</ol>
+<h3 id="Android-新版本发布"><a href="#Android-新版本发布" class="headerlink" title="Android 新版本发布"></a>Android 新版本发布</h3><p>修改 App.js 的 deploymentKey 为安卓的</p>
+<ol>
+<li><code>deploymentKey:&#39;android key&#39;</code></li>
+<li><code>code-push release-react aaa-android android</code></li>
+<li><code>yarn start-android</code></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;微软-CodePush-使用&quot;&gt;&lt;a href=&quot;#微软-CodePush-使用&quot; class=&quot;headerlink&quot; title=&quot;微软 CodePush 使用&quot;&gt;&lt;/a&gt;微软 CodePush 使用&lt;/h1&gt;&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;&lt;code&gt;yarn global add code-push-cli&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;注册账户&quot;&gt;&lt;a href=&quot;#注册账户&quot; class=&quot;headerlink&quot; title=&quot;注册账户&quot;&gt;&lt;/a&gt;注册账户&lt;/h2&gt;&lt;p&gt;&lt;code&gt;code-push register&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;会弹出一个浏览器,让你注册,可以使用 github 帐号对其进行授权,授权成功会给一串 Token,点击复制，在控制进行粘贴回车(或者使用 code-push login 命令)。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="React Native" scheme="http://xuzihao.fun/categories/React-Native/"/>
+    
+    
+      <category term="React Native" scheme="http://xuzihao.fun/tags/React-Native/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac通过ssh连接ecs</title>
@@ -1562,98 +1646,6 @@
     
     
       <category term="C++" scheme="http://xuzihao.fun/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>BOM</title>
-    <link href="http://xuzihao.fun/BOM.html"/>
-    <id>http://xuzihao.fun/BOM.html</id>
-    <published>2017-12-06T13:42:00.000Z</published>
-    <updated>2017-12-07T13:22:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h2><p>它既是window对象的属性，也是document对象的属性。</p>
-<a id="more"></a>
-<ul>
-<li>location.hash        “#contents”<ul>
-<li>返回URL中的hash，如果URL中不包含散列，则返回空字符串</li>
-</ul>
-</li>
-<li>location.host                 “www.wrox.com:80”<ul>
-<li>返回服务器名称和端口号</li>
-</ul>
-</li>
-<li>location.hostname       “www.wrox.com”<ul>
-<li>返回不带端口号的服务器名称</li>
-</ul>
-</li>
-<li>location.href                  “http:/www.wrox.com”<ul>
-<li>返回当前加载页面的完整URL</li>
-</ul>
-</li>
-<li>location.pathname       “/WileyCDA/“<ul>
-<li>返回URL中的目录和（或者）文件名</li>
-</ul>
-</li>
-<li>location.port                  “8080”<ul>
-<li>返回URL中指定的端口号</li>
-</ul>
-</li>
-<li>location.protocol           “http:”<ul>
-<li>返回页面使用的协议</li>
-</ul>
-</li>
-<li>location.search              “?q=javascript”<ul>
-<li>返回URL的查询字符串，字符串以问号开头</li>
-</ul>
-</li>
-</ul>
-<h2 id="位置操作"><a href="#位置操作" class="headerlink" title="位置操作"></a>位置操作</h2><ul>
-<li>location.assign <ul>
-<li>可以立即打开新URL，而且还在浏览器的历史记录中生成一条记录</li>
-</ul>
-</li>
-<li>location.replace             <ul>
-<li>导航到的URL，不会在历史记录中生成新纪录，用户不能回到前一个页面。</li>
-</ul>
-</li>
-<li>location.reload <ul>
-<li>不传递任何参数，页面就会以最有效的方式重新加载</li>
-<li>要强制从服务器重新加载，那么就需要给个参数为<strong>true</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator" target="_blank" rel="external">查看MDN</a></p>
-<h2 id="screen对象"><a href="#screen对象" class="headerlink" title="screen对象"></a>screen对象</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Screen" target="_blank" rel="external">查看MDN</a></p>
-<h2 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h2><ul>
-<li>history.go(-1)        后退一页</li>
-<li>history.go(1)                 前进一页，以此类推</li>
-<li>history.go(“wrox.com”)       跳转到最近的wrox.com</li>
-</ul>
-<p>如果历史记录中不包含该字符串的话，那么这个方法什么也不做</p>
-<p>还有两个简写方法,方法可以模仿浏览器的“后退” 和 “前进” 按钮。</p>
-<ul>
-<li>history.back</li>
-<li>history.forward</li>
-</ul>
-<ul>
-<li>history.length<ul>
-<li>这个length属性保存着历史记录的数量。</li>
-</ul>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;location对象&quot;&gt;&lt;a href=&quot;#location对象&quot; class=&quot;headerlink&quot; title=&quot;location对象&quot;&gt;&lt;/a&gt;location对象&lt;/h2&gt;&lt;p&gt;它既是window对象的属性，也是document对象的属性。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Javascript修仙之旅" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
-    
-    
-      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
     
   </entry>
   
