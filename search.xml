@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[React-Saga笔记]]></title>
+      <url>%2FReduxSaga.html</url>
+      <content type="text"><![CDATA[takeEvery: 123function* watchFetchData() &#123; yield* takeEvery('FETCH_REQUESTED', fetchData)&#125; 允许多个fetchData同时进行，即使上一个还没执行完成。takeLatest： 123function* watchFetchData() &#123; yield* takeLatest('FETCH_REQUESTED', fetchData)&#125; 始终执行最新的那个请求的响应。 总结一下就是： 我们疯狂点击一个按钮，它触发也疯狂触发了多次fetchData。 如果我们是takeEvery那将你点击几次他执行几次fetchData。 如果我们是takeLatest那将只执行你最后点击的那一次fetchData。 ##Effect 从 Generator 里 yield 纯 JavaScript 对象以表达 Saga 逻辑。 我们称呼那些对象为 Effect。 可以使用 redux-saga/effects 包里提供的函数来创建 Effect。 call： call(fn, ...args) 这个函数。现在我们不立即执行异步调用，相反，call 创建了一条描述结果的信息 简单来说，call就是redux里的Action Creator。 ###发起actions -&gt; store put： 这个函数用于创建 dispatch Effect。 1234567891011121314//beforefunction* fetchProducts(dispatch) const products = yield call(Api.fetch, '/products') dispatch(&#123; type: 'PRODUCTS_RECEIVED', products &#125;)&#125;//afterimport &#123; call, put &#125; from 'redux-saga/effects';function* fetchProducts() &#123; const products = yield call(Api.fetch, '/products') // 创建并 yield 一个 dispatch Effect yield put(&#123; type: 'PRODUCTS_RECEIVED', products &#125;)&#125;]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[ReactNative热更新之微软CodePush]]></title>
       <url>%2FReactNativeCodePush.html</url>
       <content type="text"><![CDATA[微软 CodePush 使用安装yarn global add code-push-cli 注册账户code-push register 会弹出一个浏览器,让你注册,可以使用 github 帐号对其进行授权,授权成功会给一串 Token,点击复制，在控制进行粘贴回车(或者使用 code-push login 命令)。 CodePush 登录相关命令 code-push login 登陆 code-push logout 注销 code-push access-key ls 列出登陆的 token code-push access-key rm 删除某个 access-key CodePush 创建 App 相关命令 code-push app add 如: code-push app add yimutest-ios ios/android react-native code-push app add 在账号里面添加一个新的 app code-push app remove rm 在账号里移除一个 app code-push app rename 重命名一个存在 app code-push app list ls 列出账号下面的所有 app code-push app transfer 把 app 的所有权转移到另外一个账号 在项目中  加包 yarn add react-native-code-push react-native link 之后会让你将刚才添加的 ios/Android App 的 Staging Key 复制粘贴到这里 Staging 为测试的 key，Production 为生产打包时用的 key。 如果忘了  则在终端下做查看: code-push deployment ls 您的应用名 -k App.js123456789101112import codePush from "react-native-code-push";const codePushOptions = &#123; checkFrequency: codePush.CheckFrequency.MANUAL &#125;;componentDidMount()&#123; codePush.sync(&#123; updateDialog: true, installMode: codePush.InstallMode.IMMEDIATE, mandatoryInstallMode:codePush.InstallMode.IMMEDIATE, //deploymentKey为刚才生成的,打包哪个平台的App就使用哪个Key,这里用IOS的打包测试 deploymentKey: 'xxxxxxx', &#125;);&#125; 附上其他的详细 API: 详细配置 发布新版本 code-push release &lt;应用名称&gt; &lt;Bundles所在目录&gt; &lt;对应的应用版本&gt; --deploymentName： 更新环境 --description： 更新描述 --mandatory： 是否强制更新 code-push release codepush01 ./bundles/ 1.0.0 --deploymentName Production --description &quot;我也不知道要写啥&quot; --mandatory false code-push app add aaa-ios ios react-native yarn start-ios Android 新版本发布修改 App.js 的 deploymentKey 为安卓的 deploymentKey:&#39;android key&#39; code-push release-react aaa-android android yarn start-android]]></content>
@@ -34,6 +41,13 @@
       <title><![CDATA[浅谈script标签]]></title>
       <url>%2F%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html</url>
       <content type="text"><![CDATA[&lt;script&gt; ? 这不就是直接执行script脚本吗？ 以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。 属性&lt;script&gt;拥有7个属性，没想到吧！ async boolean 异步执行该脚本，但不保证按照指定它们的先后顺序执行 defer boolean 通知浏览器该脚本将在文档完成解析后遇到&lt;/html&gt;，并会按照它们出现的先后顺序执行。但会在触发 DOMContentLoaded 事件前执行。 integrity 包含用户代理可用于验证已提取资源是否已无意外操作的内联元数据 src type text crossorigin 使那些将静态资源放在另外一个域名的站点打印错误信息,就是将跨域报错变为同源报错 在XHTML文档中，要把async属性设置为 async = “async”, defer = “defer” 知道了那几个属性接下来，来看看下面这个图： 第一个光秃秃的&lt;script&gt;说明了，在html解析中，如果有&lt;script&gt;的话，html会在Script下载并且执行的时候，暂停解析。 第二个带async属性的&lt;script&gt;，如图所示，也就是他下载Script的时候是异步的，但是只要Script文件下好了，那么就马上执行。 第三个带defer属性的&lt;script&gt;，其实和上面带async属性一样都是异步执行去下载Script文件的。但是在这个带有defer的则是在html全部解析完毕之后才去执行Script文件。而且它是按照加载顺序执行脚本的，这一点要善加利用。显然 defer 是最接近我们对于应用脚本加载和执行的要求的 参考 MDN SegmentFault]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[CSS布局]]></title>
+      <url>%2FCSS%E5%B8%83%E5%B1%80.html</url>
+      <content type="text"></content>
     </entry>
 
     
@@ -178,16 +192,16 @@
 
     
     <entry>
-      <title><![CDATA[英语例句]]></title>
-      <url>%2F%E4%BE%8B%E5%8F%A5.html</url>
-      <content type="text"><![CDATA[No sooner ····· then 一。。。就。 not so much …as 与其。。不如 no more…than 不过，仅仅；至多，同。。。一样不 as…as 像。。。一样 imagined + sth. + to be + adj. 为复合宾语解构 put forward to do sth. 提出要求做某事 get sth. done 把某事做了 would rather 引导从句的虚拟结构中，如果表示对现在或将来情况的愿望，从句用过去时。 如果是对过去情况的虚拟，从句用过去完成时。 never, hardly, seldom, little, not until, not, not only, no sooner, no longer, nowhere, by no means 以上位于句首需要部分倒装 keep diary 记日记 can’t help doing sth. 忍不住做。。。 be worth doing 某（事或物）值得做 be worthy to be done 或 sth. is worthy of being done 以及 sb. be worhty of doing sth. 或者 sb. be worthy to do sth. 和 worth 的意思一样 It is/was /will be the first time that …句式 主句谓语是is，从句用现在完成时 主句谓语是was，从句谓语用过去完成时 主句谓语是will be，从句谓语用一般现在时 be appropriate for sb. 或 be appropriate to do sth. 固定搭配 appreciate + doing sth. 感激做某事 but to do,但是but之前出现了 do/does/did/done就要 but do no mood | in the mood 没有心情 | 有好心情 the impression of + doing sth. 做过某事的印象 have a(the) right to sth. 享有。。的权利 do nothing but 此结构后要求动词原形 need doing / need to done 需要被 sb. spend some time doing sth. 花时间做某事 a large amount of, a great deal of 固定搭配 将来时除了有be going to, will + do, 还有be to do, be about to do. play a part in 在。。。起作用。 must have + 过去分词 过去一定做了某事，表示对过去的肯定推测。 could have + 过去分词 本来能够做…. another + 基数词 + 名词复数 另外/在多少个 I want another three apples. 我还需要三个苹果。 mind doing sth. 介意做某事 to help you to out 表示目的 be going to + 一般现在时（leaves）]]></content>
+      <title><![CDATA[英语单词]]></title>
+      <url>%2F%E5%8D%95%E8%AF%8D.html</url>
+      <content type="text"><![CDATA[delicate| 易碎的 idleness| 懒惰 tell the truth | 说实话 tell a lie / tell lies| 说谎话 hold the view 持某种看法;认为. in view of | 鉴于，考虑到 working on | 从事于；致力于 set free | 释放 run into | 偶然 allow | 允许，给予(人) for fear of | 生怕，以免]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[英语单词]]></title>
-      <url>%2F%E5%8D%95%E8%AF%8D.html</url>
-      <content type="text"><![CDATA[delicate| 易碎的 idleness| 懒惰 tell the truth | 说实话 tell a lie / tell lies| 说谎话 hold the view 持某种看法;认为. in view of | 鉴于，考虑到 working on | 从事于；致力于 set free | 释放 run into | 偶然 allow | 允许，给予(人) for fear of | 生怕，以免]]></content>
+      <title><![CDATA[英语例句]]></title>
+      <url>%2F%E4%BE%8B%E5%8F%A5.html</url>
+      <content type="text"><![CDATA[No sooner ····· then 一。。。就。 not so much …as 与其。。不如 no more…than 不过，仅仅；至多，同。。。一样不 as…as 像。。。一样 imagined + sth. + to be + adj. 为复合宾语解构 put forward to do sth. 提出要求做某事 get sth. done 把某事做了 would rather 引导从句的虚拟结构中，如果表示对现在或将来情况的愿望，从句用过去时。 如果是对过去情况的虚拟，从句用过去完成时。 never, hardly, seldom, little, not until, not, not only, no sooner, no longer, nowhere, by no means 以上位于句首需要部分倒装 keep diary 记日记 can’t help doing sth. 忍不住做。。。 be worth doing 某（事或物）值得做 be worthy to be done 或 sth. is worthy of being done 以及 sb. be worhty of doing sth. 或者 sb. be worthy to do sth. 和 worth 的意思一样 It is/was /will be the first time that …句式 主句谓语是is，从句用现在完成时 主句谓语是was，从句谓语用过去完成时 主句谓语是will be，从句谓语用一般现在时 be appropriate for sb. 或 be appropriate to do sth. 固定搭配 appreciate + doing sth. 感激做某事 but to do,但是but之前出现了 do/does/did/done就要 but do no mood | in the mood 没有心情 | 有好心情 the impression of + doing sth. 做过某事的印象 have a(the) right to sth. 享有。。的权利 do nothing but 此结构后要求动词原形 need doing / need to done 需要被 sb. spend some time doing sth. 花时间做某事 a large amount of, a great deal of 固定搭配 将来时除了有be going to, will + do, 还有be to do, be about to do. play a part in 在。。。起作用。 must have + 过去分词 过去一定做了某事，表示对过去的肯定推测。 could have + 过去分词 本来能够做…. another + 基数词 + 名词复数 另外/在多少个 I want another three apples. 我还需要三个苹果。 mind doing sth. 介意做某事 to help you to out 表示目的 be going to + 一般现在时（leaves）]]></content>
     </entry>
 
     
@@ -325,13 +339,6 @@
 
     
     <entry>
-      <title><![CDATA[数据库E-R图]]></title>
-      <url>%2FE-R%E5%9B%BE.html</url>
-      <content type="text"><![CDATA[E-R图E-R图是指实体-关系-属性三个基本概括数据的基本结构. 强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。 ER图的实体（entity）即数据模型中的数据对象，例如人、学生、音乐都可以作为一个数据对象，用长方体来表示，每个实体都有自己的实体成员（entity member）或者说实体对象（entity instance），例如学生实体里包括张三、李四等，实体成员（entity member）/实体实例（entity instance） 不需要出现在ER图中。 ER图的属性（attribute）即数据对象所具有的属性，例如学生具有姓名、学号、年级等属性，用椭圆形表示，属性分为唯一属性（ unique attribute）和非唯一属性，唯一属性指的是唯一可用来标识该实体实例或者成员的属性，用下划线表示，一般来讲实体都至少有一个唯一属性。 ER图的关系（relationship）用来表现数据对象与数据对象之间的联系，例如学生的实体和成绩表的实体之间有一定的联系，每个学生都有自己的成绩表，这就是一种关系，关系用菱形来表示。]]></content>
-    </entry>
-
-    
-    <entry>
       <title><![CDATA[GraphQL基本操作]]></title>
       <url>%2FGraphQL.html</url>
       <content type="text"><![CDATA[GraphQL()强类型 也就是说，你可以查询值类型：Int, Float, String, Boolean和ID GraphQL不是像MySQL或Redis这样直接面向数据的接口，而是面向你已经存在的应用代码的接口。 你可以把GraphQL看作是为了调用应用服务器上的方法的一些内嵌的RPC。 操作(operation)操作（Operations） GraphQL 规范支持两种操作： query：仅获取数据（fetch）的只读请求 mutation：获取数据后还有写操作的请求 123456query&#123; clent(id:1)&#123; id name &#125;&#125; client 是查询的operation (id:1)包含了传入给Query的参数 查询包含id和name字段,这些字段也是我们希望查询可以返回的. server会给这个查询返回什么： 12345678&#123; "data": &#123; "client": &#123; "id": "1", "name": "Uncle Charlie" &#125; &#125;&#125; server会返回一个JSON串。这个JSON的schema和查询的基本一致。 变量(Variable)1234567891011121314151617181920212223query($clientId: Int) &#123; client(id: $clientId) &#123; name dob &#125; purchases(client_id: $clientId) &#123; date quantity total product &#123; name price product_category &#123; name &#125; &#125; client &#123; name dob &#125; &#125;&#125; 123&#123; "clientId": 1&#125; Graphql的schema下1234567schema&#123; query: Query, mutation: Mutation,&#125; Mutation（修改）增、删、改一类的operation在GraphQL里统称为变异（mutation，即修改数据） GraphQL中将对数据的修改操作称为 mutation。在 GraphQL Schema 中按照如下形式来定义一个 mutation： mutation 查询和普通查询请求（query）的重要区别在于 mutation 操作是序列化执行的。例如 GraphQL 规范中给出的示例，服务器一定会序列化处理下面的 mutation 请求： 请求结束时 theNumber 的值会是 2。 create_client增加 12345678910mutation &#123; create_client ( name: "查理大叔" dob: "2017/01/28" ) &#123; id name dob &#125;&#125; update_client更新 12345678910mutation &#123; update_client ( id: 5 dob: "1990/01/01" ) &#123; id name dob &#125;&#125; destroy_client删除 123456mutation &#123; destroy_client(id: 5) &#123; name dob &#125;&#125; 修改数据就像Rest以PUT／POST约定为修改服务器端数据一样，Mutations操作在GraphQL的意义就是修改数据库。就像官网中的例子： 12345678910111213mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) &#123; //!表示必须填写的查询条件 createReview(episode: $ep, review: $review) &#123; stars commentary &#125;&#125;&#123; &quot;ep&quot;: &quot;JEDI&quot;, &quot;review&quot;: &#123; &quot;stars&quot;: 5, &quot;commentary&quot;: &quot;This is a great movie!&quot; &#125;&#125; 需要注意的是，为了保证mutation操作不冲突，mutation只能序列执行。而query可以并行。 强类型由于 GraphQL 是一个强类型语言，所以它可以在执行查询之前检查每个查询语句是否满足事先设定的 schema，符合则合法，如果查询语句不合法则不进行查询。 Fragments(组合)GraphQL 可以组合使用查询。比如可以定义一种叫 fragment 的东西，就是查询片断，然后我们可以在不同的地方重复的去使用查询。比如下面的这个例子： 1234567891011&#123; me &#123; name friends &#123; name events &#123; name &#125; &#125; &#125;&#125; 可以转换成这样： 123456789101112131415&#123; me &#123; name friends &#123; ...firendFragment &#125; &#125;&#125;fragment friendFragment on User &#123; name events &#123; name &#125;&#125; 上面定义了一个叫 friendFragment 的查询片断，它返回用户朋友的名字，还有参加的活动的名字，然后我们可以在其它的查询里面使用这个查询片断。 简单的说，GraphQL 是一种描述请求数据方法的语法，通常用于客户端从服务端加载数据。GraphQL 有以下三个主要特征： 它允许客户端指定具体所需的数据。 它让从多个数据源汇总取数据变得更简单。 它使用了类型系统来描述数据。 一个 GraphQL API 主要由三个部分组成：schema（类型），queries（查询） 以及 resolvers（解析器）。 Arguments(参数)123456&#123; human(id: "1000") &#123; name height &#125;&#125; 12345678&#123; "data": &#123; "human": &#123; "name": "Luke Skywalker", "height": 1.72 &#125; &#125;&#125; 当然在字段里我们也可以传参数. 123456&#123; human(id: "1000") &#123; name height(unit: FOOT//or METER) &#125;&#125; 12345678&#123; "data": &#123; "human": &#123; "name": "Luke Skywalker", "height": 5.6430448 // or 1.72 &#125; &#125;&#125; Aliases(别名)12345678&#123; empireHero: hero(episode: EMPIRE) &#123; name &#125; jediHero: hero(episode: JEDI) &#123; name &#125;&#125; 12345678910&#123; "data": &#123; "empireHero": &#123; "name": "Luke Skywalker" &#125;, "jediHero": &#123; "name": "R2-D2" &#125; &#125;&#125; Variables(变量)当我们开始使用变量的时候,我们需要做三件事情 Replace the static value in the query with $variableName Declare $variableName as one of the variables accepted by the query Pass variableName: value in the separate, transport-specific (usually JSON) variables dictionary 用$ 替换查询中的静态值 将$ 声明为查询接受变量之一 通常传递json. 123456789101112131415161718queryHeroNameAndFriends( $episode: Episode, )&#123; hero( episode: $episode)&#123; name friends&#123; name &#125; &#125;&#125;//variables&#123; "episode": "JEDI"&#125; 123456789101112131415161718&#123; "data": &#123; "hero": &#123; "name": "R2-D2", "friends": [ &#123; "name": "Luke Skywalker" &#125;, &#123; "name": "Han Solo" &#125;, &#123; "name": "Leia Organa" &#125; ] &#125; &#125;&#125; fieldsFields就是客户端要求GraphQL返回的数据说明，一个Fields也可以包含参数 Root fields &amp; resolvers1234567Query: &#123; human(obj, args, context) &#123; return context.db.loadHumanByID(args.id).then( userData =&gt; new Human(userData) ) &#125;&#125; obj上一个对象，其对于根查询类型的字段通常不被使用 args提供给GraphQL查询中的字段的参数。 context提供给每个解析器并保存重要的上下文信息（如当前登录的用户）或访问数据库的值。]]></content>
@@ -342,6 +349,13 @@
       <title><![CDATA[React-Router v3]]></title>
       <url>%2FReact-Router.html</url>
       <content type="text"><![CDATA[React-Router3路径语法路由路径是匹配一个（或一部分）URL 的 一个字符串模式。大部分的路由路径都可以直接按照字面量理解，除了以下几个特殊的符号： :paramName – 匹配一段位于 /、? 或 # 之后的 URL。 命中的部分将被作为一个参数 () – 在它内部的内容被认为是可选的 * – 匹配任意字符（非贪婪的）直到命中下一个字符或者整个 URL 的末尾，并创建一个 splat 参数 12345678910//匹配 /hello/michael 和 /hello/ryan&lt;Route path=&quot;/hello/:name&quot;&gt; //匹配 /hello, /hello/02 和 /hello/01&lt;Route path=&quot;/hello(/:id)&quot;&gt; //匹配 /files/hello.jpg和/files/path/to/hello.jpg&lt;Route path=&quot;/files/*.*&quot;&gt; Histories常用的 history 有三种形式， 但是你也可以使用 React Router 实现自定义的 history。 browserHistory (推荐) hashHistory createMemoryHistory 1&lt;Router history=&#123;browserHistory&#125;&gt; browserHistoryBrowser history 是使用 React Router 的应用推荐的 history。它使用浏览器中的 History API 用于处理 URL，创建一个像example.com/some/path这样真实的 URL 。 在组件外部使用导航虽然在组件内部可以使用 this.context.router 来实现导航，但许多应用想要在组件外部使用导航。使用Router组件上被赋予的history可以在组件外部实现导航。]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[数据库E-R图]]></title>
+      <url>%2FE-R%E5%9B%BE.html</url>
+      <content type="text"><![CDATA[E-R图E-R图是指实体-关系-属性三个基本概括数据的基本结构. 强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。 ER图的实体（entity）即数据模型中的数据对象，例如人、学生、音乐都可以作为一个数据对象，用长方体来表示，每个实体都有自己的实体成员（entity member）或者说实体对象（entity instance），例如学生实体里包括张三、李四等，实体成员（entity member）/实体实例（entity instance） 不需要出现在ER图中。 ER图的属性（attribute）即数据对象所具有的属性，例如学生具有姓名、学号、年级等属性，用椭圆形表示，属性分为唯一属性（ unique attribute）和非唯一属性，唯一属性指的是唯一可用来标识该实体实例或者成员的属性，用下划线表示，一般来讲实体都至少有一个唯一属性。 ER图的关系（relationship）用来表现数据对象与数据对象之间的联系，例如学生的实体和成绩表的实体之间有一定的联系，每个学生都有自己的成绩表，这就是一种关系，关系用菱形来表示。]]></content>
     </entry>
 
     

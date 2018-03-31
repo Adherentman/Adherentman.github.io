@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-03-28T14:16:55.431Z</updated>
+  <updated>2018-03-31T14:55:33.007Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -14,6 +14,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React-Saga笔记</title>
+    <link href="http://xuzihao.fun/ReduxSaga.html"/>
+    <id>http://xuzihao.fun/ReduxSaga.html</id>
+    <published>2018-03-31T14:55:00.000Z</published>
+    <updated>2018-03-31T14:55:33.007Z</updated>
+    
+    <content type="html"><![CDATA[<p>takeEvery:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">watchFetchData</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">yield</span>* takeEvery(<span class="string">'FETCH_REQUESTED'</span>, fetchData)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>允许多个<code>fetchData</code>同时进行，即使上一个还没执行完成。<br><a id="more"></a><br>takeLatest：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">watchFetchData</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">yield</span>* takeLatest(<span class="string">'FETCH_REQUESTED'</span>, fetchData)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>始终执行最新的那个请求的响应。</p>
+<p>总结一下就是：</p>
+<p>我们疯狂点击一个按钮，它触发也疯狂触发了多次<code>fetchData</code>。</p>
+<p>如果我们是<code>takeEvery</code>那将你点击几次他执行几次<code>fetchData</code>。</p>
+<p>如果我们是<code>takeLatest</code>那将只执行你最后点击的那一次<code>fetchData</code>。</p>
+<p>##Effect</p>
+<p>从 Generator 里 yield 纯 JavaScript 对象以表达 Saga 逻辑。 我们称呼那些对象为 <em>Effect</em>。</p>
+<p>可以使用 <code>redux-saga/effects</code> 包里<strong>提供的函数</strong>来创建 Effect。</p>
+<p>call：</p>
+<p><code>call(fn, ...args)</code> 这个函数。现在我们不立即执行异步调用，相反，call 创建了一条描述结果的信息</p>
+<p>简单来说，call就是redux里的Action Creator。 </p>
+<p>###发起actions -&gt; store</p>
+<p>put：</p>
+<p>这个函数用于创建 dispatch Effect。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//before</span></div><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fetchProducts</span>(<span class="params">dispatch</span>)</span></div><div class="line">  <span class="title">const</span> <span class="title">products</span> = <span class="title">yield</span> <span class="title">call</span>(<span class="params">Api.fetch, <span class="string">'/products'</span></span>)</div><div class="line">  <span class="title">dispatch</span>(<span class="params">&#123; type: <span class="string">'PRODUCTS_RECEIVED'</span>, products &#125;</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line">//<span class="title">after</span></div><div class="line"><span class="title">import</span> &#123; call, put &#125; <span class="keyword">from</span> <span class="string">'redux-saga/effects'</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fetchProducts</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> products = <span class="keyword">yield</span> call(Api.fetch, <span class="string">'/products'</span>)</div><div class="line">  <span class="comment">// 创建并 yield 一个 dispatch Effect</span></div><div class="line">  <span class="keyword">yield</span> put(&#123; <span class="attr">type</span>: <span class="string">'PRODUCTS_RECEIVED'</span>, products &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;takeEvery:&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;* &lt;span class=&quot;title&quot;&gt;watchFetchData&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;yield&lt;/span&gt;* takeEvery(&lt;span class=&quot;string&quot;&gt;&#39;FETCH_REQUESTED&#39;&lt;/span&gt;, fetchData)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;允许多个&lt;code&gt;fetchData&lt;/code&gt;同时进行，即使上一个还没执行完成。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="React" scheme="http://xuzihao.fun/categories/React/"/>
+    
+    
+      <category term="React" scheme="http://xuzihao.fun/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>ReactNative热更新之微软CodePush</title>
@@ -409,6 +452,24 @@
     
     
       <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS布局</title>
+    <link href="http://xuzihao.fun/CSS%E5%B8%83%E5%B1%80.html"/>
+    <id>http://xuzihao.fun/CSS布局.html</id>
+    <published>2018-03-18T14:38:00.000Z</published>
+    <updated>2018-03-29T07:56:01.758Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://xuzihao.fun/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="http://xuzihao.fun/tags/CSS/"/>
     
   </entry>
   
@@ -1311,341 +1372,6 @@
     
     
       <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DOM</title>
-    <link href="http://xuzihao.fun/DOM.html"/>
-    <id>http://xuzihao.fun/DOM.html</id>
-    <published>2017-12-10T07:17:00.000Z</published>
-    <updated>2017-12-13T13:47:24.096Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="文档对象模型"><a href="#文档对象模型" class="headerlink" title="文档对象模型"></a>文档对象模型</h1><p>一点小差异，IE中所有DOM对象都是以COM对象的形式实现的。</p>
-<h2 id="节点属性"><a href="#节点属性" class="headerlink" title="节点属性"></a>节点属性</h2><p>每个节点的属性</p>
-<ul>
-<li>childNodes<ul>
-<li>它里面有一个对象叫NodeList</li>
-</ul>
-</li>
-<li>patentNode</li>
-<li>previousSibling</li>
-<li>nextSibling</li>
-<li>ownerDoucment</li>
-</ul>
-<a id="more"></a>
-<h2 id="Node类型"><a href="#Node类型" class="headerlink" title="Node类型"></a>Node类型</h2><ul>
-<li>appendChild（）<ul>
-<li>向childNodes列表的末尾添加一个节点</li>
-</ul>
-</li>
-<li>insertBefour()<ul>
-<li>​把节点放在childNodes列表的特定位置，它接受两参数要插入的节点，和作为参照的节点。</li>
-</ul>
-</li>
-<li>replaceChild()<ul>
-<li>把节点替换，这个方法接受两个参数：要插入的节点和要替换的节点</li>
-</ul>
-</li>
-<li>removeChild()<ul>
-<li>看英文就知道remove,移除。就只接受一个参数：就是你要移除的节点。</li>
-</ul>
-</li>
-<li>cloneNode()<ul>
-<li>这个方法接受一个布尔值参数，在参数为true进行深复制，反之则执行浅复制。</li>
-</ul>
-</li>
-<li>normalize()<ul>
-<li>处理文档树中的文本节点。</li>
-</ul>
-</li>
-</ul>
-<h2 id="Document类型"><a href="#Document类型" class="headerlink" title="Document类型"></a>Document类型</h2><p>nodeType的值是9.</p>
-<p>document的对象是window对象的一个属性，因此可以将其作为全局对象来访问。</p>
-<p>查找元素的方法：</p>
-<ul>
-<li>getElementById()</li>
-<li>getElementByTagName()</li>
-<li>getElementByName()</li>
-<li>document.anchors<ul>
-<li>包含文档中所有带name特性的<a>元素</a></li>
-</ul>
-</li>
-<li>document.applets<ul>
-<li>包含文档中所有的<applet>元素​</applet></li>
-</ul>
-</li>
-<li>document.forms</li>
-<li>document.images</li>
-<li>document.links<ul>
-<li>包含文档中所有带href特性的<a>元素</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="Element类型"><a href="#Element类型" class="headerlink" title="Element类型"></a>Element类型</h2><p>nodeType的值是1。</p>
-<p>它提供了对元素标签名、子节点及特性的访问。</p>
-<p>操作特性的DOM方法：</p>
-<ul>
-<li>getAttribute()</li>
-<li>setAttribute()</li>
-<li>removeAttribute()</li>
-</ul>
-<p>attributes属性中包含一个NamedNodeMap，与NodeList类似，也是一个“动态”的集合。<br>NamedNodeMap对象有下列方法</p>
-<ul>
-<li>getNamedItem(name)<ul>
-<li>返回nodeName属性等于name的节点</li>
-</ul>
-</li>
-<li>removeNamedItem(name)<ul>
-<li>从列表移除nodeName属性等于name的节点</li>
-</ul>
-</li>
-<li>setNamedItem(node)<ul>
-<li>向列表中添加节点，以节点的nodeName属性为索引</li>
-</ul>
-</li>
-<li>item(pos)<ul>
-<li>返回位于数字pos属性位置处的节点。</li>
-</ul>
-</li>
-</ul>
-<h2 id="Text类型"><a href="#Text类型" class="headerlink" title="Text类型"></a>Text类型</h2><p>nodeType的值是3</p>
-<p>下列方法可以操作节点中的文本：</p>
-<ul>
-<li>appendData(text)<ul>
-<li>将text添加到节点的末尾</li>
-</ul>
-</li>
-<li>deleteData(offset, count)<ul>
-<li>从<strong>offset</strong>指定的位置开始删除<strong>count</strong>个字符</li>
-</ul>
-</li>
-<li>insertData(offset, text)<ul>
-<li>在<strong>offset</strong>指定的位置插入<strong>text</strong></li>
-</ul>
-</li>
-<li>replaceData(offset, count, text)<ul>
-<li>用<strong>text</strong>替换从<strong>offset</strong>指定的位置开始到<strong>offset + count</strong>为止处的文本</li>
-</ul>
-</li>
-<li>splitText(offset)<ul>
-<li>从<strong>offset</strong>指定的位置将当前文本节点分成两个文本节点</li>
-</ul>
-</li>
-<li><p>substringData(offset, count)</p>
-<ul>
-<li>提取从<strong>offset</strong>指定的位置开始到<strong>offset + count</strong>为止处的字符串</li>
-</ul>
-</li>
-<li><p>document.createTextNode()</p>
-<ul>
-<li>接受一个参数就是，要插入的文本内容</li>
-<li>document.createTextNode(“<strong>Hello</strong> world!”);</li>
-</ul>
-</li>
-</ul>
-<h3 id="文本节点合并"><a href="#文本节点合并" class="headerlink" title="文本节点合并"></a>文本节点合并</h3><p>normalize()</p>
-<h3 id="文本节点分割"><a href="#文本节点分割" class="headerlink" title="文本节点分割"></a>文本节点分割</h3><p>splitText()</p>
-<h2 id="Comment类型"><a href="#Comment类型" class="headerlink" title="Comment类型"></a>Comment类型</h2><p>nodeType的值是8</p>
-<p>Comment类型与Text类型继承自相同的基类，所以它拥有除了splitText()之外的所有字符串操作方法。<br>document.createComment()<br>创建注释节点</p>
-<h2 id="CDATASection类型"><a href="#CDATASection类型" class="headerlink" title="CDATASection类型"></a>CDATASection类型</h2><p>nodeType的值是4</p>
-<p>CDATA区域只会出现在XML文档中</p>
-<h2 id="DocumentType类型"><a href="#DocumentType类型" class="headerlink" title="DocumentType类型"></a>DocumentType类型</h2><p>nodeType的值是10</p>
-<p>DocumentType包含着与文档的doctype有关的所有信息。</p>
-<h2 id="DocumentFragment类型"><a href="#DocumentFragment类型" class="headerlink" title="DocumentFragment类型"></a>DocumentFragment类型</h2><p>nodeType的值是11</p>
-<p>DocumentFragment 接口表示一个没有父级文件的最小文档对象。它被当做一个轻量版的 Document 使用，用于存储已排好版的或尚未打理好格式的XML片段。最大的区别是因为DocumentFragment不是真实DOM树的一部分，它的变化不会引起DOM树的重新渲染的操作(reflow) ，且不会导致性能等问题。</p>
-<p>该接口继承 Node 的全部方法，并实现了 ParentNode 接口中的方法。</p>
-<h2 id="Attr类型"><a href="#Attr类型" class="headerlink" title="Attr类型"></a>Attr类型</h2><p>nodeType的值是2.</p>
-<p>Attr对象有三个属性：name、 value、 specified</p>
-<p>#总结：<br>DOM由各种节点构成：</p>
-<ol>
-<li>最基本的节点类型是Node;所有其他类型都继承自Node。</li>
-<li>Document类型表示整个文档，是一组分层节点的根节点。在JS中document对象是Document的一个实例。</li>
-<li>Element节点表示文档中所有HTML或XML元素，可以用来操作这些元素的内容和特性。</li>
-<li>还有一些节点就是文本内容啊、注释、文档类型、CDATA区域和文档片段。</li>
-<li>理解DOM的关键，就是理解DOM对性能的影响。DOM操作是Js程序中开销最大的部分，因此访问NodeList导致的问题为最多。所以每次访问NodeList对象，都会运行一次查询。</li>
-<li><strong>尽量减少DOM操作！！！</strong></li>
-</ol>
-<h2 id="DOM扩展"><a href="#DOM扩展" class="headerlink" title="DOM扩展"></a>DOM扩展</h2><p>Leval 1两个方法：</p>
-<ol>
-<li>querySelector()</li>
-<li>querySelectorAll()</li>
-</ol>
-<p>Level 2 的一个方法：</p>
-<ol>
-<li>matchesSelector()</li>
-</ol>
-<h3 id="元素遍历"><a href="#元素遍历" class="headerlink" title="元素遍历"></a>元素遍历</h3><p>Element Traversal API 为DOM元素添加了以下5个属性：</p>
-<ol>
-<li>childElementCount: 返回子元素的个数</li>
-<li>firstElementChild：指向第一个子元素</li>
-<li>lastElementChild：指向最后一个子元素</li>
-<li>previousElementSibling ：指向前一个同辈元素</li>
-<li>nextElementSibling：指向后一个同辈元素</li>
-</ol>
-<h3 id="与类相关的扩充"><a href="#与类相关的扩充" class="headerlink" title="与类相关的扩充"></a>与类相关的扩充</h3><p>1.getElementsByClassName()<br>2.classList</p>
-<p>classList属性有以下方法：</p>
-<ul>
-<li>add(value)</li>
-<li>contains(value)</li>
-<li>remove(value)</li>
-<li>toggle(value)</li>
-</ul>
-<h3 id="焦点管理"><a href="#焦点管理" class="headerlink" title="焦点管理"></a>焦点管理</h3><p>document.actoveElement()<br>document.hasFocus()</p>
-<h3 id="插入标记"><a href="#插入标记" class="headerlink" title="插入标记"></a>插入标记</h3><ul>
-<li>innerHTML</li>
-<li>outerHTML</li>
-<li>insertAdjacentHTML()方法<ul>
-<li>beforebegin: 在<strong>当前元素之前</strong>插入一个紧邻的同辈元素</li>
-<li>afterbegin：在<strong>当前元素之下</strong>插入一个新的子元素或<strong>第一个子元素之前</strong>再插入新的子元素</li>
-<li>beforeend：在<strong>当前元素之下</strong>插入一个新的子元素或在<strong>最后一个子元素之</strong>后再插入新的子元素</li>
-<li>afterend：在<strong>当前元素之后</strong>插入一个紧邻的同辈元素。</li>
-</ul>
-</li>
-</ul>
-<h3 id="scrollIntoView"><a href="#scrollIntoView" class="headerlink" title="scrollIntoView()"></a>scrollIntoView()</h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;文档对象模型&quot;&gt;&lt;a href=&quot;#文档对象模型&quot; class=&quot;headerlink&quot; title=&quot;文档对象模型&quot;&gt;&lt;/a&gt;文档对象模型&lt;/h1&gt;&lt;p&gt;一点小差异，IE中所有DOM对象都是以COM对象的形式实现的。&lt;/p&gt;
-&lt;h2 id=&quot;节点属性&quot;&gt;&lt;a href=&quot;#节点属性&quot; class=&quot;headerlink&quot; title=&quot;节点属性&quot;&gt;&lt;/a&gt;节点属性&lt;/h2&gt;&lt;p&gt;每个节点的属性&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;childNodes&lt;ul&gt;
-&lt;li&gt;它里面有一个对象叫NodeList&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;patentNode&lt;/li&gt;
-&lt;li&gt;previousSibling&lt;/li&gt;
-&lt;li&gt;nextSibling&lt;/li&gt;
-&lt;li&gt;ownerDoucment&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="Javascript修仙之旅" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
-    
-    
-      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C++ 初体验</title>
-    <link href="http://xuzihao.fun/C++%E5%88%9D%E4%BD%93%E9%AA%8C.html"/>
-    <id>http://xuzihao.fun/C++初体验.html</id>
-    <published>2017-12-08T14:05:00.000Z</published>
-    <updated>2017-12-09T06:27:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="First"><a href="#First" class="headerlink" title="First"></a>First</h2><p>Clion给我建的第一个C++文件如下<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello, World!"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>那么我在想这和平常写得js不同啊，那个<code>std::</code>是啥…</p>
-<p>经过强大的搜索引擎我知道了！这玩意儿就是一个类（std）啊（输入输出标准），它包括了cin成员和cout成员。</p>
-<p>当我加了<code>using namespace std;</code>以后，我才能使用它的成员。我的c++程序可以写成:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"> </div><div class="line"><span class="comment">// main() 是程序开始执行的地方</span></div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">   <span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello World"</span>; <span class="comment">// 输出 Hello World</span></div><div class="line">   <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>那我又发现 <code>namespace</code>这个东西。原来它是指标识符的各种可见范围。</p>
-<h2 id="C-数据类型"><a href="#C-数据类型" class="headerlink" title="C++数据类型"></a>C++数据类型</h2><p>讲到数据类型。。我这个写惯了动态语言的人。。。诶西。强制让我写静态有点不行惯，没办法只能去写啊！</p>
-<p>C++有七种数据类型：</p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>关键字</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>布尔型</td>
-<td>bool</td>
-</tr>
-<tr>
-<td>字符型</td>
-<td>Char</td>
-</tr>
-<tr>
-<td>整型</td>
-<td>int</td>
-</tr>
-<tr>
-<td>浮点型</td>
-<td>float</td>
-</tr>
-<tr>
-<td>双浮点型</td>
-<td>double</td>
-</tr>
-<tr>
-<td>无类型</td>
-<td>void</td>
-</tr>
-<tr>
-<td>宽字符型</td>
-<td>wchar_t</td>
-</tr>
-</tbody>
-</table>
-<p>有一些基本类型可以使用一个或多个类型装饰符进行修饰：</p>
-<ul>
-<li>signed</li>
-<li>unsigned</li>
-<li>short</li>
-<li>long</li>
-</ul>
-<h2 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h2><p>枚举大家可能都听过吧，它其实就是将变量的值一一列举出来，在这提醒下！变量的值只能在列举出来的值的范围内。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">enum</span> animal &#123; dog, cat, pig &#125; c;</div><div class="line">c = cat;</div><div class="line"><span class="comment">//这段代码意思为 变量c的类型为animal，最后c被赋值给cat。</span></div></pre></td></tr></table></figure>
-<p>在默认情况下第一个名称的值为0，第二个名称值为1，第三个名称的值为2.</p>
-<p>如果我这有写：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">enum</span> animal &#123; dog, cat=<span class="number">5</span>, pig &#125;;</div></pre></td></tr></table></figure>
-<p>在这里，cat的值为5，那么pig值为6.</p>
-<h2 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h2><p>类型决定了变量存储的大小和布局，该范围内的值都可以存储在内存中，运算符可应用于变量上。</p>
-<ul>
-<li>布尔</li>
-<li>char<ul>
-<li>通常为8位字节，这是一个整数类型</li>
-</ul>
-</li>
-<li>int</li>
-<li>float<ul>
-<li>单精度浮点类型，32位</li>
-</ul>
-</li>
-<li>double<ul>
-<li>双精度浮点类型，64位</li>
-</ul>
-</li>
-<li>void</li>
-<li>wchar_t</li>
-</ul>
-<p>而且C++ 也允许定义各种其他类型的变量，比如<strong>枚举、指针、数组、引用、数据结构、类</strong>。</p>
-<p>我们可以使用 <strong>extern</strong> 关键字在任何地方声明一个变量</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="keyword">extern</span> <span class="keyword">int</span> a, b;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> a, b;</div><div class="line">  </div><div class="line">  	a = <span class="number">10</span>;</div><div class="line">  </div><div class="line">  <span class="built_in">cout</span> &lt;&lt; a ;  <span class="comment">//=&gt; 10</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>在JS中我们的作用域可是太坑了！现在我们来看看C++的作用域吧。</p>
-<ul>
-<li>（1）在函数或一个代码块内部声明的变量，称为局部变量。</li>
-<li>（2）在函数参数的定义中声明的变量，称为形式参数。</li>
-<li>（3）在所有函数外部声明的变量，称为全局变量。</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">(<span class="number">1</span>局部变量)</div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">  <span class="comment">// 局部变量声明</span></div><div class="line">  <span class="keyword">int</span> a, b;</div><div class="line">  <span class="keyword">int</span> c;</div><div class="line"> </div><div class="line">  <span class="comment">// 实际初始化</span></div><div class="line">  a = <span class="number">10</span>;</div><div class="line">  b = <span class="number">20</span>;</div><div class="line">  c = a + b;</div><div class="line"> </div><div class="line">  <span class="built_in">cout</span> &lt;&lt; c;</div><div class="line"> </div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">(<span class="number">3</span>全局变量)</div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"> </div><div class="line"><span class="comment">// 全局变量声明</span></div><div class="line"><span class="keyword">int</span> g;</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">  <span class="comment">// 局部变量声明</span></div><div class="line">  <span class="keyword">int</span> a, b;</div><div class="line"> </div><div class="line">  <span class="comment">// 实际初始化</span></div><div class="line">  a = <span class="number">10</span>;</div><div class="line">  b = <span class="number">20</span>;</div><div class="line">  g = a + b;</div><div class="line"> </div><div class="line">  <span class="built_in">cout</span> &lt;&lt; g;</div><div class="line"> </div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>当我们遇到全局变量和局部变量的名称相同时，和js一样，<strong>在函数体内局部变量的值会覆盖全局变量</strong>。</p>
-<h2 id="定义常量"><a href="#定义常量" class="headerlink" title="定义常量"></a>定义常量</h2><p>在 C++ 中，有两种简单的定义常量的方式：</p>
-<ul>
-<li>使用 <strong>#define</strong> 预处理器。</li>
-<li>使用 <strong>const</strong> 关键字。</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"> </div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> DOGFOOT 4   </span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> CHICKENFOOT  2</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> NEWLINE <span class="meta-string">'\n'</span></span></div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"> </div><div class="line">   <span class="keyword">int</span> area;  </div><div class="line">   </div><div class="line">   allFoot = DOGFOOT * CHICKENFOOT;</div><div class="line">   <span class="built_in">cout</span> &lt;&lt; allFoot;</div><div class="line">   <span class="built_in">cout</span> &lt;&lt; NEWLINE;</div><div class="line">   <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//会输出8.</span></div></pre></td></tr></table></figure>
-<p>那么const很简单就和es6中一样只<strong>可读不可写</strong>。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;First&quot;&gt;&lt;a href=&quot;#First&quot; class=&quot;headerlink&quot; title=&quot;First&quot;&gt;&lt;/a&gt;First&lt;/h2&gt;&lt;p&gt;Clion给我建的第一个C++文件如下&lt;br&gt;&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;span class=&quot;meta-keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;meta-string&quot;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;::&lt;span class=&quot;built_in&quot;&gt;cout&lt;/span&gt; &amp;lt;&amp;lt; &lt;span class=&quot;string&quot;&gt;&quot;Hello, World!&quot;&lt;/span&gt; &amp;lt;&amp;lt; &lt;span class=&quot;built_in&quot;&gt;std&lt;/span&gt;::&lt;span class=&quot;built_in&quot;&gt;endl&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="C++" scheme="http://xuzihao.fun/categories/C/"/>
-    
-    
-      <category term="C++" scheme="http://xuzihao.fun/tags/C/"/>
     
   </entry>
   

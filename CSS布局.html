@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="git," />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -88,17 +88,17 @@
 
 
 
-<meta name="description" content="Git addgit add -A 和 git add . 和 git add -u  git add   . ：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。">
-<meta name="keywords" content="git">
+<meta name="description" content="🤔🤡🤔">
+<meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git基本操作">
-<meta property="og:url" content="http://xuzihao.fun/git.html">
+<meta property="og:title" content="CSS布局">
+<meta property="og:url" content="http://xuzihao.fun/CSS布局.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="Git addgit add -A 和 git add . 和 git add -u  git add   . ：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。">
-<meta property="og:updated_time" content="2017-09-06T09:40:39.000Z">
+<meta property="og:description" content="🤔🤡🤔">
+<meta property="og:updated_time" content="2018-03-29T07:56:01.758Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git基本操作">
-<meta name="twitter:description" content="Git addgit add -A 和 git add . 和 git add -u  git add   . ：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。">
+<meta name="twitter:title" content="CSS布局">
+<meta name="twitter:description" content="🤔🤡🤔">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://xuzihao.fun/git.html"/>
+  <link rel="canonical" href="http://xuzihao.fun/CSS布局.html"/>
 
 
 
 
 
-  <title>Git基本操作 | 壮壮-Technology</title>
+  <title>CSS布局 | 壮壮-Technology</title>
   
 
 
@@ -271,7 +271,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/git.html">
+    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/CSS布局.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XuZiHao">
@@ -288,7 +288,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Git基本操作</h2>
+          <h2 class="post-title" itemprop="name headline">CSS布局</h2>
         
 
         <div class="post-meta">
@@ -300,8 +300,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-25T20:47:00+08:00">
-                2017-07-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-18T22:38:00+08:00">
+                2018-03-18
               </time>
             
 
@@ -323,8 +323,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -341,9 +341,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/git.html#comments" itemprop="discussionUrl">
+                <a href="/CSS布局.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="git.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="CSS布局.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -376,52 +376,7 @@
       
 
       
-        <h1 id="Git-add"><a href="#Git-add" class="headerlink" title="Git add"></a>Git add</h1><p><code>git add -A</code> 和 <code>git add .</code> 和 <code>git add -u</code></p>
-<ul>
-<li>git add   <strong>.</strong> ：他会监控工作区的状态树，使用它会把工作时的<strong>所有变化提交</strong>到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li>git add -u ：他仅监控<strong>已经被add的文件</strong>（即tracked file），他会将被修改的文件提交到暂存区。add -u 不会提交新文件（untracked file）。（git add –update的缩写)</li>
-<li>git add -A ：是上面两个功能的合集（git add –all的缩写）</li>
-</ul>
-<p>自我理解:</p>
-<ul>
-<li>git add -A  提交所有变化</li>
-<li>git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)</li>
-<li>git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件</li>
-</ul>
-<h1 id="commit过程"><a href="#commit过程" class="headerlink" title="commit过程"></a>commit过程</h1><ul>
-<li>git status  检查工作区是否干净</li>
-<li>git add 命令主要用于把我们要提交的文件的信息添加到索引库中。当我们使用git commit时，git将依据索引库中的内容来进行文件的提交。</li>
-<li>git commit -am “xxxxxxx”</li>
-<li>git branch </li>
-<li>git push origin xxxx</li>
-</ul>
-<h1 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h1><ul>
-<li>git branch -D xx <strong>删除本地分支</strong></li>
-<li>git push origin :br  (origin 后面有空格) <strong>删除远程分支</strong></li>
-</ul>
-<h1 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h1><ul>
-<li>git fetch origin cms:new  创建新本地分支new</li>
-<li>git branch   </li>
-<li>git merge new  合并</li>
-<li>git branch -D new 删除本地分支</li>
-</ul>
-<h1 id="diff"><a href="#diff" class="headerlink" title="diff"></a>diff</h1><p>查看自上次提交以来，本地代码改动的具体情况</p>
-<h1 id="Git-log"><a href="#Git-log" class="headerlink" title="Git log"></a>Git log</h1><p>在提交了若干更新之后，又或者克隆了某个项目，想回顾下提交历史，可以使用 <code>Git log</code> 命令查看</p>
-<h1 id="Git-show"><a href="#Git-show" class="headerlink" title="Git show"></a>Git show</h1><p>git show <commit-hash-id>查看某次commit的修改内容</commit-hash-id></p>
-<h1 id="Git-reset-–hard"><a href="#Git-reset-–hard" class="headerlink" title="Git reset –hard "></a>Git reset –hard <commit></commit></h1><p>现在让我们来重置回那次提交的状态：</p>
-<h1 id="Git-rebase"><a href="#Git-rebase" class="headerlink" title="Git rebase"></a>Git rebase</h1><p>对于git rebase, 你亦可以选择进行交互式的rebase。这种方法通常用于在向别处推送提交之前对它们进行重写。交互式rebase提供了一个简单易用的途径让你在和别人 分享提交之前对你的提交进行分割、合并或者重排序。在把从其他开发者处拉取的提交应用到本地时，你也可以使用交互式rebase对它们进行清理。</p>
-<p>如果你想在rebase的过程中对一部分提交进行修改，你可以在’git rebase’命令中加入’-i’或’–interactive’参数去调用交互模式。</p>
-<p>$ git rebase -i origin/master</p>
-<p>这个命令会执行交互式rebase操作，操作对象是那些自最后一次从origin仓库拉取或者向origin推送之后的所有提交。</p>
-<p>若想查看一下将被rebase的提交，可以用如下的log命令：</p>
-<p>$ git log github/master..</p>
-<h1 id="git-branch-a"><a href="#git-branch-a" class="headerlink" title="git branch -a"></a>git branch -a</h1><p>查看远程分支</p>
-<p>master<br>remotes/origin/HEAD -&gt; origin/master<br>remotes/origin/Release<br>remotes/origin/master</p>
-<h1 id="git-checkout-b-myRelease-origin-Release"><a href="#git-checkout-b-myRelease-origin-Release" class="headerlink" title="git checkout -b myRelease origin/Release"></a>git checkout -b myRelease origin/Release</h1><p>切换到 origin/Release分支，并在本地新建分支 myRelease</p>
-
+        
       
     </div>
     
@@ -438,7 +393,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag"># git</a>
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
           
         </div>
       
@@ -451,8 +406,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/yewu.html" rel="next" title="实习谈业务时所学">
-                <i class="fa fa-chevron-left"></i> 实习谈业务时所学
+              <a href="/CSS外轮廓.html" rel="next" title="CSS3外轮廓">
+                <i class="fa fa-chevron-left"></i> CSS3外轮廓
               </a>
             
           </div>
@@ -461,8 +416,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Node.html" rel="prev" title="学Node日志(一)">
-                学Node日志(一) <i class="fa fa-chevron-right"></i>
+              <a href="/浅谈script标签.html" rel="prev" title="浅谈script标签">
+                浅谈script标签 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -525,17 +480,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -628,22 +574,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-add"><span class="nav-number">1.</span> <span class="nav-text">Git add</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#commit过程"><span class="nav-number">2.</span> <span class="nav-text">commit过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除分支"><span class="nav-number">3.</span> <span class="nav-text">删除分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决冲突"><span class="nav-number">4.</span> <span class="nav-text">解决冲突</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#diff"><span class="nav-number">5.</span> <span class="nav-text">diff</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-log"><span class="nav-number">6.</span> <span class="nav-text">Git log</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-show"><span class="nav-number">7.</span> <span class="nav-text">Git show</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-reset-–hard"><span class="nav-number">8.</span> <span class="nav-text">Git reset –hard </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-rebase"><span class="nav-number">9.</span> <span class="nav-text">Git rebase</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-branch-a"><span class="nav-number">10.</span> <span class="nav-text">git branch -a</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-checkout-b-myRelease-origin-Release"><span class="nav-number">11.</span> <span class="nav-text">git checkout -b myRelease origin/Release</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -835,9 +765,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://xuzihao.fun/git.html';
-          this.page.identifier = 'git.html';
-          this.page.title = 'Git基本操作';
+          this.page.url = 'http://xuzihao.fun/CSS布局.html';
+          this.page.identifier = 'CSS布局.html';
+          this.page.title = 'CSS布局';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://xuzihao.disqus.com/embed.js';
