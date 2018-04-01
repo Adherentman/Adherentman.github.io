@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://xuzihao.fun/%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html</loc>
+    <lastmod>2018-04-01T11:28:52.269Z</lastmod>
+    <data>
+        <display>
+        <title>浅谈script标签</title>
+        <pubTime>2018-03-19T12:57:11.911Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="Javascript修仙之旅" url="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xuzihao.fun/CSS%E5%B8%83%E5%B1%80.html</loc>
     <lastmod>2018-04-01T07:28:26.254Z</lastmod>
     <data>
@@ -90,26 +110,6 @@
         <display>
         <title>同源与跨域资源共享</title>
         <pubTime>2018-03-23T12:53:35.483Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="Javascript修仙之旅" url="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xuzihao.fun/%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html</loc>
-    <lastmod>2018-03-23T14:18:39.533Z</lastmod>
-    <data>
-        <display>
-        <title>浅谈script标签</title>
-        <pubTime>2018-03-19T12:57:11.911Z</pubTime>
         
         <tag>JavaScript</tag>
          
