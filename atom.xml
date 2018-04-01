@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-03-31T14:55:33.007Z</updated>
+  <updated>2018-04-01T06:20:41.512Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -20,12 +20,11 @@
     <link href="http://xuzihao.fun/ReduxSaga.html"/>
     <id>http://xuzihao.fun/ReduxSaga.html</id>
     <published>2018-03-31T14:55:00.000Z</published>
-    <updated>2018-03-31T14:55:33.007Z</updated>
+    <updated>2018-04-01T06:20:41.512Z</updated>
     
-    <content type="html"><![CDATA[<p>takeEvery:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">watchFetchData</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">yield</span>* takeEvery(<span class="string">'FETCH_REQUESTED'</span>, fetchData)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>允许多个<code>fetchData</code>同时进行，即使上一个还没执行完成。<br><a id="more"></a><br>takeLatest：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">watchFetchData</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">yield</span>* takeLatest(<span class="string">'FETCH_REQUESTED'</span>, fetchData)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+    <content type="html"><![CDATA[<h2 id="监听"><a href="#监听" class="headerlink" title="监听"></a>监听</h2><h3 id="takeEvery"><a href="#takeEvery" class="headerlink" title="takeEvery:"></a>takeEvery:</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">watchFetchData</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">yield</span>* takeEvery(<span class="string">'FETCH_REQUESTED'</span>, fetchData)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>允许多个<code>fetchData</code>同时进行，即使上一个还没执行完成。<br><a id="more"></a></p>
+<h3 id="takeLatest："><a href="#takeLatest：" class="headerlink" title="takeLatest："></a>takeLatest：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">watchFetchData</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">yield</span>* takeLatest(<span class="string">'FETCH_REQUESTED'</span>, fetchData)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>始终执行最新的那个请求的响应。</p>
 <p>总结一下就是：</p>
 <p>我们疯狂点击一个按钮，它触发也疯狂触发了多次<code>fetchData</code>。</p>
@@ -34,19 +33,19 @@
 <p>##Effect</p>
 <p>从 Generator 里 yield 纯 JavaScript 对象以表达 Saga 逻辑。 我们称呼那些对象为 <em>Effect</em>。</p>
 <p>可以使用 <code>redux-saga/effects</code> 包里<strong>提供的函数</strong>来创建 Effect。</p>
-<p>call：</p>
-<p><code>call(fn, ...args)</code> 这个函数。现在我们不立即执行异步调用，相反，call 创建了一条描述结果的信息</p>
+<h3 id="call："><a href="#call：" class="headerlink" title="call："></a>call：</h3><p><code>call(fn, ...args)</code> 这个函数。现在我们不立即执行异步调用，相反，call 创建了一条描述结果的信息</p>
 <p>简单来说，call就是redux里的Action Creator。 </p>
-<p>###发起actions -&gt; store</p>
-<p>put：</p>
+<p>###put：</p>
 <p>这个函数用于创建 dispatch Effect。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//before</span></div><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fetchProducts</span>(<span class="params">dispatch</span>)</span></div><div class="line">  <span class="title">const</span> <span class="title">products</span> = <span class="title">yield</span> <span class="title">call</span>(<span class="params">Api.fetch, <span class="string">'/products'</span></span>)</div><div class="line">  <span class="title">dispatch</span>(<span class="params">&#123; type: <span class="string">'PRODUCTS_RECEIVED'</span>, products &#125;</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line">//<span class="title">after</span></div><div class="line"><span class="title">import</span> &#123; call, put &#125; <span class="keyword">from</span> <span class="string">'redux-saga/effects'</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fetchProducts</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> products = <span class="keyword">yield</span> call(Api.fetch, <span class="string">'/products'</span>)</div><div class="line">  <span class="comment">// 创建并 yield 一个 dispatch Effect</span></div><div class="line">  <span class="keyword">yield</span> put(&#123; <span class="attr">type</span>: <span class="string">'PRODUCTS_RECEIVED'</span>, products &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="take："><a href="#take：" class="headerlink" title="take："></a>take：</h3><p>它将会暂停 Generator 直到一个匹配的 action 被发起。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">loginFlow</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</div><div class="line">    <span class="keyword">yield</span> take(<span class="string">'LOGIN'</span>)</div><div class="line">    <span class="comment">// ... perform the login logic</span></div><div class="line">    <span class="keyword">yield</span> take(<span class="string">'LOGOUT'</span>)</div><div class="line">    <span class="comment">// ... perform the logout logic</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>也就是说我们可以用<code>take</code>去监听还未发生的事情。比如我们Login之后必定跟着一个Logout，或者说我们Logout后面必定跟着一个Login。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;takeEvery:&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;* &lt;span class=&quot;title&quot;&gt;watchFetchData&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;yield&lt;/span&gt;* takeEvery(&lt;span class=&quot;string&quot;&gt;&#39;FETCH_REQUESTED&#39;&lt;/span&gt;, fetchData)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;h2 id=&quot;监听&quot;&gt;&lt;a href=&quot;#监听&quot; class=&quot;headerlink&quot; title=&quot;监听&quot;&gt;&lt;/a&gt;监听&lt;/h2&gt;&lt;h3 id=&quot;takeEvery&quot;&gt;&lt;a href=&quot;#takeEvery&quot; class=&quot;headerlink&quot; title=&quot;takeEvery:&quot;&gt;&lt;/a&gt;takeEvery:&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;* &lt;span class=&quot;title&quot;&gt;watchFetchData&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;yield&lt;/span&gt;* takeEvery(&lt;span class=&quot;string&quot;&gt;&#39;FETCH_REQUESTED&#39;&lt;/span&gt;, fetchData)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;允许多个&lt;code&gt;fetchData&lt;/code&gt;同时进行，即使上一个还没执行完成。&lt;br&gt;
     
     </summary>
