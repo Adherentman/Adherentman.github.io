@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://xuzihao.fun/CSS%E5%B8%83%E5%B1%80.html</loc>
+    <lastmod>2018-04-01T07:28:26.254Z</lastmod>
+    <data>
+        <display>
+        <title>CSS布局</title>
+        <pubTime>2018-04-01T06:50:00.000Z</pubTime>
+        
+        <tag>CSS</tag>
+         
+         
+           
+             
+              <breadCrumb title="CSS" url="http://xuzihao.fun/categories/CSS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xuzihao.fun/ReduxSaga.html</loc>
     <lastmod>2018-04-01T06:20:41.512Z</lastmod>
     <data>
@@ -17,26 +37,6 @@
            
              
               <breadCrumb title="React" url="http://xuzihao.fun/categories/React/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xuzihao.fun/CSS%E5%B8%83%E5%B1%80.html</loc>
-    <lastmod>2018-03-29T07:56:01.758Z</lastmod>
-    <data>
-        <display>
-        <title>CSS布局</title>
-        <pubTime>2018-03-18T14:38:00.000Z</pubTime>
-        
-        <tag>CSS</tag>
-         
-         
-           
-             
-              <breadCrumb title="CSS" url="http://xuzihao.fun/categories/CSS/"/>
           
         </display>
     </data>

@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[CSS布局]]></title>
+      <url>%2FCSS%E5%B8%83%E5%B1%80.html</url>
+      <content type="text"><![CDATA[两栏——左固定右自适应布局方法一12345678910111213141516&lt;div class="left"&gt;&lt;/div&gt;&lt;div class="right"&gt;&lt;/div&gt;// css .left &#123; width: 40px; height: 200px; background: red; float: left&#125;.right &#123; height: 200px; margin-left: 40px; background: blue;&#125; Demo 方法二123456789101112131415&lt;div class="left"&gt;&lt;/div&gt;&lt;div class="right"&gt;&lt;/div&gt;//css.left &#123; position: absolute; height: 200px; width: 40px; background: red;&#125;.right &#123; height: 200px; margin-left: 40px; background: blue;&#125; Demo]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[React-Saga笔记]]></title>
       <url>%2FReduxSaga.html</url>
       <content type="text"><![CDATA[监听takeEvery:123function* watchFetchData() &#123; yield* takeEvery('FETCH_REQUESTED', fetchData)&#125; 允许多个fetchData同时进行，即使上一个还没执行完成。 takeLatest：123function* watchFetchData() &#123; yield* takeLatest('FETCH_REQUESTED', fetchData)&#125; 始终执行最新的那个请求的响应。 总结一下就是： 我们疯狂点击一个按钮，它触发也疯狂触发了多次fetchData。 如果我们是takeEvery那将你点击几次他执行几次fetchData。 如果我们是takeLatest那将只执行你最后点击的那一次fetchData。 ##Effect 从 Generator 里 yield 纯 JavaScript 对象以表达 Saga 逻辑。 我们称呼那些对象为 Effect。 可以使用 redux-saga/effects 包里提供的函数来创建 Effect。 call：call(fn, ...args) 这个函数。现在我们不立即执行异步调用，相反，call 创建了一条描述结果的信息 简单来说，call就是redux里的Action Creator。 ###put： 这个函数用于创建 dispatch Effect。 1234567891011121314//beforefunction* fetchProducts(dispatch) const products = yield call(Api.fetch, '/products') dispatch(&#123; type: 'PRODUCTS_RECEIVED', products &#125;)&#125;//afterimport &#123; call, put &#125; from 'redux-saga/effects';function* fetchProducts() &#123; const products = yield call(Api.fetch, '/products') // 创建并 yield 一个 dispatch Effect yield put(&#123; type: 'PRODUCTS_RECEIVED', products &#125;)&#125; take：它将会暂停 Generator 直到一个匹配的 action 被发起。 12345678function* loginFlow() &#123; while(true) &#123; yield take('LOGIN') // ... perform the login logic yield take('LOGOUT') // ... perform the logout logic &#125;&#125; 也就是说我们可以用take去监听还未发生的事情。比如我们Login之后必定跟着一个Logout，或者说我们Logout后面必定跟着一个Login。]]></content>
@@ -41,13 +48,6 @@
       <title><![CDATA[浅谈script标签]]></title>
       <url>%2F%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html</url>
       <content type="text"><![CDATA[&lt;script&gt; ? 这不就是直接执行script脚本吗？ 以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。 属性&lt;script&gt;拥有7个属性，没想到吧！ async boolean 异步执行该脚本，但不保证按照指定它们的先后顺序执行 defer boolean 通知浏览器该脚本将在文档完成解析后遇到&lt;/html&gt;，并会按照它们出现的先后顺序执行。但会在触发 DOMContentLoaded 事件前执行。 integrity 包含用户代理可用于验证已提取资源是否已无意外操作的内联元数据 src type text crossorigin 使那些将静态资源放在另外一个域名的站点打印错误信息,就是将跨域报错变为同源报错 在XHTML文档中，要把async属性设置为 async = “async”, defer = “defer” 知道了那几个属性接下来，来看看下面这个图： 第一个光秃秃的&lt;script&gt;说明了，在html解析中，如果有&lt;script&gt;的话，html会在Script下载并且执行的时候，暂停解析。 第二个带async属性的&lt;script&gt;，如图所示，也就是他下载Script的时候是异步的，但是只要Script文件下好了，那么就马上执行。 第三个带defer属性的&lt;script&gt;，其实和上面带async属性一样都是异步执行去下载Script文件的。但是在这个带有defer的则是在html全部解析完毕之后才去执行Script文件。而且它是按照加载顺序执行脚本的，这一点要善加利用。显然 defer 是最接近我们对于应用脚本加载和执行的要求的 参考 MDN SegmentFault]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[CSS布局]]></title>
-      <url>%2FCSS%E5%B8%83%E5%B1%80.html</url>
-      <content type="text"></content>
     </entry>
 
     

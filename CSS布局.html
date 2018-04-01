@@ -88,17 +88,17 @@
 
 
 
-<meta name="description" content="🤔🤡🤔">
+<meta name="description" content="两栏——左固定右自适应布局方法一12345678910111213141516&amp;lt;div class=&quot;left&quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;right&quot;&amp;gt;&amp;lt;/div&amp;gt;// css .left &amp;#123;  width: 40px;  height: 200px;  background: red;  float: left&amp;#125;.r">
 <meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS布局">
 <meta property="og:url" content="http://xuzihao.fun/CSS布局.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="🤔🤡🤔">
-<meta property="og:updated_time" content="2018-03-29T07:56:01.758Z">
+<meta property="og:description" content="两栏——左固定右自适应布局方法一12345678910111213141516&amp;lt;div class=&quot;left&quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;right&quot;&amp;gt;&amp;lt;/div&amp;gt;// css .left &amp;#123;  width: 40px;  height: 200px;  background: red;  float: left&amp;#125;.r">
+<meta property="og:updated_time" content="2018-04-01T07:28:26.254Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS布局">
-<meta name="twitter:description" content="🤔🤡🤔">
+<meta name="twitter:description" content="两栏——左固定右自适应布局方法一12345678910111213141516&amp;lt;div class=&quot;left&quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&quot;right&quot;&amp;gt;&amp;lt;/div&amp;gt;// css .left &amp;#123;  width: 40px;  height: 200px;  background: red;  float: left&amp;#125;.r">
 
 
 
@@ -300,8 +300,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-18T22:38:00+08:00">
-                2018-03-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-01T14:50:00+08:00">
+                2018-04-01
               </time>
             
 
@@ -376,7 +376,12 @@
       
 
       
-        
+        <h2 id="两栏——左固定右自适应布局"><a href="#两栏——左固定右自适应布局" class="headerlink" title="两栏——左固定右自适应布局"></a>两栏——左固定右自适应布局</h2><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">// css </div><div class="line">.left &#123;</div><div class="line">  width: 40px;</div><div class="line">  height: 200px;</div><div class="line">  background: red;</div><div class="line">  float: left</div><div class="line">&#125;</div><div class="line"></div><div class="line">.right &#123;</div><div class="line">  height: 200px;</div><div class="line">  margin-left: 40px;</div><div class="line">  background: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://codepan.net/gist/9c5dd595475bf4a68adc87c895f6e561" target="_blank" rel="external">Demo</a></p>
+<a id="more"></a>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">//css</div><div class="line">.left &#123;</div><div class="line">  position: absolute;</div><div class="line">  height: 200px;</div><div class="line">  width: 40px;</div><div class="line">  background: red;</div><div class="line">&#125;</div><div class="line">.right &#123;</div><div class="line">  height: 200px;</div><div class="line">  margin-left: 40px;</div><div class="line">  background: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://codepan.net/gist/4166718a79e3d3013d43a63bb4220b98" target="_blank" rel="external">Demo</a></p>
+
       
     </div>
     
@@ -406,8 +411,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/CSS外轮廓.html" rel="next" title="CSS3外轮廓">
-                <i class="fa fa-chevron-left"></i> CSS3外轮廓
+              <a href="/ReduxSaga.html" rel="next" title="React-Saga笔记">
+                <i class="fa fa-chevron-left"></i> React-Saga笔记
               </a>
             
           </div>
@@ -415,10 +420,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/浅谈script标签.html" rel="prev" title="浅谈script标签">
-                浅谈script标签 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -480,8 +481,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -574,6 +584,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#两栏——左固定右自适应布局"><span class="nav-number">1.</span> <span class="nav-text">两栏——左固定右自适应布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法一"><span class="nav-number">2.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法二"><span class="nav-number">3.</span> <span class="nav-text">方法二</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
