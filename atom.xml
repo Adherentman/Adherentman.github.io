@@ -461,25 +461,11 @@
     <link href="http://xuzihao.fun/%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html"/>
     <id>http://xuzihao.fun/浅谈script标签.html</id>
     <published>2018-03-19T12:57:11.911Z</published>
-    <updated>2018-04-02T06:06:19.104Z</updated>
+    <updated>2018-04-01T12:21:00.000Z</updated>
     
-    <content type="html"><![CDATA[<p>更新于2018-04-01</p>
-<ul>
-<li>使用动态创建的<code>&lt;script&gt;</code>标签元素来下载并执行代码</li>
-<li>使用XHR对象下载JS代码注入页面</li>
-</ul>
-<a id="more"></a>
-<h2 id="使用动态创建的-lt-script-gt-标签元素来下载并执行代码"><a href="#使用动态创建的-lt-script-gt-标签元素来下载并执行代码" class="headerlink" title="使用动态创建的&lt;script&gt;标签元素来下载并执行代码"></a>使用动态创建的<code>&lt;script&gt;</code>标签元素来下载并执行代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</div><div class="line">script.type = <span class="string">"text/javascript"</span>;</div><div class="line">script.src = <span class="string">"file1.js"</span>;</div><div class="line"><span class="built_in">document</span>.getElementByTagName(<span class="string">"head"</span>)[<span class="number">0</span>].appendChild(script);</div></pre></td></tr></table></figure>
-<p>这个技术的重点在于：</p>
-<p>无论何时启动下载，文件的下载和执行过程不会阻塞页面其他进程。</p>
-<p>参考：</p>
-<blockquote>
-<p>《高性能JavaScript》</p>
-</blockquote>
-<h2 id="使用XHR对象下载JS代码注入页面"><a href="#使用XHR对象下载JS代码注入页面" class="headerlink" title="使用XHR对象下载JS代码注入页面"></a>使用XHR对象下载JS代码注入页面</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadScript</span>(<span class="params">url, callback</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(</div><div class="line"><span class="string">"e"</span>);</div><div class="line">    script.type = <span class="string">"text/javascript"</span>;</div><div class="line">    <span class="keyword">if</span>(script.readyState)&#123;	<span class="comment">//ie</span></div><div class="line">        script.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">if</span>(script.readyState == <span class="string">"loaded"</span> || script.readyState == <span class="string">"complete"</span>)&#123;</div><div class="line">                script.onreadystatechage = <span class="literal">null</span>;</div><div class="line">                callback();</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        script.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            callback();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">loadScript(<span class="string">"the-rest.js"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    Application.init()</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>这样做实现了动态创建标签元素并下载，其次当第二个脚本文件下载时，应用所需的所有DOM结构已经创建完毕，并做好了交互的准备,从而避免了需要另一个事件来检测页面是否准备好。</p>
-<p><code>&lt;script&gt;</code> ? 这不就是直接执行script脚本吗？</p>
+    <content type="html"><![CDATA[<p><code>&lt;script&gt;</code> ? 这不就是直接执行script脚本吗？</p>
 <p>以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。</p>
+<a id="more"></a>
 <h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p><code>&lt;script&gt;</code>拥有7个属性，没想到吧！</p>
 <ul>
 <li><strong>async</strong><ul>
@@ -514,6 +500,15 @@
 <li>第二个带<code>async</code>属性的<code>&lt;script&gt;</code>，如图所示，也就是他下载<code>Script</code>的时候是异步的，但是只要<code>Script</code>文件下好了，那么就马上执行。</li>
 <li>第三个带<code>defer</code>属性的<code>&lt;script&gt;</code>，其实和上面带<code>async</code>属性一样都是异步执行去下载<code>Script</code>文件的。但是在这个带有<code>defer</code>的则是在<code>html</code>全部解析完毕之后才去执行<code>Script</code>文件。而且它是按照加载顺序执行脚本的，这一点要善加利用。显然 <code>defer</code> 是最接近我们对于应用脚本加载和执行的要求的</li>
 </ol>
+<h2 id="使用动态创建的-lt-script-gt-标签元素来下载并执行代码"><a href="#使用动态创建的-lt-script-gt-标签元素来下载并执行代码" class="headerlink" title="使用动态创建的&lt;script&gt;标签元素来下载并执行代码"></a>使用动态创建的<code>&lt;script&gt;</code>标签元素来下载并执行代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</div><div class="line">script.type = <span class="string">"text/javascript"</span>;</div><div class="line">script.src = <span class="string">"file1.js"</span>;</div><div class="line"><span class="built_in">document</span>.getElementByTagName(<span class="string">"head"</span>)[<span class="number">0</span>].appendChild(script);</div></pre></td></tr></table></figure>
+<p>这个技术的重点在于：</p>
+<p>无论何时启动下载，文件的下载和执行过程不会阻塞页面其他进程。</p>
+<p>参考：</p>
+<blockquote>
+<p>《高性能JavaScript》</p>
+</blockquote>
+<h2 id="使用XHR对象下载JS代码注入页面"><a href="#使用XHR对象下载JS代码注入页面" class="headerlink" title="使用XHR对象下载JS代码注入页面"></a>使用XHR对象下载JS代码注入页面</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadScript</span>(<span class="params">url, callback</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(</div><div class="line"><span class="string">"e"</span>);</div><div class="line">    script.type = <span class="string">"text/javascript"</span>;</div><div class="line">    <span class="keyword">if</span>(script.readyState)&#123;	<span class="comment">//ie</span></div><div class="line">        script.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">if</span>(script.readyState == <span class="string">"loaded"</span> || script.readyState == <span class="string">"complete"</span>)&#123;</div><div class="line">                script.onreadystatechage = <span class="literal">null</span>;</div><div class="line">                callback();</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        script.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            callback();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">loadScript(<span class="string">"the-rest.js"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    Application.init()</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>这样做实现了动态创建标签元素并下载，其次当第二个脚本文件下载时，应用所需的所有DOM结构已经创建完毕，并做好了交互的准备,从而避免了需要另一个事件来检测页面是否准备好。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/script" target="_blank" rel="external">MDN</a></li>
 <li><a href="https://segmentfault.com/a/1190000006778717" target="_blank" rel="external">SegmentFault</a></li>
@@ -522,11 +517,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;更新于2018-04-01&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;使用动态创建的&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;标签元素来下载并执行代码&lt;/li&gt;
-&lt;li&gt;使用XHR对象下载JS代码注入页面&lt;/li&gt;
-&lt;/ul&gt;
+      &lt;p&gt;&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; ? 这不就是直接执行script脚本吗？&lt;/p&gt;
+&lt;p&gt;以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。&lt;/p&gt;
     
     </summary>
     
@@ -1098,7 +1090,7 @@
     <link href="http://xuzihao.fun/React-Native%E8%B8%A9%E5%9D%91.html"/>
     <id>http://xuzihao.fun/React-Native踩坑.html</id>
     <published>2018-01-30T13:46:59.212Z</published>
-    <updated>2018-02-04T06:53:42.836Z</updated>
+    <updated>2018-04-02T15:12:00.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="用nativebase遇到的fontFamily的问题"><a href="#用nativebase遇到的fontFamily的问题" class="headerlink" title="用nativebase遇到的fontFamily的问题"></a>用nativebase遇到的fontFamily的问题</h2><p><img src="http://ozar6ogjb.bkt.clouddn.com/expo-font-family.png" alt="选区_022"></p>
 <a id="more"></a>
@@ -1106,6 +1098,11 @@
 <h3 id="在RN中CSS、display不能为none"><a href="#在RN中CSS、display不能为none" class="headerlink" title="在RN中CSS、display不能为none"></a>在RN中CSS、display不能为none</h3><p><img src="http://ozar6ogjb.bkt.clouddn.com/rn-timed-out.png" alt="选区_027"></p>
 <p>​    </p>
 <p>​    {display: ‘none’} cause this bug</p>
+<h2 id="Unrecognized-Font-Family-on-React-Native"><a href="#Unrecognized-Font-Family-on-React-Native" class="headerlink" title="Unrecognized Font Family on React Native"></a>Unrecognized Font Family on React Native</h2><p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/Unrecognized%20Font%20FamilyonReactNative.png" alt="Unrecognized Font Family on React Native"></p>
+<ul>
+<li>react-native link</li>
+<li><code>react-native run-ios</code> or <code>react-native run-android</code></li>
+</ul>
 ]]></content>
     
     <summary type="html">
