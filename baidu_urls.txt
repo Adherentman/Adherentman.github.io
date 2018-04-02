@@ -1,3 +1,4 @@
+http://xuzihao.fun/《高性能JavaScript》读书笔记.html
 http://xuzihao.fun/CSS布局.html
 http://xuzihao.fun/ReduxSaga.html
 http://xuzihao.fun/ReactNativeCodePush.html
@@ -46,8 +47,8 @@ http://xuzihao.fun/Node.html
 http://xuzihao.fun/git.html
 http://xuzihao.fun/yewu.html
 http://xuzihao.fun/评论功能迁移.html
-http://xuzihao.fun/GraphQL.html
 http://xuzihao.fun/React-Router.html
+http://xuzihao.fun/GraphQL.html
 http://xuzihao.fun/E-R图.html
 http://xuzihao.fun/React-State与Props的小心思.html
 http://xuzihao.fun/JavaScript闭包.html
