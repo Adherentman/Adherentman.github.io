@@ -621,8 +621,8 @@
     <title>数据结构与算法学习</title>
     <link href="http://xuzihao.fun/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95.html"/>
     <id>http://xuzihao.fun/数据结构与算法.html</id>
-    <published>2018-03-10T07:33:07.614Z</published>
-    <updated>2018-03-17T14:21:19.288Z</updated>
+    <published>2018-03-10T13:25:00.000Z</published>
+    <updated>2018-04-03T04:54:00.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">binary_search</span>(<span class="params">array, item</span>)</span>&#123;</div><div class="line">    <span class="keyword">let</span> low = <span class="number">0</span>;</div><div class="line">    <span class="keyword">let</span> high = array.length - <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span>(low &lt;= high)&#123;</div><div class="line">        <span class="keyword">let</span> mid = (low + high) / <span class="number">2</span> &gt;&gt; <span class="number">0</span>;</div><div class="line">        <span class="keyword">let</span> guess = array[mid];</div><div class="line">        <span class="keyword">if</span>(guess == item)&#123;</div><div class="line">            <span class="keyword">return</span> mid;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(guess &gt; item)&#123;</div><div class="line">            high = mid - <span class="number">1</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            low = mid + <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="string">'没有该数字'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -634,6 +634,14 @@
 <li>缓存/ 记住数据，以免服务器再通过处理来生成它们。</li>
 <li>一旦填装因子超过0.7 ，就该调整散列表的长度。</li>
 </ul>
+<h2 id="狄克斯特拉算法"><a href="#狄克斯特拉算法" class="headerlink" title="狄克斯特拉算法"></a>狄克斯特拉算法</h2><p>狄克斯特拉算法包含4个步骤。</p>
+<ol>
+<li>找出最便宜的节点，即可在最短时间内前往的节点。</li>
+<li>对于该节点的邻居，检查是否有前往它们的更短路径，如果有，就更新其开销。</li>
+<li>重复这个过程，直到对图中的每个节点都这样做了。</li>
+<li>计算最终路径。</li>
+</ol>
+<p>​<br>​    </p>
 ]]></content>
     
     <summary type="html">
