@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-04-02T06:55:27.423Z</updated>
+  <updated>2018-04-01T12:21:00.000Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -14,6 +14,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RegExp正则表达式</title>
+    <link href="http://xuzihao.fun/RegExp.html"/>
+    <id>http://xuzihao.fun/RegExp.html</id>
+    <published>2018-04-06T13:44:57.528Z</published>
+    <updated>2018-04-01T12:21:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="仨标志"><a href="#仨标志" class="headerlink" title="仨标志"></a>仨标志</h2><ul>
+<li>g<ul>
+<li>全局查</li>
+</ul>
+</li>
+<li>i<ul>
+<li>忽略大小写</li>
+</ul>
+</li>
+<li>m<ul>
+<li>多行查</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="regexp">/a/g</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="regexp">/at/i</span>;</div><div class="line"><span class="keyword">var</span> c = <span class="regexp">/.at/gi</span>;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;仨标志&quot;&gt;&lt;a href=&quot;#仨标志&quot; class=&quot;headerlink&quot; title=&quot;仨标志&quot;&gt;&lt;/a&gt;仨标志&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;g&lt;ul&gt;
+&lt;li&gt;全局查&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;i&lt;ul&gt;
+&lt;li&gt;忽略大小写&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;m&lt;ul&gt;
+&lt;li&gt;多行查&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &lt;span class=&quot;regexp&quot;&gt;/a/g&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; b = &lt;span class=&quot;regexp&quot;&gt;/at/i&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; c = &lt;span class=&quot;regexp&quot;&gt;/.at/gi&lt;/span&gt;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="Javascript修仙之旅" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
+    
+    
+      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>《高性能JavaScript》读书笔记</title>
@@ -1303,92 +1355,6 @@
     
     
       <category term="生活" scheme="http://xuzihao.fun/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《你不知道的JavaScript（上）》读书笔记</title>
-    <link href="http://xuzihao.fun/%E3%80%8A%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84JavaScript%EF%BC%88%E4%B8%8A%EF%BC%89%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html"/>
-    <id>http://xuzihao.fun/《你不知道的JavaScript（上）》读书笔记.html</id>
-    <published>2017-12-23T13:40:30.000Z</published>
-    <updated>2017-12-23T13:40:10.302Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="This"><a href="#This" class="headerlink" title="This"></a>This</h2><p>在JS中This让我们捉摸不透。看了《你不知道的JavaScript（上）》让我对this有了更胜的认识。</p>
-<p>总结一下：</p>
-<p>This实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用。</p>
-<a id="more"></a>
-<p>那么我们要去判断一个运行中函数的<code>this</code>绑定，我们需要先知道：</p>
-<ol>
-<li>函数在哪里被直接调用？</li>
-<li>找到之后，我们需要去通过四条顺序规则去判断<code>this</code>的绑定对象</li>
-</ol>
-<h3 id="四条顺序"><a href="#四条顺序" class="headerlink" title="四条顺序"></a>四条顺序</h3><ol>
-<li><p>是否是被<code>new</code>调用的？是的话那就绑定到新的创建对象。</p>
-<ol>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> bar = <span class="keyword">new</span> foo()</div></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>是否被<code>call</code>或者<code>apply</code>或者<code>bind</code>调用？是的话那就绑定到指定的对象。</p>
-<ol>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> bar = call(obj, <span class="number">2</span>);</div></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>是否由上下文调用？是的话那就绑定到那个上下文对象。</p>
-</li>
-<li><p>默认：在默认情况下，如果我们在严格模式下则为<code>undefined</code>，否则我们会绑定到全局对象</p>
-</li>
-</ol>
-<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>JavaScript对象可以通过两种形式定义： 声明（文字）形式和构造形式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//声明形式</span></div><div class="line"><span class="keyword">var</span> object = &#123;</div><div class="line">  <span class="attr">a</span>:<span class="number">1</span></div><div class="line">&#125;;</div><div class="line"><span class="comment">//构造形式</span></div><div class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">b.key = <span class="number">1</span>;	<span class="comment">//给b添加个属性</span></div></pre></td></tr></table></figure>
-<p>通过这两种形式我发现一个大问题！</p>
-<p>用构造函数去创建对象我们只能通过<code>.</code>去添加属性，那真是可太麻烦了。。所以我基本上都用声明形式去创建对象。</p>
-<p>那么我想要得到<code>b</code>中<code>key</code>的值呢？？</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(b.key,<span class="string">'.'</span>);</div><div class="line"><span class="built_in">console</span>.log(b[<span class="string">"key"</span>],<span class="string">'[]'</span>);</div></pre></td></tr></table></figure>
-<p>我们有两种方法可以做到哦！</p>
-<ol>
-<li>用<code>.</code>操作符通常被我们叫做“属性访问”；</li>
-<li>用<code>[]</code>操作符通常被我们叫做“键访问”；</li>
-</ol>
-<p>但是我发现他们做的是同一件事情。。那我就把他们统称一下叫“属性访问”啦！</p>
-<p>哦对啦！在ES6中还有个好玩的方法！</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> prev = <span class="string">"foo"</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> myObject = &#123;</div><div class="line">  [prev + <span class="string">"Hello"</span>] : <span class="string">"Hello"</span>,</div><div class="line">  [prev + <span class="string">"World"</span>] : <span class="string">"World"</span>,</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(myObject[<span class="string">"prevHello"</span>]); -&gt; Hello</div><div class="line"><span class="built_in">console</span>.log(myObject[<span class="string">"prevWorld"</span>]); -&gt; World</div></pre></td></tr></table></figure>
-<p>这是不是很神奇！我们可以通过<code>+</code>号实现了可计算的属性名。</p>
-<p>多亏了ES6的<code>Symbol</code>,它是一种新的类型，在这我就不多说啦，贴上<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol" target="_blank" rel="external">mdn</a>。</p>
-<h2 id="属性描述符"><a href="#属性描述符" class="headerlink" title="属性描述符"></a>属性描述符</h2><p><img src="http://ozar6ogjb.bkt.clouddn.com/getOwnPropertyDescriptor.png" alt="getOwnPropertyDescriptor"></p>
-<blockquote>
-<p>writable：可写的</p>
-<p>enumerable: 可枚举的</p>
-<p>configurable: 可配置的</p>
-</blockquote>
-<p>那么如果我做以下操作呢？</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.defineProperty(myObject, <span class="string">"a"</span>,&#123;</div><div class="line">  <span class="attr">value</span>:<span class="number">2</span>,</div><div class="line">  <span class="attr">writable</span>:<span class="literal">false</span>,</div><div class="line">  <span class="attr">configurable</span>:<span class="literal">false</span>,</div><div class="line">  <span class="attr">enumerable</span>:<span class="literal">false</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p><img src="http://ozar6ogjb.bkt.clouddn.com/defineProperty.png" alt="defineProperty"></p>
-<p>也就是这个<code>myObject</code>对象变成了不可写、不可枚举、不可配置啦。</p>
-<p>那么我可以通过这个特性去实现一个不可变（Immutable）的对象了！</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> zoo = &#123;&#125;;</div><div class="line"><span class="built_in">Object</span>.defineProperty(myObject, <span class="string">"cat"</span>,&#123;</div><div class="line">  <span class="attr">cat</span>: <span class="string">"cat"</span>,</div><div class="line">  <span class="attr">writable</span>:<span class="literal">false</span>,</div><div class="line">  <span class="attr">configurable</span>:<span class="literal">false</span>,</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>但是我只想要我的动物园(<code>zoo</code>)里只有猫不想要别的小动物了！我只能用<code>Object.preventExtensions()</code>来禁止别的小动物进入我的动物园，而且还保留了猫。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> zoo = &#123;</div><div class="line">  <span class="attr">cat</span>: <span class="string">"cat"</span></div><div class="line">&#125;;</div><div class="line"><span class="built_in">Object</span>.Object.preventExtensions(zoo);</div><div class="line"></div><div class="line">zoo.dog = <span class="string">"dog"</span>;</div><div class="line">zoo.dog; -&gt;<span class="comment">//undefined</span></div></pre></td></tr></table></figure>
-<p>还有2种方法可以做到不可变(不详细讲解，附上mdn)8：</p>
-<ol>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/seal" target="_blank" rel="external">Object.seal()</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze" target="_blank" rel="external">Object.freeze()</a></li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;This&quot;&gt;&lt;a href=&quot;#This&quot; class=&quot;headerlink&quot; title=&quot;This&quot;&gt;&lt;/a&gt;This&lt;/h2&gt;&lt;p&gt;在JS中This让我们捉摸不透。看了《你不知道的JavaScript（上）》让我对this有了更胜的认识。&lt;/p&gt;
-&lt;p&gt;总结一下：&lt;/p&gt;
-&lt;p&gt;This实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="读书笔记" scheme="http://xuzihao.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="读书笔记" scheme="http://xuzihao.fun/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
