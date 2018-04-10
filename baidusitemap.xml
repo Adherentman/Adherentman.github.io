@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://xuzihao.fun/React%E6%96%B0%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html</loc>
+    <lastmod>2018-04-10T15:18:34.076Z</lastmod>
+    <data>
+        <display>
+        <title>React新生命周期</title>
+        <pubTime>2018-04-10T12:39:26.000Z</pubTime>
+        
+        <tag>React</tag>
+         
+         
+           
+             
+              <breadCrumb title="React" url="http://xuzihao.fun/categories/React/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xuzihao.fun/JavaScript%E9%97%AD%E5%8C%85.html</loc>
     <lastmod>2018-04-04T13:35:00.000Z</lastmod>
     <data>
@@ -84,12 +104,12 @@
 
     
   <url>
-    <loc>http://xuzihao.fun/RegExp.html</loc>
+    <loc>http://xuzihao.fun/%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html</loc>
     <lastmod>2018-04-01T12:21:00.000Z</lastmod>
     <data>
         <display>
-        <title>RegExp正则表达式</title>
-        <pubTime>2018-04-06T13:44:57.528Z</pubTime>
+        <title>浅谈script标签</title>
+        <pubTime>2018-03-19T12:57:11.911Z</pubTime>
         
         <tag>JavaScript</tag>
          
@@ -104,12 +124,12 @@
 
     
   <url>
-    <loc>http://xuzihao.fun/%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html</loc>
+    <loc>http://xuzihao.fun/RegExp.html</loc>
     <lastmod>2018-04-01T12:21:00.000Z</lastmod>
     <data>
         <display>
-        <title>浅谈script标签</title>
-        <pubTime>2018-03-19T12:57:11.911Z</pubTime>
+        <title>RegExp正则表达式</title>
+        <pubTime>2018-04-06T13:44:57.528Z</pubTime>
         
         <tag>JavaScript</tag>
          

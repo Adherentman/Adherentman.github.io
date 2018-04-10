@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-04-01T12:21:00.000Z</updated>
+  <updated>2018-04-10T15:18:34.076Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -14,6 +14,67 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React新生命周期</title>
+    <link href="http://xuzihao.fun/React%E6%96%B0%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html"/>
+    <id>http://xuzihao.fun/React新生命周期.html</id>
+    <published>2018-04-10T12:39:26.000Z</published>
+    <updated>2018-04-10T15:18:34.076Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="React16-3-1"><a href="#React16-3-1" class="headerlink" title="React16.3.1"></a>React16.3.1</h1><p>React发生了重大的变化。并且更新了新的生命周期我们来了解一下。</p>
+<p>献上一个图！</p>
+<p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/react%E6%96%B0%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt=""></p>
+<blockquote>
+<p>地址：<a href="http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/" target="_blank" rel="external">React新生命周期图</a></p>
+</blockquote>
+<a id="more"></a>
+<h4 id="Mounting-挂载"><a href="#Mounting-挂载" class="headerlink" title="Mounting/挂载"></a>Mounting/挂载</h4><ul>
+<li>constructor()</li>
+<li>static getDerivedStateFromProps()</li>
+<li>UNSAFE_componentWillMount()</li>
+<li>render()</li>
+<li>componentDidMount()</li>
+</ul>
+<h4 id="Updating-更新"><a href="#Updating-更新" class="headerlink" title="Updating/更新"></a>Updating/更新</h4><ul>
+<li>UNSAFE_componentWillReceiveProps()</li>
+<li>static getDerivedStateFromProps()</li>
+<li>shouldComponentUpdate(prevProps, prevState)</li>
+<li>UNSAFE_componentWillUpdate()</li>
+<li>render()</li>
+<li>getSnapshotBeforeUpdate()</li>
+<li>componentDidUpdate(prevProps, prevState, snapshot)</li>
+</ul>
+<h4 id="Unmounting-卸载"><a href="#Unmounting-卸载" class="headerlink" title="Unmounting/卸载"></a>Unmounting/卸载</h4><ul>
+<li>componentWillUnmount()</li>
+</ul>
+<h2 id="Demo-getDerivedStateFromProps-amp-amp-componentDidUpdate"><a href="#Demo-getDerivedStateFromProps-amp-amp-componentDidUpdate" class="headerlink" title="Demo- getDerivedStateFromProps &amp;&amp; componentDidUpdate:"></a>Demo- getDerivedStateFromProps &amp;&amp; componentDidUpdate:</h2><p>链接： <a href="https://codesandbox.io/s/2xv69l269j" target="_blank" rel="external">小demo，了解一下</a></p>
+<p>componentDidUpdate是个做网络请求的好地方。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</div><div class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">"react-dom"</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> (</div><div class="line">  &lt;div style=&#123;styles&#125;&gt;</div><div class="line">    &lt;Hello name="CodeSandbox" /&gt;</div><div class="line">    &lt;h2&gt;Start editing to see some magic happen &#123;"\u2728"&#125;&lt;/h2&gt;</div><div class="line">    &lt;B /&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">);</div><div class="line">class B extends React.Component &#123;</div><div class="line">  state = &#123;</div><div class="line">    myParentValue: ""</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  componentDidMount() &#123;</div><div class="line">    setTimeout(() =&gt; &#123;</div><div class="line">      this.setState(&#123; myParentValue: "XuZiHao" &#125;);</div><div class="line">    &#125;, 1000);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    return &lt;C foo=&#123;this.state.myParentValue&#125; /&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class C extends React.Component &#123;</div><div class="line">  state = &#123;</div><div class="line">    foo: ""</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  static getDerivedStateFromProps(nextProps, prevState) &#123;</div><div class="line">    if (nextProps.foo === "XuZiHao") &#123;</div><div class="line">      return &#123;</div><div class="line">        foo: "bar"</div><div class="line">      &#125;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return null;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  componentDidUpdate() &#123;</div><div class="line">    if (this.state.foo === "bar") &#123;</div><div class="line">      setTimeout(() =&gt; &#123;</div><div class="line">        this.setState(&#123; foo: "Hello!!!!" &#125;);</div><div class="line">      &#125;, 4000);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    return &lt;h1&gt;Value of `foo` is &#123;this.state.foo&#125;&lt;/h1&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">render(&lt;App /&gt;, document.getElementById("root"));</div></pre></td></tr></table></figure>
+<h2 id="Demo-getSnapshotBeforeUpdate"><a href="#Demo-getSnapshotBeforeUpdate" class="headerlink" title="Demo- getSnapshotBeforeUpdate()"></a>Demo- getSnapshotBeforeUpdate()</h2><p>官方例子：</p>
+<blockquote>
+<p><a href="https://reactjs.org/docs/react-component.html#getsnapshotbeforeupdate" target="_blank" rel="external">官网地址</a></p>
+</blockquote>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ScrollingList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  listRef = React.createRef();</div><div class="line"></div><div class="line">  getSnapshotBeforeUpdate(prevProps, prevState) &#123;</div><div class="line">    <span class="comment">// 是否将新项目添加到列表中？</span></div><div class="line">    <span class="comment">// 捕获列表的当前高度，以便稍后调整滚动。</span></div><div class="line">    <span class="keyword">if</span> (prevProps.list.length &lt; <span class="keyword">this</span>.props.list.length) &#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.listRef.current.scrollHeight;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  componentDidUpdate(prevProps, prevState, snapshot) &#123;</div><div class="line">    <span class="comment">// 如果我们有快照值，我们刚刚添加了新items</span></div><div class="line">    <span class="comment">// 调整滚动条，以便这些新items不会将旧的推出视图。</span></div><div class="line">    <span class="keyword">if</span> (snapshot !== <span class="literal">null</span>) &#123;</div><div class="line">      <span class="keyword">this</span>.listRef.current.scrollTop +=</div><div class="line">        <span class="keyword">this</span>.listRef.current.scrollHeight - snapshot;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div ref=&#123;this.listRef&#125;&gt;&#123;/* ...contents... */&#125;&lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;React16-3-1&quot;&gt;&lt;a href=&quot;#React16-3-1&quot; class=&quot;headerlink&quot; title=&quot;React16.3.1&quot;&gt;&lt;/a&gt;React16.3.1&lt;/h1&gt;&lt;p&gt;React发生了重大的变化。并且更新了新的生命周期我们来了解一下。&lt;/p&gt;
+&lt;p&gt;献上一个图！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/react%E6%96%B0%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;地址：&lt;a href=&quot;http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React新生命周期图&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="React" scheme="http://xuzihao.fun/categories/React/"/>
+    
+    
+      <category term="React" scheme="http://xuzihao.fun/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>RegExp正则表达式</title>
@@ -1284,77 +1345,6 @@
     
     
       <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2017年自己的前端总结</title>
-    <link href="http://xuzihao.fun/2017%E5%B9%B4%E6%80%BB%E7%BB%93.html"/>
-    <id>http://xuzihao.fun/2017年总结.html</id>
-    <published>2017-12-28T16:18:00.000Z</published>
-    <updated>2017-12-28T16:23:57.403Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="2017年自己的前端总结"><a href="#2017年自己的前端总结" class="headerlink" title="2017年自己的前端总结"></a>2017年自己的前端总结</h1><p>​    转眼从2017的1月1日那是即将进入大二下册的我，一直到现在实习的我，靠在沙发上静静的想想自己在暑假的实习以及这一年的进步速度堪称火箭🚀。</p>
-<p>​    现在是2017年12月28日23：00，在这时刻我翻开了自己脑海中的技术树，对自己这一年中所成长的一点一滴做一个总结还有对即将到来的2018年，我需要去往哪方面发展或者完成一件什么事情？</p>
-<p><img src="http://ozar6ogjb.bkt.clouddn.com/2017%E7%94%A8%E8%BF%87%E7%9A%84%E6%8A%80%E6%9C%AF.png" alt="技术树"><br><a id="more"></a><br>​    整理了一下，看着很多，其实很多只是会用，还没到深入研究其原理！不过我很好奇为什么会这么做，然后会去看看源码。但是功力不够。。还需要继续修炼！</p>
-<h2 id="书"><a href="#书" class="headerlink" title="书"></a>书</h2><p>读万卷书，行万里路？ 在2017年，当我读书的时候，我觉得这句话可能要改一下：</p>
-<blockquote>
-<p>读万卷书，思万/千万遍，写数次，行万里路。</p>
-<p>ps:辣鸡文笔，请勿模仿，欢迎吐槽！</p>
-</blockquote>
-<p>​    因为我大多数读的是技术书，文学类也有。不思考？光去看这些书没有任何用处，看了不懂继续看，看了就忘？为何不去把书上的东西都敲下来呢。</p>
-<p>​    我突然发现这种学习方法虽然麻烦但是很有效果。而且一个个知识点虽然看着零散，但是我每次都在纸上把思维导图画出来，发现他们都是连通的。而且边思考边去把逻辑理清，真的事半功倍。</p>
-<blockquote>
-<p> ps: 虽然。。有用但。。时间花的真的很多！！有些时候看十几页1个小时就过去了 T T！</p>
-</blockquote>
-<p>第一次写总结，就把我的书单全放上来吧：</p>
-<p><img src="http://ozar6ogjb.bkt.clouddn.com/%E8%AF%BB%E8%BF%87%E7%9A%84%E4%B9%A61.png" alt="书单"></p>
-<p><img src="http://ozar6ogjb.bkt.clouddn.com/%E8%AF%BB%E8%BF%87%E7%9A%84%E4%B9%A62.png" alt="书单"></p>
-<p><img src="http://ozar6ogjb.bkt.clouddn.com/%E8%AF%BB%E8%BF%87%E7%9A%84%E4%B9%A63.png" alt="书单"></p>
-<p>这个书单可以到我的<a href="https://github.com/Adherentman" target="_blank" rel="external">Github</a>上面看。只要读完了我都会去更新状态还有最近看的书我都写了读书笔记。</p>
-<h2 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h2><p>​    在2017年7月，我第一次去实习。在公司里发现了自己在学校或者自学永远看不到的技术。还有身边那么多厉害的人，他们懂的真的特别多。特别是冰哥（公司老大），几乎啥都知道，不懂得只要一伙儿就能信手拈来。</p>
-<p>​    还记得他说的一句话：没有什么是现在不该学的，学任何东西不要有那么多条条框框的限制住自己，只要你想要知道，那么就该去做去“玩”。</p>
-<p>所以我一点都不畏惧前端那么快的变化，而且我深知基础牢固的重要性。</p>
-<p>​    第一个接触的项目就是公司后台，技术栈为React技术栈 + Mongodb + Graphql + Gulp + docker这些东西整合一起，我整整看了10天。。不过在那2个月内进步神速。学会了如何去谈需求/业务，如何去设计mongodb，如何去处理逻辑，如何去写日志（log），如何去看源码，如何去看文档，如何去用框架等等。。让我从一个无知的少年变成了小小的“全栈“程序员。</p>
-<p>​    之后就是现在正在采坑的是React-Native + Expo。老大放手让我去采坑。。每天被坑的不要不要的，挣扎在一大堆一大堆的英文文档、还有源码、还有在Github上给Expo团队提<code>Issue</code>！还把语言改成了了TypeScript这个Js超集语言。有了类型真的很棒，和VSCode搭配写代码，食用更佳！😋</p>
-<p>​    公司的微信小程序项目我没有参加（9月份回学校了！）。。不过。。我希望自己可以去学习小程序。毕竟今天出的小游戏可把我玩坏了！</p>
-<p>​    哦对了还有自己的毕设。。也是React技术栈 + Mock.js（Easy Mock大搜车开源）做的自己的博客！</p>
-<h2 id="2018展望"><a href="#2018展望" class="headerlink" title="2018展望"></a>2018展望</h2><p>​    在2018，我觉得自己该学习的技术：</p>
-<h3 id="Progressive-Web-Apps"><a href="#Progressive-Web-Apps" class="headerlink" title="Progressive Web Apps"></a>Progressive Web Apps</h3><p>PWA就是Google希望用现代浏览器的技术来提供更像移动应用程序Web的体验！PWA 的基础是一个 <code>manifest.json</code> 文件和对 <a href="http://link.zhihu.com/?target=https%3A//developers.google.com/web/fundamentals/primers/service-workers/" target="_blank" rel="external">service workers</a> 的利用。</p>
-<p>为啥该学呢！因为。。最近Safari终于支持了Service Worker！</p>
-<h3 id="Serverless-架构"><a href="#Serverless-架构" class="headerlink" title="Serverless 架构"></a>Serverless 架构</h3><p>Serverless是一种架构理念，指的是以服务的形式来提供计算能力而不是以服务器形式，让开发者在构建应用的过程中不用过多考虑基础设施的问题。</p>
-<blockquote>
-<p>也就是说我们前端er可以安安心心的写app、做网页、做游戏？？</p>
-</blockquote>
-<h3 id="Node-js-and-Python"><a href="#Node-js-and-Python" class="headerlink" title="Node.js and Python"></a>Node.js and Python</h3><p>会系统的（各种计算机基础以及数据库之类的）去学习Node.js，我相信这是门很强大的后端语言。</p>
-<p>Python会去涉及。</p>
-<h3 id="CSS-in-JS"><a href="#CSS-in-JS" class="headerlink" title="CSS in JS"></a>CSS in JS</h3><p>这几天才试了试CSS in JS体验很棒，<code>styled-component</code>像写组件一样写css。很多特性功能还需要去学习。</p>
-<h3 id="Graphql"><a href="#Graphql" class="headerlink" title="Graphql"></a>Graphql</h3><p>在Github宣布v4版本，API都换成Graphql 我感觉会在REST之上占一席之地。因为我用过Graphql。真的是一次请求能获取我们所需要的所有数据！重要的是，数据简洁、明了。</p>
-<h3 id="Angular-and-vue"><a href="#Angular-and-vue" class="headerlink" title="Angular and vue"></a>Angular and vue</h3><p>angular发布了v4而后马上发布了v5，让我很想去学习一下这个框架。还有还有Vue！这个感觉国人都会的框架。。而我。。就看过文档，连TODO都没写过。。</p>
-<h3 id="3D-and-2D"><a href="#3D-and-2D" class="headerlink" title="3D and 2D"></a>3D and 2D</h3><p>Canvas、pixi.js、svg等等这些都是我想去学习的，特别是canvas很神奇，最近就会去着手尝试！</p>
-<h3 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h3><p>React-native在采坑，最近在看Swift的语法，会去学习原生app开发吧。但是重心都会在前端。Kotlin也会看吧。还有Weex看见过阿里的有个框架可以用React写转换成Weex。。名字忘了。下次找出来！</p>
-<p>最后最重要的。。。计算机基础，巴拉巴拉巴拉巴拉🤓！！！！</p>
-<p>OK，大家共勉。加油！</p>
-<p>有写错的地方欢迎指出！！</p>
-<p>附上自己的地址：</p>
-<ul>
-<li>Github: <a href="https://github.com/Adherentman" target="_blank" rel="external">github</a></li>
-<li>博客： <a href="xuzihao.fun">blog</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;2017年自己的前端总结&quot;&gt;&lt;a href=&quot;#2017年自己的前端总结&quot; class=&quot;headerlink&quot; title=&quot;2017年自己的前端总结&quot;&gt;&lt;/a&gt;2017年自己的前端总结&lt;/h1&gt;&lt;p&gt;​    转眼从2017的1月1日那是即将进入大二下册的我，一直到现在实习的我，靠在沙发上静静的想想自己在暑假的实习以及这一年的进步速度堪称火箭🚀。&lt;/p&gt;
-&lt;p&gt;​    现在是2017年12月28日23：00，在这时刻我翻开了自己脑海中的技术树，对自己这一年中所成长的一点一滴做一个总结还有对即将到来的2018年，我需要去往哪方面发展或者完成一件什么事情？&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ozar6ogjb.bkt.clouddn.com/2017%E7%94%A8%E8%BF%87%E7%9A%84%E6%8A%80%E6%9C%AF.png&quot; alt=&quot;技术树&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    
-      <category term="生活" scheme="http://xuzihao.fun/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
