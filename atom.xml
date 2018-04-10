@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-04-10T15:18:34.076Z</updated>
+  <updated>2018-04-10T15:22:26.183Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://xuzihao.fun/React%E6%96%B0%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html"/>
     <id>http://xuzihao.fun/React新生命周期.html</id>
     <published>2018-04-10T12:39:26.000Z</published>
-    <updated>2018-04-10T15:18:34.076Z</updated>
+    <updated>2018-04-10T15:22:26.183Z</updated>
     
     <content type="html"><![CDATA[<h1 id="React16-3-1"><a href="#React16-3-1" class="headerlink" title="React16.3.1"></a>React16.3.1</h1><p>React发生了重大的变化。并且更新了新的生命周期我们来了解一下。</p>
 <p>献上一个图！</p>
@@ -29,14 +29,14 @@
 <p>地址：<a href="http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/" target="_blank" rel="external">React新生命周期图</a></p>
 </blockquote>
 <a id="more"></a>
-<h4 id="Mounting-挂载"><a href="#Mounting-挂载" class="headerlink" title="Mounting/挂载"></a>Mounting/挂载</h4><ul>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><h3 id="Mounting-挂载"><a href="#Mounting-挂载" class="headerlink" title="Mounting/挂载"></a>Mounting/挂载</h3><ul>
 <li>constructor()</li>
 <li>static getDerivedStateFromProps()</li>
 <li>UNSAFE_componentWillMount()</li>
 <li>render()</li>
 <li>componentDidMount()</li>
 </ul>
-<h4 id="Updating-更新"><a href="#Updating-更新" class="headerlink" title="Updating/更新"></a>Updating/更新</h4><ul>
+<h3 id="Updating-更新"><a href="#Updating-更新" class="headerlink" title="Updating/更新"></a>Updating/更新</h3><ul>
 <li>UNSAFE_componentWillReceiveProps()</li>
 <li>static getDerivedStateFromProps()</li>
 <li>shouldComponentUpdate(prevProps, prevState)</li>
@@ -45,7 +45,7 @@
 <li>getSnapshotBeforeUpdate()</li>
 <li>componentDidUpdate(prevProps, prevState, snapshot)</li>
 </ul>
-<h4 id="Unmounting-卸载"><a href="#Unmounting-卸载" class="headerlink" title="Unmounting/卸载"></a>Unmounting/卸载</h4><ul>
+<h3 id="Unmounting-卸载"><a href="#Unmounting-卸载" class="headerlink" title="Unmounting/卸载"></a>Unmounting/卸载</h3><ul>
 <li>componentWillUnmount()</li>
 </ul>
 <h2 id="Demo-getDerivedStateFromProps-amp-amp-componentDidUpdate"><a href="#Demo-getDerivedStateFromProps-amp-amp-componentDidUpdate" class="headerlink" title="Demo- getDerivedStateFromProps &amp;&amp; componentDidUpdate:"></a>Demo- getDerivedStateFromProps &amp;&amp; componentDidUpdate:</h2><p>链接： <a href="https://codesandbox.io/s/2xv69l269j" target="_blank" rel="external">小demo，了解一下</a></p>
