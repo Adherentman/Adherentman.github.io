@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="壮壮-Technology">
 <meta property="og:description" content="React16.3.1React发生了重大的变化。并且更新了新的生命周期我们来了解一下。 献上一个图！   地址：React新生命周期图">
 <meta property="og:image" content="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/react%E6%96%B0%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png">
-<meta property="og:updated_time" content="2018-04-10T15:22:26.183Z">
+<meta property="og:updated_time" content="2018-04-10T15:25:42.966Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React新生命周期">
 <meta name="twitter:description" content="React16.3.1React发生了重大的变化。并且更新了新的生命周期我们来了解一下。 献上一个图！   地址：React新生命周期图">
@@ -309,7 +309,7 @@
             
               <span class="post-updated">
               &nbsp; | &nbsp; 更新于
-              <time itemprop="dateUpdated" datetime="2018-04-10T23:22:26+08:00" content="2018-04-10">
+              <time itemprop="dateUpdated" datetime="2018-04-10T23:25:42+08:00" content="2018-04-10">
                 2018-04-10
               </time>
               </span>
@@ -392,14 +392,14 @@
 <p>地址：<a href="http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/" target="_blank" rel="external">React新生命周期图</a></p>
 </blockquote>
 <a id="more"></a>
-<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><h3 id="Mounting-挂载"><a href="#Mounting-挂载" class="headerlink" title="Mounting/挂载"></a>Mounting/挂载</h3><ul>
+<h1 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h1><h2 id="Mounting-挂载"><a href="#Mounting-挂载" class="headerlink" title="Mounting/挂载"></a>Mounting/挂载</h2><ul>
 <li>constructor()</li>
 <li>static getDerivedStateFromProps()</li>
 <li>UNSAFE_componentWillMount()</li>
 <li>render()</li>
 <li>componentDidMount()</li>
 </ul>
-<h3 id="Updating-更新"><a href="#Updating-更新" class="headerlink" title="Updating/更新"></a>Updating/更新</h3><ul>
+<h2 id="Updating-更新"><a href="#Updating-更新" class="headerlink" title="Updating/更新"></a>Updating/更新</h2><ul>
 <li>UNSAFE_componentWillReceiveProps()</li>
 <li>static getDerivedStateFromProps()</li>
 <li>shouldComponentUpdate(prevProps, prevState)</li>
@@ -408,13 +408,13 @@
 <li>getSnapshotBeforeUpdate()</li>
 <li>componentDidUpdate(prevProps, prevState, snapshot)</li>
 </ul>
-<h3 id="Unmounting-卸载"><a href="#Unmounting-卸载" class="headerlink" title="Unmounting/卸载"></a>Unmounting/卸载</h3><ul>
+<h2 id="Unmounting-卸载"><a href="#Unmounting-卸载" class="headerlink" title="Unmounting/卸载"></a>Unmounting/卸载</h2><ul>
 <li>componentWillUnmount()</li>
 </ul>
-<h2 id="Demo-getDerivedStateFromProps-amp-amp-componentDidUpdate"><a href="#Demo-getDerivedStateFromProps-amp-amp-componentDidUpdate" class="headerlink" title="Demo- getDerivedStateFromProps &amp;&amp; componentDidUpdate:"></a>Demo- getDerivedStateFromProps &amp;&amp; componentDidUpdate:</h2><p>链接： <a href="https://codesandbox.io/s/2xv69l269j" target="_blank" rel="external">小demo，了解一下</a></p>
+<h1 id="Demo-getDerivedStateFromProps-amp-amp-componentDidUpdate"><a href="#Demo-getDerivedStateFromProps-amp-amp-componentDidUpdate" class="headerlink" title="Demo-getDerivedStateFromProps&amp;&amp;componentDidUpdate:"></a>Demo-getDerivedStateFromProps&amp;&amp;componentDidUpdate:</h1><p>链接： <a href="https://codesandbox.io/s/2xv69l269j" target="_blank" rel="external">小demo，了解一下</a></p>
 <p>componentDidUpdate是个做网络请求的好地方。</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</div><div class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">"react-dom"</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> (</div><div class="line">  &lt;div style=&#123;styles&#125;&gt;</div><div class="line">    &lt;Hello name="CodeSandbox" /&gt;</div><div class="line">    &lt;h2&gt;Start editing to see some magic happen &#123;"\u2728"&#125;&lt;/h2&gt;</div><div class="line">    &lt;B /&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">);</div><div class="line">class B extends React.Component &#123;</div><div class="line">  state = &#123;</div><div class="line">    myParentValue: ""</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  componentDidMount() &#123;</div><div class="line">    setTimeout(() =&gt; &#123;</div><div class="line">      this.setState(&#123; myParentValue: "XuZiHao" &#125;);</div><div class="line">    &#125;, 1000);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    return &lt;C foo=&#123;this.state.myParentValue&#125; /&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class C extends React.Component &#123;</div><div class="line">  state = &#123;</div><div class="line">    foo: ""</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  static getDerivedStateFromProps(nextProps, prevState) &#123;</div><div class="line">    if (nextProps.foo === "XuZiHao") &#123;</div><div class="line">      return &#123;</div><div class="line">        foo: "bar"</div><div class="line">      &#125;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return null;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  componentDidUpdate() &#123;</div><div class="line">    if (this.state.foo === "bar") &#123;</div><div class="line">      setTimeout(() =&gt; &#123;</div><div class="line">        this.setState(&#123; foo: "Hello!!!!" &#125;);</div><div class="line">      &#125;, 4000);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    return &lt;h1&gt;Value of `foo` is &#123;this.state.foo&#125;&lt;/h1&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">render(&lt;App /&gt;, document.getElementById("root"));</div></pre></td></tr></table></figure>
-<h2 id="Demo-getSnapshotBeforeUpdate"><a href="#Demo-getSnapshotBeforeUpdate" class="headerlink" title="Demo- getSnapshotBeforeUpdate()"></a>Demo- getSnapshotBeforeUpdate()</h2><p>官方例子：</p>
+<h1 id="Demo-getSnapshotBeforeUpdate"><a href="#Demo-getSnapshotBeforeUpdate" class="headerlink" title="Demo-getSnapshotBeforeUpdate()"></a>Demo-getSnapshotBeforeUpdate()</h1><p>官方例子：</p>
 <blockquote>
 <p><a href="https://reactjs.org/docs/react-component.html#getsnapshotbeforeupdate" target="_blank" rel="external">官网地址</a></p>
 </blockquote>
@@ -632,7 +632,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React16-3-1"><span class="nav-number">1.</span> <span class="nav-text">React16.3.1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期"><span class="nav-number">1.1.</span> <span class="nav-text">生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mounting-挂载"><span class="nav-number">1.1.1.</span> <span class="nav-text">Mounting/挂载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Updating-更新"><span class="nav-number">1.1.2.</span> <span class="nav-text">Updating/更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unmounting-卸载"><span class="nav-number">1.1.3.</span> <span class="nav-text">Unmounting/卸载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Demo-getDerivedStateFromProps-amp-amp-componentDidUpdate"><span class="nav-number">1.2.</span> <span class="nav-text">Demo- getDerivedStateFromProps && componentDidUpdate:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Demo-getSnapshotBeforeUpdate"><span class="nav-number">1.3.</span> <span class="nav-text">Demo- getSnapshotBeforeUpdate()</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#React16-3-1"><span class="nav-number">1.</span> <span class="nav-text">React16.3.1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生命周期"><span class="nav-number">2.</span> <span class="nav-text">生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mounting-挂载"><span class="nav-number">2.1.</span> <span class="nav-text">Mounting/挂载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Updating-更新"><span class="nav-number">2.2.</span> <span class="nav-text">Updating/更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unmounting-卸载"><span class="nav-number">2.3.</span> <span class="nav-text">Unmounting/卸载</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Demo-getDerivedStateFromProps-amp-amp-componentDidUpdate"><span class="nav-number">3.</span> <span class="nav-text">Demo-getDerivedStateFromProps&&componentDidUpdate:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Demo-getSnapshotBeforeUpdate"><span class="nav-number">4.</span> <span class="nav-text">Demo-getSnapshotBeforeUpdate()</span></a></li></ol></div>
             
 
           </div>
