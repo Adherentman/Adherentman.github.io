@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-04-11T13:41:42.000Z</updated>
+  <updated>2018-04-12T13:43:06.528Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式之工厂模式js和ts实现</title>
+    <link href="http://xuzihao.fun/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.html"/>
+    <id>http://xuzihao.fun/设计模式之工厂模式.html</id>
+    <published>2018-04-12T13:21:15.484Z</published>
+    <updated>2018-04-12T13:43:06.528Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="简单工厂"><a href="#简单工厂" class="headerlink" title="简单工厂"></a>简单工厂</h1><p>Js:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Book</span>(<span class="params">name, price, type</span>)</span>&#123;</div><div class="line">    <span class="keyword">let</span> a = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">    a.name = name;</div><div class="line">    a.price = price;</div><div class="line">    a.type = type;</div><div class="line">    </div><div class="line">    a.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">    &#125;</div><div class="line">    a.getPrice = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.price);</div><div class="line">    &#125;</div><div class="line">    a.getType = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.type)</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> a;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> b = Book(<span class="string">"Js"</span>, <span class="number">14</span>, <span class="string">"语言书籍"</span>);</div><div class="line">b.getName();</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>Ts:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">enum</span> BookType&#123;</div><div class="line">    Js,</div><div class="line">    Ts,</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">interface</span> BookAction&#123;</div><div class="line">    read();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> Book <span class="keyword">implements</span> BookAction&#123; <span class="comment">// 抽象产品 - 书</span></div><div class="line">    <span class="keyword">abstract</span> read();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">class</span> JSbook <span class="keyword">extends</span> Book&#123; <span class="comment">//具体产品 - Jsbook</span></div><div class="line">    read()&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'js book.'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">class</span> Tsbook <span class="keyword">extends</span> Book&#123; <span class="comment">//具体产品 - Tsbook</span></div><div class="line">    read()&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'ts book.'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">class</span> BookFactory&#123;</div><div class="line"></div><div class="line">    <span class="keyword">static</span> createBook(<span class="keyword">type</span>: BookType): Book&#123;</div><div class="line">        <span class="keyword">switch</span>(<span class="keyword">type</span>)&#123;</div><div class="line">            <span class="keyword">case</span> BookType.Js:</div><div class="line">                <span class="keyword">return</span> <span class="keyword">new</span> JSbook();</div><div class="line">            <span class="keyword">case</span> BookType.Ts:</div><div class="line">                <span class="keyword">return</span> <span class="keyword">new</span> Tsbook();</div><div class="line">            <span class="keyword">default</span>:</div><div class="line">                <span class="keyword">throw</span> <span class="built_in">Error</span>(<span class="string">'not support book'</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">BookFactory.createBook(BookType.Js).read();</div><div class="line">BookFactory.createBook(BookType.Ts).read();</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;简单工厂&quot;&gt;&lt;a href=&quot;#简单工厂&quot; class=&quot;headerlink&quot; title=&quot;简单工厂&quot;&gt;&lt;/a&gt;简单工厂&lt;/h1&gt;&lt;p&gt;Js:&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Book&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;name, price, type&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; a = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    a.name = name;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    a.price = price;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    a.type = type;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    a.getName = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    a.getPrice = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.price);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    a.getType = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.type)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; b = Book(&lt;span class=&quot;string&quot;&gt;&quot;Js&quot;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;14&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;语言书籍&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;b.getName();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://xuzihao.fun/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
+    
+      <category term="设计模式" scheme="http://xuzihao.fun/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>React新生命周期</title>
@@ -1264,88 +1294,6 @@
     
     
       <category term="node.js" scheme="http://xuzihao.fun/tags/node-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JSON看这篇就行了</title>
-    <link href="http://xuzihao.fun/JSON.html"/>
-    <id>http://xuzihao.fun/JSON.html</id>
-    <published>2018-01-05T13:27:00.000Z</published>
-    <updated>2018-01-05T13:29:13.991Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><p>最近大量接触<code>JSON</code> 所以我特意去<a href="https://www.rfc-editor.org/rfc/rfc4627.txt" target="_blank" rel="external"><code>JSON</code>标准</a>(短短的8页，大家也可以看看)看了下，还参阅了许多资料，总结一下<code>JSON</code></p>
-<p>我们先来看一个<code>JSON</code>的组成：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"propertyName"</span>: <span class="string">"propertyValue"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ol>
-<li>property(属性/键值对)</li>
-<li>propertyName(属性名/键)</li>
-<li>propertyValue(属性值)</li>
-</ol>
-<p>JSON可以表示四种基本类型（string(字符串)、number(数字）、booleans(布尔值)、null（空））和两个结构化类型（Object(对象)、Arrarys（数组））</p>
-<a id="more"></a>
-<h2 id="书写"><a href="#书写" class="headerlink" title="书写"></a>书写</h2><h3 id="逗号"><a href="#逗号" class="headerlink" title="逗号"></a>逗号</h3><p>最后一个属性后不能有逗号</p>
-<h3 id="双引号"><a href="#双引号" class="headerlink" title="双引号"></a>双引号</h3><p>在标准中都使用了双引号。因为所有的属性必须在双引号内。但是布尔值或者数字可以不用引号。</p>
-<h3 id="结构层次"><a href="#结构层次" class="headerlink" title="结构层次"></a>结构层次</h3><p>在设计<code>JSON</code> 的时候，我们都能看见可扩展和不可扩展的JSON结构。其中最主要的就2种，一种为扁平化数据，还有结构层次。</p>
-<p>先讲讲我在知乎上看见的问题：</p>
-<p>正常情况有一个JSON应为：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123; </div><div class="line">    "name": "Javascript权威指南"，</div><div class="line">    "chapters:": 500,</div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    "name": "Javascript高级程序设计",</div><div class="line">    "chapters": 500,</div><div class="line">  &#125;,</div><div class="line">  &#123;...&#125;,</div><div class="line">  &#123;...&#125;</div><div class="line">]</div></pre></td></tr></table></figure>
-<p>这样看是很完美，但是有些人会这样设计？</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">    "Javascript权威指南"： 500</div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    "Javascript高级程序设计": 500</div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
-<p>那么我们就可以看出2种设计的问题，第二种无法扩展有木有！！而且。。他们为啥要把<strong>数据内容带入属性名！！</strong></p>
-<p>ok！我们知道了一点，不要把<strong>数据内容带入属性名</strong>。</p>
-<p>接下来扁平化数据：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"Image"</span>: &#123;</div><div class="line">    <span class="attr">"width"</span>: <span class="number">800</span>,</div><div class="line">    <span class="attr">"Height"</span>: <span class="number">600</span>,</div><div class="line">    <span class="attr">"Title"</span>:  <span class="string">"View from 15th Floor"</span>,</div><div class="line">    <span class="attr">"ThumbnailUrl"</span>: <span class="string">"http://www.example.com/image/481989943"</span>,</div><div class="line">    <span class="attr">"ThumbnailHeight"</span>: <span class="number">125</span>,</div><div class="line">    <span class="attr">"ThumbnailWidth"</span>: <span class="number">100</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>结构层次：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"Image"</span>: &#123;</div><div class="line">    <span class="attr">"Width"</span>:  <span class="number">800</span>,</div><div class="line">    <span class="attr">"Height"</span>: <span class="number">600</span>,</div><div class="line">    <span class="attr">"Title"</span>:  <span class="string">"View from 15th Floor"</span>,</div><div class="line">    <span class="attr">"Thumbnail"</span>: &#123;</div><div class="line">      <span class="attr">"Url"</span>:    <span class="string">"http://www.example.com/image/481989943"</span>,</div><div class="line">      <span class="attr">"Height"</span>: <span class="number">125</span>,</div><div class="line">      <span class="attr">"Width"</span>:  <span class="string">"100"</span></div><div class="line">    &#125;,</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>JSON中本应该以数据元素扁平化方式呈现。</p>
-<p>但是结构层次对我们开发人员更加的友好有意义。</p>
-<p>具体情况看自己的选择。</p>
-<h2 id="下面讲点细的"><a href="#下面讲点细的" class="headerlink" title="下面讲点细的"></a>下面讲点细的</h2><h3 id="属性名规范"><a href="#属性名规范" class="headerlink" title="属性名规范"></a>属性名规范</h3><ul>
-<li>属性名应该一看就知道啥用</li>
-<li>属性名必须是驼峰，ASCII码字符串</li>
-<li>首字符必须是字母，_ （下划线），$(美元符号)</li>
-<li>避免使用js中的保留字</li>
-<li>数组类型应该是复数，其他属性名都为单数</li>
-</ul>
-<h3 id="属性值规范"><a href="#属性值规范" class="headerlink" title="属性值规范"></a>属性值规范</h3><ul>
-<li>属性值应该为四种基本类型（string(字符串)、number(数字）、booleans(布尔值)、null（空））和两个结构化类型（Object(对象)、Arrarys（数组））</li>
-<li>其他的具体可以看我下面给出的参考资料链接</li>
-</ul>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
-<li>JSON.parse()<ul>
-<li>解析一个JSON将他转换成JavaScript值或对象</li>
-</ul>
-</li>
-<li>JSON.stringify()<ul>
-<li>把一个对象或者值转换成JSON字符串</li>
-</ul>
-</li>
-</ul>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://github.com/darcyliu/google-styleguide/blob/master/JSONStyleGuide.md" target="_blank" rel="external">JSON风格指南</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON" target="_blank" rel="external">JSON-MDN</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;JSON&quot;&gt;&lt;a href=&quot;#JSON&quot; class=&quot;headerlink&quot; title=&quot;JSON&quot;&gt;&lt;/a&gt;JSON&lt;/h1&gt;&lt;p&gt;最近大量接触&lt;code&gt;JSON&lt;/code&gt; 所以我特意去&lt;a href=&quot;https://www.rfc-editor.org/rfc/rfc4627.txt&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;code&gt;JSON&lt;/code&gt;标准&lt;/a&gt;(短短的8页，大家也可以看看)看了下，还参阅了许多资料，总结一下&lt;code&gt;JSON&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;我们先来看一个&lt;code&gt;JSON&lt;/code&gt;的组成：&lt;/p&gt;
-&lt;figure class=&quot;highlight json&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attr&quot;&gt;&quot;propertyName&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;propertyValue&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ol&gt;
-&lt;li&gt;property(属性/键值对)&lt;/li&gt;
-&lt;li&gt;propertyName(属性名/键)&lt;/li&gt;
-&lt;li&gt;propertyValue(属性值)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;JSON可以表示四种基本类型（string(字符串)、number(数字）、booleans(布尔值)、null（空））和两个结构化类型（Object(对象)、Arrarys（数组））&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Javascript修仙之旅" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
-    
-    
-      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
     
   </entry>
   
