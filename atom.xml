@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-04-12T14:36:45.226Z</updated>
+  <updated>2018-04-15T11:39:47.584Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Contenteditable与变成输入普通文本</title>
+    <link href="http://xuzihao.fun/contenteditable.html"/>
+    <id>http://xuzihao.fun/contenteditable.html</id>
+    <published>2018-04-15T11:36:26.000Z</published>
+    <updated>2018-04-15T11:39:47.584Z</updated>
+    
+    <content type="html"><![CDATA[<p>我们需要实现富文本的方法有一个很方便那就是在任意元素你都可以给个属性叫<code>contenteditable</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">contenteditable</span>&gt;</span>我是个富文本哟！<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>很简单这就是一个富文本啦！</p>
+<a id="more"></a>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们需要实现富文本的方法有一个很方便那就是在任意元素你都可以给个属性叫&lt;code&gt;contenteditable&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;contenteditable&lt;/span&gt;&amp;gt;&lt;/span&gt;我是个富文本哟！&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;很简单这就是一个富文本啦！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Html" scheme="http://xuzihao.fun/categories/Html/"/>
+    
+    
+      <category term="Html" scheme="http://xuzihao.fun/tags/Html/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式之工厂模式js和ts实现</title>
@@ -1272,33 +1300,6 @@
     
     
       <category term="React Native" scheme="http://xuzihao.fun/tags/React-Native/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>初入Node</title>
-    <link href="http://xuzihao.fun/%E5%88%9D%E5%85%A5Node.html"/>
-    <id>http://xuzihao.fun/初入Node.html</id>
-    <published>2018-01-25T12:05:00.000Z</published>
-    <updated>2018-01-25T12:52:12.843Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="初入Node"><a href="#初入Node" class="headerlink" title="初入Node"></a>初入Node</h1><h2 id="回调地狱"><a href="#回调地狱" class="headerlink" title="回调地狱"></a>回调地狱</h2><p>Node的异步回调惯例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line">fs.readFile(<span class="string">'/index.html'</span>, (err, data) =&gt; &#123;</div><div class="line">  <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</div><div class="line">  getSomething(data.toString(), res);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>在Node里大多数的内置模块在使用回调时都会带两个参数，第一个一般都用来放可能会发生的错误（err或error）;第二个是放结果。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;初入Node&quot;&gt;&lt;a href=&quot;#初入Node&quot; class=&quot;headerlink&quot; title=&quot;初入Node&quot;&gt;&lt;/a&gt;初入Node&lt;/h1&gt;&lt;h2 id=&quot;回调地狱&quot;&gt;&lt;a href=&quot;#回调地狱&quot; class=&quot;headerlink&quot; title=&quot;回调地狱&quot;&gt;&lt;/a&gt;回调地狱&lt;/h2&gt;&lt;p&gt;Node的异步回调惯例：&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; fs = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;fs&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;fs.readFile(&lt;span class=&quot;string&quot;&gt;&#39;/index.html&#39;&lt;/span&gt;, (err, data) =&amp;gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(err) &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; err;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  getSomething(data.toString(), res);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="Node.js" scheme="http://xuzihao.fun/categories/Node-js/"/>
-    
-    
-      <category term="node.js" scheme="http://xuzihao.fun/tags/node-js/"/>
     
   </entry>
   
