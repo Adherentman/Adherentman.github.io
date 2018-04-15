@@ -972,7 +972,7 @@
             
               <span class="post-updated">
               &nbsp; | &nbsp; 更新于
-              <time itemprop="dateUpdated" datetime="2018-04-15T21:07:18+08:00" content="2018-04-15">
+              <time itemprop="dateUpdated" datetime="2018-04-15T23:21:38+08:00" content="2018-04-15">
                 2018-04-15
               </time>
               </span>
@@ -1045,9 +1045,17 @@
       
         
           
-            <h1 id="CSS3-transform"><a href="#CSS3-transform" class="headerlink" title="CSS3 transform"></a>CSS3 transform</h1><p>Transform就指变换。</p>
+            <h1 id="CSS3-transform"><a href="#CSS3-transform" class="headerlink" title="CSS3 transform"></a>CSS3 transform</h1><p>先来了解下单位：</p>
+<ul>
+<li>度（deg）。一个圆360度</li>
+</ul>
+<p>Transform就指变换。</p>
 <p>transform:</p>
 <ul>
+<li>矩阵  (matrix)<ul>
+<li>用六个指定的值来指定一个均匀的二维（2D）变换矩阵</li>
+</ul>
+</li>
 <li>转换（translate）</li>
 <li>旋转（rotate）</li>
 <li>缩放（scale）</li>
@@ -1058,8 +1066,20 @@
 <p>scaleX, scaleY</p>
 <p>skewX, skewY</p>
 <p>translateX, translateY</p>
+<p>matrix3d</p>
+<p><code>matrix(a, b, c, d, tx, ty)</code> 是 <code>matrix3d(a, b, 0, 0, c, d, 0, 0, 0, 0, 1, 0, tx, ty, 0, 1)</code> 的简写</p>
 </blockquote>
 <p>先来看一个demo：<a href="https://codepan.net/gist/02e3a0857615ee407878f1b46663f950" target="_blank" rel="external">字体歪斜变正</a></p>
+<ul>
+<li><strong>transform-origin</strong><ul>
+<li>以一个点去变形</li>
+</ul>
+</li>
+<li><strong>transform-style</strong><ul>
+<li>确定元素的子元素是否位于3D空间中，还是在该元素所在的平面内被扁平化。</li>
+</ul>
+</li>
+</ul>
 
           
         

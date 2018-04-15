@@ -103,7 +103,7 @@
     <entry>
       <title><![CDATA[CSS3transform/transition]]></title>
       <url>%2FCSS3transform.html</url>
-      <content type="text"><![CDATA[CSS3 transformTransform就指变换。 transform: 转换（translate） 旋转（rotate） 缩放（scale） 倾斜（skew） 但是还可以这样玩 scaleX, scaleY skewX, skewY translateX, translateY 先来看一个demo：字体歪斜变正]]></content>
+      <content type="text"><![CDATA[CSS3 transform先来了解下单位： 度（deg）。一个圆360度 Transform就指变换。 transform: 矩阵 (matrix) 用六个指定的值来指定一个均匀的二维（2D）变换矩阵 转换（translate） 旋转（rotate） 缩放（scale） 倾斜（skew） 但是还可以这样玩 scaleX, scaleY skewX, skewY translateX, translateY matrix3d matrix(a, b, c, d, tx, ty) 是 matrix3d(a, b, 0, 0, c, d, 0, 0, 0, 0, 1, 0, tx, ty, 0, 1) 的简写 先来看一个demo：字体歪斜变正 transform-origin 以一个点去变形 transform-style 确定元素的子元素是否位于3D空间中，还是在该元素所在的平面内被扁平化。]]></content>
     </entry>
 
     
