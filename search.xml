@@ -103,7 +103,7 @@
     <entry>
       <title><![CDATA[CSS3transform/transition]]></title>
       <url>%2FCSS3transform.html</url>
-      <content type="text"><![CDATA[CSS3 transform/transition先来看一个demo：字体歪斜变正]]></content>
+      <content type="text"><![CDATA[CSS3 transformTransform就指变换。 transform: 转换（translate） 旋转（rotate） 缩放（scale） 倾斜（skew） 但是还可以这样玩 scaleX, scaleY skewX, skewY translateX, translateY 先来看一个demo：字体歪斜变正]]></content>
     </entry>
 
     

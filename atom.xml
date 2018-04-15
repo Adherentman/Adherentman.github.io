@@ -776,14 +776,29 @@
     <link href="http://xuzihao.fun/CSS3transform.html"/>
     <id>http://xuzihao.fun/CSS3transform.html</id>
     <published>2018-03-15T13:52:00.000Z</published>
-    <updated>2018-03-15T13:52:07.427Z</updated>
+    <updated>2018-04-15T13:07:18.673Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="CSS3-transform-transition"><a href="#CSS3-transform-transition" class="headerlink" title="CSS3 transform/transition"></a>CSS3 transform/transition</h1><p>先来看一个demo：<a href="https://codepan.net/gist/02e3a0857615ee407878f1b46663f950" target="_blank" rel="external">字体歪斜变正</a></p>
+    <content type="html"><![CDATA[<h1 id="CSS3-transform"><a href="#CSS3-transform" class="headerlink" title="CSS3 transform"></a>CSS3 transform</h1><p>Transform就指变换。</p>
+<p>transform:</p>
+<ul>
+<li>转换（translate）</li>
+<li>旋转（rotate）</li>
+<li>缩放（scale）</li>
+<li>倾斜（skew）</li>
+</ul>
+<p>但是还可以这样玩</p>
+<blockquote>
+<p>scaleX, scaleY</p>
+<p>skewX, skewY</p>
+<p>translateX, translateY</p>
+</blockquote>
+<p>先来看一个demo：<a href="https://codepan.net/gist/02e3a0857615ee407878f1b46663f950" target="_blank" rel="external">字体歪斜变正</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;CSS3-transform-transition&quot;&gt;&lt;a href=&quot;#CSS3-transform-transition&quot; class=&quot;headerlink&quot; title=&quot;CSS3 transform/transition&quot;&gt;&lt;/a&gt;CSS3 transf
+      &lt;h1 id=&quot;CSS3-transform&quot;&gt;&lt;a href=&quot;#CSS3-transform&quot; class=&quot;headerlink&quot; title=&quot;CSS3 transform&quot;&gt;&lt;/a&gt;CSS3 transform&lt;/h1&gt;&lt;p&gt;Transform就指变换。&lt;/p&gt;
+&lt;p&gt;
     
     </summary>
     
