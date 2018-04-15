@@ -776,7 +776,7 @@
     <link href="http://xuzihao.fun/CSS3transform.html"/>
     <id>http://xuzihao.fun/CSS3transform.html</id>
     <published>2018-03-15T13:52:00.000Z</published>
-    <updated>2018-04-15T15:21:38.946Z</updated>
+    <updated>2018-04-15T15:23:18.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="CSS3-transform"><a href="#CSS3-transform" class="headerlink" title="CSS3 transform"></a>CSS3 transform</h1><p>先来了解下单位：</p>
 <ul>
@@ -794,6 +794,7 @@
 <li>缩放（scale）</li>
 <li>倾斜（skew）</li>
 </ul>
+<a id="more"></a>
 <p>但是还可以这样玩</p>
 <blockquote>
 <p>scaleX, scaleY</p>
@@ -819,7 +820,20 @@
     
       &lt;h1 id=&quot;CSS3-transform&quot;&gt;&lt;a href=&quot;#CSS3-transform&quot; class=&quot;headerlink&quot; title=&quot;CSS3 transform&quot;&gt;&lt;/a&gt;CSS3 transform&lt;/h1&gt;&lt;p&gt;先来了解下单位：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
+&lt;li&gt;度（deg）。一个圆360度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Transform就指变换。&lt;/p&gt;
+&lt;p&gt;transform:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;矩阵  (matrix)&lt;ul&gt;
+&lt;li&gt;用六个指定的值来指定一个均匀的二维（2D）变换矩阵&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;转换（translate）&lt;/li&gt;
+&lt;li&gt;旋转（rotate）&lt;/li&gt;
+&lt;li&gt;缩放（scale）&lt;/li&gt;
+&lt;li&gt;倾斜（skew）&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
