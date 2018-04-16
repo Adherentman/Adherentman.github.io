@@ -776,7 +776,7 @@
     <link href="http://xuzihao.fun/CSS3transform.html"/>
     <id>http://xuzihao.fun/CSS3transform.html</id>
     <published>2018-03-15T13:52:00.000Z</published>
-    <updated>2018-04-15T15:23:18.000Z</updated>
+    <updated>2018-04-16T04:19:18.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="CSS3-transform"><a href="#CSS3-transform" class="headerlink" title="CSS3 transform"></a>CSS3 transform</h1><p>先来了解下单位：</p>
 <ul>
@@ -803,7 +803,6 @@
 <p>matrix3d</p>
 <p><code>matrix(a, b, c, d, tx, ty)</code> 是 <code>matrix3d(a, b, 0, 0, c, d, 0, 0, 0, 0, 1, 0, tx, ty, 0, 1)</code> 的简写</p>
 </blockquote>
-<p>先来看一个demo：<a href="https://codepan.net/gist/02e3a0857615ee407878f1b46663f950" target="_blank" rel="external">字体歪斜变正</a></p>
 <ul>
 <li><strong>transform-origin</strong><ul>
 <li>以一个点去变形</li>
@@ -814,6 +813,22 @@
 </ul>
 </li>
 </ul>
+<h1 id="CSS-transition"><a href="#CSS-transition" class="headerlink" title="CSS transition"></a>CSS transition</h1><p><code>transition = &lt;transition-property&gt; | &lt;transition-duration&gt; | &lt;transition-delay&gt; | &lt;transition-timing-function&gt;</code></p>
+<ul>
+<li>Transition-property: 指定过渡的属性值。</li>
+<li>Transition-duration: 指定这个过渡的持续时间</li>
+<li>Transition-delay: 延迟过渡时间</li>
+<li>Transition-timing-function: 指定过渡动画运行类型；<ul>
+<li>ease    越来越慢</li>
+<li>linear      匀速</li>
+<li>ease-in    先慢后快</li>
+<li>ease-out 先快后慢 </li>
+<li>ease-in-out 先慢后快再慢</li>
+<li>cubic-bezier()</li>
+</ul>
+</li>
+</ul>
+<p>先来看一个transform和transition结合的demo：<a href="https://codepan.net/gist/02e3a0857615ee407878f1b46663f950" target="_blank" rel="external">字体歪斜变正</a></p>
 ]]></content>
     
     <summary type="html">
