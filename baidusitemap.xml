@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://xuzihao.fun/contenteditable.html</loc>
+    <lastmod>2018-04-17T15:36:27.222Z</lastmod>
+    <data>
+        <display>
+        <title>Contenteditable与变成输入普通文本</title>
+        <pubTime>2018-04-15T11:36:26.000Z</pubTime>
+        
+        <tag>Html</tag>
+         
+         
+           
+             
+              <breadCrumb title="Html" url="http://xuzihao.fun/categories/Html/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xuzihao.fun/CSS3transform.html</loc>
     <lastmod>2018-04-16T04:19:18.000Z</lastmod>
     <data>
@@ -17,26 +37,6 @@
            
              
               <breadCrumb title="CSS" url="http://xuzihao.fun/categories/CSS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xuzihao.fun/contenteditable.html</loc>
-    <lastmod>2018-04-15T11:39:47.584Z</lastmod>
-    <data>
-        <display>
-        <title>Contenteditable与变成输入普通文本</title>
-        <pubTime>2018-04-15T11:36:26.000Z</pubTime>
-        
-        <tag>Html</tag>
-         
-         
-           
-             
-              <breadCrumb title="Html" url="http://xuzihao.fun/categories/Html/"/>
           
         </display>
     </data>
