@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[Contenteditable与变成输入普通文本]]></title>
       <url>%2Fcontenteditable.html</url>
-      <content type="text"><![CDATA[我们需要实现富文本的方法有一个很方便那就是在任意元素你都可以给个属性叫contenteditable 1&lt;div contenteditable&gt;我是个富文本哟！&lt;/div&gt; 很简单这就是一个富文本啦！ 经过百度一番，看见张鑫旭大神的很久以前的文章。为了实现普通输入文本我们只能借助css啦！ user-modify user-modify: read-only; 只能看 user-modify: read-write; 支持富文本 user-modify: write-only; 无所谓的东西 user-modify: read-write-plaintext-only; 纯文本 OK~~问题解决啦。那就是只要给那个元素设个css 123&lt;div contenteditable style="user-modify="read-write-plaintext-only"&gt; 我是纯文本&lt;/div&gt; 参考： 张鑫旭大神博客]]></content>
+      <content type="text"><![CDATA[我们需要实现富文本的方法有一个很方便那就是在任意元素你都可以给个属性叫contenteditable 1&lt;div contenteditable&gt;我是个富文本哟！&lt;/div&gt; 很简单这就是一个富文本啦！ 经过百度一番，看见张鑫旭大神的很久以前的文章。为了实现普通输入文本我们只能借助css啦！ user-modify user-modify: read-only; 只能看 user-modify: read-write; 支持富文本 user-modify: write-only; 无所谓的东西 user-modify: read-write-plaintext-only; 纯文本 OK~~问题解决啦。那就是只要给那个元素设个css 123&lt;div contenteditable style="user-modify:read-write-plaintext-only"&gt; 我是纯文本&lt;/div&gt; 参考： 张鑫旭大神博客]]></content>
     </entry>
 
     
