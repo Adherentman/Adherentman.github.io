@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-04-17T15:36:27.222Z</updated>
+  <updated>2018-04-17T15:43:02.635Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -20,13 +20,38 @@
     <link href="http://xuzihao.fun/contenteditable.html"/>
     <id>http://xuzihao.fun/contenteditable.html</id>
     <published>2018-04-15T11:36:26.000Z</published>
-    <updated>2018-04-17T15:36:27.222Z</updated>
+    <updated>2018-04-17T15:43:02.635Z</updated>
     
     <content type="html"><![CDATA[<p>我们需要实现富文本的方法有一个很方便那就是在任意元素你都可以给个属性叫<code>contenteditable</code></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">contenteditable</span>&gt;</span>我是个富文本哟！<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>很简单这就是一个富文本啦！</p>
 <a id="more"></a>
 <p>经过百度一番，看见张鑫旭大神的很久以前的文章。为了实现普通输入文本我们只能借助css啦！</p>
+<p><strong>user-modify</strong></p>
+<ul>
+<li>user-modify: read-only;<ul>
+<li>只能看</li>
+</ul>
+</li>
+<li>user-modify: read-write;<ul>
+<li>支持富文本</li>
+</ul>
+</li>
+<li><del>user-modify: write-only;</del><ul>
+<li>无所谓的东西</li>
+</ul>
+</li>
+<li>user-modify: read-write-plaintext-only;<ul>
+<li>纯文本</li>
+</ul>
+</li>
+</ul>
+<p>OK~~问题解决啦。那就是只要给那个元素设个css</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">contenteditable</span> <span class="attr">style</span>=<span class="string">"user-modify="</span><span class="attr">read-write-plaintext-only</span>"&gt;</span></div><div class="line">    我是纯文本</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>参考：</p>
+<ul>
+<li><a href="http://www.zhangxinxu.com/wordpress/2016/01/contenteditable-plaintext-only/" target="_blank" rel="external">张鑫旭大神博客</a></li>
+</ul>
 ]]></content>
     
     <summary type="html">
