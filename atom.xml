@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-04-17T15:44:56.767Z</updated>
+  <updated>2018-04-18T14:41:35.592Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -14,6 +14,55 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>事件处理</title>
+    <link href="http://xuzihao.fun/%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86.html"/>
+    <id>http://xuzihao.fun/事件处理.html</id>
+    <published>2018-04-18T14:39:15.249Z</published>
+    <updated>2018-04-18T14:41:35.592Z</updated>
+    
+    <content type="html"><![CDATA[<p>事件简要分析：</p>
+<ul>
+<li>事件类型<ul>
+<li>“load”..etc..</li>
+</ul>
+</li>
+<li>事件目标<ul>
+<li>各种load、load事件</li>
+</ul>
+</li>
+<li>事件处理程序</li>
+<li>事件对象</li>
+<li>事件传播</li>
+</ul>
+<a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;事件简要分析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;事件类型&lt;ul&gt;
+&lt;li&gt;“load”..etc..&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;事件目标&lt;ul&gt;
+&lt;li&gt;各种load、load事件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;事件处理程序&lt;/li&gt;
+&lt;li&gt;事件对象&lt;/li&gt;
+&lt;li&gt;事件传播&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://xuzihao.fun/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>Contenteditable与变成输入普通文本</title>
@@ -1358,39 +1407,6 @@
     
     
       <category term="机器学习" scheme="http://xuzihao.fun/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React-Native踩得坑持续更新</title>
-    <link href="http://xuzihao.fun/React-Native%E8%B8%A9%E5%9D%91.html"/>
-    <id>http://xuzihao.fun/React-Native踩坑.html</id>
-    <published>2018-01-30T13:46:59.212Z</published>
-    <updated>2018-04-02T15:12:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="用nativebase遇到的fontFamily的问题"><a href="#用nativebase遇到的fontFamily的问题" class="headerlink" title="用nativebase遇到的fontFamily的问题"></a>用nativebase遇到的fontFamily的问题</h2><p><img src="http://ozar6ogjb.bkt.clouddn.com/expo-font-family.png" alt="选区_022"></p>
-<a id="more"></a>
-<p><a href="https://github.com/GeekyAnts/NativeBase-KitchenSink/blob/CRNA/App.js#L13" target="_blank" rel="external">https://github.com/GeekyAnts/NativeBase-KitchenSink/blob/CRNA/App.js#L13</a></p>
-<h3 id="在RN中CSS、display不能为none"><a href="#在RN中CSS、display不能为none" class="headerlink" title="在RN中CSS、display不能为none"></a>在RN中CSS、display不能为none</h3><p><img src="http://ozar6ogjb.bkt.clouddn.com/rn-timed-out.png" alt="选区_027"></p>
-<p>​    </p>
-<p>​    {display: ‘none’} cause this bug</p>
-<h2 id="Unrecognized-Font-Family-on-React-Native"><a href="#Unrecognized-Font-Family-on-React-Native" class="headerlink" title="Unrecognized Font Family on React Native"></a>Unrecognized Font Family on React Native</h2><p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/Unrecognized%20Font%20FamilyonReactNative.png" alt="Unrecognized Font Family on React Native"></p>
-<ul>
-<li>react-native link</li>
-<li><code>react-native run-ios</code> or <code>react-native run-android</code></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;用nativebase遇到的fontFamily的问题&quot;&gt;&lt;a href=&quot;#用nativebase遇到的fontFamily的问题&quot; class=&quot;headerlink&quot; title=&quot;用nativebase遇到的fontFamily的问题&quot;&gt;&lt;/a&gt;用nativebase遇到的fontFamily的问题&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://ozar6ogjb.bkt.clouddn.com/expo-font-family.png&quot; alt=&quot;选区_022&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="React Native" scheme="http://xuzihao.fun/categories/React-Native/"/>
-    
-    
-      <category term="React Native" scheme="http://xuzihao.fun/tags/React-Native/"/>
     
   </entry>
   
