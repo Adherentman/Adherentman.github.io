@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-04-18T14:41:35.592Z</updated>
+  <updated>2018-04-19T13:31:37.000Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://xuzihao.fun/%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86.html"/>
     <id>http://xuzihao.fun/事件处理.html</id>
     <published>2018-04-18T14:39:15.249Z</published>
-    <updated>2018-04-18T14:41:35.592Z</updated>
+    <updated>2018-04-19T13:31:37.000Z</updated>
     
     <content type="html"><![CDATA[<p>事件简要分析：</p>
 <ul>
@@ -36,7 +36,20 @@
 <li>事件对象</li>
 <li>事件传播</li>
 </ul>
-<a id="more"></a>]]></content>
+<a id="more"></a>
+<h1 id="注册事件"><a href="#注册事件" class="headerlink" title="注册事件"></a>注册事件</h1><ul>
+<li><code>addEventListener()</code></li>
+<li>IE9 之前: <code>attachEvent()</code></li>
+</ul>
+<p>按照约定，事件处理程序属性的名字由”on”后面跟着时间名组成：<code>onclick</code>、<code>onchange</code>、<code>onload</code>、<code>onmouseover</code>.并且所有都是小写。</p>
+<p>但是在 <code>addEventListener()</code> 中第一个参数却是不用带<code>on</code>的，<code>attachEvent()</code> 却要加的。</p>
+<p><a href="https://codepan.net/gist/500a52945c31109d769f0fa4a6bc9cf5" target="_blank" rel="external">Demo</a></p>
+<h1 id="事件调用顺序"><a href="#事件调用顺序" class="headerlink" title="事件调用顺序"></a>事件调用顺序</h1><ul>
+<li>通过设置对象属性或者HTML属性注册的处理程序一直优先调用</li>
+<li>使用<code>addEventListener()</code> 注册的处理程序按照它们的注册顺序调用</li>
+<li>使用 <code>attachEvent()</code> 注册的处理程序可能按照任何顺序调用，所以代码不应该依赖于调用顺序</li>
+</ul>
+]]></content>
     
     <summary type="html">
     

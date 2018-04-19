@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[事件处理]]></title>
       <url>%2F%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86.html</url>
-      <content type="text"><![CDATA[事件简要分析： 事件类型 “load”..etc.. 事件目标 各种load、load事件 事件处理程序 事件对象 事件传播]]></content>
+      <content type="text"><![CDATA[事件简要分析： 事件类型 “load”..etc.. 事件目标 各种load、load事件 事件处理程序 事件对象 事件传播 注册事件 addEventListener() IE9 之前: attachEvent() 按照约定，事件处理程序属性的名字由”on”后面跟着时间名组成：onclick、onchange、onload、onmouseover.并且所有都是小写。 但是在 addEventListener() 中第一个参数却是不用带on的，attachEvent() 却要加的。 Demo 事件调用顺序 通过设置对象属性或者HTML属性注册的处理程序一直优先调用 使用addEventListener() 注册的处理程序按照它们的注册顺序调用 使用 attachEvent() 注册的处理程序可能按照任何顺序调用，所以代码不应该依赖于调用顺序]]></content>
     </entry>
 
     

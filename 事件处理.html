@@ -95,7 +95,7 @@
 <meta property="og:url" content="http://xuzihao.fun/事件处理.html">
 <meta property="og:site_name" content="壮壮-Technology">
 <meta property="og:description" content="事件简要分析：  事件类型 “load”..etc..   事件目标 各种load、load事件   事件处理程序 事件对象 事件传播">
-<meta property="og:updated_time" content="2018-04-18T14:41:35.592Z">
+<meta property="og:updated_time" content="2018-04-19T13:31:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事件处理">
 <meta name="twitter:description" content="事件简要分析：  事件类型 “load”..etc..   事件目标 各种load、load事件   事件处理程序 事件对象 事件传播">
@@ -307,8 +307,8 @@
             
               <span class="post-updated">
               &nbsp; | &nbsp; 更新于
-              <time itemprop="dateUpdated" datetime="2018-04-18T22:41:35+08:00" content="2018-04-18">
-                2018-04-18
+              <time itemprop="dateUpdated" datetime="2018-04-19T21:31:37+08:00" content="2018-04-19">
+                2018-04-19
               </time>
               </span>
             
@@ -398,6 +398,19 @@
 <li>事件传播</li>
 </ul>
 <a id="more"></a>
+<h1 id="注册事件"><a href="#注册事件" class="headerlink" title="注册事件"></a>注册事件</h1><ul>
+<li><code>addEventListener()</code></li>
+<li>IE9 之前: <code>attachEvent()</code></li>
+</ul>
+<p>按照约定，事件处理程序属性的名字由”on”后面跟着时间名组成：<code>onclick</code>、<code>onchange</code>、<code>onload</code>、<code>onmouseover</code>.并且所有都是小写。</p>
+<p>但是在 <code>addEventListener()</code> 中第一个参数却是不用带<code>on</code>的，<code>attachEvent()</code> 却要加的。</p>
+<p><a href="https://codepan.net/gist/500a52945c31109d769f0fa4a6bc9cf5" target="_blank" rel="external">Demo</a></p>
+<h1 id="事件调用顺序"><a href="#事件调用顺序" class="headerlink" title="事件调用顺序"></a>事件调用顺序</h1><ul>
+<li>通过设置对象属性或者HTML属性注册的处理程序一直优先调用</li>
+<li>使用<code>addEventListener()</code> 注册的处理程序按照它们的注册顺序调用</li>
+<li>使用 <code>attachEvent()</code> 注册的处理程序可能按照任何顺序调用，所以代码不应该依赖于调用顺序</li>
+</ul>
+
       
     </div>
     
@@ -497,8 +510,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -591,6 +613,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#注册事件"><span class="nav-number">1.</span> <span class="nav-text">注册事件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事件调用顺序"><span class="nav-number">2.</span> <span class="nav-text">事件调用顺序</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
