@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-04-23T08:01:08.795Z</updated>
+  <updated>2018-04-23T11:41:33.880Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://xuzihao.fun/Webpack4%E9%85%8D%E7%BD%AE.html"/>
     <id>http://xuzihao.fun/Webpack4配置.html</id>
     <published>2018-04-23T08:02:00.000Z</published>
-    <updated>2018-04-23T08:01:08.795Z</updated>
+    <updated>2018-04-23T11:41:33.880Z</updated>
     
     <content type="html"><![CDATA[<h1 id="first"><a href="#first" class="headerlink" title="first"></a>first</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mkdir simpleFE &amp;&amp; <span class="built_in">cd</span> simpleFE</div><div class="line">npm init -y</div><div class="line">npm install webpack webpack-cli --save-dev</div><div class="line">or</div><div class="line">mkdir simpleFE &amp;&amp; <span class="built_in">cd</span> simpleFE</div><div class="line">yarn init -y</div><div class="line">yarn add webpack webpack-cli -D</div></pre></td></tr></table></figure>
 <p>不要问为什么装了<code>webpack</code> 还要装<code>webpack-cli</code>。。因为你不装就报错。。官方提示还让你去装。。</p>
@@ -34,7 +34,25 @@
 <p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/extract-text-webpack-plugin.png" alt="extract-text-webpack-plugin"></p>
 <p>然后我们去<code>package.json</code>会发现他的版本才3.0.2。。那么升级下吧因为我们webpack都4.6了。。</p>
 <p><code>yarn add extract-text-webpack-plugin@next -D</code></p>
-]]></content>
+<h1 id="CommonsChunkPlugin"><a href="#CommonsChunkPlugin" class="headerlink" title="CommonsChunkPlugin"></a>CommonsChunkPlugin</h1><p><a href="https://webpack.js.org/plugins/commons-chunk-plugin" target="_blank" rel="external"><code>CommonsChunkPlugin</code></a>已被移除。。被 <strong>SplitChunksPlugin</strong> 和 <strong>runtimeChunk</strong> 替代了。</p>
+<p>CommonsChunkPlugin存在很多问题：</p>
+<ul>
+<li>它可能导致更多的代码被下载</li>
+<li>它在异步块上效率低下。</li>
+<li>很难用</li>
+<li>实施难以理解</li>
+</ul>
+<p>SplitChunksPlugin很棒的地方：</p>
+<ul>
+<li>它对异步块也有效</li>
+<li>它在默认情况下用于异步块</li>
+<li>它处理vendor并拆分多个verdor块</li>
+<li>它更容易使用</li>
+<li>它不依赖chunk块</li>
+<li>大部分是自动的</li>
+</ul>
+<p>我们只要把原有的<code>new webpack.optimize.CommonsChunkPlugin(options)</code>删了。加上</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">splitChunks: &#123;</div><div class="line">    <span class="attr">chunks</span>: <span class="string">"async"</span>,</div><div class="line">    <span class="attr">minSize</span>: <span class="number">30000</span>,</div><div class="line">    <span class="attr">minChunks</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">maxAsyncRequests</span>: <span class="number">5</span>,</div><div class="line">    <span class="attr">maxInitialRequests</span>: <span class="number">3</span>,</div><div class="line">    <span class="attr">automaticNameDelimiter</span>: <span class="string">'~'</span>,</div><div class="line">    <span class="attr">name</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">cacheGroups</span>: &#123;</div><div class="line">        <span class="attr">vendors</span>: &#123;</div><div class="line">            <span class="attr">test</span>: <span class="regexp">/[\\/]node_modules[\\/]/</span>,</div><div class="line">            <span class="attr">priority</span>: <span class="number">-10</span></div><div class="line">        &#125;,</div><div class="line">    <span class="attr">default</span>: &#123;</div><div class="line">            <span class="attr">minChunks</span>: <span class="number">2</span>,</div><div class="line">            <span class="attr">priority</span>: <span class="number">-20</span>,</div><div class="line">            <span class="attr">reuseExistingChunk</span>: <span class="literal">true</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
