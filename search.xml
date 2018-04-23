@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[Webpack4配置指南！Up！]]></title>
+      <url>%2FWebpack4%E9%85%8D%E7%BD%AE.html</url>
+      <content type="text"><![CDATA[first1234567mkdir simpleFE &amp;&amp; cd simpleFEnpm init -ynpm install webpack webpack-cli --save-devormkdir simpleFE &amp;&amp; cd simpleFEyarn init -yyarn add webpack webpack-cli -D 不要问为什么装了webpack 还要装webpack-cli。。因为你不装就报错。。官方提示还让你去装。。 配置Sass12345npm install css-loader node-sass sass-loader style-loader --save-devoryarn add css-loader node-sass sass-loader style-loader -D 配置文件： 123456789101112131415161718192021222324252627282930313233// 提取css文件成单独的文件const extractSass = new ExtractTextPlugin(&#123; filename: "styles/[name].[hash].css", disable: process.env.NODE_ENV === "development"&#125;);module: &#123; rules: [ &#123; test: /\.scss$/, use: extractSass.extract(&#123; use: [ &#123; loader: "css-loader", // 将CSS翻译成CommonJS options: &#123; sourceMap: true // 会导致速度变慢 &#125; &#125;, &#123; loader: "sass-loader", // 将Sass编译成CSS options: &#123; sourceMap: true // 会导致速度变慢 &#125; &#125; ], // 在dev环境下配置这条 fallback: "style-loader" &#125;) &#125; ] &#125;, plugins: [extractSass] 安装extract-text-webpack-plugin这是为了把css呀这些文件单独打包成一个 但是会遇到报错： 然后我们去package.json会发现他的版本才3.0.2。。那么升级下吧因为我们webpack都4.6了。。 yarn add extract-text-webpack-plugin@next -D]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[事件处理]]></title>
       <url>%2F%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86.html</url>
       <content type="text"><![CDATA[事件简要分析： 事件类型 “load”..etc.. 事件目标 各种load、load事件 事件处理程序 事件对象 事件传播 注册事件 addEventListener() IE9 之前: attachEvent() 按照约定，事件处理程序属性的名字由”on”后面跟着时间名组成：onclick、onchange、onload、onmouseover.并且所有都是小写。 但是在 addEventListener() 中第一个参数却是不用带on的，attachEvent() 却要加的。 Demo 事件调用顺序 通过设置对象属性或者HTML属性注册的处理程序一直优先调用 使用addEventListener() 注册的处理程序按照它们的注册顺序调用 使用 attachEvent() 注册的处理程序可能按照任何顺序调用，所以代码不应该依赖于调用顺序]]></content>
