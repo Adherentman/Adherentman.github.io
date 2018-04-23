@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-04-23T11:41:33.880Z</updated>
+  <updated>2018-04-21T11:42:28.000Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://xuzihao.fun/Webpack4%E9%85%8D%E7%BD%AE.html"/>
     <id>http://xuzihao.fun/Webpack4配置.html</id>
     <published>2018-04-23T08:02:00.000Z</published>
-    <updated>2018-04-23T11:41:33.880Z</updated>
+    <updated>2018-04-21T11:42:28.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="first"><a href="#first" class="headerlink" title="first"></a>first</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mkdir simpleFE &amp;&amp; <span class="built_in">cd</span> simpleFE</div><div class="line">npm init -y</div><div class="line">npm install webpack webpack-cli --save-dev</div><div class="line">or</div><div class="line">mkdir simpleFE &amp;&amp; <span class="built_in">cd</span> simpleFE</div><div class="line">yarn init -y</div><div class="line">yarn add webpack webpack-cli -D</div></pre></td></tr></table></figure>
 <p>不要问为什么装了<code>webpack</code> 还要装<code>webpack-cli</code>。。因为你不装就报错。。官方提示还让你去装。。</p>
