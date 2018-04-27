@@ -385,7 +385,7 @@
 
       
         <p>说到跨域，我们需要先说说什么是同源策略。</p>
-<h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><p>浏览器安全的基石是”同源政策”（<a href="https://en.wikipedia.org/wiki/Same-origin_policy" target="_blank" rel="external">same-origin policy</a>）。</p>
+<h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><p>浏览器安全的基石是”同源政策”（<a href="https://en.wikipedia.org/wiki/Same-origin_policy" target="_blank" rel="noopener">same-origin policy</a>）。</p>
 <p>也就是说要满足以下条件：</p>
 <blockquote>
 <ol>
@@ -421,14 +421,14 @@
 <p>跨域资源共享标准新增了一组 HTTP 首部字段，允许服务器声明哪些源站有权限访问哪些资源。</p>
 <p>其实CORS背后的思想就是，使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功，还是应该失败。</p>
 <p>CORS分简单请求和非简单请求，满足以下条件就为简单请求：</p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="external">简单请求</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="noopener">简单请求</a></p>
 <h2 id="HTTP-响应首部字段"><a href="#HTTP-响应首部字段" class="headerlink" title="HTTP 响应首部字段"></a>HTTP 响应首部字段</h2><h3 id="Access-Control-Allow-Origin"><a href="#Access-Control-Allow-Origin" class="headerlink" title="Access-Control-Allow-Origin"></a>Access-Control-Allow-Origin</h3><p>根据Reuqest请求头中的<em>Origin</em>来判断该请求的资源是否可以被共享。</p>
 <h3 id="Access-Control-Allow-Credentials"><a href="#Access-Control-Allow-Credentials" class="headerlink" title="Access-Control-Allow-Credentials"></a>Access-Control-Allow-Credentials</h3><p>该字段可选。它的值是一个布尔值，表示是否允许发送Cookie。</p>
 <h3 id="Access-Control-Expose-Headers"><a href="#Access-Control-Expose-Headers" class="headerlink" title="Access-Control-Expose-Headers"></a>Access-Control-Expose-Headers</h3><p>让服务器把允许浏览器访问的头放入白名单</p>
 <p>在跨域访问时，XMLHttpRequest对象的getResponseHeader()方法只能拿到一些最基本的响应头，Cache-Control、Content-Language、Content-Type、Expires、Last-Modified、Pragma，如果要访问其他头，则需要服务器设置本响应头</p>
 <h3 id="Access-Control-Allow-Credentials-1"><a href="#Access-Control-Allow-Credentials-1" class="headerlink" title="Access-Control-Allow-Credentials"></a>Access-Control-Allow-Credentials</h3><p>指定了当浏览器的<code>credentials</code>设置为true时是否允许浏览器读取response的内容。</p>
 <p>所以我们需要<strong>附带身份凭证的请求</strong>:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">xhr.withCredentials = <span class="literal">true</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.withCredentials = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
 <p>我们不这样去做处理的话，即使服务器同意发送Cookie，浏览器也不会发送。或者，服务器要求设置Cookie，浏览器也不会处理。</p>
 <h2 id="HTTP请求首部字段"><a href="#HTTP请求首部字段" class="headerlink" title="HTTP请求首部字段"></a>HTTP请求首部字段</h2><p>用于发起跨域请求的首部字段，其实这些字段都不用我们去手动设置。当我们使用 XMLHttpRequest 对象发起跨域请求时，它们已经被设置就绪。</p>
 <ul>
@@ -437,7 +437,7 @@
 <li>Access-Control-Request-Headers</li>
 </ul>
 <blockquote>
-<p>参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="external">MDN-HTTP请求首部字段</a></p>
+<p>参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="noopener">MDN-HTTP请求首部字段</a></p>
 </blockquote>
 
       

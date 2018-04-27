@@ -883,7 +883,7 @@
       
         
           <h1 id="初入Node"><a href="#初入Node" class="headerlink" title="初入Node"></a>初入Node</h1><h2 id="回调地狱"><a href="#回调地狱" class="headerlink" title="回调地狱"></a>回调地狱</h2><p>Node的异步回调惯例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line">fs.readFile(<span class="string">'/index.html'</span>, (err, data) =&gt; &#123;</div><div class="line">  <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</div><div class="line">  getSomething(data.toString(), res);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line">fs.readFile(<span class="string">'/index.html'</span>, (err, data) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">  getSomething(data.toString(), res);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/初入Node.html#more" rel="contents">
@@ -1047,9 +1047,9 @@
 
       
         
-          <h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><p>最近大量接触<code>JSON</code> 所以我特意去<a href="https://www.rfc-editor.org/rfc/rfc4627.txt" target="_blank" rel="external"><code>JSON</code>标准</a>(短短的8页，大家也可以看看)看了下，还参阅了许多资料，总结一下<code>JSON</code></p>
+          <h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><p>最近大量接触<code>JSON</code> 所以我特意去<a href="https://www.rfc-editor.org/rfc/rfc4627.txt" target="_blank" rel="noopener"><code>JSON</code>标准</a>(短短的8页，大家也可以看看)看了下，还参阅了许多资料，总结一下<code>JSON</code></p>
 <p>我们先来看一个<code>JSON</code>的组成：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"propertyName"</span>: <span class="string">"propertyValue"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"propertyName"</span>: <span class="string">"propertyValue"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol>
 <li>property(属性/键值对)</li>
 <li>propertyName(属性名/键)</li>
@@ -1545,7 +1545,7 @@
       
         
           <h2 id="Parcel是啥？"><a href="#Parcel是啥？" class="headerlink" title="Parcel是啥？"></a>Parcel是啥？</h2><p>平常打包工具我们会去选择Webpack，但是我们都发现去使用webpack要么就去社区里找配置好的或者自己去看文档去配一大堆插件啊等等，但是我们在开发中还会遇到很多问题。有一句话说得好，配好了的Webpack就别动了。。因为下一步你继续配的话，你也不知道会发生什么。</p>
-<p>那么现在有一个真正的0配置打包工具，拿来就用岂不是美滋滋？<br><img src="http://ozar6ogjb.bkt.clouddn.com/parcel.png" alt="parcel"><br>这是官网的介绍，网址如下：<a href="http://www.css88.com/doc/parcel/" target="_blank" rel="external">Parcel</a></p>
+<p>那么现在有一个真正的0配置打包工具，拿来就用岂不是美滋滋？<br><img src="http://ozar6ogjb.bkt.clouddn.com/parcel.png" alt="parcel"><br>这是官网的介绍，网址如下：<a href="http://www.css88.com/doc/parcel/" target="_blank" rel="noopener">Parcel</a></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/Parcel.html#more" rel="contents">
@@ -1884,7 +1884,7 @@
 
       
         
-          <h2 id="First"><a href="#First" class="headerlink" title="First"></a>First</h2><p>Clion给我建的第一个C++文件如下<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello, World!"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+          <h2 id="First"><a href="#First" class="headerlink" title="First"></a>First</h2><p>Clion给我建的第一个C++文件如下<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello, World!"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/C++初体验.html#more" rel="contents">

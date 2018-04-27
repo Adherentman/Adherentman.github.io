@@ -385,7 +385,7 @@
 
       
         <h1 id="初入Node"><a href="#初入Node" class="headerlink" title="初入Node"></a>初入Node</h1><h2 id="回调地狱"><a href="#回调地狱" class="headerlink" title="回调地狱"></a>回调地狱</h2><p>Node的异步回调惯例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line">fs.readFile(<span class="string">'/index.html'</span>, (err, data) =&gt; &#123;</div><div class="line">  <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</div><div class="line">  getSomething(data.toString(), res);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line">fs.readFile(<span class="string">'/index.html'</span>, (err, data) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">  getSomething(data.toString(), res);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>在Node里大多数的内置模块在使用回调时都会带两个参数，第一个一般都用来放可能会发生的错误（err或error）;第二个是放结果。</p>
 

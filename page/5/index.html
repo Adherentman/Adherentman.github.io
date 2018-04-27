@@ -711,9 +711,9 @@
 
       
         
-          <h1 id="CO函数库"><a href="#CO函数库" class="headerlink" title="CO函数库"></a>CO函数库</h1><p><a href="https://github.com/tj/co" target="_blank" rel="external">co 函数库</a>是著名程序员 TJ Holowaychuk 于2013年6月发布的一个小工具，用于 <strong>Generator 函数的自动执行</strong>。</p>
+          <h1 id="CO函数库"><a href="#CO函数库" class="headerlink" title="CO函数库"></a>CO函数库</h1><p><a href="https://github.com/tj/co" target="_blank" rel="noopener">co 函数库</a>是著名程序员 TJ Holowaychuk 于2013年6月发布的一个小工具，用于 <strong>Generator 函数的自动执行</strong>。</p>
 <p>有一个 Generator 函数，用于依次读取两个文件。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> gen = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> f1 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/fstab'</span>);</div><div class="line">  <span class="keyword">var</span> f2 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/shells'</span>);</div><div class="line">  <span class="built_in">console</span>.log(f1.toString());</div><div class="line">  <span class="built_in">console</span>.log(f2.toString());</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gen = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> f1 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/fstab'</span>);</span><br><span class="line">  <span class="keyword">var</span> f2 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/shells'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(f1.toString());</span><br><span class="line">  <span class="built_in">console</span>.log(f2.toString());</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/CO函数，异步.html#more" rel="contents">
@@ -1217,7 +1217,7 @@
       
         
           <h1 id="Javascript对象"><a href="#Javascript对象" class="headerlink" title="Javascript对象"></a>Javascript对象</h1><p>JavaScript对象可以通过两种形式定义： 声明（文字）形式和构造形式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//声明形式</span></div><div class="line"><span class="keyword">var</span> object = &#123;</div><div class="line">  <span class="attr">a</span>:<span class="number">1</span></div><div class="line">&#125;;</div><div class="line"><span class="comment">//构造形式</span></div><div class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">b.key = <span class="number">1</span>;	<span class="comment">//给b添加个属性</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//声明形式</span></span><br><span class="line"><span class="keyword">var</span> object = &#123;</span><br><span class="line">  a:<span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//构造形式</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">b.key = <span class="number">1</span>;	<span class="comment">//给b添加个属性</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/Javascript对象.html#more" rel="contents">
@@ -1383,7 +1383,7 @@
         
           <h1 id="异步操作"><a href="#异步操作" class="headerlink" title="异步操作"></a>异步操作</h1><h1 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h1><p>JavaScript 语言对异步编程的实现，就是回调函数。<strong>所谓回调函数，就是把任务的第二段单独写在一个函数里面，等到重新执行这个任务的时候，就直接调用这个函数。</strong>它的英语名字 callback，直译过来就是”<strong>重新调用</strong>“。</p>
 <p>读取文件进行处理，是这样写的:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fs.readFile(<span class="string">'/etc/passwd'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</div><div class="line">  <span class="built_in">console</span>.log(data);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fs.readFile(<span class="string">'/etc/passwd'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/异步.html#more" rel="contents">
@@ -1723,7 +1723,7 @@
 <li>req.body</li>
 <li>req.query</li>
 </ul>
-<h3 id="req-params"><a href="#req-params" class="headerlink" title="req.params"></a>req.params</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'/user/:id'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">  	res.send(<span class="string">'user'</span> + req.parms.id);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="req-params"><a href="#req-params" class="headerlink" title="req.params"></a>req.params</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">'/user/:id'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">  	res.send(<span class="string">'user'</span> + req.parms.id);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>就是取带冒号的参数.</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1894,7 +1894,7 @@
 <blockquote>
 <p>摘自MDN</p>
 </blockquote>
-<p><strong>生成器</strong>对象是由一个 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/function*" target="_blank" rel="external">generator function</a> 返回的,并且它符合<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols#iterable" target="_blank" rel="external">可迭代协议</a>和<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols#iterator" target="_blank" rel="external">迭代器协议</a>。</p>
+<p><strong>生成器</strong>对象是由一个 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/function*" target="_blank" rel="noopener">generator function</a> 返回的,并且它符合<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols#iterable" target="_blank" rel="noopener">可迭代协议</a>和<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols#iterator" target="_blank" rel="noopener">迭代器协议</a>。</p>
 <blockquote>
 <p>摘自ES6标准入门</p>
 </blockquote>

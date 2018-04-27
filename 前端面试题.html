@@ -384,7 +384,7 @@
       
 
       
-        <h1 id="前端面试题"><a href="#前端面试题" class="headerlink" title="前端面试题"></a>前端面试题</h1><p>题目来自<a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Question#js" target="_blank" rel="external">朴灵大大的github</a></p>
+        <h1 id="前端面试题"><a href="#前端面试题" class="headerlink" title="前端面试题"></a>前端面试题</h1><p>题目来自<a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Question#js" target="_blank" rel="noopener">朴灵大大的github</a></p>
 <h2 id="介绍JavaScript的基本数据类型"><a href="#介绍JavaScript的基本数据类型" class="headerlink" title="介绍JavaScript的基本数据类型"></a>介绍JavaScript的基本数据类型</h2><p>JavaScript有5种简单数据类型： <code>Undefined</code>、<code>Null</code>、<code>Boolean</code>、<code>Number</code>、<code>String</code>。还有一种复杂数据类型<code>Object</code>。</p>
 <h3 id="typeof操作符"><a href="#typeof操作符" class="headerlink" title="typeof操作符"></a>typeof操作符</h3><p>用<code>typeof</code>操作符能检测给定变量的数据类型。（括号中是自己的理解意思）</p>
 <ul>
@@ -396,11 +396,11 @@
 <li>“function”       ————这个值是函数。(字面意思)</li>
 </ul>
 <a id="more"></a>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> message=<span class="string">"wa"</span>;</div><div class="line">alert(<span class="keyword">typeof</span> wa);	<span class="comment">//string</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> message=<span class="string">"wa"</span>;</span><br><span class="line">alert(<span class="keyword">typeof</span> wa);	<span class="comment">//string</span></span><br></pre></td></tr></table></figure>
 <h3 id="Undefined类型"><a href="#Undefined类型" class="headerlink" title="Undefined类型"></a>Undefined类型</h3><p>使用var声明变量但没有给它加以初始化，这个变量的值就是<code>undefined</code>。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> message;</div><div class="line">alert(message == <span class="literal">undefined</span>);			<span class="comment">//true</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> message;</span><br><span class="line">alert(message == <span class="literal">undefined</span>);			<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 <h3 id="Null类型"><a href="#Null类型" class="headerlink" title="Null类型"></a>Null类型</h3><p><code>null</code>表示一个空对象指针，但是用<code>typeof</code>操作符检测<code>null</code>会返回<code>object</code>的原因是什么？</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> car =<span class="literal">null</span>;</div><div class="line">alert(<span class="string">"typeof car"</span>);			<span class="comment">//"object"</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> car =<span class="literal">null</span>;</span><br><span class="line">alert(<span class="string">"typeof car"</span>);			<span class="comment">//"object"</span></span><br></pre></td></tr></table></figure>
 <p>只要意在保存对象的变量还没有真正的保存对象，就应该明确地让该变量保存<code>null</code>值。这样有助于进一步区分<code>null</code>和<code>undefined</code>。</p>
 <h3 id="Boolean类型"><a href="#Boolean类型" class="headerlink" title="Boolean类型"></a>Boolean类型</h3><p>这个字母值就是<code>true</code>、<code>false</code>。但是这两个值和数字不是一回事情。所以 <strong>true</strong>不一定等于 <strong>1</strong> ， <strong>false</strong>不一定等于 <strong>0</strong> 。</p>
 <p>还有布尔值是区分大小的 <strong>True</strong>和 <strong>False</strong>都不是 <strong>Boolean值</strong>。</p>
@@ -411,7 +411,7 @@
 <p>最小值保存在Number.MIN_VALUE ： 5e-324。 保存着<strong>-Infinity</strong></p>
 <p>最大值保存在Number.MAX_VALUE :   1.796931348623157e+308。保存着<strong>Infinity</strong>。</p>
 <p>想确定一个数值是否有穷可以用<code>isFinite()函数</code>。这个函数会在最小和最大数值之间会返回 <strong>true</strong>。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(<span class="built_in">isFinite</span>(result));</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="built_in">isFinite</span>(result));</span><br></pre></td></tr></table></figure>
 <ul>
 <li>NaN（Not a Number）</li>
 </ul>
@@ -437,7 +437,7 @@
 <li><p>字符串的特点——字符串是不可改变的。一旦创建，它们的值就不能改变。要改变就要先摧毁。</p>
 </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> lang=<span class="string">"Java"</span>;</div><div class="line">lang=lang+<span class="string">"Script"</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> lang=<span class="string">"Java"</span>;</span><br><span class="line">lang=lang+<span class="string">"Script"</span>;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>转换为字符串<ul>
 <li>使用 <code>toString()方法</code> 但是null和undefined没有这个方法所以，</li>
@@ -446,7 +446,7 @@
 </li>
 </ul>
 <h3 id="Object类型"><a href="#Object类型" class="headerlink" title="Object类型"></a>Object类型</h3><p>对象其实就是一组数据和功能的集合。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o =<span class="keyword">new</span> <span class="built_in">Object</span>();</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o =<span class="keyword">new</span> <span class="built_in">Object</span>();</span><br></pre></td></tr></table></figure>
 <h2 id="说说写JavaScript的基本规范？"><a href="#说说写JavaScript的基本规范？" class="headerlink" title="说说写JavaScript的基本规范？"></a>说说写JavaScript的基本规范？</h2>
       
     </div>

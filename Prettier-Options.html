@@ -599,13 +599,13 @@
 <p>Babylon和流解析器都支持相同的JavaScript特性（包括Flow）。Prettier会自动从输入文件路径中推断解析器，所以你不需要改变这个设置。</p>
 <p>Built-in parsers:</p>
 <ul>
-<li><a href="https://github.com/babel/babel/tree/master/packages/babylon" target="_blank" rel="external"><code>babylon</code></a></li>
-<li><a href="https://github.com/facebook/flow/tree/master/src/parser" target="_blank" rel="external"><code>flow</code></a></li>
-<li><a href="https://github.com/eslint/typescript-eslint-parser" target="_blank" rel="external"><code>typescript</code></a> <em>Since v1.4.0</em></li>
-<li><a href="https://github.com/postcss/postcss" target="_blank" rel="external"><code>postcss</code></a> <em>Since v1.4.0</em></li>
-<li><a href="https://github.com/babel/babylon/tree/f09eb3200f57ea94d51c2a5b1facf2149fb406bf#babylonparseexpressioncode-options" target="_blank" rel="external"><code>json</code></a> <em>Since v1.5.0</em></li>
-<li><a href="https://github.com/graphql/graphql-js/tree/master/src/language" target="_blank" rel="external"><code>graphql</code></a> <em>Since v1.5.0</em></li>
-<li><a href="https://github.com/wooorm/remark/tree/master/packages/remark-parse" target="_blank" rel="external"><code>markdown</code></a> <em>Since v1.8.0</em></li>
+<li><a href="https://github.com/babel/babel/tree/master/packages/babylon" target="_blank" rel="noopener"><code>babylon</code></a></li>
+<li><a href="https://github.com/facebook/flow/tree/master/src/parser" target="_blank" rel="noopener"><code>flow</code></a></li>
+<li><a href="https://github.com/eslint/typescript-eslint-parser" target="_blank" rel="noopener"><code>typescript</code></a> <em>Since v1.4.0</em></li>
+<li><a href="https://github.com/postcss/postcss" target="_blank" rel="noopener"><code>postcss</code></a> <em>Since v1.4.0</em></li>
+<li><a href="https://github.com/babel/babylon/tree/f09eb3200f57ea94d51c2a5b1facf2149fb406bf#babylonparseexpressioncode-options" target="_blank" rel="noopener"><code>json</code></a> <em>Since v1.5.0</em></li>
+<li><a href="https://github.com/graphql/graphql-js/tree/master/src/language" target="_blank" rel="noopener"><code>graphql</code></a> <em>Since v1.5.0</em></li>
+<li><a href="https://github.com/wooorm/remark/tree/master/packages/remark-parse" target="_blank" rel="noopener"><code>markdown</code></a> <em>Since v1.8.0</em></li>
 </ul>
 <table>
 <thead>
@@ -646,9 +646,9 @@
 </table>
 <h2 id="Require-pragma"><a href="#Require-pragma" class="headerlink" title="Require pragma"></a>Require pragma</h2><p>Prettier可以限制自己只能格式化文件顶部包含特殊注释的文件，称为杂注。逐渐将大型，无格式的代码库转换为漂亮的代码库时，这非常有用。</p>
 <p>例如，当提供–require-pragma时，将会格式化具有以下第一个注释的文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * @prettier</div><div class="line"> */</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @prettier</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
 <p>or</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * @format</div><div class="line"> */</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @format</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>

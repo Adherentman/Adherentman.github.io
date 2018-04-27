@@ -384,22 +384,22 @@
       
 
       
-        <h1 id="React-Router3"><a href="#React-Router3" class="headerlink" title="React-Router3"></a>React-Router3</h1><h3 id="路径语法"><a href="#路径语法" class="headerlink" title="路径语法"></a>路径语法</h3><p>路由路径是匹配一个（或一部分）URL 的 <a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#routepattern" target="_blank" rel="external">一个字符串模式</a>。大部分的路由路径都可以直接按照字面量理解，除了以下几个特殊的符号：</p>
+        <h1 id="React-Router3"><a href="#React-Router3" class="headerlink" title="React-Router3"></a>React-Router3</h1><h3 id="路径语法"><a href="#路径语法" class="headerlink" title="路径语法"></a>路径语法</h3><p>路由路径是匹配一个（或一部分）URL 的 <a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#routepattern" target="_blank" rel="noopener">一个字符串模式</a>。大部分的路由路径都可以直接按照字面量理解，除了以下几个特殊的符号：</p>
 <ul>
-<li><code>:paramName</code> – 匹配一段位于 <code>/</code>、<code>?</code> 或 <code>#</code> 之后的 URL。 命中的部分将被作为一个<a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params" target="_blank" rel="external">参数</a></li>
+<li><code>:paramName</code> – 匹配一段位于 <code>/</code>、<code>?</code> 或 <code>#</code> 之后的 URL。 命中的部分将被作为一个<a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params" target="_blank" rel="noopener">参数</a></li>
 <li><code>()</code> – 在它内部的内容被认为是可选的</li>
-<li><code>*</code> – 匹配任意字符（非贪婪的）直到命中下一个字符或者整个 URL 的末尾，并创建一个 <code>splat</code> <a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params" target="_blank" rel="external">参数</a></li>
+<li><code>*</code> – 匹配任意字符（非贪婪的）直到命中下一个字符或者整个 URL 的末尾，并创建一个 <code>splat</code> <a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/docs/Glossary.md#params" target="_blank" rel="noopener">参数</a></li>
 </ul>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//匹配 /hello/michael 和 /hello/ryan</div><div class="line">&lt;Route path=&quot;/hello/:name&quot;&gt;         </div><div class="line">  </div><div class="line">  </div><div class="line">//匹配 /hello, /hello/02 和 /hello/01</div><div class="line">&lt;Route path=&quot;/hello(/:id)&quot;&gt;   </div><div class="line"></div><div class="line"></div><div class="line">//匹配 /files/hello.jpg和/files/path/to/hello.jpg</div><div class="line">&lt;Route path=&quot;/files/*.*&quot;&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//匹配 /hello/michael 和 /hello/ryan</span><br><span class="line">&lt;Route path=&quot;/hello/:name&quot;&gt;         </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">//匹配 /hello, /hello/02 和 /hello/01</span><br><span class="line">&lt;Route path=&quot;/hello(/:id)&quot;&gt;   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//匹配 /files/hello.jpg和/files/path/to/hello.jpg</span><br><span class="line">&lt;Route path=&quot;/files/*.*&quot;&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="Histories"><a href="#Histories" class="headerlink" title="Histories"></a>Histories</h2><p>常用的 <strong>history</strong> 有三种形式， 但是你也可以使用 React Router 实现自定义的 history。</p>
 <ul>
-<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#browserHistory" target="_blank" rel="external"><code>browserHistory</code></a> (推荐)</li>
-<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#hashHistory" target="_blank" rel="external"><code>hashHistory</code></a></li>
-<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#creatememoryhistory" target="_blank" rel="external"><code>createMemoryHistory</code></a></li>
+<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#browserHistory" target="_blank" rel="noopener"><code>browserHistory</code></a> (推荐)</li>
+<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#hashHistory" target="_blank" rel="noopener"><code>hashHistory</code></a></li>
+<li><a href="https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#creatememoryhistory" target="_blank" rel="noopener"><code>createMemoryHistory</code></a></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Router history=&#123;browserHistory&#125;&gt;</div></pre></td></tr></table></figure>
-<h3 id="browserHistory"><a href="#browserHistory" class="headerlink" title="browserHistory"></a><code>browserHistory</code></h3><p>Browser history 是使用 React Router 的应用推荐的 history。它使用浏览器中的 <a href="https://developer.mozilla.org/en-US/docs/Web/API/History" target="_blank" rel="external">History</a> API 用于处理 URL，创建一个像<code>example.com/some/path</code>这样真实的 URL 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Router history=&#123;browserHistory&#125;&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="browserHistory"><a href="#browserHistory" class="headerlink" title="browserHistory"></a><code>browserHistory</code></h3><p>Browser history 是使用 React Router 的应用推荐的 history。它使用浏览器中的 <a href="https://developer.mozilla.org/en-US/docs/Web/API/History" target="_blank" rel="noopener">History</a> API 用于处理 URL，创建一个像<code>example.com/some/path</code>这样真实的 URL 。</p>
 <h2 id="在组件外部使用导航"><a href="#在组件外部使用导航" class="headerlink" title="在组件外部使用导航"></a>在组件外部使用导航</h2><p>虽然在组件内部可以使用 <code>this.context.router</code> 来实现导航，但许多应用想要在组件外部使用导航。使用Router组件上被赋予的history可以在组件外部实现导航。</p>
 
       
@@ -443,8 +443,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/GraphQL.html" rel="prev" title="GraphQL基本操作">
-                GraphQL基本操作 <i class="fa fa-chevron-right"></i>
+              <a href="/E-R图.html" rel="prev" title="数据库E-R图">
+                数据库E-R图 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

@@ -712,7 +712,7 @@
       
         
           <p>说到跨域，我们需要先说说什么是同源策略。</p>
-<h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><p>浏览器安全的基石是”同源政策”（<a href="https://en.wikipedia.org/wiki/Same-origin_policy" target="_blank" rel="external">same-origin policy</a>）。</p>
+<h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><p>浏览器安全的基石是”同源政策”（<a href="https://en.wikipedia.org/wiki/Same-origin_policy" target="_blank" rel="noopener">same-origin policy</a>）。</p>
 <p>也就是说要满足以下条件：</p>
 <blockquote>
 <ol>
@@ -1217,13 +1217,13 @@
       
         
           
-            <h1 id="Outline"><a href="#Outline" class="headerlink" title="Outline"></a>Outline</h1><p>看一个Outline的例子：<a href="https://codepan.net/gist/7a96f5e15ee26e3523fd17c577c01c61" target="_blank" rel="external">outline</a></p>
+            <h1 id="Outline"><a href="#Outline" class="headerlink" title="Outline"></a>Outline</h1><p>看一个Outline的例子：<a href="https://codepan.net/gist/7a96f5e15ee26e3523fd17c577c01c61" target="_blank" rel="noopener">outline</a></p>
 <p>在下面看见一个div也有类似的效果。但是我们打开开发者工具看会发现。下面用<code>outline</code>实现的外边框中border为<code>-</code>。</p>
 <h2 id="outline和border对比"><a href="#outline和border对比" class="headerlink" title="outline和border对比"></a>outline和border对比</h2><ul>
 <li>border属于盒模型的一部分，会直接影响盒子大小。</li>
 <li>outline则是将边框画在盒子上，不会影响该框。所以它不会破坏网页布局。</li>
-<li>border创建是可以显示单边的，而outline是不行的。看demo：<a href="https://codepan.net/gist/92abb7960aed0c5917f235f1a6180e5c" target="_blank" rel="external">单边</a></li>
-<li>border只可以外轮廓，而outline可以借助<code>outline-offset</code>设成负值就可以实现内轮廓，而设成正值就是外轮廓。看demo：<a href="https://codepan.net/gist/de786dc265e45ebefcd6a54614b348c4" target="_blank" rel="external">内轮廓</a></li>
+<li>border创建是可以显示单边的，而outline是不行的。看demo：<a href="https://codepan.net/gist/92abb7960aed0c5917f235f1a6180e5c" target="_blank" rel="noopener">单边</a></li>
+<li>border只可以外轮廓，而outline可以借助<code>outline-offset</code>设成负值就可以实现内轮廓，而设成正值就是外轮廓。看demo：<a href="https://codepan.net/gist/de786dc265e45ebefcd6a54614b348c4" target="_blank" rel="noopener">内轮廓</a></li>
 </ul>
 
           
@@ -1729,7 +1729,7 @@
 
       
         
-          <h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">binary_search</span>(<span class="params">array, item</span>)</span>&#123;</div><div class="line">    <span class="keyword">let</span> low = <span class="number">0</span>;</div><div class="line">    <span class="keyword">let</span> high = array.length - <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span>(low &lt;= high)&#123;</div><div class="line">        <span class="keyword">let</span> mid = (low + high) / <span class="number">2</span> &gt;&gt; <span class="number">0</span>;</div><div class="line">        <span class="keyword">let</span> guess = array[mid];</div><div class="line">        <span class="keyword">if</span>(guess == item)&#123;</div><div class="line">            <span class="keyword">return</span> mid;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(guess &gt; item)&#123;</div><div class="line">            high = mid - <span class="number">1</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            low = mid + <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="string">'没有该数字'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">binary_search</span>(<span class="params">array, item</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> low = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> high = array.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(low &lt;= high)&#123;</span><br><span class="line">        <span class="keyword">let</span> mid = (low + high) / <span class="number">2</span> &gt;&gt; <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">let</span> guess = array[mid];</span><br><span class="line">        <span class="keyword">if</span>(guess == item)&#123;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(guess &gt; item)&#123;</span><br><span class="line">            high = mid - <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            low = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'没有该数字'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/数据结构与算法.html#more" rel="contents">

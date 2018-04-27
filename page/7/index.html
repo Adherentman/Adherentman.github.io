@@ -562,7 +562,7 @@
       
         
           <h1 id="Javascript作用域与作用域链"><a href="#Javascript作用域与作用域链" class="headerlink" title="Javascript作用域与作用域链"></a>Javascript作用域与作用域链</h1><h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在JavaScript中，变量的作用域有全局作用域和局部作用域两种。</p>
-<h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><h5 id="全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。"><a href="#全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。" class="headerlink" title="全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。"></a>全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> l=<span class="string">"我是全局变量"</span>;			<span class="comment">//声明了一个全局变量</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">scope</span>(<span class="params"></span>)</span>&#123;		</div><div class="line">  <span class="keyword">var</span> l=<span class="string">"我是局部变量"</span>;		<span class="comment">//声明了一个同名的局部变量</span></div><div class="line">  <span class="keyword">return</span> l;</div><div class="line">&#125;</div><div class="line">scope()					<span class="comment">//输出“我是局部变量”</span></div></pre></td></tr></table></figure>
+<h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><h5 id="全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。"><a href="#全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。" class="headerlink" title="全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。"></a>全局变量拥有全局作用域。在JavaScript任何地方都是有定义的。</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> l=<span class="string">"我是全局变量"</span>;			<span class="comment">//声明了一个全局变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">scope</span>(<span class="params"></span>)</span>&#123;		</span><br><span class="line">  <span class="keyword">var</span> l=<span class="string">"我是局部变量"</span>;		<span class="comment">//声明了一个同名的局部变量</span></span><br><span class="line">  <span class="keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line">scope()					<span class="comment">//输出“我是局部变量”</span></span><br></pre></td></tr></table></figure>
 <h5 id=""><a href="#" class="headerlink" title=""></a>
           <!--noindex-->
           <div class="post-button text-center">
@@ -732,21 +732,21 @@
 <p>你的结果必须得是一个字符串</p>
 <p>这是一些对你有帮助的资源:</p>
 <ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="external">Global String Object</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="noopener">Global String Object</a></li>
 </ul>
 <ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split" target="_blank" rel="external">String.split()</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split" target="_blank" rel="noopener">String.split()</a></li>
 </ul>
 <ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse" target="_blank" rel="external">Array.reverse()</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse" target="_blank" rel="noopener">Array.reverse()</a></li>
 </ul>
 <ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/join" target="_blank" rel="external">Array.join()</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/join" target="_blank" rel="noopener">Array.join()</a></li>
 </ul>
 <blockquote>
 <p><code>reverseString(&quot;hello&quot;)</code> 应该返回 <code>&quot;olleh&quot;</code>.</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseString</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> str.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</div><div class="line">&#125;</div><div class="line">reverseString(<span class="string">"hello"</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseString</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> str.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">&#125;</span><br><span class="line">reverseString(<span class="string">"hello"</span>);</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/JavaScript——16道算法题.html#more" rel="contents">
@@ -910,7 +910,7 @@
 
       
         
-          <h1 id="前端面试题"><a href="#前端面试题" class="headerlink" title="前端面试题"></a>前端面试题</h1><p>题目来自<a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Question#js" target="_blank" rel="external">朴灵大大的github</a></p>
+          <h1 id="前端面试题"><a href="#前端面试题" class="headerlink" title="前端面试题"></a>前端面试题</h1><p>题目来自<a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Question#js" target="_blank" rel="noopener">朴灵大大的github</a></p>
 <h2 id="介绍JavaScript的基本数据类型"><a href="#介绍JavaScript的基本数据类型" class="headerlink" title="介绍JavaScript的基本数据类型"></a>介绍JavaScript的基本数据类型</h2><p>JavaScript有5种简单数据类型： <code>Undefined</code>、<code>Null</code>、<code>Boolean</code>、<code>Number</code>、<code>String</code>。还有一种复杂数据类型<code>Object</code>。</p>
 <h3 id="typeof操作符"><a href="#typeof操作符" class="headerlink" title="typeof操作符"></a>typeof操作符</h3><p>用<code>typeof</code>操作符能检测给定变量的数据类型。（括号中是自己的理解意思）</p>
 <ul>
@@ -1095,7 +1095,7 @@
 <li>用法</li>
 </ul>
 <p>动态的绑定一个或多个特性，或一个组件<code>prop</code>到表达式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a v-bind:href=<span class="string">"url"</span> href=<span class="string">"#"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a v-bind:href=<span class="string">"url"</span> href=<span class="string">"#"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p>在这里<code>:href</code>是参数，通过<code>v-bind</code>指令将该元素的<code>href</code>属性与表达式的<code>url</code>绑定。</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1261,7 +1261,7 @@
       
         
           <p>简单地说，</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">x</span> =&gt;</span> x;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> x;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="function"><span class="params">x</span> =&gt;</span> x;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> a =<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>这个就是最简单的箭头函数。</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1427,9 +1427,9 @@
       
         
           <p>因为需要做一个自己的小想法以后需要去实现把这个想法变成项目，在重多得框架中选择React.js，因为它需要学习成本，所以我觉得我在学习的过程中能学到很多东西。</p>
-<h1 id="通过npm使用React"><a href="#通过npm使用React" class="headerlink" title="通过npm使用React"></a>通过npm使用React</h1><p>建议在 React 中使用 CommonJS 模块系统，比如 <a href="http://browserify.org/" target="_blank" rel="external">browserify</a> 或 <a href="https://webpack.github.io/" target="_blank" rel="external">webpack</a>。使用 <a href="https://www.npmjs.com/package/react" target="_blank" rel="external"><code>react</code></a> 和 <a href="https://www.npmjs.com/package/react-dom" target="_blank" rel="external"><code>react-dom</code></a> npm 包.</p>
+<h1 id="通过npm使用React"><a href="#通过npm使用React" class="headerlink" title="通过npm使用React"></a>通过npm使用React</h1><p>建议在 React 中使用 CommonJS 模块系统，比如 <a href="http://browserify.org/" target="_blank" rel="noopener">browserify</a> 或 <a href="https://webpack.github.io/" target="_blank" rel="noopener">webpack</a>。使用 <a href="https://www.npmjs.com/package/react" target="_blank" rel="noopener"><code>react</code></a> 和 <a href="https://www.npmjs.com/package/react-dom" target="_blank" rel="noopener"><code>react-dom</code></a> npm 包.</p>
 <p>我使用webpack来安装React DOM的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm install --save react react-dom babelify babel-preset-react</div><div class="line">$ browserify -t [ babelify --presets [ react ] ] main.js -o bundle.js</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save react react-dom babelify babel-preset-react</span><br><span class="line">$ browserify -t [ babelify --presets [ react ] ] main.js -o bundle.js</span><br></pre></td></tr></table></figure>
 <p>那么第一步肯定是创建Hello World啦~</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1596,7 +1596,7 @@
         
           <h1 id="JavaScript变量-方法"><a href="#JavaScript变量-方法" class="headerlink" title="JavaScript变量+方法"></a>JavaScript变量+方法</h1><p>ECMAScript变量可能包含两种不同数据类型的值：基本类型值和引用类型值。</p>
 <p><strong>基本类型值</strong>指的是简单的数据段，而<strong>引用类型值</strong>指那些可能有多个值构成的<strong>对象</strong>。</p>
-<h2 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTen</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">  num +=<span class="number">10</span>;</div><div class="line">  <span class="keyword">return</span> num;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> count =<span class="number">20</span>;</div><div class="line"><span class="keyword">var</span> result = addTen(count);</div><div class="line">alert(count); 		<span class="comment">//20,没变化</span></div><div class="line">alert(result);		<span class="comment">//30</span></div></pre></td></tr></table></figure>
+<h2 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTen</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">  num +=<span class="number">10</span>;</span><br><span class="line">  <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> count =<span class="number">20</span>;</span><br><span class="line"><span class="keyword">var</span> result = addTen(count);</span><br><span class="line">alert(count); 		<span class="comment">//20,没变化</span></span><br><span class="line">alert(result);		<span class="comment">//30</span></span><br></pre></td></tr></table></figure>
 <p>在这上面看了高程三的话懵懵懂懂，实际上在说的是，要执行<code>alert(count);</code>时<code>count</code>只是把20复制给参数num，以便20在addTen()中使用，在函数里面num的值确实+10变成了30，但是不影响外部count的变量。</p>
           <!--noindex-->
           <div class="post-button text-center">
