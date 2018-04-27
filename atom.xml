@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-04-21T11:42:28.000Z</updated>
+  <updated>2018-04-27T16:03:53.777Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Typescript配置采坑之路</title>
+    <link href="http://xuzihao.fun/Typescript%E9%85%8D%E7%BD%AE%E9%87%87%E5%9D%91%E4%B9%8B%E8%B7%AF.html"/>
+    <id>http://xuzihao.fun/Typescript配置采坑之路.html</id>
+    <published>2018-04-27T16:03:52.000Z</published>
+    <updated>2018-04-27T16:03:53.777Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/tscNodeError.png" alt=""></p>
+<blockquote>
+<p>这是没有@typesc/node导致的。但是安装最新的10.0.0也不行。我就安装了@types/node@8</p>
+</blockquote>
+<p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/tsconfigComm.png" alt=""></p>
+<blockquote>
+<p>tsconfig文件加这条：    “module”: “commonjs”, </p>
+</blockquote>
+<p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/tsconfigLib.png" alt=""></p>
+<blockquote>
+<p>tsconfig文件加这条：    “lib”: [“es2015”]</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/tscNodeError.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是没有@typesc/node导致的。但是安装最新的10.0.
+    
+    </summary>
+    
+      <category term="Typescript" scheme="http://xuzihao.fun/categories/Typescript/"/>
+    
+    
+      <category term="Typescript" scheme="http://xuzihao.fun/tags/Typescript/"/>
+    
+  </entry>
   
   <entry>
     <title>Webpack4配置指南！Up！</title>
@@ -1062,355 +1098,6 @@
     
     
       <category term="CSS" scheme="http://xuzihao.fun/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Prettier Option</title>
-    <link href="http://xuzihao.fun/Prettier-Options.html"/>
-    <id>http://xuzihao.fun/Prettier-Options.html</id>
-    <published>2018-02-09T09:50:00.000Z</published>
-    <updated>2018-03-05T07:27:16.739Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Prettier-Option"><a href="#Prettier-Option" class="headerlink" title="Prettier Option"></a>Prettier Option</h1><p>.Prettierrc</p>
-<p>Cli是在终端使用，</p>
-<p>Api是在<code>.Prettierrc</code>中设置使用<br><a id="more"></a></p>
-<h2 id="printWidth"><a href="#printWidth" class="headerlink" title="printWidth"></a>printWidth</h2><p>打印宽度指定打印将换行的行长。</p>
-<table>
-<thead>
-<tr>
-<th>Default</th>
-<th style="text-align:center">Cli Override</th>
-<th style="text-align:center">Api Override</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>80</td>
-<td style="text-align:center">–print-width <int></int></td>
-<td style="text-align:center">printWidth: <int></int></td>
-</tr>
-</tbody>
-</table>
-<h2 id="Tab-Width"><a href="#Tab-Width" class="headerlink" title="Tab Width"></a>Tab Width</h2><p>指定每个缩进的空格数。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Default</th>
-<th style="text-align:center">Cli Override</th>
-<th style="text-align:center">Api Override</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">–tab-width <int></int></td>
-<td style="text-align:center">tabWidth: <int></int></td>
-</tr>
-</tbody>
-</table>
-<h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2><p>用<code>Tab</code>缩进而不是空格</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Default</th>
-<th style="text-align:center">Cli Override</th>
-<th style="text-align:center">Api Override</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">false</td>
-<td style="text-align:center">–use-tabs <int></int></td>
-<td style="text-align:center">useTabs: <bool></bool></td>
-</tr>
-</tbody>
-</table>
-<h2 id="Semicolons"><a href="#Semicolons" class="headerlink" title="Semicolons"></a>Semicolons</h2><p>在语句的末尾打印分号。</p>
-<p>有效的选项：</p>
-<ul>
-<li>true  - 在每个语句的末尾添加一个分号。</li>
-<li>false - 只在可能引入ASI故障的行的开头添加分号。</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Default</th>
-<th style="text-align:center">Cli Override</th>
-<th style="text-align:center">Api Override</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">true</td>
-<td style="text-align:center">–no-semi <int></int></td>
-<td style="text-align:center">semi: <bool></bool></td>
-</tr>
-</tbody>
-</table>
-<h2 id="Quotes"><a href="#Quotes" class="headerlink" title="Quotes"></a>Quotes</h2><p>使用单引号而不是双引号。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Default</th>
-<th style="text-align:center">Cli Override</th>
-<th style="text-align:center">Api Override</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">false</td>
-<td style="text-align:center">–single-quote</td>
-<td style="text-align:center">singleQuote: <bool></bool></td>
-</tr>
-</tbody>
-</table>
-<h2 id="Trailing-Commas"><a href="#Trailing-Commas" class="headerlink" title="Trailing Commas"></a>Trailing Commas</h2><p>多行时，尽可能打印尾随逗号。 （例如，一个单行数组永远不会得到尾随的逗号。）</p>
-<p>有效选项：</p>
-<ul>
-<li>none - 没有尾随逗号。</li>
-<li>es5 - 在ES5中有效的尾随逗号（object，arrays等）</li>
-<li>all - 尽可能尾随逗号（包括函数参数）。</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Default</th>
-<th style="text-align:center">Cli Override</th>
-<th style="text-align:center">Api Override</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">None</td>
-<td style="text-align:center">–trailing-comma &lt;none\</td>
-<td style="text-align:center">es5\</td>
-<td>all&gt;</td>
-<td>trailingComma: “&lt;none\</td>
-<td>es5\</td>
-<td>all&gt;”</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Bracket-Spacing"><a href="#Bracket-Spacing" class="headerlink" title="Bracket Spacing"></a>Bracket Spacing</h2><p>在对象文字中的括号之间打印空格。</p>
-<p>选项：</p>
-<ul>
-<li>true - Example { foo: bar }</li>
-<li>flase - Example {foo: bar}</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Default</th>
-<th>Cli Override</th>
-<th>Api Override</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">true</td>
-<td>–no-bracket-spacing</td>
-<td>bracketSpacing: <bool></bool></td>
-</tr>
-</tbody>
-</table>
-<h2 id="JSX-Brackets"><a href="#JSX-Brackets" class="headerlink" title="JSX Brackets"></a>JSX Brackets</h2><p>将多行JSX元素的 <code>&gt;</code> 放在最后一行的末尾，而不是单独放在下一行（不适用于自闭元素）。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Default</th>
-<th style="text-align:center">Cli Override</th>
-<th style="text-align:center">Api Override</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">false</td>
-<td style="text-align:center">–jsx-bracket-same-line</td>
-<td style="text-align:center">jsxBracketSameLine: <bool></bool></td>
-</tr>
-</tbody>
-</table>
-<h2 id="Arrow-Function-Parentheses"><a href="#Arrow-Function-Parentheses" class="headerlink" title="Arrow Function Parentheses"></a>Arrow Function Parentheses</h2><p>围绕一个唯一的箭头函数参数包括括号。</p>
-<p>选项：</p>
-<ul>
-<li>avoid - 尽可能省略括号 Example： x =&gt; x</li>
-<li>always - 总是包括括号 Example： (x) =&gt; x</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Default</th>
-<th style="text-align:center">Cli Override</th>
-<th style="text-align:center">Api Override</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">avoid</td>
-<td style="text-align:center">–arrow-parens &lt;avoid\</td>
-<td style="text-align:center">always&gt;</td>
-<td>arrowParens: “&lt;avoid\</td>
-<td>always&gt;”</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Range"><a href="#Range" class="headerlink" title="Range"></a>Range</h2><p>只格式化文件的一部分。</p>
-<p>这两个选项可用于格式化以给定字符偏移（分别包含和排除）开始和结束的代码。范围将延伸:</p>
-<ul>
-<li>返回到包含选定语句的第一行的开头。 </li>
-<li>转到选定语句的末尾。</li>
-</ul>
-<p>这些选项不能与cursorOffset一起使用。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Default</th>
-<th style="text-align:center">Cli Override</th>
-<th style="text-align:center">Api Override</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">–range-start <int></int></td>
-<td style="text-align:center">rangeStart: <int></int></td>
-</tr>
-<tr>
-<td style="text-align:center">Infinity</td>
-<td style="text-align:center">–range-end <int></int></td>
-<td style="text-align:center">rangeEnd: <int></int></td>
-</tr>
-</tbody>
-</table>
-<h2 id="Parser"><a href="#Parser" class="headerlink" title="Parser"></a>Parser</h2><p>指定使用哪个分析器。</p>
-<p>Babylon和流解析器都支持相同的JavaScript特性（包括Flow）。Prettier会自动从输入文件路径中推断解析器，所以你不需要改变这个设置。</p>
-<p>Built-in parsers:</p>
-<ul>
-<li><a href="https://github.com/babel/babel/tree/master/packages/babylon" target="_blank" rel="external"><code>babylon</code></a></li>
-<li><a href="https://github.com/facebook/flow/tree/master/src/parser" target="_blank" rel="external"><code>flow</code></a></li>
-<li><a href="https://github.com/eslint/typescript-eslint-parser" target="_blank" rel="external"><code>typescript</code></a> <em>Since v1.4.0</em></li>
-<li><a href="https://github.com/postcss/postcss" target="_blank" rel="external"><code>postcss</code></a> <em>Since v1.4.0</em></li>
-<li><a href="https://github.com/babel/babylon/tree/f09eb3200f57ea94d51c2a5b1facf2149fb406bf#babylonparseexpressioncode-options" target="_blank" rel="external"><code>json</code></a> <em>Since v1.5.0</em></li>
-<li><a href="https://github.com/graphql/graphql-js/tree/master/src/language" target="_blank" rel="external"><code>graphql</code></a> <em>Since v1.5.0</em></li>
-<li><a href="https://github.com/wooorm/remark/tree/master/packages/remark-parse" target="_blank" rel="external"><code>markdown</code></a> <em>Since v1.8.0</em></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Default</th>
-<th style="text-align:left">Cli Override</th>
-<th style="text-align:left">Api Override</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">babylon</td>
-<td style="text-align:left">–parser <string><br>–parser ./my-parser</string></td>
-<td style="text-align:left">parser: “<string>“<br>parser: require(“./my-parser”)</string></td>
-</tr>
-</tbody>
-</table>
-<h2 id="FilePath"><a href="#FilePath" class="headerlink" title="FilePath"></a>FilePath</h2><p>指定输入文件路径。这将被用来做解析器推理。</p>
-<p>例如，以下将使用postcss解析器：</p>
-<blockquote>
-<p>cat foo | prettier –stdin-filepath foo.css</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>Default</th>
-<th>Cli Override</th>
-<th>Api Override</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>None</td>
-<td>–stdin-filepath <string></string></td>
-<td>filepath: “<string>“</string></td>
-</tr>
-</tbody>
-</table>
-<h2 id="Require-pragma"><a href="#Require-pragma" class="headerlink" title="Require pragma"></a>Require pragma</h2><p>Prettier可以限制自己只能格式化文件顶部包含特殊注释的文件，称为杂注。逐渐将大型，无格式的代码库转换为漂亮的代码库时，这非常有用。</p>
-<p>例如，当提供–require-pragma时，将会格式化具有以下第一个注释的文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * @prettier</div><div class="line"> */</div></pre></td></tr></table></figure>
-<p>or</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * @format</div><div class="line"> */</div></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Default</th>
-<th style="text-align:center">Cli Override</th>
-<th style="text-align:center">Api Override</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">false</td>
-<td style="text-align:center">–require-pragma</td>
-<td style="text-align:center">requirePragma: <bool></bool></td>
-</tr>
-</tbody>
-</table>
-<h2 id="Insert-Pragma"><a href="#Insert-Pragma" class="headerlink" title="Insert Pragma"></a>Insert Pragma</h2><p>Prettier的可以在文件的顶部插入一个特殊的@format标记，指定文件已被格式化为Prettier。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Default</th>
-<th style="text-align:center">Cli Override</th>
-<th style="text-align:center">Api Override</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">false</td>
-<td style="text-align:center">–insert-pragma</td>
-<td style="text-align:center">insertPragma: <bool></bool></td>
-</tr>
-</tbody>
-</table>
-<h2 id="Prose-Wrap"><a href="#Prose-Wrap" class="headerlink" title="Prose Wrap"></a>Prose Wrap</h2><p>默认情况下，由于某些服务使用了对换行符敏感的呈现器，因此Prettier会按原样包装降价文本。</p>
-<p>选项：</p>
-<ul>
-<li><code>&quot;always&quot;</code> - 如果超出了打印宽度，请将散的包好。</li>
-<li><code>&quot;never&quot;</code> - 不包散的。</li>
-<li><code>&quot;preserve&quot;</code> - 按原样包散的。</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Default</th>
-<th style="text-align:center">Cli Override</th>
-<th style="text-align:center">Api Override</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">“preserve”</td>
-<td style="text-align:center">–prose-wrap &lt;always\</td>
-<td style="text-align:center">never\</td>
-<td>preserve&gt;</td>
-<td>proseWrap: “&lt;always\</td>
-<td>never\</td>
-<td>preserve&gt;”</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Prettier-Option&quot;&gt;&lt;a href=&quot;#Prettier-Option&quot; class=&quot;headerlink&quot; title=&quot;Prettier Option&quot;&gt;&lt;/a&gt;Prettier Option&lt;/h1&gt;&lt;p&gt;.Prettierrc&lt;/p&gt;
-&lt;p&gt;Cli是在终端使用，&lt;/p&gt;
-&lt;p&gt;Api是在&lt;code&gt;.Prettierrc&lt;/code&gt;中设置使用&lt;br&gt;
-    
-    </summary>
-    
-      <category term="前端工具" scheme="http://xuzihao.fun/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="前端工具" scheme="http://xuzihao.fun/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
