@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://xuzihao.fun/JavaScript%E5%87%BD%E6%95%B0.html</loc>
+    
+    <lastmod>2018-04-27T07:19:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://xuzihao.fun/Webpack4%E9%85%8D%E7%BD%AE.html</loc>
     
     <lastmod>2018-04-21T11:42:28.000Z</lastmod>
@@ -397,13 +404,6 @@
     <loc>http://xuzihao.fun/JavaScript%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5copy.html</loc>
     
     <lastmod>2017-09-22T09:50:18.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://xuzihao.fun/JavaScript%E5%87%BD%E6%95%B0.html</loc>
-    
-    <lastmod>2017-09-22T09:50:14.000Z</lastmod>
     
   </url>
   
