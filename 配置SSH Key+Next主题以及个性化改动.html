@@ -88,22 +88,22 @@
 
 
 
-<meta name="description" content="Git SSH Key 生成步骤Git是分布式的代码管理工具，远程的代码管理是基于SSH的，所以要使用远程的Git则需要SSH的配置。  第一次使用要设置Git的user name 和email1$ git config --global user.name    1$ git config --global user.email">
+<meta name="description" content="Git SSH Key 生成步骤Git是分布式的代码管理工具，远程的代码管理是基于SSH的，所以要使用远程的Git则需要SSH的配置。  第一次使用要设置Git的user name 和email 1$ git config --global user.name 1$ git config --global user.email">
 <meta name="keywords" content="git,hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="配置SSH Key+Next主题以及个性化改动">
 <meta property="og:url" content="http://xuzihao.fun/配置SSH Key+Next主题以及个性化改动.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="Git SSH Key 生成步骤Git是分布式的代码管理工具，远程的代码管理是基于SSH的，所以要使用远程的Git则需要SSH的配置。  第一次使用要设置Git的user name 和email1$ git config --global user.name    1$ git config --global user.email">
+<meta property="og:description" content="Git SSH Key 生成步骤Git是分布式的代码管理工具，远程的代码管理是基于SSH的，所以要使用远程的Git则需要SSH的配置。  第一次使用要设置Git的user name 和email 1$ git config --global user.name 1$ git config --global user.email">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://xuzihao.fun/images/github.png">
 <meta property="og:image" content="http://xuzihao.fun/images/foot.jpg">
 <meta property="og:image" content="http://xuzihao.fun/images/foot1.png">
 <meta property="og:image" content="http://xuzihao.fun/images/foot2.png">
-<meta property="og:updated_time" content="2017-03-21T08:46:28.000Z">
+<meta property="og:updated_time" content="2018-04-30T03:57:37.289Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="配置SSH Key+Next主题以及个性化改动">
-<meta name="twitter:description" content="Git SSH Key 生成步骤Git是分布式的代码管理工具，远程的代码管理是基于SSH的，所以要使用远程的Git则需要SSH的配置。  第一次使用要设置Git的user name 和email1$ git config --global user.name    1$ git config --global user.email">
+<meta name="twitter:description" content="Git SSH Key 生成步骤Git是分布式的代码管理工具，远程的代码管理是基于SSH的，所以要使用远程的Git则需要SSH的配置。  第一次使用要设置Git的user name 和email 1$ git config --global user.name 1$ git config --global user.email">
 <meta name="twitter:image" content="http://xuzihao.fun/images/github.png">
 
 
@@ -313,8 +313,8 @@
             
               <span class="post-updated">
               &nbsp; | &nbsp; 更新于
-              <time itemprop="dateUpdated" datetime="2017-03-21T16:46:28+08:00" content="2017-03-21">
-                2017-03-21
+              <time itemprop="dateUpdated" datetime="2018-04-30T11:57:37+08:00" content="2018-04-30">
+                2018-04-30
               </time>
               </span>
             
@@ -391,18 +391,16 @@
       
         <h1 id="Git-SSH-Key-生成步骤"><a href="#Git-SSH-Key-生成步骤" class="headerlink" title="Git SSH Key 生成步骤"></a>Git SSH Key 生成步骤</h1><p>Git是分布式的代码管理工具，远程的代码管理是基于SSH的，所以要使用远程的Git则需要SSH的配置。</p>
 <ul>
-<li>第一次使用要设置Git的user name 和email<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.name</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.email</span></span><br></pre></td></tr></table></figure>
- <a id="more"></a>
-<ul>
+<li><p>第一次使用要设置Git的user name 和email</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git config --global user.name</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git config --global user.email</span><br></pre></td></tr></table></figure>
+<a id="more"></a></li>
 <li><p>查看你是否已经拥有密钥</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">cd</span> ~/.ssh</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>cd ~/.ssh</span><br></pre></td></tr></table></figure>
 <p>如果没有的话就不会有此文件，有的话就会备份删除掉</p>
 </li>
 <li><p>生成密钥</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ssh-keygen -t rsa -C “user.email”</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ssh-keygen -t rsa -C “user.email”</span><br></pre></td></tr></table></figure>
 <p>你将会遇到以下情况的处理：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/root/.ssh/id_rsa):  直接回车</span><br><span class="line">Enter passphrase (empty for no passphrase):               直接回车</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved in /root/.ssh/id_rsa.  公钥</span><br><span class="line">Your public key has been saved in /root/.ssh/id_rsa.pub.  私钥</span><br><span class="line">The key fingerprint is:</span><br><span class="line">4d:dd:48:af:76:c2:ba:a8:bc:20:f3:28:1d:6a:28:53</span><br></pre></td></tr></table></figure>
 </li>
@@ -410,20 +408,20 @@
 <p>就是按3次回车，密码为空！<br>最后你会得到两个文件：<code>id_rsa</code>和<code>id_rsa.pub</code></p>
 <ul>
 <li>把密钥加到Github或者码云或者Coding的SSH上<br><img src="/images/github.png" alt="Github"><br>我们需要把<code>id_rsa.pub</code>中的内容全选复制，然后粘贴进Pages的各自SSH地方，当然需要输入密码。</li>
-<li>测试SSH<br>Github：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ssh -T git@github.com</span></span><br></pre></td></tr></table></figure>
+<li>测试SSH<br>Github：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>码云：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ssh -T git@git.oschina.net</span></span><br></pre></td></tr></table></figure></p>
-<p>Coding:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ssh -T git@coding.net</span></span><br></pre></td></tr></table></figure></p>
+<p>码云：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>ssh -T git@git.oschina.net</span><br></pre></td></tr></table></figure></p>
+<p>Coding:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>ssh -T git@coding.net</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>若返回则配置成功<br>github:<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host ‘github.com (207.97.227.239)’ can’t be established.</span><br><span class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)? yes</span><br><span class="line">Warning: Permanently added ‘github.com,207.97.227.239′ (RSA) to the list of known hosts.</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>码云：<code>Welcome to Git@OSC, yourname!</code><br>Coding：<code>Enter passphrase for key ‘/c/Users/Yuankai/.ssh/id_rsa’: Coding.net Tips : [ Hello Kyle_lyk! You have connected to Coding.net by SSH successfully! ]</code><br>那么配置好，我们就可以把Hexo部署到Git上了<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">hexo deploy</span></span><br></pre></td></tr></table></figure></p>
+<p>码云：<code>Welcome to Git@OSC, yourname!</code><br>Coding：<code>Enter passphrase for key ‘/c/Users/Yuankai/.ssh/id_rsa’: Coding.net Tips : [ Hello Kyle_lyk! You have connected to Coding.net by SSH successfully! ]</code><br>那么配置好，我们就可以把Hexo部署到Git上了<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>hexo deploy</span><br></pre></td></tr></table></figure></p>
 <h1 id="Hexo之Next"><a href="#Hexo之Next" class="headerlink" title="Hexo之Next"></a>Hexo之Next</h1><ul>
 <li>Hexo有很多主题，有大道至简的<code>maupassant</code> 也有<code>casper</code>还有<code>uno</code>。但是我还是最喜欢<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">next</a>的风格。</li>
 </ul>
-<h1 id="安装Next"><a href="#安装Next" class="headerlink" title="安装Next"></a>安装Next</h1><p>安装Next是非常的简单。如果你熟悉Git那么你就可以直接使用Git checkout代码：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> your-hexo-site</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="安装Next"><a href="#安装Next" class="headerlink" title="安装Next"></a>安装Next</h1><p>安装Next是非常的简单。如果你熟悉Git那么你就可以直接使用Git checkout代码：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cd your-hexo-site</span><br><span class="line"><span class="meta">$</span> git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></p>
 <p>还有一种方法是下载稳定版本</p>
 <ul>
 <li>前往Next版本<a href="https://github.com/iissnan/hexo-theme-next/releases" target="_blank" rel="noopener">发布页面</a></li>
@@ -435,14 +433,14 @@
 <li>我们需要在站点文件<code>_config.yml</code>中<code>ctrl+F</code>打入<code>theme</code>字段，并将其值改为<code>next</code>：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme:next</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="验证主题是否生成完成"><a href="#验证主题是否生成完成" class="headerlink" title="验证主题是否生成完成"></a>验证主题是否生成完成</h2><p>首先我们要右击你的站点然后选择<code>Git Bash Here</code>，并开启调试模式。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo s --debug</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="验证主题是否生成完成"><a href="#验证主题是否生成完成" class="headerlink" title="验证主题是否生成完成"></a>验证主题是否生成完成</h2><p>首先我们要右击你的站点然后选择<code>Git Bash Here</code>，并开启调试模式。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo s --debug</span><br></pre></td></tr></table></figure></p>
 <p>命令行出现：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure></p>
 <p>那么我们就可以在网址上输入<code>http://0.0.0.0:4000</code>去查看效果，检查站点是否正确运行。</p>
 <h1 id="Next各种细节"><a href="#Next各种细节" class="headerlink" title="Next各种细节"></a>Next各种细节</h1><h2 id="主题设定"><a href="#主题设定" class="headerlink" title="主题设定"></a>主题设定</h2><p>Scheme 是Next提供的一种特性，就因为Scheme我们有三种选择外观。</p>
 <ul>
 <li>Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</li>
 <li>Mist - Muse 的紧凑版本，整洁有序的单栏外观</li>
-<li>Pisces - 双栏 Scheme，小家碧玉似的清新<br>Scheme 的切换通过更改 主题配置文件（theme/next下的<code>_config.yml</code>），搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可。<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">scheme: Muse</span></span><br><span class="line"><span class="meta">#</span><span class="bash">scheme: Mist</span></span><br><span class="line">scheme: Pisces</span><br></pre></td></tr></table></figure>
+<li>Pisces - 双栏 Scheme，小家碧玉似的清新<br>Scheme 的切换通过更改 主题配置文件（theme/next下的<code>_config.yml</code>），搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可。<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>scheme: Muse</span><br><span class="line"><span class="meta">#</span>scheme: Mist</span><br><span class="line">scheme: Pisces</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>还有更多的小东西大家可以去<a href="https://github.com/iissnan/hexo-theme-next/releases" target="_blank" rel="noopener">Next官方文档</a>看。比如说</p>
@@ -591,7 +589,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-count">75</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -613,7 +611,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

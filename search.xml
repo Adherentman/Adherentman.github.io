@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[配置阿里云服务器之Docker服务]]></title>
+    <url>%2F%E9%85%8D%E7%BD%AE%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B9%8BDocker%E6%9C%8D%E5%8A%A1.html</url>
+    <content type="text"><![CDATA[配置阿里云服务器之Docker服务阿里云搜索容器镜像服务。网址地址 具体操作看别人的博文:博文地址下面讲一点使用docker注意事项和上传至阿里云 保存容器我们进到容器里一顿apt update &amp;&amp; apt install 巴拉巴拉但是只要exit一pull就发现所有做的都没了。原来我是没commit命令如下：docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]] OPTIONS: –author , -a 作者 –change , -c 将Docker file指令应用于创建的映像 –message , -m 提交信息 –pause , -p 在提交期间暂停容器因为我得是私有镜像仓库可能会有以下情况：如果出现这种情况那么我们可以直接pull该镜像即可]]></content>
+      <categories>
+        <category>阿里云服务的使用</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Typescript配置采坑之路]]></title>
     <url>%2FTypescript%E9%85%8D%E7%BD%AE%E9%87%87%E5%9D%91%E4%B9%8B%E8%B7%AF.html</url>
     <content type="text"><![CDATA[这是没有@typesc/node导致的。但是安装最新的10.0.0也不行。我就安装了@types/node@8 tsconfig文件加这条： “module”: “commonjs”, tsconfig文件加这条： “lib”: [“es2015”]]]></content>
@@ -631,6 +642,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[数据库E-R图]]></title>
+    <url>%2FE-R%E5%9B%BE.html</url>
+    <content type="text"><![CDATA[E-R图E-R图是指实体-关系-属性三个基本概括数据的基本结构. 强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。 ER图的实体（entity）即数据模型中的数据对象，例如人、学生、音乐都可以作为一个数据对象，用长方体来表示，每个实体都有自己的实体成员（entity member）或者说实体对象（entity instance），例如学生实体里包括张三、李四等，实体成员（entity member）/实体实例（entity instance） 不需要出现在ER图中。 ER图的属性（attribute）即数据对象所具有的属性，例如学生具有姓名、学号、年级等属性，用椭圆形表示，属性分为唯一属性（ unique attribute）和非唯一属性，唯一属性指的是唯一可用来标识该实体实例或者成员的属性，用下划线表示，一般来讲实体都至少有一个唯一属性。 ER图的关系（relationship）用来表现数据对象与数据对象之间的联系，例如学生的实体和成绩表的实体之间有一定的联系，每个学生都有自己的成绩表，这就是一种关系，关系用菱形来表示。]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[React-Router v3]]></title>
     <url>%2FReact-Router.html</url>
     <content type="text"><![CDATA[React-Router3路径语法路由路径是匹配一个（或一部分）URL 的 一个字符串模式。大部分的路由路径都可以直接按照字面量理解，除了以下几个特殊的符号： :paramName – 匹配一段位于 /、? 或 # 之后的 URL。 命中的部分将被作为一个参数 () – 在它内部的内容被认为是可选的 * – 匹配任意字符（非贪婪的）直到命中下一个字符或者整个 URL 的末尾，并创建一个 splat 参数 12345678910//匹配 /hello/michael 和 /hello/ryan&lt;Route path=&quot;/hello/:name&quot;&gt; //匹配 /hello, /hello/02 和 /hello/01&lt;Route path=&quot;/hello(/:id)&quot;&gt; //匹配 /files/hello.jpg和/files/path/to/hello.jpg&lt;Route path=&quot;/files/*.*&quot;&gt; Histories常用的 history 有三种形式， 但是你也可以使用 React Router 实现自定义的 history。 browserHistory (推荐) hashHistory createMemoryHistory 1&lt;Router history=&#123;browserHistory&#125;&gt; browserHistoryBrowser history 是使用 React Router 的应用推荐的 history。它使用浏览器中的 History API 用于处理 URL，创建一个像example.com/some/path这样真实的 URL 。 在组件外部使用导航虽然在组件内部可以使用 this.context.router 来实现导航，但许多应用想要在组件外部使用导航。使用Router组件上被赋予的history可以在组件外部实现导航。]]></content>
@@ -651,17 +673,6 @@
       </categories>
       <tags>
         <tag>GraphQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[数据库E-R图]]></title>
-    <url>%2FE-R%E5%9B%BE.html</url>
-    <content type="text"><![CDATA[E-R图E-R图是指实体-关系-属性三个基本概括数据的基本结构. 强调ER模型设计的两大内容：一是将需求通过ER表达，另一个是将ER转换为关系模型。ER图是从实践归纳出来的理论方法，可以重新指导实践行为，既可以作为理解和表达用户数据需求的手段，同时也构成如何生成关系模型的依据。 ER图的实体（entity）即数据模型中的数据对象，例如人、学生、音乐都可以作为一个数据对象，用长方体来表示，每个实体都有自己的实体成员（entity member）或者说实体对象（entity instance），例如学生实体里包括张三、李四等，实体成员（entity member）/实体实例（entity instance） 不需要出现在ER图中。 ER图的属性（attribute）即数据对象所具有的属性，例如学生具有姓名、学号、年级等属性，用椭圆形表示，属性分为唯一属性（ unique attribute）和非唯一属性，唯一属性指的是唯一可用来标识该实体实例或者成员的属性，用下划线表示，一般来讲实体都至少有一个唯一属性。 ER图的关系（relationship）用来表现数据对象与数据对象之间的联系，例如学生的实体和成绩表的实体之间有一定的联系，每个学生都有自己的成绩表，这就是一种关系，关系用菱形来表示。]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
@@ -807,7 +818,7 @@
   <entry>
     <title><![CDATA[配置SSH Key+Next主题以及个性化改动]]></title>
     <url>%2F%E9%85%8D%E7%BD%AESSH%20Key%2BNext%E4%B8%BB%E9%A2%98%E4%BB%A5%E5%8F%8A%E4%B8%AA%E6%80%A7%E5%8C%96%E6%94%B9%E5%8A%A8.html</url>
-    <content type="text"><![CDATA[Git SSH Key 生成步骤Git是分布式的代码管理工具，远程的代码管理是基于SSH的，所以要使用远程的Git则需要SSH的配置。 第一次使用要设置Git的user name 和email1$ git config --global user.name 1$ git config --global user.email 查看你是否已经拥有密钥 1$cd ~/.ssh 如果没有的话就不会有此文件，有的话就会备份删除掉 生成密钥 1$ ssh-keygen -t rsa -C “user.email” 你将会遇到以下情况的处理： 12345678 Generating public/private rsa key pair.Enter file in which to save the key (/root/.ssh/id_rsa): 直接回车Enter passphrase (empty for no passphrase): 直接回车Enter same passphrase again:Your identification has been saved in /root/.ssh/id_rsa. 公钥Your public key has been saved in /root/.ssh/id_rsa.pub. 私钥The key fingerprint is:4d:dd:48:af:76:c2:ba:a8:bc:20:f3:28:1d:6a:28:53 就是按3次回车，密码为空！最后你会得到两个文件：id_rsa和id_rsa.pub 把密钥加到Github或者码云或者Coding的SSH上我们需要把id_rsa.pub中的内容全选复制，然后粘贴进Pages的各自SSH地方，当然需要输入密码。 测试SSHGithub：1$ssh -T git@github.com 码云：1$ssh -T git@git.oschina.net Coding:1$ssh -T git@coding.net 若返回则配置成功github:1234The authenticity of host ‘github.com (207.97.227.239)’ can’t be established.RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.Are you sure you want to continue connecting (yes/no)? yesWarning: Permanently added ‘github.com,207.97.227.239′ (RSA) to the list of known hosts. 码云：Welcome to Git@OSC, yourname!Coding：Enter passphrase for key ‘/c/Users/Yuankai/.ssh/id_rsa’: Coding.net Tips : [ Hello Kyle_lyk! You have connected to Coding.net by SSH successfully! ]那么配置好，我们就可以把Hexo部署到Git上了1$hexo deploy Hexo之Next Hexo有很多主题，有大道至简的maupassant 也有casper还有uno。但是我还是最喜欢next的风格。 安装Next安装Next是非常的简单。如果你熟悉Git那么你就可以直接使用Git checkout代码：12$ cd your-hexo-site$ git clone https://github.com/iissnan/hexo-theme-next themes/next 还有一种方法是下载稳定版本 前往Next版本发布页面 一直下拉找到Source code(zip)点击即可下载 之后把下载的压缩包至站点的themes目录下，并将解压后的文件名改为next。 启用Next 你需要打开你的站点目录找到_config.yml这个文件，记住不是themes下next中的_config.yml。 我们需要在站点文件_config.yml中ctrl+F打入theme字段，并将其值改为next：1theme:next 验证主题是否生成完成首先我们要右击你的站点然后选择Git Bash Here，并开启调试模式。1$ hexo s --debug 命令行出现：1INFO Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop. 那么我们就可以在网址上输入http://0.0.0.0:4000去查看效果，检查站点是否正确运行。 Next各种细节主题设定Scheme 是Next提供的一种特性，就因为Scheme我们有三种选择外观。 Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白 Mist - Muse 的紧凑版本，整洁有序的单栏外观 Pisces - 双栏 Scheme，小家碧玉似的清新Scheme 的切换通过更改 主题配置文件（theme/next下的_config.yml），搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可。123#scheme: Muse#scheme: Mistscheme: Pisces 还有更多的小东西大家可以去Next官方文档看。比如说 菜单， 侧栏， 头像， 作者昵称， 站点描述， 第三方服务等。 Next中foot更改我把原来的什么Hexo啊..Next.Pisces啊通通改了，这才像我们自己的博客呀！没得说。我们需要打开next下的layout接着打开_partials下的footer.swig。然后我们要把其中红框里的删除。紧接着我们回到next下，找到languages，打开zh-Hans.yml。我们可以改成如下：123footer: powered: "个人专属 " theme: Adherent 看大家的想法自己随意发挥！好啦，我要去研究SEO了！！祝大家建博成功]]></content>
+    <content type="text"><![CDATA[Git SSH Key 生成步骤Git是分布式的代码管理工具，远程的代码管理是基于SSH的，所以要使用远程的Git则需要SSH的配置。 第一次使用要设置Git的user name 和email 1$ git config --global user.name 1$ git config --global user.email 查看你是否已经拥有密钥 1$cd ~/.ssh 如果没有的话就不会有此文件，有的话就会备份删除掉 生成密钥 1$ ssh-keygen -t rsa -C “user.email” 你将会遇到以下情况的处理： 12345678 Generating public/private rsa key pair.Enter file in which to save the key (/root/.ssh/id_rsa): 直接回车Enter passphrase (empty for no passphrase): 直接回车Enter same passphrase again:Your identification has been saved in /root/.ssh/id_rsa. 公钥Your public key has been saved in /root/.ssh/id_rsa.pub. 私钥The key fingerprint is:4d:dd:48:af:76:c2:ba:a8:bc:20:f3:28:1d:6a:28:53 就是按3次回车，密码为空！最后你会得到两个文件：id_rsa和id_rsa.pub 把密钥加到Github或者码云或者Coding的SSH上我们需要把id_rsa.pub中的内容全选复制，然后粘贴进Pages的各自SSH地方，当然需要输入密码。 测试SSHGithub：1$ssh -T git@github.com 码云：1$ssh -T git@git.oschina.net Coding:1$ssh -T git@coding.net 若返回则配置成功github:1234The authenticity of host ‘github.com (207.97.227.239)’ can’t be established.RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.Are you sure you want to continue connecting (yes/no)? yesWarning: Permanently added ‘github.com,207.97.227.239′ (RSA) to the list of known hosts. 码云：Welcome to Git@OSC, yourname!Coding：Enter passphrase for key ‘/c/Users/Yuankai/.ssh/id_rsa’: Coding.net Tips : [ Hello Kyle_lyk! You have connected to Coding.net by SSH successfully! ]那么配置好，我们就可以把Hexo部署到Git上了1$hexo deploy Hexo之Next Hexo有很多主题，有大道至简的maupassant 也有casper还有uno。但是我还是最喜欢next的风格。 安装Next安装Next是非常的简单。如果你熟悉Git那么你就可以直接使用Git checkout代码：12$ cd your-hexo-site$ git clone https://github.com/iissnan/hexo-theme-next themes/next 还有一种方法是下载稳定版本 前往Next版本发布页面 一直下拉找到Source code(zip)点击即可下载 之后把下载的压缩包至站点的themes目录下，并将解压后的文件名改为next。 启用Next 你需要打开你的站点目录找到_config.yml这个文件，记住不是themes下next中的_config.yml。 我们需要在站点文件_config.yml中ctrl+F打入theme字段，并将其值改为next：1theme:next 验证主题是否生成完成首先我们要右击你的站点然后选择Git Bash Here，并开启调试模式。1$ hexo s --debug 命令行出现：1INFO Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop. 那么我们就可以在网址上输入http://0.0.0.0:4000去查看效果，检查站点是否正确运行。 Next各种细节主题设定Scheme 是Next提供的一种特性，就因为Scheme我们有三种选择外观。 Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白 Mist - Muse 的紧凑版本，整洁有序的单栏外观 Pisces - 双栏 Scheme，小家碧玉似的清新Scheme 的切换通过更改 主题配置文件（theme/next下的_config.yml），搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 # 去除即可。123#scheme: Muse#scheme: Mistscheme: Pisces 还有更多的小东西大家可以去Next官方文档看。比如说 菜单， 侧栏， 头像， 作者昵称， 站点描述， 第三方服务等。 Next中foot更改我把原来的什么Hexo啊..Next.Pisces啊通通改了，这才像我们自己的博客呀！没得说。我们需要打开next下的layout接着打开_partials下的footer.swig。然后我们要把其中红框里的删除。紧接着我们回到next下，找到languages，打开zh-Hans.yml。我们可以改成如下：123footer: powered: "个人专属 " theme: Adherent 看大家的想法自己随意发挥！好啦，我要去研究SEO了！！祝大家建博成功]]></content>
       <categories>
         <category>Technology</category>
       </categories>
