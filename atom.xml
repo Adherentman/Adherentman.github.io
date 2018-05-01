@@ -43,7 +43,7 @@
     <link href="http://xuzihao.fun/%E9%85%8D%E7%BD%AE%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B9%8BDocker%E6%9C%8D%E5%8A%A1.html"/>
     <id>http://xuzihao.fun/配置阿里云服务器之Docker服务.html</id>
     <published>2018-04-30T04:00:00.000Z</published>
-    <updated>2018-04-30T03:59:31.944Z</updated>
+    <updated>2018-05-01T12:30:00.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="配置阿里云服务器之Docker服务"><a href="#配置阿里云服务器之Docker服务" class="headerlink" title="配置阿里云服务器之Docker服务"></a>配置阿里云服务器之Docker服务</h1><p>阿里云搜索容器镜像服务。<a href="https://cr.console.aliyun.com/" target="_blank" rel="noopener">网址地址</a></p><p>具体操作看别人的博文:<a href="https://yq.aliyun.com/articles/70756" target="_blank" rel="noopener">博文地址</a><br>下面讲一点使用docker注意事项和上传至阿里云<br><a id="more"></a></p><h2 id="保存容器"><a href="#保存容器" class="headerlink" title="保存容器"></a>保存容器</h2><p>我们进到容器里一顿<code>apt update &amp;&amp; apt install 巴拉巴拉</code><br>但是只要<code>exit</code>一<code>pull</code>就发现所有做的都没了。<br>原来我是没<code>commit</code><br>命令如下：<br><code>docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]</code></p><p>OPTIONS:</p><ul><li>–author , -a 作者</li><li>–change , -c 将Docker file指令应用于创建的映像</li><li>–message , -m 提交信息</li><li>–pause , -p 在提交期间暂停容器<h2 id="因为我得是私有镜像仓库可能会有以下情况："><a href="#因为我得是私有镜像仓库可能会有以下情况：" class="headerlink" title="因为我得是私有镜像仓库可能会有以下情况："></a>因为我得是私有镜像仓库可能会有以下情况：</h2><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/dockerpusherror.png" alt="docker-push"><br>如果出现这种情况那么我们可以直接pull该镜像即可</li></ul>]]></content>
     
@@ -54,7 +54,7 @@
     
     </summary>
     
-      <category term="阿里云服务的使用" scheme="http://xuzihao.fun/categories/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+      <category term="阿里云服务的使用、docker" scheme="http://xuzihao.fun/categories/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%81docker/"/>
     
     
       <category term="docker" scheme="http://xuzihao.fun/tags/docker/"/>

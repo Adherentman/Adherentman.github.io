@@ -16,7 +16,7 @@
     <url>%2F%E9%85%8D%E7%BD%AE%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B9%8BDocker%E6%9C%8D%E5%8A%A1.html</url>
     <content type="text"><![CDATA[配置阿里云服务器之Docker服务阿里云搜索容器镜像服务。网址地址 具体操作看别人的博文:博文地址下面讲一点使用docker注意事项和上传至阿里云 保存容器我们进到容器里一顿apt update &amp;&amp; apt install 巴拉巴拉但是只要exit一pull就发现所有做的都没了。原来我是没commit命令如下：docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]] OPTIONS: –author , -a 作者 –change , -c 将Docker file指令应用于创建的映像 –message , -m 提交信息 –pause , -p 在提交期间暂停容器因为我得是私有镜像仓库可能会有以下情况：如果出现这种情况那么我们可以直接pull该镜像即可]]></content>
       <categories>
-        <category>阿里云服务的使用</category>
+        <category>阿里云服务的使用、docker</category>
       </categories>
       <tags>
         <tag>docker</tag>
