@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-05-02T01:24:15.000Z</updated>
+  <updated>2018-05-03T08:47:56.809Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vscode快捷键提升效率</title>
+    <link href="http://xuzihao.fun/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%8F%90%E5%8D%87%E6%95%88%E7%8E%87.html"/>
+    <id>http://xuzihao.fun/vscode快捷键提升效率.html</id>
+    <published>2018-05-03T08:09:01.915Z</published>
+    <updated>2018-05-03T08:47:56.809Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="vscode快捷键提升效率"><a href="#vscode快捷键提升效率" class="headerlink" title="vscode快捷键提升效率"></a>vscode快捷键提升效率</h1><p>windows： cmd = ctrl, option = alt</p><ul><li>重开一行<ul><li>不在行尾向下： cmd + enter</li><li>不在行尾向上： shift + cmd + enter</li></ul></li><li>删除一行<ul><li>cmd + x</li><li>shift + cmd + k</li></ul></li><li>移动换位<ul><li>option + ↑</li><li>option + ↓</li></ul></li><li>复制一行<ul><li>shift + option + ↑</li><li>shift + option + ↓</li></ul></li><li>选一个词<ul><li>cmd + d</li></ul></li><li>搜索<ul><li>cmd + f</li><li>cmd + option + f 替换</li><li>cmd + shift + f 项目中替换</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;vscode快捷键提升效率&quot;&gt;&lt;a href=&quot;#vscode快捷键提升效率&quot; class=&quot;headerlink&quot; title=&quot;vscode快捷键提升效率&quot;&gt;&lt;/a&gt;vscode快捷键提升效率&lt;/h1&gt;&lt;p&gt;windows： cmd = ctrl, optio
+      
+    
+    </summary>
+    
+      <category term="前端工具" scheme="http://xuzihao.fun/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="前端工具" scheme="http://xuzihao.fun/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>微微学习Docker</title>
@@ -504,43 +529,6 @@
     
     
       <category term="计算机网络" scheme="http://xuzihao.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS3transform/transition</title>
-    <link href="http://xuzihao.fun/CSS3transform.html"/>
-    <id>http://xuzihao.fun/CSS3transform.html</id>
-    <published>2018-03-15T13:52:00.000Z</published>
-    <updated>2018-04-16T04:19:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="CSS3-transform"><a href="#CSS3-transform" class="headerlink" title="CSS3 transform"></a>CSS3 transform</h1><p>先来了解下单位：</p><ul><li>度（deg）。一个圆360度</li></ul><p>Transform就指变换。</p><p>transform:</p><ul><li>矩阵  (matrix)<ul><li>用六个指定的值来指定一个均匀的二维（2D）变换矩阵</li></ul></li><li>转换（translate）</li><li>旋转（rotate）</li><li>缩放（scale）</li><li>倾斜（skew）</li></ul><a id="more"></a><p>但是还可以这样玩</p><blockquote><p>scaleX, scaleY</p><p>skewX, skewY</p><p>translateX, translateY</p><p>matrix3d</p><p><code>matrix(a, b, c, d, tx, ty)</code> 是 <code>matrix3d(a, b, 0, 0, c, d, 0, 0, 0, 0, 1, 0, tx, ty, 0, 1)</code> 的简写</p></blockquote><ul><li><strong>transform-origin</strong><ul><li>以一个点去变形</li></ul></li><li><strong>transform-style</strong><ul><li>确定元素的子元素是否位于3D空间中，还是在该元素所在的平面内被扁平化。</li></ul></li></ul><h1 id="CSS-transition"><a href="#CSS-transition" class="headerlink" title="CSS transition"></a>CSS transition</h1><p><code>transition = &lt;transition-property&gt; | &lt;transition-duration&gt; | &lt;transition-delay&gt; | &lt;transition-timing-function&gt;</code></p><ul><li>Transition-property: 指定过渡的属性值。</li><li>Transition-duration: 指定这个过渡的持续时间</li><li>Transition-delay: 延迟过渡时间</li><li>Transition-timing-function: 指定过渡动画运行类型；<ul><li>ease    越来越慢</li><li>linear      匀速</li><li>ease-in    先慢后快</li><li>ease-out 先快后慢 </li><li>ease-in-out 先慢后快再慢</li><li>cubic-bezier()</li></ul></li></ul><p>先来看一个transform和transition结合的demo：<a href="https://codepan.net/gist/02e3a0857615ee407878f1b46663f950" target="_blank" rel="noopener">字体歪斜变正</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;CSS3-transform&quot;&gt;&lt;a href=&quot;#CSS3-transform&quot; class=&quot;headerlink&quot; title=&quot;CSS3 transform&quot;&gt;&lt;/a&gt;CSS3 transform&lt;/h1&gt;&lt;p&gt;先来了解下单位：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;度（deg）。一个圆360度&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Transform就指变换。&lt;/p&gt;
-&lt;p&gt;transform:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;矩阵  (matrix)&lt;ul&gt;
-&lt;li&gt;用六个指定的值来指定一个均匀的二维（2D）变换矩阵&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;转换（translate）&lt;/li&gt;
-&lt;li&gt;旋转（rotate）&lt;/li&gt;
-&lt;li&gt;缩放（scale）&lt;/li&gt;
-&lt;li&gt;倾斜（skew）&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="CSS" scheme="http://xuzihao.fun/categories/CSS/"/>
-    
-    
-      <category term="CSS" scheme="http://xuzihao.fun/tags/CSS/"/>
     
   </entry>
   
