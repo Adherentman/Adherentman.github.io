@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-05-03T08:47:56.809Z</updated>
+  <updated>2018-05-05T02:27:32.000Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <title>vscode快捷键提升效率</title>
     <link href="http://xuzihao.fun/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%8F%90%E5%8D%87%E6%95%88%E7%8E%87.html"/>
     <id>http://xuzihao.fun/vscode快捷键提升效率.html</id>
-    <published>2018-05-03T08:09:01.915Z</published>
-    <updated>2018-05-03T08:47:56.809Z</updated>
+    <published>2018-05-03T08:47:14.000Z</published>
+    <updated>2018-05-05T02:27:32.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="vscode快捷键提升效率"><a href="#vscode快捷键提升效率" class="headerlink" title="vscode快捷键提升效率"></a>vscode快捷键提升效率</h1><p>windows： cmd = ctrl, option = alt</p><ul><li>重开一行<ul><li>不在行尾向下： cmd + enter</li><li>不在行尾向上： shift + cmd + enter</li></ul></li><li>删除一行<ul><li>cmd + x</li><li>shift + cmd + k</li></ul></li><li>移动换位<ul><li>option + ↑</li><li>option + ↓</li></ul></li><li>复制一行<ul><li>shift + option + ↑</li><li>shift + option + ↓</li></ul></li><li>选一个词<ul><li>cmd + d</li></ul></li><li>搜索<ul><li>cmd + f</li><li>cmd + option + f 替换</li><li>cmd + shift + f 项目中替换</li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="vscode快捷键提升效率"><a href="#vscode快捷键提升效率" class="headerlink" title="vscode快捷键提升效率"></a>vscode快捷键提升效率</h1><p>windows： cmd = ctrl, option = alt</p><ul><li>重开一行<ul><li>不在行尾向下： cmd + enter</li><li>不在行尾向上： shift + cmd + enter</li></ul></li><li>删除一行<ul><li>cmd + x</li><li>shift + cmd + k</li></ul></li><li>移动换位<ul><li>option + ↑</li><li>option + ↓</li></ul></li><li>复制一行<ul><li>shift + option + ↑</li><li>shift + option + ↓</li></ul></li><li>选一个词<ul><li>cmd + d</li></ul></li><li>搜索<ul><li>cmd + f</li><li>cmd + option + f 替换</li><li>cmd + shift + f 项目中替换</li></ul></li><li>使用鼠标键选择列 v1.23<ul><li>按住shift + option 之后通过鼠标去选择</li></ul></li></ul>]]></content>
     
     <summary type="html">
     

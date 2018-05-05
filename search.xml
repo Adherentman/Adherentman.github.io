@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[vscode快捷键提升效率]]></title>
     <url>%2Fvscode%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%8F%90%E5%8D%87%E6%95%88%E7%8E%87.html</url>
-    <content type="text"><![CDATA[vscode快捷键提升效率windows： cmd = ctrl, option = alt 重开一行 不在行尾向下： cmd + enter 不在行尾向上： shift + cmd + enter 删除一行 cmd + x shift + cmd + k 移动换位 option + ↑ option + ↓ 复制一行 shift + option + ↑ shift + option + ↓ 选一个词 cmd + d 搜索 cmd + f cmd + option + f 替换 cmd + shift + f 项目中替换]]></content>
+    <content type="text"><![CDATA[vscode快捷键提升效率windows： cmd = ctrl, option = alt 重开一行 不在行尾向下： cmd + enter 不在行尾向上： shift + cmd + enter 删除一行 cmd + x shift + cmd + k 移动换位 option + ↑ option + ↓ 复制一行 shift + option + ↑ shift + option + ↓ 选一个词 cmd + d 搜索 cmd + f cmd + option + f 替换 cmd + shift + f 项目中替换 使用鼠标键选择列 v1.23 按住shift + option 之后通过鼠标去选择]]></content>
       <categories>
         <category>前端工具</category>
       </categories>
