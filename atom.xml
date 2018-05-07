@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-05-05T02:27:32.000Z</updated>
+  <updated>2018-05-07T11:34:00.500Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mongoose小试牛刀</title>
+    <link href="http://xuzihao.fun/Mongoose%E5%B0%8F%E8%AF%95%E7%89%9B%E5%88%80.html"/>
+    <id>http://xuzihao.fun/Mongoose小试牛刀.html</id>
+    <published>2018-05-07T11:32:51.537Z</published>
+    <updated>2018-05-07T11:34:00.500Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Mongoose小试牛刀"><a href="#Mongoose小试牛刀" class="headerlink" title="Mongoose小试牛刀"></a>Mongoose小试牛刀</h1><h2 id="认识下Mongodb："><a href="#认识下Mongodb：" class="headerlink" title="认识下Mongodb："></a>认识下Mongodb：</h2><ul><li>文档(document)<br>[image:79168A5D-318F-44EC-A56E-6ABE09429711-737-00007D6E0562294A/mongodb-Document.png]</li><li>集合（Collection）<ul><li>document存于collection</li></ul></li><li>数据库（database）<ul><li>里面有很多collection</li></ul></li></ul><a id="more"></a><h2 id="在mongoose中："><a href="#在mongoose中：" class="headerlink" title="在mongoose中："></a>在mongoose中：</h2><ul><li>Schema -&gt; collection，不具备数据库的操作能力</li><li>Model -&gt; 由Schema生成的模型，能操作数据库</li><li>Entity -&gt; 由Model创建的实例，也能操作数据库</li></ul><h2 id="创建schema"><a href="#创建schema" class="headerlink" title="创建schema"></a>创建schema</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> mongoose <span class="keyword">from</span> <span class="string">'mongoose'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">interface</span> UserType <span class="keyword">extends</span> mongoose.Document &#123;</span><br><span class="line">  name: <span class="built_in">String</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> userSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</span><br><span class="line">  name: <span class="built_in">String</span>,</span><br><span class="line">&#125;, &#123;collection: <span class="string">'user'</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> User = mongoose.model&lt;UserType&gt;(<span class="string">'User'</span>, userSchema)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> User;</span><br></pre></td></tr></table></figure><p>在这里我们会遇到一个问题，如果我们不添加<code>collections: &#39;user&#39;</code>之后会发现会创建一个名为 <code>users</code> 的 <code>collection</code> 的表名。<br>还有个方法自定义 <code>collection</code> 名：<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> User = mongoose.model&lt;UserType&gt;(<span class="string">'User'</span>, userSchema, <span class="string">'user'</span>)</span><br></pre></td></tr></table></figure></p><p>二选一！</p><h2 id="创建model"><a href="#创建model" class="headerlink" title="创建model"></a>创建model</h2><ol><li><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> User, &#123; UserType &#125; <span class="keyword">from</span> <span class="string">'../schemas/User'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> UserModel = <span class="keyword">new</span> User(&#123;name: <span class="string">"xzh"</span>&#125;);</span><br><span class="line">UserModel.save(<span class="function">(<span class="params">(<span class="params">err: <span class="built_in">any</span>, product: UserType </span>)=&gt; &#123;</span></span></span><br><span class="line"><span class="function"><span class="params">  <span class="keyword">if</span>(<span class="params">err</span>) <span class="keyword">return</span> <span class="built_in">console</span>.error(<span class="params">err</span>);</span></span></span><br><span class="line"><span class="function"><span class="params">  <span class="built_in">console</span>.log(<span class="params">product, '结果'</span>);</span></span></span><br><span class="line"><span class="function"><span class="params">&#125;</span>))</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="params">export</span> <span class="params">default</span> <span class="params">UserModel</span>;</span></span><br></pre></td></tr></table></figure></li></ol><p>这有个小插曲，我们也可以不定义一个 <code>UserModel</code> 去向数据库写入数据：</p><ol start="2"><li><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> User, &#123; UserType &#125; <span class="keyword">from</span> <span class="string">'../schemas/User'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> User.create(&#123;name: <span class="string">"xzh"</span>&#125;, <span class="function">(<span class="params">err: <span class="built_in">any</span>, res: <span class="built_in">any</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span>(err) <span class="keyword">return</span> <span class="built_in">console</span>.error(err);</span><br><span class="line">  <span class="built_in">console</span>.log(res, <span class="string">'结果'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li></ol><p>因为前面也提到了在 <code>mongoose</code> 中还有个 <code>Entity</code> 的存在。<br>第1种是 <code>entity</code> 保存方法。<br>第2种是 <code>model</code> 保存方法。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Mongoose小试牛刀&quot;&gt;&lt;a href=&quot;#Mongoose小试牛刀&quot; class=&quot;headerlink&quot; title=&quot;Mongoose小试牛刀&quot;&gt;&lt;/a&gt;Mongoose小试牛刀&lt;/h1&gt;&lt;h2 id=&quot;认识下Mongodb：&quot;&gt;&lt;a href=&quot;#认识下Mongodb：&quot; class=&quot;headerlink&quot; title=&quot;认识下Mongodb：&quot;&gt;&lt;/a&gt;认识下Mongodb：&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;文档(document)&lt;br&gt;[image:79168A5D-318F-44EC-A56E-6ABE09429711-737-00007D6E0562294A/mongodb-Document.png]&lt;/li&gt;
+&lt;li&gt;集合（Collection）&lt;ul&gt;
+&lt;li&gt;document存于collection&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;数据库（database）&lt;ul&gt;
+&lt;li&gt;里面有很多collection&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://xuzihao.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="数据库" scheme="http://xuzihao.fun/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="Mongodb" scheme="http://xuzihao.fun/tags/Mongodb/"/>
+    
+  </entry>
   
   <entry>
     <title>vscode快捷键提升效率</title>
@@ -504,31 +538,6 @@
     
     
       <category term="CSS" scheme="http://xuzihao.fun/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Cookie、Session</title>
-    <link href="http://xuzihao.fun/Cookie-Session.html"/>
-    <id>http://xuzihao.fun/Cookie-Session.html</id>
-    <published>2018-03-17T06:54:00.000Z</published>
-    <updated>2018-03-17T07:43:26.135Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>中文名称为“小型文本文件”或“小甜饼”，总大小要小于4kb，并且尽量保证cookie的个数小于20个。</p><blockquote><p>摘自维基百科</p></blockquote><a id="more"></a><p>按存在时间所分，可以分为非持久Cookie和持久Cookie。那么非持久Cookie是保存在内存中，即你关闭浏览器就会消失。而非持久Cookie保存在硬盘中，只有你去清理或者Cookie到了过期时间该Cookie才会消失。</p><h3 id="为什么要有Cookie？"><a href="#为什么要有Cookie？" class="headerlink" title="为什么要有Cookie？"></a>为什么要有Cookie？</h3><p>因为HTTP协议是无状态的。也就是说，服务器并不知道你上次做了什么操作。所以我们需要一个帮手去记录我们刚刚都在网页上做了什么操作，所以Cookie就诞生了。<strong>也就是说服务器会给客户端发送一段cookie</strong>.</p><p>LocalStorage和SessionStorage都是本地存储，不会被发送到服务器上。同时空间比Cookie大很多，一般支持5-10M。 与Cookie类似，每个域名下会有不同的localStorage和SessionStorage实例，而且localStorage可以在多个标签页中互相访问。 其中LocalStorage没有过期时间，除非手动删除它会一直存在。而SessionStorage在浏览器会话结束时（关闭标签页，不包括刷新和跳转）清空。</p><h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><p>它其实是一个抽象的概念。它本质上是借助cookie本身和后端存储实现的。</p><h2 id="Cookie和Session的关系"><a href="#Cookie和Session的关系" class="headerlink" title="Cookie和Session的关系"></a>Cookie和Session的关系</h2><p>这里我做了一个图<img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/WX20180317-145114@2x.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Cookie&quot;&gt;&lt;a href=&quot;#Cookie&quot; class=&quot;headerlink&quot; title=&quot;Cookie&quot;&gt;&lt;/a&gt;Cookie&lt;/h2&gt;&lt;p&gt;中文名称为“小型文本文件”或“小甜饼”，总大小要小于4kb，并且尽量保证cookie的个数小于20个。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;摘自维基百科&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="计算机网络" scheme="http://xuzihao.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-    
-      <category term="计算机网络" scheme="http://xuzihao.fun/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   

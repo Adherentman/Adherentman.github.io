@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript,node.js," />
+  <meta name="keywords" content="数据库,Mongodb," />
 
 
 
@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="学Node日志(一)node实例1234567891011121314const http = require(&apos;http&apos;);const hostname = &apos;127.0.0.1&apos;;const port = 9000;const server = http.createServer((req,res) =&amp;gt; &amp;#123;    res.statusCode = 200;    res.s">
-<meta name="keywords" content="JavaScript,node.js">
+<meta name="description" content="Mongoose小试牛刀认识下Mongodb： 文档(document)[image:79168A5D-318F-44EC-A56E-6ABE09429711-737-00007D6E0562294A/mongodb-Document.png] 集合（Collection） document存于collection   数据库（database） 里面有很多collection">
+<meta name="keywords" content="数据库,Mongodb">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学Node日志(一)">
-<meta property="og:url" content="http://xuzihao.fun/Node.html">
+<meta property="og:title" content="Mongoose小试牛刀">
+<meta property="og:url" content="http://xuzihao.fun/Mongoose小试牛刀.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="学Node日志(一)node实例1234567891011121314const http = require(&apos;http&apos;);const hostname = &apos;127.0.0.1&apos;;const port = 9000;const server = http.createServer((req,res) =&amp;gt; &amp;#123;    res.statusCode = 200;    res.s">
+<meta property="og:description" content="Mongoose小试牛刀认识下Mongodb： 文档(document)[image:79168A5D-318F-44EC-A56E-6ABE09429711-737-00007D6E0562294A/mongodb-Document.png] 集合（Collection） document存于collection   数据库（database） 里面有很多collection">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-28T12:40:40.000Z">
+<meta property="og:updated_time" content="2018-05-07T11:34:00.500Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学Node日志(一)">
-<meta name="twitter:description" content="学Node日志(一)node实例1234567891011121314const http = require(&apos;http&apos;);const hostname = &apos;127.0.0.1&apos;;const port = 9000;const server = http.createServer((req,res) =&amp;gt; &amp;#123;    res.statusCode = 200;    res.s">
+<meta name="twitter:title" content="Mongoose小试牛刀">
+<meta name="twitter:description" content="Mongoose小试牛刀认识下Mongodb： 文档(document)[image:79168A5D-318F-44EC-A56E-6ABE09429711-737-00007D6E0562294A/mongodb-Document.png] 集合（Collection） document存于collection   数据库（database） 里面有很多collection">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://xuzihao.fun/Node.html"/>
+  <link rel="canonical" href="http://xuzihao.fun/Mongoose小试牛刀.html"/>
 
 
 
 
 
-  <title>学Node日志(一) | 壮壮-Technology</title>
+  <title>Mongoose小试牛刀 | 壮壮-Technology</title>
   
 
 
@@ -272,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/Node.html">
+    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/Mongoose小试牛刀.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XuZiHao">
@@ -289,7 +289,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">学Node日志(一)</h2>
+          <h2 class="post-title" itemprop="name headline">Mongoose小试牛刀</h2>
         
 
         <div class="post-meta">
@@ -301,15 +301,15 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-26T20:53:08+08:00">
-                2017-07-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-07T19:32:51+08:00">
+                2018-05-07
               </time>
             
             
               <span class="post-updated">
               &nbsp; | &nbsp; 更新于
-              <time itemprop="dateUpdated" datetime="2017-07-28T20:40:40+08:00" content="2017-07-28">
-                2017-07-28
+              <time itemprop="dateUpdated" datetime="2018-05-07T19:34:00+08:00" content="2018-05-07">
+                2018-05-07
               </time>
               </span>
             
@@ -331,8 +331,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Node-js/" itemprop="url" rel="index">
-                    <span itemprop="name">Node.js</span>
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
                   </a>
                 </span>
 
@@ -349,9 +349,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Node.html#comments" itemprop="discussionUrl">
+                <a href="/Mongoose小试牛刀.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="Node.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="Mongoose小试牛刀.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -384,68 +384,36 @@
       
 
       
-        <h1 id="学Node日志-一"><a href="#学Node日志-一" class="headerlink" title="学Node日志(一)"></a>学Node日志(一)</h1><h2 id="node实例"><a href="#node实例" class="headerlink" title="node实例"></a>node实例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> hostname = <span class="string">'127.0.0.1'</span>;</span><br><span class="line"><span class="keyword">const</span> port = <span class="number">9000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line">    res.statusCode = <span class="number">200</span>;</span><br><span class="line">    res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/plain'</span>);</span><br><span class="line">    res.end(<span class="string">'Hello World\n'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(port,hostname, () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'服务器运行在 http://$&#123;hostname&#125;:$&#123;port&#125;/'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+        <h1 id="Mongoose小试牛刀"><a href="#Mongoose小试牛刀" class="headerlink" title="Mongoose小试牛刀"></a>Mongoose小试牛刀</h1><h2 id="认识下Mongodb："><a href="#认识下Mongodb：" class="headerlink" title="认识下Mongodb："></a>认识下Mongodb：</h2><ul>
+<li>文档(document)<br>[image:79168A5D-318F-44EC-A56E-6ABE09429711-737-00007D6E0562294A/mongodb-Document.png]</li>
+<li>集合（Collection）<ul>
+<li>document存于collection</li>
+</ul>
+</li>
+<li>数据库（database）<ul>
+<li>里面有很多collection</li>
+</ul>
+</li>
+</ul>
 <a id="more"></a>
-<ul>
-<li><p><code>response.statusCode()</code>控制响应头刷新时将被发送到客户端的状态码</p>
-<ul>
-<li><code>res.statusCode = 200</code></li>
+<h2 id="在mongoose中："><a href="#在mongoose中：" class="headerlink" title="在mongoose中："></a>在mongoose中：</h2><ul>
+<li>Schema -&gt; collection，不具备数据库的操作能力</li>
+<li>Model -&gt; 由Schema生成的模型，能操作数据库</li>
+<li>Entity -&gt; 由Model创建的实例，也能操作数据库</li>
 </ul>
-<blockquote>
-<p>状态码</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1xx的代码代表请求已被接受，需要继续处理。2xx这一类型的状态码，代表请求已成功被服务器接收、理解、并接受。3xx 重定向。4xx 请求错误。5xx表示服务器错误。</span><br></pre></td></tr></table></figure>
-<p>​</p>
+<h2 id="创建schema"><a href="#创建schema" class="headerlink" title="创建schema"></a>创建schema</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> mongoose <span class="keyword">from</span> <span class="string">'mongoose'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">interface</span> UserType <span class="keyword">extends</span> mongoose.Document &#123;</span><br><span class="line">  name: <span class="built_in">String</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> userSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</span><br><span class="line">  name: <span class="built_in">String</span>,</span><br><span class="line">&#125;, &#123;collection: <span class="string">'user'</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> User = mongoose.model&lt;UserType&gt;(<span class="string">'User'</span>, userSchema)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> User;</span><br></pre></td></tr></table></figure>
+<p>在这里我们会遇到一个问题，如果我们不添加<code>collections: &#39;user&#39;</code>之后会发现会创建一个名为 <code>users</code> 的 <code>collection</code> 的表名。<br>还有个方法自定义 <code>collection</code> 名：<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> User = mongoose.model&lt;UserType&gt;(<span class="string">'User'</span>, userSchema, <span class="string">'user'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>二选一！</p>
+<h2 id="创建model"><a href="#创建model" class="headerlink" title="创建model"></a>创建model</h2><ol>
+<li><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> User, &#123; UserType &#125; <span class="keyword">from</span> <span class="string">'../schemas/User'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> UserModel = <span class="keyword">new</span> User(&#123;name: <span class="string">"xzh"</span>&#125;);</span><br><span class="line">UserModel.save(<span class="function">(<span class="params">(<span class="params">err: <span class="built_in">any</span>, product: UserType </span>)=&gt; &#123;</span></span></span><br><span class="line"><span class="function"><span class="params">  <span class="keyword">if</span>(<span class="params">err</span>) <span class="keyword">return</span> <span class="built_in">console</span>.error(<span class="params">err</span>);</span></span></span><br><span class="line"><span class="function"><span class="params">  <span class="built_in">console</span>.log(<span class="params">product, '结果'</span>);</span></span></span><br><span class="line"><span class="function"><span class="params">&#125;</span>))</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="params">export</span> <span class="params">default</span> <span class="params">UserModel</span>;</span></span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<ul>
-<li><p><code>response.setHeader()</code> 响应头如果存在,则值会被覆盖</p>
-<blockquote>
-<p>如果要发送多个名称相同的响应头,则使用字符串数组</p>
-</blockquote>
-<ul>
-<li><code>res.setHeader(&#39;Content-Type&#39;,&#39;text/plain&#39;)</code></li>
-</ul>
-<blockquote>
-<p>Content-Type表明信息类型,缺省值为” text/plain”.它包含了主要类型（primary type）和次要类型（subtype）两个部分，两者之间用”/“分割.</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">text/plain：纯文本，文件扩展名.txt</span><br><span class="line">text/html：HTML文本，文件扩展名.htm和.html</span><br><span class="line">image/jpeg：jpeg格式的图片，文件扩展名.jpg</span><br><span class="line">image/gif：GIF格式的图片，文件扩展名.gif</span><br><span class="line">audio/x-wave：WAVE格式的音频，文件扩展名.wav</span><br><span class="line">audio/mpeg：MP3格式的音频，文件扩展名.mp3</span><br><span class="line">video/mpeg：MPEG格式的视频，文件扩展名.mpg</span><br><span class="line">application/zip：PK-ZIP格式的压缩文件，文件扩展名.zip</span><br></pre></td></tr></table></figure>
-<p>​</p>
+</ol>
+<p>这有个小插曲，我们也可以不定义一个 <code>UserModel</code> 去向数据库写入数据：</p>
+<ol start="2">
+<li><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> User, &#123; UserType &#125; <span class="keyword">from</span> <span class="string">'../schemas/User'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> User.create(&#123;name: <span class="string">"xzh"</span>&#125;, <span class="function">(<span class="params">err: <span class="built_in">any</span>, res: <span class="built_in">any</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span>(err) <span class="keyword">return</span> <span class="built_in">console</span>.error(err);</span><br><span class="line">  <span class="built_in">console</span>.log(res, <span class="string">'结果'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><code>response.end()</code> 每次响应都必须调用 <code>response.end()</code> 方法.</p>
-<blockquote>
-<p>该方法会通知服务器,所有响应头和响应主体都已被发送,即服务器就将他看成已完成</p>
-</blockquote>
-<ul>
-<li><code>res.end(&#39;Hello World\n&#39;)</code></li>
-</ul>
-<blockquote>
-<p>Hello World已经被发送.</p>
-</blockquote>
-</li>
-<li><p><code>server.listen(port,hostname)</code>开始在指定的 <code>port</code> 和 <code>hostname</code> 上接受连接</p>
-</li>
-</ul>
-<h2 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h2><ul>
-<li>端口号是一个 16位的 uint, 所以其范围为 <strong>1 to 65535</strong> </li>
-</ul>
-<h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><ul>
-<li><p>定义的url格式笼统版本<code>&lt;scheme&gt;:&lt;scheme-specific-part&gt;</code></p>
-<blockquote>
-<p>scheme有我们很熟悉的<code>http</code>、<code>https</code>、<code>ftp</code>，以及著名的<code>ed2k</code>，<code>thunder</code></p>
-</blockquote>
-</li>
-<li><p>通常我们熟悉的url定义成这个样子</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;scheme&gt;://&lt;user&gt;:&lt;password&gt;@&lt;host&gt;:&lt;port&gt;/&lt;url-path&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>用过ftp的估计能体会这么长的，网页上很少带auth信息，所以就精简成这样:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;scheme&gt;://&lt;host&gt;:&lt;port&gt;/&lt;url-path&gt;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>在上面的例子中, scheme=http, host=localhost, port=3000, url-path=/.</p>
-</blockquote>
-<p>​</p>
-</li>
-</ul>
+</ol>
+<p>因为前面也提到了在 <code>mongoose</code> 中还有个 <code>Entity</code> 的存在。<br>第1种是 <code>entity</code> 保存方法。<br>第2种是 <code>model</code> 保存方法。</p>
 
       
     </div>
@@ -463,9 +431,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/数据库/" rel="tag"># 数据库</a>
           
-            <a href="/tags/node-js/" rel="tag"># node.js</a>
+            <a href="/tags/Mongodb/" rel="tag"># Mongodb</a>
           
         </div>
       
@@ -478,8 +446,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/git.html" rel="next" title="Git基本操作">
-                <i class="fa fa-chevron-left"></i> Git基本操作
+              <a href="/vscode快捷键提升效率.html" rel="next" title="vscode快捷键提升效率">
+                <i class="fa fa-chevron-left"></i> vscode快捷键提升效率
               </a>
             
           </div>
@@ -487,10 +455,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/mongodb.html" rel="prev" title="Mongodb之旅(一)">
-                Mongodb之旅(一) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -665,7 +629,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#学Node日志-一"><span class="nav-number">1.</span> <span class="nav-text">学Node日志(一)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#node实例"><span class="nav-number">1.1.</span> <span class="nav-text">node实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#端口"><span class="nav-number">1.2.</span> <span class="nav-text">端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL"><span class="nav-number">1.3.</span> <span class="nav-text">URL</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mongoose小试牛刀"><span class="nav-number">1.</span> <span class="nav-text">Mongoose小试牛刀</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#认识下Mongodb："><span class="nav-number">1.1.</span> <span class="nav-text">认识下Mongodb：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在mongoose中："><span class="nav-number">1.2.</span> <span class="nav-text">在mongoose中：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建schema"><span class="nav-number">1.3.</span> <span class="nav-text">创建schema</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建model"><span class="nav-number">1.4.</span> <span class="nav-text">创建model</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -862,9 +826,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://xuzihao.fun/Node.html';
-          this.page.identifier = 'Node.html';
-          this.page.title = '学Node日志(一)';
+          this.page.url = 'http://xuzihao.fun/Mongoose小试牛刀.html';
+          this.page.identifier = 'Mongoose小试牛刀.html';
+          this.page.title = 'Mongoose小试牛刀';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://xuzihao.disqus.com/embed.js';
