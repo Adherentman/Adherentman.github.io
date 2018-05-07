@@ -48,7 +48,7 @@
   <entry>
     <title><![CDATA[Typescript配置采坑之路]]></title>
     <url>%2FTypescript%E9%85%8D%E7%BD%AE%E9%87%87%E5%9D%91%E4%B9%8B%E8%B7%AF.html</url>
-    <content type="text"><![CDATA[这是没有@typesc/node导致的。但是安装最新的10.0.0也不行。我就安装了@types/node@8 tsconfig文件加这条： “module”: “commonjs”, tsconfig文件加这条： “lib”: [“es2015”]]]></content>
+    <content type="text"><![CDATA[这是没有@typesc/node导致的。但是安装最新的10.0.0也不行。我就安装了@types/node@8 tsconfig文件加这条： “module”: “commonjs”, tsconfig文件加这条： “lib”: [“es2015”] tsconfig文件加这条： “lib”: [“esnext”]]]></content>
       <categories>
         <category>Typescript</category>
       </categories>

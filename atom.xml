@@ -125,9 +125,9 @@
     <link href="http://xuzihao.fun/Typescript%E9%85%8D%E7%BD%AE%E9%87%87%E5%9D%91%E4%B9%8B%E8%B7%AF.html"/>
     <id>http://xuzihao.fun/Typescript配置采坑之路.html</id>
     <published>2018-04-27T16:03:52.000Z</published>
-    <updated>2018-04-28T07:45:55.243Z</updated>
+    <updated>2018-05-07T12:17:00.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/tscNodeError.png" alt=""></p><blockquote><p>这是没有@typesc/node导致的。但是安装最新的10.0.0也不行。我就安装了@types/node@8</p></blockquote><a id="more"></a><p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/tsconfigComm.png" alt=""></p><blockquote><p>tsconfig文件加这条：    “module”: “commonjs”, </p></blockquote><p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/tsconfigLib.png" alt=""></p><blockquote><p>tsconfig文件加这条：    “lib”: [“es2015”]</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/tscNodeError.png" alt=""></p><blockquote><p>这是没有@typesc/node导致的。但是安装最新的10.0.0也不行。我就安装了@types/node@8</p></blockquote><a id="more"></a><p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/tsconfigComm.png" alt=""></p><blockquote><p>tsconfig文件加这条：    “module”: “commonjs”, </p></blockquote><p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/tsconfigLib.png" alt=""></p><blockquote><p>tsconfig文件加这条：    “lib”: [“es2015”]</p></blockquote><p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/tsgraphql.png" alt=""></p><blockquote><p>tsconfig文件加这条：    “lib”: [“esnext”]</p></blockquote>]]></content>
     
     <summary type="html">
     
