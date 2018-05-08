@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-05-07T11:34:00.500Z</updated>
+  <updated>2018-05-08T13:47:34.978Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Apollo-server-graphql</title>
+    <link href="http://xuzihao.fun/Apollo-server-graphql.html"/>
+    <id>http://xuzihao.fun/Apollo-server-graphql.html</id>
+    <published>2018-05-08T13:37:10.225Z</published>
+    <updated>2018-05-08T13:47:34.978Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Apollo-server-graphql"><a href="#Apollo-server-graphql" class="headerlink" title="Apollo-server-graphql"></a>Apollo-server-graphql</h1><p>玩 <code>graphql</code> 的肯定听过吧 <code>apollo</code> 等等？没有？<br>上月球的那个 <code>apollo</code>也没听过吗？？</p><h2 id="apollo-server主要是做什么呢？？"><a href="#apollo-server主要是做什么呢？？" class="headerlink" title="apollo-server主要是做什么呢？？"></a>apollo-server主要是做什么呢？？</h2><p>它能轻松将您的后端转换为 <code>GraphQL</code> 架构。<br>你说你们以前都是 <code>rest</code> ？<br>没事，最新版的 <code>apollo</code> 能够让你，<br>在现有的 <code>REST API</code> 之上构建通用的 <code>GraphQL API</code>，这样您就可以快速发布新的应用程序功能，而无需等待后端更改。</p><a id="more"></a><h2 id="Go！"><a href="#Go！" class="headerlink" title="Go！"></a>Go！</h2><p>我用 <code>TypeScript</code> 和 <code>Koa</code> 去玩 <code>graphql</code> 。听起来就很棒！</p><blockquote><p>yarn add koa koa-router apollo-server-koa graphql-tools koa-bodyparser<br>&amp;&amp; yarn add  @types/graphql @types/koa @types/koa-bodyparser @types/koa-router  typescript -D<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> Koa <span class="keyword">from</span> <span class="string">'koa'</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> Mongoose <span class="keyword">from</span> <span class="string">'mongoose'</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> koaRouter <span class="keyword">from</span> <span class="string">'koa-router'</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> koaBody <span class="keyword">from</span> <span class="string">'koa-bodyparser'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; graphiqlKoa,graphqlKoa &#125; <span class="keyword">from</span> <span class="string">'apollo-server-koa'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; makeExecutableSchema &#125; <span class="keyword">from</span> <span class="string">'graphql-tools'</span>;</span><br><span class="line"><span class="keyword">import</span> env <span class="keyword">from</span> <span class="string">'./env'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> koaRouter();</span><br><span class="line"><span class="keyword">const</span> port: <span class="built_in">number</span> = <span class="number">4040</span>;</span><br><span class="line"></span><br><span class="line">app.use(koaBody());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 注册路由中间件</span></span><br><span class="line">app.use(router.routes()).use(router.allowedMethods());</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> books = [</span><br><span class="line">  &#123;title: <span class="string">"hdiahida"</span>, author: <span class="string">'dhiahdia'</span>&#125;,</span><br><span class="line">  &#123;title: <span class="string">"dbfb"</span>, author: <span class="string">'dahdiahi'</span>&#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> typeDefs = <span class="string">`</span></span><br><span class="line"><span class="string">  type Query &#123; books: [Book]&#125;</span></span><br><span class="line"><span class="string">  type Book &#123; title: String, author: String&#125;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> resolvers = &#123;</span><br><span class="line">  Query: &#123; books: <span class="function"><span class="params">()</span> =&gt;</span> books&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> schema = makeExecutableSchema(&#123;</span><br><span class="line">  typeDefs,</span><br><span class="line">  resolvers</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">router.post(</span><br><span class="line">  <span class="string">'/graphql'</span>,</span><br><span class="line">  graphqlKoa(&#123;</span><br><span class="line">    schema,</span><br><span class="line">  &#125;)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// graphiql</span></span><br><span class="line">router.get(</span><br><span class="line">  <span class="string">'/graphiql'</span>,</span><br><span class="line">  graphiqlKoa(&#123;</span><br><span class="line">    endpointURL: <span class="string">'/graphql'</span>,</span><br><span class="line">  &#125;)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">router.get(<span class="string">'/404'</span>, <span class="keyword">async</span> ctx =&gt; &#123;</span><br><span class="line">  ctx.body = <span class="string">'404!!!'</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(port, <span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'🌏 =&gt; server is open loaclhost:'</span> + port)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Apollo-server-graphql&quot;&gt;&lt;a href=&quot;#Apollo-server-graphql&quot; class=&quot;headerlink&quot; title=&quot;Apollo-server-graphql&quot;&gt;&lt;/a&gt;Apollo-server-graphql&lt;/h1&gt;&lt;p&gt;玩 &lt;code&gt;graphql&lt;/code&gt; 的肯定听过吧 &lt;code&gt;apollo&lt;/code&gt; 等等？没有？&lt;br&gt;上月球的那个 &lt;code&gt;apollo&lt;/code&gt;也没听过吗？？&lt;/p&gt;
+&lt;h2 id=&quot;apollo-server主要是做什么呢？？&quot;&gt;&lt;a href=&quot;#apollo-server主要是做什么呢？？&quot; class=&quot;headerlink&quot; title=&quot;apollo-server主要是做什么呢？？&quot;&gt;&lt;/a&gt;apollo-server主要是做什么呢？？&lt;/h2&gt;&lt;p&gt;它能轻松将您的后端转换为 &lt;code&gt;GraphQL&lt;/code&gt; 架构。&lt;br&gt;你说你们以前都是 &lt;code&gt;rest&lt;/code&gt; ？&lt;br&gt;没事，最新版的 &lt;code&gt;apollo&lt;/code&gt; 能够让你，&lt;br&gt;在现有的 &lt;code&gt;REST API&lt;/code&gt; 之上构建通用的 &lt;code&gt;GraphQL API&lt;/code&gt;，这样您就可以快速发布新的应用程序功能，而无需等待后端更改。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="GraphQL" scheme="http://xuzihao.fun/categories/GraphQL/"/>
+    
+    
+      <category term="GraphQL" scheme="http://xuzihao.fun/tags/GraphQL/"/>
+    
+  </entry>
   
   <entry>
     <title>Mongoose小试牛刀</title>
@@ -513,31 +536,6 @@
     
     
       <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS3外轮廓</title>
-    <link href="http://xuzihao.fun/CSS%E5%A4%96%E8%BD%AE%E5%BB%93.html"/>
-    <id>http://xuzihao.fun/CSS外轮廓.html</id>
-    <published>2018-03-18T14:38:00.000Z</published>
-    <updated>2018-03-19T13:21:36.586Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Outline"><a href="#Outline" class="headerlink" title="Outline"></a>Outline</h1><p>看一个Outline的例子：<a href="https://codepan.net/gist/7a96f5e15ee26e3523fd17c577c01c61" target="_blank" rel="noopener">outline</a></p><p>在下面看见一个div也有类似的效果。但是我们打开开发者工具看会发现。下面用<code>outline</code>实现的外边框中border为<code>-</code>。</p><h2 id="outline和border对比"><a href="#outline和border对比" class="headerlink" title="outline和border对比"></a>outline和border对比</h2><ul><li>border属于盒模型的一部分，会直接影响盒子大小。</li><li>outline则是将边框画在盒子上，不会影响该框。所以它不会破坏网页布局。</li><li>border创建是可以显示单边的，而outline是不行的。看demo：<a href="https://codepan.net/gist/92abb7960aed0c5917f235f1a6180e5c" target="_blank" rel="noopener">单边</a></li><li>border只可以外轮廓，而outline可以借助<code>outline-offset</code>设成负值就可以实现内轮廓，而设成正值就是外轮廓。看demo：<a href="https://codepan.net/gist/de786dc265e45ebefcd6a54614b348c4" target="_blank" rel="noopener">内轮廓</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Outline&quot;&gt;&lt;a href=&quot;#Outline&quot; class=&quot;headerlink&quot; title=&quot;Outline&quot;&gt;&lt;/a&gt;Outline&lt;/h1&gt;&lt;p&gt;看一个Outline的例子：&lt;a href=&quot;https://codepan.net/gist/7a
-      
-    
-    </summary>
-    
-      <category term="CSS" scheme="http://xuzihao.fun/categories/CSS/"/>
-    
-    
-      <category term="CSS" scheme="http://xuzihao.fun/tags/CSS/"/>
     
   </entry>
   
