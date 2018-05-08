@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://xuzihao.fun/Mongoose%E5%B0%8F%E8%AF%95%E7%89%9B%E5%88%80.html</loc>
+    <lastmod>2018-05-08T13:49:29.000Z</lastmod>
+    <data>
+        <display>
+        <title>Mongoose小试牛刀</title>
+        <pubTime>2018-05-07T11:32:51.537Z</pubTime>
+        
+        <tag>数据库</tag>
+         
+        <tag>Mongodb</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据库" url="http://xuzihao.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xuzihao.fun/Apollo-server-graphql.html</loc>
     <lastmod>2018-05-08T13:47:34.978Z</lastmod>
     <data>
@@ -37,28 +59,6 @@
            
              
               <breadCrumb title="Typescript" url="http://xuzihao.fun/categories/Typescript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xuzihao.fun/Mongoose%E5%B0%8F%E8%AF%95%E7%89%9B%E5%88%80.html</loc>
-    <lastmod>2018-05-07T11:34:00.500Z</lastmod>
-    <data>
-        <display>
-        <title>Mongoose小试牛刀</title>
-        <pubTime>2018-05-07T11:32:51.537Z</pubTime>
-        
-        <tag>数据库</tag>
-         
-        <tag>Mongodb</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据库" url="http://xuzihao.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
           
         </display>
     </data>
