@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://xuzihao.fun/%E7%95%85%E8%AF%BB%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F.html</loc>
+    <lastmod>2018-05-16T13:54:10.289Z</lastmod>
+    <data>
+        <display>
+        <title>畅读深入理解计算机系统</title>
+        <pubTime>2018-05-16T13:53:01.000Z</pubTime>
+        
+        <tag>读书笔记</tag>
+         
+         
+           
+             
+              <breadCrumb title="读书笔记" url="http://xuzihao.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xuzihao.fun/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89.html</loc>
     <lastmod>2018-05-14T15:01:42.517Z</lastmod>
     <data>
@@ -393,12 +413,12 @@
 
     
   <url>
-    <loc>http://xuzihao.fun/RegExp.html</loc>
+    <loc>http://xuzihao.fun/%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html</loc>
     <lastmod>2018-04-01T12:21:00.000Z</lastmod>
     <data>
         <display>
-        <title>RegExp正则表达式</title>
-        <pubTime>2018-04-06T13:44:57.528Z</pubTime>
+        <title>浅谈script标签</title>
+        <pubTime>2018-03-19T12:57:11.911Z</pubTime>
         
         <tag>JavaScript</tag>
          
@@ -413,12 +433,12 @@
 
     
   <url>
-    <loc>http://xuzihao.fun/%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html</loc>
+    <loc>http://xuzihao.fun/RegExp.html</loc>
     <lastmod>2018-04-01T12:21:00.000Z</lastmod>
     <data>
         <display>
-        <title>浅谈script标签</title>
-        <pubTime>2018-03-19T12:57:11.911Z</pubTime>
+        <title>RegExp正则表达式</title>
+        <pubTime>2018-04-06T13:44:57.528Z</pubTime>
         
         <tag>JavaScript</tag>
          

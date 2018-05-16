@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-05-08T13:47:34.978Z</updated>
+  <updated>2018-05-16T13:54:10.289Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>畅读深入理解计算机系统</title>
+    <link href="http://xuzihao.fun/%E7%95%85%E8%AF%BB%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F.html"/>
+    <id>http://xuzihao.fun/畅读深入理解计算机系统.html</id>
+    <published>2018-05-16T13:53:01.000Z</published>
+    <updated>2018-05-16T13:54:10.289Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="畅读深入理解计算机系统"><a href="#畅读深入理解计算机系统" class="headerlink" title="畅读深入理解计算机系统"></a>畅读深入理解计算机系统</h1><h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>程序为0和1组成的位。<br>8个位组成一起为字节。<br>每个字节表示程序中的某些字符。</p><p>只由 <code>ASCII</code> 字符构成的文件为——文本文件<br>其他文件为———二进制文件</p><p>编译一个可执行的 <code>hello world</code>  需要4个步骤:<br>hello.c -&gt; 预处理器(cpp) -&gt; hello.i -&gt; 编译器(ccl) -&gt; hello.s -&gt; 汇编器(as) -&gt; hello.o -&gt; 链接器(ld) -&gt; hello可执行文件</p><h3 id="系统的硬件组成"><a href="#系统的硬件组成" class="headerlink" title="系统的硬件组成"></a>系统的硬件组成</h3><p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%84%E6%88%90.jpg" alt=""></p><ol><li>总线</li><li>I/O设备</li><li>主存</li><li>处理器<h3 id="存储器访问速度"><a href="#存储器访问速度" class="headerlink" title="存储器访问速度"></a>存储器访问速度</h3></li></ol><p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%E5%AD%98%E5%82%A8%E5%99%A8%E8%AF%BB%E5%86%99%E9%80%9F%E5%BA%A6.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;畅读深入理解计算机系统&quot;&gt;&lt;a href=&quot;#畅读深入理解计算机系统&quot; class=&quot;headerlink&quot; title=&quot;畅读深入理解计算机系统&quot;&gt;&lt;/a&gt;畅读深入理解计算机系统&lt;/h1&gt;&lt;h2 id=&quot;第一章&quot;&gt;&lt;a href=&quot;#第一章&quot; class=&quot;he
+      
+    
+    </summary>
+    
+      <category term="读书笔记" scheme="http://xuzihao.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="读书笔记" scheme="http://xuzihao.fun/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>Apollo-server-graphql</title>
@@ -506,29 +531,6 @@
     
       &lt;p&gt;虽说现有Fetch和Axios，但我们还是需要了解下当初那传奇的Ajax！&lt;/p&gt;
 &lt;h2 id=&quot;Ajax&quot;&gt;&lt;a href=&quot;#Ajax&quot; class=&quot;headerlink&quot; title=&quot;Ajax&quot;&gt;&lt;/a&gt;Ajax&lt;/h2&gt;&lt;p&gt;Ajax是基于XMLHttpRequest对象来请求数据的。所以我们需要先了解下XMLHttpRequest对象。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Javascript修仙之旅" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
-    
-    
-      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>浅谈script标签</title>
-    <link href="http://xuzihao.fun/%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html"/>
-    <id>http://xuzihao.fun/浅谈script标签.html</id>
-    <published>2018-03-19T12:57:11.911Z</published>
-    <updated>2018-04-01T12:21:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>&lt;script&gt;</code> ? 这不就是直接执行script脚本吗？</p><p>以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。</p><a id="more"></a><h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p><code>&lt;script&gt;</code>拥有7个属性，没想到吧！</p><ul><li><strong>async</strong><ul><li>boolean</li><li>异步执行该脚本，但不保证按照指定它们的先后顺序执行</li></ul></li><li><strong>defer</strong><ul><li>boolean</li><li>通知浏览器该脚本将在文档完成解析后遇到<code>&lt;/html&gt;</code>，并会按照它们出现的先后顺序执行。但会在触发 <code>DOMContentLoaded</code> 事件前执行。</li></ul></li><li><strong>integrity</strong><ul><li>包含用户代理可用于验证已提取资源是否已无意外操作的内联元数据</li></ul></li><li><strong>src</strong></li><li><strong>type</strong></li><li><strong>text</strong></li><li><strong>crossorigin</strong><ul><li>使那些将静态资源放在另外一个域名的站点打印错误信息,就是将跨域报错变为同源报错</li></ul></li></ul><blockquote><p>在XHTML文档中，要把async属性设置为 async = “async”, defer = “defer”</p></blockquote><p>知道了那几个属性接下来，来看看下面这个图：</p><p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%3Cscript%3E.png" alt=""></p><ol><li>第一个光秃秃的<code>&lt;script&gt;</code>说明了，在<code>html</code>解析中，如果有<code>&lt;script&gt;</code>的话，<code>html</code>会在<code>Script</code>下载并且执行的时候，暂停解析。</li><li>第二个带<code>async</code>属性的<code>&lt;script&gt;</code>，如图所示，也就是他下载<code>Script</code>的时候是异步的，但是只要<code>Script</code>文件下好了，那么就马上执行。</li><li>第三个带<code>defer</code>属性的<code>&lt;script&gt;</code>，其实和上面带<code>async</code>属性一样都是异步执行去下载<code>Script</code>文件的。但是在这个带有<code>defer</code>的则是在<code>html</code>全部解析完毕之后才去执行<code>Script</code>文件。而且它是按照加载顺序执行脚本的，这一点要善加利用。显然 <code>defer</code> 是最接近我们对于应用脚本加载和执行的要求的</li></ol><h2 id="使用动态创建的-lt-script-gt-标签元素来下载并执行代码"><a href="#使用动态创建的-lt-script-gt-标签元素来下载并执行代码" class="headerlink" title="使用动态创建的&lt;script&gt;标签元素来下载并执行代码"></a>使用动态创建的<code>&lt;script&gt;</code>标签元素来下载并执行代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">script.type = <span class="string">"text/javascript"</span>;</span><br><span class="line">script.src = <span class="string">"file1.js"</span>;</span><br><span class="line"><span class="built_in">document</span>.getElementByTagName(<span class="string">"head"</span>)[<span class="number">0</span>].appendChild(script);</span><br></pre></td></tr></table></figure><p>这个技术的重点在于：</p><p>无论何时启动下载，文件的下载和执行过程不会阻塞页面其他进程。</p><p>参考：</p><blockquote><p>《高性能JavaScript》</p></blockquote><h2 id="使用XHR对象下载JS代码注入页面"><a href="#使用XHR对象下载JS代码注入页面" class="headerlink" title="使用XHR对象下载JS代码注入页面"></a>使用XHR对象下载JS代码注入页面</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadScript</span>(<span class="params">url, callback</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(</span><br><span class="line"><span class="string">"e"</span>);</span><br><span class="line">    script.type = <span class="string">"text/javascript"</span>;</span><br><span class="line">    <span class="keyword">if</span>(script.readyState)&#123;<span class="comment">//ie</span></span><br><span class="line">        script.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(script.readyState == <span class="string">"loaded"</span> || script.readyState == <span class="string">"complete"</span>)&#123;</span><br><span class="line">                script.onreadystatechage = <span class="literal">null</span>;</span><br><span class="line">                callback();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        script.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            callback();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">loadScript(<span class="string">"the-rest.js"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    Application.init()</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>这样做实现了动态创建标签元素并下载，其次当第二个脚本文件下载时，应用所需的所有DOM结构已经创建完毕，并做好了交互的准备,从而避免了需要另一个事件来检测页面是否准备好。</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/script" target="_blank" rel="noopener">MDN</a></li><li><a href="https://segmentfault.com/a/1190000006778717" target="_blank" rel="noopener">SegmentFault</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; ? 这不就是直接执行script脚本吗？&lt;/p&gt;
-&lt;p&gt;以前的我这有认为，但是今天却知道了他的奥秘。他并没有表面的那么简单。&lt;/p&gt;
     
     </summary>
     
