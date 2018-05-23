@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-05-16T13:54:10.289Z</updated>
+  <updated>2018-05-23T12:50:28.000Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://xuzihao.fun/%E7%95%85%E8%AF%BB%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F.html"/>
     <id>http://xuzihao.fun/畅读深入理解计算机系统.html</id>
     <published>2018-05-16T13:53:01.000Z</published>
-    <updated>2018-05-16T13:54:10.289Z</updated>
+    <updated>2018-05-23T12:50:28.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="畅读深入理解计算机系统"><a href="#畅读深入理解计算机系统" class="headerlink" title="畅读深入理解计算机系统"></a>畅读深入理解计算机系统</h1><h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>程序为0和1组成的位。<br>8个位组成一起为字节。<br>每个字节表示程序中的某些字符。</p><p>只由 <code>ASCII</code> 字符构成的文件为——文本文件<br>其他文件为———二进制文件</p><p>编译一个可执行的 <code>hello world</code>  需要4个步骤:<br>hello.c -&gt; 预处理器(cpp) -&gt; hello.i -&gt; 编译器(ccl) -&gt; hello.s -&gt; 汇编器(as) -&gt; hello.o -&gt; 链接器(ld) -&gt; hello可执行文件</p><h3 id="系统的硬件组成"><a href="#系统的硬件组成" class="headerlink" title="系统的硬件组成"></a>系统的硬件组成</h3><p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%84%E6%88%90.jpg" alt=""></p><ol><li>总线</li><li>I/O设备</li><li>主存</li><li>处理器<h3 id="存储器访问速度"><a href="#存储器访问速度" class="headerlink" title="存储器访问速度"></a>存储器访问速度</h3></li></ol><p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%E5%AD%98%E5%82%A8%E5%99%A8%E8%AF%BB%E5%86%99%E9%80%9F%E5%BA%A6.jpg" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="畅读深入理解计算机系统"><a href="#畅读深入理解计算机系统" class="headerlink" title="畅读深入理解计算机系统"></a>畅读深入理解计算机系统</h1><h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>程序为0和1组成的位。<br>8个位组成一起为字节。<br>每个字节表示程序中的某些字符。</p><p>只由 <code>ASCII</code> 字符构成的文件为——文本文件<br>其他文件为———二进制文件</p><p>编译一个可执行的 <code>hello world</code>  需要4个步骤:<br>hello.c -&gt; 预处理器(cpp) -&gt; hello.i -&gt; 编译器(ccl) -&gt; hello.s -&gt; 汇编器(as) -&gt; hello.o -&gt; 链接器(ld) -&gt; hello可执行文件</p><h3 id="系统的硬件组成"><a href="#系统的硬件组成" class="headerlink" title="系统的硬件组成"></a>系统的硬件组成</h3><p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%84%E6%88%90.jpg" alt=""></p><ol><li>总线</li><li>I/O设备</li><li>主存</li><li>处理器<h3 id="存储器访问速度"><a href="#存储器访问速度" class="headerlink" title="存储器访问速度"></a>存储器访问速度</h3></li></ol><p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%E5%AD%98%E5%82%A8%E5%99%A8%E8%AF%BB%E5%86%99%E9%80%9F%E5%BA%A6.jpg" alt=""></p><h3 id="操作系统管理硬件"><a href="#操作系统管理硬件" class="headerlink" title="操作系统管理硬件"></a>操作系统管理硬件</h3><p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E7%A1%AC%E4%BB%B6.jpg" alt=""></p><p><strong>文件</strong> 是对  <code>I/O</code> 设备的抽象表示,<br><strong>虚拟内存</strong> 是 对主存和磁盘的<code>I/O</code>设备的抽象表示<br><strong>进程</strong> 则是对 处理器、主存和<code>I/O</code>设备的抽象表示</p><h3 id="虚拟地址空间"><a href="#虚拟地址空间" class="headerlink" title="虚拟地址空间"></a>虚拟地址空间</h3><p>程序代码和数据 -&gt; 堆 -&gt; 共享库 -&gt; 栈 -&gt; 内核虚拟内存 </p><p>网络就是一种I/O设备</p>]]></content>
     
     <summary type="html">
     
