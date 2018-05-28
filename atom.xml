@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-05-25T12:16:57.490Z</updated>
+  <updated>2018-05-28T12:18:47.382Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《Css权威指南》</title>
+    <link href="http://xuzihao.fun/CSS%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97.html"/>
+    <id>http://xuzihao.fun/CSS权威指南.html</id>
+    <published>2018-05-28T12:18:00.000Z</published>
+    <updated>2018-05-28T12:18:47.382Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="CSS权威指南"><a href="#CSS权威指南" class="headerlink" title="CSS权威指南"></a>CSS权威指南</h1><h2 id="候选样式表"><a href="#候选样式表" class="headerlink" title="候选样式表"></a>候选样式表</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"alternate stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"styles.css"</span> <span class="attr">title</span>=<span class="string">"Big Text"</span>/&gt;</span></span><br></pre></td></tr></table></figure><a id="more"></a><p>候选样式表在大多数<code>Gecko</code>的浏览器中得到支持，如：Firefox、Netscape以及Opera 7.<br>或者设置同样的<code>title</code>属性，之后设置不同的<code>media</code>属性，在各种场景会使用对应的<code>css</code>文件</p><h2 id="import"><a href="#import" class="headerlink" title="@import"></a>@import</h2><p>@import也可以应用媒体。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@import url(styles.css) all;</span><br><span class="line">@import url(styles1.css) print;</span><br><span class="line">@import url(styles2.css) print, screen;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;CSS权威指南&quot;&gt;&lt;a href=&quot;#CSS权威指南&quot; class=&quot;headerlink&quot; title=&quot;CSS权威指南&quot;&gt;&lt;/a&gt;CSS权威指南&lt;/h1&gt;&lt;h2 id=&quot;候选样式表&quot;&gt;&lt;a href=&quot;#候选样式表&quot; class=&quot;headerlink&quot; title=&quot;候选样式表&quot;&gt;&lt;/a&gt;候选样式表&lt;/h2&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;alternate stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;text/css&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;styles.css&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;title&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;Big Text&quot;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="读书笔记" scheme="http://xuzihao.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="读书笔记" scheme="http://xuzihao.fun/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>天总知乎live小结</title>
@@ -503,39 +525,6 @@
     
     
       <category term="Linux" scheme="http://xuzihao.fun/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>同源与跨域资源共享</title>
-    <link href="http://xuzihao.fun/%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB.html"/>
-    <id>http://xuzihao.fun/跨域资源共享.html</id>
-    <published>2018-03-23T12:53:35.483Z</published>
-    <updated>2018-03-26T13:53:48.550Z</updated>
-    
-    <content type="html"><![CDATA[<p>说到跨域，我们需要先说说什么是同源策略。</p><h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><p>浏览器安全的基石是”同源政策”（<a href="https://en.wikipedia.org/wiki/Same-origin_policy" target="_blank" rel="noopener">same-origin policy</a>）。</p><p>也就是说要满足以下条件：</p><blockquote><ol><li>协议相同</li><li>域名相同</li><li>端口相同</li></ol></blockquote><p>也就是说，如果两个页面的协议，端口（如果有指定）和域名都相同，则两个页面具有相同的<strong>源</strong>。</p><p>同源政策的目的，是为了保证用户信息的安全，防止恶意的网站窃取数据。</p><a id="more"></a><p>如果非同源，共有三种行为受到限制：</p><blockquote><ol><li>Cookie、LocalStorage 和 IndexDB 无法读取。</li><li>DOM 无法获得。</li><li>AJAX 请求不能发送。</li></ol></blockquote><p>同源策略是对XMLHTTPRequest的一种约束。所以有时候我们想要去获取别的消息，我们需要跨过同源策略。</p><p>但是有些的跨域请求是被允许的比如：</p><ul><li><code>&lt;script&gt;</code>标签</li><li><code>&lt;link&gt;</code>标签</li><li><code>&lt;img&gt;</code>标签</li><li><code>&lt;a&gt;</code>标签</li><li><code>&lt;video&gt;</code>和 <code>&lt;audio&gt;</code>嵌入多媒体资源。</li><li><code>&lt;iframe&gt;</code>与<code>&lt;frame&gt;</code></li></ul><h2 id="CORS跨域资源共享"><a href="#CORS跨域资源共享" class="headerlink" title="CORS跨域资源共享"></a>CORS跨域资源共享</h2><p>那么为了解决这个问题，CORS横空出世！</p><p>IE8可以通过XDomainRequest对象支持CORS。</p><p>其他浏览器我们都可以通过XMLHttpRequest对象支持CORS。</p><p>跨域资源共享标准新增了一组 HTTP 首部字段，允许服务器声明哪些源站有权限访问哪些资源。</p><p>其实CORS背后的思想就是，使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功，还是应该失败。</p><p>CORS分简单请求和非简单请求，满足以下条件就为简单请求：</p><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="noopener">简单请求</a></p><h2 id="HTTP-响应首部字段"><a href="#HTTP-响应首部字段" class="headerlink" title="HTTP 响应首部字段"></a>HTTP 响应首部字段</h2><h3 id="Access-Control-Allow-Origin"><a href="#Access-Control-Allow-Origin" class="headerlink" title="Access-Control-Allow-Origin"></a>Access-Control-Allow-Origin</h3><p>根据Reuqest请求头中的<em>Origin</em>来判断该请求的资源是否可以被共享。</p><h3 id="Access-Control-Allow-Credentials"><a href="#Access-Control-Allow-Credentials" class="headerlink" title="Access-Control-Allow-Credentials"></a>Access-Control-Allow-Credentials</h3><p>该字段可选。它的值是一个布尔值，表示是否允许发送Cookie。</p><h3 id="Access-Control-Expose-Headers"><a href="#Access-Control-Expose-Headers" class="headerlink" title="Access-Control-Expose-Headers"></a>Access-Control-Expose-Headers</h3><p>让服务器把允许浏览器访问的头放入白名单</p><p>在跨域访问时，XMLHttpRequest对象的getResponseHeader()方法只能拿到一些最基本的响应头，Cache-Control、Content-Language、Content-Type、Expires、Last-Modified、Pragma，如果要访问其他头，则需要服务器设置本响应头</p><h3 id="Access-Control-Allow-Credentials-1"><a href="#Access-Control-Allow-Credentials-1" class="headerlink" title="Access-Control-Allow-Credentials"></a>Access-Control-Allow-Credentials</h3><p>指定了当浏览器的<code>credentials</code>设置为true时是否允许浏览器读取response的内容。</p><p>所以我们需要<strong>附带身份凭证的请求</strong>:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.withCredentials = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure><p>我们不这样去做处理的话，即使服务器同意发送Cookie，浏览器也不会发送。或者，服务器要求设置Cookie，浏览器也不会处理。</p><h2 id="HTTP请求首部字段"><a href="#HTTP请求首部字段" class="headerlink" title="HTTP请求首部字段"></a>HTTP请求首部字段</h2><p>用于发起跨域请求的首部字段，其实这些字段都不用我们去手动设置。当我们使用 XMLHttpRequest 对象发起跨域请求时，它们已经被设置就绪。</p><ul><li>Origin</li><li>Access-Control-Request-Method</li><li>Access-Control-Request-Headers</li></ul><blockquote><p>参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="noopener">MDN-HTTP请求首部字段</a></p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;说到跨域，我们需要先说说什么是同源策略。&lt;/p&gt;
-&lt;h2 id=&quot;同源策略&quot;&gt;&lt;a href=&quot;#同源策略&quot; class=&quot;headerlink&quot; title=&quot;同源策略&quot;&gt;&lt;/a&gt;同源策略&lt;/h2&gt;&lt;p&gt;浏览器安全的基石是”同源政策”（&lt;a href=&quot;https://en.wikipedia.org/wiki/Same-origin_policy&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;same-origin policy&lt;/a&gt;）。&lt;/p&gt;
-&lt;p&gt;也就是说要满足以下条件：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;协议相同&lt;/li&gt;
-&lt;li&gt;域名相同&lt;/li&gt;
-&lt;li&gt;端口相同&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;也就是说，如果两个页面的协议，端口（如果有指定）和域名都相同，则两个页面具有相同的&lt;strong&gt;源&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;同源政策的目的，是为了保证用户信息的安全，防止恶意的网站窃取数据。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Javascript修仙之旅" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
-    
-    
-      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
     
   </entry>
   
