@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-05-28T12:18:47.382Z</updated>
+  <updated>2018-06-02T07:30:10.762Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>玩Deno遇到问题的解决方案</title>
+    <link href="http://xuzihao.fun/%E7%8E%A9Deno%E9%81%87%E5%88%B0%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html"/>
+    <id>http://xuzihao.fun/玩Deno遇到问题的解决方案.html</id>
+    <published>2018-06-02T07:30:00.000Z</published>
+    <updated>2018-06-02T07:30:10.762Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近有个新的Deno项目是由node原作者ry发起的，瞬间火爆，star数飞起。<br>但是在搭建环境的过程中还是有些小问题，但是在友好的issue下都得到了解决！<br>再此总结，并对那些在issue里无私贡献自己解决方案的人点赞！开源社区的和谐需要大家去一起努力。</p><p>附上项目地址:<br><a href="https://github.com/ry/deno" target="_blank" rel="noopener">GitHub - ry/deno: A secure TypeScript runtime on V8</a></p><a id="more"></a><h2 id="Step1"><a href="#Step1" class="headerlink" title="Step1"></a>Step1</h2><p>在开始之前请准备好v<em>p</em>n*。<br>大家需要去安装 <code>Go</code> 环境.并且去 <code>export</code> 各种Go相关的环境变量.</p><p>以下是方正大佬给我提供解决方案，很感谢。<br><a href="https://github.com/ry/deno/issues/92" target="_blank" rel="noopener">https://github.com/ry/deno/issues/92</a><br>Mac OS可以参考以下：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export GOROOT=/usr/local/go # where your `go` sitting, usually here ( Mac )</span><br><span class="line">export GOPATH=$HOME/go # means `~/go` </span><br><span class="line">export PATH=$PATH:$HOME/go/bin:$GOPATH/bin</span><br></pre></td></tr></table></figure></p><p>如果是Mac的话，我们还需要去安装<code>xcode-select</code><br> <a href="http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/" target="_blank" rel="noopener">http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/</a> </p><p>我们还需要安装Protobuf 。Ubuntu下：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">wget https://github.com/google/protobuf/releases/download/v3.1.0/protoc-3.1.0-linux-x86_64.zip</span><br><span class="line">unzip protoc-3.1.0-linux-x86_64.zip</span><br><span class="line">export PATH=$HOME/bin:$PATH</span><br></pre></td></tr></table></figure></p><p>Mac下简单粗暴：<br><code>brew install protobuf</code><br>再来装一个<code>README</code>中没提及的<br><code>brew install pkg-config</code></p><h2 id="Step2"><a href="#Step2" class="headerlink" title="Step2"></a>Step2</h2><p>Ok以上一切正常，没出啥幺蛾子。<br>我们继续，现在需要 <code>protoc-gen-go</code>  和  <code>go-bindata</code>:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">go get -u github.com/golang/protobuf/protoc-gen-go</span><br><span class="line">go get -u github.com/jteeuwen/go-bindata/...</span><br></pre></td></tr></table></figure></p><p>这步需要等一小伙，记得一定要v<em>p</em>n啊!</p><h2 id="Step3"><a href="#Step3" class="headerlink" title="Step3"></a>Step3</h2><p>现在我们来困难重重的 <code>v8worker2</code> 啦。我们需要get 然后 build 它。大概会花30min<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">go get -u github.com/ry/v8worker2</span><br><span class="line">cd $GOPATH/src/github.com/ry/v8worker2</span><br><span class="line">./build.py --use_ccache</span><br></pre></td></tr></table></figure></p><p>接下来大家可能遇到的情况：<br><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/go-get.png" alt=""><br>这种情况说明我们 <code>clone</code> 下的v8是有损坏的，然后我们需要做以下操作</p><ol><li><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd $GOPATH/src/github.com/ry/v8worker2</span><br><span class="line">rm -rf v8</span><br><span class="line">git clone https://github.com/v8/v8.git</span><br><span class="line">cd v8</span><br><span class="line">git checkout fe12316ec4b4a101923e395791ca55442e62f4cc</span><br></pre></td></tr></table></figure></li></ol><p>或者</p><ol start="2"><li><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">export PATH=$PATH:$GOPATH/src/github.com/ry/v8worker2/depot_tools</span><br><span class="line">cd $GOPATH/src/github.com/ry/v8worker2</span><br><span class="line">rm -rf v8</span><br><span class="line">fetch v8</span><br><span class="line">cd v8</span><br><span class="line">git checkout fe12316</span><br></pre></td></tr></table></figure></li></ol><p>因为用第一种方法我发现我的vpn不能快速的下载所以就尝试了第二种方法。如果你键入<code>fetch</code>发现命令行出现<code>command not found: fetch</code>。<br>你可以尝试<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $GOPATH/src/github.com/ry/v8worker2</span><br><span class="line">depot_tools/./fetch v8</span><br></pre></td></tr></table></figure></p><p>感谢 <a href="https://github.com/ry/deno/issues/92" target="_blank" rel="noopener">go get v8worker2 Direct fetching of that commit failed? · Issue #92 · ry/deno · GitHub</a> 下面给出解决方案的人@wbgbg ，@qti3e，@ztplz </p><p>如果你发现自己的<code>depot_tools</code>文件夹下啥都没有。你需要执行以下命令<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $GOPATH/src/github.com/ry/v8worker2</span><br><span class="line">git submodule update --init</span><br></pre></td></tr></table></figure></p><p>之后再去<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $GOPATH/src/github.com/ry/v8worker2</span><br><span class="line">./build.py</span><br></pre></td></tr></table></figure></p><p>你看见了以下，那么就恭喜啦！他在编译了<br><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/buildv8woker2.png" alt=""></p><h2 id="Step4"><a href="#Step4" class="headerlink" title="Step4"></a>Step4</h2><p>最后一步<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">go get -u github.com/ry/deno/...</span><br><span class="line">cd $GOPATH/src/github.com/ry/deno</span><br><span class="line">make # 稍等片刻</span><br><span class="line">./deno testdata/001_hello.js # Output: Hello World</span><br></pre></td></tr></table></figure></p><p>又是熟悉的Hello World！<br>在<code>go get -u github.com/ry/deno/...</code>遇到以下问题不要急，直接<code>make deno</code>走你！<br><a href="https://github.com/ry/deno/issues/71" target="_blank" rel="noopener">deno/dispatch.go:10:26: undefined: BaseMsg · Issue #71 · ry/deno · GitHub</a><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> go get  -u github.com/ry/deno/...</span><br><span class="line"><span class="meta">#</span> github.com/ry/deno</span><br><span class="line">../deno/dispatch.go:10:26: undefined: BaseMsg</span><br><span class="line">../deno/dispatch.go:30:10: undefined: BaseMsg</span><br><span class="line">../deno/dispatch.go:62:14: undefined: BaseMsg</span><br><span class="line">../deno/dispatch.go:68:34: undefined: Msg</span><br><span class="line">../deno/dispatch.go:119:13: select case must be receive, send or assign recv</span><br><span class="line">../deno/fetch.go:13:11: undefined: Msg</span><br><span class="line">../deno/fetch.go:16:8: undefined: Msg_FETCH_REQ</span><br><span class="line">../deno/fetch.go:29:14: undefined: Msg</span><br><span class="line">../deno/main.go:38:15: undefined: Asset</span><br><span class="line">../deno/main.go:110:19: undefined: Msg</span><br><span class="line">../deno/main.go:110:19: too many errors</span><br></pre></td></tr></table></figure></p><p>如果你在这<code>make deno</code>遇到了以下问题，说明你第一步方正大佬给出的解决方案还没做。回去乖乖配置吧！<br><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/makedeno.png" alt=""></p><p>之后再次运行<code>make deno</code>完成！<br><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/denowork.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近有个新的Deno项目是由node原作者ry发起的，瞬间火爆，star数飞起。&lt;br&gt;但是在搭建环境的过程中还是有些小问题，但是在友好的issue下都得到了解决！&lt;br&gt;再此总结，并对那些在issue里无私贡献自己解决方案的人点赞！开源社区的和谐需要大家去一起努力。&lt;/p&gt;
+&lt;p&gt;附上项目地址:&lt;br&gt;&lt;a href=&quot;https://github.com/ry/deno&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub - ry/deno: A secure TypeScript runtime on V8&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Node.js" scheme="http://xuzihao.fun/categories/Node-js/"/>
+    
+    
+      <category term="go" scheme="http://xuzihao.fun/tags/go/"/>
+    
+      <category term="TypeScript" scheme="http://xuzihao.fun/tags/TypeScript/"/>
+    
+  </entry>
   
   <entry>
     <title>《Css权威指南》</title>
@@ -503,28 +528,6 @@
     
     
       <category term="React Native" scheme="http://xuzihao.fun/tags/React-Native/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mac通过ssh连接ecs</title>
-    <link href="http://xuzihao.fun/mac%E8%BF%9E%E6%8E%A5ssh.html"/>
-    <id>http://xuzihao.fun/mac连接ssh.html</id>
-    <published>2018-03-26T13:55:10.689Z</published>
-    <updated>2018-03-26T14:09:56.265Z</updated>
-    
-    <content type="html"><![CDATA[<p>通过学生优惠买了半年的阿里云服务器ecs！好便宜啊。。想想马上就毕业了，甚至有点小可惜不能时间长点享受优惠。。</p><a id="more"></a><p>那不说多的直接进入正题。</p><p>起初通过阿里云控制台进行远程控制自己买的云服务器。。总是感觉在网页端操作终端有点变扭，就准备用tmux直接通过ssh连接我自己的云服务器。</p><p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%E9%98%BF%E9%87%8C%E4%BA%91ecs%E6%8A%A5%E9%94%99.png" alt=""></p><p>它居然说！！！</p><p>Timed out!!</p><p>这是Why！！</p><p>之后帮助中心走了一遭，发现原来我是安全组没配置。。</p><p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9B%B4%E5%A4%9A.png" alt=""></p><p>然后我们点击安全组配置。</p><p>之后进入重点！</p><p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/%E9%98%BF%E9%87%8C%E4%BA%91ces%E5%87%BA%E5%85%A5.png" alt=""></p><p>我们在出和入都配置一样的设置。</p><p>然后我们就可以愉快的去终端里通过ssh连接我们的云服务器啦~</p><p><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/ssh%E5%89%AF%E6%9C%AC.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;通过学生优惠买了半年的阿里云服务器ecs！好便宜啊。。想想马上就毕业了，甚至有点小可惜不能时间长点享受优惠。。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="阿里云服务的使用" scheme="http://xuzihao.fun/categories/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    
-    
-      <category term="Linux" scheme="http://xuzihao.fun/tags/Linux/"/>
     
   </entry>
   
