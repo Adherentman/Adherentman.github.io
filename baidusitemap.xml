@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://xuzihao.fun/Webpack-dev-server%E9%85%8D%E5%90%88react-router4.html</loc>
+    <lastmod>2018-06-30T13:28:43.245Z</lastmod>
+    <data>
+        <display>
+        <title>Webpack-dev-server配合react-router4</title>
+        <pubTime>2018-06-30T13:28:00.000Z</pubTime>
+        
+        <tag>Webpack</tag>
+         
+         
+           
+             
+              <breadCrumb title="Webpack" url="http://xuzihao.fun/categories/Webpack/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xuzihao.fun/%E5%BE%AE%E4%BF%A1%E5%AE%A2%E6%9C%8D%E6%B6%88%E6%81%AF%E5%8A%9F%E8%83%BD%E5%85%A8%E8%A7%A3.html</loc>
     <lastmod>2018-06-29T15:25:22.252Z</lastmod>
     <data>
@@ -515,12 +535,12 @@
 
     
   <url>
-    <loc>http://xuzihao.fun/%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html</loc>
+    <loc>http://xuzihao.fun/RegExp.html</loc>
     <lastmod>2018-04-01T12:21:00.000Z</lastmod>
     <data>
         <display>
-        <title>浅谈script标签</title>
-        <pubTime>2018-03-19T12:57:11.911Z</pubTime>
+        <title>RegExp正则表达式</title>
+        <pubTime>2018-04-06T13:44:57.528Z</pubTime>
         
         <tag>JavaScript</tag>
          
@@ -535,12 +555,12 @@
 
     
   <url>
-    <loc>http://xuzihao.fun/RegExp.html</loc>
+    <loc>http://xuzihao.fun/%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html</loc>
     <lastmod>2018-04-01T12:21:00.000Z</lastmod>
     <data>
         <display>
-        <title>RegExp正则表达式</title>
-        <pubTime>2018-04-06T13:44:57.528Z</pubTime>
+        <title>浅谈script标签</title>
+        <pubTime>2018-03-19T12:57:11.911Z</pubTime>
         
         <tag>JavaScript</tag>
          
