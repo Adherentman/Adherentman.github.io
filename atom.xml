@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-06-30T13:28:43.245Z</updated>
+  <updated>2018-07-05T12:50:47.002Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Draft.js —— API Basics</title>
+    <link href="http://xuzihao.fun/Draft.js%20%E2%80%94%E2%80%94API%20Basics.html"/>
+    <id>http://xuzihao.fun/Draft.js ——API Basics.html</id>
+    <published>2018-07-05T12:49:00.000Z</published>
+    <updated>2018-07-05T12:50:47.002Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Draft-js-——API-Basics"><a href="#Draft-js-——API-Basics" class="headerlink" title="Draft.js ——API Basics"></a>Draft.js ——API Basics</h1><h2 id="API-Basics"><a href="#API-Basics" class="headerlink" title="API Basics"></a>API Basics</h2><p>React组件<code>Editor</code>是作为HTML5的<code>ContentEditable</code>元素并以受控组件来构建的，其目标是提供以熟悉的React控制输入API为模型的顶级API。</p><p>简要回顾，受控输入涉及两个关键部分：</p><ol><li>一个<code>state</code> 代表输入<code>value</code>的值。</li><li><code>onChange</code>函数用于接受输入的值并更新。</li></ol><p>这种方法允许组成输入的组件严格控制输入的状态，同时仍然允许更新<code>DOM</code>以提供有关用户编写的文本的信息。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyInput</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;<span class="attr">value</span>: <span class="string">''</span>&#125;;</span><br><span class="line">    <span class="keyword">this</span>.onChange = <span class="function">(<span class="params">evt</span>) =&gt;</span> <span class="keyword">this</span>.setState(&#123;<span class="attr">value</span>: evt.target.value&#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;input value=&#123;this.state.value&#125; onChange=&#123;this.onChange&#125; /&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>顶级组件可以通过此值state属性保持对输入状态的控制。<br><a id="more"></a></p><h2 id="受控富文本"><a href="#受控富文本" class="headerlink" title="受控富文本"></a>受控富文本</h2><p>在React富文本方案中，有两个明显的问题：</p><ol><li>一串字符串纯文本不足以表示富编辑器的复杂状态</li><li>HTML5的 <code>ContentEditable</code>元素没有可用的<code>onChange</code>事件。</li></ol><p><code>State</code> 因此就被作为一个单个不可变的<code>EditorState</code>对象，并且和<code>onChange</code>一起在<code>Editor</code>核心中实现，以将此状态值提供给顶部。</p><p><code>EditorState</code>对象是编辑器状态的完整快照，包含内容(contents)，光标(cursor)，和撤消(undo)/重做(redo)的历史记录。对内容的所有改变和编辑器中的选择都将创建新的<code>EditorState</code>对象。<br>注意：由于横过不可变对象的数据持久性，这仍然有效。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;Editor, EditorState&#125; <span class="keyword">from</span> <span class="string">'draft-js'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyEditor</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;<span class="attr">editorState</span>: EditorState.createEmpty()&#125;;</span><br><span class="line">    <span class="keyword">this</span>.onChange = <span class="function">(<span class="params">editorState</span>) =&gt;</span> <span class="keyword">this</span>.setState(&#123;editorState&#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;Editor editorState=&#123;this.state.editorState&#125; onChange=&#123;this.onChange&#125; /&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>对于编辑器DOM中发生的任何编辑或选择更改，<code>onChange</code>处理程序将根据这些更改使用最新的<code>EditorState</code>对象执行。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Draft-js-——API-Basics&quot;&gt;&lt;a href=&quot;#Draft-js-——API-Basics&quot; class=&quot;headerlink&quot; title=&quot;Draft.js ——API Basics&quot;&gt;&lt;/a&gt;Draft.js ——API Basics&lt;/h1&gt;&lt;h2 id=&quot;API-Basics&quot;&gt;&lt;a href=&quot;#API-Basics&quot; class=&quot;headerlink&quot; title=&quot;API Basics&quot;&gt;&lt;/a&gt;API Basics&lt;/h2&gt;&lt;p&gt;React组件&lt;code&gt;Editor&lt;/code&gt;是作为HTML5的&lt;code&gt;ContentEditable&lt;/code&gt;元素并以受控组件来构建的，其目标是提供以熟悉的React控制输入API为模型的顶级API。&lt;/p&gt;
+&lt;p&gt;简要回顾，受控输入涉及两个关键部分：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;一个&lt;code&gt;state&lt;/code&gt; 代表输入&lt;code&gt;value&lt;/code&gt;的值。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;onChange&lt;/code&gt;函数用于接受输入的值并更新。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这种方法允许组成输入的组件严格控制输入的状态，同时仍然允许更新&lt;code&gt;DOM&lt;/code&gt;以提供有关用户编写的文本的信息。&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;MyInput&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;React&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;Component&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;constructor&lt;/span&gt;(props) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;(props);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.state = &amp;#123;&lt;span class=&quot;attr&quot;&gt;value&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.onChange = &lt;span class=&quot;function&quot;&gt;(&lt;span class=&quot;params&quot;&gt;evt&lt;/span&gt;) =&amp;gt;&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.setState(&amp;#123;&lt;span class=&quot;attr&quot;&gt;value&lt;/span&gt;: evt.target.value&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  render() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &amp;lt;input value=&amp;#123;this.state.value&amp;#125; onChange=&amp;#123;this.onChange&amp;#125; /&amp;gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;顶级组件可以通过此值state属性保持对输入状态的控制。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Draft" scheme="http://xuzihao.fun/categories/Draft/"/>
+    
+    
+      <category term="React" scheme="http://xuzihao.fun/tags/React/"/>
+    
+      <category term="Draft.js" scheme="http://xuzihao.fun/tags/Draft-js/"/>
+    
+  </entry>
   
   <entry>
     <title>Webpack-dev-server配合react-router4</title>
@@ -501,34 +532,6 @@
     
     
       <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《高性能JavaScript》读书笔记</title>
-    <link href="http://xuzihao.fun/%E3%80%8A%E9%AB%98%E6%80%A7%E8%83%BDJavaScript%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.html"/>
-    <id>http://xuzihao.fun/《高性能JavaScript》读书笔记.html</id>
-    <published>2018-04-02T06:39:00.000Z</published>
-    <updated>2018-04-02T06:55:27.424Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="First"><a href="#First" class="headerlink" title="First"></a>First</h2><p><code>&lt;script&gt;</code>方面的我写了一篇博文链接地址：<a href="http://xuzihao.fun/%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html">浅谈script标签</a></p><h2 id="Second"><a href="#Second" class="headerlink" title="Second"></a>Second</h2><p>数据存储：</p><ol><li>把数据存在访问字面量和局部变量是然后去访问速度最快的。</li><li>全局变量总是在作用域的最末端所以访问速度也是最慢的。</li><li>对象的深度嵌套拿值会影响性能。</li></ol><a id="more"></a><p>例子：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//before</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> getId = <span class="built_in">document</span>.getElementById(<span class="string">"id"</span>);</span><br><span class="line">    <span class="keyword">var</span> getClass = documnent.getElementsByClassName(<span class="string">"class"</span>);</span><br><span class="line">    getId.style.width......</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"><span class="comment">//after</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> doc = <span class="built_in">document</span>;</span><br><span class="line">        <span class="keyword">var</span> getId = doc.getElementById(<span class="string">"id"</span>);</span><br><span class="line">        <span class="keyword">var</span> getClass = doc.getElementsByClassName(<span class="string">"class"</span>);</span><br><span class="line">        ....</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;First&quot;&gt;&lt;a href=&quot;#First&quot; class=&quot;headerlink&quot; title=&quot;First&quot;&gt;&lt;/a&gt;First&lt;/h2&gt;&lt;p&gt;&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;方面的我写了一篇博文链接地址：&lt;a href=&quot;http://xuzihao.fun/%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html&quot;&gt;浅谈script标签&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Second&quot;&gt;&lt;a href=&quot;#Second&quot; class=&quot;headerlink&quot; title=&quot;Second&quot;&gt;&lt;/a&gt;Second&lt;/h2&gt;&lt;p&gt;数据存储：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;把数据存在访问字面量和局部变量是然后去访问速度最快的。&lt;/li&gt;
-&lt;li&gt;全局变量总是在作用域的最末端所以访问速度也是最慢的。&lt;/li&gt;
-&lt;li&gt;对象的深度嵌套拿值会影响性能。&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="读书笔记" scheme="http://xuzihao.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="读书笔记" scheme="http://xuzihao.fun/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
