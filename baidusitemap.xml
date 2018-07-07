@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://xuzihao.fun/Draft%E2%80%94%E2%80%94Entities.html</loc>
+    <lastmod>2018-07-07T11:36:38.560Z</lastmod>
+    <data>
+        <display>
+        <title>Draft——Entities</title>
+        <pubTime>2018-07-07T11:36:00.000Z</pubTime>
+        
+        <tag>React</tag>
+         
+        <tag>Draft.js</tag>
+         
+         
+           
+             
+              <breadCrumb title="Draft" url="http://xuzihao.fun/categories/Draft/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xuzihao.fun/Draft-RichUtils.html</loc>
     <lastmod>2018-07-06T13:02:52.464Z</lastmod>
     <data>
@@ -579,12 +601,12 @@
 
     
   <url>
-    <loc>http://xuzihao.fun/RegExp.html</loc>
+    <loc>http://xuzihao.fun/%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html</loc>
     <lastmod>2018-04-01T12:21:00.000Z</lastmod>
     <data>
         <display>
-        <title>RegExp正则表达式</title>
-        <pubTime>2018-04-06T13:44:57.528Z</pubTime>
+        <title>浅谈script标签</title>
+        <pubTime>2018-03-19T12:57:11.911Z</pubTime>
         
         <tag>JavaScript</tag>
          
@@ -599,12 +621,12 @@
 
     
   <url>
-    <loc>http://xuzihao.fun/%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html</loc>
+    <loc>http://xuzihao.fun/RegExp.html</loc>
     <lastmod>2018-04-01T12:21:00.000Z</lastmod>
     <data>
         <display>
-        <title>浅谈script标签</title>
-        <pubTime>2018-03-19T12:57:11.911Z</pubTime>
+        <title>RegExp正则表达式</title>
+        <pubTime>2018-04-06T13:44:57.528Z</pubTime>
         
         <tag>JavaScript</tag>
          
