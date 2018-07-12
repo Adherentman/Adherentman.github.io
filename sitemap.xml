@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://xuzihao.fun/Sass%E5%B0%8F%E7%AC%94%E8%AE%B0.html</loc>
+    
+    <lastmod>2018-07-12T12:55:07.653Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://xuzihao.fun/Draft%E2%80%94%E2%80%94Entities.html</loc>
     
     <lastmod>2018-07-07T11:36:38.560Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://xuzihao.fun/Webpack-dev-server%E9%85%8D%E5%90%88react-router4.html</loc>
     
     <lastmod>2018-06-30T13:28:43.245Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://xuzihao.fun/Sass%E5%B0%8F%E7%AC%94%E8%AE%B0.html</loc>
-    
-    <lastmod>2018-06-21T13:26:59.330Z</lastmod>
     
   </url>
   
