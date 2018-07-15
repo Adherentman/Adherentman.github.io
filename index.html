@@ -271,6 +271,174 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/K8s基本概念.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XuZiHao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="壮壮-Technology">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/K8s基本概念.html" itemprop="url">K8s基本概念</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-15T22:24:00+08:00">
+                2018-07-15
+              </time>
+            
+            
+              <span class="post-updated">
+              &nbsp; | &nbsp; 更新于
+              <time itemprop="dateUpdated" datetime="2018-07-15T22:44:54+08:00" content="2018-07-15">
+                2018-07-15
+              </time>
+              </span>
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/K8s基本概念.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="K8s基本概念.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="K8s基本概念"><a href="#K8s基本概念" class="headerlink" title="K8s基本概念"></a>K8s基本概念</h1><p>基本概念<br>以下都可以看作一种资源对象</p>
+<ul>
+<li>Node</li>
+<li>Pod</li>
+<li>Replication Controller</li>
+<li>Service<br>以上通过k8s提高的 <code>kubectl</code> 或者 <code>Api</code> 调用进行操作，并保存在 <code>etcd</code> 中。</li>
+</ul>
+<p>k8s集群由两类节点组成：<strong>Master</strong> 和 <strong>Node</strong>。<br>在<code>Master</code>上运行<code>etcd</code>、<code>API Server</code>、<code>Controller Manager</code>和<code>Scheduler</code>四个组件。其中后面三个组件构成了k8s的总控中心，负责对集群中所有资源进行管理和调度。</p>
+<p>在每个<code>Node</code> 上运行<code>kubelet</code>、<code>Proxy</code>和<code>Docker Daemon</code>三个组件。<br>它们负责对本节点上的<code>Pod</code>的生命周期进行管理，以及实现服务代理的功能。<br>另外在所有节点上都可以运行<code>Kubectl</code>命令行工具，它提供了k8s的集群管理工具集。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/Draft——Entities.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1754,172 +1922,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/畅读深入理解计算机系统.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="XuZiHao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="壮壮-Technology">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/畅读深入理解计算机系统.html" itemprop="url">畅读深入理解计算机系统</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-16T21:53:01+08:00">
-                2018-05-16
-              </time>
-            
-            
-              <span class="post-updated">
-              &nbsp; | &nbsp; 更新于
-              <time itemprop="dateUpdated" datetime="2018-05-23T20:50:28+08:00" content="2018-05-23">
-                2018-05-23
-              </time>
-              </span>
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/畅读深入理解计算机系统.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="畅读深入理解计算机系统.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="畅读深入理解计算机系统"><a href="#畅读深入理解计算机系统" class="headerlink" title="畅读深入理解计算机系统"></a>畅读深入理解计算机系统</h1><h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>程序为0和1组成的位。<br>8个位组成一起为字节。<br>每个字节表示程序中的某些字符。</p>
-<p>只由 <code>ASCII</code> 字符构成的文件为——文本文件<br>其他文件为———二进制文件</p>
-<p>编译一个可执行的 <code>hello world</code>  需要4个步骤:<br>hello.c -&gt; 预处理器(cpp) -&gt; hello.i -&gt; 编译器(ccl) -&gt; hello.s -&gt; 汇编器(as) -&gt; hello.o -&gt; 链接器(ld) -&gt; hello可执行文件<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/畅读深入理解计算机系统.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1974,7 +1976,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">89</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
