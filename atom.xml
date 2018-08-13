@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xuzihao.fun/"/>
-  <updated>2018-07-15T14:44:54.376Z</updated>
+  <updated>2018-08-13T10:53:40.297Z</updated>
   <id>http://xuzihao.fun/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS之em/rem</title>
+    <link href="http://xuzihao.fun/CSS%E4%B9%8Bem-rem.html"/>
+    <id>http://xuzihao.fun/CSS之em-rem.html</id>
+    <published>2018-08-13T10:51:00.000Z</published>
+    <updated>2018-08-13T10:53:40.297Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="CSS之em-rem"><a href="#CSS之em-rem" class="headerlink" title="CSS之em/rem"></a>CSS之em/rem</h1><p>#blog<br>先来个一句话概括：</p><ul><li><code>em</code>相对于父元素</li><li><code>rem</code>相对于根元素<br>所以这些都是相对单位。</li></ul><p>默认<code>font-size</code>为16px所以我们可以知道<code>1px和1em</code>之间的关系</p><blockquote><p>1em = 16px<br>1px = 1 ÷ 16 = 0.0625em  </p></blockquote><p>那么我们知道具体的px值后我们就能直接换算，比如：</p><blockquote><p>我想要800px转换成<code>em</code><br>800 * 0.0625em = 50em  </p></blockquote><p>那么如果父元素不为16px，根据上面我们可以得出一个公式：</p><blockquote><p>1 ÷ 父元素的font-size × 你想要的像素值 = em值  </p></blockquote><h2 id="REM"><a href="#REM" class="headerlink" title="REM"></a>REM</h2><p>那么REM其实和EM没啥区别。<br>本质在REM以<code>&lt;html&gt;</code>标签中的<code>font-size</code>为依据</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;CSS之em-rem&quot;&gt;&lt;a href=&quot;#CSS之em-rem&quot; class=&quot;headerlink&quot; title=&quot;CSS之em/rem&quot;&gt;&lt;/a&gt;CSS之em/rem&lt;/h1&gt;&lt;p&gt;#blog&lt;br&gt;先来个一句话概括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;
+      
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://xuzihao.fun/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="http://xuzihao.fun/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title>K8s基本概念</title>
@@ -502,30 +529,6 @@
     
     
       <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Contenteditable与变成输入普通文本</title>
-    <link href="http://xuzihao.fun/contenteditable.html"/>
-    <id>http://xuzihao.fun/contenteditable.html</id>
-    <published>2018-04-15T11:36:26.000Z</published>
-    <updated>2018-04-17T15:44:56.767Z</updated>
-    
-    <content type="html"><![CDATA[<p>我们需要实现富文本的方法有一个很方便那就是在任意元素你都可以给个属性叫<code>contenteditable</code></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">contenteditable</span>&gt;</span>我是个富文本哟！<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><p>很简单这就是一个富文本啦！</p><a id="more"></a><p>经过百度一番，看见张鑫旭大神的很久以前的文章。为了实现普通输入文本我们只能借助css啦！</p><p><strong>user-modify</strong></p><ul><li>user-modify: read-only;<ul><li>只能看</li></ul></li><li>user-modify: read-write;<ul><li>支持富文本</li></ul></li><li><del>user-modify: write-only;</del><ul><li>无所谓的东西</li></ul></li><li>user-modify: read-write-plaintext-only;<ul><li>纯文本</li></ul></li></ul><p>OK~~问题解决啦。那就是只要给那个元素设个css</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">contenteditable</span> <span class="attr">style</span>=<span class="string">"user-modify:read-write-plaintext-only"</span>&gt;</span></span><br><span class="line">    我是纯文本</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><p>参考：</p><ul><li><a href="http://www.zhangxinxu.com/wordpress/2016/01/contenteditable-plaintext-only/" target="_blank" rel="noopener">张鑫旭大神博客</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我们需要实现富文本的方法有一个很方便那就是在任意元素你都可以给个属性叫&lt;code&gt;contenteditable&lt;/code&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;contenteditable&lt;/span&gt;&amp;gt;&lt;/span&gt;我是个富文本哟！&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;很简单这就是一个富文本啦！&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Html" scheme="http://xuzihao.fun/categories/Html/"/>
-    
-    
-      <category term="Html" scheme="http://xuzihao.fun/tags/Html/"/>
     
   </entry>
   
