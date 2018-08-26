@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="数据库,PostgreSQL," />
 
 
 
@@ -88,17 +88,18 @@
 
 
 
-<meta name="description" content="title: PostgreSQL基础date: 2018-08-26 20：05comments: truelayout: posttags: [数据库, PostgreSQL]categories: [数据库, PostgreSQL]  PostgreSQL基础创建新表：123456CREATE TABLE xxx (	xxx		int,	# 普通的整数类型	xxx		varchar(80)">
+<meta name="description" content="PostgreSQL基础创建新表：123456CREATE TABLE xxx (	xxx		int,	# 普通的整数类型	xxx		varchar(80), # 一个可以存储最长 80 个字符的任意字符串的数据类型	xxx		real,		# 一种用于存储单精度浮点数的类型	xxx		date		# 时间) 删表：1DROP TABLE tablename; 在表中增加行：12INSERT IN">
+<meta name="keywords" content="数据库,PostgreSQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="壮壮-Technology">
+<meta property="og:title" content="PostgreSQL基础">
 <meta property="og:url" content="http://xuzihao.fun/PostgreSQL基础.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="title: PostgreSQL基础date: 2018-08-26 20：05comments: truelayout: posttags: [数据库, PostgreSQL]categories: [数据库, PostgreSQL]  PostgreSQL基础创建新表：123456CREATE TABLE xxx (	xxx		int,	# 普通的整数类型	xxx		varchar(80)">
+<meta property="og:description" content="PostgreSQL基础创建新表：123456CREATE TABLE xxx (	xxx		int,	# 普通的整数类型	xxx		varchar(80), # 一个可以存储最长 80 个字符的任意字符串的数据类型	xxx		real,		# 一种用于存储单精度浮点数的类型	xxx		date		# 时间) 删表：1DROP TABLE tablename; 在表中增加行：12INSERT IN">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-26T12:57:59.264Z">
+<meta property="og:updated_time" content="2018-08-26T14:09:12.254Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="壮壮-Technology">
-<meta name="twitter:description" content="title: PostgreSQL基础date: 2018-08-26 20：05comments: truelayout: posttags: [数据库, PostgreSQL]categories: [数据库, PostgreSQL]  PostgreSQL基础创建新表：123456CREATE TABLE xxx (	xxx		int,	# 普通的整数类型	xxx		varchar(80)">
+<meta name="twitter:title" content="PostgreSQL基础">
+<meta name="twitter:description" content="PostgreSQL基础创建新表：123456CREATE TABLE xxx (	xxx		int,	# 普通的整数类型	xxx		varchar(80), # 一个可以存储最长 80 个字符的任意字符串的数据类型	xxx		real,		# 一种用于存储单精度浮点数的类型	xxx		date		# 时间) 删表：1DROP TABLE tablename; 在表中增加行：12INSERT IN">
 
 
 
@@ -134,7 +135,7 @@
 
 
 
-  <title> | 壮壮-Technology</title>
+  <title>PostgreSQL基础 | 壮壮-Technology</title>
   
 
 
@@ -288,7 +289,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline"></h2>
+          <h2 class="post-title" itemprop="name headline">PostgreSQL基础</h2>
         
 
         <div class="post-meta">
@@ -307,7 +308,7 @@
             
               <span class="post-updated">
               &nbsp; | &nbsp; 更新于
-              <time itemprop="dateUpdated" datetime="2018-08-26T20:57:59+08:00" content="2018-08-26">
+              <time itemprop="dateUpdated" datetime="2018-08-26T22:09:12+08:00" content="2018-08-26">
                 2018-08-26
               </time>
               </span>
@@ -317,6 +318,39 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/PostgreSQL/" itemprop="url" rel="index">
+                    <span itemprop="name">PostgreSQL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -361,10 +395,7 @@
       
 
       
-        <hr>
-<p>title: PostgreSQL基础<br>date: 2018-08-26 20：05<br>comments: true<br>layout: post<br>tags: [数据库, PostgreSQL]<br>categories: [数据库, PostgreSQL]</p>
-<hr>
-<h1 id="PostgreSQL基础"><a href="#PostgreSQL基础" class="headerlink" title="PostgreSQL基础"></a>PostgreSQL基础</h1><p>创建新表：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> xxx (</span><br><span class="line">	xxx		<span class="built_in">int</span>,	# 普通的整数类型</span><br><span class="line">	xxx		<span class="built_in">varchar</span>(<span class="number">80</span>), # 一个可以存储最长 <span class="number">80</span> 个字符的任意字符串的数据类型</span><br><span class="line">	xxx		<span class="built_in">real</span>,		# 一种用于存储单精度浮点数的类型</span><br><span class="line">	xxx		<span class="built_in">date</span>		# 时间</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+        <h1 id="PostgreSQL基础"><a href="#PostgreSQL基础" class="headerlink" title="PostgreSQL基础"></a>PostgreSQL基础</h1><p>创建新表：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> xxx (</span><br><span class="line">	xxx		<span class="built_in">int</span>,	# 普通的整数类型</span><br><span class="line">	xxx		<span class="built_in">varchar</span>(<span class="number">80</span>), # 一个可以存储最长 <span class="number">80</span> 个字符的任意字符串的数据类型</span><br><span class="line">	xxx		<span class="built_in">real</span>,		# 一种用于存储单精度浮点数的类型</span><br><span class="line">	xxx		<span class="built_in">date</span>		# 时间</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
 <p>删表：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> tablename;</span><br></pre></td></tr></table></figure></p>
 <p>在表中增加行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> tablename (xx, xx, xx)</span><br><span class="line">		<span class="keyword">VALUES</span>(xx, xx, xx)</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
@@ -383,6 +414,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据库/" rel="tag"># 数据库</a>
+          
+            <a href="/tags/PostgreSQL/" rel="tag"># PostgreSQL</a>
+          
+        </div>
       
 
       
@@ -503,7 +542,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -514,7 +553,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -769,7 +808,7 @@
         var disqus_config = function () {
           this.page.url = 'http://xuzihao.fun/PostgreSQL基础.html';
           this.page.identifier = 'PostgreSQL基础.html';
-          this.page.title = '';
+          this.page.title = 'PostgreSQL基础';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://xuzihao.disqus.com/embed.js';

@@ -51,8 +51,8 @@ http://xuzihao.fun/计算机网络读书笔记（一）.html
 http://xuzihao.fun/《图解HTTP》读书笔记.html
 http://xuzihao.fun/《编码》读书笔记.html
 http://xuzihao.fun/例句.html
-http://xuzihao.fun/时态.html
 http://xuzihao.fun/单词.html
+http://xuzihao.fun/时态.html
 http://xuzihao.fun/React生命周期.html
 http://xuzihao.fun/学习CSS(二).html
 http://xuzihao.fun/学CSS（一）.html

@@ -5,14 +5,24 @@
     
   <url>
     <loc>http://xuzihao.fun/PostgreSQL%E5%9F%BA%E7%A1%80.html</loc>
-    <lastmod>2018-08-26T12:57:59.264Z</lastmod>
+    <lastmod>2018-08-26T14:09:12.254Z</lastmod>
     <data>
         <display>
-        <title></title>
+        <title>PostgreSQL基础</title>
         <pubTime>2018-08-26T05:49:36.501Z</pubTime>
         
+        <tag>数据库</tag>
+         
+        <tag>PostgreSQL</tag>
+         
          
            
+             
+              <breadCrumb title="数据库" url="http://xuzihao.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+          
+             
+              <breadCrumb title="PostgreSQL" url="http://xuzihao.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/PostgreSQL/"/>
+          
         </display>
     </data>
     </url>
