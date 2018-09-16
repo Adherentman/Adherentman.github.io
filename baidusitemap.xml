@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>http://xuzihao.fun/PostgreSQL%E5%9F%BA%E7%A1%80.html</loc>
+    <lastmod>2018-09-16T07:18:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>PostgreSQL基础</title>
+        <pubTime>2018-08-26T14:09:00.000Z</pubTime>
+        
+        <tag>数据库</tag>
+         
+        <tag>PostgreSQL</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据库" url="http://xuzihao.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+          
+             
+              <breadCrumb title="PostgreSQL" url="http://xuzihao.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/PostgreSQL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xuzihao.fun/Koa2%E2%80%94Https.html</loc>
     <lastmod>2018-08-27T12:44:34.898Z</lastmod>
     <data>
@@ -17,31 +42,6 @@
            
              
               <breadCrumb title="Koa2" url="http://xuzihao.fun/categories/Koa2/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xuzihao.fun/PostgreSQL%E5%9F%BA%E7%A1%80.html</loc>
-    <lastmod>2018-08-26T14:09:12.254Z</lastmod>
-    <data>
-        <display>
-        <title>PostgreSQL基础</title>
-        <pubTime>2018-08-26T05:49:36.501Z</pubTime>
-        
-        <tag>数据库</tag>
-         
-        <tag>PostgreSQL</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据库" url="http://xuzihao.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-          
-             
-              <breadCrumb title="PostgreSQL" url="http://xuzihao.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/PostgreSQL/"/>
           
         </display>
     </data>
