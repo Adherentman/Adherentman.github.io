@@ -1,3 +1,4 @@
+http://xuzihao.fun/打造个人or团队适用的开源项目规范.html
 http://xuzihao.fun/git-empty-object-file.html
 http://xuzihao.fun/es6解构赋值妙用.html
 http://xuzihao.fun/Koa2—Https.html
@@ -84,8 +85,8 @@ http://xuzihao.fun/JavaScript作用域.html
 http://xuzihao.fun/JavaScript——16道算法题.html
 http://xuzihao.fun/前端面试题.html
 http://xuzihao.fun/Vue.js小记.html
-http://xuzihao.fun/Es6箭头函数.html
 http://xuzihao.fun/初入React.html
+http://xuzihao.fun/Es6箭头函数.html
 http://xuzihao.fun/JavaScript变量.html
 http://xuzihao.fun/JavaScript基本概念copy.html
 http://xuzihao.fun/Javascript Dom编程艺术学习笔记一（第三章兼高程三）.html
