@@ -1,3 +1,4 @@
+http://xuzihao.fun/部署 Kubernetes 集群.html
 http://xuzihao.fun/打造个人or团队适用的开源项目规范.html
 http://xuzihao.fun/git-empty-object-file.html
 http://xuzihao.fun/es6解构赋值妙用.html
@@ -76,8 +77,8 @@ http://xuzihao.fun/Node.html
 http://xuzihao.fun/git.html
 http://xuzihao.fun/yewu.html
 http://xuzihao.fun/评论功能迁移.html
-http://xuzihao.fun/E-R图.html
 http://xuzihao.fun/GraphQL.html
+http://xuzihao.fun/E-R图.html
 http://xuzihao.fun/React-Router.html
 http://xuzihao.fun/React-State与Props的小心思.html
 http://xuzihao.fun/JavaScript闭包.html
