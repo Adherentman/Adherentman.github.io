@@ -4,7 +4,7 @@ date: 2017-05-18 17：37
 comments: true
 layout: post
 tags: [JavaScript]
-categories: Javascript基础
+categories: Javascript修仙之旅
 ---
 
 # Javascript作用域与作用域链

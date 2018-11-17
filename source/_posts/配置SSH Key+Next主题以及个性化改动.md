@@ -1,4 +1,4 @@
-﻿---
+---
 title: 配置SSH Key+Next主题以及个性化改动
 date: 2017-03-20 21:10:55
 comments: true
@@ -15,18 +15,18 @@ Git是分布式的代码管理工具，远程的代码管理是基于SSH的，�
  ```shell
 $ git config --global user.name
  ```
- 
+
  ```shell
  $ git config --global user.email
  ```
- 
+
  <!--more-->
 - 查看你是否已经拥有密钥
  ```shell
  $cd ~/.ssh
  ```
  如果没有的话就不会有此文件，有的话就会备份删除掉
- 
+
 - 生成密钥
  ```shell
  $ ssh-keygen -t rsa -C “user.email”
@@ -79,7 +79,7 @@ Hexo之Next
 ==
 
  - Hexo有很多主题，有大道至简的`maupassant` 也有`casper`还有`uno`。但是我还是最喜欢[next](http://theme-next.iissnan.com/)的风格。
- 
+
 
 安装Next
 ======
@@ -133,7 +133,7 @@ Scheme 的切换通过更改 主题配置文件（theme/next下的`_config.yml`�
 scheme: Pisces
 ```
 还有更多的小东西大家可以去[Next官方文档](https://github.com/iissnan/hexo-theme-next/releases)看。比如说
- 
+
  - 菜单，
  - 侧栏，
  - 头像，

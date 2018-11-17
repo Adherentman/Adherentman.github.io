@@ -3,7 +3,7 @@ title: Node.js+hexo部署博客
 date: 2017-03-20 16:10:14
 comments: true
 layout: post
-tags: [hexo,git,node.js,javascript]
+tags: [hexo,git,node.js,JavaScript]
 categories: Technology
 ---
 

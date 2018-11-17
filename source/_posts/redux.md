@@ -1,5 +1,5 @@
 ---
-title: React-Redux、Redux
+title: React-Redux和Redux
 date: 2017-07-31 09:18:26
 comments: true
 layout: post

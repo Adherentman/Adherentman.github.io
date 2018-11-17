@@ -4,12 +4,12 @@ date: 2017-04-11 10:49
 comments: true
 layout: post
 tags: [JavaScript]
-categories: Javascript基础
+categories: Javascript修仙之旅
 ---
 
 # JavaScript基本概念（高程3）
 
-## JavaScript高级程序设计第三章
+
 
 ## 数据类型
 

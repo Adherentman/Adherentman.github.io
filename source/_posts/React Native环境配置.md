@@ -3,8 +3,8 @@ title: React Native iOS/android环境配置
 date: 2017-08-14 14：54
 comments: true
 layout: post
-tags: [React,React Native,iOS,Android]
-categories: React,React Native,iOS,Android
+tags: [React Native]
+categories: React Native
 ---
 
 # React Native环境配置
@@ -13,11 +13,11 @@ categories: React,React Native,iOS,Android
 
 因为我是在mac下搭建环境的。所以比较方便。
 
-- Xcode时必须的！
+- Xcode时**必须**的！
 
-- > brew install node        //电脑需要有node
-  >
-  > brew install watchman    //这是用来监视文件系统中的更改的工具
+- brew install node        //电脑需要有**node**
+
+- brew install watchman    //这是用来监视文件系统中的更改的工具
 
 - npm install -g react-native-cli
 
@@ -44,7 +44,7 @@ react-native run-ios
 
 接下来我们等就好了
 
-![iphone6](/images/iphone6.png)
+![iphonex](/images/iphonex.png)
 
 这就是成功界面
 

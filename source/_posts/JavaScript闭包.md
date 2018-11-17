@@ -1,10 +1,11 @@
 ---
 title: JavaScript闭包
 date: 2017-05-26 17：47
+updated: 2018-04-04 21:35
 comments: true
 layout: post
 tags: [JavaScript]
-categories: Javascript基础
+categories: Javascript修仙之旅
 ---
 
 # 闭包/bibao/Closures
@@ -137,10 +138,34 @@ f2();		//1
 f3();		//2
 ```
 
-注意这里用了一个“创建一个匿名函数并立刻执行”的语法：
+注意这里用了一个“**创建一个匿名函数并立刻执行**”的语法：
 
 ```javascript
 (function (n) {
     return n;
 })(1); //1
 ```
+## 总结
+
+可能上面的例子都不够很清晰
+
+```javascript
+function a() {
+    var b = 1;
+    function c(){
+        console.log(b++);
+    }
+    return c;
+}
+
+var d1 = a();
+var d2 = a();
+
+d1();		//1
+d1();		//2
+
+d2();		//1
+d2();		//2
+```
+
+也就是说他们都会去创建一个属于自己的执行环境！ok一切明了。

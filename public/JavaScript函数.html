@@ -1,20 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
 
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
+
 
 
 
@@ -37,38 +52,27 @@
 
 
 
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
 
 
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg?v=5.1.3">
+
+
+  <link rel="mask-icon" href="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg?v=5.1.3" color="#222">
+
+
+
 
 
   <meta name="keywords" content="JavaScript," />
@@ -82,24 +86,20 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
-
-
-
-
-<meta name="description" content="JavaScript函数在JavaScript中，函数是一等公民。">
+<meta name="description" content="在JavaScript中，函数是一等公民。函数是第一型对象。 所以说，我们可以将其视为其他任意类型的JavaScript对象。">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript函数">
-<meta property="og:url" content="http://adherentman.cn/JavaScript函数.html">
+<meta property="og:url" content="http://xzh.hi.cn/JavaScript函数.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="JavaScript函数在JavaScript中，函数是一等公民。">
-<meta property="og:updated_time" content="2017-08-16T14:43:43.000Z">
+<meta property="og:description" content="在JavaScript中，函数是一等公民。函数是第一型对象。 所以说，我们可以将其视为其他任意类型的JavaScript对象。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-27T07:19:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript函数">
-<meta name="twitter:description" content="JavaScript函数在JavaScript中，函数是一等公民。">
+<meta name="twitter:description" content="在JavaScript中，函数是一等公民。函数是第一型对象。 所以说，我们可以将其视为其他任意类型的JavaScript对象。">
 
 
 
@@ -107,10 +107,12 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
-    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '6398696795836253000',
       author: '徐大大'
@@ -127,48 +129,32 @@
 
 
 
-  <link rel="canonical" href="http://adherentman.cn/JavaScript函数.html"/>
+  <link rel="canonical" href="http://xzh.hi.cn/JavaScript函数.html"/>
 
 
 
 
 
-  <title> JavaScript函数 | 壮壮-Technology </title>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
+  <title>JavaScript函数 | 壮壮-Technology</title>
   
 
 
 
 
 
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?c695bc1693d95b40142d577a27c7180c";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
 
 
+</head>
 
-
-
-
-
-
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container sidebar-position-right page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -184,7 +170,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">宠辱不惊，闲看庭前花落花开</p>
+        <h1 class="site-subtitle" itemprop="description">宠辱不惊，闲看庭前花落花开</h1>
       
   </div>
 
@@ -214,36 +200,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
@@ -254,54 +210,40 @@
         </li>
       
         
-        <li class="menu-item menu-item-guestbook">
-          <a href="/guestbook" rel="section">
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            留言
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
           </a>
         </li>
       
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
       
     </ul>
   
 
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocapitalize="off" autocomplete="off" autocorrect="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
   
 </nav>
 
@@ -325,13 +267,17 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://adherentman.cn/JavaScript函数.html">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xzh.hi.cn/JavaScript函数.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XuZiHao">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/1.jpg">
+      <meta itemprop="image" content="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -343,14 +289,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                JavaScript函数
-              
-            
-          </h1>
+          <h2 class="post-title" itemprop="name headline">JavaScript函数</h2>
         
 
         <div class="post-meta">
@@ -366,7 +305,14 @@
                 2017-08-16
               </time>
             
-
+            
+              <span class="post-updated">
+              &nbsp; | &nbsp; 更新于
+              <time itemprop="dateUpdated" datetime="2018-04-27T15:19:40+08:00" content="2018-04-27">
+                2018-04-27
+              </time>
+              </span>
+            
             
 
             
@@ -385,8 +331,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Javascript基础</span>
+                  <a href="/categories/Javascript修仙之旅/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript修仙之旅</span>
                   </a>
                 </span>
 
@@ -397,6 +343,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/JavaScript函数.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="JavaScript函数.html" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -418,59 +375,114 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <h1 id="JavaScript函数"><a href="#JavaScript函数" class="headerlink" title="JavaScript函数"></a>JavaScript函数</h1><p>在JavaScript中，函数是一等公民。</p>
+        <p>在JavaScript中，函数是<strong>一等公民</strong>。函数是<strong>第一型对象</strong>。</p>
+<p>所以说，我们可以将其视为其他任意类型的JavaScript对象。</p>
+<a id="more"></a>
+<p>在JavaScript中函数可以：</p>
+<ul>
+<li>可以赋值给<strong>变量，数组，或其他对象</strong>的属性</li>
+<li>可以通过<strong>字面量</strong>进行创建</li>
+<li>将其作为<strong>参数</strong>进行传递</li>
+<li>可以作为函数的<strong>返回值</strong>进行返回</li>
+<li>可以拥有<strong>动态创建并赋值</strong>的属性</li>
+</ul>
+<p>最重要是的，它们还可以被<strong>调用</strong>。这些调用通常是以<strong>异步方式</strong>进行调用。</p>
+<h1 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h1><p>回调函数的术语源于：我们定义一个函数，以便其他一些代码在适当的时机回头再调用他。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">useless</span>(<span class="params">callback</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> callback();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text = <span class="string">'Demo arigato'</span>;</span><br><span class="line">assert(useless(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> text;</span><br><span class="line">&#125;) ===text, <span class="string">"This useless function works!"</span> + text);</span><br><span class="line"><span class="comment">//assert是测试函数</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">assert</span>(<span class="params">value, desc</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> li = <span class="built_in">document</span>.createElement(<span class="string">"li"</span>);</span><br><span class="line">  li.className = value ? <span class="string">"pase"</span> : <span class="string">"fail"</span>;</span><br><span class="line">  li.appendChild(<span class="built_in">document</span>.createTextNode(desc));</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">"results"</span>).appendChild(li);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="函数字面量"><a href="#函数字面量" class="headerlink" title="函数字面量"></a>函数字面量</h1><p>函数字面量由4个部分组成</p>
+<ul>
+<li>function关键字</li>
+<li>可选名称。</li>
+<li>括号内部，一个以逗号分隔的参数列表。</li>
+<li>包含在大括号内的一系列JavaScript语句叫 <strong>函数体</strong>。</li>
+</ul>
+<p>注意：</p>
+<blockquote>
+<p>所有的函数都有name属性，该属性保存的是他们的名称的字符串。</p>
+<p>当然没有名称的函数也有name属性，只是为空字符串。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> canFly = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这个函数我们可以通过它的引用 <strong>canFly</strong> 进行调用。它与canFly函数几乎一模一样，但是不一样的地方在于它的字符串值为” ”，而不是“canFly”。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.isDeadly = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>我们可以（ <strong>window.isDeadly() || isDeadly()</strong> ）去调用这个函数，其实这就跟命名函数几乎一模一样了。</p>
+<h1 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h1><p>4个不同的方式可以进行函数调用。</p>
+<ol>
+<li>作为一个函数进行调用</li>
+<li>作为一个方法进行调用，在对象是进行调用，支持面向对象编程</li>
+<li>作为构造器进行调用，创建一个新对象</li>
+<li>通过<code>apply()</code>或<code>call()</code>方法进行调用。</li>
+</ol>
+<h2 id="函数传递两个隐式参数"><a href="#函数传递两个隐式参数" class="headerlink" title="函数传递两个隐式参数"></a>函数传递两个隐式参数</h2><p><strong>arguments和this</strong></p>
+<p>隐式（limplicit），意味着这些参数不会显示列在函数签名里。但是他们都会默默的传递给函数并存在于函数作用于内。</p>
+<h3 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h3><p>它是传递给函数的所有参数的一个集合，它有一个<code>length</code>属性。比如：</p>
+<p><code>arguments[2]</code>表示获取第三个参数。</p>
+<p>虽然它可以使用数组进行获取，甚至可以用for循环对它进行遍历。但是它确实不是JS数组。</p>
+<p>我们只要将它看成一个类数组结构，并且 <strong>只拥有数组</strong> 的某些特性，仅此而已。</p>
+<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p>this参数引用了与该函数调用进行隐式关联的一个对象，被称为<strong>函数上下文。</strong></p>
+<h2 id="作为函数进行调用"><a href="#作为函数进行调用" class="headerlink" title="作为函数进行调用"></a>作为函数进行调用</h2><p>很简单，比如说：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hi</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> hello;</span><br><span class="line">&#125;</span><br><span class="line">hi();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> xzh = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> xuzihao;</span><br><span class="line">&#125;</span><br><span class="line">xzh();</span><br></pre></td></tr></table></figure>
+<p>这就是作为函数调用。这种方法调用函数的上下文就是——-window对象。</p>
+<h2 id="作为方法进行调用"><a href="#作为方法进行调用" class="headerlink" title="作为方法进行调用"></a>作为方法进行调用</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;&#125;;</span><br><span class="line">o.whatever = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">o.whatever();</span><br></pre></td></tr></table></figure>
+<p>那么<code>o.whatever</code>的函数上下文为<strong>o</strong>。</p>
+<h2 id="作为构造器进行调用"><a href="#作为构造器进行调用" class="headerlink" title="作为构造器进行调用"></a>作为构造器进行调用</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">creep</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">new</span> creep();</span><br></pre></td></tr></table></figure>
+<h3 id="构造器的超能力"><a href="#构造器的超能力" class="headerlink" title="构造器的超能力"></a>构造器的超能力</h3><p>构造器调用时，下面的特殊行为会发生：</p>
+<ul>
+<li>创建一个新的空对象</li>
+<li>传递给构造器的对象是this参数，从而成为构造器的函数上下文。</li>
+<li>如果没有显式的返回值，新创建的对象则作为构造器的返回值进行返回。</li>
+</ul>
+<h2 id="使用apply-和call-方法进行调用"><a href="#使用apply-和call-方法进行调用" class="headerlink" title="使用apply()和call()方法进行调用"></a>使用apply()和call()方法进行调用</h2><p>可以显式指定任何一个对象作为其函数上下文。</p>
+<p>JavaScript的每个函数都有<strong>apply()</strong> 和 <strong>call()</strong>方法。使用其中一个我们都可以实现这种功能。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">juggle</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = <span class="number">0</span>;</span><br><span class="line">  	<span class="keyword">for</span>(<span class="keyword">var</span> n = <span class="number">0</span>; n &lt; <span class="built_in">arguments</span>.length; n++)&#123;</span><br><span class="line">        result += <span class="built_in">arguments</span>[n];</span><br><span class="line">    &#125;</span><br><span class="line">  	<span class="keyword">this</span>.result = result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ninja1 = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> ninja2 = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//apply() 传入2个参数： 一个是作为函数上下文的对象，另外一个是作为函数参数所组成的数组。</span></span><br><span class="line">juggle.apply(ninja1, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]);</span><br><span class="line"><span class="comment">//call() 传入两个参数： 一个是作为函数上下文的对象，另外一个是一个参数列表。</span></span><br><span class="line">juggle.call(ninja2, <span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//assert是断言测试用的</span></span><br><span class="line">assert(ninja1.result === <span class="number">10</span>, <span class="string">"juggled via apply"</span>);</span><br><span class="line">assert(ninja2.result === <span class="number">26</span>, <span class="string">"juggled via call"</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="五种this的工作原理"><a href="#五种this的工作原理" class="headerlink" title="五种this的工作原理"></a>五种this的工作原理</h2><h3 id="全局"><a href="#全局" class="headerlink" title="全局"></a>全局</h3><blockquote>
+<p>this;</p>
+</blockquote>
+<p>this指向全局对象，浏览器：window，js:global</p>
+<h3 id="函数调用-1"><a href="#函数调用-1" class="headerlink" title="函数调用"></a>函数调用</h3><blockquote>
+<p>foo();</p>
+</blockquote>
+<p>this也指向全局对象</p>
+<h3 id="方法调用"><a href="#方法调用" class="headerlink" title="方法调用"></a>方法调用</h3><blockquote>
+<p>bar.foo();</p>
+</blockquote>
+<p>this指向被调用的对象。</p>
+<p>调用构造函数</p>
+<blockquote>
+<p>new foo();</p>
+</blockquote>
+<p>this指向新创建的对像。</p>
+<h3 id="显式的设置this"><a href="#显式的设置this" class="headerlink" title="显式的设置this"></a>显式的设置this</h3><blockquote>
+<p>apply, call</p>
+</blockquote>
+<p>当使用 <code>Function.prototype</code> 上的 <code>call</code> 或者 <code>apply</code> 方法时，函数内的 <code>this</code> 将会被 <strong>显式设置</strong>为函数调用的第一个参数。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>作为函数进行调用：该上下文是方法的拥有者。</li>
+<li>作为全局函数进行调用：该上下文永远是windos。</li>
+<li>作为构造器函数进行调用：该上下文对象则是新创建的对象实例。</li>
+<li>通过函数的apply（）或call（）方法进行调用时，上下文可以设置成任意值。</li>
+</ul>
 
       
     </div>
+    
+    
+    
 
-    <div>
-      
-        
+    
 
-      
-    </div>
+    
 
-    <div>
-      
-        
-  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
-    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-      <span>赏</span>
-    </button>
-    <div id="QR" style="display: none;">
-      
-        <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/wechatpay.png" alt="XuZiHao WeChat Pay"/>
-          <p>微信打赏</p>
-        </div>
-      
-      
-        <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/images/alipay.png" alt="XuZiHao Alipay"/>
-          <p>支付宝打赏</p>
-        </div>
-      
-    </div>
-  </div>
-
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -482,7 +494,7 @@
       
 
       
-        
+      
       
 
       
@@ -510,6 +522,10 @@
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -525,11 +541,19 @@
 
 
           
-  <div class="comments" id="comments">
-    
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTc3My82MzM5"></div>
-    
-  </div>
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
 
 
         </div>
@@ -545,117 +569,113 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
             站点概览
           </li>
         </ul>
       
 
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/1.jpg"
-               alt="XuZiHao" />
-          <p class="site-author-name" itemprop="name">XuZiHao</p>
-           
-              <p class="site-description motion-element" itemprop="description">🤔🤡🤔</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">33</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg"
+                alt="XuZiHao" />
             
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">13</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">23</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
+              <p class="site-author-name" itemprop="name">XuZiHao</p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
-        
 
-        <div class="links-of-author motion-element">
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">98</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
           
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/Adherentman" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/5723659619/" target="_blank" title="微博">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  微博
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/xu-zi-hao-60/" target="_blank" title="知乎">
-                  
-                    <i class="fa fa-fw fa-zhihu"></i>
-                  
-                  知乎
-                </a>
-              </span>
-            
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Adherentman" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/u/0/114280794987404078066" target="_blank" title="Google">
+                    
+                      <i class="fa fa-fw fa-google"></i>Google</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/xu-zi-hao-60/activities" target="_blank" title="知乎">
+                    
+                      <i class="fa fa-fw fa-知乎"></i>知乎</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
         </div>
-
-        
-        
-
-        
-        
-
-        
-
-
       </section>
 
       
@@ -668,7 +688,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript函数"><span class="nav-number">1.</span> <span class="nav-text">JavaScript函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#回调"><span class="nav-number">1.</span> <span class="nav-text">回调</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数字面量"><span class="nav-number">2.</span> <span class="nav-text">函数字面量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数调用"><span class="nav-number">3.</span> <span class="nav-text">函数调用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数传递两个隐式参数"><span class="nav-number">3.1.</span> <span class="nav-text">函数传递两个隐式参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#arguments"><span class="nav-number">3.1.1.</span> <span class="nav-text">arguments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this"><span class="nav-number">3.1.2.</span> <span class="nav-text">this</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作为函数进行调用"><span class="nav-number">3.2.</span> <span class="nav-text">作为函数进行调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作为方法进行调用"><span class="nav-number">3.3.</span> <span class="nav-text">作为方法进行调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作为构造器进行调用"><span class="nav-number">3.4.</span> <span class="nav-text">作为构造器进行调用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造器的超能力"><span class="nav-number">3.4.1.</span> <span class="nav-text">构造器的超能力</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用apply-和call-方法进行调用"><span class="nav-number">3.5.</span> <span class="nav-text">使用apply()和call()方法进行调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五种this的工作原理"><span class="nav-number">3.6.</span> <span class="nav-text">五种this的工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全局"><span class="nav-number">3.6.1.</span> <span class="nav-text">全局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数调用-1"><span class="nav-number">3.6.2.</span> <span class="nav-text">函数调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法调用"><span class="nav-number">3.6.3.</span> <span class="nav-text">方法调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显式的设置this"><span class="nav-number">3.6.4.</span> <span class="nav-text">显式的设置this</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.7.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -688,30 +708,26 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">XuZiHao</span>
+
+  
 </div>
 
 
-<div class="powered-by">
-  个人专属 
-</div>
 
-<div class="theme-info">
-  Adherent -
-  </a>
-</div>
+
+
+
+
 
 
         
 <div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
     <span class="site-uv">
@@ -731,6 +747,12 @@
 </div>
 
 
+
+
+
+
+
+
         
       </div>
     </footer>
@@ -740,6 +762,8 @@
         <i class="fa fa-arrow-up"></i>
         
       </div>
+    
+
     
 
   </div>
@@ -763,62 +787,108 @@
   
 
 
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+
+
 
 
 
   
   
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
 
 
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+  
 
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
 
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
 
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
 
 
 
   
 
 
+  
+
+    
+      <script id="dsq-count-scr" src="https://xuzihao.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xzh.hi.cn/JavaScript函数.html';
+          this.page.identifier = 'JavaScript函数.html';
+          this.page.title = 'JavaScript函数';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuzihao.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
 
   
 
@@ -837,24 +907,9 @@
 
 
 
-  
 
 
 
-
-
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
-  
 
 
 
@@ -863,132 +918,6 @@
 
   
 
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length == 0) {
-      search_path = "search.xml";
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.popup').toggle();
-    }
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-      $.ajax({
-        url: path,
-        dataType: "xml",
-        async: true,
-        success: function( xmlResponse ) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = $( "entry", xmlResponse ).map(function() {
-            return {
-              title: $( "title", this ).text(),
-              content: $("content",this).text(),
-              url: $( "url" , this).text()
-            };
-          }).get();
-          var $input = document.getElementById(search_id);
-          var $resultContent = document.getElementById(content_id);
-          $input.addEventListener('input', function(){
-            var matchcounts = 0;
-            var str='<ul class=\"search-result-list\">';
-            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-            $resultContent.innerHTML = "";
-            if (this.value.trim().length > 1) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var content_index = [];
-                var data_title = data.title.trim().toLowerCase();
-                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
-                var data_url = decodeURIComponent(data.url);
-                var index_title = -1;
-                var index_content = -1;
-                var first_occur = -1;
-                // only match artiles with not empty titles and contents
-                if(data_title != '') {
-                  keywords.forEach(function(keyword, i) {
-                    index_title = data_title.indexOf(keyword);
-                    index_content = data_content.indexOf(keyword);
-                    if( index_title >= 0 || index_content >= 0 ){
-                      isMatch = true;
-                      if (i == 0) {
-                        first_occur = index_content;
-                      }
-                    }
-
-                  });
-                }
-                // show search results
-                if (isMatch) {
-                  matchcounts += 1;
-                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
-                  var content = data.content.trim().replace(/<[^>]+>/g,"");
-                  if (first_occur >= 0) {
-                    // cut out 100 characters
-                    var start = first_occur - 20;
-                    var end = first_occur + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if(start == 0){
-                      end = 50;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    var match_content = content.substring(start, end);
-                    // highlight all keywords
-                    keywords.forEach(function(keyword){
-                      var regS = new RegExp(keyword, "gi");
-                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
-                    });
-
-                    str += "<p class=\"search-result\">" + match_content +"...</p>"
-                  }
-                  str += "</li>";
-                }
-              })};
-            str += "</ul>";
-            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
-            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
-            $resultContent.innerHTML = str;
-          });
-          proceedsearch();
-        }
-      });}
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched == false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(function(e){
-      $('.popup').hide();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    });
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-  </script>
-
 
 
 
@@ -996,21 +925,13 @@
   
 
   
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 
+  
+
+  
+  
+
+  
 
   
 

@@ -7,7 +7,7 @@ tags: [JavaScript,node.js]
 categories: Node.js
 ---
 
-# Express
+
 
 ## expressjs里的请求参数，4.x里只有3种(都引用官方例子) 
 

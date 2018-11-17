@@ -4,7 +4,7 @@ date: 2017-07-28 20：37
 comments: true
 layout: post
 tags: [JavaScript,node.js]
-categories: Javascript修仙之路
+categories: Javascript修仙之旅
 ---
 
 # Promise

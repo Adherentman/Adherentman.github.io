@@ -4,7 +4,7 @@ date: 2017-05-15 13：07
 comments: true
 layout: post
 tags: [JavaScript]
-categories: Javascript修仙之路
+categories: Javascript修仙之旅
 ---
 
 # Let‘s go

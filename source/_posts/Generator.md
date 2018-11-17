@@ -4,12 +4,12 @@ date: 2017-07-29 14：27
 comments: true
 layout: post
 tags: [JavaScript,node.js]
-categories: Javascript修仙之路
+categories: Javascript修仙之旅
 ---
 
-# Generator函数
 
-Generator最大的特点就是定义的函数可以被暂停执行.
+
+Generator最大的特点就是定义的函数可以被**暂停执行**.
 
 ## 作用
 

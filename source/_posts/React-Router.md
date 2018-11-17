@@ -36,7 +36,7 @@ categories: React
 
 ## Histories
 
-常用的 history 有三种形式， 但是你也可以使用 React Router 实现自定义的 history。
+常用的 **history** 有三种形式， 但是你也可以使用 React Router 实现自定义的 history。
 
 - [`browserHistory`](https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#browserHistory) (推荐)
 - [`hashHistory`](https://react-guide.github.io/react-router-cn/docs/guides/basics/Histories.html#hashHistory)

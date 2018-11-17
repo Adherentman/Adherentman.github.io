@@ -4,14 +4,14 @@ date: 2017-04-24 13:55
 comments: true
 layout: post
 tags: [JavaScript]
-categories: Javascript基础
+categories: Javascript修仙之旅
 ---
 
 # JavaScript变量+方法
 
 ECMAScript变量可能包含两种不同数据类型的值：基本类型值和引用类型值。
 
-**基本类型值**指的是简单的数据段，而**引用类型值**指那些可能有多个值构成的对象。
+**基本类型值**指的是简单的数据段，而**引用类型值**指那些可能有多个值构成的**对象**。
 
 ## 传递参数
 

@@ -18,7 +18,7 @@ permalink: about
 |  昵称-Nickname  | XuZiHao/壮壮/Adherent    |
 | 属性-Attribute  | 汉子 摩羯                  |
 | 坐标-Coordinate | Beijing     Zhejiang   |
-|  目前-Present   | 大二在读                   |
+|  目前-Present   | 大三                     |
 |   技能-Skills   | html/css/js/java/linux |
 |  语言-Language  | 普通话/温州话/English        |
 
@@ -26,12 +26,12 @@ permalink: about
 关于本站
 ----
 
-|              |                                          |
-| :----------: | ---------------------------------------- |
-|   博名-Blog    | Aherent                                  |
-| 诞生日-Birthday | 2017-3-18                                |
-| 家庭地址-Address | [www.adherentman.cn](http://www.adherentman.cn/) |
-|  宗旨-Purpose  | 做记录、分享                                   |
+|              |                            |
+| :----------: | -------------------------- |
+|   博名-Blog    | Aherent                    |
+| 诞生日-Birthday | 2017-3-18                  |
+| 家庭地址-Address | [xuzihao.fun](xuzihao.fun) |
+|  宗旨-Purpose  | 做记录、分享                     |
 
 
 想法
@@ -54,6 +54,5 @@ permalink: about
 项目
 --
 
-- xxx网站
-
+- 基于React技术栈（React-router4、Redux、Mock.js）自己的博客
 

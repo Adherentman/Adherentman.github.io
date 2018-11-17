@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg?v=5.1.3">
+
+
+  <link rel="mask-icon" href="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="React,Draft.js," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="壮壮-Technology" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="现在我们已经建立了顶级API的基础知识，我们可以更进一步，研究如何将基本的丰富样式添加到Dragt编辑器中。 A richTextExample is also available to follow along. EditorState: Yours to Command上一篇文章介绍了EditorState对象作为编辑器完整状态的快照,由Editor核心通过onChange props给的.">
+<meta name="keywords" content="React,Draft.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Draft —— Rich Styling">
+<meta property="og:url" content="http://xzh.hi.cn/Draft-RichUtils.html">
+<meta property="og:site_name" content="壮壮-Technology">
+<meta property="og:description" content="现在我们已经建立了顶级API的基础知识，我们可以更进一步，研究如何将基本的丰富样式添加到Dragt编辑器中。 A richTextExample is also available to follow along. EditorState: Yours to Command上一篇文章介绍了EditorState对象作为编辑器完整状态的快照,由Editor核心通过onChange props给的.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-06T13:02:52.463Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Draft —— Rich Styling">
+<meta name="twitter:description" content="现在我们已经建立了顶级API的基础知识，我们可以更进一步，研究如何将基本的丰富样式添加到Dragt编辑器中。 A richTextExample is also available to follow along. EditorState: Yours to Command上一篇文章介绍了EditorState对象作为编辑器完整状态的快照,由Editor核心通过onChange props给的.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '6398696795836253000',
+      author: '徐大大'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xzh.hi.cn/Draft-RichUtils.html"/>
+
+
+
+
+
+  <title>Draft —— Rich Styling | 壮壮-Technology</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">壮壮-Technology</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">宠辱不惊，闲看庭前花落花开</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xzh.hi.cn/Draft-RichUtils.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XuZiHao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="壮壮-Technology">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Draft —— Rich Styling</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-06T21:02:00+08:00">
+                2018-07-06
+              </time>
+            
+            
+              <span class="post-updated">
+              &nbsp; | &nbsp; 更新于
+              <time itemprop="dateUpdated" datetime="2018-07-06T21:02:52+08:00" content="2018-07-06">
+                2018-07-06
+              </time>
+              </span>
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Draft/" itemprop="url" rel="index">
+                    <span itemprop="name">Draft</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Draft-RichUtils.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="Draft-RichUtils.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>现在我们已经建立了顶级API的基础知识，我们可以更进一步，研究如何将基本的丰富样式添加到<code>Dragt</code>编辑器中。</p>
+<p>A <a href="https://github.com/facebook/draft-js/tree/master/examples/draft-0-10-0/rich" target="_blank" rel="noopener">richTextExample</a> is also available to follow along.</p>
+<h2 id="EditorState-Yours-to-Command"><a href="#EditorState-Yours-to-Command" class="headerlink" title="EditorState: Yours to Command"></a>EditorState: Yours to Command</h2><p>上一篇文章介绍了<code>EditorState</code>对象作为编辑器完整状态的快照,由<code>Editor</code>核心通过<code>onChange props</code>给的.</p>
+<p>但是，由于最顶层的React组件负责维护状态，因此您还可以以任何您认为合适的方式自由地将更改应用于该<code>EditorState</code>对象。</p>
+<p>例如，对于内联和块样式行为，<code>RichUtils</code> 模块提供了许多有用的函数来帮助操作状态。</p>
+<p>同样，<a href="https://draftjs.org/docs/api-reference-modifier.html" target="_blank" rel="noopener">Modifier</a> 模块还提供了许多允许您应用编辑的常用操作，包括对文本，样式等更改。该模块是一套编辑函数，它们组成更简单，更小的编辑函数，以返回所需的<code>EditorState</code>对象。</p>
+<p>对于此示例，我们将坚持使用<code>RichUtils</code>来演示如何在最顶层组件中应用基本的丰富样式。</p>
+<a id="more"></a>
+<h2 id="RichUtils-and-Key-Commands"><a href="#RichUtils-and-Key-Commands" class="headerlink" title="RichUtils and Key Commands"></a>RichUtils and Key Commands</h2><p><code>RichUtils</code> 包含有关Web编辑器可用的核心键命令的信息，例如<code>Cmd + B（粗体）</code>，<code>Cmd + I（斜体）</code>等。</p>
+<p>我们可以通过<code>handleKeyCommand</code> <code>prop</code>观察和处理关键命令，并将它们挂钩到<code>RichUtils</code>中以应用或删除所需的样式。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;Editor, EditorState, RichUtils&#125; <span class="keyword">from</span> <span class="string">'draft-js'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyEditor</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;<span class="attr">editorState</span>: EditorState.createEmpty()&#125;;</span><br><span class="line">    <span class="keyword">this</span>.onChange = <span class="function">(<span class="params">editorState</span>) =&gt;</span> <span class="keyword">this</span>.setState(&#123;editorState&#125;);</span><br><span class="line">    <span class="keyword">this</span>.handleKeyCommand = <span class="keyword">this</span>.handleKeyCommand.bind(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  handleKeyCommand(command, editorState) &#123;</span><br><span class="line">    <span class="keyword">const</span> newState = RichUtils.handleKeyCommand(editorState, command);</span><br><span class="line">    <span class="keyword">if</span> (newState) &#123;</span><br><span class="line">      <span class="keyword">this</span>.onChange(newState);</span><br><span class="line">      <span class="keyword">return</span> <span class="string">'handled'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'not-handled'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;Editor</span><br><span class="line">        editorState=&#123;<span class="keyword">this</span>.state.editorState&#125;</span><br><span class="line">        handleKeyCommand=&#123;<span class="keyword">this</span>.handleKeyCommand&#125;</span><br><span class="line">        onChange=&#123;<span class="keyword">this</span>.onChange&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>handleKeyCommand  </p>
+<p>提供给<code>handleKeyCommand</code>的命令参数是一个字符串值，即要执行的命令的名称。这是从DOM键事件映射的。<code>editorState</code>参数表示最新的编辑器状态，因为在处理密钥时它可能会被<code>Draft</code>内部更改。在<code>handleKeyCommand</code>中使用编辑器状态的这个实例。有关详细信息，请参阅<a href="https://draftjs.org/docs/advanced-topics-key-bindings.html" target="_blank" rel="noopener"> Advanced Topics - Key Binding</a>，以及有关函数返回处理或未处理的详细信息。  </p>
+</blockquote>
+<h2 id="Styling-Controls-in-UI"><a href="#Styling-Controls-in-UI" class="headerlink" title="Styling Controls in UI"></a>Styling Controls in UI</h2><p>在React组件中，您可以添加按钮或其他控件以允许用户在编辑器中修改样式。在上面的示例中，我们使用已知的键命令，但我们可以添加更复杂的UI来提供这些丰富的功能。</p>
+<p>这是一个超级基本的例子，带有一个“粗体”按钮来切换BOLD风格。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyEditor</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="comment">// …</span></span><br><span class="line"></span><br><span class="line">  _onBoldClick() &#123;</span><br><span class="line">    <span class="keyword">this</span>.onChange(RichUtils.toggleInlineStyle(<span class="keyword">this</span>.state.editorState, <span class="string">'BOLD'</span>));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;button onClick=&#123;<span class="keyword">this</span>._onBoldClick.bind(<span class="keyword">this</span>)&#125;&gt;Bold&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">        &lt;Editor</span></span><br><span class="line"><span class="regexp">          editorState=&#123;this.state.editorState&#125;</span></span><br><span class="line"><span class="regexp">          handleKeyCommand=&#123;this.handleKeyCommand&#125;</span></span><br><span class="line"><span class="regexp">          onChange=&#123;this.onChange&#125;</span></span><br><span class="line"><span class="regexp">        /</span>&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React/" rel="tag"># React</a>
+          
+            <a href="/tags/Draft-js/" rel="tag"># Draft.js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Draft.js ——API Basics.html" rel="next" title="Draft.js —— API Basics">
+                <i class="fa fa-chevron-left"></i> Draft.js —— API Basics
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Draft——Entities.html" rel="prev" title="Draft——Entities">
+                Draft——Entities <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg"
+                alt="XuZiHao" />
+            
+              <p class="site-author-name" itemprop="name">XuZiHao</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">98</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Adherentman" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/u/0/114280794987404078066" target="_blank" title="Google">
+                    
+                      <i class="fa fa-fw fa-google"></i>Google</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/xu-zi-hao-60/activities" target="_blank" title="知乎">
+                    
+                      <i class="fa fa-fw fa-知乎"></i>知乎</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#EditorState-Yours-to-Command"><span class="nav-number">1.</span> <span class="nav-text">EditorState: Yours to Command</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RichUtils-and-Key-Commands"><span class="nav-number">2.</span> <span class="nav-text">RichUtils and Key Commands</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Styling-Controls-in-UI"><span class="nav-number">3.</span> <span class="nav-text">Styling Controls in UI</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XuZiHao</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xuzihao.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xzh.hi.cn/Draft-RichUtils.html';
+          this.page.identifier = 'Draft-RichUtils.html';
+          this.page.title = 'Draft —— Rich Styling';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuzihao.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

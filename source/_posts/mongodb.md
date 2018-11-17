@@ -4,7 +4,7 @@ date: 2017-07-27 21：19
 comments: true
 layout: post
 tags: [Mongodb,数据库]
-categories: 数据库,Mongodb
+categories: [数据库,Mongodb]
 ---
 
 # Mongodb之旅(一)

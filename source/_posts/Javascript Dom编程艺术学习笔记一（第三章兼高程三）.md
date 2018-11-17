@@ -4,7 +4,7 @@ date: 2017-03-26 20:01:14
 comments: true
 layout: post
 tags: [JavaScript]
-categories: Javascript修仙之路
+categories: Javascript修仙之旅
 ---
 
 1.Dom基础
