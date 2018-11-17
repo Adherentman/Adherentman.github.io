@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="壮壮-Technology">
 <meta property="og:description" content="getget命令用于获取集群的一个或一些resource信息.kubectl get可以列出集群所有resource的详细。resource包括集群节点、运行的pod，ReplicationController，service等。 获取deployment1234zihao@zihao-desktop:~ $ kubectl get deploymentNAME    DESIRED   CURR">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-17T14:34:14.602Z">
+<meta property="og:updated_time" content="2018-11-17T14:40:22.112Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kubectl常用命令">
 <meta name="twitter:description" content="getget命令用于获取集群的一个或一些resource信息.kubectl get可以列出集群所有resource的详细。resource包括集群节点、运行的pod，ReplicationController，service等。 获取deployment1234zihao@zihao-desktop:~ $ kubectl get deploymentNAME    DESIRED   CURR">
@@ -308,7 +308,7 @@
             
               <span class="post-updated">
               &nbsp; | &nbsp; 更新于
-              <time itemprop="dateUpdated" datetime="2018-11-17T22:34:14+08:00" content="2018-11-17">
+              <time itemprop="dateUpdated" datetime="2018-11-17T22:40:22+08:00" content="2018-11-17">
                 2018-11-17
               </time>
               </span>
@@ -386,6 +386,7 @@
       
         <h2 id="get"><a href="#get" class="headerlink" title="get"></a>get</h2><p>get命令用于获取集群的一个或一些resource信息.<br><code>kubectl get</code>可以列出集群所有resource的详细。resource包括集群节点、运行的pod，ReplicationController，service等。</p>
 <h3 id="获取deployment"><a href="#获取deployment" class="headerlink" title="获取deployment"></a>获取deployment</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl get deployment</span><br><span class="line">NAME    DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE</span><br><span class="line">curl    1         1         1            1           43m</span><br><span class="line">nginx   2         2         2            2           107m</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="获取所有运行的pod信息"><a href="#获取所有运行的pod信息" class="headerlink" title="获取所有运行的pod信息"></a>获取所有运行的pod信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl get pods</span><br><span class="line">NAME                     READY   STATUS    RESTARTS   AGE</span><br><span class="line">curl-5cc7b478b6-4x7pl    1/1     Running   1          44m</span><br><span class="line">nginx-65d5c4f7cc-khzn8   1/1     Running   0          108m</span><br><span class="line">nginx-65d5c4f7cc-v7x49   1/1     Running   0          107m</span><br></pre></td></tr></table></figure>
 <h3 id="列出Pod以及运行Pod节点信息"><a href="#列出Pod以及运行Pod节点信息" class="headerlink" title="列出Pod以及运行Pod节点信息"></a>列出Pod以及运行Pod节点信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl get pods -o wide </span><br><span class="line">NAME                     READY   STATUS    RESTARTS   AGE    IP            NODE    NOMINATED NODE</span><br><span class="line">nginx-65d5c4f7cc-khzn8   1/1     Running   0          159m   192.168.1.2   zihao   &lt;none&gt;</span><br><span class="line">nginx-65d5c4f7cc-v7x49   1/1     Running   0          158m   192.168.1.3   zihao   &lt;none&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="查看集群中所有的node"><a href="#查看集群中所有的node" class="headerlink" title="查看集群中所有的node"></a>查看集群中所有的node</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl get nodes</span><br><span class="line">NAME            STATUS   ROLES    AGE     VERSION</span><br><span class="line">zihao           Ready    &lt;none&gt;   4h15m   v1.12.2</span><br><span class="line">zihao-desktop   Ready    master   21h     v1.12.2</span><br></pre></td></tr></table></figure>
