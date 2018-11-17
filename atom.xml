@@ -5,9 +5,9 @@
   <subtitle>宠辱不惊，闲看庭前花落花开</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://xuzihao.fun/"/>
+  <link href="http://xzh.hi.cn/"/>
   <updated>2018-11-17T14:40:22.112Z</updated>
-  <id>http://xuzihao.fun/</id>
+  <id>http://xzh.hi.cn/</id>
   
   <author>
     <name>XuZiHao</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Kubectl常用命令</title>
-    <link href="http://xuzihao.fun/Kubectl%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html"/>
-    <id>http://xuzihao.fun/Kubectl常用命令.html</id>
+    <link href="http://xzh.hi.cn/Kubectl%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html"/>
+    <id>http://xzh.hi.cn/Kubectl常用命令.html</id>
     <published>2018-11-17T14:34:00.000Z</published>
     <updated>2018-11-17T14:40:22.112Z</updated>
     
@@ -32,19 +32,19 @@
     
     </summary>
     
-      <category term="docker" scheme="http://xuzihao.fun/categories/docker/"/>
+      <category term="docker" scheme="http://xzh.hi.cn/categories/docker/"/>
     
     
-      <category term="docker" scheme="http://xuzihao.fun/tags/docker/"/>
+      <category term="docker" scheme="http://xzh.hi.cn/tags/docker/"/>
     
-      <category term="Kubernetes" scheme="http://xuzihao.fun/tags/Kubernetes/"/>
+      <category term="Kubernetes" scheme="http://xzh.hi.cn/tags/Kubernetes/"/>
     
   </entry>
   
   <entry>
     <title>部署 Kubernetes 集群</title>
-    <link href="http://xuzihao.fun/%E9%83%A8%E7%BD%B2%20Kubernetes%20%E9%9B%86%E7%BE%A4.html"/>
-    <id>http://xuzihao.fun/部署 Kubernetes 集群.html</id>
+    <link href="http://xzh.hi.cn/%E9%83%A8%E7%BD%B2%20Kubernetes%20%E9%9B%86%E7%BE%A4.html"/>
+    <id>http://xzh.hi.cn/部署 Kubernetes 集群.html</id>
     <published>2018-11-14T14:24:00.000Z</published>
     <updated>2018-11-14T14:25:38.994Z</updated>
     
@@ -62,19 +62,19 @@
     
     </summary>
     
-      <category term="docker" scheme="http://xuzihao.fun/categories/docker/"/>
+      <category term="docker" scheme="http://xzh.hi.cn/categories/docker/"/>
     
     
-      <category term="docker" scheme="http://xuzihao.fun/tags/docker/"/>
+      <category term="docker" scheme="http://xzh.hi.cn/tags/docker/"/>
     
-      <category term="Kubernetes" scheme="http://xuzihao.fun/tags/Kubernetes/"/>
+      <category term="Kubernetes" scheme="http://xzh.hi.cn/tags/Kubernetes/"/>
     
   </entry>
   
   <entry>
     <title></title>
-    <link href="http://xuzihao.fun/%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BAor%E5%9B%A2%E9%98%9F%E9%80%82%E7%94%A8%E7%9A%84%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%A7%84%E8%8C%83.html"/>
-    <id>http://xuzihao.fun/打造个人or团队适用的开源项目规范.html</id>
+    <link href="http://xzh.hi.cn/%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BAor%E5%9B%A2%E9%98%9F%E9%80%82%E7%94%A8%E7%9A%84%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%A7%84%E8%8C%83.html"/>
+    <id>http://xzh.hi.cn/打造个人or团队适用的开源项目规范.html</id>
     <published>2018-10-03T07:10:14.280Z</published>
     <updated>2018-11-03T12:51:15.430Z</updated>
     
@@ -95,8 +95,8 @@
   
   <entry>
     <title>git empty object file</title>
-    <link href="http://xuzihao.fun/git-empty-object-file.html"/>
-    <id>http://xuzihao.fun/git-empty-object-file.html</id>
+    <link href="http://xzh.hi.cn/git-empty-object-file.html"/>
+    <id>http://xzh.hi.cn/git-empty-object-file.html</id>
     <published>2018-10-01T07:35:00.000Z</published>
     <updated>2018-11-17T14:41:16.753Z</updated>
     
@@ -108,17 +108,17 @@
     
     </summary>
     
-      <category term="git" scheme="http://xuzihao.fun/categories/git/"/>
+      <category term="git" scheme="http://xzh.hi.cn/categories/git/"/>
     
     
-      <category term="git" scheme="http://xuzihao.fun/tags/git/"/>
+      <category term="git" scheme="http://xzh.hi.cn/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>es6解构赋值妙用</title>
-    <link href="http://xuzihao.fun/es6%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC%E5%A6%99%E7%94%A8.html"/>
-    <id>http://xuzihao.fun/es6解构赋值妙用.html</id>
+    <link href="http://xzh.hi.cn/es6%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC%E5%A6%99%E7%94%A8.html"/>
+    <id>http://xzh.hi.cn/es6解构赋值妙用.html</id>
     <published>2018-09-25T14:24:21.133Z</published>
     <updated>2018-10-01T07:42:15.749Z</updated>
     
@@ -133,17 +133,17 @@
     
     </summary>
     
-      <category term="Javascript修仙之旅" scheme="http://xuzihao.fun/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
+      <category term="Javascript修仙之旅" scheme="http://xzh.hi.cn/categories/Javascript%E4%BF%AE%E4%BB%99%E4%B9%8B%E6%97%85/"/>
     
     
-      <category term="JavaScript" scheme="http://xuzihao.fun/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://xzh.hi.cn/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>Koa2—Https</title>
-    <link href="http://xuzihao.fun/Koa2%E2%80%94Https.html"/>
-    <id>http://xuzihao.fun/Koa2—Https.html</id>
+    <link href="http://xzh.hi.cn/Koa2%E2%80%94Https.html"/>
+    <id>http://xzh.hi.cn/Koa2—Https.html</id>
     <published>2018-08-27T08:27:00.000Z</published>
     <updated>2018-08-27T12:44:34.897Z</updated>
     
@@ -158,17 +158,17 @@
     
     </summary>
     
-      <category term="Koa2" scheme="http://xuzihao.fun/categories/Koa2/"/>
+      <category term="Koa2" scheme="http://xzh.hi.cn/categories/Koa2/"/>
     
     
-      <category term="Koa2" scheme="http://xuzihao.fun/tags/Koa2/"/>
+      <category term="Koa2" scheme="http://xzh.hi.cn/tags/Koa2/"/>
     
   </entry>
   
   <entry>
     <title>PostgreSQL基础</title>
-    <link href="http://xuzihao.fun/PostgreSQL%E5%9F%BA%E7%A1%80.html"/>
-    <id>http://xuzihao.fun/PostgreSQL基础.html</id>
+    <link href="http://xzh.hi.cn/PostgreSQL%E5%9F%BA%E7%A1%80.html"/>
+    <id>http://xzh.hi.cn/PostgreSQL基础.html</id>
     <published>2018-08-26T14:09:00.000Z</published>
     <updated>2018-09-16T07:18:20.000Z</updated>
     
@@ -183,21 +183,21 @@
     
     </summary>
     
-      <category term="数据库" scheme="http://xuzihao.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://xzh.hi.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="PostgreSQL" scheme="http://xuzihao.fun/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/PostgreSQL/"/>
+      <category term="PostgreSQL" scheme="http://xzh.hi.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/PostgreSQL/"/>
     
     
-      <category term="数据库" scheme="http://xuzihao.fun/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://xzh.hi.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="PostgreSQL" scheme="http://xuzihao.fun/tags/PostgreSQL/"/>
+      <category term="PostgreSQL" scheme="http://xzh.hi.cn/tags/PostgreSQL/"/>
     
   </entry>
   
   <entry>
     <title>CSS之em/rem</title>
-    <link href="http://xuzihao.fun/CSS%E4%B9%8Bem-rem.html"/>
-    <id>http://xuzihao.fun/CSS之em-rem.html</id>
+    <link href="http://xzh.hi.cn/CSS%E4%B9%8Bem-rem.html"/>
+    <id>http://xzh.hi.cn/CSS之em-rem.html</id>
     <published>2018-08-13T10:51:00.000Z</published>
     <updated>2018-08-13T10:53:40.296Z</updated>
     
@@ -214,17 +214,17 @@
     
     </summary>
     
-      <category term="CSS" scheme="http://xuzihao.fun/categories/CSS/"/>
+      <category term="CSS" scheme="http://xzh.hi.cn/categories/CSS/"/>
     
     
-      <category term="CSS" scheme="http://xuzihao.fun/tags/CSS/"/>
+      <category term="CSS" scheme="http://xzh.hi.cn/tags/CSS/"/>
     
   </entry>
   
   <entry>
     <title>K8s基本概念</title>
-    <link href="http://xuzihao.fun/K8s%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html"/>
-    <id>http://xuzihao.fun/K8s基本概念.html</id>
+    <link href="http://xzh.hi.cn/K8s%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5.html"/>
+    <id>http://xzh.hi.cn/K8s基本概念.html</id>
     <published>2018-07-15T14:24:00.000Z</published>
     <updated>2018-07-15T14:44:54.375Z</updated>
     
@@ -242,17 +242,17 @@
     
     </summary>
     
-      <category term="docker" scheme="http://xuzihao.fun/categories/docker/"/>
+      <category term="docker" scheme="http://xzh.hi.cn/categories/docker/"/>
     
     
-      <category term="docker" scheme="http://xuzihao.fun/tags/docker/"/>
+      <category term="docker" scheme="http://xzh.hi.cn/tags/docker/"/>
     
   </entry>
   
   <entry>
     <title>Draft——Entities</title>
-    <link href="http://xuzihao.fun/Draft%E2%80%94%E2%80%94Entities.html"/>
-    <id>http://xuzihao.fun/Draft——Entities.html</id>
+    <link href="http://xzh.hi.cn/Draft%E2%80%94%E2%80%94Entities.html"/>
+    <id>http://xzh.hi.cn/Draft——Entities.html</id>
     <published>2018-07-07T11:36:00.000Z</published>
     <updated>2018-07-07T11:36:38.559Z</updated>
     
@@ -267,19 +267,19 @@
     
     </summary>
     
-      <category term="Draft" scheme="http://xuzihao.fun/categories/Draft/"/>
+      <category term="Draft" scheme="http://xzh.hi.cn/categories/Draft/"/>
     
     
-      <category term="React" scheme="http://xuzihao.fun/tags/React/"/>
+      <category term="React" scheme="http://xzh.hi.cn/tags/React/"/>
     
-      <category term="Draft.js" scheme="http://xuzihao.fun/tags/Draft-js/"/>
+      <category term="Draft.js" scheme="http://xzh.hi.cn/tags/Draft-js/"/>
     
   </entry>
   
   <entry>
     <title>Draft —— Rich Styling</title>
-    <link href="http://xuzihao.fun/Draft-RichUtils.html"/>
-    <id>http://xuzihao.fun/Draft-RichUtils.html</id>
+    <link href="http://xzh.hi.cn/Draft-RichUtils.html"/>
+    <id>http://xzh.hi.cn/Draft-RichUtils.html</id>
     <published>2018-07-06T13:02:00.000Z</published>
     <updated>2018-07-06T13:02:52.463Z</updated>
     
@@ -297,19 +297,19 @@
     
     </summary>
     
-      <category term="Draft" scheme="http://xuzihao.fun/categories/Draft/"/>
+      <category term="Draft" scheme="http://xzh.hi.cn/categories/Draft/"/>
     
     
-      <category term="React" scheme="http://xuzihao.fun/tags/React/"/>
+      <category term="React" scheme="http://xzh.hi.cn/tags/React/"/>
     
-      <category term="Draft.js" scheme="http://xuzihao.fun/tags/Draft-js/"/>
+      <category term="Draft.js" scheme="http://xzh.hi.cn/tags/Draft-js/"/>
     
   </entry>
   
   <entry>
     <title>Draft.js —— API Basics</title>
-    <link href="http://xuzihao.fun/Draft.js%20%E2%80%94%E2%80%94API%20Basics.html"/>
-    <id>http://xuzihao.fun/Draft.js ——API Basics.html</id>
+    <link href="http://xzh.hi.cn/Draft.js%20%E2%80%94%E2%80%94API%20Basics.html"/>
+    <id>http://xzh.hi.cn/Draft.js ——API Basics.html</id>
     <published>2018-07-05T12:49:00.000Z</published>
     <updated>2018-07-05T12:50:47.002Z</updated>
     
@@ -328,19 +328,19 @@
     
     </summary>
     
-      <category term="Draft" scheme="http://xuzihao.fun/categories/Draft/"/>
+      <category term="Draft" scheme="http://xzh.hi.cn/categories/Draft/"/>
     
     
-      <category term="React" scheme="http://xuzihao.fun/tags/React/"/>
+      <category term="React" scheme="http://xzh.hi.cn/tags/React/"/>
     
-      <category term="Draft.js" scheme="http://xuzihao.fun/tags/Draft-js/"/>
+      <category term="Draft.js" scheme="http://xzh.hi.cn/tags/Draft-js/"/>
     
   </entry>
   
   <entry>
     <title>Webpack-dev-server配合react-router4</title>
-    <link href="http://xuzihao.fun/Webpack-dev-server%E9%85%8D%E5%90%88react-router4.html"/>
-    <id>http://xuzihao.fun/Webpack-dev-server配合react-router4.html</id>
+    <link href="http://xzh.hi.cn/Webpack-dev-server%E9%85%8D%E5%90%88react-router4.html"/>
+    <id>http://xzh.hi.cn/Webpack-dev-server配合react-router4.html</id>
     <published>2018-06-30T13:28:00.000Z</published>
     <updated>2018-06-30T13:28:43.244Z</updated>
     
@@ -353,17 +353,17 @@
     
     </summary>
     
-      <category term="Webpack" scheme="http://xuzihao.fun/categories/Webpack/"/>
+      <category term="Webpack" scheme="http://xzh.hi.cn/categories/Webpack/"/>
     
     
-      <category term="Webpack" scheme="http://xuzihao.fun/tags/Webpack/"/>
+      <category term="Webpack" scheme="http://xzh.hi.cn/tags/Webpack/"/>
     
   </entry>
   
   <entry>
     <title>微信小程序客服自动回复消息功能采坑（完）</title>
-    <link href="http://xuzihao.fun/%E5%BE%AE%E4%BF%A1%E5%AE%A2%E6%9C%8D%E6%B6%88%E6%81%AF%E5%8A%9F%E8%83%BD%E5%85%A8%E8%A7%A3.html"/>
-    <id>http://xuzihao.fun/微信客服消息功能全解.html</id>
+    <link href="http://xzh.hi.cn/%E5%BE%AE%E4%BF%A1%E5%AE%A2%E6%9C%8D%E6%B6%88%E6%81%AF%E5%8A%9F%E8%83%BD%E5%85%A8%E8%A7%A3.html"/>
+    <id>http://xzh.hi.cn/微信客服消息功能全解.html</id>
     <published>2018-06-29T15:19:00.000Z</published>
     <updated>2018-07-04T05:06:17.041Z</updated>
     
@@ -376,17 +376,17 @@
     
     </summary>
     
-      <category term="小程序" scheme="http://xuzihao.fun/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+      <category term="小程序" scheme="http://xzh.hi.cn/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
     
-      <category term="小程序" scheme="http://xuzihao.fun/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+      <category term="小程序" scheme="http://xzh.hi.cn/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
   <entry>
     <title>Sass小笔记</title>
-    <link href="http://xuzihao.fun/Sass%E5%B0%8F%E7%AC%94%E8%AE%B0.html"/>
-    <id>http://xuzihao.fun/Sass小笔记.html</id>
+    <link href="http://xzh.hi.cn/Sass%E5%B0%8F%E7%AC%94%E8%AE%B0.html"/>
+    <id>http://xzh.hi.cn/Sass小笔记.html</id>
     <published>2018-06-21T13:26:00.000Z</published>
     <updated>2018-07-12T12:55:07.653Z</updated>
     
@@ -399,17 +399,17 @@
     
     </summary>
     
-      <category term="CSS" scheme="http://xuzihao.fun/categories/CSS/"/>
+      <category term="CSS" scheme="http://xzh.hi.cn/categories/CSS/"/>
     
     
-      <category term="CSS" scheme="http://xuzihao.fun/tags/CSS/"/>
+      <category term="CSS" scheme="http://xzh.hi.cn/tags/CSS/"/>
     
   </entry>
   
   <entry>
     <title>玩Deno遇到问题的解决方案</title>
-    <link href="http://xuzihao.fun/%E7%8E%A9Deno%E9%81%87%E5%88%B0%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html"/>
-    <id>http://xuzihao.fun/玩Deno遇到问题的解决方案.html</id>
+    <link href="http://xzh.hi.cn/%E7%8E%A9Deno%E9%81%87%E5%88%B0%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.html"/>
+    <id>http://xzh.hi.cn/玩Deno遇到问题的解决方案.html</id>
     <published>2018-06-02T07:30:00.000Z</published>
     <updated>2018-08-26T12:07:13.131Z</updated>
     
@@ -422,19 +422,19 @@
     
     </summary>
     
-      <category term="Node.js" scheme="http://xuzihao.fun/categories/Node-js/"/>
+      <category term="Node.js" scheme="http://xzh.hi.cn/categories/Node-js/"/>
     
     
-      <category term="go" scheme="http://xuzihao.fun/tags/go/"/>
+      <category term="go" scheme="http://xzh.hi.cn/tags/go/"/>
     
-      <category term="TypeScript" scheme="http://xuzihao.fun/tags/TypeScript/"/>
+      <category term="TypeScript" scheme="http://xzh.hi.cn/tags/TypeScript/"/>
     
   </entry>
   
   <entry>
     <title>《Css权威指南》</title>
-    <link href="http://xuzihao.fun/CSS%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97.html"/>
-    <id>http://xuzihao.fun/CSS权威指南.html</id>
+    <link href="http://xzh.hi.cn/CSS%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97.html"/>
+    <id>http://xzh.hi.cn/CSS权威指南.html</id>
     <published>2018-05-28T12:18:00.000Z</published>
     <updated>2018-05-28T12:18:47.381Z</updated>
     
@@ -446,17 +446,17 @@
     
     </summary>
     
-      <category term="读书笔记" scheme="http://xuzihao.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="http://xzh.hi.cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="读书笔记" scheme="http://xuzihao.fun/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="http://xzh.hi.cn/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>天总知乎live小结</title>
-    <link href="http://xuzihao.fun/%E5%A4%A9%E6%80%BB%E7%9F%A5%E4%B9%8Elive%E5%B0%8F%E7%BB%93.html"/>
-    <id>http://xuzihao.fun/天总知乎live小结.html</id>
+    <link href="http://xzh.hi.cn/%E5%A4%A9%E6%80%BB%E7%9F%A5%E4%B9%8Elive%E5%B0%8F%E7%BB%93.html"/>
+    <id>http://xzh.hi.cn/天总知乎live小结.html</id>
     <published>2018-05-24T05:27:00.000Z</published>
     <updated>2018-05-25T12:16:57.489Z</updated>
     
@@ -468,17 +468,17 @@
     
     </summary>
     
-      <category term="日常" scheme="http://xuzihao.fun/categories/%E6%97%A5%E5%B8%B8/"/>
+      <category term="日常" scheme="http://xzh.hi.cn/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-      <category term="生活" scheme="http://xuzihao.fun/tags/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://xzh.hi.cn/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
   <entry>
     <title>畅读深入理解计算机系统</title>
-    <link href="http://xuzihao.fun/%E7%95%85%E8%AF%BB%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F.html"/>
-    <id>http://xuzihao.fun/畅读深入理解计算机系统.html</id>
+    <link href="http://xzh.hi.cn/%E7%95%85%E8%AF%BB%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F.html"/>
+    <id>http://xzh.hi.cn/畅读深入理解计算机系统.html</id>
     <published>2018-05-16T13:53:01.000Z</published>
     <updated>2018-05-23T12:50:28.000Z</updated>
     
@@ -492,17 +492,17 @@
     
     </summary>
     
-      <category term="读书笔记" scheme="http://xuzihao.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="http://xzh.hi.cn/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="读书笔记" scheme="http://xuzihao.fun/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+      <category term="读书笔记" scheme="http://xzh.hi.cn/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>Apollo-server-graphql</title>
-    <link href="http://xuzihao.fun/Apollo-server-graphql.html"/>
-    <id>http://xuzihao.fun/Apollo-server-graphql.html</id>
+    <link href="http://xzh.hi.cn/Apollo-server-graphql.html"/>
+    <id>http://xzh.hi.cn/Apollo-server-graphql.html</id>
     <published>2018-05-08T13:37:10.224Z</published>
     <updated>2018-05-08T13:47:34.977Z</updated>
     
@@ -515,10 +515,10 @@
     
     </summary>
     
-      <category term="GraphQL" scheme="http://xuzihao.fun/categories/GraphQL/"/>
+      <category term="GraphQL" scheme="http://xzh.hi.cn/categories/GraphQL/"/>
     
     
-      <category term="GraphQL" scheme="http://xuzihao.fun/tags/GraphQL/"/>
+      <category term="GraphQL" scheme="http://xzh.hi.cn/tags/GraphQL/"/>
     
   </entry>
   
