@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="docker,Kubernetes," />
 
 
 
@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="文档对象模型一点小差异，IE中所有DOM对象都是以COM对象的形式实现的。 节点属性每个节点的属性  childNodes 它里面有一个对象叫NodeList   patentNode previousSibling nextSibling ownerDoucment">
-<meta name="keywords" content="JavaScript">
+<meta name="description" content="getget命令用于获取集群的一个或一些resource信息.kubectl get可以列出集群所有resource的详细。resource包括集群节点、运行的pod，ReplicationController，service等。 获取deployment1234zihao@zihao-desktop:~ $ kubectl get deploymentNAME    DESIRED   CURR">
+<meta name="keywords" content="docker,Kubernetes">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DOM">
-<meta property="og:url" content="http://xuzihao.fun/DOM.html">
+<meta property="og:title" content="Kubectl常用命令">
+<meta property="og:url" content="http://xuzihao.fun/Kubectl常用命令.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="文档对象模型一点小差异，IE中所有DOM对象都是以COM对象的形式实现的。 节点属性每个节点的属性  childNodes 它里面有一个对象叫NodeList   patentNode previousSibling nextSibling ownerDoucment">
+<meta property="og:description" content="getget命令用于获取集群的一个或一些resource信息.kubectl get可以列出集群所有resource的详细。resource包括集群节点、运行的pod，ReplicationController，service等。 获取deployment1234zihao@zihao-desktop:~ $ kubectl get deploymentNAME    DESIRED   CURR">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-13T13:47:24.097Z">
+<meta property="og:updated_time" content="2018-11-17T14:34:14.602Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DOM">
-<meta name="twitter:description" content="文档对象模型一点小差异，IE中所有DOM对象都是以COM对象的形式实现的。 节点属性每个节点的属性  childNodes 它里面有一个对象叫NodeList   patentNode previousSibling nextSibling ownerDoucment">
+<meta name="twitter:title" content="Kubectl常用命令">
+<meta name="twitter:description" content="getget命令用于获取集群的一个或一些resource信息.kubectl get可以列出集群所有resource的详细。resource包括集群节点、运行的pod，ReplicationController，service等。 获取deployment1234zihao@zihao-desktop:~ $ kubectl get deploymentNAME    DESIRED   CURR">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://xuzihao.fun/DOM.html"/>
+  <link rel="canonical" href="http://xuzihao.fun/Kubectl常用命令.html"/>
 
 
 
 
 
-  <title>DOM | 壮壮-Technology</title>
+  <title>Kubectl常用命令 | 壮壮-Technology</title>
   
 
 
@@ -272,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/DOM.html">
+    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/Kubectl常用命令.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XuZiHao">
@@ -289,7 +289,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">DOM</h2>
+          <h2 class="post-title" itemprop="name headline">Kubectl常用命令</h2>
         
 
         <div class="post-meta">
@@ -301,15 +301,15 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-10T15:17:00+08:00">
-                2017-12-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T22:34:00+08:00">
+                2018-11-17
               </time>
             
             
               <span class="post-updated">
               &nbsp; | &nbsp; 更新于
-              <time itemprop="dateUpdated" datetime="2017-12-13T21:47:24+08:00" content="2017-12-13">
-                2017-12-13
+              <time itemprop="dateUpdated" datetime="2018-11-17T22:34:14+08:00" content="2018-11-17">
+                2018-11-17
               </time>
               </span>
             
@@ -331,8 +331,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript修仙之旅/" itemprop="url" rel="index">
-                    <span itemprop="name">Javascript修仙之旅</span>
+                  <a href="/categories/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
                   </a>
                 </span>
 
@@ -349,9 +349,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/DOM.html#comments" itemprop="discussionUrl">
+                <a href="/Kubectl常用命令.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="DOM.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="Kubectl常用命令.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -384,189 +384,16 @@
       
 
       
-        <h1 id="文档对象模型"><a href="#文档对象模型" class="headerlink" title="文档对象模型"></a>文档对象模型</h1><p>一点小差异，IE中所有DOM对象都是以COM对象的形式实现的。</p>
-<h2 id="节点属性"><a href="#节点属性" class="headerlink" title="节点属性"></a>节点属性</h2><p>每个节点的属性</p>
-<ul>
-<li>childNodes<ul>
-<li>它里面有一个对象叫NodeList</li>
-</ul>
-</li>
-<li>patentNode</li>
-<li>previousSibling</li>
-<li>nextSibling</li>
-<li>ownerDoucment</li>
-</ul>
-<a id="more"></a>
-<h2 id="Node类型"><a href="#Node类型" class="headerlink" title="Node类型"></a>Node类型</h2><ul>
-<li>appendChild（）<ul>
-<li>向childNodes列表的末尾添加一个节点</li>
-</ul>
-</li>
-<li>insertBefour()<ul>
-<li>​把节点放在childNodes列表的特定位置，它接受两参数要插入的节点，和作为参照的节点。</li>
-</ul>
-</li>
-<li>replaceChild()<ul>
-<li>把节点替换，这个方法接受两个参数：要插入的节点和要替换的节点</li>
-</ul>
-</li>
-<li>removeChild()<ul>
-<li>看英文就知道remove,移除。就只接受一个参数：就是你要移除的节点。</li>
-</ul>
-</li>
-<li>cloneNode()<ul>
-<li>这个方法接受一个布尔值参数，在参数为true进行深复制，反之则执行浅复制。</li>
-</ul>
-</li>
-<li>normalize()<ul>
-<li>处理文档树中的文本节点。</li>
-</ul>
-</li>
-</ul>
-<h2 id="Document类型"><a href="#Document类型" class="headerlink" title="Document类型"></a>Document类型</h2><p>nodeType的值是9.</p>
-<p>document的对象是window对象的一个属性，因此可以将其作为全局对象来访问。</p>
-<p>查找元素的方法：</p>
-<ul>
-<li>getElementById()</li>
-<li>getElementByTagName()</li>
-<li>getElementByName()</li>
-<li>document.anchors<ul>
-<li>包含文档中所有带name特性的<a>元素</a></li>
-</ul>
-</li>
-<li>document.applets<ul>
-<li>包含文档中所有的<applet>元素​</applet></li>
-</ul>
-</li>
-<li>document.forms</li>
-<li>document.images</li>
-<li>document.links<ul>
-<li>包含文档中所有带href特性的<a>元素</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="Element类型"><a href="#Element类型" class="headerlink" title="Element类型"></a>Element类型</h2><p>nodeType的值是1。</p>
-<p>它提供了对元素标签名、子节点及特性的访问。</p>
-<p>操作特性的DOM方法：</p>
-<ul>
-<li>getAttribute()</li>
-<li>setAttribute()</li>
-<li>removeAttribute()</li>
-</ul>
-<p>attributes属性中包含一个NamedNodeMap，与NodeList类似，也是一个“动态”的集合。<br>NamedNodeMap对象有下列方法</p>
-<ul>
-<li>getNamedItem(name)<ul>
-<li>返回nodeName属性等于name的节点</li>
-</ul>
-</li>
-<li>removeNamedItem(name)<ul>
-<li>从列表移除nodeName属性等于name的节点</li>
-</ul>
-</li>
-<li>setNamedItem(node)<ul>
-<li>向列表中添加节点，以节点的nodeName属性为索引</li>
-</ul>
-</li>
-<li>item(pos)<ul>
-<li>返回位于数字pos属性位置处的节点。</li>
-</ul>
-</li>
-</ul>
-<h2 id="Text类型"><a href="#Text类型" class="headerlink" title="Text类型"></a>Text类型</h2><p>nodeType的值是3</p>
-<p>下列方法可以操作节点中的文本：</p>
-<ul>
-<li>appendData(text)<ul>
-<li>将text添加到节点的末尾</li>
-</ul>
-</li>
-<li>deleteData(offset, count)<ul>
-<li>从<strong>offset</strong>指定的位置开始删除<strong>count</strong>个字符</li>
-</ul>
-</li>
-<li>insertData(offset, text)<ul>
-<li>在<strong>offset</strong>指定的位置插入<strong>text</strong></li>
-</ul>
-</li>
-<li>replaceData(offset, count, text)<ul>
-<li>用<strong>text</strong>替换从<strong>offset</strong>指定的位置开始到<strong>offset + count</strong>为止处的文本</li>
-</ul>
-</li>
-<li>splitText(offset)<ul>
-<li>从<strong>offset</strong>指定的位置将当前文本节点分成两个文本节点</li>
-</ul>
-</li>
-<li><p>substringData(offset, count)</p>
-<ul>
-<li>提取从<strong>offset</strong>指定的位置开始到<strong>offset + count</strong>为止处的字符串</li>
-</ul>
-</li>
-<li><p>document.createTextNode()</p>
-<ul>
-<li>接受一个参数就是，要插入的文本内容</li>
-<li>document.createTextNode(“<strong>Hello</strong> world!”);</li>
-</ul>
-</li>
-</ul>
-<h3 id="文本节点合并"><a href="#文本节点合并" class="headerlink" title="文本节点合并"></a>文本节点合并</h3><p>normalize()</p>
-<h3 id="文本节点分割"><a href="#文本节点分割" class="headerlink" title="文本节点分割"></a>文本节点分割</h3><p>splitText()</p>
-<h2 id="Comment类型"><a href="#Comment类型" class="headerlink" title="Comment类型"></a>Comment类型</h2><p>nodeType的值是8</p>
-<p>Comment类型与Text类型继承自相同的基类，所以它拥有除了splitText()之外的所有字符串操作方法。<br>document.createComment()<br>创建注释节点</p>
-<h2 id="CDATASection类型"><a href="#CDATASection类型" class="headerlink" title="CDATASection类型"></a>CDATASection类型</h2><p>nodeType的值是4</p>
-<p>CDATA区域只会出现在XML文档中</p>
-<h2 id="DocumentType类型"><a href="#DocumentType类型" class="headerlink" title="DocumentType类型"></a>DocumentType类型</h2><p>nodeType的值是10</p>
-<p>DocumentType包含着与文档的doctype有关的所有信息。</p>
-<h2 id="DocumentFragment类型"><a href="#DocumentFragment类型" class="headerlink" title="DocumentFragment类型"></a>DocumentFragment类型</h2><p>nodeType的值是11</p>
-<p>DocumentFragment 接口表示一个没有父级文件的最小文档对象。它被当做一个轻量版的 Document 使用，用于存储已排好版的或尚未打理好格式的XML片段。最大的区别是因为DocumentFragment不是真实DOM树的一部分，它的变化不会引起DOM树的重新渲染的操作(reflow) ，且不会导致性能等问题。</p>
-<p>该接口继承 Node 的全部方法，并实现了 ParentNode 接口中的方法。</p>
-<h2 id="Attr类型"><a href="#Attr类型" class="headerlink" title="Attr类型"></a>Attr类型</h2><p>nodeType的值是2.</p>
-<p>Attr对象有三个属性：name、 value、 specified</p>
-<p>#总结：<br>DOM由各种节点构成：</p>
-<ol>
-<li>最基本的节点类型是Node;所有其他类型都继承自Node。</li>
-<li>Document类型表示整个文档，是一组分层节点的根节点。在JS中document对象是Document的一个实例。</li>
-<li>Element节点表示文档中所有HTML或XML元素，可以用来操作这些元素的内容和特性。</li>
-<li>还有一些节点就是文本内容啊、注释、文档类型、CDATA区域和文档片段。</li>
-<li>理解DOM的关键，就是理解DOM对性能的影响。DOM操作是Js程序中开销最大的部分，因此访问NodeList导致的问题为最多。所以每次访问NodeList对象，都会运行一次查询。</li>
-<li><strong>尽量减少DOM操作！！！</strong></li>
-</ol>
-<h2 id="DOM扩展"><a href="#DOM扩展" class="headerlink" title="DOM扩展"></a>DOM扩展</h2><p>Leval 1两个方法：</p>
-<ol>
-<li>querySelector()</li>
-<li>querySelectorAll()</li>
-</ol>
-<p>Level 2 的一个方法：</p>
-<ol>
-<li>matchesSelector()</li>
-</ol>
-<h3 id="元素遍历"><a href="#元素遍历" class="headerlink" title="元素遍历"></a>元素遍历</h3><p>Element Traversal API 为DOM元素添加了以下5个属性：</p>
-<ol>
-<li>childElementCount: 返回子元素的个数</li>
-<li>firstElementChild：指向第一个子元素</li>
-<li>lastElementChild：指向最后一个子元素</li>
-<li>previousElementSibling ：指向前一个同辈元素</li>
-<li>nextElementSibling：指向后一个同辈元素</li>
-</ol>
-<h3 id="与类相关的扩充"><a href="#与类相关的扩充" class="headerlink" title="与类相关的扩充"></a>与类相关的扩充</h3><p>1.getElementsByClassName()<br>2.classList</p>
-<p>classList属性有以下方法：</p>
-<ul>
-<li>add(value)</li>
-<li>contains(value)</li>
-<li>remove(value)</li>
-<li>toggle(value)</li>
-</ul>
-<h3 id="焦点管理"><a href="#焦点管理" class="headerlink" title="焦点管理"></a>焦点管理</h3><p>document.actoveElement()<br>document.hasFocus()</p>
-<h3 id="插入标记"><a href="#插入标记" class="headerlink" title="插入标记"></a>插入标记</h3><ul>
-<li>innerHTML</li>
-<li>outerHTML</li>
-<li>insertAdjacentHTML()方法<ul>
-<li>beforebegin: 在<strong>当前元素之前</strong>插入一个紧邻的同辈元素</li>
-<li>afterbegin：在<strong>当前元素之下</strong>插入一个新的子元素或<strong>第一个子元素之前</strong>再插入新的子元素</li>
-<li>beforeend：在<strong>当前元素之下</strong>插入一个新的子元素或在<strong>最后一个子元素之</strong>后再插入新的子元素</li>
-<li>afterend：在<strong>当前元素之后</strong>插入一个紧邻的同辈元素。</li>
-</ul>
-</li>
-</ul>
-<h3 id="scrollIntoView"><a href="#scrollIntoView" class="headerlink" title="scrollIntoView()"></a>scrollIntoView()</h3>
+        <h2 id="get"><a href="#get" class="headerlink" title="get"></a>get</h2><p>get命令用于获取集群的一个或一些resource信息.<br><code>kubectl get</code>可以列出集群所有resource的详细。resource包括集群节点、运行的pod，ReplicationController，service等。</p>
+<h3 id="获取deployment"><a href="#获取deployment" class="headerlink" title="获取deployment"></a>获取deployment</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl get deployment</span><br><span class="line">NAME    DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE</span><br><span class="line">curl    1         1         1            1           43m</span><br><span class="line">nginx   2         2         2            2           107m</span><br></pre></td></tr></table></figure>
+<h3 id="获取所有运行的pod信息"><a href="#获取所有运行的pod信息" class="headerlink" title="获取所有运行的pod信息"></a>获取所有运行的pod信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl get pods</span><br><span class="line">NAME                     READY   STATUS    RESTARTS   AGE</span><br><span class="line">curl-5cc7b478b6-4x7pl    1/1     Running   1          44m</span><br><span class="line">nginx-65d5c4f7cc-khzn8   1/1     Running   0          108m</span><br><span class="line">nginx-65d5c4f7cc-v7x49   1/1     Running   0          107m</span><br></pre></td></tr></table></figure>
+<h3 id="列出Pod以及运行Pod节点信息"><a href="#列出Pod以及运行Pod节点信息" class="headerlink" title="列出Pod以及运行Pod节点信息"></a>列出Pod以及运行Pod节点信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl get pods -o wide </span><br><span class="line">NAME                     READY   STATUS    RESTARTS   AGE    IP            NODE    NOMINATED NODE</span><br><span class="line">nginx-65d5c4f7cc-khzn8   1/1     Running   0          159m   192.168.1.2   zihao   &lt;none&gt;</span><br><span class="line">nginx-65d5c4f7cc-v7x49   1/1     Running   0          158m   192.168.1.3   zihao   &lt;none&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="查看集群中所有的node"><a href="#查看集群中所有的node" class="headerlink" title="查看集群中所有的node"></a>查看集群中所有的node</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl get nodes</span><br><span class="line">NAME            STATUS   ROLES    AGE     VERSION</span><br><span class="line">zihao           Ready    &lt;none&gt;   4h15m   v1.12.2</span><br><span class="line">zihao-desktop   Ready    master   21h     v1.12.2</span><br></pre></td></tr></table></figure>
+<h3 id="查看某个Node的详细信息"><a href="#查看某个Node的详细信息" class="headerlink" title="查看某个Node的详细信息"></a>查看某个Node的详细信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl describe node zihao</span><br><span class="line">Name:               zihao</span><br><span class="line">Roles:              &lt;none&gt;</span><br><span class="line">Labels:             beta.kubernetes.io/arch=amd64</span><br><span class="line">                    beta.kubernetes.io/os=linux</span><br><span class="line">                    kubernetes.io/hostname=zihao</span><br><span class="line">Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: /var/run/dockershim.sock</span><br><span class="line">                    node.alpha.kubernetes.io/ttl: 0</span><br><span class="line">                    projectcalico.org/IPv4Address: 172.16.187.132/24</span><br><span class="line">                    volumes.kubernetes.io/controller-managed-attach-detach: true</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
+<h2 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h2><h3 id="删除pod"><a href="#删除pod" class="headerlink" title="删除pod"></a>删除pod</h3><p>这样删除pods后，你会发现可以看到刚刚生成的<code>curl-5cc7b478b6-4x7pl</code>的status为<code>Terminating</code>，随后又一个新的<code>curl-xxxxxx</code>正在创建，这正是确保<code>replicas</code>为1的动作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl delete pods curl-5cc7b478b6-4x7pl</span><br><span class="line">pod &quot;curl-5cc7b478b6-4x7pl&quot; deleted</span><br></pre></td></tr></table></figure></p>
+<h3 id="删除deployment"><a href="#删除deployment" class="headerlink" title="删除deployment"></a>删除deployment</h3><p>直接删除pod触发了replicas的确保机制，我们需要删除deployment<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl delete deployment curl</span><br><span class="line">deployment.extensions &quot;curl&quot; deleted</span><br></pre></td></tr></table></figure></p>
+<h3 id="强制删除pod"><a href="#强制删除pod" class="headerlink" title="强制删除pod"></a>强制删除pod</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl delete pod curl-5cc7b478b6-4x7pl --grace-period=0 --force</span><br><span class="line">warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.</span><br><span class="line">pod &quot;curl-5cc7b478b6-4x7pl&quot; force deleted</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -583,7 +410,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/docker/" rel="tag"># docker</a>
+          
+            <a href="/tags/Kubernetes/" rel="tag"># Kubernetes</a>
           
         </div>
       
@@ -596,8 +425,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/C++初体验.html" rel="next" title="C++ 初体验">
-                <i class="fa fa-chevron-left"></i> C++ 初体验
+              <a href="/部署 Kubernetes 集群.html" rel="next" title="部署 Kubernetes 集群">
+                <i class="fa fa-chevron-left"></i> 部署 Kubernetes 集群
               </a>
             
           </div>
@@ -605,10 +434,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Parcel.html" rel="prev" title="Parcel-typescript-react初尝试">
-                Parcel-typescript-react初尝试 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -783,7 +608,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文档对象模型"><span class="nav-number">1.</span> <span class="nav-text">文档对象模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#节点属性"><span class="nav-number">1.1.</span> <span class="nav-text">节点属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node类型"><span class="nav-number">1.2.</span> <span class="nav-text">Node类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Document类型"><span class="nav-number">1.3.</span> <span class="nav-text">Document类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Element类型"><span class="nav-number">1.4.</span> <span class="nav-text">Element类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Text类型"><span class="nav-number">1.5.</span> <span class="nav-text">Text类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文本节点合并"><span class="nav-number">1.5.1.</span> <span class="nav-text">文本节点合并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本节点分割"><span class="nav-number">1.5.2.</span> <span class="nav-text">文本节点分割</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comment类型"><span class="nav-number">1.6.</span> <span class="nav-text">Comment类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CDATASection类型"><span class="nav-number">1.7.</span> <span class="nav-text">CDATASection类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DocumentType类型"><span class="nav-number">1.8.</span> <span class="nav-text">DocumentType类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DocumentFragment类型"><span class="nav-number">1.9.</span> <span class="nav-text">DocumentFragment类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Attr类型"><span class="nav-number">1.10.</span> <span class="nav-text">Attr类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM扩展"><span class="nav-number">1.11.</span> <span class="nav-text">DOM扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#元素遍历"><span class="nav-number">1.11.1.</span> <span class="nav-text">元素遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与类相关的扩充"><span class="nav-number">1.11.2.</span> <span class="nav-text">与类相关的扩充</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#焦点管理"><span class="nav-number">1.11.3.</span> <span class="nav-text">焦点管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入标记"><span class="nav-number">1.11.4.</span> <span class="nav-text">插入标记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scrollIntoView"><span class="nav-number">1.11.5.</span> <span class="nav-text">scrollIntoView()</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#get"><span class="nav-number">1.</span> <span class="nav-text">get</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取deployment"><span class="nav-number">1.1.</span> <span class="nav-text">获取deployment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取所有运行的pod信息"><span class="nav-number">1.2.</span> <span class="nav-text">获取所有运行的pod信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列出Pod以及运行Pod节点信息"><span class="nav-number">1.3.</span> <span class="nav-text">列出Pod以及运行Pod节点信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看集群中所有的node"><span class="nav-number">1.4.</span> <span class="nav-text">查看集群中所有的node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看某个Node的详细信息"><span class="nav-number">1.5.</span> <span class="nav-text">查看某个Node的详细信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delete"><span class="nav-number">2.</span> <span class="nav-text">delete</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除pod"><span class="nav-number">2.1.</span> <span class="nav-text">删除pod</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除deployment"><span class="nav-number">2.2.</span> <span class="nav-text">删除deployment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强制删除pod"><span class="nav-number">2.3.</span> <span class="nav-text">强制删除pod</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -974,9 +799,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://xuzihao.fun/DOM.html';
-          this.page.identifier = 'DOM.html';
-          this.page.title = 'DOM';
+          this.page.url = 'http://xuzihao.fun/Kubectl常用命令.html';
+          this.page.identifier = 'Kubectl常用命令.html';
+          this.page.title = 'Kubectl常用命令';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://xuzihao.disqus.com/embed.js';

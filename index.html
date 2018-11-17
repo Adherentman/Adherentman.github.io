@@ -271,6 +271,174 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/Kubectl常用命令.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XuZiHao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="壮壮-Technology">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Kubectl常用命令.html" itemprop="url">Kubectl常用命令</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T22:34:00+08:00">
+                2018-11-17
+              </time>
+            
+            
+              <span class="post-updated">
+              &nbsp; | &nbsp; 更新于
+              <time itemprop="dateUpdated" datetime="2018-11-17T22:34:14+08:00" content="2018-11-17">
+                2018-11-17
+              </time>
+              </span>
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Kubectl常用命令.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="Kubectl常用命令.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="get"><a href="#get" class="headerlink" title="get"></a>get</h2><p>get命令用于获取集群的一个或一些resource信息.<br><code>kubectl get</code>可以列出集群所有resource的详细。resource包括集群节点、运行的pod，ReplicationController，service等。</p>
+<h3 id="获取deployment"><a href="#获取deployment" class="headerlink" title="获取deployment"></a>获取deployment</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl get deployment</span><br><span class="line">NAME    DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE</span><br><span class="line">curl    1         1         1            1           43m</span><br><span class="line">nginx   2         2         2            2           107m</span><br></pre></td></tr></table></figure>
+<h3 id="获取所有运行的pod信息"><a href="#获取所有运行的pod信息" class="headerlink" title="获取所有运行的pod信息"></a>获取所有运行的pod信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl get pods</span><br><span class="line">NAME                     READY   STATUS    RESTARTS   AGE</span><br><span class="line">curl-5cc7b478b6-4x7pl    1/1     Running   1          44m</span><br><span class="line">nginx-65d5c4f7cc-khzn8   1/1     Running   0          108m</span><br><span class="line">nginx-65d5c4f7cc-v7x49   1/1     Running   0          107m</span><br></pre></td></tr></table></figure>
+<h3 id="列出Pod以及运行Pod节点信息"><a href="#列出Pod以及运行Pod节点信息" class="headerlink" title="列出Pod以及运行Pod节点信息"></a>列出Pod以及运行Pod节点信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl get pods -o wide </span><br><span class="line">NAME                     READY   STATUS    RESTARTS   AGE    IP            NODE    NOMINATED NODE</span><br><span class="line">nginx-65d5c4f7cc-khzn8   1/1     Running   0          159m   192.168.1.2   zihao   &lt;none&gt;</span><br><span class="line">nginx-65d5c4f7cc-v7x49   1/1     Running   0          158m   192.168.1.3   zihao   &lt;none&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="查看集群中所有的node"><a href="#查看集群中所有的node" class="headerlink" title="查看集群中所有的node"></a>查看集群中所有的node</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl get nodes</span><br><span class="line">NAME            STATUS   ROLES    AGE     VERSION</span><br><span class="line">zihao           Ready    &lt;none&gt;   4h15m   v1.12.2</span><br><span class="line">zihao-desktop   Ready    master   21h     v1.12.2</span><br></pre></td></tr></table></figure>
+<h3 id="查看某个Node的详细信息"><a href="#查看某个Node的详细信息" class="headerlink" title="查看某个Node的详细信息"></a>查看某个Node的详细信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl describe node zihao</span><br><span class="line">Name:               zihao</span><br><span class="line">Roles:              &lt;none&gt;</span><br><span class="line">Labels:             beta.kubernetes.io/arch=amd64</span><br><span class="line">                    beta.kubernetes.io/os=linux</span><br><span class="line">                    kubernetes.io/hostname=zihao</span><br><span class="line">Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: /var/run/dockershim.sock</span><br><span class="line">                    node.alpha.kubernetes.io/ttl: 0</span><br><span class="line">                    projectcalico.org/IPv4Address: 172.16.187.132/24</span><br><span class="line">                    volumes.kubernetes.io/controller-managed-attach-detach: true</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
+<h2 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h2><h3 id="删除pod"><a href="#删除pod" class="headerlink" title="删除pod"></a>删除pod</h3><p>这样删除pods后，你会发现可以看到刚刚生成的<code>curl-5cc7b478b6-4x7pl</code>的status为<code>Terminating</code>，随后又一个新的<code>curl-xxxxxx</code>正在创建，这正是确保<code>replicas</code>为1的动作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl delete pods curl-5cc7b478b6-4x7pl</span><br><span class="line">pod &quot;curl-5cc7b478b6-4x7pl&quot; deleted</span><br></pre></td></tr></table></figure></p>
+<h3 id="删除deployment"><a href="#删除deployment" class="headerlink" title="删除deployment"></a>删除deployment</h3><p>直接删除pod触发了replicas的确保机制，我们需要删除deployment<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl delete deployment curl</span><br><span class="line">deployment.extensions &quot;curl&quot; deleted</span><br></pre></td></tr></table></figure></p>
+<h3 id="强制删除pod"><a href="#强制删除pod" class="headerlink" title="强制删除pod"></a>强制删除pod</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl delete pod curl-5cc7b478b6-4x7pl --grace-period=0 --force</span><br><span class="line">warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.</span><br><span class="line">pod &quot;curl-5cc7b478b6-4x7pl&quot; force deleted</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/部署 Kubernetes 集群.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1778,176 +1946,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://xuzihao.fun/Draft-RichUtils.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="XuZiHao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="壮壮-Technology">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Draft-RichUtils.html" itemprop="url">Draft —— Rich Styling</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-06T21:02:00+08:00">
-                2018-07-06
-              </time>
-            
-            
-              <span class="post-updated">
-              &nbsp; | &nbsp; 更新于
-              <time itemprop="dateUpdated" datetime="2018-07-06T21:02:52+08:00" content="2018-07-06">
-                2018-07-06
-              </time>
-              </span>
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Draft/" itemprop="url" rel="index">
-                    <span itemprop="name">Draft</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Draft-RichUtils.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="Draft-RichUtils.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>现在我们已经建立了顶级API的基础知识，我们可以更进一步，研究如何将基本的丰富样式添加到<code>Dragt</code>编辑器中。</p>
-<p>A <a href="https://github.com/facebook/draft-js/tree/master/examples/draft-0-10-0/rich" target="_blank" rel="noopener">richTextExample</a> is also available to follow along.</p>
-<h2 id="EditorState-Yours-to-Command"><a href="#EditorState-Yours-to-Command" class="headerlink" title="EditorState: Yours to Command"></a>EditorState: Yours to Command</h2><p>上一篇文章介绍了<code>EditorState</code>对象作为编辑器完整状态的快照,由<code>Editor</code>核心通过<code>onChange props</code>给的.</p>
-<p>但是，由于最顶层的React组件负责维护状态，因此您还可以以任何您认为合适的方式自由地将更改应用于该<code>EditorState</code>对象。</p>
-<p>例如，对于内联和块样式行为，<code>RichUtils</code> 模块提供了许多有用的函数来帮助操作状态。</p>
-<p>同样，<a href="https://draftjs.org/docs/api-reference-modifier.html" target="_blank" rel="noopener">Modifier</a> 模块还提供了许多允许您应用编辑的常用操作，包括对文本，样式等更改。该模块是一套编辑函数，它们组成更简单，更小的编辑函数，以返回所需的<code>EditorState</code>对象。</p>
-<p>对于此示例，我们将坚持使用<code>RichUtils</code>来演示如何在最顶层组件中应用基本的丰富样式。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Draft-RichUtils.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2002,7 +2000,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">97</span>
+                  <span class="site-state-item-count">98</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
