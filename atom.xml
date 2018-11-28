@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xzh.hi.cn/"/>
-  <updated>2018-11-27T14:27:17.958Z</updated>
+  <updated>2018-11-28T14:37:57.929Z</updated>
   <id>http://xzh.hi.cn/</id>
   
   <author>
@@ -17,21 +17,22 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>初识RxJs</title>
+    <title>初识RxJS</title>
     <link href="http://xzh.hi.cn/%E5%88%9D%E8%AF%86RxJs.html"/>
     <id>http://xzh.hi.cn/初识RxJs.html</id>
     <published>2018-11-27T14:27:00.000Z</published>
-    <updated>2018-11-27T14:27:17.958Z</updated>
+    <updated>2018-11-28T14:37:57.929Z</updated>
     
-    <content type="html"><![CDATA[<p>RxJs世界中有一种特殊的对象，称为流（stream）。<br>代表 “流” 的变量标识符，都是用$符号结尾。这被称为“芬兰式命名法”。<br>流对象中流淌的是数据。</p>]]></content>
+    <content type="html"><![CDATA[<p>RxJs世界中有一种特殊的对象，称为流（stream）。<br>代表 “流” 的变量标识符，都是用$符号结尾。这被称为“芬兰式命名法”。<br>流对象中流淌的是数据。</p><h2 id="RxJS模型"><a href="#RxJS模型" class="headerlink" title="RxJS模型"></a>RxJS模型</h2><ul><li>数据流抽象了很多现实问题</li><li>擅长处理异步操作</li><li>把复杂问题分解成简单问题的组合</li></ul><a id="more"></a><h2 id="Observable-和-Observer"><a href="#Observable-和-Observer" class="headerlink" title="Observable 和 Observer"></a>Observable 和 Observer</h2><p>Observabel: 可被观察者<br>Observer: 观察者</p><h3 id="Observable"><a href="#Observable" class="headerlink" title="Observable"></a>Observable</h3><p>它实现了下面两种设计模式：</p><ul><li>观察者模式</li><li>迭代器模式</li></ul><p><code>Observable = Publisher + Iterator</code></p><p>Observable分为:</p><ul><li>Hot Observable<ul><li>只接受从订阅开始Observable产生的数据</li></ul></li><li>Cold Observable<ul><li>不能错过任何数据，需要获取Observable之前产生的数据</li></ul></li></ul><h2 id="弹珠图"><a href="#弹珠图" class="headerlink" title="弹珠图"></a>弹珠图</h2><p>弹珠图： <a href="https://rxviz.com/" target="_blank" rel="noopener">https://rxviz.com/</a></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;RxJs世界中有一种特殊的对象，称为流（stream）。&lt;br&gt;代表 “流” 的变量标识符，都是用$符号结尾。这被称为“芬兰式命名法”。&lt;br&gt;流对象中流淌的是数据。&lt;/p&gt;
-
-      
+      &lt;p&gt;RxJs世界中有一种特殊的对象，称为流（stream）。&lt;br&gt;代表 “流” 的变量标识符，都是用$符号结尾。这被称为“芬兰式命名法”。&lt;br&gt;流对象中流淌的是数据。&lt;/p&gt;
+&lt;h2 id=&quot;RxJS模型&quot;&gt;&lt;a href=&quot;#RxJS模型&quot; class=&quot;headerlink&quot; title=&quot;RxJS模型&quot;&gt;&lt;/a&gt;RxJS模型&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;数据流抽象了很多现实问题&lt;/li&gt;
+&lt;li&gt;擅长处理异步操作&lt;/li&gt;
+&lt;li&gt;把复杂问题分解成简单问题的组合&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     

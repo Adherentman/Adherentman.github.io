@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[初识RxJs]]></title>
+    <title><![CDATA[初识RxJS]]></title>
     <url>%2F%E5%88%9D%E8%AF%86RxJs.html</url>
-    <content type="text"><![CDATA[RxJs世界中有一种特殊的对象，称为流（stream）。代表 “流” 的变量标识符，都是用$符号结尾。这被称为“芬兰式命名法”。流对象中流淌的是数据。]]></content>
+    <content type="text"><![CDATA[RxJs世界中有一种特殊的对象，称为流（stream）。代表 “流” 的变量标识符，都是用$符号结尾。这被称为“芬兰式命名法”。流对象中流淌的是数据。 RxJS模型 数据流抽象了很多现实问题 擅长处理异步操作 把复杂问题分解成简单问题的组合 Observable 和 ObserverObservabel: 可被观察者Observer: 观察者 Observable它实现了下面两种设计模式： 观察者模式 迭代器模式 Observable = Publisher + Iterator Observable分为: Hot Observable 只接受从订阅开始Observable产生的数据 Cold Observable 不能错过任何数据，需要获取Observable之前产生的数据 弹珠图弹珠图： https://rxviz.com/]]></content>
       <categories>
         <category>RxJS</category>
       </categories>
@@ -660,9 +660,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[英语单词]]></title>
-    <url>%2F%E5%8D%95%E8%AF%8D.html</url>
-    <content type="text"><![CDATA[delicate| 易碎的 idleness| 懒惰 tell the truth | 说实话 tell a lie / tell lies| 说谎话 hold the view 持某种看法;认为. in view of | 鉴于，考虑到 working on | 从事于；致力于 set free | 释放 run into | 偶然 allow | 允许，给予(人) for fear of | 生怕，以免]]></content>
+    <title><![CDATA[英语例句]]></title>
+    <url>%2F%E4%BE%8B%E5%8F%A5.html</url>
+    <content type="text"><![CDATA[No sooner ····· then 一。。。就。 not so much …as 与其。。不如 no more…than 不过，仅仅；至多，同。。。一样不 as…as 像。。。一样 imagined + sth. + to be + adj. 为复合宾语解构 put forward to do sth. 提出要求做某事 get sth. done 把某事做了 would rather 引导从句的虚拟结构中，如果表示对现在或将来情况的愿望，从句用过去时。 如果是对过去情况的虚拟，从句用过去完成时。 never, hardly, seldom, little, not until, not, not only, no sooner, no longer, nowhere, by no means 以上位于句首需要部分倒装 keep diary 记日记 can’t help doing sth. 忍不住做。。。 be worth doing 某（事或物）值得做 be worthy to be done 或 sth. is worthy of being done 以及 sb. be worhty of doing sth. 或者 sb. be worthy to do sth. 和 worth 的意思一样 It is/was /will be the first time that …句式 主句谓语是is，从句用现在完成时 主句谓语是was，从句谓语用过去完成时 主句谓语是will be，从句谓语用一般现在时 be appropriate for sb. 或 be appropriate to do sth. 固定搭配 appreciate + doing sth. 感激做某事 but to do,但是but之前出现了 do/does/did/done就要 but do no mood | in the mood 没有心情 | 有好心情 the impression of + doing sth. 做过某事的印象 have a(the) right to sth. 享有。。的权利 do nothing but 此结构后要求动词原形 need doing / need to done 需要被 sb. spend some time doing sth. 花时间做某事 a large amount of, a great deal of 固定搭配 将来时除了有be going to, will + do, 还有be to do, be about to do. play a part in 在。。。起作用。 must have + 过去分词 过去一定做了某事，表示对过去的肯定推测。 could have + 过去分词 本来能够做…. another + 基数词 + 名词复数 另外/在多少个 I want another three apples. 我还需要三个苹果。 mind doing sth. 介意做某事 to help you to out 表示目的 be going to + 一般现在时（leaves）]]></content>
       <categories>
         <category>日常</category>
       </categories>
@@ -671,9 +671,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[英语例句]]></title>
-    <url>%2F%E4%BE%8B%E5%8F%A5.html</url>
-    <content type="text"><![CDATA[No sooner ····· then 一。。。就。 not so much …as 与其。。不如 no more…than 不过，仅仅；至多，同。。。一样不 as…as 像。。。一样 imagined + sth. + to be + adj. 为复合宾语解构 put forward to do sth. 提出要求做某事 get sth. done 把某事做了 would rather 引导从句的虚拟结构中，如果表示对现在或将来情况的愿望，从句用过去时。 如果是对过去情况的虚拟，从句用过去完成时。 never, hardly, seldom, little, not until, not, not only, no sooner, no longer, nowhere, by no means 以上位于句首需要部分倒装 keep diary 记日记 can’t help doing sth. 忍不住做。。。 be worth doing 某（事或物）值得做 be worthy to be done 或 sth. is worthy of being done 以及 sb. be worhty of doing sth. 或者 sb. be worthy to do sth. 和 worth 的意思一样 It is/was /will be the first time that …句式 主句谓语是is，从句用现在完成时 主句谓语是was，从句谓语用过去完成时 主句谓语是will be，从句谓语用一般现在时 be appropriate for sb. 或 be appropriate to do sth. 固定搭配 appreciate + doing sth. 感激做某事 but to do,但是but之前出现了 do/does/did/done就要 but do no mood | in the mood 没有心情 | 有好心情 the impression of + doing sth. 做过某事的印象 have a(the) right to sth. 享有。。的权利 do nothing but 此结构后要求动词原形 need doing / need to done 需要被 sb. spend some time doing sth. 花时间做某事 a large amount of, a great deal of 固定搭配 将来时除了有be going to, will + do, 还有be to do, be about to do. play a part in 在。。。起作用。 must have + 过去分词 过去一定做了某事，表示对过去的肯定推测。 could have + 过去分词 本来能够做…. another + 基数词 + 名词复数 另外/在多少个 I want another three apples. 我还需要三个苹果。 mind doing sth. 介意做某事 to help you to out 表示目的 be going to + 一般现在时（leaves）]]></content>
+    <title><![CDATA[英语单词]]></title>
+    <url>%2F%E5%8D%95%E8%AF%8D.html</url>
+    <content type="text"><![CDATA[delicate| 易碎的 idleness| 懒惰 tell the truth | 说实话 tell a lie / tell lies| 说谎话 hold the view 持某种看法;认为. in view of | 鉴于，考虑到 working on | 从事于；致力于 set free | 释放 run into | 偶然 allow | 允许，给予(人) for fear of | 生怕，以免]]></content>
       <categories>
         <category>日常</category>
       </categories>

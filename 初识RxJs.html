@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="RxJs世界中有一种特殊的对象，称为流（stream）。代表 “流” 的变量标识符，都是用$符号结尾。这被称为“芬兰式命名法”。流对象中流淌的是数据。">
+<meta name="description" content="RxJs世界中有一种特殊的对象，称为流（stream）。代表 “流” 的变量标识符，都是用$符号结尾。这被称为“芬兰式命名法”。流对象中流淌的是数据。 RxJS模型 数据流抽象了很多现实问题 擅长处理异步操作 把复杂问题分解成简单问题的组合">
 <meta name="keywords" content="RxJS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="初识RxJs">
+<meta property="og:title" content="初识RxJS">
 <meta property="og:url" content="http://xzh.hi.cn/初识RxJs.html">
 <meta property="og:site_name" content="壮壮-Technology">
-<meta property="og:description" content="RxJs世界中有一种特殊的对象，称为流（stream）。代表 “流” 的变量标识符，都是用$符号结尾。这被称为“芬兰式命名法”。流对象中流淌的是数据。">
+<meta property="og:description" content="RxJs世界中有一种特殊的对象，称为流（stream）。代表 “流” 的变量标识符，都是用$符号结尾。这被称为“芬兰式命名法”。流对象中流淌的是数据。 RxJS模型 数据流抽象了很多现实问题 擅长处理异步操作 把复杂问题分解成简单问题的组合">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-27T14:27:17.958Z">
+<meta property="og:updated_time" content="2018-11-28T14:37:57.929Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="初识RxJs">
-<meta name="twitter:description" content="RxJs世界中有一种特殊的对象，称为流（stream）。代表 “流” 的变量标识符，都是用$符号结尾。这被称为“芬兰式命名法”。流对象中流淌的是数据。">
+<meta name="twitter:title" content="初识RxJS">
+<meta name="twitter:description" content="RxJs世界中有一种特殊的对象，称为流（stream）。代表 “流” 的变量标识符，都是用$符号结尾。这被称为“芬兰式命名法”。流对象中流淌的是数据。 RxJS模型 数据流抽象了很多现实问题 擅长处理异步操作 把复杂问题分解成简单问题的组合">
 
 
 
@@ -135,7 +135,7 @@
 
 
 
-  <title>初识RxJs | 壮壮-Technology</title>
+  <title>初识RxJS | 壮壮-Technology</title>
   
 
 
@@ -289,7 +289,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">初识RxJs</h2>
+          <h2 class="post-title" itemprop="name headline">初识RxJS</h2>
         
 
         <div class="post-meta">
@@ -308,8 +308,8 @@
             
               <span class="post-updated">
               &nbsp; | &nbsp; 更新于
-              <time itemprop="dateUpdated" datetime="2018-11-27T22:27:17+08:00" content="2018-11-27">
-                2018-11-27
+              <time itemprop="dateUpdated" datetime="2018-11-28T22:37:57+08:00" content="2018-11-28">
+                2018-11-28
               </time>
               </span>
             
@@ -385,6 +385,31 @@
 
       
         <p>RxJs世界中有一种特殊的对象，称为流（stream）。<br>代表 “流” 的变量标识符，都是用$符号结尾。这被称为“芬兰式命名法”。<br>流对象中流淌的是数据。</p>
+<h2 id="RxJS模型"><a href="#RxJS模型" class="headerlink" title="RxJS模型"></a>RxJS模型</h2><ul>
+<li>数据流抽象了很多现实问题</li>
+<li>擅长处理异步操作</li>
+<li>把复杂问题分解成简单问题的组合</li>
+</ul>
+<a id="more"></a>
+<h2 id="Observable-和-Observer"><a href="#Observable-和-Observer" class="headerlink" title="Observable 和 Observer"></a>Observable 和 Observer</h2><p>Observabel: 可被观察者<br>Observer: 观察者</p>
+<h3 id="Observable"><a href="#Observable" class="headerlink" title="Observable"></a>Observable</h3><p>它实现了下面两种设计模式：</p>
+<ul>
+<li>观察者模式</li>
+<li>迭代器模式</li>
+</ul>
+<p><code>Observable = Publisher + Iterator</code></p>
+<p>Observable分为:</p>
+<ul>
+<li>Hot Observable<ul>
+<li>只接受从订阅开始Observable产生的数据</li>
+</ul>
+</li>
+<li>Cold Observable<ul>
+<li>不能错过任何数据，需要获取Observable之前产生的数据</li>
+</ul>
+</li>
+</ul>
+<h2 id="弹珠图"><a href="#弹珠图" class="headerlink" title="弹珠图"></a>弹珠图</h2><p>弹珠图： <a href="https://rxviz.com/" target="_blank" rel="noopener">https://rxviz.com/</a></p>
 
       
     </div>
@@ -485,8 +510,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -579,6 +613,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RxJS模型"><span class="nav-number">1.</span> <span class="nav-text">RxJS模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Observable-和-Observer"><span class="nav-number">2.</span> <span class="nav-text">Observable 和 Observer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Observable"><span class="nav-number">2.1.</span> <span class="nav-text">Observable</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#弹珠图"><span class="nav-number">3.</span> <span class="nav-text">弹珠图</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -766,7 +816,7 @@
         var disqus_config = function () {
           this.page.url = 'http://xzh.hi.cn/初识RxJs.html';
           this.page.identifier = '初识RxJs.html';
-          this.page.title = '初识RxJs';
+          this.page.title = '初识RxJS';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://xuzihao.disqus.com/embed.js';

@@ -5,10 +5,10 @@
     
   <url>
     <loc>http://xzh.hi.cn/%E5%88%9D%E8%AF%86RxJs.html</loc>
-    <lastmod>2018-11-27T14:27:17.958Z</lastmod>
+    <lastmod>2018-11-28T14:37:57.929Z</lastmod>
     <data>
         <display>
-        <title>初识RxJs</title>
+        <title>初识RxJS</title>
         <pubTime>2018-11-27T14:27:00.000Z</pubTime>
         
         <tag>RxJS</tag>
@@ -821,12 +821,12 @@
 
     
   <url>
-    <loc>http://xzh.hi.cn/%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html</loc>
+    <loc>http://xzh.hi.cn/RegExp.html</loc>
     <lastmod>2018-04-01T12:21:00.000Z</lastmod>
     <data>
         <display>
-        <title>浅谈script标签</title>
-        <pubTime>2018-03-19T12:57:11.911Z</pubTime>
+        <title>RegExp正则表达式</title>
+        <pubTime>2018-04-06T13:44:57.528Z</pubTime>
         
         <tag>JavaScript</tag>
          
@@ -841,12 +841,12 @@
 
     
   <url>
-    <loc>http://xzh.hi.cn/RegExp.html</loc>
+    <loc>http://xzh.hi.cn/%E6%B5%85%E8%B0%88script%E6%A0%87%E7%AD%BE.html</loc>
     <lastmod>2018-04-01T12:21:00.000Z</lastmod>
     <data>
         <display>
-        <title>RegExp正则表达式</title>
-        <pubTime>2018-04-06T13:44:57.528Z</pubTime>
+        <title>浅谈script标签</title>
+        <pubTime>2018-03-19T12:57:11.911Z</pubTime>
         
         <tag>JavaScript</tag>
          
