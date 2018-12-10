@@ -1,3 +1,11 @@
+---
+title: Nginx基础
+date: 2018-11-22 19：33
+comments: true
+layout: post
+tags: [Nginx]
+categories: [Nginx]
+---
 ## 配置
 
 ### nginx.conf

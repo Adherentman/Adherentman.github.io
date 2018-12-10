@@ -1,4 +1,11 @@
-# 打造个人or团队适用的开源项目规范
+---
+title: 打造个人or团队适用的开源项目规范
+date: 2018-10-03 19：33
+comments: true
+layout: post
+tags: [工程化]
+categories: [工程化]
+---
 
 ![](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1541259226466&di=3d9d04f5f77d2f23b7b121fb02083038&imgtype=jpg&src=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D738639994%2C2302403857%26fm%3D214%26gp%3D0.jpg)
 

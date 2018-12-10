@@ -27,6 +27,7 @@ console.log(isPush)		// true
 console.log(isOpen)		// false
 ```
 
+<!--more-->
 ## 解构赋值：
 
 当额外定义一个局部变量`isClick`，但是在`options`上没这个对应名称的属性，所以会返回`underfined`。
