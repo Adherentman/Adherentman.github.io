@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg?v=5.1.3">
+
+
+  <link rel="mask-icon" href="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="壮壮-Technology" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="打造个人or团队适用的开源项目规范 lernaLerna 是一个用来优化托管在git\npm上的多package代码库的工作流的一个管理工具,可以让你在主项目下管理多个子项目，从而解决了多个包互相依赖，且发布时需要手动维护多个包的问题。 lerna的文件树：1234567my-lerna-repo/  package.json  packages/    package-1/      packa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="壮壮-Technology">
+<meta property="og:url" content="http://xzh.hi.cn/打造个人or团队适用的开源项目规范.html">
+<meta property="og:site_name" content="壮壮-Technology">
+<meta property="og:description" content="打造个人or团队适用的开源项目规范 lernaLerna 是一个用来优化托管在git\npm上的多package代码库的工作流的一个管理工具,可以让你在主项目下管理多个子项目，从而解决了多个包互相依赖，且发布时需要手动维护多个包的问题。 lerna的文件树：1234567my-lerna-repo/  package.json  packages/    package-1/      packa">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1541259226466&di=3d9d04f5f77d2f23b7b121fb02083038&imgtype=jpg&src=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D738639994%2C2302403857%26fm%3D214%26gp%3D0.jpg">
+<meta property="og:updated_time" content="2018-11-03T12:51:15.430Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="壮壮-Technology">
+<meta name="twitter:description" content="打造个人or团队适用的开源项目规范 lernaLerna 是一个用来优化托管在git\npm上的多package代码库的工作流的一个管理工具,可以让你在主项目下管理多个子项目，从而解决了多个包互相依赖，且发布时需要手动维护多个包的问题。 lerna的文件树：1234567my-lerna-repo/  package.json  packages/    package-1/      packa">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1541259226466&di=3d9d04f5f77d2f23b7b121fb02083038&imgtype=jpg&src=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D738639994%2C2302403857%26fm%3D214%26gp%3D0.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '6398696795836253000',
+      author: '徐大大'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xzh.hi.cn/打造个人or团队适用的开源项目规范.html"/>
+
+
+
+
+
+  <title> | 壮壮-Technology</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">壮壮-Technology</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">宠辱不惊，闲看庭前花落花开</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xzh.hi.cn/打造个人or团队适用的开源项目规范.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XuZiHao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="壮壮-Technology">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline"></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-03T15:10:14+08:00">
+                2018-10-03
+              </time>
+            
+            
+              <span class="post-updated">
+              &nbsp; | &nbsp; 更新于
+              <time itemprop="dateUpdated" datetime="2018-11-03T20:51:15+08:00" content="2018-11-03">
+                2018-11-03
+              </time>
+              </span>
+            
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/打造个人or团队适用的开源项目规范.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="打造个人or团队适用的开源项目规范.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="打造个人or团队适用的开源项目规范"><a href="#打造个人or团队适用的开源项目规范" class="headerlink" title="打造个人or团队适用的开源项目规范"></a>打造个人or团队适用的开源项目规范</h1><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1541259226466&amp;di=3d9d04f5f77d2f23b7b121fb02083038&amp;imgtype=jpg&amp;src=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D738639994%2C2302403857%26fm%3D214%26gp%3D0.jpg" alt=""></p>
+<h2 id="lerna"><a href="#lerna" class="headerlink" title="lerna"></a>lerna</h2><p>Lerna 是一个用来优化托管在git\npm上的多package代码库的工作流的一个管理工具,可以让你在主项目下管理多个子项目，从而解决了多个包互相依赖，且发布时需要手动维护多个包的问题。</p>
+<p>lerna的文件树：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">my-lerna-repo/</span><br><span class="line">  package.json</span><br><span class="line">  packages/</span><br><span class="line">    package-1/</span><br><span class="line">      package.json</span><br><span class="line">    package-2/</span><br><span class="line">      package.json</span><br></pre></td></tr></table></figure></p>
+<p>首先作为项目拥有者全局安装：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install -g lerna</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> or</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn global add lerna</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><p>在项目使用以下命令：</p>
+<a id="more"></a>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> lerna init</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> or</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> lerna init --independent</span></span><br></pre></td></tr></table></figure>
+<p>这条命令要注意的是，lerna提供两类管理项目的模式：</p>
+<ol>
+<li>fixed/locked mode（default）<ol>
+<li>Fixed模式下，项目通过单一的版本进行控制。版本号放在项目根目录下的lerna.json文件的version这个字段。当你执行 lerna publish，如果有文件更新，它将发布新的版本。</li>
+</ol>
+</li>
+<li>independent mode（—independent）<ol>
+<li>这种模式下，项目里的各个package独立维护自己的version，它将会忽略lerna.json中定义的version</li>
+</ol>
+</li>
+</ol>
+<h3 id="publish"><a href="#publish" class="headerlink" title="publish"></a>publish</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> lerna publish</span></span><br></pre></td></tr></table></figure>
+<p>Publish它做了以下几件事情</p>
+<ol>
+<li>发布项目里的每个模块</li>
+<li>执行lerna updated确定是否需要发布</li>
+<li>假如需要发布 给lerna.json 版本号做自增</li>
+<li>更新package.json里的版本号至最新</li>
+<li>为新版本更新dependencies</li>
+<li>为新版本创建一个git commit 和tag</li>
+<li>发布更新项目到npm</li>
+<li>一次发布所有packages<br>只有你在<code>package.json</code>里设置<code>private: true</code>这个包则不会被发布。</li>
+</ol>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>如果我们使用yarn我们可以在<code>lerna.json</code>做如下配置：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">...</span><br><span class="line">  "npmClient": "yarn"</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="代码检查和规范"><a href="#代码检查和规范" class="headerlink" title="代码检查和规范"></a>代码检查和规范</h2><p>在一个项目中，多人开发时会遇到代码格式问题。<br>解决方案：</p>
+<h3 id="使用Eslint"><a href="#使用Eslint" class="headerlink" title="使用Eslint"></a>使用Eslint</h3><p>项目拥有者需要全局安装：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install eslint -g</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> or</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn global add eslint</span></span><br></pre></td></tr></table></figure></p>
+<p>在项目中执行命令：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> eslint --init</span></span><br></pre></td></tr></table></figure></p>
+<p>React项目推荐使用airbnb规范。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"devDependencies"</span>: &#123;</span><br><span class="line">        <span class="attr">"eslint"</span>: <span class="string">"^4.19.1"</span>,</span><br><span class="line">        <span class="attr">"eslint-config-airbnb"</span>: <span class="string">"^17.0.0"</span>,</span><br><span class="line">        <span class="attr">"eslint-plugin-import"</span>: <span class="string">"^2.13.0"</span>,</span><br><span class="line">        <span class="attr">"eslint-plugin-react"</span>: <span class="string">"^7.10.0"</span>,</span><br><span class="line">        <span class="attr">"eslint-plugin-jsx-a11y"</span>: <span class="string">"^6.1.1"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="使用Standard"><a href="#使用Standard" class="headerlink" title="使用Standard"></a>使用Standard</h3><p>参考中文文档 <a href="https://github.com/standard/standard/blob/master/docs/README-zhcn.md#i-disagree-with-rule-x-can-you-change-it" target="_blank" rel="noopener">standard/README-zhcn.md at master · standard/standard · GitHub</a></p>
+<h3 id="Prettier"><a href="#Prettier" class="headerlink" title="Prettier"></a>Prettier</h3><p>Eslint + prettier 解决了代码风格和格式化的所有问题。</p>
+<h3 id="与git-hook来解决何时lint"><a href="#与git-hook来解决何时lint" class="headerlink" title="与git hook来解决何时lint"></a>与git hook来解决何时lint</h3><p>目前比较成熟的是<code>husky</code>与<code>lint-staged</code>两者结合:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install lint-staged husky -D</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> or</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn add lint-staged husky -D</span></span><br></pre></td></tr></table></figure></p>
+<p>接着在<code>package.json</code>中加入：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">"lint-staged": &#123;</span><br><span class="line">    "packages/*/src/**/*.js": [</span><br><span class="line">      "eslint --fix",</span><br><span class="line">      "prettier --write",</span><br><span class="line">      <span class="string">"git add"</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  "husky": &#123;</span><br><span class="line">    "hooks": &#123;</span><br><span class="line">      "pre-commit": "lint-staged"</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure></p>
+<h3 id="Tslint"><a href="#Tslint" class="headerlink" title="Tslint"></a>Tslint</h3><p>如果你的项目使<code>TypeScript</code>那么<code>tslint</code>能帮助你许多！</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> yarn add -D prettier tslint-config-prettier tslint-plugin-prettier husky pretty-quick</span></span><br></pre></td></tr></table></figure>
+<h4 id="Tslint-json"><a href="#Tslint-json" class="headerlink" title="Tslint.json"></a>Tslint.json</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"defaultSeverity"</span>: <span class="string">"error"</span>,</span><br><span class="line">    <span class="attr">"extends"</span>: [</span><br><span class="line">				<span class="string">"tslint:recommended"</span>,</span><br><span class="line">				<span class="string">"tslint-react"</span>,</span><br><span class="line">				<span class="string">"tslint-config-prettier"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"jsRules"</span>: &#123;&#125;,</span><br><span class="line">    <span class="attr">"rules"</span>: &#123;</span><br><span class="line">			<span class="attr">"prettier"</span>: [<span class="literal">true</span>, <span class="string">"./prettierrc"</span>]</span><br><span class="line">		&#125;,</span><br><span class="line">    <span class="attr">"rulesDirectory"</span>: [</span><br><span class="line">			<span class="string">"tslint-plugin-prettier"</span></span><br><span class="line">		]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="编辑器的不同"><a href="#编辑器的不同" class="headerlink" title="编辑器的不同"></a>编辑器的不同</h2><p>解决方案：<br>主流的都是使用EditorConfig<br>只需要在根目录新建一个<code>.editorconfig</code>文件，然后去根据文档自行定义。再给自己使用的编辑器安装<code>editorConfig</code>的插件即可。<br>官方网站：<a href="https://editorconfig.org/" target="_blank" rel="noopener">EditorConfig</a></p>
+<h2 id="commit-不统一"><a href="#commit-不统一" class="headerlink" title="commit 不统一"></a>commit 不统一</h2><p>主流的方法是commitizen.<br>项目拥有者应当全局安装：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install -g commitizen</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> or</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn global add commitizen</span></span><br></pre></td></tr></table></figure></p>
+<p>之后我们在项目里选用angular格式的commit message并在终端下输入以下命令：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> commitizen init cz-conventional-changelog —save-exact</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> or</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> commitizen init cz-conventional-changelog --yarn --dev --exact</span></span><br></pre></td></tr></table></figure></p>
+<p>上面的命令为你做了三件事：</p>
+<ol>
+<li>安装cz-conventional-changelog的adapter的npm模块。</li>
+<li>将其保存到package.json的dependencies或devDependencies。</li>
+<li>将config.commitizen键添加到package.json的根目录，如下所示：<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">"config": &#123;</span><br><span class="line">    "commitizen": &#123;</span><br><span class="line">      "path": "cz-conventional-changelog"</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>然后在<code>package.json</code>里的<code>scripts</code>里加上<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">    "commit": "git-cz"</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意：<br>如果你使用像<code>husky</code>这样的<code>precommit hooks</code>，你需要为脚本命名除“commit”之外的其他东西（例如“cm”：“git-cz”）。<br>原因是因为npm-scripts有一个“feature”，它自动运行名称为prexxx的脚本，其中xxx是另一个脚本的名称。<br>本质上，如果您将脚本命名为“commit”，则npm和husky将运行两次“precommit”脚本，并且解决方法是阻止npm触发的precommit脚本。</p>
+<p>之后如果有别人也参与进你的项目开发中，我们最好在仓库里也安装依赖<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install -D commitizen</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> or</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn add commititzen -D</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="changelog"><a href="#changelog" class="headerlink" title="changelog"></a>changelog</h2><p>通过手动去维护changelog在我之前的那个wx-tsApi项目中是非常头疼的一件事情，所以去寻找自动化的东西。</p>
+<p>全局安装<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install -g conventional-changelog-cli</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> or</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn global add conventional-changelog-cli</span></span><br></pre></td></tr></table></figure></p>
+<p>然后在<code>package.json</code>文件中添加<code>scripts</code><br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"changelog"</span>: <span class="string">"conventional-changelog -p angular -i CHANGELOG.md -s -r 0 &amp;&amp; git add CHANGELOG.md"</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>官方推荐的工作流程：</p>
+<ol>
+<li>做出改变</li>
+<li>提交这些改变</li>
+<li>确定Travis变成绿色</li>
+<li>改version</li>
+<li>changelog</li>
+<li>commit package.json 和CHANGELOG.md文件</li>
+<li>打Tag</li>
+<li>push</li>
+</ol>
+<p>基于lerna的工作流程(自己研究的有不对请指出)：</p>
+<ol>
+<li>做出改变</li>
+<li>git-cz</li>
+<li>“conventional-changelog -p angular -i CHANGELOG.md -s -r 0 &amp;&amp; git add CHANGELOG.md”</li>
+<li>commit CHANGELOG.md 文件</li>
+<li>Git push</li>
+<li>lerna publish</li>
+</ol>
+<h2 id="借鉴"><a href="#借鉴" class="headerlink" title="借鉴"></a>借鉴</h2><ul>
+<li>eJayYoung(<a href="https://github.com/eJayYoung/blog/issues/1" target="_blank" rel="noopener">如何打造规范的开源项目workflow · Issue #1 · eJayYoung/blog · GitHub</a>)</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/git-empty-object-file.html" rel="next" title="git empty object file">
+                <i class="fa fa-chevron-left"></i> git empty object file
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/部署 Kubernetes 集群.html" rel="prev" title="部署 Kubernetes 集群">
+                部署 Kubernetes 集群 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg"
+                alt="XuZiHao" />
+            
+              <p class="site-author-name" itemprop="name">XuZiHao</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">100</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Adherentman" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/u/0/114280794987404078066" target="_blank" title="Google">
+                    
+                      <i class="fa fa-fw fa-google"></i>Google</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/xu-zi-hao-60/activities" target="_blank" title="知乎">
+                    
+                      <i class="fa fa-fw fa-知乎"></i>知乎</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#打造个人or团队适用的开源项目规范"><span class="nav-number">1.</span> <span class="nav-text">打造个人or团队适用的开源项目规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#lerna"><span class="nav-number">1.1.</span> <span class="nav-text">lerna</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#init"><span class="nav-number">1.1.1.</span> <span class="nav-text">init</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#publish"><span class="nav-number">1.1.2.</span> <span class="nav-text">publish</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">1.1.3.</span> <span class="nav-text">配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码检查和规范"><span class="nav-number">1.2.</span> <span class="nav-text">代码检查和规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Eslint"><span class="nav-number">1.2.1.</span> <span class="nav-text">使用Eslint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Standard"><span class="nav-number">1.2.2.</span> <span class="nav-text">使用Standard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prettier"><span class="nav-number">1.2.3.</span> <span class="nav-text">Prettier</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与git-hook来解决何时lint"><span class="nav-number">1.2.4.</span> <span class="nav-text">与git hook来解决何时lint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tslint"><span class="nav-number">1.2.5.</span> <span class="nav-text">Tslint</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Tslint-json"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">Tslint.json</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑器的不同"><span class="nav-number">1.3.</span> <span class="nav-text">编辑器的不同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#commit-不统一"><span class="nav-number">1.4.</span> <span class="nav-text">commit 不统一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#changelog"><span class="nav-number">1.5.</span> <span class="nav-text">changelog</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#借鉴"><span class="nav-number">1.6.</span> <span class="nav-text">借鉴</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XuZiHao</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xuzihao.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xzh.hi.cn/打造个人or团队适用的开源项目规范.html';
+          this.page.identifier = '打造个人or团队适用的开源项目规范.html';
+          this.page.title = '';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuzihao.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
