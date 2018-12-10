@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg?v=5.1.3">
+
+
+  <link rel="mask-icon" href="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="go,TypeScript," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="壮壮-Technology" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="最近有个新的Deno项目是由node原作者ry发起的，瞬间火爆，star数飞起。但是在搭建环境的过程中还是有些小问题，但是在友好的issue下都得到了解决！再此总结，并对那些在issue里无私贡献自己解决方案的人点赞！开源社区的和谐需要大家去一起努力。 附上项目地址:GitHub - ry/deno: A secure TypeScript runtime on V8">
+<meta name="keywords" content="go,TypeScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="玩Deno遇到问题的解决方案">
+<meta property="og:url" content="http://xzh.hi.cn/玩Deno遇到问题的解决方案.html">
+<meta property="og:site_name" content="壮壮-Technology">
+<meta property="og:description" content="最近有个新的Deno项目是由node原作者ry发起的，瞬间火爆，star数飞起。但是在搭建环境的过程中还是有些小问题，但是在友好的issue下都得到了解决！再此总结，并对那些在issue里无私贡献自己解决方案的人点赞！开源社区的和谐需要大家去一起努力。 附上项目地址:GitHub - ry/deno: A secure TypeScript runtime on V8">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/go-get.png">
+<meta property="og:image" content="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/buildv8woker2.png">
+<meta property="og:image" content="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/makedeno.png">
+<meta property="og:image" content="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/denowork.png">
+<meta property="og:updated_time" content="2018-08-26T12:07:13.131Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="玩Deno遇到问题的解决方案">
+<meta name="twitter:description" content="最近有个新的Deno项目是由node原作者ry发起的，瞬间火爆，star数飞起。但是在搭建环境的过程中还是有些小问题，但是在友好的issue下都得到了解决！再此总结，并对那些在issue里无私贡献自己解决方案的人点赞！开源社区的和谐需要大家去一起努力。 附上项目地址:GitHub - ry/deno: A secure TypeScript runtime on V8">
+<meta name="twitter:image" content="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/go-get.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '6398696795836253000',
+      author: '徐大大'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xzh.hi.cn/玩Deno遇到问题的解决方案.html"/>
+
+
+
+
+
+  <title>玩Deno遇到问题的解决方案 | 壮壮-Technology</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">壮壮-Technology</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">宠辱不惊，闲看庭前花落花开</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://xzh.hi.cn/玩Deno遇到问题的解决方案.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="XuZiHao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="壮壮-Technology">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">玩Deno遇到问题的解决方案</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-02T15:30:00+08:00">
+                2018-06-02
+              </time>
+            
+            
+              <span class="post-updated">
+              &nbsp; | &nbsp; 更新于
+              <time itemprop="dateUpdated" datetime="2018-08-26T20:07:13+08:00" content="2018-08-26">
+                2018-08-26
+              </time>
+              </span>
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Node-js/" itemprop="url" rel="index">
+                    <span itemprop="name">Node.js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/玩Deno遇到问题的解决方案.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="玩Deno遇到问题的解决方案.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近有个新的Deno项目是由node原作者ry发起的，瞬间火爆，star数飞起。<br>但是在搭建环境的过程中还是有些小问题，但是在友好的issue下都得到了解决！<br>再此总结，并对那些在issue里无私贡献自己解决方案的人点赞！开源社区的和谐需要大家去一起努力。</p>
+<p>附上项目地址:<br><a href="https://github.com/ry/deno" target="_blank" rel="noopener">GitHub - ry/deno: A secure TypeScript runtime on V8</a></p>
+<a id="more"></a>
+<h2 id="Step1"><a href="#Step1" class="headerlink" title="Step1"></a>Step1</h2><p>在开始之前请准备好v<em>p</em>n*。<br>大家需要去安装 <code>Go</code> 环境.并且去 <code>export</code> 各种Go相关的环境变量.</p>
+<p>以下是方正大佬给我提供解决方案，很感谢。<br><a href="https://github.com/ry/deno/issues/92" target="_blank" rel="noopener">https://github.com/ry/deno/issues/92</a><br>Mac OS可以参考以下：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export GOROOT=/usr/local/go # where your `go` sitting, usually here ( Mac )</span><br><span class="line">export GOPATH=$HOME/go # means `~/go` </span><br><span class="line">export PATH=$PATH:$HOME/go/bin:$GOPATH/bin</span><br></pre></td></tr></table></figure></p>
+<p>如果是Mac的话，我们还需要去安装<code>xcode-select</code><br> <a href="http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/" target="_blank" rel="noopener">http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/</a> </p>
+<p>我们还需要安装Protobuf 。Ubuntu下：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">wget https://github.com/google/protobuf/releases/download/v3.1.0/protoc-3.1.0-linux-x86_64.zip</span><br><span class="line">unzip protoc-3.1.0-linux-x86_64.zip</span><br><span class="line">export PATH=$HOME/bin:$PATH</span><br></pre></td></tr></table></figure></p>
+<p>Mac下简单粗暴：<br><code>brew install protobuf</code><br>再来装一个<code>README</code>中没提及的<br><code>brew install pkg-config</code></p>
+<h2 id="Step2"><a href="#Step2" class="headerlink" title="Step2"></a>Step2</h2><p>Ok以上一切正常，没出啥幺蛾子。<br>我们继续，现在需要 <code>protoc-gen-go</code>  和  <code>go-bindata</code>:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">go get -u github.com/golang/protobuf/protoc-gen-go</span><br><span class="line">go get -u github.com/jteeuwen/go-bindata/...</span><br></pre></td></tr></table></figure></p>
+<p>这步需要等一小伙，记得一定要v<em>p</em>n啊!</p>
+<h2 id="Step3"><a href="#Step3" class="headerlink" title="Step3"></a>Step3</h2><p>现在我们来困难重重的 <code>v8worker2</code> 啦。我们需要get 然后 build 它。大概会花30min<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">go get -u github.com/ry/v8worker2</span><br><span class="line">cd $GOPATH/src/github.com/ry/v8worker2</span><br><span class="line">./build.py --use_ccache</span><br></pre></td></tr></table></figure></p>
+<p>接下来大家可能遇到的情况：<br><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/go-get.png" alt=""><br>这种情况说明我们 <code>clone</code> 下的v8是有损坏的，然后我们需要做以下操作</p>
+<ol>
+<li><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd $GOPATH/src/github.com/ry/v8worker2</span><br><span class="line">rm -rf v8</span><br><span class="line">git clone https://github.com/v8/v8.git</span><br><span class="line">cd v8</span><br><span class="line">git checkout fe12316ec4b4a101923e395791ca55442e62f4cc</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>或者</p>
+<ol start="2">
+<li><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">export PATH=$PATH:$GOPATH/src/github.com/ry/v8worker2/depot_tools</span><br><span class="line">cd $GOPATH/src/github.com/ry/v8worker2</span><br><span class="line">rm -rf v8</span><br><span class="line">fetch v8</span><br><span class="line">cd v8</span><br><span class="line">git checkout fe12316</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>因为用第一种方法我发现我的vpn不能快速的下载所以就尝试了第二种方法。如果你键入<code>fetch</code>发现命令行出现<code>command not found: fetch</code>。<br>你可以尝试<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $GOPATH/src/github.com/ry/v8worker2</span><br><span class="line">depot_tools/./fetch v8</span><br></pre></td></tr></table></figure></p>
+<p>感谢 <a href="https://github.com/ry/deno/issues/92" target="_blank" rel="noopener">go get v8worker2 Direct fetching of that commit failed? · Issue #92 · ry/deno · GitHub</a> 下面给出解决方案的人@wbgbg ，@qti3e，@ztplz </p>
+<p>如果你发现自己的<code>depot_tools</code>文件夹下啥都没有。你需要执行以下命令<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $GOPATH/src/github.com/ry/v8worker2</span><br><span class="line">git submodule update --init</span><br></pre></td></tr></table></figure></p>
+<p>之后再去<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $GOPATH/src/github.com/ry/v8worker2</span><br><span class="line">./build.py</span><br></pre></td></tr></table></figure></p>
+<p>你看见了以下，那么就恭喜啦！他在编译了<br><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/buildv8woker2.png" alt=""></p>
+<h2 id="Step4"><a href="#Step4" class="headerlink" title="Step4"></a>Step4</h2><p>最后一步<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">go get -u github.com/ry/deno/...</span><br><span class="line">cd $GOPATH/src/github.com/ry/deno</span><br><span class="line">make # 稍等片刻</span><br><span class="line">./deno testdata/001_hello.js # Output: Hello World</span><br></pre></td></tr></table></figure></p>
+<p>又是熟悉的Hello World！<br>在<code>go get -u github.com/ry/deno/...</code>遇到以下问题不要急，直接<code>make deno</code>走你！<br><a href="https://github.com/ry/deno/issues/71" target="_blank" rel="noopener">deno/dispatch.go:10:26: undefined: BaseMsg · Issue #71 · ry/deno · GitHub</a><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> go get  -u github.com/ry/deno/...</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> github.com/ry/deno</span></span><br><span class="line">../deno/dispatch.go:10:26: undefined: BaseMsg</span><br><span class="line">../deno/dispatch.go:30:10: undefined: BaseMsg</span><br><span class="line">../deno/dispatch.go:62:14: undefined: BaseMsg</span><br><span class="line">../deno/dispatch.go:68:34: undefined: Msg</span><br><span class="line">../deno/dispatch.go:119:13: select case must be receive, send or assign recv</span><br><span class="line">../deno/fetch.go:13:11: undefined: Msg</span><br><span class="line">../deno/fetch.go:16:8: undefined: Msg_FETCH_REQ</span><br><span class="line">../deno/fetch.go:29:14: undefined: Msg</span><br><span class="line">../deno/main.go:38:15: undefined: Asset</span><br><span class="line">../deno/main.go:110:19: undefined: Msg</span><br><span class="line">../deno/main.go:110:19: too many errors</span><br></pre></td></tr></table></figure></p>
+<p>如果你在这<code>make deno</code>遇到了以下问题，说明你第一步方正大佬给出的解决方案还没做。回去乖乖配置吧！<br><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/makedeno.png" alt=""></p>
+<p>之后再次运行<code>make deno</code>完成！<br><img src="https://blogaaaaxzh.oss-cn-hangzhou.aliyuncs.com/denowork.png" alt=""></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/go/" rel="tag"># go</a>
+          
+            <a href="/tags/TypeScript/" rel="tag"># TypeScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/CSS权威指南.html" rel="next" title="《Css权威指南》">
+                <i class="fa fa-chevron-left"></i> 《Css权威指南》
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Sass小笔记.html" rel="prev" title="Sass小笔记">
+                Sass小笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://ozar6ogjb.bkt.clouddn.com/avatar.jpeg"
+                alt="XuZiHao" />
+            
+              <p class="site-author-name" itemprop="name">XuZiHao</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">100</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Adherentman" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/u/0/114280794987404078066" target="_blank" title="Google">
+                    
+                      <i class="fa fa-fw fa-google"></i>Google</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/xu-zi-hao-60/activities" target="_blank" title="知乎">
+                    
+                      <i class="fa fa-fw fa-知乎"></i>知乎</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step1"><span class="nav-number">1.</span> <span class="nav-text">Step1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step2"><span class="nav-number">2.</span> <span class="nav-text">Step2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step3"><span class="nav-number">3.</span> <span class="nav-text">Step3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step4"><span class="nav-number">4.</span> <span class="nav-text">Step4</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XuZiHao</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://xuzihao.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://xzh.hi.cn/玩Deno遇到问题的解决方案.html';
+          this.page.identifier = '玩Deno遇到问题的解决方案.html';
+          this.page.title = '玩Deno遇到问题的解决方案';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xuzihao.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
