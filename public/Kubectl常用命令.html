@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="壮壮-Technology">
 <meta property="og:description" content="getget命令用于获取集群的一个或一些resource信息.kubectl get可以列出集群所有resource的详细。resource包括集群节点、运行的pod，ReplicationController，service等。 获取deployment1234zihao@zihao-desktop:~ $ kubectl get deploymentNAME    DESIRED   CURR">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-17T14:40:22.112Z">
+<meta property="og:updated_time" content="2018-11-25T13:29:43.475Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kubectl常用命令">
 <meta name="twitter:description" content="getget命令用于获取集群的一个或一些resource信息.kubectl get可以列出集群所有resource的详细。resource包括集群节点、运行的pod，ReplicationController，service等。 获取deployment1234zihao@zihao-desktop:~ $ kubectl get deploymentNAME    DESIRED   CURR">
@@ -308,8 +308,8 @@
             
               <span class="post-updated">
               &nbsp; | &nbsp; 更新于
-              <time itemprop="dateUpdated" datetime="2018-11-17T22:40:22+08:00" content="2018-11-17">
-                2018-11-17
+              <time itemprop="dateUpdated" datetime="2018-11-25T21:29:43+08:00" content="2018-11-25">
+                2018-11-25
               </time>
               </span>
             
@@ -385,14 +385,14 @@
 
       
         <h2 id="get"><a href="#get" class="headerlink" title="get"></a>get</h2><p>get命令用于获取集群的一个或一些resource信息.<br><code>kubectl get</code>可以列出集群所有resource的详细。resource包括集群节点、运行的pod，ReplicationController，service等。</p>
-<h3 id="获取deployment"><a href="#获取deployment" class="headerlink" title="获取deployment"></a>获取deployment</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl get deployment</span><br><span class="line">NAME    DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE</span><br><span class="line">curl    1         1         1            1           43m</span><br><span class="line">nginx   2         2         2            2           107m</span><br></pre></td></tr></table></figure>
+<h3 id="获取deployment"><a href="#获取deployment" class="headerlink" title="获取deployment"></a>获取deployment</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl get deployment</span><br><span class="line">NAME    DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE</span><br><span class="line">curl    1         1         1            1           43m</span><br><span class="line">nginx   2         2         2            2           107m</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="获取所有运行的pod信息"><a href="#获取所有运行的pod信息" class="headerlink" title="获取所有运行的pod信息"></a>获取所有运行的pod信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl get pods</span><br><span class="line">NAME                     READY   STATUS    RESTARTS   AGE</span><br><span class="line">curl-5cc7b478b6-4x7pl    1/1     Running   1          44m</span><br><span class="line">nginx-65d5c4f7cc-khzn8   1/1     Running   0          108m</span><br><span class="line">nginx-65d5c4f7cc-v7x49   1/1     Running   0          107m</span><br></pre></td></tr></table></figure>
-<h3 id="列出Pod以及运行Pod节点信息"><a href="#列出Pod以及运行Pod节点信息" class="headerlink" title="列出Pod以及运行Pod节点信息"></a>列出Pod以及运行Pod节点信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl get pods -o wide </span><br><span class="line">NAME                     READY   STATUS    RESTARTS   AGE    IP            NODE    NOMINATED NODE</span><br><span class="line">nginx-65d5c4f7cc-khzn8   1/1     Running   0          159m   192.168.1.2   zihao   &lt;none&gt;</span><br><span class="line">nginx-65d5c4f7cc-v7x49   1/1     Running   0          158m   192.168.1.3   zihao   &lt;none&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="查看集群中所有的node"><a href="#查看集群中所有的node" class="headerlink" title="查看集群中所有的node"></a>查看集群中所有的node</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl get nodes</span><br><span class="line">NAME            STATUS   ROLES    AGE     VERSION</span><br><span class="line">zihao           Ready    &lt;none&gt;   4h15m   v1.12.2</span><br><span class="line">zihao-desktop   Ready    master   21h     v1.12.2</span><br></pre></td></tr></table></figure>
-<h3 id="查看某个Node的详细信息"><a href="#查看某个Node的详细信息" class="headerlink" title="查看某个Node的详细信息"></a>查看某个Node的详细信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl describe node zihao</span><br><span class="line">Name:               zihao</span><br><span class="line">Roles:              &lt;none&gt;</span><br><span class="line">Labels:             beta.kubernetes.io/arch=amd64</span><br><span class="line">                    beta.kubernetes.io/os=linux</span><br><span class="line">                    kubernetes.io/hostname=zihao</span><br><span class="line">Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: /var/run/dockershim.sock</span><br><span class="line">                    node.alpha.kubernetes.io/ttl: 0</span><br><span class="line">                    projectcalico.org/IPv4Address: 172.16.187.132/24</span><br><span class="line">                    volumes.kubernetes.io/controller-managed-attach-detach: true</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
-<h2 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h2><h3 id="删除pod"><a href="#删除pod" class="headerlink" title="删除pod"></a>删除pod</h3><p>这样删除pods后，你会发现可以看到刚刚生成的<code>curl-5cc7b478b6-4x7pl</code>的status为<code>Terminating</code>，随后又一个新的<code>curl-xxxxxx</code>正在创建，这正是确保<code>replicas</code>为1的动作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl delete pods curl-5cc7b478b6-4x7pl</span><br><span class="line">pod &quot;curl-5cc7b478b6-4x7pl&quot; deleted</span><br></pre></td></tr></table></figure></p>
-<h3 id="删除deployment"><a href="#删除deployment" class="headerlink" title="删除deployment"></a>删除deployment</h3><p>直接删除pod触发了replicas的确保机制，我们需要删除deployment<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl delete deployment curl</span><br><span class="line">deployment.extensions &quot;curl&quot; deleted</span><br></pre></td></tr></table></figure></p>
+<h3 id="获取所有运行的pod信息"><a href="#获取所有运行的pod信息" class="headerlink" title="获取所有运行的pod信息"></a>获取所有运行的pod信息</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl get pods</span><br><span class="line">NAME                     READY   STATUS    RESTARTS   AGE</span><br><span class="line">curl-5cc7b478b6-4x7pl    1/1     Running   1          44m</span><br><span class="line">nginx-65d5c4f7cc-khzn8   1/1     Running   0          108m</span><br><span class="line">nginx-65d5c4f7cc-v7x49   1/1     Running   0          107m</span><br></pre></td></tr></table></figure>
+<h3 id="列出Pod以及运行Pod节点信息"><a href="#列出Pod以及运行Pod节点信息" class="headerlink" title="列出Pod以及运行Pod节点信息"></a>列出Pod以及运行Pod节点信息</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl get pods -o wide </span><br><span class="line">NAME                     READY   STATUS    RESTARTS   AGE    IP            NODE    NOMINATED NODE</span><br><span class="line">nginx-65d5c4f7cc-khzn8   1/1     Running   0          159m   192.168.1.2   zihao   &lt;none&gt;</span><br><span class="line">nginx-65d5c4f7cc-v7x49   1/1     Running   0          158m   192.168.1.3   zihao   &lt;none&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="查看集群中所有的node"><a href="#查看集群中所有的node" class="headerlink" title="查看集群中所有的node"></a>查看集群中所有的node</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl get nodes</span><br><span class="line">NAME            STATUS   ROLES    AGE     VERSION</span><br><span class="line">zihao           Ready    &lt;none&gt;   4h15m   v1.12.2</span><br><span class="line">zihao-desktop   Ready    master   21h     v1.12.2</span><br></pre></td></tr></table></figure>
+<h3 id="查看某个Node的详细信息"><a href="#查看某个Node的详细信息" class="headerlink" title="查看某个Node的详细信息"></a>查看某个Node的详细信息</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl describe node zihao</span><br><span class="line">Name:               zihao</span><br><span class="line">Roles:              &lt;none&gt;</span><br><span class="line">Labels:             beta.kubernetes.io/arch=amd64</span><br><span class="line">                    beta.kubernetes.io/os=linux</span><br><span class="line">                    kubernetes.io/hostname=zihao</span><br><span class="line">Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: /var/run/dockershim.sock</span><br><span class="line">                    node.alpha.kubernetes.io/ttl: 0</span><br><span class="line">                    projectcalico.org/IPv4Address: 172.16.187.132/24</span><br><span class="line">                    volumes.kubernetes.io/controller-managed-attach-detach: true</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
+<h2 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h2><h3 id="删除pod"><a href="#删除pod" class="headerlink" title="删除pod"></a>删除pod</h3><p>这样删除pods后，你会发现可以看到刚刚生成的<code>curl-5cc7b478b6-4x7pl</code>的status为<code>Terminating</code>，随后又一个新的<code>curl-xxxxxx</code>正在创建，这正是确保<code>replicas</code>为1的动作<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl delete pods curl-5cc7b478b6-4x7pl</span><br><span class="line">pod "curl-5cc7b478b6-4x7pl" deleted</span><br></pre></td></tr></table></figure></p>
+<h3 id="删除deployment"><a href="#删除deployment" class="headerlink" title="删除deployment"></a>删除deployment</h3><p>直接删除pod触发了replicas的确保机制，我们需要删除deployment<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl delete deployment curl</span><br><span class="line">deployment.extensions "curl" deleted</span><br></pre></td></tr></table></figure></p>
 <h3 id="强制删除pod"><a href="#强制删除pod" class="headerlink" title="强制删除pod"></a>强制删除pod</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">zihao@zihao-desktop:~ $ kubectl delete pod curl-5cc7b478b6-4x7pl --grace-period=0 --force</span><br><span class="line">warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.</span><br><span class="line">pod &quot;curl-5cc7b478b6-4x7pl&quot; force deleted</span><br></pre></td></tr></table></figure>
 
       
@@ -435,6 +435,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/nginx基础.html" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -525,7 +529,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">98</span>
+                  <span class="site-state-item-count">100</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -536,7 +540,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -547,7 +551,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
